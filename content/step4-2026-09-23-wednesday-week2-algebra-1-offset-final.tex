@@ -134,7 +134,7 @@ So, the last topic yesterday was categories, and I wanted to say a few things.
 
 When I had this discussion about categories yesterday, it was mixed in with all the examples. So, I want to just very quickly give the pure abstract definition and two small points. But this course is not about category theory. It's a topic here because it's natural to introduce when you talk about these algebraic objects; so, anyway, the course is not about category theory.
 
-A category \inlinemetanote{writes \qt{Category}} has data, two types of data \inlinemetanote{writes \qt{$\operatorname{Cat} \Rightarrow$}}: It has objects \inlinemetanote{writes \qt{$\operatorname{Obj} \ni A$}}, as we said, and it has homs \inlinemetanote{writes \qt{Homs $\operatorname{Hom}(A, B)$}}. So, maybe $A$ can be an object; and for homs, if you pick any two objects, you get a hom-space \inlinemetanote{writes \qt{$\operatorname{Hom}(A, B)$} with a brace}, sometimes called morphisms.
+A category has data, two types of data \inlinemetanote{writes \qt{Category} and \qt{$\operatorname{Cat} \Rightarrow$}}: It has objects, as we said, and it has homs \inlinemetanote{writes \qt{$\operatorname{Obj} \ni A$} and \qt{Homs $\operatorname{Hom}(A, B)$}}. So, maybe $A$ can be an object; and for homs, if you pick any two objects, you get a hom-space \inlinemetanote{writes \qt{$\operatorname{Hom}(A, B)$} with a brace}, sometimes called morphisms.
 
 And the properties, the abstract properties of this hom-space --- I said them, but... --- is that it's a set \inlinemetanote{writes \qt{$\bullet$ Set}}. That's a technical property; that's to avoid some contradictions in foundations, which I'm not going to discuss now. The second is that there's a composition law \inlinemetanote{writes \qt{$\bullet$ Comp Law}}. And the third is that there are identity elements --- existence of identity, so \inlinemetanote{writes \qt{$\bullet$ $1_A \in \operatorname{Hom}(A, B)$}, a slip for $\operatorname{Hom}(A, A)$}...
 
@@ -333,7 +333,7 @@ Hence, left-cancellation with respect to arbitrary test objects $X$ precisely re
 \end{content}
 
 \begin{speech}[00:08:27 - 00:09:20]
-So, you can define epimorphism. \inlinemetanote{writes \qt{epimorphism}} If you have $f$ from $A$ to $B$, it is an epimorphism \inlinemetanote{writes \qt{$A \xrightarrow{f} B$ is an epimorphism}} if \inlinemetanote{writes \qt{if}} for all...
+So, you can define epimorphism \inlinemetanote{writes: epimorphism}. If you have $f$ from $A$ to $B$, it is an epimorphism if for all \inlinemetanote{writes: $A \xrightarrow{f} B$ is an epimorphism if}...
 
 And this is now about this kind of feeling of mathematics: How do you think I'm going to define the opposite notion of injective?
 
@@ -621,7 +621,7 @@ The existence of non-zero elements $\bar{a}, \bar{b} \in \faktor{\mathbb{Z}}{m\m
 \begin{speech}[00:19:24 - 00:21:50]
 So, then the other thing is: Suppose it is prime.
 
-Suppose $m = p$ is prime. \inlinemetanote{writes \qt{Suppose $m = p$ is prime}} Then let $a$ and $b$ be integers \inlinemetanote{writes \qt{Then let $a, b \in \mathbb{Z}$}} such that $\bar{a} \cdot \bar{b} = \bar{0}$ in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ \inlinemetanote{writes \qt{such that $\bar{a} \cdot \bar{b} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$}}.
+Suppose $m = p$ is prime \inlinemetanote{writes: Suppose $m = p$ is prime}. Then let $a$ and $b$ be integers such that $\bar{a} \cdot \bar{b} = \bar{0}$ in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ \inlinemetanote{writes: Then let $a, b \in \mathbb{Z}$ such that $\bar{a} \cdot \bar{b} = \bar{0} \in \faktor{\mathbb{Z}}{p\mathbb{Z}}$}.
 
 All right? What are we going to do here? If I translate this equation on residue classes to integers, this means that $a \cdot b$ is equal to some integer $d \cdot p$ \inlinemetanote{writes \qt{$ab = dp$}}.
 
@@ -678,18 +678,18 @@ There's a certain kind of mathematician that takes pleasure in these edge cases,
 \begin{content}[Pedagogical Analysis of Boundary Cases]
 \begin{remark}[Boundary Cases: \texorpdfstring{$m = 1$}{m=1} and \texorpdfstring{$m = 0$}{m=0}]\label[remark]{rem:boundary-cases-mod-rings}
 The proposition specifies $m \in \mathbb{Z}_{>0}$. Let us examine the boundary cases:
-\begin{description}
-    \item[Case $m = 1$:] The ideal is $1\mathbb{Z} = \mathbb{Z}$. The quotient ring is the zero ring:
+\begin{itemize}
+    \item \textbf{Case $m = 1$:} The ideal is $1\mathbb{Z} = \mathbb{Z}$. The quotient ring is the zero ring:
     \[
     \mathbb{Z}/1\mathbb{Z} \cong \{0\},
     \]
     where $\bar{1} = \bar{0}$. Since the definition of an integral domain explicitly requires $R \neq \{0\}$, $\mathbb{Z}/1\mathbb{Z}$ is \emph{not} an integral domain. This perfectly matches the number-theoretic convention that $1$ is not a prime number.
-    \item[Case $m = 0$:] The zero ideal is $0\mathbb{Z} = \{0\}$. The quotient ring is canonically isomorphic to the integers:
+    \item \textbf{Case $m = 0$:} The zero ideal is $0\mathbb{Z} = \{0\}$. The quotient ring is canonically isomorphic to the integers:
     \[
     \mathbb{Z}/0\mathbb{Z} \cong \mathbb{Z}.
     \]
     The integers $\mathbb{Z}$ are the prototypical integral domain. In modern commutative algebra, $\{0\} \subset \mathbb{Z}$ is a prime ideal precisely because $\mathbb{Z}/\{0\} \cong \mathbb{Z}$ is an integral domain!
-\end{description}
+\end{itemize}
 \end{remark}
 \end{content}
 
@@ -704,7 +704,7 @@ This has to do with every ring; so, let's say here, we take a ring $R$ \inlineme
 
 And this is now related to last week; in fact, it was the point of the discussion last week. There we discussed the ring $\mathbb{Z}$, but now we can take any ring.
 
-So, the definition here is that if we have elements $a$ and $b$ in the ring \inlinemetanote{writes \qt{Def. if $a, b \in R$}}, then we say --- this is the definition of the term --- we say $a$ divides $b$ \inlinemetanote{writes \qt{we say $a$ divides $b$}}. What this means is there exists some element of the ring $c$ \inlinemetanote{writes \qt{$\exists c \in R$}} such that $a \cdot c = b$ \inlinemetanote{writes \qt{$ac = b$}}.
+So, the definition here is that if we have elements $a$ and $b$ in the ring \inlinemetanote{writes: Def. if $a, b \in R$}, then we say --- this is the definition of the term --- we say $a$ divides $b$ \inlinemetanote{writes: we say $a$ divides $b$}. What this means is there exists some element of the ring $c$ such that $a \cdot c = b$ \inlinemetanote{writes \qt{$\exists c \in R$} and \qt{$ac = b$}}.
 
 Okay? That's just the actual definition of division, and it's the same definition as with the integers. So, this is a notion of division for any ring.
 \end{speech}
@@ -739,7 +739,7 @@ Now, $u \in R$ is a unit \inlinemetanote{writes \qt{$u \in R$ is a unit}} --- th
 
 Oh, I should say that also: \qt{$a$ divides $b$}, that's how you say it in English, and the symbol for that is $a \mid b$ \inlinemetanote{writes \qt{$(a \mid b)$}}.
 
-So, here this is now a definition: An element is a unit if $u$ divides $1$. And that is equivalent to: There exists a $w$ such that \inlinemetanote{writes \qt{$\iff \exists w \text{ such that }$}} $u \cdot w = 1$ \inlinemetanote{writes \qt{$uw = 1$}}. I never have to worry about the order here, because I said that for the rings for this course, unless I tell you explicitly otherwise, we're always in commutative rings. Okay?
+So, here this is now a definition: An element is a unit if $u$ divides $1$. And that is equivalent to: There exists a $w$ such that $u \cdot w = 1$ \inlinemetanote{writes: $\iff \exists w$ such that $uw = 1$}. I never have to worry about the order here, because I said that for the rings for this course, unless I tell you explicitly otherwise, we're always in commutative rings. Okay?
 
 So, this is the definition, this is just the equivalence unwinding division; and if I want to unwind this using English --- so, this is the definition of division \inlinemetanote{writes \qt{Def of div}} --- this is just English, which we say: if and only if $u$ has a multiplicative inverse \inlinemetanote{writes \qt{$\iff u \text{ has mult. inverse in } R$}}. Multiplicative inverse in $R$.
 
@@ -813,7 +813,7 @@ We discussed the units of the Gaussian integers (Recall: $\pm 1, \pm i$, Week~1,
 
 This is an exercise: Prove the units of the Gaussian integers are $\pm 1, \pm i$. You need an argument for that, and that argument comes from the norm in complex analysis so that you prove it.
 
-Okay, so, observation \inlinemetanote{writes \qt{Observation}} --- and it's really an important observation: If I take any ring $R$ \inlinemetanote{writes \qt{$R$ ring}}, and let $\mathcal{U}_R$ \inlinemetanote{writes \qt{let $\mathcal{U}_R$ be the set of units of $R$}} be the set of units of $R$.
+Okay, so, observation \inlinemetanote{writes \qt{Observation}} --- and it's really an important observation: If I take any ring $R$, and let $\mathcal{U}_R$ be the set of units of $R$ \inlinemetanote{writes \qt{$R$ ring} and \qt{let $\mathcal{U}_R$ be the set of units of $R$}}.
 
 Then this observation is: If I take the units, I take multiplication --- that's multiplication in the ring --- and I take the unit $1$, this is a group \inlinemetanote{writes \qt{$(\mathcal{U}_R, \cdot, 1) \leftarrow$ Group}}...
 \end{speech}
@@ -898,9 +898,9 @@ A very natural question, and one of the first things to think about regarding $\
 
 And then there's the confusing thing when $m = 0$, which is usually a special case, so I exclude it. Usually we allow $m = 1$, which is the zero ring, but anyway, this is kind of standard. When I write $\faktor{\mathbb{Z}}{m\mathbb{Z}}$, I always mean this; and typically I also mean it's bigger than $1$, but anyway.
 
-So, the question \inlinemetanote{writes \qt{Question}} is: What are the units \inlinemetanote{writes \qt{What are the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$?}} of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$?
+So, the question is: What are the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes: Question: What are the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$?}?
 
-Suppose we have $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{Suppose $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}}, and $\bar{x}$ is a unit \inlinemetanote{writes \qt{and $\bar{x}$ is a unit}} --- a unit. This means that there exists $\bar{y}$ such that \inlinemetanote{writes \qt{$\exists \bar{y}$ such that}} $\bar{x}\bar{y} = \bar{1}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{$\bar{x}\bar{y} = \bar{1} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}}. That's what it means to be a unit; I'm just repeating it, right?
+Suppose we have $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$, and $\bar{x}$ is a unit \inlinemetanote{writes: Suppose $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ and $\bar{x}$ is a unit} --- a unit. This means that there exists $\bar{y}$ such that $\bar{x}\bar{y} = \bar{1}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes: $\exists \bar{y}$ such that $\bar{x}\bar{y} = \bar{1} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$}. That's what it means to be a unit; I'm just repeating it, right?
 \end{speech}
 
 \begin{speech}[00:32:27 - 00:33:32]
@@ -916,7 +916,7 @@ And in English, this condition is usually said as: $x$ and $m$ are relatively pr
 \begin{speech}[00:33:32 - 00:35:02]
 We have now discovered what the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ are: They're all the elements which are relatively prime. Because if it is a unit, it's the residue class of a relatively prime integer. If you have $\operatorname{gcd} = 1$, then you go backwards in this diagram.
 
-If you write this as a result, then it says that the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ \inlinemetanote{writes \qt{The units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$}} consist of all elements $\bar{x}$ \inlinemetanote{writes \qt{consist of $\{\bar{x} \mid$}} where $\operatorname{gcd}(x, m) = 1$ \inlinemetanote{writes \qt{$\operatorname{gcd}(x, m) = 1$\}}}.
+If you write this as a result, then it says that the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ consist of all elements $\bar{x}$ where $\operatorname{gcd}(x, m) = 1$ \inlinemetanote{writes: The units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ consist of $\{\bar{x} \mid \operatorname{gcd}(x, m) = 1\}$}.
 
 Did I write GCD here? Maybe GCD. Okay? Is that clear?
 

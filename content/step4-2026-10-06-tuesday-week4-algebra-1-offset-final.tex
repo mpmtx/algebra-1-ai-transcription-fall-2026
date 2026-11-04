@@ -135,7 +135,7 @@ This lecture explores fundamental algebraic ring constructions, bridging polynom
 \begin{speech}[00:00:00 - 00:01:55]
 Okay, so, we start, and I wanted to start with some things from last week. \inlinemetanote{walks to the board and writes on the blackboard} If $R$ is a ring, we had defined this polynomial ring in one variable, and also the power series ring. \inlinemetanote{writes: $R \to R[x], R[[x]]$} And just some comments: the polynomial ring is a subring of the power series ring. \inlinemetanote{writes: $R[x] \subset R[[x]]$} That's important to note, because every polynomial you can view as a finite power series. 
 
-So, this is one comment. The second comment is that --- and people were asking me after class ---: what happens if I have two variables or three variables? \inlinemetanote{writes: $\to R[x,y]$} There's two ways to approach this. One is you could just define this in the same way as we define this, \inlinemetanote{writes: $\to \text{defined}$} which is: it's the set of finite sums $a_{i,j} x^i y^j$, where these indices go over some finite set, and the coefficients are in $R$, \inlinemetanote{writes: $\{ \sum_{0 \le i, j \in \mathbb{N}} a_{i,j} x^i y^j \mid a_{i,j} \in R \}$} and it's just the same definition as before. So, that's one way to do it. I hope that's clear --- it's just multiplying with more polynomials. 
+So, this is one comment. The second comment is that --- and people were asking me after class ---: what happens if I have two variables or three variables? \inlinemetanote{writes: $\to R[x,y]$} There's two ways to approach this. One is you could just define this in the same way as we define this, \inlinemetanote{writes: $\to$ defined} which is: it's the set of finite sums $a_{i,j} x^i y^j$, where these indices go over some finite set, and the coefficients are in $R$, \inlinemetanote{writes: $\{ \sum_{0 \le i, j \in \mathbb{N}} a_{i,j} x^i y^j \mid a_{i,j} \in R \}$} and it's just the same definition as before. So, that's one way to do it. I hope that's clear --- it's just multiplying with more polynomials. 
 
 But there's a more formal way, which is that $R$ is a ring, so then we've already defined this, that's where we add one variable, \inlinemetanote{writes: $R \Rightarrow R[x]$} and so this is a ring, so we can also define this: this is a ring, and have one more variable. \inlinemetanote{writes: $\Rightarrow R[x][y]$} And you could take this to be the definition of $R[x, y]$. \inlinemetanote{writes: $= R[x,y]$} So, it's just: we add the variables one at a time, as this is a polynomial ring over the polynomial ring over $R$. 
 
@@ -370,10 +370,6 @@ It is called the \newterm{field of Laurent series}: when $R = K$ is a field, it 
 \end{definition}
 \end{content}
 
-\begin{note}[Board Transition]
-The lecturer moves the board with the fields of fractions up and washes the panel below it for the definition of Laurent series.
-\end{note}
-
 \subsection{Formal Laurent Series with Finitely Many Negative Powers}
 
 \begin{speech}[00:10:48 - 00:12:45]
@@ -468,10 +464,6 @@ For an integral domain $R$ that is not a field, the Laurent series with coeffici
 
 \subsection{Definition and Axioms of an Ideal}
 
-\begin{note}[Transition to the Main Weekly Topic]
-The lecturer takes a sponge and cleans the boards, erasing the Laurent series overview and preparing the blackboards for the introduction of ideals and quotient rings.
-\end{note}
-
 \begin{speech}[00:15:33 - 00:16:29]
 Okay, so, the main topic this week is about ideals and quotient rings, and the main construction is that of a quotient ring. 
 
@@ -481,7 +473,7 @@ If you like polynomial rings, the class will talk about results of polynomial ri
 \begin{speech}[00:16:29 - 00:18:33]
 Okay, so, now we finish these constructions and we start something new. $R$ is our ring, \inlinemetanote{writes: $R$ ring} and the first thing: we've already defined $I$ is an ideal. \inlinemetanote{writes: $I \subset R$ is an ideal} So, we've already defined this (Recall: \cref{def:ideal}), but I'll just review it briefly because now it's crucial for this week. 
 
-$I$ is an ideal if it satisfies that, if I take $R$ plus and $0$... this is a subgroup of the additive part of the ring. \inlinemetanote{writes: $\bullet (I, +, 0) \subset (R, +, 0)$ subgroup} And the second is: if I take anybody in the ring and anybody in the ideal, then their product lies in the ideal. \inlinemetanote{writes: $\bullet \ \forall r \in R, \forall a \in I \text{ then } r \cdot a \in I$} This says that the ideal is an additive subgroup under addition, but there's another condition. The ideal has kind of two constraints: one is the addition constraint, and the other is the multiplication constraint. They're just different, because they're talking about two different operations.
+$I$ is an ideal if it satisfies that, if I take $R$ plus and $0$... this is a subgroup of the additive part of the ring. \inlinemetanote{writes: $\bullet (I, +, 0) \subset (R, +, 0)$ subgroup} And the second is: if I take anybody in the ring and anybody in the ideal, then their product lies in the ideal. \inlinemetanote{writes: $\bullet \ \forall r \in R, \forall a \in I$ then $r \cdot a \in I$} This says that the ideal is an additive subgroup under addition, but there's another condition. The ideal has kind of two constraints: one is the addition constraint, and the other is the multiplication constraint. They're just different, because they're talking about two different operations.
 
 And our example we had seen... we did some examples anyway, but a place where we know we always get ideals: if I take a homomorphism... \inlinemetanote{writes: $f \colon R \to S$} maybe I should put it here... so, $f$ is a homomorphism of rings, \inlinemetanote{writes: $f$ is a hom of rings} then whenever you have a homomorphism of rings, you get an ideal for free. Sorry. \inlinemetanote{chalk slips}
 
@@ -572,7 +564,7 @@ All right, but we also get the image of $f$ inside $S$, \inlinemetanote{writes: 
 
 So, that's kind of the parallel there. And then we're going to work on this quotient business, but you see the matter is slightly... you know, in the vector space world, everything is a vector space. But in the ring world, sometimes you get rings, and sometimes you get ideals, and they're slightly different objects, so, we have to come to terms with that.
 
-So, let me just say that the statements there that you know... so, basic statements: \inlinemetanote{writes \qt{STATEMENT}} One is that $f$ is surjective if and only if this subring is the whole ring. \inlinemetanote{writes: (i) $f \text{ is surjective} \iff \operatorname{Im}(f) = S$} That's almost like a tautology, right? That's what surjective means: you get everybody here, and if the image is everybody, it's surjective. So, that's essentially a tautology.
+So, let me just say that the statements there that you know... so, basic statements: \inlinemetanote{writes \qt{STATEMENT}} One is that $f$ is surjective if and only if this subring is the whole ring. \inlinemetanote{writes: (i) $f$ is surjective $\iff \operatorname{Im}(f) = S$} That's almost like a tautology, right? That's what surjective means: you get everybody here, and if the image is everybody, it's surjective. So, that's essentially a tautology.
 \end{speech}
 
 \begin{content}[The Morphism Data for Rings: Ideals vs. Subrings]
@@ -607,7 +599,7 @@ Let $f \colon R \to S$ be a ring homomorphism. Then $f$ is surjective if and onl
 \subsection{Injectivity and the Zero Ideal}
 
 \begin{speech}[00:23:08 - 00:24:34]
-The second statement --- and that's also true there --- the second statement: \inlinemetanote{writes: (ii)} $f$ is injective if and only if... \inlinemetanote{writes: $f \text{ is injective} \iff$} so, what's the statement going to be? It's going to be about the kernel: the kernel of $f$ is the zero ideal. \inlinemetanote{writes: $\ker(f) = (0) \text{ zero ideal}$}
+The second statement --- and that's also true there --- the second statement: \inlinemetanote{writes: (ii)} $f$ is injective if and only if... \inlinemetanote{writes: $f$ is injective $\iff$} so, what's the statement going to be? It's going to be about the kernel: the kernel of $f$ is the zero ideal. \inlinemetanote{writes: $\ker(f) = (0)$ zero ideal}
 
 This is the standard terminology for the zero ideal, the standard notation for the zero ideal. The zero ideal is the ideal that has zero and nothing else. If you look at the definition of an ideal, the ideal that has the single element zero... So, this is going to be used a lot, so, it should be completely clear. \inlinemetanote{moves to the right and writes: Zero ideal, $(0)$, $0$, $\{0\}$}
 
@@ -711,10 +703,6 @@ And there was a construction already in linear algebra you needed, which was the
 
 The idea of a math education is that, actually, you're not allowed to forget anything you've learned. That's one theory. The other theory is that education is what's left after you've forgotten everything you've learned. You can decide which theory of education you'd like to subscribe to.
 \end{speech}
-
-\begin{note}[Board Cleaning and Pedagogical Aside]
-The lecturer erases the lower blackboard to prepare for the construction of quotient rings, sharing an aside on two contrasting theories of education.
-\end{note}
 
 \section{The Construction of Quotient Rings}
 
@@ -840,7 +828,7 @@ Okay, so, if it's an equivalence relation, then you can imagine that we're going
 \end{speech}
 
 \begin{speech}[00:34:47 - 00:36:03]
-Now we can define the set: $R \bmod I$ as a set is equal to the set of equivalence classes \inlinemetanote{writes: $\faktor{R}{I} = \text{Set of equivalence classes}$} of this relation, let us say, on $R$. \inlinemetanote{writes: of $\equiv_I$ on $R$} 
+Now we can define the set: $R \bmod I$ as a set is equal to the set of equivalence classes \inlinemetanote{writes: $\faktor{R}{I} =$ Set of equivalence classes} of this relation, let us say, on $R$. \inlinemetanote{writes: of $\equiv_I$ on $R$} 
 
 Okay, so, I've defined this as a set. And now the question of names: how do I name things? And that's a separate discussion. It's the same discussion we had about the rational numbers, the same for the field of fractions, that one of the conceptual issues about the quotient is that people do not have unique names. And this is just, you know, something you have to live with. 
 
@@ -869,18 +857,15 @@ The third way to write it, which is by far the most common, is you just call it 
 \begin{content}[Three Standard Notations for Residue Classes (Cosets)]
 An element of $\faktor{R}{I}$ is an equivalence class containing elements of $R$. Because representations are not unique (different representatives can specify the exact same class), three standard notations are commonly employed:
 
-\begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Overline Notation ($\bar{x}$):}
-    Denoted $\bar{x} \in \faktor{R}{I}$. This is compact and mirrors the notation used for residue classes $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ (\cref{def:residue-class-ring}).
-    \item \textbf{Coset Notation ($x + I$):}
-    Explicitly writing the equivalence class as an affine shift of the ideal:
+\begin{description}
+    \item[1. Overline Notation:] \textbf{$\bar{x} \in \faktor{R}{I}$:} Denoted $\bar{x} \in \faktor{R}{I}$. This is compact and mirrors the notation used for residue classes $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ (\cref{def:residue-class-ring}).
+    \item[2. Coset Notation:] \textbf{$x + I \subseteq R$:} Explicitly writing the equivalence class as an affine shift of the ideal:
     \begin{equation}\label{eq:coset-explicit-def}
     [x] = x + I := \{ x + i \mid i \in I \} \subseteq R.
     \end{equation}
     Since $y \equiv x \iff y - x = i \in I \iff y = x + i$, the equivalence class of $x$ is literally the subset $x + I$.
-    \item \textbf{Bare Representative Notation ($x$ or $[x]$):}
-    Writing simply $[x]$ or, by abuse of notation, $x \in \faktor{R}{I}$. While by far the most common in advanced algebra, this requires carefully tracking whether $x$ represents an individual ring element in $R$ or an entire equivalence class in $\faktor{R}{I}$ (the \qt{data type} in one's head).
-\end{enumerate}
+    \item[3. Bare Representative:] \textbf{$[x]$ or $x \in \faktor{R}{I}$:} Writing simply $[x]$ or, by abuse of notation, $x \in \faktor{R}{I}$. While by far the most common in advanced algebra, this requires carefully tracking whether $x$ represents an individual ring element in $R$ or an entire equivalence class in $\faktor{R}{I}$ (the \qt{data type} in one's head).
+\end{description}
 \end{content}
 
 \subsection{Step 2 \& 3: Distinguished Elements and the Well-Definedness of Addition}
@@ -966,10 +951,6 @@ Then formally, we have to show... now I've defined addition and the zero, you ha
 
 But there is multiplication, and that's worth doing carefully, because so far we have not used the multiplicative part of the hypothesis on the ideal, and it comes out now, and it's kind of crucial. So, I will try to do this carefully, maybe after the break, but let me just say for...
 \end{speech}
-
-\begin{note}[Board Transition and Preparation for Multiplication]
-The lecturer cleans the middle blackboard to prepare for the definition of multiplication on $\faktor{R}{I}$ and the proof of its well-definedness.
-\end{note}
 
 \subsection{Step 4: Multiplication and the Crucial Role of the Ideal Absorption Property}
 
@@ -1191,10 +1172,6 @@ In particular, if $f$ is surjective, then $\faktor{R}{\ker(f)} \cong S$ (\cref{p
 \end{center}
 \end{content}
 
-\begin{note}[Board Transition and Wet Washing]
-The lecturer pauses as students reflect on the proposed definition of $\bar{f}$. From timestamp 00:52:37 to 00:53:31, he takes a sponge and cleans the lower blackboard to clear working space for the step-by-step proof of the First Isomorphism Theorem.
-\end{note}
-
 \begin{proofWrapper}[Proof of the First Isomorphism Theorem]
 
 \subsection{Step 1: Construction and Well-Definedness of the Induced Map \texorpdfstring{$\bar{f}$}{fbar}}
@@ -1292,10 +1269,6 @@ So, we'd have to show, for example, $\bar{f}(\bar{0})$... well, what is this? We
 
 Well, we also have to show $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$. \inlinemetanote{writes: $\bar{f}(\bar{x} + \bar{y}) = \bar{f}(\bar{x}) + \bar{f}(\bar{y})$} We also have to show this. And now you just have to expand these sides completely, and if you do that, you'll get a chain like this, more or less similar to that, and you'll find that it's compatible with the definition. Okay, so, expand yourself. \inlinemetanote{writes \qt{expand yourself}} As I said, you'll get a chain where...
 \end{speech}
-
-\begin{note}[Board Transition and Cleaning]
-The lecturer pulls down the chalkboard and cleans the panel from timestamp 01:00:17 to 01:01:06 to prepare for the multiplicative verification of $\bar{f}$.
-\end{note}
 
 \begin{speech}[01:01:06 - 01:01:57]
 That's the additive structure. Then you also have to show that $\bar{f}$ respects the multiplicative structure: \inlinemetanote{writes: Check $\bar{f}(\bar{x} \cdot \bar{y}) \overset{?}{=} \bar{f}(\bar{x}) \cdot \bar{f}(\bar{y})$} 
@@ -1438,11 +1411,11 @@ By the injectivity criterion established earlier in \cref{prop:injective-kernel}
 
 \begin{steps}[Conclusion of the Isomorphism]
 Combining the three steps:
-\begin{itemize}
-    \item $\bar{f} \colon \faktor{R}{\ker(f)} \to \operatorname{Im}(f)$ is a well-defined ring homomorphism (Step 1).
-    \item $\bar{f}$ is surjective onto $\operatorname{Im}(f)$ (Step 2).
-    \item $\bar{f}$ is injective, having trivial kernel (Step 3).
-\end{itemize}
+\begin{description}
+    \item[Step 1:] \textbf{Well-Defined Homomorphism:} $\bar{f} \colon \faktor{R}{\ker(f)} \to \operatorname{Im}(f)$ is a well-defined ring homomorphism.
+    \item[Step 2:] \textbf{Surjectivity:} $\bar{f}$ is surjective onto $\operatorname{Im}(f)$.
+    \item[Step 3:] \textbf{Injectivity:} $\bar{f}$ is injective, having trivial kernel.
+\end{description}
 A bijective ring homomorphism is an isomorphism (\cref{def:ring-isomorphism}). Thus, $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$, which completes the proof of the First Isomorphism Theorem (\cref{thm:first-isomorphism-theorem-statement}).
 \end{steps}
 \end{content}
@@ -1457,10 +1430,6 @@ So, those are the three steps. You have to define $\bar{f}$, you show it's surje
 So, that's an admittedly confusing state of affairs, but you have to somehow come to terms with that.
 \end{speech}
 
-\begin{note}[Board Transition and Washing]
-The lecturer pulls down the upper blackboard and thoroughly cleans the lower right panel with a wet sponge from timestamp 01:07:37 to 01:07:47 to prepare space for the formal synthesis of the First Isomorphism Theorem.
-\end{note}
-
 \begin{speech}[01:07:47 - 01:09:13]
 So, I say it in words because it's confusing. We start with $f$ from $R$ to $S$. This has a kernel, which we call the kernel of $f$, \inlinemetanote{writes \qt{$f \colon R \to S$} and \qt{This has kernel $\ker(f)$}} which could be anything --- maybe zero, maybe not, could be anything in the world. 
 
@@ -1474,7 +1443,7 @@ That's a nice way to think about it. I'll explain tomorrow how this kind of logi
 \end{speech}
 
 \begin{speech}[01:09:13 - 01:10:35]
-So, these three steps, if you take Steps 1 to 3 together --- because first we defined $\bar{f}$, we show it's surjective onto the image of $f$, and now we show the kernel is zero, so, that means it's also injective. I remind you: the kernel being zero implies that $\bar{f}$ is injective. \inlinemetanote{writes: $\implies \bar{f} \text{ is injective}$} We started the lecture with that, I think (Recall: \cref{prop:injective-kernel}). 
+So, these three steps, if you take Steps 1 to 3 together --- because first we defined $\bar{f}$, we show it's surjective onto the image of $f$, and now we show the kernel is zero, so, that means it's also injective. I remind you: the kernel being zero implies that $\bar{f}$ is injective. \inlinemetanote{writes: $\implies \bar{f}$ is injective} We started the lecture with that, I think (Recall: \cref{prop:injective-kernel}). 
 
 So, Steps 1 to 3 show that $\bar{f}$ from $R \bmod \ker(f)$ to the image of $f$ is well-defined, injective, and surjective, so, $\bar{f}$ is an isomorphism of rings. \inlinemetanote{writes: STEP 1--3: $\bar{f} \colon \faktor{R}{\ker(f)} \to \operatorname{Im}(f)$, $\bar{f}$ is isom.} 
 
@@ -1579,10 +1548,6 @@ I have a few minutes, let's do some examples.
 
 So, now you have a very flexible way of generating really a lot of rings. And these rings already --- the rings that you have the power to generate --- have all sorts of interesting, different behavior. And part of the course is exploring some of that structure, by far not all of it.
 \end{speech}
-
-\begin{note}[Board Transition and Cleaning]
-The lecturer takes a wet sponge and washes the left panel of the lower chalkboard from timestamp 01:14:12 to 01:14:41 to prepare space for working out concrete polynomial quotient ring examples.
-\end{note}
 
 \begin{speech}[01:14:41 - 01:16:10]
 Okay, so, for example, I can take my ring $R$ to be polynomials in one variable: \inlinemetanote{writes: $R = \mathbb{C}[x]$} $R = \mathbb{C}[x]$. You should be totally happy with this ring: it's polynomials with complex coefficients, all right? 
@@ -1851,10 +1816,6 @@ Since $\ker(f)$ is an ideal of $\mathbb{Q}[x]$ (\cref{prop:kernel-is-ideal-w4}),
 Hence, $(x^2 + 1) \subseteq \ker(f)$.
 \end{proof}
 \end{content}
-
-\begin{note}[Board Transition and Washing]
-The lecturer takes a wet sponge and cleans the lower blackboard from timestamp 01:26:25 to 01:27:00 to prepare room for polynomial long division.
-\end{note}
 
 \begin{speech}[01:26:25 - 01:28:30]
 Let us try to think really what we have to do to prove it's the kernel. You have to actually understand the definitions of the class. 

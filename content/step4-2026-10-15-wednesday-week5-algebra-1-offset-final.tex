@@ -320,10 +320,10 @@ Multiplying both sides of \eqref{eq:crt-unit-decomp} by $z$ yields:
 z = (i + j)z = iz + jz.
 \end{equation}
 We now analyze each of the two summands in \eqref{eq:crt-injectivity-identity}:
-\begin{itemize}
-    \item \textbf{First Summand ($iz$):} In the product $iz$, we have $i \in I$ and $z \in J$, so $iz \in IJ$.
-    \item \textbf{Second Summand ($jz$):} In the product $jz$, we have $j \in J$ and $z \in I$, so $jz \in JI = IJ$ (by commutativity of $R$).
-\end{itemize}
+\begin{description}
+    \item[First Summand:] \textbf{$iz \in IJ$:} In the product $iz$, we have $i \in I$ and $z \in J$, so $iz \in IJ$.
+    \item[Second Summand:] \textbf{$jz \in IJ$:} In the product $jz$, we have $j \in J$ and $z \in I$, so $jz \in JI = IJ$ (by commutativity of $R$).
+\end{description}
 Since $IJ$ is an ideal, it is closed under addition, which implies:
 \[
 z = \underbrace{iz}_{\in IJ} + \underbrace{jz}_{\in IJ} \in IJ.
@@ -429,7 +429,7 @@ And you can... yeah. This is how it works, the Chinese Remainder Theorem. You ju
 
 Okay, so, let's go back to the integers, because you can use this now many, many times, and you get some fun results about the integers, which, you know, are very closely related to topics in school, but maybe usually not made explicit there.
 
-So, this says that if I just write this theorem, the Chinese Remainder Theorem for $R = \mathbb{Z}$ \inlinemetanote{writes: CRT in $R = \mathbb{Z}$}, then it says that if $a$ and $b$ are relatively prime \inlinemetanote{writes: $(a, b) \text{ co-pr.}$} --- this is in the language of the Chinese Remainder Theorem, this says that the ideal of $a$ plus the ideal of $b$ is equal to $(1)$ \inlinemetanote{writes: $( (a) + (b) = (1) )$} ---, then $\mathbb{Z} \bmod ab$ is isomorphic to $\mathbb{Z} \bmod a \times \mathbb{Z} \bmod b$ \inlinemetanote{writes: then $\faktor{\mathbb{Z}}{(ab)} \cong \faktor{\mathbb{Z}}{(a)} \times \faktor{\mathbb{Z}}{(b)}$}, okay?
+So, this says that if I just write this theorem, the Chinese Remainder Theorem for $R = \mathbb{Z}$ \inlinemetanote{writes: CRT in $R = \mathbb{Z}$}, then it says that if $a$ and $b$ are relatively prime \inlinemetanote{writes: $(a, b)$ co-pr.} --- this is in the language of the Chinese Remainder Theorem, this says that the ideal of $a$ plus the ideal of $b$ is equal to $(1)$ \inlinemetanote{writes: $( (a) + (b) = (1) )$} ---, then $\mathbb{Z} \bmod ab$ is isomorphic to $\mathbb{Z} \bmod a \times \mathbb{Z} \bmod b$ \inlinemetanote{writes: then $\faktor{\mathbb{Z}}{(ab)} \cong \faktor{\mathbb{Z}}{(a)} \times \faktor{\mathbb{Z}}{(b)}$}, okay?
 \end{speech}
 
 \begin{content}
@@ -505,7 +505,6 @@ because $\gcd(p, p) = p \neq 1$. The ring $\faktor{\mathbb{Z}}{p^2\mathbb{Z}}$ c
 Now we can consider the units. So, we have this idea of the units. We consider the units of this ring \inlinemetanote{writes: $\operatorname{Unit}(\faktor{\mathbb{Z}}{(n)})$} $\mathbb{Z} \bmod n\mathbb{Z}$... Let me just write it, because I don't want to confuse the notation: the units of this ring $\mathbb{Z} \bmod n\mathbb{Z}$, $\mathbb{Z} \bmod n$.
 
 The units. Those are the invertible elements here. But remember, $1$ here is just $(1, 1)$, everybody is just $1$, the unit here is the unit everywhere. So, how can you be invertible on this side? Well, you have to be invertible in every factor. So, this says the units here are also just the product here: it's the product of the units \inlinemetanote{writes: $= \operatorname{Unit}(\faktor{\mathbb{Z}}{(p_1^{k_1})}) \times \dots \times \operatorname{Unit}(\faktor{\mathbb{Z}}{(p_r^{k_r})})$}.
-
 \inlinemetanote{writes \qt{$\operatorname{Unit}(\faktor{\mathbb{Z}}{(p_r^{k_r})})$} on the far right} This was bad board management.
 
 $p_r^{k_r}$, okay? So, if you're interested in the units of this ring, this is extremely useful, because it just tells you the units are just the product. You have to pick a unit here, a unit here, a unit here, that's all it is. And moreover, then it also tells you how many there are!
@@ -758,16 +757,16 @@ Subtracting \eqref{eq:rep2} from \eqref{eq:rep1} gives:
 0 = \bigl(q(x) - \tilde{q}(x)\bigr) g(x) + \bigl(r(x) - \tilde{r}(x)\bigr) \implies \bigl(q(x) - \tilde{q}(x)\bigr) g(x) = \tilde{r}(x) - r(x).
 \end{equation}
 We show that $q(x) - \tilde{q}(x) = 0$:
-\begin{description}
-    \item[Case $q \neq \tilde{q}$:] Assume for contradiction that $q(x) - \tilde{q}(x) \neq 0$. Since $K$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
+\begin{itemize}
+    \item \textbf{Case $q \neq \tilde{q}$:} Assume for contradiction that $q(x) - \tilde{q}(x) \neq 0$. Since $K$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
     \[
     \deg\Bigl(\bigl(q(x) - \tilde{q}(x)\bigr) g(x)\Bigr) = \deg(q - \tilde{q}) + \deg(g) \ge \deg(g).
     \]
-    \item[Degree Contradiction:] On the other hand, each of $r(x)$ and $\tilde{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\tilde{r}(x) - r(x)$ is therefore either zero or satisfies:
+    \item \textbf{Degree Contradiction:} On the other hand, each of $r(x)$ and $\tilde{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\tilde{r}(x) - r(x)$ is therefore either zero or satisfies:
     \[
     \deg(\tilde{r} - r) \le \max\bigl(\deg(\tilde{r}), \, \deg(r)\bigr) < \deg(g).
     \]
-\end{description}
+\end{itemize}
 This forces $\deg(g) \le \deg\bigl((q - \tilde{q})g\bigr) = \deg(\tilde{r} - r) < \deg(g)$, an impossible contradiction.
 Therefore:
 \[
@@ -831,18 +830,17 @@ Because the set of degrees are some set of integers. As long as it's not empty, 
 \end{hidden}
 
 \begin{content}[Case 1 and the Choice of the Minimal Degree Generator]
-\textbf{Case 1 ($I = \{0\}$):}
-If $I$ contains only the zero polynomial, then $I = (0) = 0 \cdot K[x]$, which is principal.
-
-\textbf{Case 2 ($I \neq \{0\}$):}
-If $I$ contains non-zero elements, consider the non-empty set of non-negative integer degrees:
-\[
-\mathcal{D} := \{ \deg(g) \mid g \in I \setminus \{0\} \} \subseteq \mathbb{N}_0.
-\]
-By the Well-Ordering Principle of $\mathbb{N}_0$, every non-empty set of non-negative integers has a least element. Let $d_{\min} := \min \mathcal{D}$, and choose an element $f \in I \setminus \{0\}$ such that:
-\begin{equation}\label{eq:minimal-degree-f}
-\deg(f) = d_{\min} = \min \{ \deg(g) \mid g \in I, \, g \neq 0 \}.
-\end{equation}
+\begin{description}
+    \item[Case 1:] \textbf{$I = \{0\}$:} If $I$ contains only the zero polynomial, then $I = (0) = 0 \cdot K[x]$, which is principal.
+    \item[Case 2:] \textbf{$I \neq \{0\}$:} If $I$ contains non-zero elements, consider the non-empty set of non-negative integer degrees:
+    \[
+    \mathcal{D} := \{ \deg(g) \mid g \in I \setminus \{0\} \} \subseteq \mathbb{N}_0.
+    \]
+    By the Well-Ordering Principle of $\mathbb{N}_0$, every non-empty set of non-negative integers has a least element. Let $d_{\min} := \min \mathcal{D}$, and choose an element $f \in I \setminus \{0\}$ such that:
+    \begin{equation}\label{eq:minimal-degree-f}
+    \deg(f) = d_{\min} = \min \{ \deg(g) \mid g \in I, \, g \neq 0 \}.
+    \end{equation}
+\end{description}
 \end{content}
 
 \begin{speech}[00:35:48 - 00:37:19]
@@ -879,21 +877,21 @@ So, this thing can't happen. We can cross it out with purple \inlinemetanote{cro
 \begin{content}[Full Restatement: Proof that Every Ideal in $K[x]$ is Principal]
 \begin{proof}[Complete Proof of \cref{prop:kx-ideals-principal}]
 Let $I \subseteq K[x]$ be an ideal.
-\begin{itemize}
-    \item \textbf{Zero Ideal:} If $I = \{0\}$, then $I = (0)$ is principal.
-    \item \textbf{Minimal Degree Choice:} If $I \neq \{0\}$, choose $f \in I \setminus \{0\}$ of minimal degree among all non-zero polynomials in $I$.
-    \item \textbf{First Inclusion ($(f) \subseteq I$):} Clearly, the principal ideal $(f) = f \cdot K[x] \subseteq I$, because $f \in I$ and $I$ is an ideal.
-    \item \textbf{Reverse Inclusion ($I \subseteq (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in K[x]$ such that:
+\begin{description}
+    \item[Step 1:] \textbf{Zero Ideal:} If $I = \{0\}$, then $I = (0)$ is principal.
+    \item[Step 2:] \textbf{Minimal Degree Choice:} If $I \neq \{0\}$, choose $f \in I \setminus \{0\}$ of minimal degree among all non-zero polynomials in $I$.
+    \item[Step 3:] \textbf{First Inclusion ($(f) \subseteq I$):} Clearly, the principal ideal $(f) = f \cdot K[x] \subseteq I$, because $f \in I$ and $I$ is an ideal.
+    \item[Step 4:] \textbf{Reverse Inclusion ($I \subseteq (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in K[x]$ such that:
     \[
     g = q f + r, \quad \text{with } r = 0 \text{ or } \deg(r) < \deg(f).
     \]
     Then $r = g - q f \in I$. If $r \neq 0$, then $r \in I \setminus \{0\}$ would satisfy $\deg(r) < \deg(f)$, directly contradicting the minimality of $\deg(f)$.
-    \item \textbf{Conclusion:} Therefore, $r = 0$, which implies:
+    \item[Step 5:] \textbf{Conclusion:} Therefore, $r = 0$, which implies:
     \[
     g = q f \in (f).
     \]
     Since $g \in I$ was arbitrary, $I \subseteq (f)$.
-\end{itemize}
+\end{description}
 Combining inclusions gives $I = (f)$, proving that $I$ is principal.
 \end{proof}
 
@@ -939,17 +937,17 @@ Oh, okay. Thank you.
 \begin{speech}[00:40:29 - 00:41:37]
 Okay, so, $R$ is a principal ideal domain in words if every ideal $I \subset R$ is principal \inlinemetanote{writes: $R$ is a PID if every ideal $I \subset R$ is principal}.
 
-So, that's in words. It means exactly: for every ideal in $R$, there exists some element of the ideal such that the ideal is generated by that element \inlinemetanote{writes: $\left[\forall \text{ ideal } I \subset R, \ \exists f \in I \text{ s.t. } I = (f)\right]$}, okay? This is just repeating it.
+So, that's in words. It means exactly: for every ideal in $R$, there exists some element of the ideal such that the ideal is generated by that element \inlinemetanote{writes: $[\forall$ ideal $I \subset R, \, \exists f \in I$ s.t. $I = (f)]$}, okay? This is just repeating it.
 
 So, that's a special kind of domain. I should say that when I say $R$ is a principal ideal domain, it should be a domain too. I didn't write it, I guess, because it's already there. $R$ is a principal ideal domain if every ideal of $R$ is principal, and $R$ is a domain \inlinemetanote{adds: and $R$ is a domain}.
 
 Okay? But it's already in the... right. So, to be a principal ideal domain, you have to be a domain, of course.
 
-So, what we've seen in the class so far: $\mathbb{Z}$, I mean, many of them, but let's say $\mathbb{Z}$ is a PID \inlinemetanote{writes: $\mathbb{Z} = \text{PID}$}.
+So, what we've seen in the class so far: $\mathbb{Z}$, I mean, many of them, but let's say $\mathbb{Z}$ is a PID \inlinemetanote{writes: $\mathbb{Z} =$ PID}.
 
-What about $\mathbb{Z} \bmod 6\mathbb{Z}$? \inlinemetanote{writes: $\faktor{\mathbb{Z}}{6\mathbb{Z}}$} Well, no, because it's not a domain \inlinemetanote{writes: $\text{not a domain}$}.
+What about $\mathbb{Z} \bmod 6\mathbb{Z}$? \inlinemetanote{writes: $\faktor{\mathbb{Z}}{6\mathbb{Z}}$} Well, no, because it's not a domain \inlinemetanote{writes: not a domain}.
 
-A field is a principal ideal domain. It's kind of a dumb principal ideal domain, because there's not many ideals, but it is \inlinemetanote{writes: A field is a PID, because $(0), (1)$}. Because there are only two ideals in a field: one ideal is this one, and one ideal is that one. So, it's also a principal ideal domain --- not, as I said, not the most interesting way to look at a field. That's an interesting principal ideal domain, and then today we see that if $K$ is a field, then this is a principal ideal domain \inlinemetanote{writes: If $K$ is a field $\implies K[x] = \text{PID}$}.
+A field is a principal ideal domain. It's kind of a dumb principal ideal domain, because there's not many ideals, but it is \inlinemetanote{writes: A field is a PID, because $(0), (1)$}. Because there are only two ideals in a field: one ideal is this one, and one ideal is that one. So, it's also a principal ideal domain --- not, as I said, not the most interesting way to look at a field. That's an interesting principal ideal domain, and then today we see that if $K$ is a field, then this is a principal ideal domain \inlinemetanote{writes: If $K$ is a field $\implies K[x] =$ PID}.
 \end{speech}
 
 \begin{hidden}
@@ -1001,7 +999,7 @@ Yeah, yours is principal, I'd say. I think.
 
 All right, so, this is the standard one that's not principal. And the reason, as I said, you take something from the $\mathbb{Z}$ side and something from the two side. And so, this should be an exercise for you: prove it's not principal \inlinemetanote{writes: Prove not principal}.
 
-And another way you could do it, if you have a field with polynomials in two variables over a field, then you can take the ideal $(x, y)$ \inlinemetanote{writes: $\mathbb{C}[x, y] \supset (x, y)$} \inlinemetanote{writes: Prove not princ.}. And that's also clearly not going to be principal, because there's no way you can find one polynomial that generates both $x$ and $y$. Okay. That's it. \inlinemetanote{students applaud}
+And another way you could do it, if you have a field with polynomials in two variables over a field, then you can take the ideal $(x, y)$ \inlinemetanote{writes \qt{$\mathbb{C}[x, y] \supset (x, y)$} and \qt{Prove not princ.}}. And that's also clearly not going to be principal, because there's no way you can find one polynomial that generates both $x$ and $y$. Okay. That's it. \inlinemetanote{students applaud}
 \end{speech}
 
 \begin{content}[Non-Principal Ideals in Multi-Variable and Integer Polynomial Rings]

@@ -117,11 +117,11 @@ This lecture explores the foundational structure of finite groups, culminating i
 \begin{speech}[00:00:00 - 00:01:25]
 Okay, so, we start. I hope you have now concluded your study of Confucius, Plato, and Schopenhauer, and we can come back to the discussion of groups.
 
-So, I defined last time group --- $G$ is a group \inlinemetanote{writes: $G \text{ group } (G, \cdot, e)$} --- which I don't repeat now (Recall: \cref{def:group-w7tue}). And I remind you, because it's kind of important for the perspective of the discussion about group theory: we will normally... our interest will be here mainly, but not exclusively, focused on finite groups \inlinemetanote{writes: $\implies \text{mostly focused on finite groups}$}, but not always.
+So, I defined last time group --- $G$ is a group \inlinemetanote{writes: $G$ group $(G, \cdot, e)$} --- which I don't repeat now (Recall: \cref{def:group-w7tue}). And I remind you, because it's kind of important for the perspective of the discussion about group theory: we will normally... our interest will be here mainly, but not exclusively, focused on finite groups \inlinemetanote{writes: $\implies$ mostly focused on finite groups}, but not always.
 
-And also our main interest, but not always, is on non-commutative groups, so non-Abelian \inlinemetanote{writes: $\implies \text{on non-Abelian}$}. But not always. So, what you should have in your mind when I say group: it's a finite group and not necessarily Abelian.
+And also our main interest, but not always, is on non-commutative groups, so non-Abelian \inlinemetanote{writes: $\implies$ on non-Abelian}. But not always. So, what you should have in your mind when I say group: it's a finite group and not necessarily Abelian.
 
-The two families of examples on extremes are the family of the symmetric groups $S_n$ --- we'll say more; I said a little bit about this before, but I will say more --- symmetric group \inlinemetanote{writes: $S_n \text{ Symmetric group } |S_n| = n!$}. And this is, of course, a finite group of size $n$ factorial. And that's somehow the richest family that we will speak about, and in some sense... in a sense I'll make more precise later, really a very rich family of finite groups, maybe the richest family of finite groups.
+The two families of examples on extremes are the family of the symmetric groups $S_n$ --- we'll say more; I said a little bit about this before, but I will say more --- symmetric group \inlinemetanote{writes: $S_n$ Symmetric group $|S_n| = n!$}. And this is, of course, a finite group of size $n$ factorial. And that's somehow the richest family that we will speak about, and in some sense... in a sense I'll make more precise later, really a very rich family of finite groups, maybe the richest family of finite groups.
 \end{speech}
 
 \begin{content}[Standing Focus in Group Theory]
@@ -147,7 +147,7 @@ The lecturer highlights $S_n$ as \qt{the richest family} of finite groups. Going
 \subsection{Cyclic Abelian Groups}
 
 \begin{speech}[00:01:25 - 00:02:04]
-And then there's the simplest family, $\mathbb{Z} / n\mathbb{Z}$ \inlinemetanote{writes: $(\mathbb{Z}_n, +, 0)$}. That's with plus and zero. These are the Abelian groups we've seen before, and these are called cyclic \inlinemetanote{writes: $\text{cyclic Abelian}$}. So, this is a word we haven't really used before: cyclic Abelian.
+And then there's the simplest family, $\mathbb{Z} / n\mathbb{Z}$ \inlinemetanote{writes: $(\mathbb{Z}_n, +, 0)$}. That's with plus and zero. These are the Abelian groups we've seen before, and these are called cyclic \inlinemetanote{writes: cyclic Abelian}. So, this is a word we haven't really used before: cyclic Abelian.
 
 If you meet someone and they say they're considering a cyclic Abelian group of order $n$, they mean this group, exactly this group. It's cyclic --- well, it's because the one element generates it all in a big cycle.
 \end{speech}
@@ -170,9 +170,9 @@ A group $G$ is called \newterm{cyclic} if there exists an element $g \in G$ such
 \subsection{Review of Element Orders}
 
 \begin{speech}[00:02:04 - 00:03:20]
-So, we were discussing in the second period last time... the setup of the discussion was $G$ is a group \inlinemetanote{writes: $G \text{ is group, finite}$}, a finite one, and $x$ is an element \inlinemetanote{writes: $x \in G$}. And we had proven some things already, so we had defined --- it's kind of a theorem-definition --- we had seen \inlinemetanote{writes: $\text{(1) we had seen that}$} that the order of $x$ is well-defined \inlinemetanote{writes: $\text{order of } x \text{ is well-defined}$}.
+So, we were discussing in the second period last time... the setup of the discussion was $G$ is a group \inlinemetanote{writes: $G$ is group, finite}, a finite one, and $x$ is an element \inlinemetanote{writes: $x \in G$}. And we had proven some things already, so we had defined --- it's kind of a theorem-definition --- we had seen that the order of $x$ is well-defined \inlinemetanote{writes: (1) we had seen that order of $x$ is well-defined}.
 
-And I'll just remind you what the order is. This order of $x$ \inlinemetanote{writes: $\operatorname{Ord}(x) =$} is equal... is the minimal $m$ positive integer such that \inlinemetanote{writes: $\min_{m > 0} \text{ s.t. } x^m = e$} $x^m$ is the neutral element in $G$. So, to say it's well-defined, you have to first show that there exists some, and that it's a non-empty set and you can pick the minimal one. So, we proved all of this last time (Recall: \cref{prop:finite-group-identity-power}, \cref{def:element-order}).
+And I'll just remind you what the order is. This order of $x$ \inlinemetanote{writes: $\operatorname{Ord}(x) =$} is equal... is the minimal $m$ positive integer such that \inlinemetanote{writes: $\min_{m > 0}$ s.t. $x^m = e$} $x^m$ is the neutral element in $G$. So, to say it's well-defined, you have to first show that there exists some, and that it's a non-empty set and you can pick the minimal one. So, we proved all of this last time (Recall: \cref{prop:finite-group-identity-power}, \cref{def:element-order}).
 \end{speech}
 
 \begin{content}
@@ -224,9 +224,9 @@ For any element $x \in G$ in a finite group, we define the set of its distinct p
 \subsection{Verification of the Subgroup Criteria}
 
 \begin{speech}[00:04:06 - 00:05:35]
-So, the statement now, proposition, is that this subset in $G$ is a subgroup \inlinemetanote{writes: $\text{Prop. } \langle x \rangle \subset G \text{ is a subgroup}$}.
+So, the statement now, proposition, is that this subset in $G$ is a subgroup \inlinemetanote{writes: Prop. $\langle x \rangle \subset G$ is a subgroup}.
 
-All right, and what's the proof? Well, to check it's a subgroup \inlinemetanote{writes: $\text{Proof. } \langle x \rangle \text{ is closed under } \cdot$}, I have to check several things. The first is that this subset is closed under the group product, okay? So, I have to check that.
+All right, and what's the proof? Well, to check it's a subgroup \inlinemetanote{writes: Proof. $\langle x \rangle$ is closed under $\cdot$}, I have to check several things. The first is that this subset is closed under the group product, okay? So, I have to check that.
 
 Is this true? That means I take some person here, $x^k$, and take another one, $x^\ell$ \inlinemetanote{writes: $x^k \cdot x^l$}, and I apply the group product. And this is just... this is $x$ $k$ times, this is $x$ $\ell$ times \inlinemetanote{writes: $x \cdots x \quad x \cdots x$}, so, when I put them together, I get $x$ $k+\ell$ times \inlinemetanote{writes: $= x^{k+l}$}.
 
@@ -238,7 +238,7 @@ So, I can just, yeah. I hope that's clear it's closed under product, because if 
 \begin{speech}[00:05:35 - 00:06:33]
 Okay, so, then we have to show that --- well, I should have said this first: $e$ is in here, but that was \inlinemetanote{writes: $e \in \langle x \rangle \checkmark$} just on the list.
 
-And the last one we have to show is that if someone is here, then the inverse is also here \inlinemetanote{writes: $\text{if } y \in \langle x \rangle, \text{ then } y^{-1} \in \langle x \rangle$}. So, this should also be clear.
+And the last one we have to show is that if someone is here, then the inverse is also here \inlinemetanote{writes: if $y \in \langle x \rangle$, then $y^{-1} \in \langle x \rangle$}. So, this should also be clear.
 
 If I pick one of these elements, $x^k$, where $k$ is in this list, I can always multiply it by $x^{\operatorname{Ord}(x) - k}$ \inlinemetanote{writes: $x^k \cdot x^{\operatorname{Ord}(x)-k}$}, and it will also be in this list. Unless $k$ is zero --- there's a boundary case you can check, but it's fine also. But this times this is equal to $x^{\operatorname{Ord}(x)}$, which is $e$ \inlinemetanote{writes: $= x^{\operatorname{Ord}(x)} = e$}.
 
@@ -250,11 +250,11 @@ So, that means the inverse is also in this list, okay? So, all these three thing
 
 And moreover, if you understood this product rule where you take this and this --- and maybe I just write it: is equal to $x^r$ where $r$ is $k+\ell \bmod \text{the order}$ \inlinemetanote{writes: $= x^r \text{ where } r \equiv k+l \pmod{\operatorname{Ord}(x)}$}. If you understand this product rule, as a... maybe I write it as a corollary, corollary to the proof \inlinemetanote{writes: $\text{Cor. } \langle x \rangle \cong (\mathbb{Z}_{\operatorname{Ord}(x)}, +, 0)$}: actually, this group is isomorphic to $\mathbb{Z} / \operatorname{Ord}(x)\mathbb{Z}$ with addition and zero, okay?
 
-And the words for this --- now I tell you the words because I didn't want to bias the issue --- is that this symbol, the words for it is the subgroup generated by the element $x$ \inlinemetanote{writes: $\langle x \rangle \subset G \text{ subgroup generated by } x$}. Okay? I didn't want to say at the beginning because I didn't want to bias the issue, but now we know it's a subgroup, I can say.
+And the words for this --- now I tell you the words because I didn't want to bias the issue --- is that this symbol, the words for it is the subgroup generated by the element $x$ \inlinemetanote{writes: $\langle x \rangle \subset G$ subgroup generated by $x$}. Okay? I didn't want to say at the beginning because I didn't want to bias the issue, but now we know it's a subgroup, I can say.
 \end{speech}
 
 \begin{content}
-\begin{proposition}\label[proposition]{prop:cyclic-subgroup}
+\begin{proposition}[Subgroup Generated by an Element]\label[proposition]{prop:cyclic-subgroup}
 Let $G$ be a finite group and $x \in G$. Then the set $\langle x \rangle$ is a subgroup of $G$, termed the \newterm{subgroup generated by $x$}:
 \[
 \langle x \rangle \le G.
@@ -292,7 +292,7 @@ Let $m := \operatorname{Ord}(x)$. We verify the three standard subgroup criteria
 Hence, $\langle x \rangle$ is a subgroup of $G$.
 \end{proof}
 
-\begin{corollary}\label[corollary]{cor:cyclic-subgroup-isomorphism}
+\begin{corollary}[Isomorphism with Additive Cyclic Groups]\label[corollary]{cor:cyclic-subgroup-isomorphism}
 Let $G$ be a finite group and $x \in G$ with $m = \operatorname{Ord}(x)$. Then the subgroup $\langle x \rangle$ is isomorphic to the additive cyclic group $(\mathbb{Z}_m, +, [0])$:
 \[
 \langle x \rangle \cong (\mathbb{Z}_m, +, [0]).
@@ -318,7 +318,7 @@ All right, so, like in our example for $S_3$ (Recall: \cref{ex:orders-s3}), we h
 
 If I take this element, we saw it has order $2$. So, this has order $2$, and this \inlinemetanote{writes: $(1\,2\,3) \implies \operatorname{ord} = 3$} has order $3$.
 
-And one of the things you notice here is: what is the order of this group? It's $3$ factorial, which is $6$ \inlinemetanote{writes: $|S_3| = 3! = 6$}. So, these orders, we find here the orders of the elements, at least in this example, orders of elements seem to divide the order of the group \inlinemetanote{writes: $\text{Orders of elem. } \mid |S_3|$}.
+And one of the things you notice here is: what is the order of this group? It's $3$ factorial, which is $6$ \inlinemetanote{writes: $|S_3| = 3! = 6$}. So, these orders, we find here the orders of the elements, at least in this example, orders of elements seem to divide the order of the group \inlinemetanote{writes: Orders of elem. $\mid |S_3|$}.
 
 At least in this case. So, you can wonder whether this is always the case. So, this is kind of an interesting question. As I said, like this kind of question is a question about finite groups. Because if $G$ has infinite order, we can't really talk about... well, if $G$ was a group with infinite order, the elements may not have finite order, and in any case we can't talk about this division property. That's why I say we're focusing on finite groups.
 \end{speech}
@@ -343,13 +343,13 @@ In every case, the order of the element divides the order of the group:
 \subsection{Statement of Lagrange's Theorem}
 
 \begin{speech}[00:09:18 - 00:10:50]
-So, anyway, in this case we find that the order of the elements divide the order of the group, so, one can wonder: is this always the case? \inlinemetanote{writes: $\text{Is this always true?}$}
+So, anyway, in this case we find that the order of the elements divide the order of the group, so, one can wonder: is this always the case? \inlinemetanote{writes: Is this always true?}
 
-Specifically, if $x$ is an element of $G$, a finite group, does the order of $x$ divide the order of $G$? \inlinemetanote{writes: $\text{(If } x \in G \text{ finite group, does } \operatorname{Ord}(x) \mid |G|\text{?)}$} That's a very specific question, and the answer is going to be yes \inlinemetanote{writes: $\text{YES}$}.
+Specifically, if $x$ is an element of $G$, a finite group, does the order of $x$ divide the order of $G$? \inlinemetanote{writes: (If $x \in G$ finite group, does $\operatorname{Ord}(x) \mid |G|$?)} That's a very specific question, and the answer is going to be yes \inlinemetanote{writes: YES}.
 
-And actually the proof is that a much bigger property, a much more general property holds, and that's the main topic of today's lecture, which is really in some sense usually the first theorem in finite group theory: it's a theorem of Joseph-Louis Lagrange \inlinemetanote{writes: $\text{J. L. Lagrange}$}.
+And actually the proof is that a much bigger property, a much more general property holds, and that's the main topic of today's lecture, which is really in some sense usually the first theorem in finite group theory: it's a theorem of Joseph-Louis Lagrange \inlinemetanote{writes: J. L. Lagrange}.
 
-And it's that if $H$ is a subgroup of $G$ --- $H$ is a subgroup and $G$ is finite \inlinemetanote{writes: $\text{Thm: If } H \subset G \text{ is a subgroup and } G \text{ is finite}$} --- so that's the hypothesis: we have a finite group and a subgroup. I don't have to say the subgroup is finite, because once the group is finite, the subgroup is also finite. So, then, this is what Joseph-Louis says: the order of $H$ always divides the order of $G$ \inlinemetanote{writes: $\text{then } |H| \mid |G|$}. Okay?
+And it's that if $H$ is a subgroup of $G$ --- $H$ is a subgroup and $G$ is finite \inlinemetanote{writes: Thm: If $H \subset G$ is a subgroup and $G$ is finite} --- so that's the hypothesis: we have a finite group and a subgroup. I don't have to say the subgroup is finite, because once the group is finite, the subgroup is also finite. So, then, this is what Joseph-Louis says: the order of $H$ always divides the order of $G$ \inlinemetanote{writes: then $|H| \mid |G|$}. Okay?
 \end{speech}
 
 \begin{content}
@@ -398,11 +398,11 @@ Joseph-Louis Lagrange (1736--1813) published his foundational work on the solvab
 \subsection{The Subgroup Equivalence Relation}
 
 \begin{speech}[00:12:05 - 00:13:17]
-Okay, so, we're going to prove this. Proof \inlinemetanote{writes: $\text{Proof.}$}. Is there any question about this theorem?
+Okay, so, we're going to prove this. Proof \inlinemetanote{writes: Proof.}. Is there any question about this theorem?
 
 And you see this theorem certainly implies this statement, because if I have an element, the order of this element is the size of that subgroup. So, in particular, if every subgroup divides the order of $G$, the order always divides the order of $G$, okay? But then this is a much more general result.
 
-So, how are we going to prove it? It's an extremely nice proof, and yeah. So, the proof is, we start by defining an equivalence relation on the set $G$ \inlinemetanote{writes: $\text{We start by defining an equivalence relation on set } G.$}. And then we will count... we will count $G$ by counting up the size of the equivalence classes.
+So, how are we going to prove it? It's an extremely nice proof, and yeah. So, the proof is, we start by defining an equivalence relation on the set $G$ \inlinemetanote{writes: We start by defining an equivalence relation on set $G$.}. And then we will count... we will count $G$ by counting up the size of the equivalence classes.
 
 And this equivalence relation is just incredibly important for group theory. So, we will define it.
 \end{speech}
@@ -413,12 +413,8 @@ The notion of a group, while I erase I say, is that, you know, it has many fewer
 So, while they're in the same class, and in some sense one thinks about them algebraically in the same space, the motivations that led to them are pretty much different, that I would say. But they're both really amazingly interesting, intricate topics. And a lot of the algebraic moves are similar. Maybe that justifies having them in the same course. Sometimes the course is taught with groups first and then rings. I've taught it with rings first, then groups. It doesn't really matter, of course.
 \end{speech}
 
-\begin{note}[Board Transition and Conceptual Motivations]
-The lecturer erases the board and reflects on the broader architecture of abstract algebra: while rings capture arithmetic properties modeled after number systems ($\mathbb{Z}, \mathbb{Q}, \mathbb{R}$), groups possess fewer axioms, making them more fundamental and universally applicable to transformations and geometric symmetries.
-\end{note}
-
 \begin{speech}[00:14:52 - 00:16:00]
-All right, so, for the proof of this theorem, I'm going to define an equivalence relation. So, that means if you have $x$ and $y$ in $G$ \inlinemetanote{writes: $x, y \in G$}, I have to tell you how to define this relation. The definition \inlinemetanote{writes: $x \sim y \stackrel{\text{def}}{\iff}$} is that we say $x$ is related to $y$ if and only if --- the definition --- if there exists an $h$ in the subgroup \inlinemetanote{writes: $\exists h \in H$} such that $xh = y$ \inlinemetanote{writes: $\text{s.t. } xh = y$}. All right?
+All right, so, for the proof of this theorem, I'm going to define an equivalence relation. So, that means if you have $x$ and $y$ in $G$ \inlinemetanote{writes: $x, y \in G$}, I have to tell you how to define this relation. The definition \inlinemetanote{writes: $x \sim y \stackrel{\text{def}}{\iff}$} is that we say $x$ is related to $y$ if and only if --- the definition --- if there exists an $h$ in the subgroup \inlinemetanote{writes: $\exists h \in H$} such that $xh = y$ \inlinemetanote{writes: s.t. $xh = y$}. All right?
 
 Now, you could say: why do I put $h$ on the right side? Could I put it on the left side? And you could do that. That'd be your own equivalence relation, and it's totally equivalent for this proof, and the proof will be fine. But since the groups are not commutative, not necessarily commutative, I have to decide, and I've decided to put it on the right, okay? That's the first comment.
 \end{speech}
@@ -439,21 +435,21 @@ Because $G$ is not assumed to be Abelian, the equation $xh = y$ places $h$ on th
 \begin{speech}[00:16:00 - 00:17:28]
 So, then, I have to check for an equivalence relation, I have to check the properties. And normally I leave this to you, but here this is so fundamental I'm going to do it. It's probably a mistake, but nevertheless.
 
-The first property is that $x$ is related to itself \inlinemetanote{writes: $\bullet\ x \sim x$}. And that's if and only if I can find an $h$ in this group that satisfies that \inlinemetanote{writes: $\iff \exists h \in H \text{ s.t. } xh = x$}, and which one is that? Yeah, neutral element, because $e$ has to be here, because it's a subgroup, and then of course I have this equation \inlinemetanote{writes: $e \in H \quad x e = x \checkmark$}, so that's fine.
+The first property is that $x$ is related to itself \inlinemetanote{writes: $\bullet\ x \sim x$}. And that's if and only if I can find an $h$ in this group that satisfies that \inlinemetanote{writes: $\iff \exists h \in H$ s.t. $xh = x$}, and which one is that? Yeah, neutral element, because $e$ has to be here, because it's a subgroup, and then of course I have this equation \inlinemetanote{writes: $e \in H \quad x e = x \checkmark$}, so that's fine.
 
-Now, that's the reflexive property. Then the symmetric property is if $x$ is related to $y$, then $y$ is related to $x$ \inlinemetanote{writes: $\bullet\ \text{If } x \sim y \implies y \sim x$}. So, we have to prove this. $x$ is related to $y$ means that there exists an $h$ such that $xh = y$ \inlinemetanote{writes: $x \sim y \implies \exists h \in H \text{ s.t. } xh = y$}. And then what do I write on the then-side? If I have this, I can just multiply by $h$ inverse, right? So, then, I get... sorry... so, I can multiply by $h$ inverse, which will make this $h$ go away and put $h$ inverse there \inlinemetanote{writes: $\text{then } x = yh^{-1}$}. And then this means that $y$ is related to $x$. I can write this again if you really want to fit the definition \inlinemetanote{writes: $yh^{-1} = x$}: this says that $y$ is related to $x$ because if you have an element of $H$, the inverse is also in $H$ \inlinemetanote{writes: $h^{-1} \in H \implies y \sim x \checkmark$}, that's a property of being in a subgroup, right?
+Now, that's the reflexive property. Then the symmetric property is if $x$ is related to $y$, then $y$ is related to $x$ \inlinemetanote{writes: $\bullet$ If $x \sim y \implies y \sim x$}. So, we have to prove this. $x$ is related to $y$ means that there exists an $h$ such that $xh = y$ \inlinemetanote{writes: $x \sim y \implies \exists h \in H$ s.t. $xh = y$}. And then what do I write on the then-side? If I have this, I can just multiply by $h$ inverse, right? So, then, I get... sorry... so, I can multiply by $h$ inverse, which will make this $h$ go away and put $h$ inverse there \inlinemetanote{writes: then $x = yh^{-1}$}. And then this means that $y$ is related to $x$. I can write this again if you really want to fit the definition \inlinemetanote{writes: $yh^{-1} = x$}: this says that $y$ is related to $x$ because if you have an element of $H$, the inverse is also in $H$ \inlinemetanote{writes: $h^{-1} \in H \implies y \sim x \checkmark$}, that's a property of being in a subgroup, right?
 \end{speech}
 
 \begin{speech}[00:17:28 - 00:19:02]
-And the third one is transitivity, which says that if I have $x$ related to $y$ and $y$ related to $z$, then I have to show that $x$ is related to $z$ \inlinemetanote{writes: $\bullet\ \text{If } x \sim y \text{ and } y \sim z \implies x \sim z$}. And if I do this using the definition, this means that there exists some $h_1$ that satisfies this equation \inlinemetanote{writes: $xh_1 = y$}, and this one means there's some $h_2$ that satisfies this equation \inlinemetanote{writes: $yh_2 = z$}. And then I have to find this relation equation, and you can imagine what I do: I just take here $x h_1 h_2 = z$ \inlinemetanote{writes: $\implies x(h_1 h_2) = z$}, all right?
+And the third one is transitivity, which says that if I have $x$ related to $y$ and $y$ related to $z$, then I have to show that $x$ is related to $z$ \inlinemetanote{writes: $\bullet$ If $x \sim y$ and $y \sim z \implies x \sim z$}. And if I do this using the definition, this means that there exists some $h_1$ that satisfies this equation \inlinemetanote{writes: $xh_1 = y$}, and this one means there's some $h_2$ that satisfies this equation \inlinemetanote{writes: $yh_2 = z$}. And then I have to find this relation equation, and you can imagine what I do: I just take here $x h_1 h_2 = z$ \inlinemetanote{writes: $\implies x(h_1 h_2) = z$}, all right?
 
-And why does this work? It's because it's a subgroup, so, $H$ is closed under product \inlinemetanote{writes: $h_1 h_2 \in H \text{ as } H \text{ is closed under product } \checkmark$}. So, that's the proof that it's an equivalence relation.
+And why does this work? It's because it's a subgroup, so, $H$ is closed under product \inlinemetanote{writes: $h_1 h_2 \in H$ as $H$ is closed under product $\checkmark$}. So, that's the proof that it's an equivalence relation.
 
 And you see the proof is perfect in a way that I need to check three properties to be an equivalence relation, and those were exactly the same three properties that $H$ is a subgroup. I've used everything exactly: the existence of the neutral element is there, it's closed under inverse, and it's closed under product. So, in some sense, the statement that this definition is... on one hand, on this side it's an equivalence relation, and on that side $H$ is a subgroup, they're just perfectly aligned. All right, so, we have proven that.
 \end{speech}
 
 \begin{content}
-\begin{proposition}\label[proposition]{prop:equiv-relation-subgroup}
+\begin{proposition}[Equivalence Relation Induced by a Subgroup]\label[proposition]{prop:equiv-relation-subgroup}
 The relation $\sim$ defined in \eqref{eq:coset-equiv-relation} is an equivalence relation on $G$.
 \end{proposition}
 
@@ -502,7 +498,7 @@ Okay, so, now we have a picture. Here is the group $G$, the finite group, so the
 
 So, our equivalence relation divides it into equivalence classes. Maybe here's one equivalence class, $E_1$ \inlinemetanote{draws boundary for $E_1$}, and then there's some equivalence class here, $E_2$ \inlinemetanote{draws boundary for $E_2$}, and then there's another equivalence class, $E_3$ \inlinemetanote{draws boundary for $E_3$}, I don't know. There's finitely many --- it's a finite set, so it's finitely many equivalence classes.
 
-So, we can write an equation, and this equation you can always write for equivalence classes on finite sets, and it's an equation that is so naive you think it couldn't possibly be useful: the equation is that the size of $G$ is equal to the sum from $i=1$ to $k$ \inlinemetanote{writes: $|G| = \sum_{i=1}^k |E_i|$}, where $k$ is the number of equivalence classes \inlinemetanote{writes: $k = \text{\# of equiv classes}$} --- there are some finite number of equivalence classes, it's a finite group --- you sum over the number of equivalence classes and it's the size of the equivalence class.
+So, we can write an equation, and this equation you can always write for equivalence classes on finite sets, and it's an equation that is so naive you think it couldn't possibly be useful: the equation is that the size of $G$ is equal to the sum from $i=1$ to $k$ \inlinemetanote{writes: $|G| = \sum_{i=1}^k |E_i|$}, where $k$ is the number of equivalence classes \inlinemetanote{writes: $k =$ \# of equiv classes} --- there are some finite number of equivalence classes, it's a finite group --- you sum over the number of equivalence classes and it's the size of the equivalence class.
 
 So, that's the equation. It's a pretty naive equation, but as I said, it looks so silly it seems hard to believe that's useful, but it's just saying you take this $G$, equivalence relation makes some equivalence classes, and you account for everybody in $G$, and that equation just says you've accounted for everybody exactly once.
 \end{speech}
@@ -584,7 +580,7 @@ The standard place in the undergraduate curriculum where you learn calculus of v
 \begin{speech}[00:21:22 - 00:22:28]
 All right, so, what are we going to do here? We have to prove this, and so, the observation, which is an incredibly simple observation... So, the claim, which will prove everything, is that for all equivalence classes, the size of this equivalence class is actually the size of $H$ \inlinemetanote{writes: $\boxed{\text{Claim: } \forall i, \ |E_i| = |H|}$}. All right?
 
-So, that sum is actually just adding up the order of $H$. And so, of course, that proves it. Claim: if I prove this --- so, I have to prove this claim --- then Lagrange's Theorem follows \inlinemetanote{writes: $\text{Then Lagrange's Theorem follows}$}, since we rewrite that equation as: the size of $G$ is equal to the sum $i=1$ to $k$ of $|E_i|$ \inlinemetanote{writes: $|G| = \sum_{i=1}^k |E_i|$}, but all of these are just the size of $H$, so this is actually $k \times |H|$ \inlinemetanote{writes: $= k \cdot |H|$}.
+So, that sum is actually just adding up the order of $H$. And so, of course, that proves it. Claim: if I prove this --- so, I have to prove this claim --- then Lagrange's Theorem follows \inlinemetanote{writes: Then Lagrange's Theorem follows}, since we rewrite that equation as: the size of $G$ is equal to the sum $i=1$ to $k$ of $|E_i|$ \inlinemetanote{writes: $|G| = \sum_{i=1}^k |E_i|$}, but all of these are just the size of $H$, so this is actually $k \times |H|$ \inlinemetanote{writes: $= k \cdot |H|$}.
 
 So, that shows that, as a consequence, the order of $H$ divides the order of $G$ \inlinemetanote{writes: $\implies |H| \mid |G| \ \ \square$}. So, that's the end of the theorem, and I just have to prove this. Okay?
 \end{speech}
@@ -622,7 +618,7 @@ The integer $k$, representing the number of distinct cosets of $H$ in $G$, is ca
 \subsection{Proof of the Cardinality Claim}
 
 \begin{speech}[00:22:28 - 00:23:53]
-So, let us see: how are we going to prove that? Let $E = E_i$ be an equivalence class in $G$ \inlinemetanote{writes: $\text{Let } E = E_i \text{ be an equiv. class in } G$}. So, we have some equivalence class in $G$. Here's the picture of $G$. Here is $E$ \inlinemetanote{draws set $G$ and subset $E$}, and I need to show that the cardinality of $E$ is exactly $|H|$.
+So, let us see: how are we going to prove that? Let $E = E_i$ be an equivalence class in $G$ \inlinemetanote{writes: Let $E = E_i$ be an equiv. class in $G$}. So, we have some equivalence class in $G$. Here's the picture of $G$. Here is $E$ \inlinemetanote{draws set $G$ and subset $E$}, and I need to show that the cardinality of $E$ is exactly $|H|$.
 
 The first thing I do is I reach into $E$ and I pick a person in it, which of course I call $x$, right? \inlinemetanote{draws point $x$ in $E$ and writes: $x \in E$} So, I have $x$ in $E$. I can do that, because it's an equivalence class, it's not empty; we don't consider the empty equivalence class.
 
@@ -638,13 +634,13 @@ $xh$
 \begin{speech}[00:23:54 - 00:25:12]
 $xh$ \inlinemetanote{writes: $xh$}. I have to write something.
 
-And whatever I write has to be in $E$. And the things that are in $E$, remember: $x$ is equivalent to $y$ if and only if we have this equation, $xh = y$ for some $h$ in $H$ \inlinemetanote{writes: $x \sim y \iff \exists h \in H \text{ s.t. } xh = y$}. So, these things for sure are equivalent to $x$.
+And whatever I write has to be in $E$. And the things that are in $E$, remember: $x$ is equivalent to $y$ if and only if we have this equation, $xh = y$ for some $h$ in $H$ \inlinemetanote{writes: $x \sim y \iff \exists h \in H$ s.t. $xh = y$}. So, these things for sure are equivalent to $x$.
 
 Is that clear? This is more or less the only thing you could possibly write in this situation.
 
-So, that gives a map, so that at least $\phi$ maps $H$ to $E$ \inlinemetanote{writes: $\text{At least } \phi \colon H \to E$}. That means if you put in any $h$ in here, you get something in the equivalence class.
+So, that gives a map, so that at least $\phi$ maps $H$ to $E$ \inlinemetanote{writes: At least $\phi \colon H \to E$}. That means if you put in any $h$ in here, you get something in the equivalence class.
 
-So, now we want to prove --- the last step is we should prove, we will prove, let's be confident here --- prove that $\phi$ is a bijection \inlinemetanote{writes: $\text{We will prove that } \phi \text{ is a bijection}$}.
+So, now we want to prove --- the last step is we should prove, we will prove, let's be confident here --- prove that $\phi$ is a bijection \inlinemetanote{writes: We will prove that $\phi$ is a bijection}.
 \end{speech}
 
 \begin{content}[Construction of the Bijection between \texorpdfstring{$H$}{H} and \texorpdfstring{$E$}{E}]
@@ -701,11 +697,11 @@ For every $h \in H$, setting $y := xh$ gives $xh = y$ with $h \in H$, which sati
 \begin{speech}[00:25:12 - 00:25:57]
 So, if we do that, then we're happy, because we need to show that the cardinality of $E$ is the same as the cardinality of $H$, and if I show this map is a bijection, then I will have shown that.
 
-All right, so, for this we need to start... we need to prove that $\phi$ is surjective \inlinemetanote{writes: $\bullet\ \phi \text{ is surjective}$}. And this is true because anybody in $E$ is someone that's related to $x$, and all people related to $x$ are of this form. So, it's surjective by definition. And this is true by definition of this equivalence relation \inlinemetanote{writes: $\text{(True by def of } \sim)$}, meaning the only way to be in this equivalence class of $x$ is to satisfy such a relation for some $h$.
+All right, so, for this we need to start... we need to prove that $\phi$ is surjective \inlinemetanote{writes: $\bullet\ \phi$ is surjective}. And this is true because anybody in $E$ is someone that's related to $x$, and all people related to $x$ are of this form. So, it's surjective by definition. And this is true by definition of this equivalence relation \inlinemetanote{writes: (True by def of $\sim$)}, meaning the only way to be in this equivalence class of $x$ is to satisfy such a relation for some $h$.
 \end{speech}
 
 \begin{speech}[00:25:57 - 00:27:37]
-Okay, then we have to prove $\phi$ is injective \inlinemetanote{writes: $\bullet\ \phi \text{ is injective}$}, and then we will be done.
+Okay, then we have to prove $\phi$ is injective \inlinemetanote{writes: $\bullet\ \phi$ is injective}, and then we will be done.
 
 Okay, so, we have to prove this. Why? Why would this be true? Injectivity means you have to study the equation $\phi(h_1) = \phi(h_2)$ \inlinemetanote{writes: $\phi(h_1) = \phi(h_2)$}. We have to study that equation, right? So, let's see: suppose $\phi(h_1) = \phi(h_2)$, where $h_1$ and $h_2$ are in $H$ \inlinemetanote{writes: $h_1, h_2 \in H$}.
 
@@ -759,10 +755,6 @@ Furthermore, choosing any non-identity element $x \in G \setminus \{e\}$, its ge
 \end{steps}
 \end{content}
 
-\begin{note}[Board Transition]
-The lecturer erases the middle and lower blackboards to transition from the theoretical proof of Lagrange's Theorem to concrete families of groups: symmetric groups, cycle notation, and rotational symmetry groups of geometric solids.
-\end{note}
-
 \section{Symmetric Groups and Geometric Symmetries}
 
 \subsection{Cycle Decomposition in \texorpdfstring{$S_n$}{Sn} and Integer Partitions}
@@ -798,7 +790,7 @@ You notice --- and this will be for $\sigma$ --- out of this cycle decomposition
 
 Whenever you have... because at the end you have to account for all the points. Every point has to be in one of the cycles, so you get all the points, and that's the lengths of the cycles.
 
-So, this gives you a connection to partitions, and that's an extremely deep connection. So, this is a partition. Do you know that? That's like an object: how to take a number and break it up into other numbers. There's a very deep connection between the symmetric group and the study of partitions \inlinemetanote{writes: $S_n \longleftrightarrow \text{Partitions}$}.
+So, this gives you a connection to partitions, and that's an extremely deep connection. So, this is a partition. Do you know that? That's like an object: how to take a number and break it up into other numbers. There's a very deep connection between the symmetric group and the study of partitions \inlinemetanote{writes: $S_n \longleftrightarrow$ Partitions}.
 
 Maybe I'll say a little bit about this later. But have you ever thought about the study of partitions? Maybe I'll say a little bit about it. But not today. That's a great subject. Okay, but not today.
 \end{speech}
@@ -885,7 +877,7 @@ Those are the five Platonic solids. And one thing in this class, at some point, 
 
 And if you remember a long time ago --- well, couldn't be that long, since the beginning of the class --- we discussed this. For every one of these, there's a group of rotational symmetries, which means you imagine this object, and you look at the rotations that move the faces to the faces.
 
-And we discussed this once before. So, this one, let's just review this: how many rotational symmetries does this have? \inlinemetanote{points to the cube, writes: $\text{how many rotat. symm.}$ under it}
+And we discussed this once before. So, this one, let's just review this: how many rotational symmetries does this have? \inlinemetanote{points to the cube, writes \qt{how many rotat. symm.} under it}
 \end{speech}
 
 \begin{speech}[00:34:15 - 00:35:37]
@@ -893,9 +885,9 @@ You just imagine you have a cube, and it's really you could just pick up a cube 
 
 So, how many rotational symmetries does this have? You can just rotate the cube in your head.
 
-The standard way to count this --- there's many different ways to count it, but one way to count it is you take the top side, and suppose just take the top of the box. You can ask: how many ways can I rotate it, keeping that the top of the box? And the answer is clearly four. If you want to keep it to be the top, there's four things you can do. Do you agree? So, that's four \inlinemetanote{writes: $4$ under the cube}.
+The standard way to count this --- there's many different ways to count it, but one way to count it is you take the top side, and suppose just take the top of the box. You can ask: how many ways can I rotate it, keeping that the top of the box? And the answer is clearly four. If you want to keep it to be the top, there's four things you can do. Do you agree? So, that's four \inlinemetanote{writes \qt{$4$} under the cube}.
 
-And what else can you do? I can move the top of the box to any other side. And how many sides are there? Six. And it turns out that's all you can do, because you can just think about it. You should think about this yourself. That's the only thing you can do: you can either rotate the box or move it to the other side \inlinemetanote{writes: $4 \cdot 6 = 24$ under the cube}.
+And what else can you do? I can move the top of the box to any other side. And how many sides are there? Six. And it turns out that's all you can do, because you can just think about it. You should think about this yourself. That's the only thing you can do: you can either rotate the box or move it to the other side \inlinemetanote{writes \qt{$4 \cdot 6 = 24$} under the cube}.
 
 But these things, as I said, this is the geometric part of the class, and geometry is all about the camera in your head, and at some point, if you want to understand geometry, you have to develop the camera in your head. There's no other way in some sense. Okay, and I can't really help you do that.
 
@@ -915,11 +907,11 @@ If you fix the bottom side, you can rotate it in three ways, and then there are 
 \end{student}
 
 \begin{speech}[00:35:50 - 00:36:52]
-Yeah, three ways, exactly. And then four faces, yeah, in this way. So, there's lots of different ways, there's no unique way to do it. This one is: $3 \times 4 = 12$ \inlinemetanote{writes: $3 \cdot 4 = 12$ under the tetrahedron}.
+Yeah, three ways, exactly. And then four faces, yeah, in this way. So, there's lots of different ways, there's no unique way to do it. This one is: $3 \times 4 = 12$ \inlinemetanote{writes \qt{$3 \cdot 4 = 12$} under the tetrahedron}.
 
 And what about this one? \inlinemetanote{points to the octahedron} So, let's just do this together. We could pick one of the triangles... You know what these things are, right? You've seen them, it's not...
 
-So, if you take one of the triangle sides, there's three motions around, and eight ways it can go, so, it's $24$ also \inlinemetanote{writes: $3 \cdot 8 = 24$ under the octahedron}.
+So, if you take one of the triangle sides, there's three motions around, and eight ways it can go, so, it's $24$ also \inlinemetanote{writes \qt{$3 \cdot 8 = 24$} under the octahedron}.
 
 We leave these... these are more fun, we'll discuss them later \inlinemetanote{points to the dodecahedron and icosahedron}. These are easy to think about, relatively. This one is a super fun thing to think about.
 
@@ -1067,11 +1059,11 @@ The lecture counts the first three and leaves the dodecahedron and the icosahedr
 \subsection{The Rotational Symmetry Group of the Cube and \texorpdfstring{$S_4$}{S4}}
 
 \begin{speech}[00:36:52 - 00:38:42]
-So, these rotations of this cube is a group of order $24$ \inlinemetanote{writes: $\operatorname{Rot}(\square) \text{ is a group of order } 24$}.
+So, these rotations of this cube is a group of order $24$ \inlinemetanote{writes: $\operatorname{Rot}(\square)$ is a group of order $24$}.
 
 What group is it? Do you know any groups of order $24$? Well, $24$ happens to be a factorial: $24$ happens to be $4$ factorial. So, that's a group of order $24$, $4$ factorial. We know another group of order $24$, is $S_4$. $S_4$ is also a group of order $24$.
 
-So, this is now a beautiful geometric question: is this rotational group, these rotations here of this cube --- this is bad terminology, but anyway, it's not great notation, but it's very convincing if I do it: is rotations of the... is it isomorphic to $S_4$? \inlinemetanote{writes: $\text{Is } \operatorname{Rot}(\square) \cong S_4\text{?}$} That's a beautiful question!
+So, this is now a beautiful geometric question: is this rotational group, these rotations here of this cube --- this is bad terminology, but anyway, it's not great notation, but it's very convincing if I do it: is rotations of the... is it isomorphic to $S_4$? \inlinemetanote{writes: Is $\operatorname{Rot}(\square) \cong S_4$?} That's a beautiful question!
 
 And I don't know whether I should solve it for you or not. Maybe I solve it for you; I do this one for you.
 
@@ -1101,7 +1093,7 @@ And you can see now, when you rotate this cube, you permute these four long diag
 
 So, that's kind of an amazing thing. That shows that a rotation of the cube gives you a permutation of the long diagonals. And the proof is just that: the proof is that this rotation of this cube... this is a group, and there's a homomorphism to the permutation group of the long diagonals, which is $S_4$ \inlinemetanote{writes: $\operatorname{Rot}(\square) \xrightarrow{\Phi} S_4$}.
 
-And the claim is that the rotations go to permutations of the long diagonals \inlinemetanote{writes: $\Phi \colon \text{rotations} \to \text{permutations of the long diagonals}$}. I say long diagonals all the time here, but I mean, you know, if you pick two points on the same face, then there's kind of a short diagonal that's on the side. But every time you rotate, you permute the long diagonals, and the claim is this is an isomorphism \inlinemetanote{writes: $\text{This is an isom.}$}.
+And the claim is that the rotations go to permutations of the long diagonals \inlinemetanote{writes: $\Phi \colon$ rotations $\to$ permutations of the long diagonals}. I say long diagonals all the time here, but I mean, you know, if you pick two points on the same face, then there's kind of a short diagonal that's on the side. But every time you rotate, you permute the long diagonals, and the claim is this is an isomorphism \inlinemetanote{writes: This is an isom.}.
 \end{speech}
 
 \begin{speech}[00:41:47 - 00:42:34]
@@ -1113,7 +1105,7 @@ So, I leave that to you to think about. But that's a totally geometric proof, a 
 \end{speech}
 
 \begin{content}
-\begin{theorem}\label[theorem]{thm:cube-rotations-isomorphism}
+\begin{theorem}[Rotational Symmetry Group of the Cube]\label[theorem]{thm:cube-rotations-isomorphism}
 The group of rotational symmetries of a cube is isomorphic to the symmetric group on four letters:
 \[
 \operatorname{Rot}(\text{Cube}) \cong S_4.
@@ -1218,7 +1210,7 @@ We claim that $\Phi$ is an isomorphism:
 \begin{speech}[00:42:34 - 00:43:53]
 Okay, so, we have one more moment here, so, what about this one? \inlinemetanote{draws a tetrahedron}
 
-This has order $12$, right? We said that the rotations of this has order $12$ \inlinemetanote{writes: $\operatorname{Rot}(\triangle) \text{ has order } 12$}. This sits inside... there's a homomorphism here to $S_4$ again! \inlinemetanote{writes: $\operatorname{Rot}(\triangle) \to S_4$} Because any rotation permutes the four vertices. It's a different geometric object. This is a much more sophisticated thing, the long diagonals. This one's kind of obvious: every time I rotate, I permute the four vertices.
+This has order $12$, right? We said that the rotations of this has order $12$ \inlinemetanote{writes: $\operatorname{Rot}(\triangle)$ has order $12$}. This sits inside... there's a homomorphism here to $S_4$ again! \inlinemetanote{writes: $\operatorname{Rot}(\triangle) \to S_4$} Because any rotation permutes the four vertices. It's a different geometric object. This is a much more sophisticated thing, the long diagonals. This one's kind of obvious: every time I rotate, I permute the four vertices.
 
 And this is also injective. But this is not an isomorphism: this is $24$, this is order $12$, it goes to a subgroup. And that subgroup is a very well-known important subgroup, it's called $A_4$. So, the answer --- I'm not defining this now, but it's just the name --- this thing here is actually isomorphic to what's called $A_4$ \inlinemetanote{writes: $A_4 \cong \operatorname{Rot}(\triangle)$}. We'll talk about it more.
 
@@ -1228,7 +1220,7 @@ Okay, so, I stop. \inlinemetanote{applause from students; video ends}
 \end{speech}
 
 \begin{content}
-\begin{theorem}\label[theorem]{thm:tetrahedron-isomorphism}
+\begin{theorem}[Rotational Symmetry Group of the Tetrahedron]\label[theorem]{thm:tetrahedron-isomorphism}
 The group of rotational symmetries of a regular tetrahedron is isomorphic to the alternating group on four letters:
 \[
 \operatorname{Rot}(\text{Tetrahedron}) \cong A_4.

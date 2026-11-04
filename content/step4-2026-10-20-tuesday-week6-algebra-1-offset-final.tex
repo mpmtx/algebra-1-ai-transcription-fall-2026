@@ -295,13 +295,13 @@ So, we have to be careful about the units when we state unique factorization.
 
 \begin{content}[Zero and Units in an Integral Domain]
 In any domain $R$, two classes of elements are distinguished and excluded from the building blocks of factorization:
-\begin{itemize}
-    \item \textbf{The Zero Element ($0 \in R$):} Factorization of zero is degenerate and excluded.
-    \item \textbf{The Group of Units ($R^\times \subset R$):} The set of multiplicatively invertible elements:
+\begin{description}
+    \item[The Zero Element:] \textbf{$0 \in R$:} Factorization of zero is degenerate and excluded.
+    \item[The Group of Units:] \textbf{$R^\times \subset R$:} The set of multiplicatively invertible elements:
     \begin{equation}\label{eq:units-def}
     R^\times = \operatorname{Units}(R) := \{ u \in R \mid \exists v \in R \text{ such that } u \cdot v = 1 \}.
     \end{equation}
-\end{itemize}
+\end{description}
 
 \begin{example}[Units in the Integers]\label[example]{ex:units-integers}
 In $\mathbb{Z}$, the only units are $\operatorname{Units}(\mathbb{Z}) = \{1, -1\}$. They introduce trivial variations in factorizations:
@@ -358,10 +358,10 @@ x \text{ is irreducible in } \mathbb{Z} \iff x = \pm p \quad (p \text{ is a prim
 
 \begin{steps}[Why Distinguish Irreducible from Prime?]
 In high school arithmetic over $\mathbb{Z}$, the words \qt{prime} and \qt{irreducible} are used interchangeably. In abstract ring theory, however, they represent two fundamentally different concepts:
-\begin{itemize}
-    \item \textbf{Irreducible ($x = yz \implies y \in R^\times \lor z \in R^\times$):} A multiplicative property stating that $x$ cannot be broken into non-trivial factors.
-    \item \textbf{Prime ($p \mid yz \implies p \mid y \lor p \mid z$):} A divisibility property stating that if $p$ divides a product, it must divide at least one of the factors (equivalent to the principal ideal $(p)$ being a prime ideal).
-\end{itemize}
+\begin{description}
+    \item[Irreducible:] \textbf{$x = yz \implies y \in R^\times \lor z \in R^\times$:} A multiplicative property stating that $x$ cannot be broken into non-trivial factors.
+    \item[Prime:] \textbf{$p \mid yz \implies p \mid y \lor p \mid z$:} A divisibility property stating that if $p$ divides a product, it must divide at least one of the factors (equivalent to the principal ideal $(p)$ being a prime ideal).
+\end{description}
 In any integral domain, every prime element is irreducible (\cref{exer:irred-prime-ufd} in the next lecture). The converse fails in general domains: in $\mathbb{Q}[x^2, x^3]$ below, $x^2$ is irreducible but not prime (\cref{ex:r-not-ufd}), and in $\mathbb{Z}[\sqrt{-5}]$ the irreducible $2$ divides $6 = (1 + \sqrt{-5})(1 - \sqrt{-5})$ but neither factor. It holds in every UFD (\cref{exer:irred-prime-ufd}), and in particular in every PID (Step~2 below, \cref{lem:step2-pid-irr-implies-prime}).
 \end{steps}
 
@@ -394,7 +394,6 @@ So, $R$ is a UFD \inlinemetanote{writes: $R$ is a UFD} if --- and I don't repeat
 
 \begin{speech}[00:12:10 - 00:13:40]
 So, I'll number them, but I need the other board. \inlinemetanote{pushes the middle blackboard up and pulls down the second board} Hold on.
-
 \inlinemetanote{begins wiping the lower right blackboard with a wet sponge} There's a great picture of Emmy Noether on a boat in Zurich that I found when I taught the Commutative Algebra class. She was here in the '30s for the ICM (i.e., the International Congress of Mathematicians, Zurich 1932), and she gave a lecture in this building.
 
 I don't know where that photo is, but probably if you asked Lycka, she can put it on the web page if you're curious. \inlinemetanote{finishes wiping the board with the sponge}
@@ -496,7 +495,7 @@ All right? So, that's the definition.
 
 All right, so, the theorems this week are the two main theorems. Today, Theorem A, \inlinemetanote{writes: Thm A:} and that's going to be: if $R$ is a PID, \inlinemetanote{writes: If $R$ is a PID} then $R$ is a UFD. \inlinemetanote{writes: then $R$ is a UFD.} Or colloquially you could just say that \inlinemetanote{writes: (PID $\implies$ UFD)} PID implies UFD. Okay, that's going to be the theorem today, hopefully.
 
-Theorem B, for tomorrow, \inlinemetanote{writes: Thm B:} is that if $R$ is a UFD... \inlinemetanote{erases: PID and writes: UFD} Sorry. Excuse me. Is a UFD, then the polynomial ring is a UFD. \inlinemetanote{writes: then the $R[x]$ is a UFD.} Then the polynomial ring is a UFD.
+Theorem B, for tomorrow, \inlinemetanote{writes: Thm B:} is that if $R$ is a UFD... \inlinemetanote{erases \qt{PID} and writes: UFD} Sorry. Excuse me. Is a UFD, then the polynomial ring is a UFD. \inlinemetanote{writes: then the $R[x]$ is a UFD.} Then the polynomial ring is a UFD.
 
 So, this says that PID gives us a UFD automatically, and if you have a UFD, you can always add variables to it. Okay?
 \end{speech}
@@ -794,7 +793,7 @@ Okay, so, there's three steps. We start with Step 1; it'll take some time.
 
 \textbf{Step 1}. \inlinemetanote{writes: STEP 1} This concerns the issue that I was saying is somehow a confusing issue: Step 1 concerns this issue that if I have $R$ as a domain, \inlinemetanote{writes: $R$ is domain} and I take an element in $R$ --- and always this element is not zero and not a unit ---, \inlinemetanote{writes: $x \in R$, $x \neq 0, \text{unit}$} then I have two ways to talk about this element, two names I can give.
 
-There's two things I can say: $x$ is irreducible... \inlinemetanote{writes: $x \text{ irr}$} We've defined that $x$ is irreducible. Sometimes I'll write $\text{irr}$ for irreducible.
+There's two things I can say: $x$ is irreducible... \inlinemetanote{writes: $x$ irr} We've defined that $x$ is irreducible. Sometimes I'll write $\text{irr}$ for irreducible.
 
 $x$ is irreducible, and I remind you, since it was a few minutes ago: this means if $x = y z$, \inlinemetanote{writes: $(x = yz$} then at least one \inlinemetanote{writes: at least one of $y, z$ is a unit)} of $y, z$ is a unit.
 \end{speech}
@@ -847,9 +846,9 @@ In abstract ring theory, calling an element $x$ \newterm{prime} strictly refers 
 \begin{speech}[00:32:16 - 00:33:39]
 Okay. So, \textbf{Step 1} \inlinemetanote{writes: STEP 1} says: suppose --- Step 1 in the proof, there's three steps in the proof --- Step 1 is: suppose \inlinemetanote{writes: Suppose} $R$ satisfies the following property: \inlinemetanote{writes: $R$ satisfies the following property}
 
-For all $x$ not equal to zero or a unit, \inlinemetanote{writes: $\forall x \neq 0, \text{unit}$} $x$ is irreducible \inlinemetanote{writes: $x \text{ irr}$} implies \inlinemetanote{erases: $x \text{ is prime}$ and draws arrow: $\implies (x) \text{ is prime}$} $(x)$ is prime.
+For all $x$ not equal to zero or a unit, \inlinemetanote{writes: $\forall x \neq 0, \text{unit}$} $x$ is irreducible \inlinemetanote{writes: $x$ irr} implies \inlinemetanote{erases \qt{$x$ is prime} and draws arrow: $\implies (x)$ is prime} $(x)$ is prime.
 
-So, that's the property. \inlinemetanote{draws a box around: $\forall x \neq 0, \text{unit} \quad x \text{ irr} \implies (x) \text{ is prime}$}
+So, that's the property. \inlinemetanote{draws a box around: $\forall x \neq 0, \text{unit} \quad x$ irr $\implies (x)$ is prime}
 
 For an integral domain, we have these two different notions for an element $x$: an element $x$ could be irreducible, I've defined it, or the ideal generated by $x$ could be prime.
 
@@ -918,7 +917,7 @@ The definition of prime is with two: if you have a product in the prime, then at
 \end{speech}
 
 \begin{speech}[00:37:55 - 00:39:17]
-What does that mean? Specifically, it means $q_j$ is equal to... let's not bias it: $x p_1$, \inlinemetanote{writes: $q_j = x p_1$} for some \inlinemetanote{writes: for some} $x$ in the ring, or if we've already used $x$... Anyway, $x$ has also been used a lot, let's do $y$, just so there's no bias here. \inlinemetanote{erases: $x$ and writes: $y$, writes: for some $y \in R$}
+What does that mean? Specifically, it means $q_j$ is equal to... let's not bias it: $x p_1$, \inlinemetanote{writes: $q_j = x p_1$} for some \inlinemetanote{writes: for some} $x$ in the ring, or if we've already used $x$... Anyway, $x$ has also been used a lot, let's do $y$, just so there's no bias here. \inlinemetanote{erases $x$ and writes \qt{$y$} and \qt{for some $y \in R$}}
 
 All right?
 
@@ -1110,7 +1109,7 @@ This completes the induction and establishes \cref{clm:step1-uniqueness}.
 \subsection{Step 2: In a PID, Every Irreducible Element is Prime}
 
 \begin{speech}[00:45:19 - 00:47:07]
-\inlinemetanote{The lecturer pauses and taps the microphone.} Can you hear me? Yeah?
+\inlinemetanote{pauses and taps the microphone} Can you hear me? Yeah?
 
 Okay, so, we proved Step 1.
 
@@ -1120,7 +1119,7 @@ Our goal is to prove this; we proved Step 1, and unfortunately Step 1 has nothin
 
 So, we address that in Step 2.
 
-\textbf{Step 2} \inlinemetanote{writes: STEP 2} is: if $R$ is a PID, \inlinemetanote{writes: If $R$ is a PID, then} then --- now I switch to $p$ here --- $p$ irreducible \inlinemetanote{writes: $p \text{ irr}$} implies \inlinemetanote{writes: $\implies$} $(p)$ prime. \inlinemetanote{writes: $(p) \text{ prime}$}
+\textbf{Step 2} \inlinemetanote{writes: STEP 2} is: if $R$ is a PID, \inlinemetanote{writes: If $R$ is a PID, then} then --- now I switch to $p$ here --- $p$ irreducible \inlinemetanote{writes: $p$ irr} implies \inlinemetanote{writes: $\implies$} $(p)$ prime. \inlinemetanote{writes: $(p)$ prime}
 
 Okay? This is going to be important, because then that allows us to use this for PIDs. So, after I prove Step 2 and I use Step 1, I will have proved half of the UFD property for PIDs: I will have proved the uniqueness part.
 
@@ -1139,11 +1138,11 @@ p \text{ is irreducible in } R \implies (p) \text{ is prime in } R.
 
 \begin{steps}[Overview of the Architecture of the Proof of Theorem A]
 The proof of Theorem A ($R \text{ is a PID} \implies R \text{ is a UFD}$) is structured into three distinct steps:
-\begin{itemize}
-    \item \textbf{Step 1 (General Domains):} If in an integral domain every irreducible element generates a prime ideal, then factorizations into irreducibles are unique (Uniqueness Property).
-    \item \textbf{Step 2 (PIDs):} In any PID, every irreducible element generates a prime ideal (the proof shows even more: $(a, p) = R$ for every $a \notin (p)$, so $(p)$ is a maximal ideal, \cref{def:maximal-ideal}). Combining Step 2 with Step 1 proves the Uniqueness of factorizations in every PID.
-    \item \textbf{Step 3 (PIDs):} In a PID, every ascending chain of principal ideals stabilizes (the argument of \cref{def:noetherian-ring}); from this one proves that every non-zero, non-unit element factors into a product of irreducibles (Existence Property).
-\end{itemize}
+\begin{description}
+    \item[Step 1:] \textbf{General Domains:} If in an integral domain every irreducible element generates a prime ideal, then factorizations into irreducibles are unique (Uniqueness Property).
+    \item[Step 2:] \textbf{PIDs (Uniqueness):} In any PID, every irreducible element generates a prime ideal (the proof shows even more: $(a, p) = R$ for every $a \notin (p)$, so $(p)$ is a maximal ideal, \cref{def:maximal-ideal}). Combining Step 2 with Step 1 proves the Uniqueness of factorizations in every PID.
+    \item[Step 3:] \textbf{PIDs (Existence):} In a PID, every ascending chain of principal ideals stabilizes (the argument of \cref{def:noetherian-ring}); from this one proves that every non-zero, non-unit element factors into a product of irreducibles (Existence Property).
+\end{description}
 \end{steps}
 \end{content}
 
@@ -1182,7 +1181,7 @@ b \in (p).
 \begin{speech}[00:48:42 - 00:50:42]
 All right, so, how are we going to do this? It's nice to write the assumptions here: \inlinemetanote{draws a bracket and lists assumptions}
 
-$p$ is irreducible, that's one of the assumptions. $a$ is not in $(p)$, that's another assumption. And the other assumption is $ab$ is in $(p)$. These are the three assumptions, all right? And we need to somehow make it to this faraway place where $b$ is in $(p)$, all right? \inlinemetanote{writes: $\dots \text{help?} \dots b \in (p)$}
+$p$ is irreducible, that's one of the assumptions. $a$ is not in $(p)$, that's another assumption. And the other assumption is $ab$ is in $(p)$. These are the three assumptions, all right? And we need to somehow make it to this faraway place where $b$ is in $(p)$, all right? \inlinemetanote{writes: $\dots$ help? $\dots b \in (p)$}
 
 So, we have to traverse this.
 
@@ -1377,7 +1376,6 @@ The lecturer reflects on the aesthetic perfection of abstract algebra: calculati
 
 \begin{speech}[00:57:42 - 00:59:02]
 \textbf{Step 3}. So, what do we have here with Step 1 plus 2?
-
 \inlinemetanote{writes: Sum: I + II $\implies$ If $R$ is a PID, then we have the (!) property of a UFD.}
 
 Right? Do you agree with that? That was the logic in Step 1 and 2; it gives us that.
@@ -1392,10 +1390,10 @@ Okay, so, this is the last thing I have to prove.
 \begin{content}[Cumulative Progress Towards Theorem A]
 \begin{proposition}[Cumulative Progress Towards Theorem A]\label[proposition]{prop:part3-summary-steps12}
 Combining Step 1 and Step 2:
-\begin{itemize}
-    \item \textbf{Step 1 (\cref{clm:step1-uniqueness}):} $(\forall x \text{ irr} \implies (x) \text{ prime}) \implies R \text{ satisfies Uniqueness } (!)$.
-    \item \textbf{Step 2 (\cref{lem:step2-pid-irr-implies-prime}):} $R \text{ is a PID} \implies (\forall p \text{ irr} \implies (p) \text{ prime})$.
-\end{itemize}
+\begin{description}
+    \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} $(\forall x \text{ irr} \implies (x) \text{ prime}) \implies R \text{ satisfies Uniqueness } (!)$.
+    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} $R \text{ is a PID} \implies (\forall p \text{ irr} \implies (p) \text{ prime})$.
+\end{description}
 Therefore, every principal ideal domain $R$ satisfies the \textbf{Uniqueness Property (!)} of a unique factorization domain.
 
 It remains to establish Step 3:
@@ -1448,10 +1446,10 @@ So, let's try to... As I said, for me, this is the most interesting part of the 
 \begin{content}[The Factorization Strategy and Termination Question]
 \textbf{The Natural Algorithm:}
 Given $x \in R \setminus (\{0\} \cup R^\times)$:
-\begin{itemize}
-    \item \textbf{Case A:} $x$ is irreducible $\implies$ factorization complete ($n = 1$).
-    \item \textbf{Case B:} $x$ is reducible $\implies$ there exists a non-trivial factorization $x = y \cdot z$ with $y, z \notin R^\times$.
-\end{itemize}
+\begin{description}
+    \item[Case A:] \textbf{$x$ is Irreducible:} Factorization complete ($n = 1$).
+    \item[Case B:] \textbf{$x$ is Reducible:} There exists a non-trivial factorization $x = y \cdot z$ with $y, z \notin R^\times$.
+\end{description}
 We recursively repeat this split on each non-unit factor.
 
 \begin{steps}[Why General Rings Differ from the Integers]
@@ -1606,7 +1604,7 @@ Since each element is a multiple of its successor, this produces an ascending ch
 \end{content}
 
 \begin{speech}[01:06:02 - 01:07:12]
-Okay, so, now, there's something extremely important, which is... of course, here we're done, so, we don't worry about it. Our concern here, we have to address this case. \inlinemetanote{circles infinite chain and writes: Address this case}
+Okay, so, now, there's something extremely important, which is... of course, here we're done, so, we don't worry about it. Our concern here, we have to address this case. \inlinemetanote{circles the infinite chain and writes: Address this case}
 
 And there's something that's extremely important about these ideals, and that is that they actually strictly increase. \inlinemetanote{modifies $\subseteq$ to $\subsetneq$ on the board: $(x_0) \subsetneq (x_1) \subsetneq (x_2) \subsetneq \dots$}
 
@@ -1636,7 +1634,7 @@ And now, I did this in the first half, and someone asked: this is a domain; all 
 
 This is the cancellation property for domains. Are you happy with that? The proof of this is: I subtract $x_0 - x_0 z y = 0$, then I factor out the $x_0$: $x_0(1 - z y) = 0$. This is not zero, so, that must be zero. \inlinemetanote{writes: $x_0 - x_0 z y = 0 \implies x_0(1 - z y) = 0 \implies 1 - z y = 0 \implies 1 = z y$}
 
-So, this is zero. What do we deduce from that? This is an interesting deduction: that means both $z$ and $y$ are units! \inlinemetanote{writes: $\implies z, y \text{ units}$}
+So, this is zero. What do we deduce from that? This is an interesting deduction: that means both $z$ and $y$ are units! \inlinemetanote{writes: $\implies z, y$ units}
 
 But $y$ here was assumed not to be a unit! So, this cannot happen.
 
@@ -1647,7 +1645,6 @@ Because if it were the case, we would deduce $y$ is a unit, and it's not allowed
 So, that says that not only are these ideals contained, they're never equal. It's the same argument at every stage: they're never equal.
 
 Okay. So, this is actually the crucial... this is like the heart of this proof: first we say that either we succeed or there's an infinite chain, and then the really technical point is that this chain is not only increasing, it is strictly increasing.
-
 \inlinemetanote{pushes the middle board up}
 
 That strictly increasing is what was argued here. \inlinemetanote{points at the algebraic contradiction on the right}
@@ -1767,7 +1764,7 @@ That means this whole ideal, the union of everybody, is generated by one person.
 
 In this chain, $w$ sits somewhere. $w$ is in this ideal, and this ideal is just the union of all of these $(x_i)$, so, it must sit somewhere.
 
-We can find somewhere, like I don't know, okay, let's have it in $(x_{691})$, why not there? \inlinemetanote{writes: $(x_{691})$ with $w$ underneath}
+We can find somewhere, like I don't know, okay, let's have it in $(x_{691})$, why not there? \inlinemetanote{writes \qt{$(x_{691})$} with \qt{$w$} underneath}
 
 $w$ is there somewhere. But then it generates everything! In particular, this shows that this is equal to the next one: \inlinemetanote{writes: $= (x_{692}) = \dots = J$}
 
@@ -1822,16 +1819,16 @@ This completes Step 3 and establishes \cref{lem:part3-step3-existence}.
 \checkline[Theorem A proved]{Steps 1--3 together prove \cref{thm:pid-implies-ufd}: every principal ideal domain is a unique factorization domain.}
 
 \begin{steps}[Summary of the Three-Step Proof]
-\begin{itemize}
-    \item \textbf{Step 1 (\cref{clm:step1-uniqueness}):} In any domain where irreducible elements are prime, factorizations into irreducibles are unique up to permutation and associates (\textbf{Uniqueness}).
-    \item \textbf{Step 2 (\cref{lem:step2-pid-irr-implies-prime}):} In a PID, every irreducible element generates a maximal ideal, hence a prime ideal (\cref{cor:maximal-is-prime}). By Step 1, factorizations in a PID are unique.
-    \item \textbf{Step 3 (\cref{lem:part3-step3-existence}):} In a PID, there is no strictly ascending infinite chain of principal ideals (every ascending chain stabilizes), ruling out infinite factorization branches and proving that every non-zero non-unit admits a factorization into irreducibles (\textbf{Existence}).
-\end{itemize}
+\begin{description}
+    \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} In any domain where irreducible elements are prime, factorizations into irreducibles are unique up to permutation and associates (\textbf{Uniqueness}).
+    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} In a PID, every irreducible element generates a maximal ideal, hence a prime ideal (\cref{cor:maximal-is-prime}). By Step 1, factorizations in a PID are unique.
+    \item[Step 3:] \textbf{\cref{lem:part3-step3-existence}:} In a PID, there is no strictly ascending infinite chain of principal ideals (every ascending chain stabilizes), ruling out infinite factorization branches and proving that every non-zero non-unit admits a factorization into irreducibles (\textbf{Existence}).
+\end{description}
 \end{steps}
 \end{content}
 
 \begin{speech}[01:14:44 - 01:15:54]
-\inlinemetanote{The lecturer wipes the blackboards with a wet sponge.}
+\inlinemetanote{wipes the blackboards with a wet sponge}
 
 All right, so, that finishes the proof of Theorem A, and as I said, the logic there is slightly intricate, maybe more intricate than the results we've proven so far in this class.
 \end{speech}
@@ -2007,9 +2004,7 @@ Minimum.
 
 % [TIMESTAMP-SUSPECT: estimated without audio — original: 01:23:12 - 01:25:34]
 \begin{speech}[01:24:48 - 01:25:34]
-The minimum, yeah. This is why we like to write it like this: minimum of --- what did I call them? --- $n_1$ and $m_1$. \inlinemetanote{writes: $\min(n_1, m_1)$}
-
-\inlinemetanote{writes: $\dots p_k^{\min(n_k, m_k)}$}
+The minimum, yeah. This is why we like to write it like this: minimum of --- what did I call them? --- $n_1$ and $m_1$ \inlinemetanote{writes \qt{$\min(n_1, m_1)$} and \qt{$\dots p_k^{\min(n_k, m_k)}$}}.
 
 Okay. And then, so, that's the GCD, and then you can see that there's also this confusion that I could have put any unit here also: \inlinemetanote{writes: any unit $\times$} any unit. And it'll still satisfy that property.
 
@@ -2061,9 +2056,7 @@ So, that's how the GCD works for any UFD.
 
 And when I said this confusion, it's always this confusion about everybody has a lot of names, and that always causes confusion in mathematics.
 
-Okay, and then the formula for the least common multiple is the same formula, except now we have maybe a different unit --- it's only well-defined up to a unit --- and then what I put here is the max. That's what happens for integers, right? \inlinemetanote{writes: $\operatorname{LCM} = \tilde{w} \cdot p_1^{\max(n_1, m_1)} \dots p_k^{\max(n_k, m_k)}$}
-
-\inlinemetanote{writes: $\dots p_k^{\max(n_k, m_k)}$}
+Okay, and then the formula for the least common multiple is the same formula, except now we have maybe a different unit --- it's only well-defined up to a unit --- and then what I put here is the max. That's what happens for integers, right \inlinemetanote{writes: $\operatorname{LCM} = \tilde{w} \cdot p_1^{\max(n_1, m_1)} \dots p_k^{\max(n_k, m_k)}$}?
 
 Okay?
 \end{speech}
@@ -2147,11 +2140,11 @@ And there was another really good question from last time, which I will address 
 
 And we know another one. I don't think I explicitly said it, but it's a very fun thing to think about. Well, relatively fun.
 
-If I take a field, and I take the power series (Recall: \cref{def:power-series-ring-formal}), this turns out to be a PID! \inlinemetanote{writes: $k[[x]] \text{ is a PID!}$}
+If I take a field, and I take the power series (Recall: \cref{def:power-series-ring-formal}), this turns out to be a PID! \inlinemetanote{writes: $k[[x]]$ is a PID!}
 
 Is that obvious to you? You should think about this. Maybe I leave this to you: prove this. \inlinemetanote{writes: Prove this}
 
-And then in particular, this means that the power series ring is a UFD, because PID implies UFD. \inlinemetanote{writes: $k[[x]] \text{ is a UFD!}$}
+And then in particular, this means that the power series ring is a UFD, because PID implies UFD. \inlinemetanote{writes: $k[[x]]$ is a UFD!}
 
 And the hint for the proof is that... okay, no hint for the proof. You get to do it yourself. \inlinemetanote{laughter} You can see if you can figure it out. It's a good thing to think about.
 
@@ -2185,11 +2178,11 @@ This lecture established the core structural theorems linking principal ideal do
     \item \textbf{Factorization Terminology:} In an integral domain $R$, an irreducible element cannot be factored into two non-units ($x = yz \implies y \in R^\times \lor z \in R^\times$). A prime element generates a principal prime ideal ($p \mid ab \implies p \mid a \lor p \mid b$). Every prime element is irreducible; the converse holds in UFDs (and, by Step~2, in PIDs) but fails in general, e.g.\ for $x^2 \in \mathbb{Q}[x^2, x^3]$.
     \item \textbf{Unique Factorization Domains:} A domain is a UFD if every non-zero, non-unit factors into irreducibles (Existence) uniquely up to permutation and unit associates (Uniqueness). The subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ (the coordinate ring of the cuspidal cubic) fails to be a UFD because $x^6 = (x^2)^3 = (x^3)^2$.
     \item \textbf{Theorem A ($\text{PID} \implies \text{UFD}$):}
-    \begin{itemize}
-        \item \emph{Step 1:} Irreducible implies prime yields uniqueness of factorizations.
-        \item \emph{Step 2:} In a PID, every irreducible element generates a maximal (hence prime) ideal, establishing uniqueness.
-        \item \emph{Step 3:} By the ACC on principal ideals in a PID, any strictly ascending chain $(x_0) \subsetneq (x_1) \subsetneq \dots$ terminates because the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$ is principal, forcing $(x_N) = J$. This rules out infinite factorization branches and establishes existence.
-    \end{itemize}
+    \begin{description}
+        \item[Step 1:] \textbf{Uniqueness Criterion:} Irreducible implies prime yields uniqueness of factorizations.
+        \item[Step 2:] \textbf{Irreducible Implies Prime:} In a PID, every irreducible element generates a maximal (hence prime) ideal, establishing uniqueness.
+        \item[Step 3:] \textbf{Ascending Chain Condition:} By the ACC on principal ideals in a PID, any strictly ascending chain $(x_0) \subsetneq (x_1) \subsetneq \dots$ terminates because the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$ is principal, forcing $(x_N) = J$. This rules out infinite factorization branches and establishes existence.
+    \end{description}
     \item \textbf{GCD, LCM, and Power Series:} GCDs and LCMs exist in any UFD via minimum and maximum exponents of prime factorizations (unique up to units), satisfying $\operatorname{gcd}(x, y) \cdot \operatorname{lcm}(x, y) \sim x \cdot y$. Finally, formal power series rings $k[[x]]$ are discrete valuation rings, hence PIDs and UFDs.
 \end{itemize}
 \end{overview}

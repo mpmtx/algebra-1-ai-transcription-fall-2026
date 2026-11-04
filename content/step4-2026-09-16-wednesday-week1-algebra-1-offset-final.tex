@@ -242,7 +242,7 @@ The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product
 \begin{speech}[00:06:08 - 00:08:12]
 The simple fact is that if $p$ is congruent to $3 \pmod 4$ \inlinemetanote{writes: If $p \equiv 3 \pmod 4$}, this is impossible \inlinemetanote{writes: this is impossible}. You can never write a prime that is $3 \pmod 4$ as a sum of two squares. That's easy to prove; I think it's part of the exercise, I'm not sure.
 
-But the one that's tricky is: if $p$ is congruent to $1 \pmod 4$ \inlinemetanote{writes: If $p \equiv 1 \pmod 4$}, then you can. You can solve \inlinemetanote{writes: then you can solve} $p = a^2 + b^2$ \inlinemetanote{writes: $p = a^2 + b^2$} in the integers. This is a theorem that's due to Fermat \inlinemetanote{writes: (Fermat)}. And this is one of the problems on the problem set.
+But the one that's tricky is: if $p$ is congruent to $1 \pmod 4$ \inlinemetanote{writes: If $p \equiv 1 \pmod 4$}, then you can. You can solve $p = a^2 + b^2$ in the integers \inlinemetanote{writes: then you can solve $p = a^2 + b^2$}. This is a theorem that's due to Fermat \inlinemetanote{writes: (Fermat)}. And this is one of the problems on the problem set.
 
 So, the answer to this question finally is that if you have a prime, and you want to know whether it stays prime in the Gaussian integers, the whole thing that matters is whether $p$ is equal to $1$ or $3 \pmod 4$. It's kind of an interesting question.
 
@@ -277,11 +277,11 @@ Let $p$ be an odd integer prime ($p > 2$).
 
 \begin{steps}[Classification of Integer Primes in {$\mathbb{Z}[i]$}]
 Every integer prime $p \in \mathbb{Z}$ falls into one of three categories in $\mathbb{Z}[i]$:
-\begin{itemize}
-    \item \textbf{Ramified Prime ($p = 2$):} $2 = 1^2 + 1^2 = (1 + i)(1 - i) = -i(1 + i)^2$.
-    \item \textbf{Split Primes ($p \equiv 1 \pmod 4$):} $p = a^2 + b^2 = (a + bi)(a - bi)$ splits into two distinct non-associate Gaussian primes (e.g., $5, 13, 17, 29$).
-    \item \textbf{Inert Primes ($p \equiv 3 \pmod 4$):} $p$ cannot be written as $a^2 + b^2$, so $p$ remains prime in $\mathbb{Z}[i]$ (e.g., $3, 7, 11, 19, 23$).
-\end{itemize}
+\begin{description}
+    \item[Ramified Prime:] \textbf{$p = 2$:} $2 = 1^2 + 1^2 = (1 + i)(1 - i) = -i(1 + i)^2$.
+    \item[Split Primes:] \textbf{$p \equiv 1 \pmod 4$:} $p = a^2 + b^2 = (a + bi)(a - bi)$ splits into two distinct non-associate Gaussian primes (e.g., $5, 13, 17, 29$).
+    \item[Inert Primes:] \textbf{$p \equiv 3 \pmod 4$:} $p$ cannot be written as $a^2 + b^2$, so $p$ remains prime in $\mathbb{Z}[i]$ (e.g., $3, 7, 11, 19, 23$).
+\end{description}
 \end{steps}
 \end{content}
 
@@ -289,10 +289,6 @@ Every integer prime $p \in \mathbb{Z}$ falls into one of three categories in $\m
 % [PERSISTENT, ADDITION]
 The even prime is not covered by \cref{thm:fermat-two-squares}: $2 = 1^2 + 1^2 = (1 + i)(1 - i)$, and since $1 - i = -i(1 + i)$, in fact $2 = -i \, (1 + i)^2$, so $2$ does not stay prime in $\mathbb{Z}[i]$.
 \end{aiNote}
-
-\begin{note}[Board Transition]
-The lecturer erases the center and right chalkboards with a sponge to prepare for reviewing the abstract definition and axioms of a ring.
-\end{note}
 
 \begin{hidden}
 % timestamp: 00:08:15
@@ -599,7 +595,7 @@ Typical non-commutative rings are matrix rings $M_n(K)$ for $n \ge 2$ (\cref{fac
 \subsection{Definition of a Ring Homomorphism}
 
 \begin{speech}[00:18:44 - 00:20:03]
-Okay, so, the definition of a homomorphism: a homomorphism \inlinemetanote{writes: A homomorphism} $f$ from $R_1$ to $R_2$ \inlinemetanote{writes: $f \colon R_1 \to R_2$} --- maybe I put here: a ring homomorphism \inlinemetanote{writes: Ring above homomorphism} --- is defined to satisfy some properties.
+Okay, so, the definition of a homomorphism: a homomorphism $f$ from $R_1$ to $R_2$ \inlinemetanote{writes: A homomorphism $f \colon R_1 \to R_2$} --- maybe I put here: a ring homomorphism \inlinemetanote{writes \qt{Ring} above \qt{homomorphism}} --- is defined to satisfy some properties.
 
 The first is that $f(a + b) = f(a) + f(b)$ \inlinemetanote{writes: (i) $f(a+b) = f(a) + f(b)$}. This is saying that this map respects the linear structure, the additive structure of the two rings. So, this should remind you from linear algebra class: there's the idea of linear homomorphisms of vector spaces, and it has this linear condition --- that's this linear condition.
 
@@ -637,9 +633,9 @@ Condition \textbf{(i)} asserts that $f$ is a group homomorphism between the addi
 \begin{speech}[00:20:03 - 00:22:25]
 There are some puzzling aspects about this definition. You could say, \qt{Well, why don't I say it respects the zero?} That's a very reasonable question. So, you could say: what about $f(0)$ \inlinemetanote{writes: What about $f(0)$?}?
 
-Well, we can write $f(0 + 0)$ \inlinemetanote{writes: $f(0+0)$}. I want to use property \textbf{(i)}: $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes: $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes: Condition (i) $\implies$ in front of it}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes: $f(0) = f(0) + f(0)$}, okay?
+Well, we can write $f(0 + 0)$ \inlinemetanote{writes: $f(0+0)$}. I want to use property \textbf{(i)}: $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes: $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes \qt{Condition (i) $\implies$} in front of it}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes: $f(0) = f(0) + f(0)$}, okay?
 
-And then I can use left cancellation by taking the inverse. I've said that several times, and I hope you know what I mean by that: if I take such an equation... Let me just do it once formally, because I said it several times. I have one $f(0)$ here and two $f(0)$'s here, and I want to get rid of the $f(0)$ on both sides. So, what I do --- and this is what I mean by left cancellation --- is that there exists some $b \in R_2$ \inlinemetanote{writes: $\exists b \in R_2$} such that $b + f(0) = 0$ \inlinemetanote{writes: $, b + f(0) = 0$}. That's the group property on $R_2$.
+And then I can use left cancellation by taking the inverse. I've said that several times, and I hope you know what I mean by that: if I take such an equation... Let me just do it once formally, because I said it several times. I have one $f(0)$ here and two $f(0)$'s here, and I want to get rid of the $f(0)$ on both sides. So, what I do --- and this is what I mean by left cancellation --- is that there exists some $b \in R_2$ such that $b + f(0) = 0$ \inlinemetanote{writes \qt{$\exists b \in R_2$} and \qt{$b + f(0) = 0$}}. That's the group property on $R_2$.
 
 And then I just add $b$ to both sides of this. So, I get $b + f(0) = b + f(0) + f(0)$ \inlinemetanote{writes: $b + f(0) = b + f(0) + f(0)$}. I use this cancellation, I use the additive inverse of $f(0)$ on both sides, and then, since that equals $0$, this is $0$ \inlinemetanote{writes \qt{$0$} under $b+f(0)$}, that's $0$ \inlinemetanote{writes \qt{$= 0 + f(0)$} under the right side}, and finally I conclude that $f(0) = 0$ \inlinemetanote{writes: $\boxed{f(0) = 0}$}.
 
@@ -681,7 +677,7 @@ Yeah, it has to do with the fact that I cannot... I mean, maybe this is what you
 
 This is about the definitions, and as I said, the strange thing about mathematics is that when it's taught, the definitions are first, but somehow when it's understood, the definitions are last. So, it's somehow a constant difficulty. \inlinemetanote{erases more board space and begins writing}
 
-So, the point is: we don't have \inlinemetanote{writes: We don't have} multiplicative inverses \inlinemetanote{writes: mult. inverses} --- we don't always have multiplicative inverses --- in $R_1$ \inlinemetanote{writes: in $R$}, and so, we can't \inlinemetanote{writes: so we can't} use this argument \inlinemetanote{writes \qt{use that argument} and an arrow pointing to it} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
+So, the point is: we don't have multiplicative inverses --- we don't always have multiplicative inverses --- in $R_1$, and so, we can't use this argument \inlinemetanote{writes \qt{We don't have mult. inverses in $R$, so we can't use that argument} and draws an arrow pointing to it} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
 
 So, to fix that, we just say at the beginning: $f(1) = 1$. We don't leave it to chance. You could hope, maybe, that even though we couldn't use this argument, maybe you could find some different argument. You could hope that, but it's not true.
 \end{speech}
@@ -1002,7 +998,7 @@ In the additive closure proof (Property (2)), both $f(a)$ and $f(b)$ had to be z
 \begin{speech}[00:36:11 - 00:38:07]
 Those properties can be said in a more concise way, which is a more natural way to say it, and it comes with a definition: the definition of an ideal. \inlinemetanote{pushes up the board and erases the lower board} This is the definition of an ideal $I$ in $R$ \inlinemetanote{writes: Def: Ideal $I \subset R$}.
 
-The properties are: $0$ must be in $I$ \inlinemetanote{writes: $\bullet \ 0 \in I$}. And the second way to say things is that if I take $I$, and I take the $+$ from $R$, and I take the $0$, this is an abelian group \inlinemetanote{writes: $\bullet \ (I, +, 0) \text{ abelian group}$}. Remember, whenever I write $R$, I always mean $R$ with the two operations and this data \inlinemetanote{writes \qt{$= (R, +, \cdot, 0, 1)$} after $I \subset R$}. So, to be an ideal, you have to have zero, and then when I consider this subset with $+$ and $0$, it should be an abelian group. This means it's closed under addition, and it's closed under additive inverses, okay?
+The properties are: $0$ must be in $I$ \inlinemetanote{writes: $\bullet \ 0 \in I$}. And the second way to say things is that if I take $I$, and I take the $+$ from $R$, and I take the $0$, this is an abelian group \inlinemetanote{writes: $\bullet \ (I, +, 0)$ abelian group}. Remember, whenever I write $R$, I always mean $R$ with the two operations and this data \inlinemetanote{writes \qt{$= (R, +, \cdot, 0, 1)$} after $I \subset R$}. So, to be an ideal, you have to have zero, and then when I consider this subset with $+$ and $0$, it should be an abelian group. This means it's closed under addition, and it's closed under additive inverses, okay?
 
 And the second thing is that for every $a$ in $I$ and for every $r$ in $R$, $ra$ remains in $I$ \inlinemetanote{writes: $\bullet \ \forall a \in I, \forall r \in R \implies ra \in I$}. Okay? That's the ideal condition.
 
@@ -1259,7 +1255,7 @@ Did you consider this question in your first year?
 
 Of course, if it's finite-dimensional, of course it has a basis. And this issue is about whether, if you have some massively infinite-dimensional field (i.e., vector space)... has a basis. And the traditional way to do this is an application of Zorn's lemma, which is related to the axiom of choice in logic --- not my favorite direction to think about, but we will say a little bit about it. But...
 
-Okay, and I think that's it. All right, so... \inlinemetanote{The lecturer puts down the chalk, unclips the microphone, students applaud, and the lecture concludes.}
+Okay, and I think that's it. All right, so... \inlinemetanote{puts down the chalk, unclips the microphone, students applaud, and the lecture concludes}
 \end{speech}
 
 \begin{overview}[Summary of Key Concepts]

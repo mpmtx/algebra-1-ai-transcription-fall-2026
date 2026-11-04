@@ -110,14 +110,14 @@ The lecture is organized into two primary components:
         \item Divisibility property of primitive polynomials: for primitive $g \in R[x]$, $g \mid bf \implies g \mid f$ for any non-zero scalar $b \in R$.
     \end{itemize}
     \item \textbf{Proof of Gauss's Theorem (Theorem B):}
-    \begin{itemize}
-        \item \textbf{Step 1 (Existence):} Existence of irreducible factorizations in $R[x]$ via induction on $\deg(f)$, using primitivity to rule out non-unit degree-zero factors.
-        \item \textbf{Step 2 (Uniqueness):} Uniqueness via proving that every irreducible element in $R[x]$ is prime:
+    \begin{description}
+        \item[Step 1:] \textbf{Existence:} Existence of irreducible factorizations in $R[x]$ via induction on $\deg(f)$, using primitivity to rule out non-unit degree-zero factors.
+        \item[Step 2:] \textbf{Uniqueness:} Uniqueness via proving that every irreducible element in $R[x]$ is prime:
         \begin{itemize}
-            \item \emph{Case 1 ($\deg(p) = 0$):} Constant irreducibles in $R$ remain prime in $R[x]$ via coefficient divisibility and Gauss's Lemma.
-            \item \emph{Case 2 ($\deg(p) > 0$):} Positive-degree irreducibles analyzed via minimal-degree elements in the ideal $(p, f)$, division with remainder in $Q[x]$ over the field of fractions $Q = \operatorname{Frac}(R)$, and denominator clearing.
+            \item \textbf{Case 1 ($\deg(p) = 0$):} Constant irreducibles in $R$ remain prime in $R[x]$ via coefficient divisibility and Gauss's Lemma.
+            \item \textbf{Case 2 ($\deg(p) > 0$):} Positive-degree irreducibles analyzed via minimal-degree elements in the ideal $(p, f)$, division with remainder in $Q[x]$ over the field of fractions $Q = \operatorname{Frac}(R)$, and denominator clearing.
         \end{itemize}
-    \end{itemize}
+    \end{description}
 \end{itemize}
 \end{overview}
 
@@ -178,7 +178,7 @@ Okay, so, there's a new notion here which is content, which is an extremely usef
 
 Then, this is the definition: the content --- so, the word for that is the content --- is equal to the $\operatorname{GCD}$ of these elements here: $a_0, a_1, \dots, a_n$. \inlinemetanote{writes: $\operatorname{Def.} c(f) = \operatorname{GCD}(a_0, a_1, \dots, a_n)$} Okay?
 
-So, why are we allowed to consider $\operatorname{GCD}$? It's because this $R$ is a UFD. I should say this content, and for the whole lecture today, $R$ is a UFD. \inlinemetanote{writes: $R$ is a UFD above} Okay?
+So, why are we allowed to consider $\operatorname{GCD}$? It's because this $R$ is a UFD. I should say this content, and for the whole lecture today, $R$ is a UFD. \inlinemetanote{writes \qt{$R$ is a UFD} above} Okay?
 \end{speech}
 
 \begin{content}
@@ -197,7 +197,7 @@ c(f) := \operatorname{GCD}(a_0, a_1, \dots, a_n).
 \begin{speech}[00:02:55 - 00:04:53]
 And then, this is how it's typically written, and what do I mean by this? Well, we already discussed what $\operatorname{GCD}$ is. You're not allowed to have any zeros here. So, if any of these coefficients are zero, you just strike them out, because we don't do $\operatorname{GCD}$ of zero.
 
-So, this is how it's typically written, but what it means is you take $f$, you put here the non-zero coefficients \inlinemetanote{writes: non-zero under $a_0, a_1, \dots, a_n$} --- non-zero coefficients ---, and then take their $\operatorname{GCD}$s, as we discussed yesterday (Recall: \cref{def:gcd-ufd}, \cref{thm:gcd-formula-ufd}).
+So, this is how it's typically written, but what it means is you take $f$, you put here the non-zero coefficients \inlinemetanote{writes \qt{non-zero} under $a_0, a_1, \dots, a_n$} --- non-zero coefficients ---, and then take their $\operatorname{GCD}$s, as we discussed yesterday (Recall: \cref{def:gcd-ufd}, \cref{thm:gcd-formula-ufd}).
 
 The way you take $\operatorname{GCD}$s is for every one of these, like this one, if it's non-zero... There has to be some of these that are non-zero because $f$ is not zero. So, there's at least one that's not zero. You put the list of all the ones that are non-zero, and for each one you take the prime factorization, which is, you know, some unit and then some product of $p_i$ to the $k_i$ --- let's say $k_{i0}$ for the zero one \inlinemetanote{writes: $a_0 = u_0 \prod p_i^{k_{i0}}$}, and then $a_1$ would be some unit one, $p_i$ to the $k_{i1}$ \inlinemetanote{writes: $a_1 = u_1 \prod p_i^{k_{i1}}$}.
 
@@ -231,7 +231,7 @@ By standard convention, we write $c(f) = d$ to mean that $c(f)$ is associate to 
 \subsection{Canonical Decomposition of Polynomials}
 
 \begin{speech}[00:04:53 - 00:06:10]
-All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ ---, then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = c(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes: $R[x]$ under $f$, $R$ under $c(f)$, and $R[x]$ under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
+All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ ---, then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = c(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes \qt{$R[x]$} under $f$, \qt{$R$} under $c(f)$, and \qt{$R[x]$} under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
 
 And if you think about this, what happens for this polynomial? What is the content of this polynomial? What do you think the answer to that is? It's just like I take the coefficients, they have a $\operatorname{GCD}$, I divide out the $\operatorname{GCD}$... yeah, one, yeah. \inlinemetanote{writes: What is $c(f^*) = 1$} So, the answer is, this is one. And whenever I say something like this or whenever it's written, people will just write this, but what is meant is that this is up to multiplication by a unit, one, because that depends on how you did it. Because you've just taken out all of the common divisors, what's left is just units.
 \end{speech}
@@ -294,7 +294,7 @@ So, there's a definition that's important. Definition: $g \in R[x]$, $g \neq 0$,
 
 That's the notion, that's the definition of primitive. Primitive are those polynomials where, if I take their coefficients, there's no $\operatorname{GCD}$. Like this one here. \inlinemetanote{points at $x^{17} + 17$} $17$ is $\operatorname{GCD}$; this one has no $\operatorname{GCD}$, because of a one and a $17$.
 
-So, in particular, if I take this $f \neq 0$, and I take $f = c(f) \cdot f^*$, this one is primitive. \inlinemetanote{writes: \qt{primitive} under $f^*$} Okay?
+So, in particular, if I take this $f \neq 0$, and I take $f = c(f) \cdot f^*$, this one is primitive. \inlinemetanote{writes \qt{primitive} under $f^*$} Okay?
 \end{speech}
 
 \begin{content}
@@ -316,7 +316,7 @@ is always a primitive polynomial in $R[x]$. For instance, in \cref{ex:content-in
 \end{content}
 
 \begin{speech}[00:08:12 - 00:10:10]
-And the next simple observation is: suppose $f = \gamma \cdot g$, where $\gamma$ is a scalar and $g$ is a polynomial that is primitive. \inlinemetanote{writes: Suppose $f = \gamma \cdot g, \gamma \in R, g \in R[x] \text{ primitive}$} Okay, suppose I have any expression, where $f$ is just some polynomial in $R[x]$, always not zero, and I write this polynomial as some scalar times a polynomial which is primitive. We already know one way to do that. Here, I've written it as some scalar times a polynomial that's primitive.
+And the next simple observation is: suppose $f = \gamma \cdot g$, where $\gamma$ is a scalar and $g$ is a polynomial that is primitive. \inlinemetanote{writes: Suppose $f = \gamma \cdot g, \gamma \in R, g \in R[x]$ primitive} Okay, suppose I have any expression, where $f$ is just some polynomial in $R[x]$, always not zero, and I write this polynomial as some scalar times a polynomial which is primitive. We already know one way to do that. Here, I've written it as some scalar times a polynomial that's primitive.
 
 And the answer is that if I do this, it must be the case that this content is equal to $\gamma$ up to a unit, and $f^*$ is equal to $g$, again, up to a unit. \inlinemetanote{writes: $\implies c(f) \sim \gamma, f^* \sim g$} And the reason is because this is the $\operatorname{GCD}$ of all the coefficients. If I'm able to take this scalar out, then this scalar must divide the $\operatorname{GCD}$, because it's a divisor and it should divide the greatest common divisor. And if there's anything left over, then this wouldn't be primitive.
 
@@ -378,17 +378,17 @@ c(f) \sim 1 \quad \text{and} \quad c(g) \sim 1 \implies c(fg) \sim 1.
 \begin{speech}[00:11:20 - 00:13:25]
 So, we're going to proceed by contradiction. So, assume that the content of the product is not a unit. \inlinemetanote{writes: Proof: Contradiction. Assume $c(fg)$ is not a unit.} All right?
 
-Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: Then $\exists p \in R \text{ prime s.t. } p \mid c(fg) \text{ in UFD}$} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
+Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: Then $\exists p \in R$ prime s.t. $p \mid c(fg)$ in UFD} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
 
-And then comes the idea in the proof: for this prime is irreducible, so that implies that the ideal is a prime ideal --- that's that exercise (Recall: \cref{exer:irred-prime-ufd}). \inlinemetanote{writes: $p \text{ is irred} \iff (p) \text{ is prime ideal}$} And then we do something interesting, which is we look at this map, a homomorphism from $R[x]$ to... So, there's a quotient map $R$ to $R \pmod p$. \inlinemetanote{writes: $R \to R/(p)$} That's the quotient map from previous weeks (Recall: \cref{def:canonical-quotient-map}). That's a homomorphism. And that also gives me a homomorphism from polynomials by just applying this quotient map to the coefficients of the polynomials. \inlinemetanote{writes: $R[x] \to (R/(p))[x]$} And this is a ring homomorphism.
+And then comes the idea in the proof: for this prime is irreducible, so that implies that the ideal is a prime ideal --- that's that exercise (Recall: \cref{exer:irred-prime-ufd}). \inlinemetanote{writes: $p$ is irred $\iff (p)$ is prime ideal} And then we do something interesting, which is we look at this map, a homomorphism from $R[x]$ to... So, there's a quotient map $R$ to $R \pmod p$. \inlinemetanote{writes: $R \to R/(p)$} That's the quotient map from previous weeks (Recall: \cref{def:canonical-quotient-map}). That's a homomorphism. And that also gives me a homomorphism from polynomials by just applying this quotient map to the coefficients of the polynomials. \inlinemetanote{writes: $R[x] \to (R/(p))[x]$} And this is a ring homomorphism.
 
-Now, this is an integral domain. \inlinemetanote{writes: int. domain under $R/(p)$ and $(R/(p))[x]$} Why is it an integral domain? It's because this is a prime ideal. Prime ideal means this is an integral domain (Recall: \cref{prop:quotient-integral-domain-prime}). All right?
+Now, this is an integral domain. \inlinemetanote{writes \qt{int. domain} under $R/(p)$ and $(R/(p))[x]$} Why is it an integral domain? It's because this is a prime ideal. Prime ideal means this is an integral domain (Recall: \cref{prop:quotient-integral-domain-prime}). All right?
 \end{speech}
 
 \begin{speech}[00:13:25 - 00:15:16]
-So, now I consider $\phi(f) \cdot \phi(g)$. That's equal to, because of the homomorphism property, $\phi(fg)$. \inlinemetanote{writes: $\phi(f) \cdot \phi(g) = \phi(fg)$} And by this hypothesis that $p$ divides all the coefficients of $fg$, this is equal to zero. \inlinemetanote{writes: $= 0$ (since $p \mid \text{all coeffs})$} Since $p$ divides all the coefficients of $fg$, it's equal to zero.
+So, now I consider $\phi(f) \cdot \phi(g)$. That's equal to, because of the homomorphism property, $\phi(fg)$. \inlinemetanote{writes: $\phi(f) \cdot \phi(g) = \phi(fg)$} And by this hypothesis that $p$ divides all the coefficients of $fg$, this is equal to zero. \inlinemetanote{writes: $= 0$ (since $p \mid$ all coeffs)} Since $p$ divides all the coefficients of $fg$, it's equal to zero.
 
-That means, since this is an integral domain... If I take a polynomial ring in one variable over an integral domain, the whole ring is an integral domain (Recall: \cref{thm:domain-poly-power-series}). So, we have two things multiplying to zero in an integral domain; that means either $\phi(f) = 0$ or --- let me erase that --- $\phi(g) = 0$. \inlinemetanote{writes: $\implies \phi(f) = 0 \text{ or } \phi(g) = 0$}
+That means, since this is an integral domain... If I take a polynomial ring in one variable over an integral domain, the whole ring is an integral domain (Recall: \cref{thm:domain-poly-power-series}). So, we have two things multiplying to zero in an integral domain; that means either $\phi(f) = 0$ or --- let me erase that --- $\phi(g) = 0$. \inlinemetanote{writes: $\implies \phi(f) = 0$ or $\phi(g) = 0$}
 
 One of these two holds, but that contradicts the assumption. Because for either of these to hold, that means $p$ divides all their coefficients. But the assumption is that these are primitive, so no irreducible divides all their coefficients.
 
@@ -443,7 +443,7 @@ This contradiction proves that $fg$ must be primitive.
 \subsection{A Divisibility Property of Primitive Polynomials}
 
 \begin{speech}[00:15:16 - 00:16:14]
-\inlinemetanote{The lecturer wipes the right-hand boards clean with a sponge.}
+\inlinemetanote{wipes the right-hand boards clean with a sponge}
 Okay, and there's one more property of contents that we have to discuss before I go to the proof of Gauss's theorem, Theorem B. Oh, it's already gone.
 
 So, the first property was Gauss; the second property that I need is the following claim, which is also a kind of pretty claim. \inlinemetanote{writes: Claim: $g$ is primitive, $g \in R[x]$} Suppose that $g$ is primitive, so $g$ is in here, and $g$ divides $b \times f$ \inlinemetanote{writes: and $g \mid bf$}, where $b$ is a scalar that's not equal to zero \inlinemetanote{writes: $b \in R, b \neq 0$}, and $f$ is some element here \inlinemetanote{writes: $f \in R[x]$}. So, these are the assumptions: it's primitive, and this assumption.
@@ -471,13 +471,13 @@ We know that $g$ divides $bf$. That's the assumption. This is just language: $g$
 
 And now, we take the content of both sides. Well, take the content of this side: it says this polynomial here is the content of $bf$ times $f^*$, and I can take $h$ and take the content of $h$ times $h^* g$. \inlinemetanote{writes: $c(bf) f^* = c(h) h^* g$} Okay? So, this is just rewriting the left-hand side and the right-hand side in the contents.
 
-Now, by the lemma of Gauss, we think about this object here: $h^* g$. $h^*$ is primitive because that's what you do when you take $h$. $h$ may not be primitive, but we took the content of $h$ out, so $h^*$ is primitive. $g$ is primitive by assumption. So, then by Gauss upstairs (Recall: \cref{lem:gauss-lemma}), $h^* \times g$ is primitive. \inlinemetanote{writes: $h^* g: h^* \text{ primitive}, g \text{ primitive} \implies h^* g \text{ is primitive by Gauss}$} Okay?
+Now, by the lemma of Gauss, we think about this object here: $h^* g$. $h^*$ is primitive because that's what you do when you take $h$. $h$ may not be primitive, but we took the content of $h$ out, so $h^*$ is primitive. $g$ is primitive by assumption. So, then by Gauss upstairs (Recall: \cref{lem:gauss-lemma}), $h^* \times g$ is primitive. \inlinemetanote{writes: $h^* g: h^*$ primitive, $g$ primitive $\implies h^* g$ is primitive by Gauss} Okay?
 \end{speech}
 
 \begin{speech}[00:17:55 - 00:19:24]
 So, then we look at this equation: this is primitive, and this is primitive. And I said that whenever we have such an equation where we have the primitive part times the content, then the only possibility is that the primitives are equal up to a unit (Recall: \cref{prop:primitive-decomp-uniqueness}). This is a content equation: this is a primitive times some content. That was one of the comments up there.
 
-So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \sim h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = c(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f \text{ since } f = c(f) f^*$} If you divide $f^*$, you also divide $f$.
+So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \sim h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = c(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f$ since $f = c(f) f^*$} If you divide $f^*$, you also divide $f$.
 
 So, that's the proof of this too. Now with these preliminaries, we can finally prove Gauss's theorem.
 \end{speech}
@@ -517,7 +517,7 @@ It's a new idea, this content, and I've given you the definition and various pro
 
 And these properties I'm talking about are something about what happens to what's left. These primitive polynomials become a little bit special.
 
-So, now we come to Theorem B, which is the second theorem for the week. And it also, as I said, has a little bit of an intricate logic. I did look at the book to try to follow more or less the notation. It's not going to be perfect, but I did try to at least match the notation. \inlinemetanote{The lecturer finishes erasing the upper chalkboard.}
+So, now we come to Theorem B, which is the second theorem for the week. And it also, as I said, has a little bit of an intricate logic. I did look at the book to try to follow more or less the notation. It's not going to be perfect, but I did try to at least match the notation. \inlinemetanote{finishes erasing the upper chalkboard}
 \end{speech}
 
 \begin{hidden}
@@ -531,7 +531,7 @@ So, now we come to Theorem B, which is the second theorem for the week. And it a
 \section{Proof of Gauss's Theorem}
 
 \begin{speech}[00:20:34 - 00:21:44]
-Okay, so, we want to prove: $R$ is a UFD implies $R[x]$ is a UFD. \inlinemetanote{writes: Thm. $R \text{ UFD} \implies R[x] \text{ is a UFD}$} So, for $R[x]$, we must prove two things: we must prove the existence statement --- existence of factorization into irreducibles in $R[x]$ \inlinemetanote{writes: for $R[x]$, we must prove: $\exists \text{ factorization into irreducibles in } R[x]$} ---, and then we must prove the uniqueness statement: uniqueness \inlinemetanote{writes: $! \text{ uniqueness}$}.
+Okay, so, we want to prove: $R$ is a UFD implies $R[x]$ is a UFD. \inlinemetanote{writes: Thm. $R$ UFD $\implies R[x]$ is a UFD} So, for $R[x]$, we must prove two things: we must prove the existence statement --- existence of factorization into irreducibles in $R[x]$ \inlinemetanote{writes: for $R[x]$, we must prove: $\exists$ factorization into irreducibles in $R[x]$} ---, and then we must prove the uniqueness statement: uniqueness \inlinemetanote{writes: $!$ uniqueness}.
 
 There's no shortcut to that: we have to prove existence and uniqueness to prove it's a UFD.
 
@@ -557,9 +557,9 @@ To establish that $R[x]$ is a UFD (\cref{def:ufd}), we must prove two fundamenta
 \begin{speech}[00:21:44 - 00:23:58]
 For this there's a ground case and an induction.
 
-The ground case is: suppose $f \in R[x]$... \inlinemetanote{writes: Ground case:} Here $f$ is not zero, not a unit, and suppose the degree of $f$ is zero. \inlinemetanote{writes: Suppose $f \in R[x], f \neq 0, \text{not unit, and suppose } \deg(f) = 0$}
+The ground case is: suppose $f \in R[x]$... \inlinemetanote{writes: Ground case:} Here $f$ is not zero, not a unit, and suppose the degree of $f$ is zero. \inlinemetanote{writes: Suppose $f \in R[x], f \neq 0$, not unit, and suppose $\deg(f) = 0$}
 
-We're going to prove existence based on induction of the degree of the polynomial. All right? The polynomials have degree in any ring, so we're going to start with the case where the degree is zero. What does that mean, the degree is zero? If $f$ is a degree-zero polynomial, then it's like $a_0$ plus nothing else. So, this means $f$ is a scalar, actually. This means $f$ is just a scalar and it lives in $R$. \inlinemetanote{writes: $f = a_0 \implies \text{This means } f \in R$} A degree-zero polynomial is just a scalar.
+We're going to prove existence based on induction of the degree of the polynomial. All right? The polynomials have degree in any ring, so we're going to start with the case where the degree is zero. What does that mean, the degree is zero? If $f$ is a degree-zero polynomial, then it's like $a_0$ plus nothing else. So, this means $f$ is a scalar, actually. This means $f$ is just a scalar and it lives in $R$. \inlinemetanote{writes: $f = a_0 \implies$ This means $f \in R$} A degree-zero polynomial is just a scalar.
 
 So, you can imagine, in this ground case, we need to factor something in $R$. How are we going to do that? Well, we can't do that; we just assumed that from the beginning: $R$ is a unique factorization domain. So, we can just factor it.
 
@@ -596,9 +596,9 @@ In the induction case, suppose we have this $f \in R[x]$, not zero, not equal to
 
 Let us see.
 
-As far as Theorem B is concerned, this is the first moment where an idea is needed. We need to prove existence. We're not necessarily a scalar, so we can't just use the assumption; we're some actual bona fide polynomial, so we have here $f$. And the idea here is we know one thing that I taught at the beginning of the class: we can write $f$ as $c(f)$ times $f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: $f = c(f) \cdot f^*$} That's the content, and this is primitive. \inlinemetanote{writes: \qt{primitive} above $f^*$} Okay?
+As far as Theorem B is concerned, this is the first moment where an idea is needed. We need to prove existence. We're not necessarily a scalar, so we can't just use the assumption; we're some actual bona fide polynomial, so we have here $f$. And the idea here is we know one thing that I taught at the beginning of the class: we can write $f$ as $c(f)$ times $f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: $f = c(f) \cdot f^*$} That's the content, and this is primitive. \inlinemetanote{writes \qt{primitive} above $f^*$} Okay?
 
-So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes: $R$ under $c(f)$} and this is in $R[x]$ \inlinemetanote{writes: $R[x]$ under $f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
+So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes \qt{$R$} under $c(f)$} and this is in $R[x]$ \inlinemetanote{writes \qt{$R[x]$} under $f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
 
 Now, we have to think: what could happen here? So, what could happen? \inlinemetanote{writes: What could happen?}
 \end{speech}
@@ -619,9 +619,9 @@ If $c(f) \in R$ is not a unit, the UFD property of $R$ guarantees that $c(f)$ fa
 \end{content}
 
 \begin{speech}[00:25:57 - 00:27:36]
-Well, one thing that could happen --- the first case --- is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x] \text{ is irred.}$} Okay?
+Well, one thing that could happen --- the first case --- is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x]$ is irred.} Okay?
 
-If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = c(f) \cdot f^*$. \inlinemetanote{writes: $f = c(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes: irred. in $R[x]$ under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes: UFD in $R$, factor into irreds under $c(f)$} Okay?
+If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = c(f) \cdot f^*$. \inlinemetanote{writes: $f = c(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD in $R$, factor into irreds} under $c(f)$} Okay?
 
 So, then we're done, because we have irreducibles and irreducibles, so we are done. We are done with this case. \inlinemetanote{writes: We are done with this case}
 
@@ -631,9 +631,9 @@ This is not really a surprise: at the very beginning, anything in $R$ we can alr
 \begin{content}[{Case (i): Primitive Factor \texorpdfstring{$f^*$}{f*} is Irreducible}]
 \textbf{Case (i): $f^*$ is irreducible in $R[x]$.}
 If $f^*$ is already irreducible in $R[x]$, then:
-\begin{itemize}
-    \item \textbf{Unit content ($c(f) \in R^\times$):} If $c(f) \in R^\times$ is a unit, then $f = c(f) f^*$ is associate to $f^*$ and is therefore itself irreducible in $R[x]$.
-    \item \textbf{Non-unit content ($c(f) \notin R^\times$):} If $c(f) \notin R^\times$, then $c(f)$ is a non-zero, non-unit scalar in the UFD $R$. Thus, $c(f)$ factors into a finite product of irreducible elements in $R$:
+\begin{description}
+    \item[Unit Content:] \textbf{$c(f) \in R^\times$:} If $c(f) \in R^\times$ is a unit, then $f = c(f) f^*$ is associate to $f^*$ and is therefore itself irreducible in $R[x]$.
+    \item[Non-Unit Content:] \textbf{$c(f) \notin R^\times$:} If $c(f) \notin R^\times$, then $c(f)$ is a non-zero, non-unit scalar in the UFD $R$. Thus, $c(f)$ factors into a finite product of irreducible elements in $R$:
     \[
     c(f) = q_1 \cdot q_2 \cdots q_k \quad (q_i \in R \text{ irreducible in } R).
     \]
@@ -642,12 +642,12 @@ If $f^*$ is already irreducible in $R[x]$, then:
     f = q_1 \cdot q_2 \cdots q_k \cdot f^*
     \]
     is a complete factorization of $f$ into irreducible elements in $R[x]$.
-\end{itemize}
+\end{description}
 In either sub-case, the existence of a factorization into irreducibles is established.
 \end{content}
 
 \begin{speech}[00:27:36 - 00:29:34]
-The other case, of course, is that $f^*$ in $R[x]$ is not irreducible. \inlinemetanote{writes: \textbf{(ii)} $f^* \in R[x] \text{ is not irred.}$} Okay, that's the case where I have to worry. And then again you can imagine what I'm going to do: if it's not irreducible, that means $f^*$ factors into some $A$ and $B$, \inlinemetanote{writes: $f^* = A \cdot B$} where $A$ and $B$ are in $R[x]$ \inlinemetanote{writes: $A, B \in R[x]$}, and $A$ is not a unit and $B$ is not a unit. \inlinemetanote{writes: $A$ is not a unit, $B$ is not a unit} Because if it's not irreducible, then there's a legitimate factorization. Okay? That's the other world: either it's irreducible, or there's a legitimate factorization.
+The other case, of course, is that $f^*$ in $R[x]$ is not irreducible. \inlinemetanote{writes: \textbf{(ii)} $f^* \in R[x]$ is not irred.} Okay, that's the case where I have to worry. And then again you can imagine what I'm going to do: if it's not irreducible, that means $f^*$ factors into some $A$ and $B$, \inlinemetanote{writes: $f^* = A \cdot B$} where $A$ and $B$ are in $R[x]$ \inlinemetanote{writes: $A, B \in R[x]$}, and $A$ is not a unit and $B$ is not a unit. \inlinemetanote{writes: $A$ is not a unit, $B$ is not a unit} Because if it's not irreducible, then there's a legitimate factorization. Okay? That's the other world: either it's irreducible, or there's a legitimate factorization.
 
 And we would like to now use induction on it. If $A$ and $B$ have degree less than $f$, we are done by induction. \inlinemetanote{writes: If $A, B$ have degree $< \deg(f)$, we are done by induction} Because we're proceeding by induction on $f$, and if these are of lower degree, then we just use the induction statement to factor them. This is how you factor integers.
 
@@ -734,7 +734,7 @@ This completes the proof of Step 1 (Existence of Factorization).
 \end{hidden}
 
 \begin{speech}[00:30:58 - 00:31:28]
-So, you see how cunning this definition was. As I said, if you're working on this problem, the first thing you would not do is write down the definition. It comes only after you understand the argument. Then you can go back to the beginning and write down the definition for content. \inlinemetanote{The lecturer wipes the lower-left chalkboard clean with a sponge.}
+So, you see how cunning this definition was. As I said, if you're working on this problem, the first thing you would not do is write down the definition. It comes only after you understand the argument. Then you can go back to the beginning and write down the definition for content. \inlinemetanote{wipes the lower-left chalkboard clean with a sponge}
 \end{speech}
 
 \subsection{Step 2: Uniqueness of Factorization}
@@ -768,10 +768,10 @@ which is equivalent to:
 p \mid fg \quad \text{and} \quad p \nmid f \implies p \mid g \quad \text{in } R[x].
 \]
 We divide the verification of \eqref{eq:prime-ideal-condition-w6wed} into two distinct cases based on the degree of $p$:
-\begin{itemize}
-    \item \textbf{Case 1:} $\deg(p) = 0$ ($p$ is a constant scalar in $R$).
-    \item \textbf{Case 2:} $\deg(p) > 0$ ($p$ is a polynomial of positive degree).
-\end{itemize}
+\begin{description}
+    \item[Case 1:] \textbf{$\deg(p) = 0$:} $p$ is a constant scalar in $R$.
+    \item[Case 2:] \textbf{$\deg(p) > 0$:} $p$ is a polynomial of positive degree.
+\end{description}
 \end{content}
 
 \subsubsection{Case 1: Degree Zero Irreducibles (\texorpdfstring{$\deg(p) = 0$}{deg(p) = 0})}
@@ -785,7 +785,7 @@ What do we have here? We need to prove this implication. $fg$ is equal to the co
 
 And the second thing says that $p$ divides this: $p$ divides the whole thing \inlinemetanote{writes: $p \mid c(f) c(g) f^* g^*$} --- content of $f$, content of $g$, times these polynomials $f^*$, $g^*$.
 
-Now, $f^*$ is primitive because that's what happens when you extract the content. \inlinemetanote{writes: \qt{primitive} under $f^*$} This one is also primitive \inlinemetanote{writes: \qt{primitive} under $g^*$} --- that's what happens when you extract the content. So, the whole thing is primitive. \inlinemetanote{writes: \qt{primitive} under $f^* g^*$} That's by the Gauss claim (Recall: \cref{lem:gauss-lemma}): Gauss says that the whole thing is primitive. \inlinemetanote{writes: Gauss $\implies f^* g^* \text{ is primitive}$}
+Now, $f^*$ is primitive because that's what happens when you extract the content. \inlinemetanote{writes \qt{primitive} under $f^*$} This one is also primitive \inlinemetanote{writes \qt{primitive} under $g^*$} --- that's what happens when you extract the content. So, the whole thing is primitive. \inlinemetanote{writes \qt{primitive} under $f^* g^*$} That's by the Gauss claim (Recall: \cref{lem:gauss-lemma}): Gauss says that the whole thing is primitive. \inlinemetanote{writes: Gauss $\implies f^* g^*$ is primitive}
 \end{speech}
 
 \begin{content}[Case 1: Decomposition of the Product]
@@ -887,7 +887,7 @@ A crucial thing is we're going to show now: we will show the degree of $m$ is ze
 
 What we would like to do is use the division algorithm. But we cannot use the division algorithm. We would very much like to use the division algorithm for polynomial rings. \inlinemetanote{writes: We would like to use the div. alg.} We can't do it, because the division algorithm requires a field (Recall: \cref{thm:poly-long-division}). So, we give ourselves a field. What field? The field of fractions!
 
-Let $Q$ be the field of fractions. \inlinemetanote{writes: Let $Q = \text{Fraction}(R)$} $R$ is a domain; we've seen that to every domain you associate a field of fractions (Recall: \cref{def:field-of-fractions}). We let $Q$ be this field of fractions: $Q = \operatorname{Frac}(R)$.
+Let $Q$ be the field of fractions. \inlinemetanote{writes: Let $Q =$ Fraction $(R)$} $R$ is a domain; we've seen that to every domain you associate a field of fractions (Recall: \cref{def:field-of-fractions}). We let $Q$ be this field of fractions: $Q = \operatorname{Frac}(R)$.
 
 So, then in $Q[x]$ we have the division algorithm. \inlinemetanote{writes: So in $Q[x]$ we have div. alg.}
 \end{speech}
@@ -921,7 +921,7 @@ Then $R[x] \subset Q[x]$, and $Q[x]$ has division with remainder.
 \end{content}
 
 \begin{speech}[00:39:16 - 00:41:26]
-What does that mean? We can write $f = \hat{q} m + \hat{r}$, \inlinemetanote{writes: $f = \hat{q} m + \hat{r}$} where these $\hat{q}, \hat{r}$ are in the field of fractions. \inlinemetanote{writes: $\hat{q}, \hat{r} \in Q[x]$} And the division algorithm has the usual properties that $\hat{r}$ is either zero or the degree of $\hat{r}$ is strictly less than the degree of $m$. \inlinemetanote{writes: $\hat{r} = 0 \text{ or } \deg(\hat{r}) < \deg(m)$}
+What does that mean? We can write $f = \hat{q} m + \hat{r}$, \inlinemetanote{writes: $f = \hat{q} m + \hat{r}$} where these $\hat{q}, \hat{r}$ are in the field of fractions. \inlinemetanote{writes: $\hat{q}, \hat{r} \in Q[x]$} And the division algorithm has the usual properties that $\hat{r}$ is either zero or the degree of $\hat{r}$ is strictly less than the degree of $m$. \inlinemetanote{writes: $\hat{r} = 0$ or $\deg(\hat{r}) < \deg(m)$}
 
 And we can also do it with $p$: $p = \hat{\hat{q}} m + \hat{\hat{r}}$. \inlinemetanote{writes: $p = \hat{\hat{q}} m + \hat{\hat{r}}$} Same thing: $\hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$. \inlinemetanote{writes: $\hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$} Maybe I just call it $Q$, I don't need to put that here. And again, now with $\hat{\hat{r}} = 0$ or the degree of $\hat{\hat{r}}$ is less than the degree of $m$. \inlinemetanote{writes: $\hat{\hat{r}} = 0 \text{ or } \deg(\hat{\hat{r}}) < \deg(m)$}
 
@@ -1028,11 +1028,11 @@ Here the lecture stops, at the bell. The proof that $\deg(m) = 0$, and from it $
 The bell ended the lecture a few minutes before the end of the proof (\qt{I'll do it next time}). The remaining argument, which the next lecture gives in full (\cref{thm:ufd-polynomial-ring-w7tue}), runs as follows; it uses only the results of this lecture.
 \begin{steps}[Completion of the Argument for $\deg(p) > 0$]
 At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ is the primitive part of the element $m \in I = (p, f)$ of minimal degree.
-\begin{itemize}
-    \item \textbf{$m^*$ is a unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in R^\times$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
-    \item \textbf{$m$ is a non-zero constant:} Since $m = c(m) \cdot m^*$ with both factors in $R$, $m =: c \in R \setminus \{0\}$; this is the claim $\deg(m) = 0$ written on the board.
-    \item \textbf{$p$ is primitive:} $p = c(p) \cdot p^*$ with $\deg(p^*) = \deg(p) > 0$, so $p^*$ is not a unit, and the irreducibility of $p$ forces $c(p)$ to be a unit.
-    \item \textbf{Deducing $g \in (p)$:} Because $c = m \in I = (p, f)$, there exist polynomials $A, B \in R[x]$ such that:
+\begin{description}
+    \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in R^\times$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
+    \item[Step 2:] \textbf{$m$ is a Non-Zero Constant:} Since $m = c(m) \cdot m^*$ with both factors in $R$, $m =: c \in R \setminus \{0\}$; this is the claim $\deg(m) = 0$ written on the board.
+    \item[Step 3:] \textbf{$p$ is Primitive:} $p = c(p) \cdot p^*$ with $\deg(p^*) = \deg(p) > 0$, so $p^*$ is not a unit, and the irreducibility of $p$ forces $c(p)$ to be a unit.
+    \item[Step 4:] \textbf{Deducing $g \in (p)$:} Because $c = m \in I = (p, f)$, there exist polynomials $A, B \in R[x]$ such that:
     \[
     c = A p + B f.
     \]
@@ -1045,7 +1045,7 @@ At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ 
     \[
     p \mid g \quad \text{in } R[x] \implies g \in (p).
     \]
-\end{itemize}
+\end{description}
 Together with Case~1, every irreducible element $p \in R[x]$ is prime (and $(p) \neq R[x]$, since $p$ is not a unit). By Step~1 of Theorem~A (\cref{clm:step1-uniqueness}), factorizations in $R[x]$ are therefore unique; with the existence proved in Step~1 above, this concludes the proof of Gauss's Theorem (\cref{thm:ufd-polynomial-ring-w6wed}).
 \end{steps}
 \end{aiNote}
@@ -1059,9 +1059,9 @@ Together with Case~1, every irreducible element $p \in R[x]$ is prime (and $(p) 
     \item \textbf{Gauss's Lemma:} If $f, g \in R[x]$ are primitive, then their product $fg$ is primitive ($c(fg) \sim 1$). The proof utilizes reduction modulo a prime ideal $(p) \subset R$, exploiting the fact that $(R/(p))[x]$ is an integral domain.
     \item \textbf{Divisibility by Primitive Polynomials:} If $g \in R[x]$ is primitive and $g \mid bf$ for some non-zero scalar $b \in R$, then $g \mid f$ in $R[x]$.
     \item \textbf{Gauss's Theorem on Polynomial Rings:} If $R$ is a UFD, then $R[x]$ is a UFD:
-    \begin{itemize}
-        \item \emph{Existence of Factorization:} Proven by induction on polynomial degree. Factoring $f = c(f) f^*$ reduces the problem to primitive polynomials; reducibility $f^* = AB$ cannot yield degree-zero non-unit factors because $c(f^*) \sim 1$, ensuring strictly decreasing degrees $\deg(A), \deg(B) < \deg(f)$.
-        \item \emph{Uniqueness of Factorization:} Proven by showing that every irreducible element is prime. Constant irreducibles ($\deg(p) = 0$) are handled by Gauss's Lemma and prime divisibility in $R$; positive-degree irreducibles ($\deg(p) > 0$) are analyzed using division with remainder in $Q[x] = (\operatorname{Frac}(R))[x]$ and clearing denominators. The bell ended the lecture just before the last step ($\deg(m) = 0$, hence $g \in (p)$), which the next lecture completes (\cref{thm:ufd-polynomial-ring-w7tue}); the aiNote at the end of the proof gives it.
-    \end{itemize}
+    \begin{description}
+        \item[Step 1:] \textbf{Existence of Factorization:} Proven by induction on polynomial degree. Factoring $f = c(f) f^*$ reduces the problem to primitive polynomials; reducibility $f^* = AB$ cannot yield degree-zero non-unit factors because $c(f^*) \sim 1$, ensuring strictly decreasing degrees $\deg(A), \deg(B) < \deg(f)$.
+        \item[Step 2:] \textbf{Uniqueness of Factorization:} Proven by showing that every irreducible element is prime. Constant irreducibles ($\deg(p) = 0$) are handled by Gauss's Lemma and prime divisibility in $R$; positive-degree irreducibles ($\deg(p) > 0$) are analyzed using division with remainder in $Q[x] = (\operatorname{Frac}(R))[x]$ and clearing denominators. The bell ended the lecture just before the last step ($\deg(m) = 0$, hence $g \in (p)$), which the next lecture completes (\cref{thm:ufd-polynomial-ring-w7tue}); the aiNote at the end of the proof gives it.
+    \end{description}
 \end{itemize}
 \end{overview}
