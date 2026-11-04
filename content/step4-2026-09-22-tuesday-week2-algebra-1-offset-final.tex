@@ -693,8 +693,8 @@ So, the kernel enjoys these three properties: it contains the neutral element of
 Let $f \colon G \to \hat{G}$ be a group homomorphism. The kernel $\operatorname{ker}(f) \subseteq G$ satisfies the following three fundamental structural properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Contains the Identity:} $e \in \operatorname{ker}(f)$.
-    \item \textbf{Closure under Products:} $\forall a, b \in \operatorname{ker}(f) \implies ab \in \operatorname{ker}(f)$.
-    \item \textbf{Closure under Inverses:} $\forall x \in \operatorname{ker}(f) \implies x^{-1} \in \operatorname{ker}(f)$.
+    \item \textbf{Closure under Products:} $\forall a, b \in \operatorname{ker}(f) \colon ab \in \operatorname{ker}(f)$.
+    \item \textbf{Closure under Inverses:} $\forall x \in \operatorname{ker}(f) \colon x^{-1} \in \operatorname{ker}(f)$.
 \end{enumerate}
 \end{proposition}
 
@@ -734,8 +734,8 @@ That's the definition of a subgroup.
 Let $(G, \cdot, e)$ be a group. A subset $H \subseteq G$ is called a \newterm{subgroup} of $G$ (denoted $H \le G$) if it satisfies the following three conditions:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Contains the Identity:} $e \in H$ (often denoted $0 \in H$ in additive notation).
-    \item \textbf{Closure under Multiplication:} $\forall a, b \in H \implies a \cdot b \in H$.
-    \item \textbf{Closure under Inverses:} $\forall x \in H \implies x^{-1} \in H$.
+    \item \textbf{Closure under Multiplication:} $\forall a, b \in H \colon a \cdot b \in H$.
+    \item \textbf{Closure under Inverses:} $\forall x \in H \colon x^{-1} \in H$.
 \end{enumerate}
 In particular, the restriction of the group law to $H$ endows $(H, \cdot, e)$ with the structure of a group in its own right.
 \end{definition}
@@ -896,11 +896,11 @@ Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is cal
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0) \le (R, +, 0)$, meaning:
     \[
-    0 \in I, \quad \forall x, y \in I \implies x + y \in I, \quad \text{and} \quad \forall x \in I \implies -x \in I.
+    0 \in I, \quad \forall x, y \in I \colon x + y \in I, \quad \text{and} \quad \forall x \in I \colon -x \in I.
     \]
     \item \textbf{Absorption of Multiplication:}
     \begin{equation}\label{eq:ideal-absorption-w2}
-    \forall r \in R, \; \forall x \in I \implies r \cdot x \in I.
+    \forall r \in R, \; \forall x \in I \colon r \cdot x \in I.
     \end{equation}
 \end{enumerate}
 \end{definition}
@@ -964,7 +964,7 @@ Let $(R, +, \cdot, 0, 1)$ be a ring. A subset $S \subset R$ is called a \newterm
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Neutral Elements:} $0 \in S$ and $1 \in S$.
     \item \textbf{Closure under Operations:} For all $x, y \in S$, $x + y \in S$ and $x \cdot y \in S$.
-    \item \textbf{Ring Structure:} $(S, +, \cdot, 0, 1)$ forms a ring with the operations restricted from $R$ (in particular, $S$ contains additive inverses: $\forall x \in S \implies -x \in S$).
+    \item \textbf{Ring Structure:} $(S, +, \cdot, 0, 1)$ forms a ring with the operations restricted from $R$ (in particular, $S$ contains additive inverses: $\forall x \in S \colon -x \in S$).
 \end{enumerate}
 \end{definition}
 
@@ -1457,7 +1457,7 @@ And the important part of this remainder term is that $0 \le r < n$: \inlinemeta
 \begin{content}[Division Algorithm Setup]
 We show $I = n\mathbb{Z}$:
 \begin{itemize}
-    \item \textbf{Inclusion $n\mathbb{Z} \subseteq I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \implies kn \in I$, so $n\mathbb{Z} \subseteq I$.
+    \item \textbf{Inclusion $n\mathbb{Z} \subseteq I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \colon kn \in I$, so $n\mathbb{Z} \subseteq I$.
     \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{Euclidean Division Algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
     \begin{equation}\label{eq:division-remainder}
     y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.

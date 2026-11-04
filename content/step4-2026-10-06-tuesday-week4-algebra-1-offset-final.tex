@@ -493,7 +493,7 @@ A subset $I \subseteq R$ is called an \newterm{ideal} of $R$ if it satisfies the
     \item \textbf{Absorption / Multiplication Constraint:}
     $I$ absorbs multiplication by arbitrary elements of the ambient ring $R$:
     \[
-    \forall r \in R, \quad \forall a \in I \implies r \cdot a \in I.
+    \forall r \in R, \quad \forall a \in I \colon r \cdot a \in I.
     \]
 \end{enumerate}
 \end{definition}
@@ -1049,7 +1049,7 @@ A subset $I \subseteq R$ is an ideal if and only if:
     \]
     \item \textbf{Multiplicative Absorption Axiom:}
     \[
-    \forall r \in R, \quad \forall a \in I \implies r \cdot a \in I.
+    \forall r \in R, \quad \forall a \in I \colon r \cdot a \in I.
     \]
 \end{enumerate}
 \end{definition}
@@ -1811,7 +1811,7 @@ f(x^2 + 1) = i^2 + 1 = -1 + 1 = 0 \implies x^2 + 1 \in \ker(f).
 \]
 Since $\ker(f)$ is an ideal of $\mathbb{Q}[x]$ (\cref{prop:kernel-is-ideal-w4}), it must absorb multiplication by any polynomial $q(x) \in \mathbb{Q}[x]$:
 \[
-\forall q(x) \in \mathbb{Q}[x] \implies q(x)(x^2 + 1) \in \ker(f).
+\forall q(x) \in \mathbb{Q}[x] \colon q(x)(x^2 + 1) \in \ker(f).
 \]
 Hence, $(x^2 + 1) \subseteq \ker(f)$.
 \end{proof}

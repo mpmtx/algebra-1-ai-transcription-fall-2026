@@ -963,9 +963,9 @@ And so, in particular, if $a$ is in the kernel, $-a$ is in the kernel \inlinemet
 Let $f \colon R_1 \to R_2$ be a ring homomorphism. The kernel $\ker(f) \subseteq R_1$ satisfies the following properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Containment of Zero:} $0_{R_1} \in \ker(f)$.
-    \item \textbf{Closure under Addition:} $\forall a, b \in \ker(f) \implies a + b \in \ker(f)$.
-    \item \textbf{Closure under Additive Inverses:} $\forall a \in \ker(f) \implies -a \in \ker(f)$.
-    \item \textbf{Multiplicative Absorption (Ideal Property):} $\forall a \in \ker(f), \forall r \in R_1 \implies r \cdot a \in \ker(f)$.
+    \item \textbf{Closure under Addition:} $\forall a, b \in \ker(f) \colon a + b \in \ker(f)$.
+    \item \textbf{Closure under Additive Inverses:} $\forall a \in \ker(f) \colon -a \in \ker(f)$.
+    \item \textbf{Multiplicative Absorption (Ideal Property):} $\forall a \in \ker(f), \forall r \in R_1 \colon r \cdot a \in \ker(f)$.
 \end{enumerate}
 \end{proposition}
 
@@ -1012,12 +1012,12 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is an abelian subgroup (\cref{def:pre-group}) of $(R, +, 0)$:
     \begin{itemize}
         \item $0 \in I$,
-        \item $\forall a, b \in I \implies a + b \in I$,
-        \item $\forall a \in I \implies -a \in I$.
+        \item $\forall a, b \in I \colon a + b \in I$,
+        \item $\forall a \in I \colon -a \in I$.
     \end{itemize}
     \item \textbf{Multiplicative Absorption (Ideal Condition):}
     \begin{equation}\label{eq:ideal-absorption}
-    \forall a \in I, \ \forall r \in R \implies r \cdot a \in I.
+    \forall a \in I, \ \forall r \in R \colon r \cdot a \in I.
     \end{equation}
 \end{enumerate}
 \end{definition}
