@@ -1,8 +1,8 @@
 # Open items from the final review
 
-The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, the Week 6 review (24 October 2026) item 5, and a review on 5 November 2026 item 6.
+The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, and a review on 5 November 2026 item 6. Item 5 is settled and removed; the numbers of the others are unchanged.
 
-Of these recordings, only the one for item 5 is on this computer now: `D:\lecture-videos\Algebra_I\10-20-2026-tuesday-week6-Algebra_I.mp4`. The file `10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4` in `D:\Download backup\Downloads\Algebra_I\` is the book's 10-15 Wednesday lecture, not the 10-14 Tuesday lecture of items 4 and 6.
+None of these recordings is on this computer now. The file `10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4` in `D:\Download backup\Downloads\Algebra_I\` is the book's 10-15 Wednesday lecture, not the 10-14 Tuesday lecture of items 4 and 6.
 
 When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all are done).
 
@@ -32,17 +32,10 @@ When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item fr
 ## 4. Week 5 Tuesday: two speech blocks overlap by 16 seconds
 
 - **Where:** [`content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex`, lines 1412 and 1420](content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex#L1420).
-- **Problem:** the block at line 1412 is `[01:04:41 - 01:05:40]`, but the next block (line 1420) starts at `01:05:24`. The text does not repeat across the boundary, so one of the two times is simply off.
+- **Problem:** the block at line 1412 is `[01:04:41 - 01:05:40]`, but the next block (line 1420) starts at `01:05:24`. The text does not repeat across the boundary, so one of the two times is simply off. `01:05:24` is exactly where pipeline Part 4 starts, so it is probably the suspect one.
 - **Check:** in the 14 October recording, find where "…Anyway, we can now ask: Is this a prime ideal?" ends and "And the answer is no." begins.
 - **Fix:** set the end of the first block and the start of the second to that time, with a `% [TIMESTAMP-CORRECTED: …]` comment.
 - **Not worth an item:** the same file has a 1-second overlap at line 1040 (`00:46:53` / `00:46:52`), which is rounding.
-
-## 5. Week 6 Tuesday: two split speech blocks with estimated times
-
-- **Where:** [`content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex`, lines 1994–2006 and 2081–2097](content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex#L1994).
-- **Problem:** the pipeline split two speech blocks around a student's answer (`01:23:12 - 01:25:34` around "Minimum.", and `01:27:19 - 01:28:56` around "$x \times y$.") and estimated the split times (`01:24:47`/`01:24:48` and `01:28:17`/`01:28:18`) without the audio. Each pair is marked `% [TIMESTAMP-SUSPECT: estimated without audio …]`.
-- **Check:** in the 20 October recording, find where the student says "Minimum." and "x times y".
-- **Fix:** set the block boundaries to those times and replace each marker with a `% [TIMESTAMP-CORRECTED: …]` comment.
 
 ## 6. Week 5 Tuesday: two more split speech blocks with estimated times
 
