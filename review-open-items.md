@@ -1,12 +1,14 @@
 # Open items from the final review
 
-The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, and the Week 6 review (24 October 2026) item 5.
+The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, the Week 6 review (24 October 2026) item 5, and a review on 5 November 2026 item 6.
+
+Of these recordings, only the one for item 5 is on this computer now: `D:\lecture-videos\Algebra_I\10-20-2026-tuesday-week6-Algebra_I.mp4`. The file `10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4` in `D:\Download backup\Downloads\Algebra_I\` is the book's 10-15 Wednesday lecture, not the 10-14 Tuesday lecture of items 4 and 6.
 
 When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all are done).
 
 ## 1. Week 2 Tuesday: "the origin of this $n$"
 
-- **Where:** [`content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex`, line 1345](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L1345), near the end of the speech block `[00:50:20 - 00:50:43]` (line 1342).
+- **Where:** [`content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex`, line 1330](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L1330), near the end of the speech block `[00:50:20 - 00:50:43]` (line 1327).
 - **Current text:** "Okay, but that's the origin of this $n$. So, we have to prove something."
 - **Suspected:** "the origin of this **name**". The lecturer has just explained where the word "ideal" comes from (ideal numbers, Hilbert's epitaph); an $n$ has nothing to refer to there.
 - **Check:** recording `2026-09-22-tuesday-week2-algebra-1.mp4`, 00:50:20–00:50:43.
@@ -14,7 +16,7 @@ When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item fr
 
 ## 2. Week 2 Tuesday: "there's a motion giving a vector space another one"
 
-- **Where:** [same file, line 2428](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L2428), in the speech block `[01:30:08 - 01:30:50]` (line 2423).
+- **Where:** [same file, line 2408](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L2408), in the speech block `[01:30:08 - 01:30:50]` (line 2403).
 - **Current text:** "I'm just saying there's a motion giving a vector space another one, and that's the double dual, and it's functorial in this sense."
 - **Suspected:** "there's a **notion** giving a vector space another one". "Motion" makes no sense here.
 - **Check:** same recording, 01:30:08–01:30:50.
@@ -29,15 +31,22 @@ When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item fr
 
 ## 4. Week 5 Tuesday: two speech blocks overlap by 16 seconds
 
-- **Where:** [`content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex`, lines 1409 and 1417](content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex#L1417).
-- **Problem:** the block at line 1409 is `[01:04:41 - 01:05:40]`, but the next block (line 1417) starts at `01:05:24`. The text does not repeat across the boundary, so one of the two times is simply off.
+- **Where:** [`content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex`, lines 1412 and 1420](content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex#L1420).
+- **Problem:** the block at line 1412 is `[01:04:41 - 01:05:40]`, but the next block (line 1420) starts at `01:05:24`. The text does not repeat across the boundary, so one of the two times is simply off.
 - **Check:** in the 14 October recording, find where "…Anyway, we can now ask: Is this a prime ideal?" ends and "And the answer is no." begins.
 - **Fix:** set the end of the first block and the start of the second to that time, with a `% [TIMESTAMP-CORRECTED: …]` comment.
-- **Not worth an item:** the same file has a 1-second overlap at line 1051 (`00:46:53` / `00:46:52`), which is rounding.
+- **Not worth an item:** the same file has a 1-second overlap at line 1040 (`00:46:53` / `00:46:52`), which is rounding.
 
 ## 5. Week 6 Tuesday: two split speech blocks with estimated times
 
-- **Where:** [`content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex`, lines 1986–1997 and 2077–2092](content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex#L1986).
+- **Where:** [`content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex`, lines 1994–2006 and 2081–2097](content/step4-2026-10-20-tuesday-week6-algebra-1-offset-final.tex#L1994).
 - **Problem:** the pipeline split two speech blocks around a student's answer (`01:23:12 - 01:25:34` around "Minimum.", and `01:27:19 - 01:28:56` around "$x \times y$.") and estimated the split times (`01:24:47`/`01:24:48` and `01:28:17`/`01:28:18`) without the audio. Each pair is marked `% [TIMESTAMP-SUSPECT: estimated without audio …]`.
 - **Check:** in the 20 October recording, find where the student says "Minimum." and "x times y".
+- **Fix:** set the block boundaries to those times and replace each marker with a `% [TIMESTAMP-CORRECTED: …]` comment.
+
+## 6. Week 5 Tuesday: two more split speech blocks with estimated times
+
+- **Where:** [`content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex`, lines 719–729 and 1241–1260](content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex#L719).
+- **Problem:** the pipeline split two speech blocks around student remarks and estimated the split times without the audio: `00:31:18 - 00:32:23` around "Transitivity." (`00:31:22`/`00:31:24`), and `00:57:40 - 00:58:06` around the student's two remarks (`00:57:45`/`00:57:47` and `00:57:48`/`00:57:50`). Each block is marked `% [TIMESTAMP-SUSPECT: estimated without audio …]`.
+- **Check:** in the 14 October recording, find where the student says "Transitivity.", "What if $R$ is a field?" and "Then the prime ideal...".
 - **Fix:** set the block boundaries to those times and replace each marker with a `% [TIMESTAMP-CORRECTED: …]` comment.
