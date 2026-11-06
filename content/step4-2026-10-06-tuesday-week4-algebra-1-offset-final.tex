@@ -222,7 +222,7 @@ using Pascal's identity $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ (\cref{
 \end{steps}
 \end{content}
 
-\subsection{The Binomial Formula for a Prime Exponent}
+\subsection{The Binomial Formula for a Prime Exponent (in textbooks: Frobenius Identity)}
 
 \begin{speech}[00:03:48 - 00:05:44]
 Okay, so, there's one comment here, which is kind of a fun comment. That holds in any ring, that binomial formula. But what happens if we take this ring $\faktor{\mathbb{Z}}{p\mathbb{Z}}$, \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{p\mathbb{Z}}$} on the bottom blackboard} where $p$ is a prime? \inlinemetanote{writes \qt{prime} under it, with an arrow from the $p$} So, for example, and then in this ring, you could take this ring $(\faktor{\mathbb{Z}}{p\mathbb{Z}})[x, y]$, and the fun thing to consider there is $(x+y)^p$. \inlinemetanote{writes: $(x+y)^p$}
@@ -250,7 +250,7 @@ Recall the algebraic formula:
 Thus, $p$ divides the product $a! (p-a)! \binom{p}{a}$. Since $1 \le a \le p-1$, every factor occurring in the factorials $a! = 1 \cdot 2 \dots a$ and $(p-a)! = 1 \cdot 2 \dots (p-a)$ is strictly less than $p$. Because $p$ is prime, Euclid's lemma (\cref{fact:pre-euclid}), applied factor by factor, shows that $p$ does not divide $a! (p-a)!$. By Euclid's lemma once more, $p$ must divide the remaining factor $\binom{p}{a}$.
 \end{proof}
 
-\begin{proposition}[The Binomial Formula Modulo $p$]\label[proposition]{prop:frobenius-identity}
+\begin{proposition}[The Binomial Formula Modulo $p$ (in textbooks: Frobenius Identity)]\label[proposition]{prop:frobenius-identity}
 Let $p$ be a prime. In the polynomial ring $(\faktor{\mathbb{Z}}{p\mathbb{Z}})[x, y]$, we have:
 \begin{equation}\label{eq:frobenius-freshmans-dream}
 (x + y)^p = x^p + y^p.
@@ -268,7 +268,7 @@ By \cref{lem:prime-divides-binomial}, $p \mid \binom{p}{a}$ for all $1 \le a \le
 
 \begin{aiNote}[Beyond the Lecture: Characteristic $p$ and the Frobenius Endomorphism]
 % [PERSISTENT, ADDITION]
-The proof of \cref{prop:frobenius-identity} only uses that $p \cdot 1 = 0$ in the coefficient ring. A non-zero commutative ring $R$ with $p \cdot 1_R = 0$ is said to have \newterm{characteristic} $p$ (the characteristic is the least $n \ge 1$ with $n \cdot 1_R = 0$); examples are $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ and the polynomial rings over it. In every such ring, $(a + b)^p = a^p + b^p$ for all $a, b \in R$, by the same proof. Together with $1^p = 1$ and $(ab)^p = a^p b^p$, this says that $a \mapsto a^p$ is a ring homomorphism $R \to R$, the \newterm{Frobenius endomorphism} of $R$.
+Textbooks call this statement the Frobenius identity, informally also the Freshman's Dream. The proof of \cref{prop:frobenius-identity} only uses that $p \cdot 1 = 0$ in the coefficient ring. A non-zero commutative ring $R$ with $p \cdot 1_R = 0$ is said to have \newterm{characteristic} $p$ (the characteristic is the least $n \ge 1$ with $n \cdot 1_R = 0$); examples are $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ and the polynomial rings over it. In every such ring, $(a + b)^p = a^p + b^p$ for all $a, b \in R$, by the same proof. Together with $1^p = 1$ and $(ab)^p = a^p b^p$, this says that $a \mapsto a^p$ is a ring homomorphism $R \to R$, the \newterm{Frobenius endomorphism} of $R$.
 \end{aiNote}
 
 \begin{hidden}
