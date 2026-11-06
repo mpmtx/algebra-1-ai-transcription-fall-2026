@@ -86,7 +86,6 @@ In an integral domain (\cref{def:integral-domain}, Week~2), a non-zero element t
     \pm 1, \quad \pm i, \quad \pm q, \quad \pm i q.
     \]
 \end{itemize}
-In Week~6 the two words are separated: what is defined here is an \emph{irreducible} element (\cref{def:irreducible}), while a \emph{prime} element is one whose principal ideal is a prime ideal (\cref{def:prime-element}). The two agree in unique factorization domains (\cref{exer:irred-prime-ufd}), which $\mathbb{Z}$ and $\mathbb{Z}[i]$ are (\cref{rem:week1-prime-means-irreducible}).
 \end{definition}
 
 \begin{steps}[Algebraic Intuition: The Concept of Associates]
@@ -107,7 +106,7 @@ The elements $\pm 1, \pm i$ are invertible in $\mathbb{Z}[i]$ since $(\pm 1)^2 =
 
 \begin{aiNote}[Beyond the Lecture: Prime vs.\ Irreducible Elements]
 % [PERSISTENT, ADDITION — Gemini 4 Argon]
-In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R$ whose only divisors are units and associates ($q = xy \implies x \in \mathcal{U}_R$ or $y \in \mathcal{U}_R$) is called \newterm{irreducible}, whereas $q$ is called \newterm{prime} if $q \mid xy \implies q \mid x$ or $q \mid y$. Every prime element is irreducible, but in an arbitrary integral domain the converse can fail. In unique factorization domains such as $\mathbb{Z}$ and $\mathbb{Z}[i]$ (studied later in the course), the two notions coincide, which is why the lecture uses \qt{prime} for both.
+In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R$ whose only divisors are units and associates ($q = xy \implies x \in \mathcal{U}_R$ or $y \in \mathcal{U}_R$) is called \newterm{irreducible}, whereas $q$ is called \newterm{prime} if $q \mid xy \implies q \mid x$ or $q \mid y$. Every prime element is irreducible, but in an arbitrary integral domain the converse can fail. In unique factorization domains such as $\mathbb{Z}$ and $\mathbb{Z}[i]$ (studied later in the course), the two notions coincide, which is why the lecture uses \qt{prime} for both. In Week~6 the two words are separated: what is defined here is an \emph{irreducible} element (\cref{def:irreducible}), while a \emph{prime} element is one whose principal ideal is a prime ideal (\cref{def:prime-element}); see \cref{exer:irred-prime-ufd} and \cref{rem:week1-prime-means-irreducible}.
 \end{aiNote}
 
 \subsection{When Does a Rational Prime Remain Prime in \texorpdfstring{$\mathbb{Z}[i]$}{Z[i]}?}
@@ -1052,7 +1051,7 @@ The proposition we've proven with this is:
 
 Proposition \inlinemetanote{writes: Prop:}: The kernel of a homomorphism $f \colon R_1 \to R_2$ \inlinemetanote{writes: The ker of a hom $f \colon R_1 \to R_2$} is an ideal \inlinemetanote{writes: is an ideal} in $R_1$ \inlinemetanote{writes: in $R_1$}.
 
-That's what we've proven on the board up there (\cref{prop:properties-of-kernel}): with the kernel, you always get an ideal. And rings can have... we will do some examples next time, I'm running out of time here, but for $\mathbb{Z}$, if I take inside here $n\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{Z} \supset n\mathbb{Z} = I$}, that's an ideal (it is the kernel of $\pi$, \cref{ex:kernel-of-projection}). Rings can have lots of ideals.
+That's what we've proven on the board up there (\cref{prop:properties-of-kernel}): with the kernel, you always get an ideal. And rings can have... we will do some examples next time, I'm running out of time here, but for $\mathbb{Z}$, if I take inside here $n\mathbb{Z}$ \inlinemetanote{writes: $\mathbb{Z} \supset n\mathbb{Z} = I$}, that's an ideal (Recall: \cref{ex:kernel-of-projection}). Rings can have lots of ideals.
 
 What about a field? I'll just say one more thing about this. Is that clear?
 
@@ -1222,7 +1221,7 @@ Okay, and I think that's it. All right, so... \inlinemetanote{puts down the chal
 \begin{overview}[Summary of Key Concepts]
 This lecture established core bridges connecting concrete arithmetic with axiomatic ring theory:
 \begin{itemize}
-    \item \textbf{Gaussian Integers $\mathbb{Z}[i]$ and Primes:} The ring $\mathbb{Z}[i] = \{a + bi \mid a, b \in \mathbb{Z}\}$ possesses four units $\{\pm 1, \pm i\}$. An ordinary prime $p \in \mathbb{Z}$ factors in $\mathbb{Z}[i]$ if and only if $p = a^2 + b^2$, which occurs precisely when $p = 2$ or $p \equiv 1 \pmod 4$ (Fermat's two-square theorem). Integer primes $p \equiv 3 \pmod 4$ remain prime in $\mathbb{Z}[i]$.
+    \item \textbf{Gaussian Integers $\mathbb{Z}[i]$ and Primes:} The ring $\mathbb{Z}[i] = \{a + bi \mid a, b \in \mathbb{Z}\}$ possesses four units $\{\pm 1, \pm i\}$. An ordinary prime $p \in \mathbb{Z}$ that factors in $\mathbb{Z}[i]$ is a sum of two squares $p = a^2 + b^2$, and what matters is $p$ modulo $4$ (Fermat's two-square theorem): primes $p \equiv 1 \pmod 4$ are sums of two squares, and primes $p \equiv 3 \pmod 4$ remain prime in $\mathbb{Z}[i]$.
     \item \textbf{Rings and Elementary Arithmetic:} A ring $(R, +, \cdot, 0, 1)$ consists of an additive abelian group $(R, +, 0)$ and an associative multiplication with unit $1$, linked by the distributive laws. Distributivity yields the universal identities $0 \cdot a = 0$ and $(-1) \cdot a = -a$. When $1 = 0$, the ring collapses to the degenerate zero ring $R = \{0\}$.
     \item \textbf{Canonical Map $\mathbb{Z} \to R$:} Defining integer multiples $n \cdot a$ yields the canonical ring homomorphism $\phi \colon \mathbb{Z} \to R$ with $\phi(n) = n \cdot 1_R$, which requires no choices.
     \item \textbf{Ring Homomorphisms:} A ring homomorphism preserves addition, multiplication, and the multiplicative identity ($f(1) = 1$). While $f(0) = 0$ is automatic via additive group cancellation, $f(1) = 1$ must be explicitly axiomatized because elements in arbitrary rings generally lack multiplicative inverses.

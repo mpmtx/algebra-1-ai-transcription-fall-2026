@@ -102,7 +102,7 @@
 This lecture explores the foundational algebraic structures of modern mathematics---groups, rings, and fields---and the structure-preserving mappings between them, concluding with an introduction to category theory:
 \begin{itemize}
     \item \textbf{Groups, Rings, and Fields:} Review of the defining axioms; intrinsic uniqueness of group identities and inverses; the axiomatic hierarchy connecting rings and fields to additive abelian groups.
-    \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms and isomorphisms; characterization via two-sided inverse homomorphisms; classification of additive and multiplicative groups of real numbers via the exponential map.
+    \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms and isomorphisms; characterization via two-sided inverse homomorphisms; comparison of the additive and multiplicative groups of real numbers via the exponential map.
     \item \textbf{Kernels, Images, and Substructures:} Structural properties of kernels and images; formal definition of subgroups ($H \le G$); ring homomorphisms and subrings ($S \subseteq R$).
     \item \textbf{Ideals and Symmetry Breaking:} The breakdown of structural symmetry in rings, where kernels are ideals ($I \subset R$) and images are subrings; classification of ideals in $\mathbb{Z}$ ($I = n\mathbb{Z}$) via the division algorithm; ideals in rings of smooth functions $C^\infty(\mathbb{R})$.
     \item \textbf{Foundations of Category Theory:} Formal definition of categories (objects, morphisms, composition, unit laws); standard categories ($\mathbf{Grp}$, $\mathbf{Ring}$, $\mathbf{Vect}_{\mathbb{C}}$); categorical formulation of isomorphisms; covariant functors, including the functor from rings to groups and the double dual functor on vector spaces.
@@ -380,7 +380,11 @@ where $1_G = \operatorname{Id}_G$ denotes the identity map of $G$. (For maps of 
 \begin{proof}
 \textbf{Direction ($\Leftarrow$):} If homomorphisms $f$ and $g$ satisfy \eqref{eq:isom-inverses}, then $g$ serves as a set-theoretic two-sided inverse of $f$. Hence, $f$ is a bijection, and since it is given as a homomorphism, it is an isomorphism.
 
-\textbf{Direction ($\Rightarrow$):} Suppose $f$ is a bijective group homomorphism. As a bijection, there exists a unique set-theoretic inverse map $g = f^{-1} \colon \hat{G} \to G$ satisfying \eqref{eq:isom-inverses}. It remains to show that $g$ is a homomorphism. Let $\hat{a}, \hat{b} \in \hat{G}$, and let $a = g(\hat{a})$, $b = g(\hat{b}) \in G$. Then $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $f$ is a homomorphism:
+\textbf{Direction ($\Rightarrow$):} Suppose $f$ is a bijective group homomorphism. As a bijection, there exists a unique set-theoretic inverse map $g = f^{-1} \colon \hat{G} \to G$ satisfying \eqref{eq:isom-inverses}. That $g$ is a homomorphism is left to the students.
+\end{proof}
+
+\begin{steps}[Why the Inverse Is a Homomorphism]
+Going beyond the lecture, which leaves this to the students: let $\hat{a}, \hat{b} \in \hat{G}$, and let $a = g(\hat{a})$, $b = g(\hat{b}) \in G$. Then $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $f$ is a homomorphism:
 \[
 f(ab) = f(a)f(b) = \hat{a}\hat{b}.
 \]
@@ -389,7 +393,7 @@ Applying $g = f^{-1}$ to both sides:
 g(\hat{a}\hat{b}) = ab = g(\hat{a})g(\hat{b}).
 \]
 Thus, $g$ is a group homomorphism.
-\end{proof}
+\end{steps}
 \end{content}
 
 \begin{hidden}
@@ -774,8 +778,8 @@ is a subgroup of the codomain:
 \]
 \end{proposition}
 
-\begin{proof}[Proof of \cref{prop:image-is-subgroup}]
-We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
+\begin{steps}[Why the Image Is a Subgroup]
+Going beyond the lecture, which leaves this to the students: we verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} By \cref{prop:hom-preserves-identity}, $f(e) = \hat{e}$. Since $e \in G$, $\hat{e} \in \operatorname{Im}(f)$.
     \item \textbf{Closure under Multiplication:} Let $\hat{a}, \hat{b} \in \operatorname{Im}(f)$. Then there exist $a, b \in G$ such that $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $G$ is a group, $ab \in G$, and by the homomorphism property:
@@ -789,7 +793,7 @@ We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$
     By uniqueness of inverses in $\hat{G}$, $(\hat{x})^{-1} = f(x^{-1}) \in \operatorname{Im}(f)$.
 \end{enumerate}
 Thus, $\operatorname{Im}(f) \le \hat{G}$.
-\end{proof}
+\end{steps}
 \end{content}
 
 \begin{hidden}
@@ -988,8 +992,8 @@ Formally, you just have to take this, start checking everything, and use the def
 \end{speech}
 
 \begin{content}[Verification of the Subring Axioms for the Image]
-\begin{proof}[Proof of \cref{prop:image-ring-hom-subring}]
-We systematically verify conditions (i)--(iii) of \cref{def:subring} for $\operatorname{Im}(f) \subset \hat{R}$:
+\begin{steps}[Why the Image Is a Subring]
+Going beyond the lecture, which checks $\hat{0}$ and $\hat{1}$ and leaves the rest to the students: we verify conditions (i)--(iii) of \cref{def:subring} for $\operatorname{Im}(f) \subset \hat{R}$:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Neutral Elements:}
     \begin{itemize}
@@ -1004,7 +1008,7 @@ We systematically verify conditions (i)--(iii) of \cref{def:subring} for $\opera
     \item \textbf{Additive Inverses:} For $\hat{x} = f(x) \in \operatorname{Im}(f)$, we have $-\hat{x} = -f(x) = f(-x) \in \operatorname{Im}(f)$; here $f(-x) = -f(x)$ because group homomorphisms preserve inverses (shown in the proof of \cref{prop:image-is-subgroup}). Associativity, commutativity and distributivity hold identically as they are inherited from $\hat{R}$.
 \end{enumerate}
 Therefore, $\operatorname{Im}(f)$ is a subring of $\hat{R}$.
-\end{proof}
+\end{steps}
 \end{content}
 
 \begin{insight}[Broken Symmetry: Subrings vs. Ideals]
@@ -1536,11 +1540,7 @@ If $F$ is a field, its only ideals are $(0)$ and $F$.
 \end{proposition}
 
 \begin{proof}
-If $F$ is a field and $I \subseteq F$ is an ideal containing a non-zero element $x \in I \setminus \{0\}$, then $x$ possesses a multiplicative inverse $x^{-1} \in F$. By the ideal absorption property:
-\[
-1 = x^{-1} \cdot x \in I.
-\]
-Once $1 \in I$, for any $r \in F$ we have $r = r \cdot 1 \in I$, so $I = F$.
+The lecturer recalls this from the previous lecture, where the argument is given (\cref{thm:ideals-in-a-field}).
 \end{proof}
 \end{content}
 
@@ -1632,7 +1632,7 @@ The \newterm{support} of a function $f \colon \mathbb{R} \to \mathbb{R}$ is the 
 \]
 The set of smooth functions with compact support is denoted:
 \[
-C_c^\infty(\mathbb{R}) := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact in } \mathbb{R} \}.
+I := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact in } \mathbb{R} \}.
 \]
 By Heine--Borel, $\operatorname{supp}(f)$ is compact if and only if it is bounded (\cref{fact:pre-compact}).
 \end{definition}
@@ -1671,31 +1671,36 @@ By Heine--Borel, $\operatorname{supp}(f)$ is compact if and only if it is bounde
         .. controls (1.2, 0.3) and (1.3, 0) .. (1.5, 0) -- (2.6, 0);
 
     % Labels
-    \node[MidnightBlue, font=\bfseries] at (-0.2, 1.4) {$f \in C_c^\infty(\mathbb{R})$};
+    \node[MidnightBlue, font=\bfseries] at (-0.2, 1.4) {$f \in I$};
     \node[font=\footnotesize, gray!80] at (-2.1, 0.3) {$f(x) = 0$};
     \node[font=\footnotesize, gray!80] at (2.1, 0.3) {$f(x) = 0$};
 \end{tikzpicture}
 \end{center}
 
-\begin{proposition}[$C_c^\infty(\mathbb{R})$ is an Ideal, but not a Subring]\label[proposition]{prop:compact-support-ideal}
-The set of compactly supported smooth functions $I := C_c^\infty(\mathbb{R}) \subset C^\infty(\mathbb{R})$ is an ideal of $C^\infty(\mathbb{R})$, but is not a subring.
+\begin{proposition}[$I$ is an Ideal, but not a Subring]\label[proposition]{prop:compact-support-ideal}
+The set $I \subset C^\infty(\mathbb{R})$ of compactly supported smooth functions is an ideal of $C^\infty(\mathbb{R})$, but is not a subring.
 \end{proposition}
 
 \begin{proof}
 We check the ideal properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Additive Subgroup:} The zero function has $\operatorname{supp}(0) = \emptyset$, which is compact, so $0 \in C_c^\infty(\mathbb{R})$. For $f, g \in C_c^\infty(\mathbb{R})$, $\operatorname{supp}(f + g) \subseteq \operatorname{supp}(f) \cup \operatorname{supp}(g)$. The union of two compact sets is compact, so $f + g \in C_c^\infty(\mathbb{R})$ and $-f \in C_c^\infty(\mathbb{R})$.
-    \item \textbf{Multiplicative Absorption:} Let $g \in C^\infty(\mathbb{R})$ be an \emph{arbitrary} smooth function, and let $f \in C_c^\infty(\mathbb{R})$. Since $(g \cdot f)(x) = 0$ whenever $f(x) = 0$, we have:
+    \item \textbf{Additive Subgroup:} The zero function has $\operatorname{supp}(0) = \emptyset$, which is compact, so $0 \in I$. For $f, g \in I$, $\operatorname{supp}(f + g) \subseteq \operatorname{supp}(f) \cup \operatorname{supp}(g)$. The union of two compact sets is compact, so $f + g \in I$ and $-f \in I$.
+    \item \textbf{Multiplicative Absorption:} Let $g \in C^\infty(\mathbb{R})$ be an \emph{arbitrary} smooth function, and let $f \in I$. Since $(g \cdot f)(x) = 0$ whenever $f(x) = 0$, we have:
     \[
     \operatorname{supp}(g \cdot f) \subseteq \operatorname{supp}(f).
     \]
-    As a closed subset of the compact set $\operatorname{supp}(f)$, $\operatorname{supp}(g \cdot f)$ is compact. Thus, $g \cdot f \in C_c^\infty(\mathbb{R})$.
+    As a closed subset of the compact set $\operatorname{supp}(f)$, $\operatorname{supp}(g \cdot f)$ is compact. Thus, $g \cdot f \in I$.
 \end{enumerate}
-However, the multiplicative identity $1(x) \equiv 1$ has support $\operatorname{supp}(1) = \mathbb{R}$, which is not compact. Hence $1 \notin C_c^\infty(\mathbb{R})$, so $C_c^\infty(\mathbb{R})$ is not a subring.
+However, the multiplicative identity $1(x) \equiv 1$ has support $\operatorname{supp}(1) = \mathbb{R}$, which is not compact. Hence $1 \notin I$, so $I$ is not a subring.
 \end{proof}
 
 The lecturer returns to this ideal in Week~5 and shows that it is not a prime ideal (\cref{ex:compact-support-not-prime-p4}).
 \end{content}
+
+\begin{aiNote}[Notation: Compactly Supported Functions]
+% [PERSISTENT]
+Many textbooks write $C_c^\infty(\mathbb{R})$ for this ideal. The lecturer calls it $I$.
+\end{aiNote}
 
 \subsection{A Strictly Larger Ideal: Functions Vanishing on a Right Half-Line}
 
@@ -1748,7 +1753,7 @@ Let $J$ be the set of smooth functions that vanish identically on some right ray
 \begin{equation}\label{eq:j-ideal-def}
 J := \{ f \in C^\infty(\mathbb{R}) \mid \exists M \in \mathbb{R} \text{ such that } f(x) = 0 \text{ for all } x \ge M \}.
 \end{equation}
-Then $J$ is an ideal of $C^\infty(\mathbb{R})$, and with $I = C_c^\infty(\mathbb{R})$:
+Then $J$ is an ideal of $C^\infty(\mathbb{R})$, and with the ideal $I$ of \cref{def:compact-support-ideal}:
 \[
 I \subsetneq J \neq C^\infty(\mathbb{R}).
 \]
@@ -1757,7 +1762,7 @@ I \subsetneq J \neq C^\infty(\mathbb{R}).
 \begin{proof}
 \begin{itemize}
     \item \textbf{$J$ is an ideal:} If $f(x) = 0$ for $x \ge M_1$ and $g(x) = 0$ for $x \ge M_2$, then $(f+g)(x) = 0$ for $x \ge \max(M_1, M_2)$; also $0 \in J$ and $-f = (-1) \cdot f \in J$. Furthermore, for any $h \in C^\infty(\mathbb{R})$, $(h \cdot f)(x) = h(x) \cdot 0 = 0$ for all $x \ge M_1$.
-    \item \textbf{Proper inclusions:} If $f \in C_c^\infty(\mathbb{R})$, its support is bounded, so it vanishes for large positive $x$, whence $C_c^\infty(\mathbb{R}) \subseteq J$. A smooth function that is zero for $x \ge 0$ but non-zero on all of $(-\infty, 0)$, such as $x \mapsto e^{1/x}$ for $x < 0$ and $0$ for $x \ge 0$ (\cref{fact:pre-flat-function}), belongs to $J$ but not to $C_c^\infty(\mathbb{R})$, so $C_c^\infty(\mathbb{R}) \subsetneq J$. Finally, the constant function $1 \notin J$, so $J \subsetneq C^\infty(\mathbb{R})$.
+    \item \textbf{Proper inclusions:} If $f \in I$, its support is bounded, so it vanishes for large positive $x$, whence $I \subseteq J$. A smooth function that is zero for $x \ge 0$ but non-zero on all of $(-\infty, 0)$, such as $x \mapsto e^{1/x}$ for $x < 0$ and $0$ for $x \ge 0$ (\cref{fact:pre-flat-function}), belongs to $J$ but not to $I$, so $I \subsetneq J$. Finally, the constant function $1 \notin J$, so $J \subsetneq C^\infty(\mathbb{R})$.
 \end{itemize}
 \end{proof}
 \end{content}
@@ -1859,6 +1864,11 @@ In modern mathematical literature:
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Notation: Categories]
+% [PERSISTENT]
+The lecturer writes $\operatorname{Cat}$ for any category and $\widehat{\operatorname{Cat}}$ for a second one, and these notes follow him. Textbooks write $\mathcal{C}$ and $\mathcal{D}$, and they keep $\mathbf{Cat}$ for one particular category, that of all small categories.
+\end{aiNote}
+
 \subsection{The Category of Groups}
 
 \begin{speech}[01:07:57 - 01:09:08]
@@ -1906,7 +1916,7 @@ Those are all examples of categories.
 \begin{example}[The Category of Rings \texorpdfstring{$\mathbf{Ring}$}{Ring}]\label[example]{ex:cat-rings}
 In the category of rings, standardly denoted $\mathbf{Ring}$:
 \begin{itemize}
-    \item \textbf{Objects:} Rings with identity $(R, +, \cdot, 0, 1)$.
+    \item \textbf{Objects:} Rings $(R, +, \cdot, 0, 1)$, as defined in this class.
     \item \textbf{Morphisms:} Ring homomorphisms $f \colon R \to \hat{R}$ (satisfying additivity, multiplicativity, and $f(1) = \hat{1}$).
 \end{itemize}
 \end{example}
@@ -2270,7 +2280,7 @@ That's the notion of a functor.
 Let $\operatorname{Cat}$ and $\widehat{\operatorname{Cat}}$ be categories. A \newterm{functor} (or \newterm{covariant functor}) $F \colon \operatorname{Cat} \to \widehat{\operatorname{Cat}}$ consists of the following data:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Object Assignment:} To every object $A \in \operatorname{Obj}(\operatorname{Cat})$, an object $F(A) \in \operatorname{Obj}(\widehat{\operatorname{Cat}})$.
-    \item \textbf{Morphism Assignment:} To every morphism $f \in \operatorname{Hom}(A, B)$, a morphism:
+    \item \textbf{Morphism Assignment:} To every morphism $f \in \operatorname{Hom}(A, B)$ of $\operatorname{Cat}$, a morphism of $\widehat{\operatorname{Cat}}$:
     \[
     F(f) \in \operatorname{Hom}\bigl(F(A), F(B)\bigr),
     \]
@@ -2477,7 +2487,7 @@ This lecture established the following central algebraic and categorical foundat
     \item \textbf{Uniqueness of Identity and Inverses:} In any group $(G, \cdot, e)$, associativity inherently guarantees that both the identity element and inverse elements are strictly unique.
     \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms preserve products and automatically map identities to identities ($f(e) = \hat{e}$). Two groups are isomorphic if and only if there exists a two-sided inverse homomorphism. Notably, the exponential function establishes an isomorphism between the additive reals $(\mathbb{R}, +, 0)$ and the strictly positive multiplicative reals $(\mathbb{R}^*_{>0}, \cdot, 1)$.
     \item \textbf{Subgroups and Symmetry Breaking in Rings:} For group homomorphisms, both the kernel $\operatorname{ker}(f) \le G$ and image $\operatorname{Im}(f) \le \hat{G}$ are subgroups. In ring theory, this symmetry breaks: the image $\operatorname{Im}(f) \subset \hat{R}$ is a subring, whereas the kernel $\operatorname{ker}(f) \subset R$ is an ideal absorbing ring multiplication.
-    \item \textbf{Ideals of $\mathbb{Z}$ and $C^\infty(\mathbb{R})$:} Every ideal of $\mathbb{Z}$ is principal ($I = n\mathbb{Z}$ with $n \ge 0$), proven via the least positive element of an ideal and the division algorithm. In the ring of smooth functions $C^\infty(\mathbb{R})$, compactly supported functions $C_c^\infty(\mathbb{R})$ form an ideal that is strictly contained within larger proper ideals, such as functions vanishing on a right half-line $[M, \infty)$.
-    \item \textbf{Categories and Functors:} A category $\operatorname{Cat}$ formalizes collections of objects and morphism sets with composition, identity morphisms and unit laws. Isomorphisms are characterized purely arrow-theoretically by two-sided inverses. Functors formalize structure-preserving maps between categories, exemplified by the functor $\mathbf{Ring} \to \mathbf{Grp}$ and the covariant double dual endofunctor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
+    \item \textbf{Ideals of $\mathbb{Z}$ and $C^\infty(\mathbb{R})$:} Every ideal of $\mathbb{Z}$ is principal ($I = n\mathbb{Z}$ with $n \ge 0$), proven via the least positive element of an ideal and the division algorithm. In the ring of smooth functions $C^\infty(\mathbb{R})$, the compactly supported functions form an ideal $I$ that is strictly contained within larger proper ideals, such as functions vanishing on a right half-line $[M, \infty)$.
+    \item \textbf{Categories and Functors:} A category $\operatorname{Cat}$ formalizes collections of objects and morphism sets with composition, identity morphisms and unit laws. Isomorphisms are characterized purely arrow-theoretically by two-sided inverses. Functors formalize structure-preserving maps between categories, exemplified by the functor $\mathbf{Ring} \to \mathbf{Grp}$ and the covariant double dual functor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
 \end{itemize}
 \end{overview}

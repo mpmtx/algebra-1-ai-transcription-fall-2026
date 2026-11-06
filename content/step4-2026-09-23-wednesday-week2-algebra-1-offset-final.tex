@@ -922,7 +922,6 @@ Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \fakt
 \begin{equation}\label{eq:units-z-mod-m}
 \mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = \left\{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \;\big|\; \operatorname{GCD}(x, m) = 1 \right\}.
 \end{equation}
-The order of this group is given by Euler's totient function $\phi(m) \stackrel{\text{def}}{=} |\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
 \end{theorem}
 
 \begin{proof}
@@ -990,9 +989,14 @@ Consequently, the group of units is:
 \begin{equation}\label{eq:units-z7z-set}
 \operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
 \end{equation}
-The order of the unit group is $|\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})| = \phi(7) = 7 - 1 = 6$.
+The order of the unit group is $|\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})| = 6$.
 \end{example}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Euler's Totient Function]
+% [PERSISTENT, ADDITION]
+The order of $\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}$ is Euler's totient function $\phi(m)$, which the lecturer names in Week~3 (\cref{def:eulers-totient}). For example, $\phi(7) = 7 - 1 = 6$.
+\end{aiNote}
 
 \begin{speech}[00:36:50 - 00:37:28]
 Okay, and the claim is this is a group under multiplication. Well, anyway, $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ is a group under addition; but if you take the relatively prime ones, this is a group under multiplication.
@@ -1096,7 +1100,7 @@ This is the units with multiplication and $1$. This group is isomorphic to that 
 \end{speech}
 
 \begin{insight}[Paul Erd\H{o}s on the Beauty of Numbers]
-The lecturer references the celebrated quote by the Hungarian mathematician Paul Erd\H{o}s (1913--1996): \qt{If numbers are not beautiful, I don't know what is.} The unexpected isomorphism between the unit group $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ of the field $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ and the simple additive clock arithmetic of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is a classic embodiment of this aesthetic: multiplication modulo $7$ transforms into addition modulo $6$ via the powers of a single primitive root.
+The lecturer references the celebrated quote by the Hungarian mathematician Paul Erd\H{o}s (1913--1996): \qt{If numbers are not beautiful, I don't know what is.} The unexpected isomorphism between the unit group $\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})$ and the simple additive clock arithmetic of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is a classic embodiment of this aesthetic: multiplication modulo $7$ transforms into addition modulo $6$ via the powers of $\bar{3}$.
 \end{insight}
 
 \begin{speech}[00:41:19 - 00:42:48]
@@ -1202,7 +1206,7 @@ Going beyond the lecture: the isomorphism $\Phi$ is the \emph{discrete logarithm
     \begin{itemize}
         \item \textbf{Isomorphism:} A morphism $f \colon A \to B$ admitting a two-sided inverse $g \colon B \to A$ satisfying $f \circ g = \operatorname{Id}_B$ and $g \circ f = \operatorname{Id}_A$.
         \item \textbf{Monomorphism:} A morphism with ($f \circ g_1 = f \circ g_2 \implies g_1 = g_2$), corresponding to injectivity in standard concrete categories.
-        \item \textbf{Epimorphism:} A morphism with ($g_1 \circ f = g_2 \circ f \implies g_1 = g_2$), corresponding to surjectivity in $\mathbf{Set}$, $\mathbf{Grp}$ and $\mathbf{Vect}_K$, but not in $\mathbf{Ring}$ (the inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is an epimorphism).
+        \item \textbf{Epimorphism:} A morphism with ($g_1 \circ f = g_2 \circ f \implies g_1 = g_2$), corresponding to surjectivity in $\mathbf{Set}$, $\mathbf{Grp}$ and $\mathbf{Vect}_K$.
     \end{itemize}
     \item \textbf{Integral Domains:} An integral domain is a commutative ring with $R \neq \{0\}$ in which $ab = 0$ implies $a = 0$ or $b = 0$. In modular arithmetic, the residue class ring $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ ($m \in \mathbb{Z}_{>0}$) is an integral domain if and only if $m$ is prime.
     \item \textbf{Divisibility and Units:} An element $u \in R$ is a unit if $u \mid 1$ (i.e., $\exists w \in R$ such that $uw = 1$). The units of any commutative ring $R$ form an abelian group $(\mathcal{U}_R, \cdot, 1)$ under ring multiplication.

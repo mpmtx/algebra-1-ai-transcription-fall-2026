@@ -187,7 +187,7 @@ Okay? So, that's a complete proof --- that's as complete a proof as you get in t
 \begin{example}[Units of the Integers]\label[example]{ex:units-integers-w3}
 For the ring of integers $\mathbb{Z}$:
 \[
-\operatorname{Unit}(\mathbb{Z}) = \mathbb{Z}^* = \{1, -1\}.
+\operatorname{Unit}(\mathbb{Z}) = \{1, -1\}.
 \]
 \end{example}
 
@@ -522,7 +522,7 @@ that is, $g|_{\mathbb{Z}} = f$, meaning $g(x) = f(x)$ for all $x \in \mathbb{Z}$
 Injectivity is automatic, because every ring homomorphism from a field to a non-zero ring is injective (see \cref{thm:ideals-in-a-field} and the steps after it, Week~1).
 
 \begin{steps}[Universal Property as Categorical Minimality]
-Going beyond the lecture: in category theory, this universal mapping property identifies $\mathbb{Q}$ as the initial object among all field extensions receiving $\mathbb{Z}$. Any field $F$ containing a copy of $\mathbb{Z}$ must necessarily contain a subfield isomorphic to $\mathbb{Q}$, showing that $\mathbb{Q}$ cannot be compressed or embedded into any strictly smaller field.
+Going beyond the lecture: in category theory, this universal mapping property identifies $\mathbb{Q}$ as the initial object among the fields containing a copy of $\mathbb{Z}$, that is, the fields of characteristic $0$. Any field $F$ containing a copy of $\mathbb{Z}$ must necessarily contain a subfield isomorphic to $\mathbb{Q}$, showing that $\mathbb{Q}$ cannot be compressed or embedded into any strictly smaller field.
 \end{steps}
 \end{content}
 
@@ -705,8 +705,8 @@ g(1_\mathbb{Q}) &= 1_F. \label{eq:g-unit}
 \end{align}
 \end{claim}
 
-\begin{proof}
-Let $q_1 = \frac{x_1}{y_1}$ and $q_2 = \frac{x_2}{y_2}$ with $x_i, y_i \in \mathbb{Z}$ and $y_i \ne 0$.
+\begin{steps}[Why $g$ Is a Field Homomorphism]
+Going beyond the lecture, which leaves this to the students: let $q_1 = \frac{x_1}{y_1}$ and $q_2 = \frac{x_2}{y_2}$ with $x_i, y_i \in \mathbb{Z}$ and $y_i \ne 0$.
 
 \paragraph{1. Verification of Additivity \eqref{eq:g-add}:}
 Adding fractions according to standard rational arithmetic:
@@ -755,7 +755,7 @@ Since $f \colon \mathbb{Z} \to F$ is a unital ring homomorphism, $f(1_\mathbb{Z}
 g(1_\mathbb{Q}) = \frac{1_F}{1_F} = 1_F,
 \]
 establishing \eqref{eq:g-unit}. Thus $g$ is a field homomorphism.
-\end{proof}
+\end{steps}
 \end{content}
 
 \section{The Field of Fractions of an Integral Domain}
@@ -1236,8 +1236,8 @@ For any two equivalence classes $[(x_1, y_1)]$, $[(x_2, y_2)] \in F$, addition i
 Addition on $F$ as given in \eqref{eq:addition-F-formula} is well-defined.
 \end{proposition}
 
-\begin{proof}
-We verify two essential requirements:
+\begin{steps}[Why Addition Is Well-Defined]
+Going beyond the lecture, which checks the denominator and leaves the independence of the representatives to the students: we verify two essential requirements:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Legitimacy of the Denominator:} For $(x_1 y_2 + x_2 y_1, y_1 y_2)$ to lie in $S$, we must have $y_1 y_2 \ne 0$. Since $(x_1, y_1), (x_2, y_2) \in S$, we know $y_1 \ne 0$ and $y_2 \ne 0$. Because $R$ is an \textbf{integral domain}, the product of two non-zero elements is non-zero:
     \[
@@ -1261,7 +1261,7 @@ We verify two essential requirements:
     \end{align*}
     This establishes equivalence, confirming that addition is independent of the choice of representative.
 \end{enumerate}
-\end{proof}
+\end{steps}
 \end{content}
 
 \subsection{Definition and Well-Definedness of Multiplication on \texorpdfstring{$F$}{F}}
@@ -1357,7 +1357,7 @@ Injectivity was already established in \cref{prop:inclusion-injective}.
 \end{proof}
 
 \begin{steps}[Multiplicative Inverses in $F$]
-To confirm that $F$ is indeed a field, let $[(x, y)] \in F$ with $[(x, y)] \ne 0_F = [(0, 1)]$. Then $(x, y) \not\equiv (0, 1) \implies x \cdot 1 \ne 0 \cdot y \implies x \ne 0$. Thus, $(y, x) \in S$, and:
+Going beyond the lecture: to confirm that $F$ is indeed a field, let $[(x, y)] \in F$ with $[(x, y)] \ne 0_F = [(0, 1)]$. Then $(x, y) \not\equiv (0, 1) \implies x \cdot 1 \ne 0 \cdot y \implies x \ne 0$. Thus, $(y, x) \in S$, and:
 \[
 [(x, y)] \cdot [(y, x)] = [(xy, yx)] = [(1, 1)] = 1_F.
 \]
@@ -1614,8 +1614,8 @@ Let $R$ be a field. Then the canonical inclusion $i \colon R \hookrightarrow \op
 \end{equation}
 \end{proposition}
 
-\begin{proof}
-By \cref{prop:i-is-homomorphism}, $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(R)$ with $x, y \in R$ and $y \ne 0$.
+\begin{steps}[Why $i$ Is an Isomorphism]
+Going beyond the lecture, which leaves this to the students: by \cref{prop:i-is-homomorphism}, $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(R)$ with $x, y \in R$ and $y \ne 0$.
 Since $R$ is a field, $y$ has a multiplicative inverse $y^{-1} \in R$. Then:
 \[
 (x, y) \equiv (x y^{-1}, 1) \iff x \cdot 1 = (x y^{-1}) \cdot y = x.
@@ -1625,7 +1625,7 @@ Consequently:
 [(x, y)] = [(x y^{-1}, 1)] = i(x y^{-1}).
 \]
 Every element of $\operatorname{Frac}(R)$ is the image of the element $x y^{-1} \in R$. Hence, $i$ is surjective and constitutes a field isomorphism.
-\end{proof}
+\end{steps}
 \end{content}
 
 \section{Polynomial Rings}
@@ -1957,8 +1957,8 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \operatorname{GCD}(x, m) = 1\}$.
-    \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\operatorname{Unit}(\mathbb{Z}) = \{\pm 1\}$, $\operatorname{Unit}(\mathbb{Z}[i]) = \{\pm 1, \pm i\}$ (characterized via $a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \operatorname{GCD}(x, m) = 1\}$.
+    \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^2) = p^2 - p$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
     \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(R) \cong R$ for any existing field $R$.

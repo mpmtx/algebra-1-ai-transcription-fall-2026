@@ -401,7 +401,7 @@ The same argument works for polynomials of arbitrary degree: writing $f = \sum_{
 \]
 \end{content}
 
-\begin{content}[Verification of Multiplicativity and Uniqueness]
+\begin{content}[Verification of Multiplicativity]
 \textbf{4. Verification of Multiplicativity ($\hat{\phi}(fg) = \hat{\phi}(f) \cdot \hat{\phi}(g)$):}
 Let $f(x) = \sum_{i=0}^n a_i x^i$ and $g(x) = \sum_{j=0}^m b_j x^j$. Using the Cauchy product in $R[x]$:
 \begin{align}
@@ -413,12 +413,13 @@ Let $f(x) = \sum_{i=0}^n a_i x^i$ and $g(x) = \sum_{j=0}^m b_j x^j$. Using the C
 \end{align}
 Furthermore, $\hat{\phi}(1) = \phi(1) = 1_S$. Thus, $\hat{\phi}$ is a ring homomorphism.
 
-\textbf{5. Uniqueness:}
-Any ring homomorphism $\psi \colon R[x] \to S$ satisfying conditions \textbf{(1)} and \textbf{(2)} of \cref{thm:universal-property-polynomial-ring} must preserve sums and products:
+\begin{steps}[Uniqueness]
+Going beyond the lecture, which states uniqueness on the board without proving it: any ring homomorphism $\psi \colon R[x] \to S$ satisfying conditions \textbf{(1)} and \textbf{(2)} of \cref{thm:universal-property-polynomial-ring} must preserve sums and products:
 \[
 \psi\left( \sum_{i=0}^n a_i x^i \right) = \sum_{i=0}^n \psi(a_i) \psi(x)^i = \sum_{i=0}^n \phi(a_i) y^i = \hat{\phi}\left( \sum_{i=0}^n a_i x^i \right).
 \]
 Hence $\psi = \hat{\phi}$, proving uniqueness.
+\end{steps}
 \end{content}
 
 \end{proofWrapper}
@@ -1073,7 +1074,7 @@ At timestamp 00:36:51, the lecturer mentions a second proof of \cref{thm:units-p
 \begin{itemize}
     \item \textbf{Field of Fractions:} For an integral domain $R$, $\operatorname{Frac}(R)$ is formally the set of equivalence classes of pairs $(r, s) \in R \times (R \setminus \{0\})$ with $(r, s) \equiv (t, w) \stackrel{\text{def}}{\iff} rw = st$. In practice one computes with fractions $\frac{r}{s}$ by the usual rules; the integral domain property guarantees that the denominators $sw$ stay non-zero, and every $\frac{r}{s} \neq 0$ has the inverse $\frac{s}{r}$.
     \item \textbf{Polynomial Rings:} $R[x]$ exists for every commutative ring $R$ with unit. Its universal property: for every ring homomorphism $\phi \colon R \to S$ and every $y \in S$, there is a unique ring homomorphism $\hat{\phi} \colon R[x] \to S$ with $\hat{\phi}|_R = \phi$ and $\hat{\phi}(x) = y$, namely $\hat{\phi}\bigl(\sum a_i x^i\bigr) = \sum \phi(a_i) y^i$.
-    \item \textbf{Units of $R[x]$:} If $R$ is an integral domain, then $\operatorname{Unit}(R[x]) = \operatorname{Unit}(R)$, because the leading coefficient of a product is the product of the leading coefficients. Without this assumption there can be more units, e.g., $1 + 2x$ in $(\mathbb{Z}/4\mathbb{Z})[x]$.
+    \item \textbf{Units of $R[x]$:} If $R$ is an integral domain, then $\operatorname{Unit}(R[x]) = \operatorname{Unit}(R)$, because the leading coefficient of a product is the product of the leading coefficients. Whether there can be more units without this assumption is left to the students.
     \item \textbf{Formal Power Series:} $R[[x]]$ consists of all sequences $(a_0, a_1, a_2, \dots)$ of elements of $R$, written $\sum_{i \ge 0} a_i x^i$, with componentwise addition and the Cauchy product $c_k = \sum_{i=0}^k a_{k-i} b_i$; every coefficient of a product is a finite sum.
     \item \textbf{Units of $R[[x]]$:} For every commutative ring $R$ with unit, $f \in R[[x]]$ is a unit if and only if its constant term is a unit in $R$. After normalizing the constant term to $1$, the inverse of $1 + \gamma$ is the formal geometric series $\sum_{k \ge 0} (-1)^k \gamma^k$, which is well-defined because $x^k \mid \gamma^k$.
 \end{itemize}
