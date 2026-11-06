@@ -348,7 +348,7 @@ Clearly, $\operatorname{cl}^*(R) \subset \operatorname{cl}(R)$ is obtained by ex
 \end{content}
 
 \begin{speech}[00:11:04 - 00:12:36]
-And then we say --- and this is a definition ---: $M$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $M \subset R$ is a maximal ideal}. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring \inlinemetanote{writes: $(M \neq R)$}, okay?
+And then we say --- and this is a definition ---: $M$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $M \subset R$ is a maximal ideal $\stackrel{\text{def}}{\iff}$}. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring \inlinemetanote{writes: $(M \neq R)$}, okay?
 
 Maximal ideals are not allowed to be the full ring. This is a source of standard confusion, but it's really important in the definition. Maximal ideals are not the full ring --- that's cheating for a maximal ideal.
 
@@ -363,7 +363,7 @@ And you can see why we throw out $R$ here, because $R$ would be on top of everyb
 \recap{Maximal ideals were defined in the previous lecture (\cref{def:maximal-ideal}); the lecturer restates the definition here.}
 
 \begin{definition}[Maximal Ideal]\label[definition]{def:maximal-ideal-w5}
-Let $R$ be a ring. An ideal $M \subset R$ is called a \newterm{maximal ideal} if it satisfies the following two conditions:
+Let $R$ be a ring and let $M \subset R$ be an ideal. Then $M$ is a \newterm{maximal ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Properness:} $M \in \operatorname{cl}^*(R)$, i.e., $M \neq R$.
     \setcounter{enumi}{1} \item \textbf{Maximality:} For every proper ideal $\hat{M} \in \operatorname{cl}^*(R)$,
@@ -660,7 +660,7 @@ It satisfies some properties. I could say this formally: The standard thing for 
 \end{speech}
 
 \begin{speech}[00:28:38 - 00:29:58]
-Maybe the crucial example here is if I take $R$ a ring \inlinemetanote{writes: $R$}, and I take my set to be the set of all proper ideals \inlinemetanote{writes: $S = \operatorname{cl}^*(R)$}, and I take the partial ordering to be set inclusion, the subset condition \inlinemetanote{writes \qt{set inclusion} and \qt{subset}}. So, it means if I have ideals $I$ and $J$ that are proper ideals \inlinemetanote{writes: $I, J \in \operatorname{cl}^*(R)$}, then the partial ordering is... the definition is: $I$ is a subset of $J$ \inlinemetanote{writes: defn is $I \subset J$}.
+Maybe the crucial example here is if I take $R$ a ring \inlinemetanote{writes: $R$}, and I take my set to be the set of all proper ideals \inlinemetanote{writes: $S = \operatorname{cl}^*(R)$}, and I take the partial ordering to be set inclusion, the subset condition \inlinemetanote{writes \qt{set inclusion} and \qt{subset}}. So, it means if I have ideals $I$ and $J$ that are proper ideals \inlinemetanote{writes: $I, J \in \operatorname{cl}^*(R)$}, then the partial ordering is... the definition is: $I$ is a subset of $J$ \inlinemetanote{writes: $I \le J \stackrel{\text{def}}{\iff} I \subset J$}.
 
 That's kind of a standard partial ordering. Because if I have two ideals, one might be a subset of the other, the other might be a subset of the first, or they may have no subset relation at all. That's why it's called a partial ordering: I cannot always compare two elements. That's the partial part of the partial ordering.
 
@@ -689,7 +689,7 @@ S = \operatorname{cl}^*(R) = \{ I \in \operatorname{cl}(R) \mid I \neq R \},
 \end{equation}
 equipped with the partial order:
 \begin{equation}\label{eq:poset-inclusion-order}
-I \le J \iff I \subseteq J \quad (\text{written on the board as } I \subset J).
+I \le J \stackrel{\text{def}}{\iff} I \subseteq J \quad (\text{written on the board as } I \subset J).
 \end{equation}
 Two proper ideals $I, J \in \operatorname{cl}^*(R)$ are incomparable if neither $I \subseteq J$ nor $J \subseteq I$ holds (for instance, in $\mathbb{Z}$, the ideals $(2)$ and $(3)$ are incomparable).
 \end{example}
@@ -764,7 +764,7 @@ Thus, $(\operatorname{cl}^*(R), \subseteq)$ is rigorously a poset.
 \begin{speech}[00:32:38 - 00:33:55]
 Now, in posets, there's a notion of a maximal element of a poset. And that, in our example, is going to correspond exactly to the notion of a maximal ideal of a ring.
 
-If $S$ is an abstract poset --- we have here $(S, \le)$ is a poset \inlinemetanote{writes: $(S, \le)$ is a Poset} --- there's a definition of a maximal element: $x \in S$ is a maximal element of $S$ \inlinemetanote{writes: $x \in S$ is a max element of $S$}. And the definition for that --- and again, you can guess this --- the definition is: If somebody is on top of $x$, then this implies actually $x = y$ \inlinemetanote{writes: defn is if $x \le y \implies x = y$}.
+If $S$ is an abstract poset --- we have here $(S, \le)$ is a poset \inlinemetanote{writes: $(S, \le)$ is a Poset} --- there's a definition of a maximal element: $x \in S$ is a maximal element of $S$ \inlinemetanote{writes: $x \in S$ is a max element of $S$}. And the definition for that --- and again, you can guess this --- the definition is: If somebody is on top of $x$, then this implies actually $x = y$ \inlinemetanote{writes: $\stackrel{\text{def}}{\iff}$ if $x \le y \implies x = y$}.
 
 No one is on top of it. That's what it means. Okay? That's the definition of a maximal element: In any poset you can define a maximal element; it means that there's nobody on top of it here.
 \end{speech}
@@ -777,7 +777,7 @@ It's just the same definition. If I take this as my poset and I use the abstract
 
 \begin{content}
 \begin{definition}[Maximal Element of a Poset]\label[definition]{def:maximal-element-poset}
-Let $(S, \le)$ be a partially ordered set. An element $x \in S$ is called a \newterm{maximal element} of $S$ if:
+Let $(S, \le)$ be a partially ordered set. An element $x \in S$ is a \newterm{maximal element} of $S$ $\stackrel{\text{def}}{\iff}$
 \begin{equation}\label{eq:maximal-element-def}
 \forall y \in S \colon \quad x \le y \implies x = y.
 \end{equation}
@@ -1079,7 +1079,7 @@ Okay, so, sorry, that was a small discussion there.
 
 That was the end of our introduction to maximal ideals, and there's now a parallel discussion of prime ideals \inlinemetanote{writes: Parallel discussion of prime ideals}. So, this is a new definition: prime ideals.
 
-Let us say it: An ideal $P$ inside our ring is prime \inlinemetanote{writes: An ideal $P \subset R$ is prime} --- and this is the definition of prime \inlinemetanote{writes: $\Uparrow$ def} --- and there are two properties:
+Let us say it: An ideal $P$ inside our ring is prime \inlinemetanote{writes: An ideal $P \subset R$ is prime} --- and this is the definition of prime \inlinemetanote{writes: $\stackrel{\text{def}}{\iff}$} --- and there are two properties:
 
 The first property is that $P$ is in our $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $* \ P \in \operatorname{cl}^*(R)$}. This means it's an ideal and it's not the whole ring again. It's in the same class. In other words, $P$ is not the whole ring \inlinemetanote{writes: $P \neq R$}. Maximal ideals can't be the whole ring, and prime ideals can't either, all right?
 
@@ -1090,7 +1090,7 @@ All right, so, that's the definition of a prime ideal, and you have to digest it
 
 \begin{content}
 \begin{definition}[Prime Ideal]\label[definition]{def:prime-ideal}
-Let $R$ be a commutative ring. An ideal $P \subset R$ is called a \newterm{prime ideal} if it satisfies the following two conditions:
+Let $R$ be a commutative ring and let $P \subset R$ be an ideal. Then $P$ is a \newterm{prime ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Properness:} $P \in \operatorname{cl}^*(R)$, which means:
     \[
@@ -1722,7 +1722,7 @@ Consider the principal ideals $(3) = 3\mathbb{Z}$ and $(5) = 5\mathbb{Z}$ in the
 \begin{speech}[01:16:29 - 01:17:39]
 If we go back to the general development: The definition is that $I$ and $J$ in $R$ are called coprime \inlinemetanote{writes: Def: $I, J \subset R$ are coprime}.
 
-The definition of this is that $I + J = (1)$ \inlinemetanote{writes: $I + J = (1)$}.
+The definition of this is that $I + J = (1)$ \inlinemetanote{writes: $\stackrel{\text{def}}{\iff} I + J = (1)$}.
 
 When I write the unit ideal here, another way of writing it is just $R$, okay? \inlinemetanote{writes: or $= R$} Those are two equivalent things. That's the definition: It's coprime.
 
@@ -1735,7 +1735,7 @@ All right, so, now we can state the Chinese Remainder Theorem in these definitio
 \begin{definition}[Coprime Ideals]\label[definition]{def:coprime-ideals}
 Let $R$ be a ring. Two ideals $I, J \subset R$ are called \newterm{coprime} if their sum is the unit ideal:
 \begin{equation}\label{eq:coprime-ideals-def}
-I + J = (1) = R.
+I, J \text{ are coprime} \stackrel{\text{def}}{\iff} I + J = (1) = R.
 \end{equation}
 Equivalently, $I$ and $J$ are coprime if and only if there exist elements $i \in I$ and $j \in J$ such that:
 \begin{equation}\label{eq:coprime-elements-identity}
@@ -1802,7 +1802,7 @@ Let $S_1$ and $S_2$ be rings. The \newterm{direct product} $S_1 \times S_2$ is t
 (a_1, a_2) + (b_1, b_2) &:= (a_1 + b_1, a_2 + b_2), \\
 (a_1, a_2) \cdot (b_1, b_2) &:= (a_1 \cdot b_1, a_2 \cdot b_2).
 \end{align*}
-The zero element is $0_{S_1 \times S_2} = (0_{S_1}, 0_{S_2})$ and the identity element is $1_{S_1 \times S_2} = (1_{S_1}, 1_{S_2})$.
+The zero element is $0_{S_1 \times S_2} := (0_{S_1}, 0_{S_2})$ and the identity element is $1_{S_1 \times S_2} := (1_{S_1}, 1_{S_2})$.
 \end{definition}
 
 \begin{definition}[The Canonical CRT Homomorphism $\phi$]\label[definition]{def:crt-canonical-homomorphism}

@@ -16,6 +16,10 @@
 % Extended on 2026-10-24 (same model), for Week 6: the least common multiple, and gcd and lcm
 % from prime factorizations. Then, after a review of the whole book: monoids and subgroups, the
 % subspace criteria, |A x B| = |A||B|, and gcd >= 1.
+% Revised on 2026-11-06 (same model), to the standards of the review against the recordings:
+% := and :\iff for every definition, the sign convention stated in the notation block, Id for the
+% identity, GCD and Ord as on the board, classes instead of cosets, the lecturer's word for |z|.
+% Monoids are gone again: no lecture uses the word any more. Zorn's lemma now points to Week 5.
 % ==========================================
 
 % Primary Language: English
@@ -34,21 +38,22 @@ This chapter is not part of the lectures. It collects what the lectures take for
 
 \begin{notation}[Number Sets and Inclusions]\label[notation]{not:pre-notation}
 \begin{itemize}
-    \item $\mathbb{N} = \{0, 1, 2, \dots\}$, also written $\mathbb{N}_0$ to stress that $0$ is included, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} = \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
-    \item For a field $K$, $K^* = K \setminus \{0\}$. The group of units of a ring $R$ (Week~2, \cref{prop:group-of-units}) appears in these notes as $\mathcal{U}_R$, $U(R)$ and $\operatorname{Unit}(R)$, as on the board (elsewhere also written $R^\times$), and, from Week~3 on, $R^*$ (\cref{prop:units-mod-m-w3}). For a field the two meanings of $K^*$ agree, since its units are exactly its non-zero elements.
+    \item $a := b$ defines $a$ as $b$, and $A :\iff B$ defines the statement $A$ as $B$. Where the lecturer writes \qt{def} over the sign on the board, these notes keep it: $\stackrel{\text{def}}{=}$ and $\stackrel{\text{def}}{\iff}$.
+    \item $\mathbb{N} := \{0, 1, 2, \dots\}$, also written $\mathbb{N}_0$ to stress that $0$ is included, and $\mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$. Subscripts restrict a set: $\mathbb{Z}_{>0} := \{1, 2, 3, \dots\}$, $\mathbb{Z}_{\ge 2}$, $\mathbb{R}_{>0}$.
+    \item For a field $K$, $K^* := K \setminus \{0\}$. The group of units of a ring $R$ (Week~2, \cref{prop:group-of-units}) appears in these notes as $\mathcal{U}_R$, $U(R)$ and $\operatorname{Unit}(R)$, as on the board (elsewhere also written $R^\times$), and, from Week~3 on, $R^*$ (\cref{prop:units-mod-m-w3}). For a field the two meanings of $K^*$ agree, since its units are exactly its non-zero elements.
     \item $A \subset B$ means that every element of $A$ lies in $B$; equality is allowed, as in the lecturer's usage. A proper inclusion is written $A \subsetneq B$.
     \item $|X|$ (or $\# X$) is the number of elements of a finite set $X$; for a finite group it is called the \newterm{order}.
-    \item $X \times Y = \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
+    \item $X \times Y := \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
     \item $Y^X$ is the set of all maps $X \to Y$. In particular $R^{\mathbb{N}_0}$ is the set of all sequences $(a_0, a_1, a_2, \dots)$ with entries in $R$; polynomials and power series are defined as such sequences (\cref{def:poly-rigorous-sequences}, \cref{def:power-series-ring-formal}).
 \end{itemize}
 \end{notation}
 
 \begin{definition}[Maps]\label[definition]{def:pre-maps}
-A map $f \colon X \to Y$ is \newterm{injective} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$, \newterm{surjective} if every $y \in Y$ is of the form $f(x)$, and \newterm{bijective} if it is both. The composition of $f$ with $g \colon Y \to Z$ is $g \circ f \colon X \to Z$, $x \mapsto g(f(x))$; the identity of $X$ is $\id_X$ (also written $1_X$); the restriction of $f$ to $U \subset X$ is $f|_U \colon U \to Y$.
+A map $f \colon X \to Y$ is \newterm{injective} if $f(x_1) = f(x_2)$ implies $x_1 = x_2$, \newterm{surjective} if every $y \in Y$ is of the form $f(x)$, and \newterm{bijective} if it is both. The composition of $f$ with $g \colon Y \to Z$ is $g \circ f \colon X \to Z$, $x \mapsto g(f(x))$; the identity of $X$ is $\operatorname{Id}_X$ (also written $1_X$); the restriction of $f$ to $U \subset X$ is $f|_U \colon U \to Y$.
 \end{definition}
 
 \begin{fact}[Inverse Maps]\label[fact]{fact:pre-inverse-map}
-A map $f \colon X \to Y$ is bijective if and only if there is a map $g \colon Y \to X$ with $g \circ f = \id_X$ and $f \circ g = \id_Y$. This $g$ is unique; it is the \newterm{inverse map} $f^{-1}$.
+A map $f \colon X \to Y$ is bijective if and only if there is a map $g \colon Y \to X$ with $g \circ f = \operatorname{Id}_X$ and $f \circ g = \operatorname{Id}_Y$. This $g$ is unique; it is the \newterm{inverse map} $f^{-1}$.
 \end{fact}
 
 \begin{fact}[Cardinality]\label[fact]{fact:pre-cardinality}
@@ -56,9 +61,9 @@ Two sets have the same \newterm{cardinality} if there is a bijection between the
 \end{fact}
 
 \begin{definition}[Image and Preimage of a Subset]\label[definition]{def:pre-image-preimage}
-Let $f \colon X \to Y$ be a map. For $A \subset X$, the \newterm{image} of $A$ is $f(A) = \{ f(a) \mid a \in A \} \subset Y$; the image of $f$ is $\operatorname{Im}(f) = f(X)$. For $B \subset Y$, the \newterm{preimage} (or pullback) of $B$ is
+Let $f \colon X \to Y$ be a map. For $A \subset X$, the \newterm{image} of $A$ is $f(A) := \{ f(a) \mid a \in A \} \subset Y$; the image of $f$ is $\operatorname{Im}(f) := f(X)$. For $B \subset Y$, the \newterm{preimage} (or pullback) of $B$ is
 \[
-f^{-1}(B) = \{ x \in X \mid f(x) \in B \} \subset X.
+f^{-1}(B) := \{ x \in X \mid f(x) \in B \} \subset X.
 \]
 \end{definition}
 
@@ -88,7 +93,7 @@ An \newterm{equivalence relation} on a set $T$ is a relation $\equiv$ on $T$ tha
 \end{definition}
 
 \begin{definition}[Equivalence Classes and Quotient Set]\label[definition]{def:pre-quotient-set}
-The \newterm{equivalence class} of $x \in T$ is $[x] = \{ y \in T \mid y \equiv x \}$, and the \newterm{quotient set} $\faktor{T}{{\equiv}}$ (written $T_{\equiv}$ on the lecturer's board) is the set of all equivalence classes. Two classes are either equal or disjoint, $[x] = [y]$ holds exactly when $x \equiv y$, and the classes cover $T$: they form a \newterm{partition} of $T$.
+The \newterm{equivalence class} of $x \in T$ is $[x] := \{ y \in T \mid y \equiv x \}$, and the \newterm{quotient set} $\faktor{T}{{\equiv}}$ (written $T_{\equiv}$ on the lecturer's board) is the set of all equivalence classes. Two classes are either equal or disjoint, $[x] = [y]$ holds exactly when $x \equiv y$, and the classes cover $T$: they form a \newterm{partition} of $T$.
 \end{definition}
 
 \begin{steps}[Maps Defined on Classes]
@@ -96,7 +101,7 @@ A rule that defines a value for a class through one of its elements (a \newterm{
 \end{steps}
 
 \begin{definition}[Partial Orders and Maximal Elements]\label[definition]{def:pre-partial-order}
-A \newterm{partial order} on a set $P$ is a relation $\le$ that is reflexive, transitive and \newterm{antisymmetric} ($x \le y$ and $y \le x$ imply $x = y$). Two elements need not be comparable; the standard example is a set of subsets, ordered by inclusion. A \newterm{chain} is a subset in which any two elements are comparable (a totally ordered subset). An \newterm{upper bound} of $A \subset P$ is an element $b \in P$ with $a \le b$ for all $a \in A$. An element $m \in P$ is \newterm{maximal} if nothing in $P$ lies strictly above it: $m \le x$ implies $x = m$. A maximal element need not be a largest element, and there can be several. The lectures use these notions for Zorn's lemma (Week~1, \cref{rem:zorns-lemma-basis}) and for maximal ideals, which are the maximal elements of the set of proper ideals ordered by inclusion (Week~4, \cref{def:maximal-ideal}); $\mathbb{Z}$ has infinitely many of them, the ideals $p\mathbb{Z}$ for primes $p$.
+A \newterm{partial order} on a set $P$ is a relation $\le$ that is reflexive, transitive and \newterm{antisymmetric} ($x \le y$ and $y \le x$ imply $x = y$). Two elements need not be comparable; the standard example is a set of subsets, ordered by inclusion. A \newterm{chain} is a subset in which any two elements are comparable (a totally ordered subset). An \newterm{upper bound} of $A \subset P$ is an element $b \in P$ with $a \le b$ for all $a \in A$. An element $m \in P$ is \newterm{maximal} if nothing in $P$ lies strictly above it: $m \le x$ implies $x = m$. A maximal element need not be a largest element, and there can be several. The lectures use these notions for Zorn's lemma (Week~5, \cref{lem:zorns-lemma}) and for maximal ideals, which are the maximal elements of the set of proper ideals ordered by inclusion (Week~4, \cref{def:maximal-ideal}); $\mathbb{Z}$ has infinitely many of them, the ideals $p\mathbb{Z}$ for primes $p$.
 \end{definition}
 
 \section{The Integers}
@@ -110,7 +115,7 @@ Let $P(n)$ be a statement for each $n \in \mathbb{N}$. If $P(0)$ holds, and $P(n
 \end{fact}
 
 \begin{fact}[Binomial Theorem]\label[fact]{fact:pre-binomial}
-For $n \in \mathbb{N}$ and $0 \le a \le n$, the \newterm{binomial coefficient} $\binom{n}{a} = \frac{n!}{a! \, (n-a)!}$ is a positive integer, and $\binom{n}{a} = \binom{n-1}{a-1} + \binom{n-1}{a}$ for $1 \le a \le n - 1$ (Pascal's rule). For all $x, y \in \mathbb{C}$,
+For $n \in \mathbb{N}$ and $0 \le a \le n$, the \newterm{binomial coefficient} $\binom{n}{a} := \frac{n!}{a! \, (n-a)!}$ is a positive integer, and $\binom{n}{a} = \binom{n-1}{a-1} + \binom{n-1}{a}$ for $1 \le a \le n - 1$ (Pascal's rule). For all $x, y \in \mathbb{C}$,
 \[
 (x + y)^n = \sum_{a=0}^{n} \binom{n}{a} x^a y^{n-a},
 \]
@@ -125,7 +130,7 @@ y = q n + r \quad \text{and} \quad 0 \le r < n.
 \end{fact}
 
 \begin{definition}[Divisibility, Greatest Common Divisor, Primes]\label[definition]{def:pre-divisibility}
-For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both (so $\gcd(a, b) \ge 1$, as $1$ divides both); the lecturer also writes $(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
+For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both (so $\gcd(a, b) \ge 1$, as $1$ divides both); the lecturer also writes $(a, b)$ and, from Week~6 on, $\operatorname{GCD}(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
 \end{definition}
 
 \begin{fact}[Bézout's Identity]\label[fact]{fact:pre-bezout}
@@ -137,7 +142,7 @@ In particular, $a$ and $b$ are coprime if and only if $a x + b y = 1$ for some $
 \end{fact}
 
 \begin{steps}[Why It Holds]
-The set $I = \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \gcd(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
+The set $I := \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \gcd(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
 \end{steps}
 
 \begin{fact}[Euclid's Lemma]\label[fact]{fact:pre-euclid}
@@ -180,13 +185,13 @@ Let $n \in \mathbb{Z}_{>0}$. Integers $a, b$ are \newterm{congruent modulo $n$},
 \end{definition}
 
 \begin{fact}[Residue Classes]\label[fact]{fact:pre-residue-classes}
-Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is compatible with the operations: $a \equiv a'$ and $b \equiv b'$ imply $a + b \equiv a' + b'$ and $a b \equiv a' b' \pmod n$. Its classes are the \newterm{residue classes} $\bar{a} = a + n\mathbb{Z}$; by division with remainder there are exactly $n$ of them, $\bar{0}, \bar{1}, \dots, \overline{n-1}$. The lecturer recalls the resulting ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ in Week~1 (\cref{def:residue-class-ring}).
+Congruence modulo $n$ is an equivalence relation on $\mathbb{Z}$, and it is compatible with the operations: $a \equiv a'$ and $b \equiv b'$ imply $a + b \equiv a' + b'$ and $a b \equiv a' b' \pmod n$. Its classes are the \newterm{residue classes} $\bar{a} := a + n\mathbb{Z}$; by division with remainder there are exactly $n$ of them, $\bar{0}, \bar{1}, \dots, \overline{n-1}$. The lecturer recalls the resulting ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ in Week~1 (\cref{def:residue-class-ring}).
 \end{fact}
 
 \section{Groups, Fields and the Complex Numbers}
 
 \begin{definition}[Group]\label[definition]{def:pre-group}
-A \newterm{monoid} $(M, \cdot, e)$ is a set $M$ with an associative operation $\cdot$ and a neutral element $e$ ($e a = a e = a$ for all $a$); the multiplication of a ring is a monoid (Week~1, \cref{def:ring}). A \newterm{group} $(G, \cdot, e)$ is a monoid in which every element has an inverse ($a b = b a = e$ for some $b$). A \newterm{subgroup} of $G$ is a subset $H \subseteq G$ with $e \in H$ that is closed under the operation and under inverses; it is a group with the restricted operation (Week~2, \cref{def:subgroup}). It is \newterm{abelian} if $a b = b a$ for all $a, b$; an abelian group is often written additively as $(G, +, 0)$, with inverses $-a$. Examples: $(\mathbb{Z}, +, 0)$ and $(\mathbb{R}^*, \cdot, 1)$. The lecturer restates the definition in Week~2 (\cref{def:group}).
+A \newterm{group} $(G, \cdot, e)$ is a set $G$ with an associative operation $\cdot$ and a neutral element $e$ ($e a = a e = a$ for all $a$) in which every element has an inverse ($a b = b a = e$ for some $b$). A \newterm{subgroup} of $G$ is a subset $H \subset G$ with $e \in H$ that is closed under the operation and under inverses; it is a group with the restricted operation (Week~2, \cref{def:subgroup}). The group $G$ is \newterm{abelian} if $a b = b a$ for all $a, b$; an abelian group is often written additively as $(G, +, 0)$, with inverses $-a$. Examples: $(\mathbb{Z}, +, 0)$ and $(\mathbb{R}^*, \cdot, 1)$. The lecturer restates the definition in Week~2 (\cref{def:group}).
 \end{definition}
 
 \begin{definition}[Group Homomorphism]\label[definition]{def:pre-group-hom}
@@ -194,7 +199,7 @@ A map $f \colon G \to H$ between groups is a \newterm{homomorphism} if $f(a b) =
 \end{definition}
 
 \begin{definition}[Order of an Element, Cyclic Groups]\label[definition]{def:pre-cyclic}
-Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} of $a$ is the least $n \ge 1$ with $a^n = e$ (or $\infty$ if there is none); in additive notation the condition reads $n a = 0$. The group $G$ is \newterm{cyclic}, with \newterm{generator} $a$, if every element of $G$ is a power $a^k$, $k \in \mathbb{Z}$. A finite group $G$ is cyclic with generator $a$ exactly when $a$ has order $|G|$, and then $G = \{e, a, a^2, \dots, a^{|G|-1}\}$. Example: $(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, \bar{0})$ is cyclic with generator $\bar{1}$. An isomorphism maps elements of order $n$ to elements of order $n$; the lectures use this in Week~2 (\cref{prop:r-star-not-isom-r-pos}, \cref{prop:z7z-cyclic-isomorphism}).
+Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} of $a$ (in Week~7, $\operatorname{Ord}(a)$, \cref{def:element-order}) is the least $n \ge 1$ with $a^n = e$ (or $\infty$ if there is none); in additive notation the condition reads $n a = 0$. The group $G$ is \newterm{cyclic}, with \newterm{generator} $a$, if every element of $G$ is a power $a^k$, $k \in \mathbb{Z}$. A finite group $G$ is cyclic with generator $a$ exactly when $a$ has order $|G|$, and then $G = \{e, a, a^2, \dots, a^{|G|-1}\}$. Example: $(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, \bar{0})$ is cyclic with generator $\bar{1}$. An isomorphism maps elements of order $n$ to elements of order $n$; the lectures use this in Week~2 (\cref{prop:r-star-not-isom-r-pos}, \cref{prop:z7z-cyclic-isomorphism}).
 \end{definition}
 
 \begin{definition}[Field]\label[definition]{def:pre-field}
@@ -202,7 +207,7 @@ A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $
 \end{definition}
 
 \begin{fact}[Complex Conjugation and Modulus]\label[fact]{fact:pre-complex}
-For $z = a + b i \in \mathbb{C}$ ($a, b \in \mathbb{R}$, $i^2 = -1$), the \newterm{complex conjugate} is $\bar{z} = a - b i$ and the \newterm{modulus} is $|z| = \sqrt{a^2 + b^2}$. For all $z, w \in \mathbb{C}$:
+For $z = a + b i \in \mathbb{C}$ ($a, b \in \mathbb{R}$, $i^2 = -1$), the \newterm{complex conjugate} is $\bar{z} := a - b i$ and the \newterm{modulus} is $|z| := \sqrt{a^2 + b^2}$ (the lecturer calls it the length or the norm of $z$). For all $z, w \in \mathbb{C}$:
 \[
 \overline{z + w} = \bar{z} + \bar{w}, \qquad \overline{z w} = \bar{z} \, \bar{w}, \qquad z \bar{z} = |z|^2, \qquad |z w| = |z| \, |w|,
 \]
@@ -212,7 +217,7 @@ and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So conjugation respects sums 
 \section{Linear Algebra}
 
 \begin{definition}[Linear Map, Kernel and Image]\label[definition]{def:pre-linear-map}
-Let $V, W$ be vector spaces over a field $K$. A \newterm{subspace} of $V$ is a subset $U \subseteq V$ with $0 \in U$ that is closed under addition and under multiplication by scalars ($u, v \in U$, $\lambda \in K \implies u + v \in U$, $\lambda u \in U$); Week~1 compares this with the absorption property of ideals. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) = \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{Im}(T) = T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
+Let $V, W$ be vector spaces over a field $K$. A \newterm{subspace} of $V$ is a subset $U \subset V$ with $0 \in U$ that is closed under addition and under multiplication by scalars ($u, v \in U$, $\lambda \in K \implies u + v \in U$, $\lambda u \in U$); Week~1 compares this with the absorption property of ideals. A map $T \colon V \to W$ is \newterm{linear} if $T(u + v) = T(u) + T(v)$ and $T(\lambda v) = \lambda T(v)$ for all $u, v \in V$ and $\lambda \in K$. Its \newterm{kernel} is $\ker(T) := \{ v \in V \mid T(v) = 0 \}$ and its \newterm{image} is $\operatorname{Im}(T) := T(V)$. The linear maps $V \to W$ form a vector space $\operatorname{Hom}_K(V, W)$ under pointwise operations; the lectures reuse the notation $\operatorname{Hom}$ for the morphisms of any category (\cref{def:category-foundations}).
 \end{definition}
 
 \begin{fact}[Kernel, Image and Rank--Nullity]\label[fact]{fact:pre-rank-nullity}
@@ -223,7 +228,7 @@ For a linear map $T \colon V \to W$, $\ker(T) \subset V$ and $\operatorname{Im}(
 \end{fact}
 
 \begin{fact}[Span, Linear Independence and Bases]\label[fact]{fact:pre-basis}
-A family of vectors of $V$ \newterm{spans} $V$ if every vector of $V$ is a finite linear combination of them, and it is \newterm{linearly independent} if the only finite linear combination of them that equals $0$ is the one with all coefficients $0$; a \newterm{basis} is a linearly independent family that spans $V$. Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}).
+A family of vectors of $V$ \newterm{spans} $V$ if every vector of $V$ is a finite linear combination of them, and it is \newterm{linearly independent} if the only finite linear combination of them that equals $0$ is the one with all coefficients $0$; a \newterm{basis} is a linearly independent family that spans $V$. Every vector space spanned by finitely many vectors has a finite basis, and all its bases have the same number of elements, its \newterm{dimension}. That every vector space has a basis is proved with Zorn's lemma, which the course takes up itself (Week~1, \cref{q:vector-space-basis}; Week~5, \cref{lem:zorns-lemma}).
 \end{fact}
 
 \begin{fact}[Matrices]\label[fact]{fact:pre-matrices}
@@ -239,9 +244,9 @@ This is long division of polynomials: as long as $\deg(f) \ge \deg(g)$, subtract
 \end{fact}
 
 \begin{definition}[Quotient Vector Space]\label[definition]{def:pre-quotient-space}
-Let $U \subset V$ be a subspace. The relation $v \equiv w \iff v - w \in U$ is an equivalence relation on $V$, with classes the cosets $v + U$. The \newterm{quotient space} $\faktor{V}{U}$ is the set of these cosets with
+Let $U \subset V$ be a subspace. The relation $v \equiv w :\iff v - w \in U$ is an equivalence relation on $V$, with classes $v + U$ (in Linear Algebra often called cosets). The \newterm{quotient space} $\faktor{V}{U}$ is the set of these classes with
 \[
-(v + U) + (w + U) = (v + w) + U, \qquad \lambda (v + U) = \lambda v + U;
+(v + U) + (w + U) := (v + w) + U, \qquad \lambda (v + U) := \lambda v + U;
 \]
 these operations are well-defined, $\faktor{V}{U}$ is a vector space, and the projection $\pi \colon V \to \faktor{V}{U}$, $v \mapsto v + U$, is linear and surjective with $\ker(\pi) = U$. If $V$ is finite-dimensional, $\dim \faktor{V}{U} = \dim V - \dim U$.
 \end{definition}
@@ -255,7 +260,7 @@ The quotient ring $\faktor{R}{I}$ of Week~4 follows this pattern step by step, w
 \end{steps}
 
 \begin{definition}[Dual Space and Dual Map]\label[definition]{def:pre-dual-space}
-The \newterm{dual space} of a vector space $V$ over $K$ is $V^* = \operatorname{Hom}_K(V, K)$, the vector space of linear maps $V \to K$. A linear map $T \colon V \to W$ has the \newterm{dual map} $T^* \colon W^* \to V^*$, $T^*(\varphi) = \varphi \circ T$; it satisfies $(S \circ T)^* = T^* \circ S^*$ and $(\id_V)^* = \id_{V^*}$.
+The \newterm{dual space} of a vector space $V$ over $K$ is $V^* := \operatorname{Hom}_K(V, K)$, the vector space of linear maps $V \to K$. A linear map $T \colon V \to W$ has the \newterm{dual map} $T^* \colon W^* \to V^*$, $T^*(\varphi) := \varphi \circ T$; it satisfies $(S \circ T)^* = T^* \circ S^*$ and $(\operatorname{Id}_V)^* = \operatorname{Id}_{V^*}$.
 \end{definition}
 
 \begin{fact}[The Double Dual]\label[fact]{fact:pre-double-dual}
@@ -287,7 +292,7 @@ A function $f \colon U \to \mathbb{R}$ on an open set $U \subset \mathbb{R}$ is 
 \begin{fact}[Smooth Functions Vanishing on a Half-Line]\label[fact]{fact:pre-flat-function}
 The function
 \[
-h(x) = \begin{cases} e^{-1/x} & x > 0, \\ 0 & x \le 0 \end{cases}
+h(x) := \begin{cases} e^{-1/x} & x > 0, \\ 0 & x \le 0 \end{cases}
 \]
 lies in $C^\infty(\mathbb{R})$: all its derivatives tend to $0$ as $x \to 0^+$, because $e^{-1/x}$ goes to $0$ faster than any power of $x$. So $h$ vanishes exactly on $(-\infty, 0]$; the function $x \mapsto h(-x)$ vanishes exactly on $[0, \infty)$, and $h(x - a) \, h(b - x)$ is a smooth function that is non-zero exactly on $(a, b)$ (a \newterm{bump function}). Such functions show that the ideals of $C^\infty(\mathbb{R})$ in Week~2 are not zero and differ from each other (\cref{prop:compact-support-ideal}, \cref{prop:larger-ideal-smooth}).
 \end{fact}
@@ -297,5 +302,5 @@ For $z \in \mathbb{C}$ with $|z| < 1$,
 \[
 \sum_{k=0}^\infty z^k = \frac{1}{1 - z}.
 \]
-If $\sum_{n} a_n$ and $\sum_{n} b_n$ converge absolutely, then so does their \newterm{Cauchy product} $\sum_{n} c_n$ with $c_n = \sum_{i=0}^{n} a_i b_{n-i}$, and $\sum_n c_n = \bigl(\sum_n a_n\bigr)\bigl(\sum_n b_n\bigr)$. The lectures use the same coefficient formula to multiply polynomials and formal power series, where no convergence is involved (\cref{def:poly-ring-operations}, \cref{def:power-series-multiplication}).
+If $\sum_{n} a_n$ and $\sum_{n} b_n$ converge absolutely, then so does their \newterm{Cauchy product} $\sum_{n} c_n$ with $c_n := \sum_{i=0}^{n} a_i b_{n-i}$, and $\sum_n c_n = \bigl(\sum_n a_n\bigr)\bigl(\sum_n b_n\bigr)$. The lectures use the same coefficient formula to multiply polynomials and formal power series, where no convergence is involved (\cref{def:poly-ring-operations}, \cref{def:power-series-multiplication}).
 \end{fact}

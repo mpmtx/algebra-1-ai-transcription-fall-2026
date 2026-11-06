@@ -682,13 +682,13 @@ We have now, successfully, defined $g$. Then we need to check that $g$ is indeed
 
 Meaning you have to check... \inlinemetanote{writes \qt{You have to check}} You check something like: \inlinemetanote{writes: $g\left(\frac{x_1}{y_1}\right) + g\left(\frac{x_2}{y_2}\right) = g\left(\frac{x_1}{y_1} + \frac{x_2}{y_2}\right)$} $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$. You have to go check that; that's what you have to check.
 
-And you can see when you write this, this side... Okay, I'm going to do part of it for you --- I don't know why I'm feeling compassionate today here. This one is $f(x_1)/f(y_1) + f(x_2)/f(y_2)$. \inlinemetanote{writes: $= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)}$} That's the definition here. And this has a different definition.
+And you can see when you write this, this side... Okay, I'm going to do part of it for you --- I don't know why I'm feeling compassionate today here. This one is $f(x_1)/f(y_1) + f(x_2)/f(y_2)$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)}$} That's the definition here. And this has a different definition.
 
 First of all, how do we do it? We first have to add this fraction, right? Because our definition only applies to names of rational numbers, and this is the sum. So, we first have to do this, but you know how to add fractions: this is equal to \inlinemetanote{writes: $= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right)$} $g$ of $(x_1 y_2 + x_2 y_1)/(y_1 y_2)$. At least I hope you know how to add fractions --- at least I hope I know how to add fractions, right? Okay, so, that's the addition of the fraction.
 \end{speech}
 
 \begin{speech}[00:31:50 - 00:32:50]
-And then this, by definition --- use the definition --- is $f(x_1 y_2 + x_2 y_1)/f(y_1 y_2)$. \inlinemetanote{writes: $= \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)}$} Okay?
+And then this, by definition --- use the definition --- is $f(x_1 y_2 + x_2 y_1)/f(y_1 y_2)$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)}$} Okay?
 
 So, that's the one side to check, and that's supposed to equal this side, all right? And how are you going to check this? Well, you use the homomorphism property, you move everything upstairs, and then finally you're going to use the thing I erased --- this, okay?
 
@@ -716,12 +716,12 @@ q_1 + q_2 = \frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2
 Applying the definition of $g$ and the ring homomorphism properties of $f$:
 \begin{align*}
 g(q_1 + q_2) &= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right) \\
-&= \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)} \\
+&\stackrel{\text{def}}{=} \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)} \\
 &= \frac{f(x_1)f(y_2) + f(x_2)f(y_1)}{f(y_1)f(y_2)}.
 \end{align*}
 On the other hand, evaluating the sum of images in the field $F$:
 \begin{align*}
-g(q_1) + g(q_2) &= \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} \\
+g(q_1) + g(q_2) &\stackrel{\text{def}}{=} \frac{f(x_1)}{f(y_1)} + \frac{f(x_2)}{f(y_2)} \\
 &= f(x_1)f(y_1)^{-1} + f(x_2)f(y_2)^{-1}.
 \end{align*}
 Bringing both terms over the common denominator $f(y_1)f(y_2)$ in the field $F$:
@@ -955,7 +955,7 @@ Okay. You'll have to wait until after the break for this excitement to continue.
 \begin{proposition}[Reflexivity and Symmetry of $\equiv$]\label[proposition]{prop:equiv-refl-sym}
 The relation $\equiv$ defined on $S = \{ (x, y) \in R \times R \mid y \ne 0 \}$ by:
 \begin{equation}\label{eq:equiv-def-recap}
-(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1
+(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1
 \end{equation}
 is reflexive and symmetric.
 \end{proposition}
@@ -1021,7 +1021,7 @@ We have now proven transitivity. You see there was a little bit of cleverness he
 
 \begin{content}[Proof of Transitivity and the Role of the Integral Domain]
 \begin{proposition}[Transitivity of $\equiv$ on $S$]\label[proposition]{prop:equiv-on-S}
-Let $R$ be an integral domain. The relation $\equiv$ on $S$ defined by $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$ is transitive. Consequently, $\equiv$ is an equivalence relation on $S$.
+Let $R$ be an integral domain. The relation $\equiv$ on $S$ defined by $(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$ is transitive. Consequently, $\equiv$ is an equivalence relation on $S$.
 \end{proposition}
 
 \begin{proof}
@@ -1960,7 +1960,7 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
     \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
-    \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
+    \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
     \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(K) \cong K$ for any existing field $K$.
     \item \textbf{Polynomial Rings $R[x]$:} For a commutative ring with unity $R$, the polynomial ring $R[x]$ is formally defined as the ring of sequences $(a_k)_{k \in \mathbb{N}_0}$ in $R^{\mathbb{N}_0}$ that are eventually zero. It is equipped with componentwise addition and Cauchy product multiplication $c_k = \sum_{i=0}^k a_i b_{k-i}$, with indeterminate $x = (0, 1, 0, 0, \dots)$.
 \end{itemize}

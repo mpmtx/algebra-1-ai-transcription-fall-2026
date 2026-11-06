@@ -323,7 +323,7 @@ f \circ g_1 = f \circ g_2 \implies g_1 = g_2.
 \end{tikzpicture}\par}
 
 \begin{steps}[Why Monomorphisms Characterize Injectivity]
-Going beyond the lecture, which leaves this to the students: in the category of sets ($\mathbf{Set}$), suppose $f \colon A \to B$ is a monomorphism. To test whether $f$ is injective on points $a_1, a_2 \in A$, let $X = \{*\}$ be a one-element set and define two maps $g_1, g_2 \colon \{*\} \to A$ by $g_1(*) = a_1$ and $g_2(*) = a_2$.
+Going beyond the lecture, which leaves this to the students: in the category of sets ($\mathbf{Set}$), suppose $f \colon A \to B$ is a monomorphism. To test whether $f$ is injective on points $a_1, a_2 \in A$, let $X = \{*\}$ be a one-element set and define two maps $g_1, g_2 \colon \{*\} \to A$ by $g_1(*) := a_1$ and $g_2(*) := a_2$.
 Then $(f \circ g_1)(*) = f(a_1)$ and $(f \circ g_2)(*) = f(a_2)$. Thus:
 \[
 f(a_1) = f(a_2) \implies f \circ g_1 = f \circ g_2 \implies g_1 = g_2 \implies a_1 = a_2.
@@ -737,7 +737,7 @@ a \mid b \iff b \in aR \iff (b) \subset (a).
 \subsection{Units and Multiplicative Inverses}
 
 \begin{speech}[00:24:29 - 00:26:22]
-Now, $u \in R$ is a unit \inlinemetanote{writes \qt{$u \in R$ is a unit}} --- that's the definition of a unit. The definition is: if $u$ divides $1$ \inlinemetanote{writes \qt{if $u \mid 1$}}.
+Now, $u \in R$ is a unit \inlinemetanote{writes \qt{$u \in R$ is a unit}} --- that's the definition of a unit. The definition is: if $u$ divides $1$ \inlinemetanote{writes: $\stackrel{\text{def}}{\iff} u \mid 1$}.
 
 Oh, I should say that also: \qt{$a$ divides $b$}, that's how you say it in English, and the symbol for that is $a \mid b$ \inlinemetanote{writes \qt{$(a \mid b)$}}.
 
@@ -754,7 +754,7 @@ Are you happy with this? That's the definition, this is just translation, and th
 \begin{definition}[Unit in a Ring]\label[definition]{def:unit-ring}
 Let $R$ be a commutative ring with unity $1$. An element $u \in R$ is called a \newterm{unit} if $u$ divides $1$:
 \begin{equation}\label{eq:unit-div-1}
-u \mid 1.
+u \text{ is a unit} \stackrel{\text{def}}{\iff} u \mid 1.
 \end{equation}
 By the definition of divisibility (\cref{def:divisibility-ring}), this is equivalent to:
 \begin{equation}\label{eq:unit-mult-inv}
@@ -922,7 +922,7 @@ Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \fakt
 \begin{equation}\label{eq:units-z-mod-m}
 \mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = \left\{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
 \end{equation}
-The order of this group is given by Euler's totient function $\phi(m) := |\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
+The order of this group is given by Euler's totient function $\phi(m) \stackrel{\text{def}}{=} |\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
 \end{theorem}
 
 \begin{proof}

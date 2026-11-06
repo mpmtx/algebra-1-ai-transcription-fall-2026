@@ -131,8 +131,8 @@ And this is always a homomorphism: $\phi$ is a homomorphism in general \inlineme
 \begin{content}[The Canonical Product Homomorphism]
 Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals.
 \begin{itemize}
-    \item \textbf{Sum of Ideals:} $I + J := \{ i + j \mid i \in I, \, j \in J \}$ is the smallest ideal of $R$ containing both $I$ and $J$.
-    \item \textbf{Product of Ideals:} $IJ := \left\{ \sum_{k=1}^m i_k j_k \;\middle|\; m \in \mathbb{N}, \, i_k \in I, \, j_k \in J \right\}$ is an ideal of $R$ satisfying $IJ \subseteq I \cap J \subseteq I, J$.
+    \item \textbf{Sum of Ideals:} $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, \, j \in J \}$ is the smallest ideal of $R$ containing both $I$ and $J$.
+    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{k=1}^m i_k j_k \;\middle|\; m \in \mathbb{N}, \, i_k \in I, \, j_k \in J \right\}$ is an ideal of $R$ satisfying $IJ \subseteq I \cap J \subseteq I, J$.
 \end{itemize}
 
 \begin{definition}[Canonical Product Homomorphism]\label[definition]{def:canonical-crt-map}
@@ -535,7 +535,7 @@ Uh, but it's a confusing formula, like you might think... okay, so, this is the 
 \begin{definition}[Euler's Totient Function]\label[definition]{def:euler-totient}
 The \newterm{Euler totient function} $\phi(n)$ (on the board with a small \qt{tot} on the $\phi$) counts the number of invertible elements in the ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def-w5wed}
-\phi(n) := \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \gcd(m, n) = 1 \} \right|.
+\phi(n) \stackrel{\text{def}}{=} \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \gcd(m, n) = 1 \} \right|.
 \end{equation}
 \end{definition}
 

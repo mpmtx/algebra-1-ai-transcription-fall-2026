@@ -143,7 +143,7 @@ Let $R$ be an integral domain. To construct the field of fractions formally:
     \setcounter{enumi}{0} \item \textbf{Set of Pairs:} Consider the Cartesian product $S := R \times (R \setminus \{0\}) \subset R^2$.
     \setcounter{enumi}{1} \item \textbf{Equivalence Relation:} Define the relation $\equiv$ on $S$ by:
     \[
-    (r, s) \equiv (t, w) :\iff rw - st = 0.
+    (r, s) \equiv (t, w) \stackrel{\text{def}}{\iff} rw - st = 0.
     \]
     \setcounter{enumi}{2} \item \textbf{Equivalence Classes:} The field of fractions is defined as the quotient set:
     \[
@@ -1071,7 +1071,7 @@ At timestamp 00:36:51, the lecturer mentions a second proof of \cref{thm:units-p
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Field of Fractions:} For an integral domain $R$, $\operatorname{Frac}(R)$ is formally the set of equivalence classes of pairs $(r, s) \in R \times (R \setminus \{0\})$ with $(r, s) \equiv (t, w) \iff rw = st$. In practice one computes with fractions $\frac{r}{s}$ by the usual rules; the integral domain property guarantees that the denominators $sw$ stay non-zero, and every $\frac{r}{s} \neq 0$ has the inverse $\frac{s}{r}$.
+    \item \textbf{Field of Fractions:} For an integral domain $R$, $\operatorname{Frac}(R)$ is formally the set of equivalence classes of pairs $(r, s) \in R \times (R \setminus \{0\})$ with $(r, s) \equiv (t, w) \stackrel{\text{def}}{\iff} rw = st$. In practice one computes with fractions $\frac{r}{s}$ by the usual rules; the integral domain property guarantees that the denominators $sw$ stay non-zero, and every $\frac{r}{s} \neq 0$ has the inverse $\frac{s}{r}$.
     \item \textbf{Polynomial Rings:} $R[x]$ exists for every commutative ring $R$ with unit. Its universal property: for every ring homomorphism $\phi \colon R \to S$ and every $y \in S$, there is a unique ring homomorphism $\hat{\phi} \colon R[x] \to S$ with $\hat{\phi}|_R = \phi$ and $\hat{\phi}(x) = y$, namely $\hat{\phi}\bigl(\sum a_i x^i\bigr) = \sum \phi(a_i) y^i$.
     \item \textbf{Units of $R[x]$:} If $R$ is an integral domain, then $\operatorname{Unit}(R[x]) = \operatorname{Unit}(R)$, because the leading coefficient of a product is the product of the leading coefficients. Without this assumption there can be more units, e.g., $1 + 2x$ in $(\mathbb{Z}/4\mathbb{Z})[x]$.
     \item \textbf{Formal Power Series:} $R[[x]]$ consists of all sequences $(a_0, a_1, a_2, \dots)$ of elements of $R$, written $\sum_{i \ge 0} a_i x^i$, with componentwise addition and the Cauchy product $c_k = \sum_{i=0}^k a_{k-i} b_i$; every coefficient of a product is a finite sum.
