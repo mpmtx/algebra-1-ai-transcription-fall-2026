@@ -104,8 +104,8 @@ This lecture explores the foundational algebraic structures of modern mathematic
     \item \textbf{Groups, Rings, and Fields:} Review of the defining axioms; intrinsic uniqueness of group identities and inverses; the axiomatic hierarchy connecting rings and fields to additive abelian groups.
     \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms and isomorphisms; characterization via two-sided inverse homomorphisms; classification of additive and multiplicative groups of real numbers via the exponential map.
     \item \textbf{Kernels, Images, and Substructures:} Structural properties of kernels and images; formal definition of subgroups ($H \le G$); ring homomorphisms and subrings ($S \subseteq R$).
-    \item \textbf{Ideals and Symmetry Breaking:} The breakdown of structural symmetry in rings, where kernels are ideals ($I \subset R$) and images are subrings; classification of ideals in $\mathbb{Z}$ ($I = n\mathbb{Z}$) via the Euclidean division algorithm; ideals in rings of smooth functions $C^\infty(\mathbb{R})$.
-    \item \textbf{Foundations of Category Theory:} Formal definition of categories (objects, morphisms, composition, unit laws); standard categories ($\mathbf{Grp}$, $\mathbf{Ring}$, $\mathbf{Vect}_{\mathbb{C}}$); categorical formulation of isomorphisms; covariant functors, including the forgetful functor and the double dual endofunctor on vector spaces.
+    \item \textbf{Ideals and Symmetry Breaking:} The breakdown of structural symmetry in rings, where kernels are ideals ($I \subset R$) and images are subrings; classification of ideals in $\mathbb{Z}$ ($I = n\mathbb{Z}$) via the division algorithm; ideals in rings of smooth functions $C^\infty(\mathbb{R})$.
+    \item \textbf{Foundations of Category Theory:} Formal definition of categories (objects, morphisms, composition, unit laws); standard categories ($\mathbf{Grp}$, $\mathbf{Ring}$, $\mathbf{Vect}_{\mathbb{C}}$); categorical formulation of isomorphisms; covariant functors, including the functor from rings to groups and the double dual functor on vector spaces.
 \end{itemize}
 \end{overview}
 
@@ -208,7 +208,7 @@ Thus, for every element $x \in G$, its inverse is uniquely determined; it is den
 Axiom sets are often chosen for pedagogical simplicity rather than strict minimal independence:
 \begin{itemize}
     \item \textbf{Uniqueness is Inherent:} Although we only postulated the \emph{existence} of identities and inverses, uniqueness is an algebraic consequence of associativity.
-    \item \textbf{Axiom Minimization:} It is possible to formalize groups using fewer axioms (or even a single equational axiom, as found by Higman and Neumann), but the standard three axioms remain the universal textbook standard.
+    \item \textbf{Axiom Minimization:} The lecturer mentions that groups can also be written with a single axiom, which is logically equivalent. Going beyond the lecture: such an axiom goes back to Higman and Neumann (1952).
 \end{itemize}
 \end{steps}
 \end{content}
@@ -230,7 +230,7 @@ This is just at the axiomatic level, and then there was the notion of a field. \
 A \newterm{ring} is a $5$-tuple $(R, +, \cdot, 0, 1)$ such that:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Additive Abelian Group:} $(R, +, 0)$ is an abelian group (associative, commutative, with additive identity $0$ and additive inverses $-a$).
-    \item \textbf{Multiplicative Monoid:} Multiplication $\cdot$ is associative and possesses a multiplicative identity $1 \in R$:
+    \item \textbf{Multiplication:} Multiplication $\cdot$ is associative and possesses a multiplicative identity $1 \in R$:
     \[
     (a \cdot b) \cdot c = a \cdot (b \cdot c), \quad 1 \cdot a = a \cdot 1 = a \quad \forall a, b, c \in R.
     \]
@@ -544,7 +544,7 @@ This implies $f(-1) = f(1) = 1$. Since $-1 \neq 1$, $f$ cannot be injective, con
 \end{proof}
 
 \begin{steps}[Algebraic Invariants: Elements of Order $2$]
-The proof uses an \newterm{algebraic invariant}, a property preserved by every isomorphism. In $(\mathbb{R}^*, \cdot, 1)$, the element $-1$ has order $2$ ($x \neq e$ with $x^2 = e$, \cref{def:pre-cyclic}), while $(\mathbb{R}^*_{>0}, \cdot, 1)$ has no element of order $2$. An isomorphism maps elements of order $2$ to elements of order $2$, so the two groups are not isomorphic, although as sets they have the same cardinality (\cref{fact:pre-cardinality}).
+Going beyond the lecture: the proof uses an \emph{algebraic invariant}, a property preserved by every isomorphism. In $(\mathbb{R}^*, \cdot, 1)$, the element $-1$ has order $2$ ($x \neq e$ with $x^2 = e$, \cref{def:pre-cyclic}), while $(\mathbb{R}^*_{>0}, \cdot, 1)$ has no element of order $2$. An isomorphism maps elements of order $2$ to elements of order $2$, so the two groups are not isomorphic, although as sets they have the same cardinality (\cref{fact:pre-cardinality}).
 \end{steps}
 \end{content}
 
@@ -626,7 +626,7 @@ There's a notion of a subgroup. We did this for the ring (Recall: \cref{def:kern
 
 If $f$ is a group homomorphism, then in the spirit of linear algebra --- which is the algebra you're supposed to be most familiar with --- if you have a linear transformation between two vector spaces, the thing you immediately study is the kernel and the image of that linear transformation. We can do that also with groups: we can consider the kernel and the image. \inlinemetanote{writes \qt{Then we can consider $\operatorname{ker}$, $\operatorname{Im}$}} Let's start with the kernel. What properties does this kernel enjoy?
 
-The kernel of a group homomorphism is defined to be those elements in $G$ such that when I apply $f$, I get the neutral element on the second side: \inlinemetanote{writes: $\operatorname{ker}(f) := \{ x \in G \mid f(x) = \hat{e} \}$}. In the linear algebra language, that's things that went to zero. Now it's the elements that go to the neutral element. Is that clear?
+The kernel of a group homomorphism is defined to be those elements in $G$ such that when I apply $f$, I get the neutral element on the second side: \inlinemetanote{writes: $\operatorname{ker}(f) = \{ x \in G \mid f(x) = \hat{e} \}$}. In the linear algebra language, that's things that went to zero. Now it's the elements that go to the neutral element. Is that clear?
 \end{speech}
 
 \begin{content}[Definition of the Kernel]
@@ -1092,9 +1092,9 @@ Then the claim is that you have to check that this satisfies all these propertie
 That's an example, and that's a very important one. Of course, $2$ is not important here: you could have put $17$ here, and it would be fine: \inlinemetanote{writes: $17^n$}. That's another example. And in fact, being prime is not that important either.
 \end{speech}
 
-\begin{content}[Dyadic Rationals as an Intermediate Subring]
-\begin{example}[{Dyadic Rationals $\mathbb{Z}[1/2]$}]\label[example]{ex:dyadic-rationals-subring}
-There exists a strict intermediate subring $\mathbb{Z} \subsetneq S \subsetneq \mathbb{Q}$. Consider the set of dyadic rationals:
+\begin{content}[A Subring between $\mathbb{Z}$ and $\mathbb{Q}$]
+\begin{example}[{Denominators that Are Powers of $2$}]\label[example]{ex:dyadic-rationals-subring}
+There exists a strict intermediate subring $\mathbb{Z} \subsetneq S \subsetneq \mathbb{Q}$. Consider the set of rational numbers whose denominator is a power of $2$:
 \begin{equation}\label{eq:dyadic-def}
 S := \left\{ \frac{a}{2^n} \;\middle|\; a \in \mathbb{Z}, \ n \in \mathbb{Z}_{\ge 0} \right\} = \mathbb{Z}\left[\frac{1}{2}\right].
 \end{equation}
@@ -1120,12 +1120,12 @@ S := \left\{ \frac{a}{2^n} \;\middle|\; a \in \mathbb{Z}, \ n \in \mathbb{Z}_{\g
 \end{itemize}
 \end{example}
 
-\begin{steps}[Generalization: Ring of Fractions / Localization]
+\begin{steps}[Generalization: Other Denominators]
 As observed by the lecturer, the prime $2$ can be replaced by any integer $k \ge 2$ (e.g., $17$):
 \[
 \mathbb{Z}\left[\frac{1}{k}\right] := \left\{ \frac{a}{k^n} \;\middle|\; a \in \mathbb{Z}, \ n \ge 0 \right\}
 \]
-forms a valid intermediate subring between $\mathbb{Z}$ and $\mathbb{Q}$. In abstract algebra, this construction represents the simplest instance of the \newterm{localization} of a commutative ring at a multiplicative set, here $\{1, k, k^2, \dots\}$: the elements of that set are made invertible. The case $k = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
+forms a valid intermediate subring between $\mathbb{Z}$ and $\mathbb{Q}$. Going beyond the lecture: the numbers with denominator a power of $2$ are called \emph{dyadic rationals}, and this construction is the simplest instance of the \emph{localization} of a commutative ring at a multiplicative set, here $\{1, k, k^2, \dots\}$: the elements of that set are made invertible. The case $k = 3$ returns in Week~3 (\cref{ex:frac-triadic}).
 \end{steps}
 \end{content}
 
@@ -1293,7 +1293,7 @@ n\mathbb{Z} := \{ n \cdot k \mid k \in \mathbb{Z} \} \subset \mathbb{Z}.
 \begin{itemize}
     \item \textbf{$n\mathbb{Z}$ is an ideal:} For any $n \in \mathbb{Z}$, $n\mathbb{Z}$ is an additive subgroup of $\mathbb{Z}$ and absorbs multiplication: for any $r \in \mathbb{Z}$ and $nk \in n\mathbb{Z}$, $r \cdot (nk) = n(rk) \in n\mathbb{Z}$.
     \item \textbf{Sign Invariance:} Since $-1 \in \mathbb{Z}$ is an invertible unit, $n\mathbb{Z} = (-n)\mathbb{Z}$ for every $n \in \mathbb{Z}$.
-    \item \textbf{Non-negative Normalization:} By universal algebraic convention, we normalize generators to $n \ge 0$.
+    \item \textbf{Non-negative Normalization:} Typically, one writes $n\mathbb{Z}$ with $n \ge 0$.
 \end{itemize}
 \end{remark}
 \end{content}
@@ -1358,9 +1358,10 @@ I have to teach you some culture, too, you know! Okay, but that's the origin of 
 \end{center}
 \end{content}
 
-\begin{insight}[Historical Origin of Ideals and Kummer's \qt{Ideal Numbers}]
-The terminology \newterm{ideal} originates from Ernst Kummer's concept of \emph{ideal numbers} (developed in the 1840s to restore unique prime factorization in cyclotomic integer rings while attempting to prove Fermat's Last Theorem), later formalized by Richard Dedekind and David Hilbert. For the integers $\mathbb{Z}$, every ideal is simply the set of multiples of an actual integer $n\mathbb{Z}$. In more general rings where unique factorization fails, ideals serve as the generalized, \qt{idealized} numbers that recover unique prime decomposition.
-\end{insight}
+\begin{aiNote}[Beyond the Lecture: Where the Word \qt{Ideal} Comes From]
+% [PERSISTENT, ADDITION]
+The lecturer places the term around $1900$ and names Hilbert. The history goes further back: Ernst Kummer introduced \emph{ideal numbers} in the 1840s to restore unique prime factorization in cyclotomic integer rings, and Richard Dedekind formalized them as ideals. For the integers $\mathbb{Z}$, every ideal is simply the set of multiples $n\mathbb{Z}$ of an actual integer. In more general rings where unique factorization fails, ideals serve as the generalized, \qt{idealized} numbers that recover unique prime decomposition.
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:07:18
@@ -1437,8 +1438,8 @@ It has a minimum.
 Yeah, it has a least positive integer. That's the next line: \inlinemetanote{moves to the lower left board and writes: $I$ has a least positive integer}. As I said, for basically every property of the integers, at some point you have to use this principle. Once it has a least positive integer, let's call that one $n$. So, $n$ is equal to the least positive integer of $I$: \inlinemetanote{writes: $n =$ least pos. int. of $I$}.
 \end{speech}
 
-\begin{content}[Application of the Well-Ordering Principle]
-By the \newterm{Well-Ordering Principle} of $\mathbb{N}$ (every non-empty subset of positive integers possesses a least element, \cref{fact:pre-well-ordering}), the non-empty set $I \cap \mathbb{Z}_{>0}$ contains a unique minimum element:
+\begin{content}[The Least Positive Element of $I$]
+Every non-empty subset of positive integers has a least element (\cref{fact:pre-well-ordering}), so the non-empty set $I \cap \mathbb{Z}_{>0}$ contains a unique minimum element:
 \begin{equation}\label{eq:n-minimal-pos}
 n := \min(I \cap \mathbb{Z}_{>0}).
 \end{equation}
@@ -1458,7 +1459,7 @@ And the important part of this remainder term is that $0 \le r < n$: \inlinemeta
 We show $I = n\mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Inclusion $n\mathbb{Z} \subseteq I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \colon kn \in I$, so $n\mathbb{Z} \subseteq I$.
-    \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{Euclidean Division Algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
+    \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{division algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
     \begin{equation}\label{eq:division-remainder}
     y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.
     \end{equation}
@@ -1486,14 +1487,14 @@ Let $I \subset \mathbb{Z}$ be an ideal.
     \item[Case 1:] \textbf{$I = \{0\}$:} Then $I = 0\mathbb{Z}$, and $n = 0$ is unique.
     \item[Case 2:] \textbf{$I \neq \{0\}$:} Choose any non-zero $x \in I$. Since $I$ is an additive subgroup, $-x = (-1) \cdot x \in I$. Thus, $|x| \in I \cap \mathbb{Z}_{>0} \neq \emptyset$.
     
-    By the Well-Ordering Principle of $\mathbb{N}$, the non-empty set of positive elements in $I$ has a least element:
+    The non-empty set of positive elements in $I$ has a least element:
     \[
     n := \min(I \cap \mathbb{Z}_{>0}) > 0.
     \]
     We show that $I = n\mathbb{Z}$:
     \begin{itemize}
         \item Since $n \in I$ and $I$ is an ideal, $k \cdot n \in I$ for all $k \in \mathbb{Z}$, whence $n\mathbb{Z} \subseteq I$.
-        \item Conversely, let $y \in I$ be arbitrary. Applying the Euclidean division theorem to divide $y$ by $n$:
+        \item Conversely, let $y \in I$ be arbitrary. Applying the division algorithm to divide $y$ by $n$:
         \[
         y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.
         \]
@@ -1514,9 +1515,6 @@ Let $I \subset \mathbb{Z}$ be an ideal.
 
 \end{proofWrapper}
 
-\begin{insight}[Principal Ideal Domains (PIDs)]
-An integral domain (\cref{def:integral-domain}) in which every ideal is generated by a single element (i.e., $I = aR$) is called a \newterm{Principal Ideal Domain} (\newterm{PID}). \Cref{thm:ideals-of-z-are-principal} proves that the ring of integers $\mathbb{Z}$ is a PID.
-\end{insight}
 
 \subsection{Trivial Ideals and Comparison with Fields}
 
@@ -1548,7 +1546,7 @@ Once $1 \in I$, for any $r \in F$ we have $r = r \cdot 1 \in I$, so $I = F$.
 
 \begin{aiNote}[Beyond the Lecture: PID vs. Field Structure]
 % [PERSISTENT, ADDITION]
-The ring of integers $\mathbb{Z}$ is a Principal Ideal Domain, but not a field, because it contains infinitely many non-trivial proper ideals $n\mathbb{Z}$ for $n \ge 2$. In contrast, in a field $F$, every non-zero element is invertible, instantly forcing any non-zero ideal to absorb $1$ and expand to the entire ring.
+An integral domain (\cref{def:integral-domain}) in which every ideal is generated by a single element (i.e., $I = aR$) is called a \emph{principal ideal domain} (\emph{PID}), a name the lecture introduces later. By \cref{thm:ideals-of-z-are-principal}, $\mathbb{Z}$ is a PID, but not a field, because it contains infinitely many non-trivial proper ideals $n\mathbb{Z}$ for $n \ge 2$. In contrast, in a field $F$, every non-zero element is invertible, instantly forcing any non-zero ideal to absorb $1$ and expand to the entire ring.
 \end{aiNote}
 
 \section{Ideals in Rings of Smooth Functions}
@@ -1842,12 +1840,12 @@ More specifically, given two objects in the category --- \inlinemetanote{writes 
 
 \begin{content}[Definition of a Category]
 \begin{definition}[Category]\label[definition]{def:category-foundations}
-A \newterm{category} $\mathcal{C}$ consists of the following data:
+A \newterm{category} $\operatorname{Cat}$ consists of the following data:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item A collection of \newterm{objects}, denoted $\operatorname{Obj}(\mathcal{C})$.
-    \item For every pair of objects $A, B \in \operatorname{Obj}(\mathcal{C})$, a set of \newterm{morphisms} (also called \newterm{homs} or \newterm{arrows}), denoted:
+    \item A collection of \newterm{objects}, denoted $\operatorname{Obj}(\operatorname{Cat})$.
+    \item For every pair of objects $A, B \in \operatorname{Obj}(\operatorname{Cat})$, a set of \newterm{morphisms} (also called \newterm{homs} or \newterm{arrows}), denoted:
     \[
-    \operatorname{Hom}_{\mathcal{C}}(A, B) \quad (\text{or } \operatorname{Mor}(A, B)).
+    \operatorname{Hom}(A, B) \quad (\text{or } \operatorname{Mor}(A, B)).
     \]
 \end{enumerate}
 \end{definition}
@@ -2035,11 +2033,11 @@ That's the content of this: to say that this category of groups is a category, t
 \end{speech}
 
 \begin{content}[Axioms of a Category: Hom-Sets and Composition]
-\textbf{Axiom 1 (Hom-Sets):} For any two objects $A, B \in \operatorname{Obj}(\mathcal{C})$, the collection $\operatorname{Hom}_{\mathcal{C}}(A, B)$ is a well-defined set.
+\textbf{Axiom 1 (Hom-Sets):} For any two objects $A, B \in \operatorname{Obj}(\operatorname{Cat})$, the collection $\operatorname{Hom}(A, B)$ is a well-defined set.
 
-\textbf{Axiom 2 (Composition Law):} For any three objects $A, B, C \in \operatorname{Obj}(\mathcal{C})$, there is a composition mapping:
+\textbf{Axiom 2 (Composition Law):} For any three objects $A, B, C \in \operatorname{Obj}(\operatorname{Cat})$, there is a composition mapping:
 \begin{align*}
-\circ \colon \operatorname{Hom}_{\mathcal{C}}(A, B) \times \operatorname{Hom}_{\mathcal{C}}(B, C) &\longrightarrow \operatorname{Hom}_{\mathcal{C}}(A, C) \\
+\circ \colon \operatorname{Hom}(A, B) \times \operatorname{Hom}(B, C) &\longrightarrow \operatorname{Hom}(A, C) \\
 (f, g) &\longmapsto g \circ f.
 \end{align*}
 \end{content}
@@ -2061,16 +2059,16 @@ And also the other way: you can also have $A$, $B$, and $B$. \inlinemetanote{wri
 \end{speech}
 
 \begin{content}[Axioms of a Category: Identity and Unit Laws]
-\textbf{Axiom 3 (Identity Morphisms):} For every object $A \in \operatorname{Obj}(\mathcal{C})$, there exists a distinguished morphism, called the \newterm{identity morphism}:
+\textbf{Axiom 3 (Identity Morphisms):} For every object $A \in \operatorname{Obj}(\operatorname{Cat})$, there exists a distinguished morphism, called the \newterm{identity morphism}:
 \[
-\operatorname{Id}_A \in \operatorname{Hom}_{\mathcal{C}}(A, A).
+\operatorname{Id}_A \in \operatorname{Hom}(A, A).
 \]
 
 \textbf{Axiom 4 (Identity Laws / Unit Axioms):}
-For every morphism $f \in \operatorname{Hom}_{\mathcal{C}}(A, B)$:
+For every morphism $f \in \operatorname{Hom}(A, B)$:
 \begin{align}
-f \circ \operatorname{Id}_A &= f \in \operatorname{Hom}_{\mathcal{C}}(A, B), \label{eq:left-id} \\
-\operatorname{Id}_B \circ f &= f \in \operatorname{Hom}_{\mathcal{C}}(A, B). \label{eq:right-id}
+f \circ \operatorname{Id}_A &= f \in \operatorname{Hom}(A, B), \label{eq:left-id} \\
+\operatorname{Id}_B \circ f &= f \in \operatorname{Hom}(A, B). \label{eq:right-id}
 \end{align}
 \end{content}
 
@@ -2090,21 +2088,17 @@ I'll just say it again: a category has objects, it has homs, the homs have to be
 
 \begin{content}[Consolidated Definition of a Category]
 \begin{definition}[Formal Category]\label[definition]{def:category-full}
-A \newterm{category} $\mathcal{C}$ consists of:
+A \newterm{category} $\operatorname{Cat}$ consists of:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item A collection of objects $\operatorname{Obj}(\mathcal{C})$.
-    \item A set of morphisms $\operatorname{Hom}_{\mathcal{C}}(A, B)$ for every pair $A, B \in \operatorname{Obj}(\mathcal{C})$.
+    \item A collection of objects $\operatorname{Obj}(\operatorname{Cat})$.
+    \item A set of morphisms $\operatorname{Hom}(A, B)$ for every pair $A, B \in \operatorname{Obj}(\operatorname{Cat})$.
     \item A composition operation:
     \[
-    \circ \colon \operatorname{Hom}_{\mathcal{C}}(A, B) \times \operatorname{Hom}_{\mathcal{C}}(B, C) \longrightarrow \operatorname{Hom}_{\mathcal{C}}(A, C), \quad (f, g) \longmapsto g \circ f,
+    \circ \colon \operatorname{Hom}(A, B) \times \operatorname{Hom}(B, C) \longrightarrow \operatorname{Hom}(A, C), \quad (f, g) \longmapsto g \circ f,
     \]
-    satisfying \textbf{associativity}:
+    \item For each object $A \in \operatorname{Obj}(\operatorname{Cat})$, an identity morphism $\operatorname{Id}_A \in \operatorname{Hom}(A, A)$ satisfying the \textbf{unit laws}:
     \[
-    h \circ (g \circ f) = (h \circ g) \circ f \quad \forall f \in \operatorname{Hom}(A, B), \ g \in \operatorname{Hom}(B, C), \ h \in \operatorname{Hom}(C, D).
-    \]
-    \item For each object $A \in \operatorname{Obj}(\mathcal{C})$, an identity morphism $\operatorname{Id}_A \in \operatorname{Hom}_{\mathcal{C}}(A, A)$ satisfying the \textbf{unit laws}:
-    \[
-    f \circ \operatorname{Id}_A = f \quad \text{and} \quad \operatorname{Id}_B \circ f = f \quad \forall f \in \operatorname{Hom}_{\mathcal{C}}(A, B).
+    f \circ \operatorname{Id}_A = f \quad \text{and} \quad \operatorname{Id}_B \circ f = f \quad \forall f \in \operatorname{Hom}(A, B).
     \]
 \end{enumerate}
 \end{definition}
@@ -2125,10 +2119,12 @@ A \newterm{category} $\mathcal{C}$ consists of:
 \end{tikzpicture}
 \end{center}
 
-\begin{steps}[Associativity in Categories]
-Although the lecturer did not explicitly write associativity on the board, associativity of composition, $(h \circ g) \circ f = h \circ (g \circ f)$, is an indispensable standard axiom of any category, guaranteeing that diagrammatic paths compose unambiguously.
-\end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Associativity of Composition]
+% [PERSISTENT, ADDITION]
+The board lists Hom-sets, composition, identity morphisms and the two unit laws, and not associativity: $h \circ (g \circ f) = (h \circ g) \circ f$ for all $f \in \operatorname{Hom}(A, B)$, $g \in \operatorname{Hom}(B, C)$, $h \in \operatorname{Hom}(C, D)$. The lecturer adds this axiom the next day (\cref{ax:category-axioms-w2wed}). It holds in all of the examples above, since composition of maps is associative.
+\end{aiNote}
 
 \subsection{Categorical Definition of Isomorphism}
 
@@ -2192,7 +2188,7 @@ Is that confusing or clear?
 
 \begin{content}[Categorical Definition of Isomorphism]
 \begin{definition}[Isomorphism in a Category]\label[definition]{def:categorical-isomorphism}
-Let $\mathcal{C}$ be a category, and let $A, B \in \operatorname{Obj}(\mathcal{C})$. A morphism $f \in \operatorname{Hom}_{\mathcal{C}}(A, B)$ (denoted $f \colon A \to B$) is called an \newterm{isomorphism} if there exists a morphism $g \in \operatorname{Hom}_{\mathcal{C}}(B, A)$ (denoted $g \colon B \to A$) such that:
+Let $\operatorname{Cat}$ be a category, and let $A, B \in \operatorname{Obj}(\operatorname{Cat})$. A morphism $f \in \operatorname{Hom}(A, B)$ (denoted $f \colon A \to B$) is called an \newterm{isomorphism} if there exists a morphism $g \in \operatorname{Hom}(B, A)$ (denoted $g \colon B \to A$) such that:
 \begin{equation}\label{eq:isomorphism-conditions}
 f \circ g = \operatorname{Id}_B \quad \text{and} \quad g \circ f = \operatorname{Id}_A.
 \end{equation}
@@ -2221,7 +2217,7 @@ Two objects $A$ and $B$ are called \newterm{isomorphic} (written $A \cong B$) if
 \end{center}
 
 \begin{steps}[Arrow-Theoretic vs. Element-Theoretic Isomorphism]
-In standard concrete algebra, an isomorphism is typically introduced as a \emph{bijective homomorphism}. In abstract category theory, where objects may not have \qt{elements} and morphisms are not necessarily \qt{functions}, bijectivity cannot even be formulated. Instead, category theory characterizes isomorphisms purely through arrows via the existence of a two-sided inverse morphism $g$. In concrete categories this recovers the familiar notions:
+Going beyond the lecture: in standard concrete algebra, an isomorphism is typically introduced as a \emph{bijective homomorphism}. In abstract category theory, where objects may not have \qt{elements} and morphisms are not necessarily \qt{functions}, bijectivity cannot even be formulated. Instead, category theory characterizes isomorphisms purely through arrows via the existence of a two-sided inverse morphism $g$. In concrete categories this recovers the familiar notions:
 \begin{itemize}
     \item In $\mathbf{Grp}$, categorical isomorphisms are precisely bijective group homomorphisms (\cref{prop:isomorphism-inverse-characterization}).
     \item In $\mathbf{Ring}$, categorical isomorphisms are bijective ring homomorphisms (\cref{def:ring-isomorphism}).
@@ -2230,9 +2226,6 @@ In standard concrete algebra, an isomorphism is typically introduced as a \emph{
 \end{steps}
 \end{content}
 
-\begin{insight}[The Power of Category-Theoretic Abstraction]
-Category theory unifies mathematics by defining concepts purely in terms of external interactions (\newterm{morphisms}) between systems rather than internal set elements. The definition of an isomorphism $f \circ g = \operatorname{Id}_B$ and $g \circ f = \operatorname{Id}_A$ is universally identical across group theory, ring theory, linear algebra, topology, and algebraic geometry.
-\end{insight}
 
 \begin{speech}[01:21:46 - 01:22:27]
 In particular, once I tell you the categories of groups or rings, I tell you the homs, the identity, and this property, that already tells you what the notion of isomorphism is. I told you anyway what the notion of isomorphism is, but in some sense I didn't have to: it was just this categorical notion of isomorphism.
@@ -2274,21 +2267,21 @@ That's the notion of a functor.
 
 \begin{content}[Definition of a Functor]
 \begin{definition}[Covariant Functor]\label[definition]{def:functor}
-Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \newterm{functor} (or \newterm{covariant functor}) $F \colon \mathcal{C} \to \mathcal{D}$ consists of the following data:
+Let $\operatorname{Cat}$ and $\widehat{\operatorname{Cat}}$ be categories. A \newterm{functor} (or \newterm{covariant functor}) $F \colon \operatorname{Cat} \to \widehat{\operatorname{Cat}}$ consists of the following data:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Object Assignment:} To every object $A \in \operatorname{Obj}(\mathcal{C})$, an object $F(A) \in \operatorname{Obj}(\mathcal{D})$.
-    \item \textbf{Morphism Assignment:} To every morphism $f \in \operatorname{Hom}_{\mathcal{C}}(A, B)$, a morphism:
+    \item \textbf{Object Assignment:} To every object $A \in \operatorname{Obj}(\operatorname{Cat})$, an object $F(A) \in \operatorname{Obj}(\widehat{\operatorname{Cat}})$.
+    \item \textbf{Morphism Assignment:} To every morphism $f \in \operatorname{Hom}(A, B)$, a morphism:
     \[
-    F(f) \in \operatorname{Hom}_{\mathcal{D}}\bigl(F(A), F(B)\bigr),
+    F(f) \in \operatorname{Hom}\bigl(F(A), F(B)\bigr),
     \]
 \end{enumerate}
 satisfying the following structural compatibility axioms:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item \textbf{Preservation of Identity:} For every object $A \in \operatorname{Obj}(\mathcal{C})$:
+    \item \textbf{Preservation of Identity:} For every object $A \in \operatorname{Obj}(\operatorname{Cat})$:
     \[
     F(\operatorname{Id}_A) = \operatorname{Id}_{F(A)}.
     \]
-    \item \textbf{Preservation of Composition:} For all morphisms $f \in \operatorname{Hom}_{\mathcal{C}}(A, B)$ and $g \in \operatorname{Hom}_{\mathcal{C}}(B, C)$:
+    \item \textbf{Preservation of Composition:} For all morphisms $f \in \operatorname{Hom}(A, B)$ and $g \in \operatorname{Hom}(B, C)$:
     \[
     F(g \circ f) = F(g) \circ F(f).
     \]
@@ -2310,7 +2303,7 @@ satisfying the following structural compatibility axioms:
 % \end{hidden}
 \begin{tikzpicture}[scale=1.3, >=Stealth]
     % Category C
-    \node[font=\bfseries, text=MidnightBlue] at (1.35, 1.4) {$\mathcal{C}$};
+    \node[font=\bfseries, text=MidnightBlue] at (1.35, 1.4) {$\operatorname{Cat}$};
     \draw[thick, dashed, MidnightBlue!40, rounded corners=8pt] (0, -0.2) rectangle (2.7, 1.7);
     \node (A) at (0.6, 0.5) {$A$};
     \node (B) at (2.1, 0.5) {$B$};
@@ -2320,7 +2313,7 @@ satisfying the following structural compatibility axioms:
     \draw[->, ultra thick, BurntOrange] (3.0, 0.75) -- node[above, font=\bfseries] {$F$} (4.4, 0.75);
 
     % Category D
-    \node[font=\bfseries, text=ForestGreen] at (6.35, 1.4) {$\mathcal{D}$};
+    \node[font=\bfseries, text=ForestGreen] at (6.35, 1.4) {$\widehat{\operatorname{Cat}}$};
     \draw[thick, dashed, ForestGreen!40, rounded corners=8pt] (5.0, -0.2) rectangle (7.7, 1.7);
     \node (FA) at (5.6, 0.5) {$F(A)$};
     \node (FB) at (7.1, 0.5) {$F(B)$};
@@ -2337,7 +2330,7 @@ satisfying the following structural compatibility axioms:
 % open_loops: none
 \end{hidden}
 
-\subsection{Examples of Functors: Forgetful Functor from Rings to Groups}
+\subsection{Examples of Functors: From Rings to Groups}
 
 \begin{speech}[01:25:22 - 01:27:44]
 And what's an example of a functor? \inlinemetanote{erases the middle chalkboard}
@@ -2353,7 +2346,7 @@ This functor associates the ring to a group, so, it gives an object here to an o
 Again, almost nothing is happening; it's just reinterpretation. But that's an example, kind of a dumb example.
 \end{speech}
 
-\begin{content}[The Forgetful / Additive Functor from Rings to Groups]
+\begin{content}[The Functor from Rings to Groups]
 \begin{example}[The Additive Functor $F \colon \mathbf{Ring} \to \mathbf{Grp}$]\label[example]{ex:forgetful-functor-rings-groups}
 There is a canonical functor:
 \[
@@ -2374,7 +2367,7 @@ Since ring homomorphisms satisfy $f(a + b) = f(a) + f(b)$ and $f(0) = \hat{0}$, 
 \end{example}
 
 \begin{steps}[Forgetful Functors in Algebra]
-This construction is the standard prototype of a \newterm{forgetful functor}: it strips away (forgets) a layer of algebraic structure (the multiplication $\cdot$ and unit $1$), leaving only the underlying additive group $(R, +, 0)$.
+Going beyond the lecture: this construction is the standard prototype of a \emph{forgetful functor}: it strips away (forgets) a layer of algebraic structure (the multiplication $\cdot$ and unit $1$), leaving only the underlying additive group $(R, +, 0)$.
 \end{steps}
 \end{content}
 
@@ -2413,11 +2406,11 @@ You've seen this double dual business, right? Usually, in linear algebra, you sp
 Okay, good, that's it. \inlinemetanote{students applaud}
 \end{speech}
 
-\begin{content}[The Double Dual Endofunctor on Vector Spaces]
+\begin{content}[The Double Dual Functor on Vector Spaces]
 \begin{example}[The Double Dual Functor]\label[example]{ex:double-dual-functor}
-Let $\mathbf{Vect}_{\mathbb{C}}$ denote the category of complex vector spaces and $\mathbb{C}$-linear maps. The double dual construction defines an \newterm{endofunctor} (a functor from a category to itself):
+Let $\mathbf{Vect}_{\mathbb{C}}$ denote the category of complex vector spaces and $\mathbb{C}$-linear maps. The double dual construction defines a functor from this category to itself:
 \[
-(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \longrightarrow \mathbf{Vect}_{\mathbb{C}}
+F \colon \mathbf{Vect}_{\mathbb{C}} \longrightarrow \mathbf{Vect}_{\mathbb{C}}
 \]
 defined by:
 \begin{itemize}
@@ -2465,13 +2458,14 @@ defined by:
 \end{center}
 
 \begin{steps}[Covariance, Contravariance, and Canonical Isomorphism]
+Going beyond the lecture:
 \begin{itemize}
     \item \textbf{Single Dual is Contravariant:} The mapping $V \mapsto V^*$ and $f \mapsto f^*$ reverses arrow directions ($f \colon V \to W \implies f^* \colon W^* \to V^*$), making the dual functor a \newterm{contravariant functor}.
     \item \textbf{Functoriality:} $(\operatorname{Id}_V)^{**} = (\operatorname{Id}_{V^*})^* = \operatorname{Id}_{V^{**}}$, and for $U \xrightarrow{g} V \xrightarrow{f} W$ the dual satisfies $(f \circ g)^* = g^* \circ f^*$, so
     \[
     (f \circ g)^{**} = (g^* \circ f^*)^* = f^{**} \circ g^{**}.
     \]
-    \item \textbf{Double Dual is Covariant:} Dualizing twice reverses the arrows twice, so $(-)^{**}$ preserves morphism directions ($f \colon V \to W \implies f^{**} \colon V^{**} \to W^{**}$), forming a valid covariant functor.
+    \item \textbf{Double Dual is Covariant:} Dualizing twice reverses the arrows twice, so $F$ preserves morphism directions ($f \colon V \to W \implies f^{**} \colon V^{**} \to W^{**}$), forming a valid covariant functor.
     \item \textbf{Finite vs.\ Infinite Dimensions:} For finite-dimensional vector spaces, the evaluation mapping $\operatorname{ev} \colon V \to V^{**}$, $v \mapsto (\varphi \mapsto \varphi(v))$, is a canonical isomorphism ($V \cong V^{**}$, \cref{fact:pre-double-dual}). For infinite-dimensional spaces, $\operatorname{ev}$ remains an injective linear map, but is generally not surjective. The functorial construction $V \mapsto V^{**}$, however, is universally defined across all vector spaces regardless of dimension.
 \end{itemize}
 \end{steps}
@@ -2483,7 +2477,7 @@ This lecture established the following central algebraic and categorical foundat
     \item \textbf{Uniqueness of Identity and Inverses:} In any group $(G, \cdot, e)$, associativity inherently guarantees that both the identity element and inverse elements are strictly unique.
     \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms preserve products and automatically map identities to identities ($f(e) = \hat{e}$). Two groups are isomorphic if and only if there exists a two-sided inverse homomorphism. Notably, the exponential function establishes an isomorphism between the additive reals $(\mathbb{R}, +, 0)$ and the strictly positive multiplicative reals $(\mathbb{R}^*_{>0}, \cdot, 1)$.
     \item \textbf{Subgroups and Symmetry Breaking in Rings:} For group homomorphisms, both the kernel $\operatorname{ker}(f) \le G$ and image $\operatorname{Im}(f) \le \hat{G}$ are subgroups. In ring theory, this symmetry breaks: the image $\operatorname{Im}(f) \subset \hat{R}$ is a subring, whereas the kernel $\operatorname{ker}(f) \subset R$ is an ideal absorbing ring multiplication.
-    \item \textbf{Ideals of $\mathbb{Z}$ and $C^\infty(\mathbb{R})$:} Every ideal of $\mathbb{Z}$ is principal ($I = n\mathbb{Z}$ with $n \ge 0$), proven via the Well-Ordering Principle and Euclidean division. In the ring of smooth functions $C^\infty(\mathbb{R})$, compactly supported functions $C_c^\infty(\mathbb{R})$ form an ideal that is strictly contained within larger proper ideals, such as functions vanishing on a right half-line $[M, \infty)$.
-    \item \textbf{Categories and Functors:} A category $\mathcal{C}$ formalizes collections of objects and morphism sets with associative composition and unit laws. Isomorphisms are characterized purely arrow-theoretically by two-sided inverses. Functors formalize structure-preserving maps between categories, exemplified by the forgetful functor $\mathbf{Ring} \to \mathbf{Grp}$ and the covariant double dual endofunctor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
+    \item \textbf{Ideals of $\mathbb{Z}$ and $C^\infty(\mathbb{R})$:} Every ideal of $\mathbb{Z}$ is principal ($I = n\mathbb{Z}$ with $n \ge 0$), proven via the least positive element of an ideal and the division algorithm. In the ring of smooth functions $C^\infty(\mathbb{R})$, compactly supported functions $C_c^\infty(\mathbb{R})$ form an ideal that is strictly contained within larger proper ideals, such as functions vanishing on a right half-line $[M, \infty)$.
+    \item \textbf{Categories and Functors:} A category $\operatorname{Cat}$ formalizes collections of objects and morphism sets with composition, identity morphisms and unit laws. Isomorphisms are characterized purely arrow-theoretically by two-sided inverses. Functors formalize structure-preserving maps between categories, exemplified by the functor $\mathbf{Ring} \to \mathbf{Grp}$ and the covariant double dual endofunctor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
 \end{itemize}
 \end{overview}

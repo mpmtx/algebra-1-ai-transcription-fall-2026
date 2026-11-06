@@ -41,9 +41,9 @@
 \begin{overview}[Context and Overview]
 In this lecture, we explore the algebraic architecture of quotient rings and the structural behavior of ideals under ring homomorphisms:
 \begin{itemize}
-    \item \textbf{Review of Quotient Rings and the Canonical Projection:} We revisit the coset construction of $\faktor{R}{I}$ for an ideal $I \subset R$, the well-definedness of its operations, and the canonical quotient homomorphism $q \colon R \to \faktor{R}{I}$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
+    \item \textbf{Review of Quotient Rings and the Canonical Projection:} We revisit the construction of $\faktor{R}{I}$ for an ideal $I \subset R$, the well-definedness of its operations, and the canonical quotient homomorphism $q \colon R \to \faktor{R}{I}$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
     \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} We prove that the preimage (pullback) $f^{-1}(J)$ of an ideal $J \subset S$ under any ring homomorphism $f \colon R \to S$ is always an ideal of $R$, whereas forward images generally fail to be ideals unless the map is surjective.
-    \item \textbf{The Correspondence Theorem for Ideals:} We formulate and rigorously prove the Lattice Isomorphism Theorem for ideals, establishing an inclusion-preserving bijection between the ideals of the quotient ring $\faktor{R}{K}$ and the ideals of $R$ containing the modulo ideal $K$.
+    \item \textbf{The Correspondence Theorem for Ideals:} We formulate and rigorously prove the correspondence of ideals, establishing an inclusion-preserving bijection between the ideals of the quotient ring $\faktor{R}{K}$ and the ideals of $R$ containing the modulo ideal $K$.
     \item \textbf{Maximal Ideals and Fields:} We introduce maximal proper ideals, examine concrete examples in $\mathbb{Z}$, and establish the characterization that a ring $R$ is a field if and only if the zero ideal $(0)$ is maximal.
 \end{itemize}
 \end{overview}
@@ -66,7 +66,7 @@ Let $R$ be a ring and $I \subset R$ an ideal. The quotient ring $\faktor{R}{I}$ 
 \[
 x \equiv_I y \iff x - y \in I.
 \]
-The equivalence class of an element $x \in R$ is the coset:
+The equivalence class of an element $x \in R$ is the set:
 \[
 \bar{x} := x + I = \{ x + a \mid a \in I \}.
 \]
@@ -82,7 +82,7 @@ Equipped with the operations:
 additive identity $\bar{0} = 0 + I = I$, and multiplicative identity $\bar{1} = 1 + I$, the algebraic structure $(\faktor{R}{I}, +, \cdot, \bar{0}, \bar{1})$ forms a well-defined ring.
 \end{definition}
 
-\begin{steps}[Well-Definedness of Operations on Cosets]
+\begin{steps}[Well-Definedness of Operations on Classes]
 The well-definedness of addition and multiplication relies directly on $I$ being an ideal:
 \begin{itemize}
     \item \textbf{Addition:} If $\bar{x} = \bar{x}'$ and $\bar{y} = \bar{y}'$, then $x - x' \in I$ and $y - y' \in I$. Since $I$ is an additive subgroup, $(x + y) - (x' + y') = (x - x') + (y - y') \in I$, so $\overline{x + y} = \overline{x' + y'}$.
@@ -192,7 +192,7 @@ We verify each statement directly:
     \[
     \ker(q) = \{ x \in R \mid q(x) = \bar{0} \}.
     \]
-    Since the zero element in $\faktor{R}{I}$ is the coset $\bar{0} = 0 + I = I$, we have:
+    Since the zero element in $\faktor{R}{I}$ is the class $\bar{0} = 0 + I = I$, we have:
     \[
     q(x) = \bar{0} \iff \bar{x} = \bar{0} \iff x - 0 \in I \iff x \in I,
     \]
@@ -408,7 +408,7 @@ We define two collections of ideals:
 \end{notation}
 \end{content}
 
-\subsection{Statement of the Lattice Correspondence}
+\subsection{Statement of the Correspondence}
 
 \begin{speech}[00:18:40 - 00:20:07]
 So, is there any confusion about these definitions? I'm going to consider any ideal here, that's that set; and I consider here not any ideal, just ideals that contain the original $K$. Is that okay?
@@ -421,7 +421,7 @@ This is some kind of very nice way of thinking about ideals. We start with $R$ -
 \end{speech}
 
 \begin{content}
-\begin{proposition}[Correspondence Theorem / Lattice Theorem for Ideals]\label[proposition]{prop:correspondence-theorem-ideals}
+\begin{proposition}[Correspondence of Ideals]\label[proposition]{prop:correspondence-theorem-ideals}
 Let $R$ be a ring and $K \subset R$ an ideal. There is a canonical bijection:
 \begin{equation}\label{eq:correspondence-bijection}
 \operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right).
@@ -993,7 +993,7 @@ Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Cor
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Quotient Rings and Canonical Projection:} For any ideal $I \subset R$, the quotient $\faktor{R}{I}$ is a well-defined ring under coset operations $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The canonical projection $q \colon R \to \faktor{R}{I}$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$.
+    \item \textbf{Quotient Rings and Canonical Projection:} For any ideal $I \subset R$, the quotient $\faktor{R}{I}$ is a well-defined ring under the operations on classes $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The canonical projection $q \colon R \to \faktor{R}{I}$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$.
     \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} Under any ring homomorphism $f \colon R \to S$, the preimage $f^{-1}(J)$ of an ideal $J \subset S$ is always an ideal of $R$. Conversely, direct images $f(I)$ generally fail to be ideals (e.g., $2\mathbb{Z} \subset \mathbb{Z} \hookrightarrow \mathbb{Q}$), unless the homomorphism is surjective.
     \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the lattice of ideals in $\faktor{R}{K}$ is in canonical inclusion-preserving bijection with the lattice of ideals in $R$ containing $K$:
     \[

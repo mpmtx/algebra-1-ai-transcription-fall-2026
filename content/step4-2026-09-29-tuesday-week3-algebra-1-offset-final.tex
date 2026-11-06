@@ -100,14 +100,14 @@
 % Old chapter title: Rings, Groups of Units, and Fields of Fractions
 
 \begin{overview}[Course Content Overview]
-This lecture investigates the transition from commutative rings to fields and polynomials, focusing on the invertible elements of rings, the localization process that produces the minimal ambient field of an integral domain, and the algebraic construction of polynomial rings:
+This lecture investigates the transition from commutative rings to fields and polynomials, focusing on the invertible elements of rings, the construction that produces the smallest field containing an integral domain, and the algebraic construction of polynomial rings:
 \begin{itemize}
     \item \textbf{The Group of Units $\operatorname{Unit}(R)$:} Structure of multiplicatively invertible elements, characterization of units in $\mathbb{Z}$ and the Gaussian integers $\mathbb{Z}[i]$ via the norm, and the group of units of residue class rings $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Definition as the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, with explicit computations for prime powers $\phi(p) = p-1$ and $\phi(p^2) = p(p-1)$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} Rigorous formulation of $\mathbb{Q}$ as the smallest field containing $\mathbb{Z}$, and the unique extension of ring embeddings into fields.
     \item \textbf{Construction of the Field of Fractions $\operatorname{Frac}(R)$:} Generalization to arbitrary integral domains via equivalence classes of formal pairs $(x, y) \in R \times (R \setminus \{0\})$, verification of well-defined operations, and canonical embedding $i \colon R \hookrightarrow \operatorname{Frac}(R)$.
     \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}(i) = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}[\frac{1}{3}]$, and self-isomorphism for existing fields $\operatorname{Frac}(K) \cong K$.
-    \item \textbf{Polynomial Rings $R[x]$:} Intuitive formulation via formal linear combinations, rigorous foundation using almost-zero sequences in $R^{\mathbb{N}_0}$, componentwise addition, and Cauchy product (convolution) multiplication.
+    \item \textbf{Polynomial Rings $R[x]$:} Intuitive formulation via formal linear combinations, rigorous foundation using sequences in $R^{\mathbb{N}_0}$ that are eventually zero, componentwise addition, and Cauchy product multiplication.
 \end{itemize}
 \end{overview}
 
@@ -203,7 +203,7 @@ Let $z = a + bi \in \mathbb{Z}[i]$ be a unit with $a, b \in \mathbb{Z}$. By defi
 \begin{equation}\label{eq:gaussian-unit-prod}
 (a + bi)(c + di) = 1.
 \end{equation}
-Taking the complex modulus (Euclidean length) on both sides of \eqref{eq:gaussian-unit-prod}:
+Taking the norms (the lengths of the complex numbers) on both sides of \eqref{eq:gaussian-unit-prod}:
 \[
 |a + bi| \cdot |c + di| = |1| = 1 \implies \sqrt{a^2 + b^2} \cdot \sqrt{c^2 + d^2} = 1.
 \]
@@ -277,10 +277,12 @@ Conversely, $1 \cdot 1 = 1$, $(-1)(-1) = 1$, and $i(-i) = 1$, so all four elemen
 \end{tikzpicture}
 \end{center}
 
-\begin{steps}[Algebraic Meaning of the Norm]
-The field norm $N(a+bi) = a^2 + b^2$ is multiplicative: $N(zw) = N(z)N(w)$. Since $N(z) \in \mathbb{Z}_{\ge 0}$ for any Gaussian integer, the norm of any invertible element must divide $N(1) = 1$, forcing $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
-\end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Norm in Textbooks]
+% [PERSISTENT, ADDITION]
+The lecturer's \qt{norm} is the length $\sqrt{a^2 + b^2}$ of a complex number, and he squares the equation only at the end. Textbooks usually work with the square directly: the \emph{field norm} $N(a + bi) = a^2 + b^2$ of $\mathbb{Q}(i)$ over $\mathbb{Q}$ is multiplicative, $N(zw) = N(z) N(w)$, and takes non-negative integer values on $\mathbb{Z}[i]$. So $zw = 1$ gives $N(z) N(w) = N(1) = 1$ in one step, hence $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
+\end{aiNote}
 
 \subsection{The Group of Units of \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ}}
 
@@ -434,7 +436,7 @@ We evaluate the number of coprime residue classes in each case:
 \end{proof}
 
 \begin{steps}[Generalization to Prime Powers]
-For any prime power $p^k$ with $k \ge 1$, an integer $x \in \{0, 1, \dots, p^k - 1\}$ shares a factor with $p^k$ if and only if $p \mid x$. The multiples of $p$ are $0, p, 2p, \dots, (p^{k-1}-1)p$, totaling $p^{k-1}$ elements. Hence, $\phi(p^k) = p^k - p^{k-1} = p^k (1 - 1/p)$. For a general $n$, the Chinese Remainder Theorem splits $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ into prime-power factors, which gives $\phi(n) = n \prod_{p \mid n} (1 - 1/p)$ (Week~5, \cref{thm:euler-totient-product}).
+Going beyond the lecture (he returns to this in Week~5): for any prime power $p^k$ with $k \ge 1$, an integer $x \in \{0, 1, \dots, p^k - 1\}$ shares a factor with $p^k$ if and only if $p \mid x$. The multiples of $p$ are $0, p, 2p, \dots, (p^{k-1}-1)p$, totaling $p^{k-1}$ elements. Hence, $\phi(p^k) = p^k - p^{k-1} = p^k (1 - 1/p)$. For a general $n$, the Chinese Remainder Theorem splits $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ into prime-power factors, which gives $\phi(n) = n \prod_{p \mid n} (1 - 1/p)$ (Week~5, \cref{thm:euler-totient-product}).
 \end{steps}
 \end{content}
 
@@ -520,7 +522,7 @@ that is, $g|_{\mathbb{Z}} = f$, meaning $g(x) = f(x)$ for all $x \in \mathbb{Z}$
 Injectivity is automatic, because every ring homomorphism from a field to a non-zero ring is injective (see \cref{thm:ideals-in-a-field} and the steps after it, Week~1).
 
 \begin{steps}[Universal Property as Categorical Minimality]
-In category theory, this universal mapping property identifies $\mathbb{Q}$ as the initial object among all field extensions receiving $\mathbb{Z}$. Any field $F$ containing a copy of $\mathbb{Z}$ must necessarily contain a subfield isomorphic to $\mathbb{Q}$, showing that $\mathbb{Q}$ cannot be compressed or embedded into any strictly smaller field.
+Going beyond the lecture: in category theory, this universal mapping property identifies $\mathbb{Q}$ as the initial object among all field extensions receiving $\mathbb{Z}$. Any field $F$ containing a copy of $\mathbb{Z}$ must necessarily contain a subfield isomorphic to $\mathbb{Q}$, showing that $\mathbb{Q}$ cannot be compressed or embedded into any strictly smaller field.
 \end{steps}
 \end{content}
 
@@ -1065,7 +1067,7 @@ Thus, $(x_1, y_1) \equiv (x_3, y_3)$, which completes the proof.
 \end{proof}
 
 \begin{steps}[Why Integral Domains Are Essential for Transitivity]
-Notice where the ring axioms alone would fail: equation \eqref{eq:trans-factored} holds in any commutative ring. However, to deduce $x_1 y_3 = x_3 y_1$ from $(x_1 y_3 - x_3 y_1)y_2 = 0$, we must divide out and cancel the non-zero element $y_2$. If $R$ has zero divisors, the relation $\equiv$ can \emph{fail} to be transitive. For instance, in $\mathbb{Z}/6\mathbb{Z}$ (with $y_2 = \bar{2}$ and $x_1 y_3 - x_3 y_1 = \bar{3}$): $(\bar{3}, \bar{1}) \equiv (\bar{0}, \bar{2})$ since $\bar{3} \cdot \bar{2} = \bar{0} = \bar{0} \cdot \bar{1}$, and $(\bar{0}, \bar{2}) \equiv (\bar{0}, \bar{1})$ since $\bar{0} \cdot \bar{1} = \bar{0} = \bar{0} \cdot \bar{2}$, but $(\bar{3}, \bar{1}) \not\equiv (\bar{0}, \bar{1})$ since $\bar{3} \cdot \bar{1} = \bar{3} \neq \bar{0} = \bar{0} \cdot \bar{1}$.
+Going beyond the lecture: notice where the ring axioms alone would fail: equation \eqref{eq:trans-factored} holds in any commutative ring. However, to deduce $x_1 y_3 = x_3 y_1$ from $(x_1 y_3 - x_3 y_1)y_2 = 0$, we must divide out and cancel the non-zero element $y_2$. If $R$ has zero divisors, the relation $\equiv$ can \emph{fail} to be transitive. For instance, in $\mathbb{Z}/6\mathbb{Z}$ (with $y_2 = \bar{2}$ and $x_1 y_3 - x_3 y_1 = \bar{3}$): $(\bar{3}, \bar{1}) \equiv (\bar{0}, \bar{2})$ since $\bar{3} \cdot \bar{2} = \bar{0} = \bar{0} \cdot \bar{1}$, and $(\bar{0}, \bar{2}) \equiv (\bar{0}, \bar{1})$ since $\bar{0} \cdot \bar{1} = \bar{0} = \bar{0} \cdot \bar{2}$, but $(\bar{3}, \bar{1}) \not\equiv (\bar{0}, \bar{1})$ since $\bar{3} \cdot \bar{1} = \bar{3} \neq \bar{0} = \bar{0} \cdot \bar{1}$.
 \end{steps}
 \end{content}
 
@@ -1080,7 +1082,7 @@ This was almost like the first piece of algebra in this class, I think. I don't 
 \subsection{Construction of the Field of Fractions}
 
 \begin{speech}[00:51:06 - 00:52:35]
-Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R$ int. domain} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots$ with $\equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F := S_{/\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{/\equiv}$}
+Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R$ int. domain} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots$ with $\equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F = S_{\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{/\equiv}$}
 
 Is it completely clear what this thing is? We defined $S$, we defined an equivalence relation, and we took great pains to check all of its properties, so, we get the set of equivalence classes and that is $F$.
 \end{speech}
@@ -1135,7 +1137,7 @@ There's a lot of things to do in this construction --- it's like a big house: yo
 \begin{definition}[Field of Fractions]\label[definition]{def:field-of-fractions}
 Let $R$ be an integral domain, and let $S := \{ (x, y) \in R \times R \mid y \ne 0 \}$. The \newterm{field of fractions} (or quotient field) of $R$, denoted by $\operatorname{Frac}(R)$ or $F$, is defined as the quotient set:
 \begin{equation}\label{eq:field-of-fractions-def}
-F := S/\!\equiv \, = \{ [(x, y)] \mid (x, y) \in S \}.
+F := S_{\equiv} = \{ [(x, y)] \mid (x, y) \in S \}.
 \end{equation}
 The equivalence class $[(x, y)]$ is commonly written as $\frac{x}{y}$.
 \end{definition}
@@ -1152,7 +1154,7 @@ The canonical map $i \colon R \to F$ is injective.
 \end{proposition}
 
 \begin{proof}
-Let $r, \hat{r} \in R$. By definition of equality in the quotient set $F = S/\!\equiv$:
+Let $r, \hat{r} \in R$. By definition of equality in the quotient set $F = S_{\equiv}$:
 \begin{align*}
 i(r) = i(\hat{r}) &\iff [(r, 1)] = [(\hat{r}, 1)] \\
 &\iff (r, 1) \equiv (\hat{r}, 1) \\
@@ -1432,7 +1434,7 @@ such that:
 \end{content}
 
 \begin{content}[Algebraic View: Working with Fractions]
-In mathematical practice, once the formal construction of $F = S/\!\equiv$ is established, we identify $R$ with its image $i(R) \subseteq F$ and adopt standard fraction notation:
+In mathematical practice, once the formal construction of $F = S_{\equiv}$ is established, we identify $R$ with its image $i(R) \subseteq F$ and adopt standard fraction notation:
 \begin{equation}\label{eq:fraction-notation-standard}
 \frac{r}{s} := [(r, s)] \in \operatorname{Frac}(R) \quad (r, s \in R, \ s \ne 0).
 \end{equation}
@@ -1519,8 +1521,8 @@ For the ring of Gaussian integers $\mathbb{Z}[i] = \{ a + bi \mid a, b \in \math
 The field $\mathbb{Q}(i)$ is called the field of \newterm{Gaussian rationals}.
 \end{example}
 
-\begin{example}[Triadic Rationals]\label[example]{ex:frac-triadic}
-Consider the ring of triadic fractions $\mathbb{Z}[\frac{1}{3}]$ (the case $k = 3$ of the generalization after \cref{ex:dyadic-rationals-subring}), defined by:
+\begin{example}[Denominators that Are Powers of $3$]\label[example]{ex:frac-triadic}
+Consider the ring $\mathbb{Z}[\frac{1}{3}]$ (the case $k = 3$ of the generalization after \cref{ex:dyadic-rationals-subring}), defined by:
 \[
 \mathbb{Z}\left[\frac{1}{3}\right] := \left\{ \frac{a}{3^b} \;\middle|\; a \in \mathbb{Z}, \ b \in \mathbb{Z}_{\ge 0} \right\} \subset \mathbb{Q}.
 \]
@@ -1562,7 +1564,7 @@ Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \m
 \end{center}
 
 \begin{steps}[Why All Intermediate Subrings Yield $\mathbb{Q}$]
-The universal property was only proved for $\mathbb{Z}$ (\cref{thm:universal-property-q}), so here is a direct argument. Since $R \subseteq \mathbb{Q}$, a formal fraction $\frac{r}{s} \in \operatorname{Frac}(R)$ can be read as an actual rational number, which gives a map
+Going beyond the lecture: the universal property was only proved for $\mathbb{Z}$ (\cref{thm:universal-property-q}), so here is a direct argument. Since $R \subseteq \mathbb{Q}$, a formal fraction $\frac{r}{s} \in \operatorname{Frac}(R)$ can be read as an actual rational number, which gives a map
 \[
 \Phi \colon \operatorname{Frac}(R) \to \mathbb{Q}, \qquad [(r, s)] \mapsto r s^{-1}.
 \]
@@ -1754,9 +1756,9 @@ I'm defining $R[x]$ as a set first. Then I'll define addition. When I finish, it
 It's a good question. That's the reason why thinking about it this way is slightly confusing. Although I encourage you to think about it this way, because you have a lot of experience with polynomials, and in the end, nothing will go wrong.
 \end{speech}
 
-\begin{content}[Formal Definition of Polynomials as Sequences with Finite Support]
+\begin{content}[Formal Definition of Polynomials as Sequences]
 \begin{definition}[{Rigorous Definition of $R[x]$ via Coefficient Tuples}]\label[definition]{def:poly-rigorous-sequences}
-Let $R$ be a commutative ring with unit. The polynomial ring $R[x]$ is formally defined as the set of sequences $(a_k)_{k \in \mathbb{N}_0}$ of elements in $R$ (elements of $R^{\mathbb{N}_0}$, \cref{not:pre-notation}) with \newterm{finite support} (almost-zero sequences):
+Let $R$ be a commutative ring with unit. The polynomial ring $R[x]$ is formally defined as the set of sequences $(a_k)_{k \in \mathbb{N}_0}$ of elements in $R$ (elements of $R^{\mathbb{N}_0}$, \cref{not:pre-notation}) that are eventually zero:
 \begin{equation}\label{eq:poly-formal-sequence}
 R[x] := \left\{ (a_0, a_1, a_2, \dots) \in R^{\mathbb{N}_0} \;\middle|\; \exists N \in \mathbb{N}_0 \ \forall m > N \colon a_m = 0 \right\}.
 \end{equation}
@@ -1767,11 +1769,11 @@ Under the sequence model \eqref{eq:poly-formal-sequence}:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Indeterminate $x$:} The indeterminate $x$ corresponds to the elementary sequence with $1$ in position $1$:
     \begin{equation}\label{eq:x-as-sequence}
-    x := (0, 1, 0, 0, \dots).
+    x = (0, 1, 0, 0, \dots).
     \end{equation}
     \item \textbf{Constant Elements:} For any $a \in R$, the constant polynomial corresponds to the sequence:
     \begin{equation}\label{eq:constant-as-sequence}
-    a := (a, 0, 0, 0, \dots).
+    a = (a, 0, 0, 0, \dots).
     \end{equation}
 \end{enumerate}
 \end{proposition}
@@ -1836,7 +1838,7 @@ Addition is easy. Then they have to define multiplication. Multiplication is mor
 How do you define polynomial multiplication here? Let's try to do that.
 \end{speech}
 
-\subsection{Multiplication in \texorpdfstring{$R[x]$}{R[x]} and the Cauchy Convolution}
+\subsection{Multiplication in \texorpdfstring{$R[x]$}{R[x]} and the Cauchy Product}
 
 \begin{speech}[01:27:08 - 01:27:43]
 If I use this list of coefficients, here's my first polynomial, $f$, \inlinemetanote{writes: $f = (a_0, a_1, a_2, \dots)$} and my second polynomial, $g$. \inlinemetanote{writes: $g = (b_0, b_1, b_2, \dots)$} Then I have to define this polynomial, which is $f \times g$. \inlinemetanote{writes: $fg = ($}
@@ -1879,7 +1881,7 @@ Let $R$ be a commutative ring with unit $1_R$. The polynomial ring $(R[x], +, \c
     \begin{equation}\label{eq:poly-addition}
     (a_0, a_1, a_2, \dots) + (b_0, b_1, b_2, \dots) := (a_0 + b_0, \ a_1 + b_1, \ a_2 + b_2, \ \dots).
     \end{equation}
-    \item \textbf{Multiplication (Cauchy Product / Convolution):} The product $f \cdot g = (c_k)_{k \ge 0}$ is defined by:
+    \item \textbf{Multiplication (Cauchy Product):} The product $f \cdot g = (c_k)_{k \ge 0}$ is defined by:
     \begin{equation}\label{eq:poly-multiplication}
     c_k := \sum_{i=0}^k a_i b_{k-i} = a_0 b_k + a_1 b_{k-1} + \dots + a_k b_0.
     \end{equation}
@@ -1888,7 +1890,7 @@ Let $R$ be a commutative ring with unit $1_R$. The polynomial ring $(R[x], +, \c
     f \cdot g = \bigl( a_0 b_0, \ a_0 b_1 + a_1 b_0, \ a_0 b_2 + a_1 b_1 + a_2 b_0, \ \dots \bigr).
     \end{equation}
 \end{enumerate}
-Both results are again almost-zero sequences: if $a_k = 0$ for $k > N$ and $b_k = 0$ for $k > M$, then $a_k + b_k = 0$ for $k > \max(N, M)$, and $c_k = 0$ for $k > N + M$ (each term $a_i b_{k-i}$ has $i > N$ or $k - i > M$).
+Both results are again eventually zero: if $a_k = 0$ for $k > N$ and $b_k = 0$ for $k > M$, then $a_k + b_k = 0$ for $k > \max(N, M)$, and $c_k = 0$ for $k > N + M$ (each term $a_i b_{k-i}$ has $i > N$ or $k - i > M$).
 \end{definition}
 
 \begin{center}
@@ -1927,7 +1929,7 @@ Both results are again almost-zero sequences: if $a_k = 0$ for $k > N$ and $b_k 
 \end{tikzpicture}
 \end{center}
 
-\begin{steps}[Connection to the Cauchy Product and Discrete Convolution]
+\begin{steps}[Connection to the Cauchy Product]
 The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Distributive Expansion:} In formal series notation:
@@ -1935,7 +1937,7 @@ The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
     \left(\sum_{i=0}^n a_i x^i\right)\left(\sum_{j=0}^m b_j x^j\right) = \sum_{i=0}^n \sum_{j=0}^m a_i b_j x^{i+j} = \sum_{k=0}^{n+m} \left(\sum_{i+j=k} a_i b_j\right) x^k.
     \]
     The powers of the indeterminate $x$ naturally collect all terms where the sum of indices equals $k$.
-    \item \textbf{Cauchy Product of Power Series:} In analysis, the product of two absolutely convergent power series $\sum a_n x^n$ and $\sum b_n x^n$ is given by the exact same convolution formula (\cref{fact:pre-series}).
+    \item \textbf{Cauchy Product of Power Series:} In analysis, the product of two absolutely convergent power series $\sum a_n x^n$ and $\sum b_n x^n$ is given by the exact same formula (\cref{fact:pre-series}).
 \end{enumerate}
 \end{steps}
 \end{content}
@@ -1950,7 +1952,7 @@ Okay, we'll stop. \inlinemetanote{students applaud}
 
 \begin{aiNote}[Outlook: Formal Power Series in the Next Lecture]
 % [PERSISTENT]
-In the lecture introduction, the professor remarked that \qt{in some sense even more fun than polynomial rings are power series rings}. This lecture formalized the polynomial ring $R[x]$ as sequences of coefficients with finite support (almost-zero sequences). Dropping the finite support requirement leads directly to the ring of \newterm{formal power series} $R[[x]]$, consisting of arbitrary infinite sequences $(a_0, a_1, a_2, \dots)$ equipped with the same Cauchy product multiplication, which is systematically investigated at the start of the next lecture (\cref{def:power-series-ring-formal}).
+In the lecture introduction, the professor remarked that \qt{in some sense even more fun than polynomial rings are power series rings}. This lecture formalized the polynomial ring $R[x]$ as sequences of coefficients that are eventually zero. Dropping this requirement leads directly to the ring of \newterm{formal power series} $R[[x]]$, consisting of arbitrary infinite sequences $(a_0, a_1, a_2, \dots)$ equipped with the same Cauchy product multiplication, which is systematically investigated at the start of the next lecture (\cref{def:power-series-ring-formal}).
 \end{aiNote}
 
 \begin{overview}[Summary of Key Concepts]
@@ -1960,6 +1962,6 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
     \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(K) \cong K$ for any existing field $K$.
-    \item \textbf{Polynomial Rings $R[x]$:} For a commutative ring with unity $R$, the polynomial ring $R[x]$ is formally defined as the ring of almost-zero sequences $(a_k)_{k \in \mathbb{N}_0}$ in $R^{\mathbb{N}_0}$. It is equipped with componentwise addition and Cauchy product (convolution) multiplication $c_k = \sum_{i=0}^k a_i b_{k-i}$, with indeterminate $x = (0, 1, 0, 0, \dots)$.
+    \item \textbf{Polynomial Rings $R[x]$:} For a commutative ring with unity $R$, the polynomial ring $R[x]$ is formally defined as the ring of sequences $(a_k)_{k \in \mathbb{N}_0}$ in $R^{\mathbb{N}_0}$ that are eventually zero. It is equipped with componentwise addition and Cauchy product multiplication $c_k = \sum_{i=0}^k a_i b_{k-i}$, with indeterminate $x = (0, 1, 0, 0, \dots)$.
 \end{itemize}
 \end{overview}

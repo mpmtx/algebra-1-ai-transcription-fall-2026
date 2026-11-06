@@ -135,7 +135,7 @@ R \text{ is a UFD} \implies R[x] \text{ is a UFD}.
 \end{theorem}
 
 \begin{steps}[Historical Context and Scope of the Theorem]
-Gauss proved a form of the key lemma on primitive polynomials (\cref{lem:gauss-lemma}) for integer polynomials in his \emph{Disquisitiones Arithmeticae} (1801, Art.~42); the statement for an arbitrary UFD $R$ is the modern form of his argument. By induction on the number of variables $n$, the theorem extends to multivariate polynomial rings (as in \cref{ex:multivariate-poly-ufd}):
+Going beyond the lecture: gauss proved a form of the key lemma on primitive polynomials (\cref{lem:gauss-lemma}) for integer polynomials in his \emph{Disquisitiones Arithmeticae} (1801, Art.~42); the statement for an arbitrary UFD $R$ is the modern form of his argument. By induction on the number of variables $n$, the theorem extends to multivariate polynomial rings (as in \cref{ex:multivariate-poly-ufd}):
 \[
 R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \]
@@ -192,7 +192,7 @@ And I said that I was not going to give a hint about the proof, but I will now b
 
 \begin{content}
 \begin{example}[Gaussian Integers as a Euclidean Domain and UFD]\label[example]{ex:gaussian-integers-ufd}
-The ring of Gaussian integers $\mathbb{Z}[i] := \{ a + bi \mid a, b \in \mathbb{Z} \}$ equipped with the field norm $N(a + bi) = a^2 + b^2$ admits a division algorithm, establishing that it is a Euclidean domain. Since every Euclidean domain is a PID, and every PID is a UFD:
+The ring of Gaussian integers $\mathbb{Z}[i] := \{ a + bi \mid a, b \in \mathbb{Z} \}$ admits a division algorithm, so it is a Euclidean domain. Since every Euclidean domain is a PID, and every PID is a UFD:
 \[
 \mathbb{Z}[i] \text{ is a Euclidean Domain} \implies \mathbb{Z}[i] \text{ is a PID} \implies \mathbb{Z}[i] \text{ is a UFD}.
 \]
@@ -266,7 +266,7 @@ Consequently, the only non-zero ideals of $k[[x]]$ are the powers of the princip
 \[
 (0) \subset \dots \subset (x^3) \subset (x^2) \subset (x) \subset k[[x]].
 \]
-In particular, $k[[x]]$ is a discrete valuation ring (DVR), hence a PID and a UFD.
+In particular, $k[[x]]$ is a PID and a UFD.
 \end{exercise}
 \end{content}
 
@@ -298,7 +298,7 @@ Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item The \newterm{content} of $f$, denoted $C(f)$, is defined as the greatest common divisor of its non-zero coefficients:
     \[
-    C(f) := \operatorname{gcd}(a_0, a_1, \dots, a_n) \in R,
+    C(f) \overset{\text{unit}}{=} \operatorname{GCD}(a_0, a_1, \dots, a_n) \in R,
     \]
     which is well-defined up to multiplication by a unit in $\mathcal{U}_R$.
     \item A polynomial $f^* \in R[x]$ is called \newterm{primitive} if its content is a unit:
@@ -341,8 +341,8 @@ C(f) = 1 \text{ and } C(g) = 1 \implies C(f \cdot g) = 1.
 \begin{example}[{Explicit Verification in $\mathbb{Z}[x]$}]\label[example]{ex:gauss-lemma-verification}
 Consider $f(x) = 2x + 5$ and $g(x) = 3x + 17$ in $\mathbb{Z}[x]$:
 \begin{itemize}
-    \item $C(f) = \operatorname{gcd}(2, 5) = 1$, so $f$ is primitive.
-    \item $C(g) = \operatorname{gcd}(3, 17) = 1$, so $g$ is primitive.
+    \item $C(f) = \operatorname{GCD}(2, 5) = 1$, so $f$ is primitive.
+    \item $C(g) = \operatorname{GCD}(3, 17) = 1$, so $g$ is primitive.
 \end{itemize}
 Multiplying the two polynomials:
 \[
@@ -352,7 +352,7 @@ Factoring the individual coefficients into prime factors:
 \[
 6 = 2 \cdot 3, \qquad 49 = 7^2, \qquad 85 = 5 \cdot 17.
 \]
-Since no prime divides $6$, $49$, and $85$ simultaneously, we have $\operatorname{gcd}(6, 49, 85) = 1$, confirming that $f \cdot g$ is primitive.
+Since no prime divides $6$, $49$, and $85$ simultaneously, we have $\operatorname{GCD}(6, 49, 85) = 1$, confirming that $f \cdot g$ is primitive.
 \end{example}
 \end{content}
 
@@ -1274,13 +1274,15 @@ y = \hat{y}.
 \]
 \end{proof}
 
-\begin{steps}[Alternative Proof of Inverse Uniqueness via Associativity]
-Without invoking cancellation as a standalone lemma, uniqueness of the inverse follows directly from associativity:
+\end{content}
+
+\begin{aiNote}[Beyond the Lecture: A Second Proof of Uniqueness of Inverses]
+% [PERSISTENT, ADDITION]
+The lecturer proves this here with cancellation. Without cancellation as a separate step, uniqueness of the inverse follows directly from associativity, which is his argument of Week~2 (\cref{prop:uniqueness-inverse}):
 \[
 y = y \cdot e = y \cdot (x \cdot \hat{y}) = (y \cdot x) \cdot \hat{y} = e \cdot \hat{y} = \hat{y}.
 \]
-\end{steps}
-\end{content}
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:48:17
@@ -1592,7 +1594,7 @@ I thought I would do some example, think about the symmetric group, because it's
 
 So, if we start formally with the discussion of the symmetric group... And this is in the trichotomy I said about the subject: this is not definition, this is not theorem, it's example. But it's an incredibly important example: the symmetric group \inlinemetanote{writes on the lower left board: \qt{Symmetric groups:}}.
 
-So, the first symbol which is kind of standard is this square brackets $n$ \inlinemetanote{writes: $[n] := \{1, \dots, n\}$}, to be the set of numbers from $1$ to $n$. It's the $n$-element set, so it's exactly the integers from $1$ to $n$.
+So, the first symbol which is kind of standard is this square brackets $n$ \inlinemetanote{writes: $[n] = \{1, \dots, n\}$}, to be the set of numbers from $1$ to $n$. It's the $n$-element set, so it's exactly the integers from $1$ to $n$.
 
 And the symmetric group $S_n$ equals the set of functions $f$ from $[n]$ to $[n]$ such that $f$ is bijective \inlinemetanote{writes: $S_n = \{ f \colon [n] \to [n] \mid f \text{ is bijection} \}$}. That's as a set. So, it's just the set of bijections. I hope that's clear.
 
@@ -1619,7 +1621,7 @@ equipped with the binary operation of function composition $\circ$ and identity 
 \end{definition}
 
 \begin{steps}[Verification of Group Axioms for $S_n$]
-The triple $(S_n, \circ, \operatorname{id}_{[n]})$ satisfies the group axioms:
+Going beyond the lecture: the triple $(S_n, \circ, \operatorname{id}_{[n]})$ satisfies the group axioms:
 \begin{itemize}
     \item \textbf{Closure:} The composition of two bijections is a bijection: $f, g \in S_n \implies f \circ g \in S_n$.
     \item \textbf{Associativity:} Function composition is universally associative: $(f \circ g) \circ h = f \circ (g \circ h)$.
@@ -1740,7 +1742,7 @@ Although $f$ appears on the left in $f \circ g$, the mapping sequence proceeds r
 \end{center}
 
 \begin{steps}[Limitations of Bipartite String Diagrams]
-Representing permutations as bipartite matching graphs provides immediate visual clarity for small $n$ (such as $S_1$ and $S_2$). However, for larger $n$, this diagrammatic representation quickly becomes unmanageable: it consumes excessive blackboard space and obscures algebraic properties such as element orders, parity, and products. This motivates the introduction of a compact algebraic notation: \newterm{cycle notation}.
+Going beyond the lecture: representing permutations as bipartite matching graphs provides immediate visual clarity for small $n$ (such as $S_1$ and $S_2$). However, for larger $n$, this diagrammatic representation quickly becomes unmanageable: it consumes excessive blackboard space and obscures algebraic properties such as element orders, parity, and products. This motivates the introduction of a compact algebraic notation: \newterm{cycle notation}.
 \end{steps}
 \end{content}
 
@@ -1772,7 +1774,7 @@ By the fundamental counting principle, the total number of bijections is:
 \end{proof}
 
 \begin{steps}[Motivation for Cycle Decomposition]
-Since $|S_n| = n!$ grows super-exponentially ($|S_3| = 6$, $|S_4| = 24$, $|S_5| = 120$, $|S_{10}| = 3{,}628{,}800$), working with two-line Cauchy arrays or bipartite graphs is practically infeasible. The canonical algebraic language for studying permutations is the \newterm{cycle decomposition}, which factors each permutation into disjoint cycles.
+Going beyond the lecture: since $|S_n| = n!$ grows super-exponentially ($|S_3| = 6$, $|S_4| = 24$, $|S_5| = 120$, $|S_{10}| = 3{,}628{,}800$), working with two-line Cauchy arrays or bipartite graphs is practically infeasible. The canonical algebraic language for studying permutations is the \newterm{cycle decomposition}, which factors each permutation into disjoint cycles.
 \end{steps}
 \end{content}
 
@@ -2181,16 +2183,16 @@ It's how many times you have to apply the group operation to itself to get back 
 
 \begin{content}
 \begin{definition}[Order of a Group Element]\label[definition]{def:element-order}
-Let $G$ be a finite group and let $x \in G$. The \newterm{order} of $x$, denoted $\operatorname{ord}(x)$ (or $|x|$), is the smallest positive integer $m \in \mathbb{Z}_{>0}$ such that:
+Let $G$ be a finite group and let $x \in G$. The \newterm{order} of $x$, denoted $\operatorname{Ord}(x)$ (or $|x|$), is the smallest positive integer $m \in \mathbb{Z}_{>0}$ such that:
 \begin{equation}\label{eq:element-order-def}
-\operatorname{ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
+\operatorname{Ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
 \end{equation}
-By \cref{prop:finite-group-identity-power}, the set $\{ m \in \mathbb{Z}_{>0} \mid x^m = e \}$ is non-empty, so $\operatorname{ord}(x)$ is well-defined by the well-ordering of $\mathbb{N}$.
+By \cref{prop:finite-group-identity-power}, the set $\{ m \in \mathbb{Z}_{>0} \mid x^m = e \}$ is non-empty, so $\operatorname{Ord}(x)$ is well-defined by the well-ordering of $\mathbb{N}$.
 \end{definition}
 \end{content}
 
 \begin{speech}[01:24:33 - 01:24:51]
-So, let us try to think about $S_3$. What is the order of $e$? \inlinemetanote{writes: $e \to \operatorname{ord}(e) = 1$}
+So, let us try to think about $S_3$. What is the order of $e$? \inlinemetanote{writes: $e \to \operatorname{Ord}(e) = 1$}
 
 Well, the order of $e$ is $1$, because $e^1 = e$ --- it's kind of silly, all right, anyway.
 
@@ -2225,17 +2227,17 @@ Evaluating the powers of elements in $S_3 = \{e, (1\,2), (1\,3), (2\,3), (1\,2\,
 \begin{itemize}
     \item \textbf{Identity element:}
     \[
-    e^1 = e \implies \operatorname{ord}(e) = 1.
+    e^1 = e \implies \operatorname{Ord}(e) = 1.
     \]
     \item \textbf{Transpositions (2-cycles):}
     For $\sigma = (1 \, 2)$: $\sigma^1 = (1 \, 2) \neq e$, and $\sigma^2 = (1 \, 2)(1 \, 2) = e$. Thus:
     \[
-    \operatorname{ord}((1 \, 2)) = \operatorname{ord}((1 \, 3)) = \operatorname{ord}((2 \, 3)) = 2.
+    \operatorname{Ord}((1 \, 2)) = \operatorname{Ord}((1 \, 3)) = \operatorname{Ord}((2 \, 3)) = 2.
     \]
     \item \textbf{3-cycles:}
     For $\tau = (1 \, 2 \, 3)$: $\tau^1 = (1 \, 2 \, 3) \neq e$, $\tau^2 = (1 \, 3 \, 2) \neq e$, and $\tau^3 = e$. Thus:
     \[
-    \operatorname{ord}((1 \, 2 \, 3)) = \operatorname{ord}((1 \, 3 \, 2)) = 3.
+    \operatorname{Ord}((1 \, 2 \, 3)) = \operatorname{Ord}((1 \, 3 \, 2)) = 3.
     \]
 \end{itemize}
 Notice that the order of each element divides $|S_3| = 6$ ($1 \mid 6$, $2 \mid 6$, $3 \mid 6$), anticipating Lagrange's Theorem.
@@ -2247,13 +2249,13 @@ Notice that the order of each element divides $|S_3| = 6$ ($1 \mid 6$, $2 \mid 6
 \begin{speech}[01:25:43 - 01:27:08]
 Okay, and you will notice here that part of the definition... so, let $x \in G$ be an element where $G$ is finite \inlinemetanote{writes on the lower right board: $x \in G$, $G$ finite}.
 
-Then I can consider this set, which is usually called this \inlinemetanote{writes: $\langle x \rangle =$}. And it's the set that contains the neutral element, $x$, and all the way up to $x$ to the order of $x$ minus $1$, okay? \inlinemetanote{writes: $\{e, x, \dots, x^{\operatorname{ord}(x)-1}\}$}.
+Then I can consider this set, which is usually called this \inlinemetanote{writes: $\langle x \rangle =$}. And it's the set that contains the neutral element, $x$, and all the way up to $x$ to the order of $x$ minus $1$, okay? \inlinemetanote{writes: $\{e, x, \dots, x^{\operatorname{Ord}(x)-1}\}$}.
 
 I don't put order because order is the neutral element. That's the definition of the order, so, I leave out the next one. All right?
 
-And the claim is... so, proposition, if I'm with this definition, this is the definition, and now maybe lemma \inlinemetanote{writes: Lemma:}... the size of this set is exactly the order of $x$ \inlinemetanote{writes: $|\langle x \rangle| = \operatorname{ord}(x)$}.
+And the claim is... so, proposition, if I'm with this definition, this is the definition, and now maybe lemma \inlinemetanote{writes: Lemma:}... the size of this set is exactly the order of $x$ \inlinemetanote{writes: $|\langle x \rangle| = \operatorname{Ord}(x)$}.
 
-So, this is some set, and the size of this is exactly order of $x$. And by that I mean certainly I've written that many symbols, order of $x$, because there's $1$ to the $\operatorname{ord}(x)-1$ plus the neutral element. So, there's certainly that many things I've written, but to say that this set has this order means that they're all distinct.
+So, this is some set, and the size of this is exactly order of $x$. And by that I mean certainly I've written that many symbols, order of $x$, because there's $1$ to the $\operatorname{Ord}(x)-1$ plus the neutral element. So, there's certainly that many things I've written, but to say that this set has this order means that they're all distinct.
 
 So, the lemma, what I have to prove, to prove this lemma I have to show all these people here are distinct elements \inlinemetanote{writes: I have to show all these are distinct elts.}.
 \end{speech}
@@ -2261,7 +2263,7 @@ So, the lemma, what I have to prove, to prove this lemma I have to show all thes
 \begin{speech}[01:27:08 - 01:27:29]
 Because over here I wrote down a set of infinite elements, but they weren't distinct.
 
-So, why is it that when I go from the neutral up to $\operatorname{ord}(x)-1$ that they're distinct? Why is that?
+So, why is it that when I go from the neutral up to $\operatorname{Ord}(x)-1$ that they're distinct? Why is that?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -2277,11 +2279,11 @@ So, let me say the final thing, then the bell's going to ring. Actually, this se
 \end{speech}
 
 \begin{student}[Student Answer]
-$\mathbb{Z} / \operatorname{ord}(x)\mathbb{Z}$.
+$\mathbb{Z} / \operatorname{Ord}(x)\mathbb{Z}$.
 \end{student}
 
 \begin{speech}[01:28:08 - 01:28:18]
-Yeah, $\mathbb{Z}_{\operatorname{ord}(x)}$, $\mathbb{Z}/\operatorname{ord}(x)\mathbb{Z}$ \inlinemetanote{writes: $\cong \mathbb{Z} / \operatorname{ord}(x)\mathbb{Z}$}.
+Yeah, $\mathbb{Z}_{\operatorname{Ord}(x)}$, $\mathbb{Z}/\operatorname{Ord}(x)\mathbb{Z}$ \inlinemetanote{writes: $\cong \mathbb{Z} / \operatorname{Ord}(x)\mathbb{Z}$}.
 
 So, it's a subgroup: it says that if I multiply anything here, or their inverse... I have to first show that it's closed under multiplication, you have to close it under inverse. I'll do that next time. It's kind of basic, I mean, it's kind of important, so, I'll do it next time.
 
@@ -2292,7 +2294,7 @@ So, I'll explain that next time. \inlinemetanote{students applaud and pack up; t
 
 \begin{content}
 \begin{definition}[Cyclic Subgroup]\label[definition]{def:cyclic-subgroup}
-Let $G$ be a finite group and let $x \in G$ with $m = \operatorname{ord}(x)$. The \newterm{cyclic subgroup generated by $x$}, denoted $\langle x \rangle$, is the set of powers:
+Let $G$ be a finite group and let $x \in G$ with $m = \operatorname{Ord}(x)$. The \newterm{cyclic subgroup generated by $x$}, denoted $\langle x \rangle$, is the set of powers:
 \begin{equation}\label{eq:cyclic-subgroup-set}
 \langle x \rangle := \bigl\{ e, x, x^2, \dots, x^{m-1} \bigr\} = \{ x^k \mid k \in \mathbb{Z} \}.
 \end{equation}
@@ -2301,7 +2303,7 @@ Let $G$ be a finite group and let $x \in G$ with $m = \operatorname{ord}(x)$. Th
 \begin{lemma}[Cardinality of the Cyclic Subgroup]\label[lemma]{lem:cyclic-subgroup-order}
 The $m$ powers in \eqref{eq:cyclic-subgroup-set} are pairwise distinct. Consequently:
 \begin{equation}\label{eq:cyclic-subgroup-cardinality}
-|\langle x \rangle| = \operatorname{ord}(x).
+|\langle x \rangle| = \operatorname{Ord}(x).
 \end{equation}
 \end{lemma}
 
@@ -2313,14 +2315,14 @@ x^i \cdot e = x^i \cdot x^{j-i} \implies e = x^{j-i}.
 \]
 Setting $d := j - i$, we have:
 \[
-0 < d \le j \le m - 1 < m = \operatorname{ord}(x), \quad \text{with } x^d = e.
+0 < d \le j \le m - 1 < m = \operatorname{Ord}(x), \quad \text{with } x^d = e.
 \]
-This contradicts the definition of $m = \operatorname{ord}(x)$ as the \emph{minimal} positive integer satisfying $x^m = e$.
-Hence, all elements $e, x, x^2, \dots, x^{m-1}$ are distinct, proving that $|\langle x \rangle| = m = \operatorname{ord}(x)$.
+This contradicts the definition of $m = \operatorname{Ord}(x)$ as the \emph{minimal} positive integer satisfying $x^m = e$.
+Hence, all elements $e, x, x^2, \dots, x^{m-1}$ are distinct, proving that $|\langle x \rangle| = m = \operatorname{Ord}(x)$.
 \end{proof}
 
 \begin{proposition}[Isomorphism with the Additive Cyclic Group]\label[proposition]{prop:cyclic-isomorphism}
-For any element $x \in G$ of order $m = \operatorname{ord}(x)$:
+For any element $x \in G$ of order $m = \operatorname{Ord}(x)$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item $\langle x \rangle$ is a subgroup of $G$: $\langle x \rangle \le G$.
     \item $\langle x \rangle$ is isomorphic to the additive cyclic group of integers modulo $m$:
@@ -2371,8 +2373,8 @@ This lecture bridged the culmination of ring theory with the foundational princi
     \item \textbf{Element Orders and Cyclic Subgroups:}
     \begin{itemize}
         \item In a finite group, the Pigeonhole Principle ensures that powers of an element satisfy $x^m = e$ for some $m > 0$.
-        \item The order $\operatorname{ord}(x)$ is the minimal positive exponent achieving the identity.
-        \item The set of distinct powers $\langle x \rangle = \{e, x, \dots, x^{\operatorname{ord}(x)-1}\}$ forms a cyclic subgroup of cardinality $\operatorname{ord}(x)$, canonically isomorphic to $(\mathbb{Z}/\operatorname{ord}(x)\mathbb{Z}, +, 0)$.
+        \item The order $\operatorname{Ord}(x)$ is the minimal positive exponent achieving the identity.
+        \item The set of distinct powers $\langle x \rangle = \{e, x, \dots, x^{\operatorname{Ord}(x)-1}\}$ forms a cyclic subgroup of cardinality $\operatorname{Ord}(x)$, canonically isomorphic to $(\mathbb{Z}/\operatorname{Ord}(x)\mathbb{Z}, +, 0)$.
     \end{itemize}
 \end{enumerate}
 \end{overview}

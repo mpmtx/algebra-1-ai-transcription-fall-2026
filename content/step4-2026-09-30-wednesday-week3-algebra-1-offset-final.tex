@@ -145,9 +145,9 @@ Let $R$ be an integral domain. To construct the field of fractions formally:
     \[
     (r, s) \equiv (t, w) \iff rw - st = 0.
     \]
-    \setcounter{enumi}{2} \item \textbf{Equivalence Classes:} The field of fractions is defined as the quotient set, written $S_{\equiv}$ on the board:
+    \setcounter{enumi}{2} \item \textbf{Equivalence Classes:} The field of fractions is defined as the quotient set:
     \[
-    F = \operatorname{Frac}(R) := S / {\equiv}.
+    F = \operatorname{Frac}(R) := S_{\equiv}.
     \]
 \end{enumerate}
 \end{content}
@@ -198,7 +198,7 @@ Actually, about the real numbers, I can't help now but comment that Dedekind cut
 \begin{insight}[The Logical Underlayer vs. Working Mathematical Intuition]
 The lecturer highlights a fundamental pedagogical dichotomy in abstract mathematics: the distinction between the \emph{foundational underlayer} and the \emph{working mathematical intuition}. 
 
-Whether constructing $\mathbb{R}$ via Dedekind cuts or Cauchy sequences (\cref{fact:pre-reals}), or constructing $\operatorname{Frac}(R)$ via quotient sets of ordered pairs $S / {\equiv}$ (\cref{def:equiv-relation-S,def:pre-quotient-set}), the foundational machinery serves solely to establish rigorous existence and soundness. Once established, mathematicians operate with the intuitive rules (e.g., standard fraction manipulations $\frac{r}{s}$) without thinking of the underlying equivalence classes.
+Whether constructing $\mathbb{R}$ via Dedekind cuts or Cauchy sequences (\cref{fact:pre-reals}), or constructing $\operatorname{Frac}(R)$ via quotient sets of ordered pairs $S_{\equiv}$ (\cref{def:equiv-relation-S,def:pre-quotient-set}), the foundational machinery serves solely to establish rigorous existence and soundness. Once established, mathematicians operate with the intuitive rules (e.g., standard fraction manipulations $\frac{r}{s}$) without thinking of the underlying equivalence classes.
 \end{insight}
 
 \begin{aiNote}[Beyond the Lecture: Dedekind's Book on the Real Numbers]
@@ -765,7 +765,7 @@ Let $\sum_{i=0}^\infty a_i x^i$ and $\sum_{i=0}^\infty b_i x^i$ be formal power 
 \begin{equation}\label{eq:power-series-mult}
 \left( \sum_{i=0}^\infty a_i x^i \right) \cdot \left( \sum_{i=0}^\infty b_i x^i \right) \stackrel{\text{def}}{=} \sum_{k=0}^\infty c_k x^k,
 \end{equation}
-where each coefficient $c_k \in R$ is given by the Cauchy convolution formula:
+where each coefficient $c_k \in R$ is given by the Cauchy product formula:
 \begin{equation}\label{eq:cauchy-coeff-formula}
 c_k := \sum_{i=0}^k a_{k-i} b_i = \sum_{i+j=k} a_i b_j.
 \end{equation}
@@ -794,6 +794,7 @@ So, you know, you have to decide how you interact with math; but formally, if yo
 Equipped with addition \eqref{eq:power-series-addition} and multiplication \eqref{eq:power-series-mult}, the tuple $(R[[x]], +, \cdot, 0, 1)$ forms a commutative ring with unit $1_{R[[x]]}$.
 
 \begin{steps}[Verification of Ring Axioms]
+Going beyond the lecture, which leaves this to the students:
 \begin{itemize}
     \item \textbf{Abelian Group under Addition:} Follows immediately from component-wise addition inheriting associativity, commutativity, and inverses from $(R, +)$.
     \item \textbf{Commutativity of Multiplication:} By substituting $j = k - i$:

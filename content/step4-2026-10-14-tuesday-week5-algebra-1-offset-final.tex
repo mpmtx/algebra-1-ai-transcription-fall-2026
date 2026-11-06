@@ -96,14 +96,14 @@
 \begin{overview}[Course Content Overview]
 In this lecture, we explore the structural theory of ideals in commutative rings and their corresponding quotient rings:
 \begin{itemize}
-    \item \textbf{The Ideal Correspondence and Third Isomorphism Theorem:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, proving the Third Isomorphism Theorem for rings: $\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}$.
-    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{M}$ is a field if and only if $M$ is maximal. Furthermore, we establish Krull's Theorem---that every non-zero commutative ring contains at least one maximal ideal---via Zorn's Lemma, discussing its non-constructive foundational nature.
+    \item \textbf{The Ideal Correspondence and Quotients of Quotients:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, and use it to describe a quotient of a quotient: $\faktor{\left(\faktor{R}{K}\right)}{J} \cong \faktor{R}{q^{-1}(J)}$.
+    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{M}$ is a field if and only if $M$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
     \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine non-prime ideals via smooth functions with compact support $C_c^\infty(\mathbb{R}) \subset C^\infty(\mathbb{R})$.
-    \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and comaximality ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
+    \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and coprime ideals ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
 \end{itemize}
 \end{overview}
 
-\section{Ideals in Quotient Rings and the Third Isomorphism Theorem}
+\section{Ideals in Quotient Rings}
 
 \subsection{The Correspondence Theorem for Ideals}
 
@@ -168,7 +168,7 @@ Under this bijection, the following structural properties hold for any $I \in \o
 \end{steps}
 \end{content}
 
-\subsection{Quotients of Quotients: The Third Isomorphism Theorem}
+\subsection{Quotients of Quotients}
 
 \begin{speech}[00:02:37 - 00:03:48]
 So, you could ask, for example: What happens if I take a $J$ over here, an ideal $J$ in $R \bmod K$ \inlinemetanote{writes: What happens $J \subset \faktor{R}{K}$ ideal}? We know that from this, I can construct a quotient: $R \bmod K$, that's the ring, and that's an ideal, so this is the quotient \inlinemetanote{writes: $\to \faktor{(\faktor{R}{K})}{J}$}.
@@ -289,10 +289,10 @@ We shouldn't write these things during the lectures, so maybe I cross this out \
 \end{speech}
 
 \begin{content}
-\begin{theorem}[Third Isomorphism Theorem for Rings]\label[theorem]{thm:third-isomorphism-theorem}
-Let $R$ be a ring and let $K \subseteq I \subseteq R$ be ideals of $R$. Then $\faktor{I}{K}$ is an ideal of $\faktor{R}{K}$, and there is a canonical ring isomorphism:
+\begin{theorem}[Quotients of Quotients]\label[theorem]{thm:third-isomorphism-theorem}
+Let $R$ be a ring, $K \subset R$ an ideal with quotient map $q \colon R \to \faktor{R}{K}$, and $J \subset \faktor{R}{K}$ an ideal. Then there is a canonical ring isomorphism:
 \begin{equation}\label{eq:third-isomorphism-theorem}
-\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}.
+\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}.
 \end{equation}
 \end{theorem}
 
@@ -307,7 +307,7 @@ Depending on whether one starts from the ideal $J \subset \faktor{R}{K}$ or the 
     \[
     \boxed{\faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{q(I)}}
     \]
-    \setcounter{enumi}{2} \item \textbf{Standard Textbook Formulation (writing $q(I) = \faktor{I}{K}$):}
+    \setcounter{enumi}{2} \item \textbf{Going beyond the lecture, the textbook formulation (writing $q(I) = \faktor{I}{K}$), known as the Third Isomorphism Theorem:}
     \[
     \faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)}
     \]
@@ -789,7 +789,7 @@ Let $R$ be a ring. An ideal $M \subset R$ is a maximal ideal of $R$ in the sense
 \end{proposition}
 
 \begin{steps}[Maximal Element vs. Maximum / Greatest Element]
-It is crucial to distinguish between a \textbf{maximal element} and a \textbf{greatest element} (or maximum):
+Going beyond the lecture: it is crucial to distinguish between a \textbf{maximal element} and a \textbf{greatest element} (or maximum):
 \begin{itemize}
     \item \textbf{Greatest Element (Maximum):} An element $m \in S$ such that $y \le m$ for \emph{all} $y \in S$. A greatest element must be comparable to every element in the poset.
     \item \textbf{Maximal Element:} An element $x \in S$ such that \emph{no} element strictly exceeds it ($x \le y \implies x = y$). There can be multiple incomparable maximal elements in a poset!
@@ -997,7 +997,7 @@ We verify that $K = \bigcup_{I \in T} I$ satisfies the required conditions:
 Finally, for every $I \in T$, clearly $I \subseteq K$. Hence, $K$ is an upper bound for $T$ in the poset $(\operatorname{cl}^*(R), \subseteq)$.
 \end{proof}
 
-\begin{theorem}[Krull's Theorem on the Existence of Maximal Ideals]\label[theorem]{thm:krulls-theorem-maximal-ideals}
+\begin{theorem}[Existence of Maximal Ideals]\label[theorem]{thm:krulls-theorem-maximal-ideals}
 Every non-zero commutative ring $R \neq 0$ contains at least one maximal ideal.
 \end{theorem}
 
@@ -1011,7 +1011,7 @@ By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one ma
 \end{proof}
 
 \begin{steps}[Why the Chain Property is Crucial for Unions of Ideals]
-In general, the union of two arbitrary ideals $I_1 \cup I_2$ is almost \textbf{never} an ideal! For example, in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$, but not $2 + 3 = 5$.
+Going beyond the lecture: in general, the union of two arbitrary ideals $I_1 \cup I_2$ is almost \textbf{never} an ideal! For example, in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$, but not $2 + 3 = 5$.
 The union $\bigcup_{I \in T} I$ is an ideal \textbf{if and only if} the collection $T$ is directed, which is guaranteed because $T$ is a chain: any two elements $a, b \in K$ are trapped inside a common larger ideal $I_{\max} \in T$, allowing additive closure to hold.
 \end{steps}
 \end{content}
@@ -1047,7 +1047,7 @@ The reason is because I work in certain classes of rings where, rather than the 
 Actually, I don't like the idea that the work in math I do is dependent on these logical foundations. I just don't want to do that kind of math. Other people can, but...
 \end{speech}
 
-\begin{content}[Foundational Summary on Krull's Theorem]
+\begin{content}[Foundational Summary: Zorn and Maximal Ideals]
 \begin{center}
 \begin{tikzpicture}[scale=1.3, >=Stealth]
 % \begin{hidden}
@@ -1067,7 +1067,7 @@ Actually, I don't like the idea that the work in math I do is dependent on these
 \end{content}
 
 \begin{insight}[The Martian Thought Experiment and Non-Constructive Mathematics]
-The lecturer highlights a fundamental philosophical dilemma in algebra: Krull's Theorem relies intrinsically on Zorn's Lemma, which is logically equivalent to the Axiom of Choice ($\text{AC}$). Consequently, the proof is entirely non-constructive. It asserts that every non-zero commutative ring possesses a maximal ideal, but provides no algebraic algorithm to identify or construct it. A mathematician operating within constructive set theory (such as a hypothetical \qt{Martian} whose foundational framework excludes $\text{AC}$) could not accept this proof. In geometric algebra, however (such as coordinate rings of algebraic varieties), maximal ideals correspond directly to geometric points via Hilbert's Nullstellensatz, enabling explicit constructive proofs without invoking Zorn's Lemma.
+The lecturer highlights a fundamental philosophical dilemma in algebra: the existence of maximal ideals relies on Zorn's Lemma, which is logically equivalent to the Axiom of Choice ($\text{AC}$). Consequently, the proof is entirely non-constructive. It asserts that every non-zero commutative ring possesses a maximal ideal, but provides no algebraic algorithm to identify or construct it. A mathematician operating within constructive set theory (such as a hypothetical \qt{Martian} whose foundational framework excludes $\text{AC}$) could not accept this proof. In geometric algebra, however (such as coordinate rings of algebraic varieties), maximal ideals correspond directly to geometric points via Hilbert's Nullstellensatz, enabling explicit constructive proofs without invoking Zorn's Lemma.
 \end{insight}
 
 \section{Prime Ideals}
@@ -1385,7 +1385,7 @@ Every non-zero commutative ring $R \neq 0$ contains at least one prime ideal.
 \end{corollary}
 
 \begin{proof}
-By Krull's Theorem (\cref{thm:krulls-theorem-maximal-ideals}), every non-zero commutative ring $R \neq 0$ possesses at least one maximal ideal $M$. By \cref{cor:maximal-is-prime}, $M$ is also a prime ideal.
+By \cref{thm:krulls-theorem-maximal-ideals}, every non-zero commutative ring $R \neq 0$ possesses at least one maximal ideal $M$. By \cref{cor:maximal-is-prime}, $M$ is also a prime ideal.
 \end{proof}
 \end{content}
 
@@ -1592,7 +1592,7 @@ In the context here, the ideals would be the ideal generated by $a$ and the idea
 
 The whole idea of the ideal is some kind of idealized number. So, before we even get to the Chinese Remainder Theorem, there are some things to talk about.
 
-This is totally general: If I have a ring with two ideals, there's an ideal which is the sum --- I'm going to define it. I take two ideals, and I can consider their sum. By definition \inlinemetanote{writes: $I + J \coloneqq \{ i + j \mid i \in I, j \in J \}$}, this is equal to the set of elements $i + j$, where $i$ is in the first ideal and $j$ is in the second ideal, all right?
+This is totally general: If I have a ring with two ideals, there's an ideal which is the sum --- I'm going to define it. I take two ideals, and I can consider their sum. By definition \inlinemetanote{writes: $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, j \in J \} \subset R$}, this is equal to the set of elements $i + j$, where $i$ is in the first ideal and $j$ is in the second ideal, all right?
 
 Is it clear what this definition is? Then you have to check that this is an ideal. In particular, zero should be here, which it is, because $0 \in I$ and $0 \in J$. Then you have to check that if two things are here, when you add them, they're also in here, and you have to check it's also closed under scalar multiplication. I leave all those checks for you: They're all simple; there's nothing going on in those checks. But this is a very important definition.
 
@@ -1603,12 +1603,12 @@ Are there any questions about this definition? If I take two ideals, I have the 
 \begin{definition}[Sum of Ideals]\label[definition]{def:sum-of-ideals}
 Let $R$ be a ring and let $I, J \subset R$ be ideals. The \newterm{sum} of $I$ and $J$ is defined as:
 \begin{equation}\label{eq:sum-of-ideals-def}
-I + J := \{ i + j \mid i \in I, j \in J \}.
+I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, j \in J \} \subset R.
 \end{equation}
 \end{definition}
 
 \begin{steps}[Verification of the Ideal Axioms for $I + J$]
-To confirm that $I + J$ is an ideal of $R$:
+Going beyond the lecture: to confirm that $I + J$ is an ideal of $R$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Non-emptiness and Zero:} Since $0 \in I$ and $0 \in J$, we have $0 = 0 + 0 \in I + J$.
     \setcounter{enumi}{1} \item \textbf{Additive Closure:} Let $x, y \in I + J$. Then $x = i_1 + j_1$ and $y = i_2 + j_2$ for some $i_1, i_2 \in I$ and $j_1, j_2 \in J$. Using the associativity and commutativity of addition in $R$:
@@ -1626,7 +1626,7 @@ Thus, $I + J$ is indeed an ideal of $R$. In fact, $I + J$ is the smallest ideal 
 \end{content}
 
 \begin{speech}[01:12:09 - 01:14:12]
-And you can imagine what I'm going to write next: There's also $IJ$, the ideal product \inlinemetanote{writes: $I \cdot J$}. The definition here is slightly more complicated: \inlinemetanote{writes: $\coloneqq \{ \sum_{r=1}^m i_r j_r \mid i_r \in I, j_r \in J \}$}
+And you can imagine what I'm going to write next: There's also $IJ$, the ideal product \inlinemetanote{writes: $I \cdot J$}. The definition here is slightly more complicated: \inlinemetanote{writes: $\stackrel{\text{def}}{=} \{ \sum_{r=1}^k i_r j_r \mid i_r \in I, j_r \in J \} \subset R$}
 
 For the ideal product, I take all finite linear combinations of the products, where one element is in one ideal and the other is in the other. Okay? It's slightly different than this one. Here, it's literally the sum of two elements, one in one and the other in the other.
 
@@ -1645,7 +1645,7 @@ That's the definition. Take any ring and take two ideals: You can take their ide
 \begin{definition}[Product of Ideals]\label[definition]{def:product-of-ideals}
 Let $R$ be a ring and let $I, J \subset R$ be ideals. The \newterm{product} of $I$ and $J$, denoted by $IJ$ (or $I \cdot J$), is defined as the set of all finite sums of products of elements from $I$ and $J$:
 \begin{equation}\label{eq:product-of-ideals-def}
-I \cdot J := \left\{ \sum_{r=1}^m i_r j_r \;\middle|\; m \in \mathbb{N}, \ i_r \in I, \ j_r \in J \right\}.
+I \cdot J \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \ i_r \in I, \ j_r \in J \right\} \subset R.
 \end{equation}
 \end{definition}
 
@@ -1658,7 +1658,7 @@ A student might naturally ask: \emph{Why not simply define the product ideal as 
     i_1 j_1 + i_2 j_2
     \]
     cannot generally be factored into a single product $i_3 j_3$ with $i_3 \in I$ and $j_3 \in J$.
-    \item \textbf{Ideal Generation:} To ensure that $IJ$ forms a legitimate ideal that is closed under addition, one must take the additive group generated by all products $\{ij\}$, which consists precisely of all finite sums $\sum_{r=1}^m i_r j_r$.
+    \item \textbf{Ideal Generation:} To ensure that $IJ$ forms a legitimate ideal that is closed under addition, one must take the additive group generated by all products $\{ij\}$, which consists precisely of all finite sums $\sum_{r=1}^k i_r j_r$.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -1732,8 +1732,8 @@ All right, so, now we can state the Chinese Remainder Theorem in these definitio
 \end{speech}
 
 \begin{content}
-\begin{definition}[Coprime Ideals / Comaximal Ideals]\label[definition]{def:coprime-ideals}
-Let $R$ be a ring. Two ideals $I, J \subset R$ are called \newterm{coprime} (or \newterm{comaximal}) if their sum is the unit ideal:
+\begin{definition}[Coprime Ideals]\label[definition]{def:coprime-ideals}
+Let $R$ be a ring. Two ideals $I, J \subset R$ are called \newterm{coprime} if their sum is the unit ideal:
 \begin{equation}\label{eq:coprime-ideals-def}
 I + J = (1) = R.
 \end{equation}
@@ -1744,7 +1744,7 @@ i + j = 1.
 \end{definition}
 
 \begin{steps}[Compatibility with Elementary Coprimality in $\mathbb{Z}$]
-In the ring of integers $\mathbb{Z}$, every ideal is principal: $I = (a)$ and $J = (b)$.
+Going beyond the lecture: in the ring of integers $\mathbb{Z}$, every ideal is principal: $I = (a)$ and $J = (b)$.
 The sum of two principal ideals is generated by their greatest common divisor:
 \[
 (a) + (b) = (\gcd(a, b)).
@@ -1813,14 +1813,14 @@ Let $R$ be a ring and $I, J \subset R$ ideals. The canonical assignment:
 z + IJ &\longmapsto (z + I, \ z + J),
 \end{aligned}
 \end{equation}
-is denoted concisely on the blackboard as $\phi(\bar{z}) := (\bar{z}, \bar{z})$ (or informally $\phi(z) = (z, z)$).
+is denoted concisely on the blackboard as $\phi(\bar{z}) \stackrel{\text{def}}{=} (\bar{z}, \bar{z})$ (or informally $\phi(z) = (z, z)$).
 \end{definition}
 \end{content}
 
 \begin{speech}[01:21:59 - 01:24:09]
 Let me say a few words about that. You have to prove it's well-defined, etc. I can say, whatever was on that scroll in the fifth century AD, it wasn't this statement. \inlinemetanote{laughter}
 
-To really understand and get started, we have to be on the same page about this $\phi$. As I said, I take some element $z \in R$, and I get a $\bar{z}$ here --- this is a class in $R \bmod IJ$, right? \inlinemetanote{writes \qt{$\phi(\bar{z}) \coloneqq (\bar{z}, \bar{z})$}, with \qt{$z \in R$}, \qt{$\bar{z} \in \faktor{R}{IJ}$}, and \qt{$\faktor{R}{I}, \faktor{R}{J}$} under the tuple}
+To really understand and get started, we have to be on the same page about this $\phi$. As I said, I take some element $z \in R$, and I get a $\bar{z}$ here --- this is a class in $R \bmod IJ$, right? \inlinemetanote{writes \qt{$\phi(\bar{z}) \stackrel{\text{def}}{=} (\bar{z}, \bar{z})$}, with \qt{$z \in R$}, \qt{$\bar{z} \in \faktor{R}{IJ}$}, and \qt{$\faktor{R}{I}, \faktor{R}{J}$} under the tuple}
 
 And I define this to be the class $(\bar{z}, \bar{z})$, where the bars mean different things! That's the confusing thing about this, which I warned you comes: This $\bar{z}$ means this bar is the equivalence class in $R \bmod I$, and this bar is the equivalence class in $R \bmod J$, okay?
 
@@ -2032,9 +2032,9 @@ This identity $I \cap J = I J$ ensures that $\ker(\phi) = \faktor{(I \cap J)}{IJ
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Ideal Correspondence Theorem:} For an ideal $K \subset R$, the projection $q \colon R \to \faktor{R}{K}$ induces an inclusion-preserving bijection between ideals of $R$ containing $K$ and all ideals of the quotient $\faktor{R}{K}$.
-    \item \textbf{Third Isomorphism Theorem for Rings:} For nested ideals $K \subseteq I \subseteq R$, there is a canonical ring isomorphism $\faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)} \cong \faktor{R}{I}$.
+    \item \textbf{Quotients of Quotients:} For an ideal $K \subset R$ and an ideal $J \subset \faktor{R}{K}$, there is a canonical ring isomorphism $\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}$.
     \item \textbf{Maximal Ideals and Fields:} An ideal $M \subset R$ is maximal if and only if $\faktor{R}{M}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
-    \item \textbf{Krull's Theorem via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
+    \item \textbf{Maximal Ideals via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
     \item \textbf{Prime Ideals and Integral Domains:} An ideal $P \subset R$ is prime if and only if $\faktor{R}{P}$ is an integral domain. Consequently, every maximal ideal is prime, and every non-zero commutative ring possesses at least one prime ideal.
     \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the coprimality decomposition $1 = i + j$, establishing that $I \cap J = IJ$.
 \end{itemize}

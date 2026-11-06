@@ -162,7 +162,7 @@ Let $R$ be a unique factorization domain, and let $p \in R \setminus \{0\}$. Pro
 \end{exercise}
 
 \begin{steps}[Proof Outline for the Exercise]
-In any integral domain $R$, a prime element is always irreducible:
+Going beyond the lecture: in any integral domain $R$, a prime element is always irreducible:
 \begin{itemize}
     \item \textbf{Prime implies Irreducible:} If $(p)$ is prime and $p = ab$, then $ab \in (p)$, so $p \mid a$ or $p \mid b$. If $p \mid a$, write $a = pr$. Then $p = prb \implies 1 = rb$, so $b$ is a unit in $R$. Thus, $p$ is irreducible.
     \item \textbf{Irreducible implies Prime (requires UFD):} Suppose $p$ is irreducible and $p \mid ab$. Then $ab = pc$ for some $c \in R$. If $a = 0$ or $b = 0$, there is nothing to prove; if $a$ is a unit, then $p \mid a^{-1} a b = b$, and similarly if $b$ is a unit. Otherwise, factoring $a, b$ (and $c$, unless it is a unit) into products of irreducible elements, the irreducible element $p$ appearing on the right-hand side must, by uniqueness of factorization up to associates, be associate to one of the irreducible factors of $a$ or of $b$. Hence, $p \mid a$ or $p \mid b$, which implies $(p)$ is a prime ideal.
@@ -275,9 +275,14 @@ Since $289 = 17^2$, the coefficients are $a_{17} = 17$, $a_0 = 289$, and all int
 \[
 f(x) = 17 \cdot (x^{17} + 17).
 \]
-Therefore, the content is $C(f) = 17$ (up to the units $\pm 1$), and the remaining factor is $f^*(x) = x^{17} + 17$. This primitive part is even irreducible in $\mathbb{Q}[x]$, by \newterm{Eisenstein's criterion} at $p = 17$ ($17$ divides every coefficient except the leading one, and $17^2 \nmid 17$), a criterion these notes have not covered so far.
+Therefore, the content is $C(f) = 17$ (up to the units $\pm 1$), and the remaining factor is $f^*(x) = x^{17} + 17$.
 \end{example}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Eisenstein's Criterion]
+% [PERSISTENT, ADDITION]
+The primitive part $x^{17} + 17$ is even irreducible in $\mathbb{Q}[x]$, by \emph{Eisenstein's criterion} at $p = 17$: $17$ divides every coefficient except the leading one, and $17^2 \nmid 17$. The lecture does not cover this criterion.
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:07:13

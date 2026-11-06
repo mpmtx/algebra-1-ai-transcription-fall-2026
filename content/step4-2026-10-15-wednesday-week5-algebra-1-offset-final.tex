@@ -97,8 +97,8 @@ In this lecture, we complete the general ideal-theoretic formulation of the Chin
 \begin{itemize}
     \item \textbf{The Canonical Product Homomorphism:} Definition of the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ and verification of well-definedness via the ideal inclusions $IJ \subseteq I, J$.
     \item \textbf{Failure of Isomorphism for Non-Coprime Ideals:} A concrete counterexample in $\mathbb{Z}$ with $I = (4)$ and $J = (6)$, illustrating that $\phi$ fails to be either injective or surjective when ideals are not coprime.
-    \item \textbf{The Chinese Remainder Theorem:} Proof that comaximality ($I + J = (1)$) implies that $\phi$ is an isomorphism, utilizing the partition of unity identity $i + j = 1$.
-    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\varphi(n)$ alongside the irregular prime $691$ and Bernoulli numbers.
+    \item \textbf{The Chinese Remainder Theorem:} Proof that coprimality ($I + J = (1)$) implies that $\phi$ is an isomorphism, utilizing the partition of unity identity $i + j = 1$.
+    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi(n)$ alongside the irregular prime $691$ and Bernoulli numbers.
     \item \textbf{Polynomial Rings over Fields:} Rigorous definition of the degree function on $K[x]$, the convention of leaving $\deg(0)$ undefined, and polynomial long division with remainder.
     \item \textbf{Principal Ideal Domains (PIDs):} Proof via well-ordering of degrees that every ideal in $K[x]$ is principal, the formal definition of a PID, and non-examples such as $\mathbb{Z}[x]$ and $\mathbb{C}[x, y]$.
 \end{itemize}
@@ -164,9 +164,9 @@ Hence $\phi(z + IJ) = \phi(z' + IJ)$, proving well-definedness. That $\phi$ pres
 \begin{steps}[Semantic Meaning of the Class Bars]
 Although the symbol $\bar{z}$ appears on both sides of $\phi(\bar{z}) = (\bar{z}, \bar{z})$, the three occurrences denote equivalence classes in three distinct quotient rings:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \setcounter{enumi}{0} \item \textbf{Domain Class:} The argument $\bar{z}$ represents the coset $z + IJ \in \faktor{R}{IJ}$.
-    \setcounter{enumi}{1} \item \textbf{First Component:} The first component $\bar{z}$ represents the coset $z + I \in \faktor{R}{I}$.
-    \setcounter{enumi}{2} \item \textbf{Second Component:} The second component $\bar{z}$ represents the coset $z + J \in \faktor{R}{J}$.
+    \setcounter{enumi}{0} \item \textbf{Domain Class:} The argument $\bar{z}$ represents the class $z + IJ \in \faktor{R}{IJ}$.
+    \setcounter{enumi}{1} \item \textbf{First Component:} The first component $\bar{z}$ represents the class $z + I \in \faktor{R}{I}$.
+    \setcounter{enumi}{2} \item \textbf{Second Component:} The second component $\bar{z}$ represents the class $z + J \in \faktor{R}{J}$.
 \end{enumerate}
 \end{steps}
 \end{content}
@@ -228,7 +228,7 @@ The canonical homomorphism is:
 \end{example}
 
 \begin{steps}[Algebraic Reason for the Failure]
-Notice that $| \faktor{\mathbb{Z}}{24\mathbb{Z}} | = 24$, whereas $| \faktor{\mathbb{Z}}{4\mathbb{Z}} \times \faktor{\mathbb{Z}}{6\mathbb{Z}} | = 4 \times 6 = 24$. Even though the two finite rings have the exact same cardinality, $\phi$ fails to be bijective because:
+Going beyond the lecture: notice that $| \faktor{\mathbb{Z}}{24\mathbb{Z}} | = 24$, whereas $| \faktor{\mathbb{Z}}{4\mathbb{Z}} \times \faktor{\mathbb{Z}}{6\mathbb{Z}} | = 4 \times 6 = 24$. Even though the two finite rings have the exact same cardinality, $\phi$ fails to be bijective because:
 \begin{enumerate}[label=\textbf{(\alph*)}]
     \setcounter{enumi}{0} \item The sum of the ideals is $(4) + (6) = \gcd(4, 6)\mathbb{Z} = 2\mathbb{Z} \neq \mathbb{Z}$, so $4$ and $6$ are not coprime.
     \setcounter{enumi}{1} \item The kernel of the map $\phi$ is $I \cap J = \operatorname{lcm}(4, 6)\mathbb{Z} = 12\mathbb{Z}$, which strictly contains the product ideal $IJ = 24\mathbb{Z}$.
@@ -250,7 +250,7 @@ Let us start with $\phi$ is injective \inlinemetanote{writes: $\phi$ is injectiv
 
 \begin{content}
 \begin{theorem}[Chinese Remainder Theorem for Two Ideals]\label[theorem]{thm:crt-two-ideals}
-Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals such that they are \newterm{comaximal} (or coprime), meaning:
+Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals such that they are coprime, meaning:
 \begin{equation}\label{eq:crt-comaximal-hypothesis}
 I + J = (1) = R.
 \end{equation}
@@ -401,14 +401,10 @@ Having established both injectivity and surjectivity, $\phi$ is an isomorphism o
 
 \end{proofWrapper}
 
-\begin{insight}[The Partition of Unity Principle in the Chinese Remainder Theorem]
-The comaximal equation $i + j = 1$ with $i \in I$ and $j \in J$ functions as an algebraic \qt{partition of unity}:
-\begin{itemize}
-    \item \textbf{Indicator for $I$:} The element $j$ acts as an indicator for the ideal $I$: it satisfies $j \equiv 1 \pmod I$ and $j \equiv 0 \pmod J$.
-    \item \textbf{Indicator for $J$:} The element $i$ acts as an indicator for the ideal $J$: it satisfies $i \equiv 0 \pmod I$ and $i \equiv 1 \pmod J$.
-\end{itemize}
-The explicit solution $z = jx + iy$ linearly combines these indicator elements with the target values $x$ and $y$. This algebraic construction mirrors orthogonal projection bases in linear algebra and Lagrange interpolation polynomials in numerical analysis.
-\end{insight}
+\begin{aiNote}[Beyond the Lecture: The Equation $i + j = 1$ as a Partition of Unity]
+% [PERSISTENT, ADDITION]
+The equation $i + j = 1$ with $i \in I$ and $j \in J$ works like an algebraic \qt{partition of unity}: $j \equiv 1 \pmod I$ and $j \equiv 0 \pmod J$, while $i \equiv 0 \pmod I$ and $i \equiv 1 \pmod J$. The explicit solution $z = jx + iy$ combines these two elements with the target values $x$ and $y$. This mirrors orthogonal projection bases in linear algebra and Lagrange interpolation polynomials in numerical analysis.
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:13:45
@@ -430,7 +426,7 @@ So, this says that if I just write this theorem, the Chinese Remainder Theorem f
 
 \begin{content}
 \begin{corollary}[Chinese Remainder Theorem for Coprime Integers]\label[corollary]{cor:crt-integers}
-Let $R = \mathbb{Z}$, and let $a, b \in \mathbb{Z}$ be coprime integers, i.e., $\gcd(a, b) = 1$. By Bézout's identity, this is equivalent to comaximal principal ideals:
+Let $R = \mathbb{Z}$, and let $a, b \in \mathbb{Z}$ be coprime integers, i.e., $\gcd(a, b) = 1$. By Bézout's identity, this is equivalent to coprime principal ideals:
 \[
 (a) + (b) = (\gcd(a, b)) = (1) = \mathbb{Z}.
 \]
@@ -479,7 +475,7 @@ Since $\gcd(p_i^{k_i}, p_j^{k_j}) = 1$ for all $i \neq j$, induction on $r$ give
 \end{corollary}
 
 \begin{steps}[Why Prime Powers Cannot Be Split Further]
-While distinct prime powers $p_i^{k_i}$ and $p_j^{k_j}$ are coprime and can be separated, factors involving the same prime cannot be split via the Chinese Remainder Theorem. For example:
+Going beyond the lecture: while distinct prime powers $p_i^{k_i}$ and $p_j^{k_j}$ are coprime and can be separated, factors involving the same prime cannot be split via the Chinese Remainder Theorem. For example:
 \[
 \faktor{\mathbb{Z}}{p^2\mathbb{Z}} \not\cong \faktor{\mathbb{Z}}{p\mathbb{Z}} \times \faktor{\mathbb{Z}}{p\mathbb{Z}},
 \]
@@ -522,7 +518,7 @@ Applying this to the prime-power decomposition \eqref{eq:crt-prime-power-isom} o
 \end{content}
 
 \begin{speech}[00:19:16 - 00:20:45]
-If I take $\phi$ of a power of a prime \inlinemetanote{erases part of the lower board and writes: $\phi(p^k) =$} --- and let me just follow the notation here: $p$, but any prime, no index, with a $k$ ---, so, what is this?
+If I take $\phi$ of a power of a prime \inlinemetanote{erases part of the lower board and writes: $\phi^{\text{tot}}(p^k) =$} --- and let me just follow the notation here: $p$, but any prime, no index, with a $k$ ---, so, what is this?
 
 Well, this is all the numbers in $\mathbb{Z} \bmod p^k \mathbb{Z}$ that are relatively... all the numbers that are relatively prime to $p^k$ that are less than $p^k$. And how are you going to be a common factor? You have to have a $p$ in it. And so, how many people have $p$'s in it? Well, exactly $1/p$ of these has $p$ in it. So, the answer is $p^k - p^{k-1}$ \inlinemetanote{writes: $= p^k - p^{k-1}$}, or you can write this as $p^{k-1}(p - 1)$ \inlinemetanote{writes: $= p^{k-1}(p - 1)$}. Okay?
 
@@ -537,9 +533,9 @@ Uh, but it's a confusing formula, like you might think... okay, so, this is the 
 
 \begin{content}[Derivation of Euler's Product Formula]
 \begin{definition}[Euler's Totient Function]\label[definition]{def:euler-totient}
-The \newterm{Euler totient function} $\varphi(n)$ (written on the blackboard as $\phi(n)$) counts the number of invertible elements in the ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$:
+The \newterm{Euler totient function} $\phi(n)$ (on the board with a small \qt{tot} on the $\phi$) counts the number of invertible elements in the ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def-w5wed}
-\varphi(n) := \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \gcd(m, n) = 1 \} \right|.
+\phi(n) := \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \gcd(m, n) = 1 \} \right|.
 \end{equation}
 \end{definition}
 
@@ -550,11 +546,11 @@ For a prime power $p^k$ ($k \ge 1$), the elements in $\{1, 2, \dots, p^k\}$ that
 \]
 There are exactly $\frac{p^k}{p} = p^{k-1}$ such multiples. Subtracting these from the total of $p^k$ elements gives:
 \begin{equation}\label{eq:phi-prime-power}
-\varphi(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1) = p^k \left(1 - \frac{1}{p}\right).
+\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1) = p^k \left(1 - \frac{1}{p}\right).
 \end{equation}
 Since the order of a direct product of finite groups is the product of their orders, taking cardinalities in \eqref{eq:units-zn-formula} yields:
 \begin{equation}\label{eq:euler-general-formula}
-\varphi(n) = \prod_{i=1}^r \varphi\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right).
+\phi(n) = \prod_{i=1}^r \phi\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right).
 \end{equation}
 \end{theorem}
 \end{content}
@@ -573,7 +569,7 @@ Okay, so, I think this is more or less what I wanted to say about the Chinese Re
 \begin{example}[Euler's Totient on the Prime 691]\label[example]{ex:prime-691}
 For the prime $p = 691$, the value of Euler's totient function is:
 \begin{equation}\label{eq:phi-691}
-\varphi(691) = 691 - 1 = 690 = 2 \cdot 3 \cdot 5 \cdot 23.
+\phi(691) = 691 - 1 = 690 = 2 \cdot 3 \cdot 5 \cdot 23.
 \end{equation}
 The prime $691$ is famous in algebraic number theory as the numerator of the 12th Bernoulli number $B_{12}$:
 \begin{equation}\label{eq:bernoulli-12}
@@ -582,7 +578,7 @@ B_{12} = -\frac{691}{2730}.
 \end{example}
 
 \begin{steps}[Irreversibility of Euler's Totient Function]
-Even though the prime factorization of $n$ determines $\varphi(n)$ via formula \eqref{eq:euler-general-formula}, one cannot generally reconstruct $n$ from $\varphi(n)$. The presence of the terms $(p_i - 1)$ mixes new prime factors (such as $23$ appearing in $\varphi(691) = 690$) that have no relation to the original prime $p = 691$. In modern cryptography (e.g., the RSA cryptosystem), the computational difficulty of finding $\varphi(n) = (p - 1)(q - 1)$ without knowing the prime factors $p$ and $q$ of a large integer $n = pq$ provides the trapdoor mechanism for secure encryption.
+Going beyond the lecture: even though the prime factorization of $n$ determines $\phi(n)$ via formula \eqref{eq:euler-general-formula}, one cannot generally reconstruct $n$ from $\phi(n)$. The presence of the terms $(p_i - 1)$ mixes new prime factors (such as $23$ appearing in $\phi(691) = 690$) that have no relation to the original prime $p = 691$. In modern cryptography (e.g., the RSA cryptosystem), the computational difficulty of finding $\phi(n) = (p - 1)(q - 1)$ without knowing the prime factors $p$ and $q$ of a large integer $n = pq$ provides the trapdoor mechanism for secure encryption.
 \end{steps}
 \end{content}
 
@@ -657,25 +653,30 @@ Let $f(x) \in K[x]$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Non-Zero Polynomials:} If $f(x) \neq 0$, write $f(x) = \sum_{i=0}^n c_i x^i$. The \newterm{degree} of $f$, denoted by $\deg(f)$ or $\deg(f(x))$, is the highest index $d \in \mathbb{N}_0$ such that the coefficient $c_d \neq 0$:
     \begin{equation}\label{eq:deg-formula}
-    \deg(f) := d \iff c_d \neq 0 \quad \text{and} \quad c_i = 0 \quad \forall i > d.
+    \deg(f) = d \quad :\iff \quad c_d \neq 0 \quad \text{and} \quad c_i = 0 \quad \forall i > d.
     \end{equation}
     The non-zero element $c_d \in K \setminus \{0\}$ is called the \newterm{leading coefficient}.
     \setcounter{enumi}{1} \item \textbf{Non-Zero Constants:} For any non-zero constant $c \in K \setminus \{0\}$, we have $\deg(c) = 0$.
     \setcounter{enumi}{2} \item \textbf{The Zero Polynomial:} For the zero polynomial $f(x) = 0$, the degree is explicitly:
     \begin{equation}\label{eq:deg-zero}
-    \deg(0) := \text{undefined}.
+    \deg(0) \longleftarrow \text{Undefined}.
     \end{equation}
 \end{enumerate}
 \end{definition}
 
 \begin{remark}[Conventions for the Degree of the Zero Polynomial]\label[remark]{rem:deg-zero-convention}
-In some textbook literature, the convention $\deg(0) := -\infty$ is adopted so that the degree formula $\deg(f \cdot g) = \deg(f) + \deg(g)$ remains formally valid when one factor is zero (with $-\infty + d = -\infty$). However, following the lecturer's strict convention, the degree of the zero polynomial is left strictly \textbf{undefined}.
+There are several conventions here. The one the lecturer calls correct, because it works best, leaves the degree of the zero polynomial \textbf{undefined}.
 \end{remark}
 
 \begin{steps}[Why the Leading Coefficient Recipe Fails for Zero]
 The algorithmic recipe for the degree requires identifying the \qt{highest non-zero coefficient $c_d$}. For the zero polynomial $0 \in K[x]$, all coefficients in $0 = \sum 0 \cdot x^i$ are identically zero, so no such index $d$ exists.
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Convention $\deg(0) = -\infty$]
+% [PERSISTENT, ADDITION]
+Some textbooks set $\deg(0) := -\infty$, so that the degree formula $\deg(f \cdot g) = \deg(f) + \deg(g)$ remains formally valid when one factor is zero (with $-\infty + d = -\infty$).
+\end{aiNote}
 
 \subsection{Polynomial Long Division}
 
@@ -1022,15 +1023,15 @@ Prove that the ideal $(2, x) \subset \mathbb{Z}[x]$ is not principal.
 \end{exercise}
 
 \begin{steps}[Proof Hint for \cref{exer:prove-2-x-not-principal}]
-Suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but $(2, x)$ contains only polynomials with even constant terms, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
+Going beyond the lecture: suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but $(2, x)$ contains only polynomials with even constant terms, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
 \end{steps}
 \end{content}
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subseteq R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without comaximality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
+    \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subseteq R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without coprimality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
     \item \textbf{Chinese Remainder Theorem:} When $I + J = (1) = R$, there exist $i \in I$ and $j \in J$ such that $i + j = 1$. This partition of unity ensures that $\phi$ is an isomorphism, yielding explicit solutions $z = jx + iy$ to simultaneous systems of congruences.
-    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\varphi(n) = n \prod_{p \mid n} (1 - 1/p)$. The function mixes primes via $p - 1$, preventing direct inversion (a cornerstone of cryptography and connected to irregular primes such as $691 \mid \text{numerator}(B_{12})$).
+    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi(n) = n \prod_{p \mid n} (1 - 1/p)$. The function mixes primes via $p - 1$, preventing direct inversion (a cornerstone of cryptography and connected to irregular primes such as $691 \mid \text{numerator}(B_{12})$).
     \item \textbf{Polynomial Rings $K[x]$ over Fields:} For a field $K$, polynomials enjoy Euclidean long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
     \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subseteq K[x]$ is generated by any non-zero element of minimal degree, proving that $K[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
 \end{itemize}

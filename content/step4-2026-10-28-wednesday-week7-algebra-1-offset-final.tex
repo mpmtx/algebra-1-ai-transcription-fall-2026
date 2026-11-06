@@ -104,7 +104,7 @@ This lecture explores the foundational structure of finite groups, culminating i
     \item \textbf{Perspectives on Group Theory:} Focusing on finite, non-Abelian groups alongside prototype extreme families: symmetric groups $S_n$ and cyclic groups $\mathbb{Z}_n$.
     \item \textbf{Element Orders and Cyclic Subgroups:} Well-definedness of $\operatorname{Ord}(x)$ and verification that $\langle x \rangle \le G$ is isomorphic to $(\mathbb{Z}_{\operatorname{Ord}(x)}, +, [0])$.
     \item \textbf{Lagrange's Theorem:} Formulation and proof that $|H|$ divides $|G|$ for any subgroup $H \le G$, establishing that element orders divide group orders and that prime-order groups have no non-trivial proper subgroups.
-    \item \textbf{Coset Equivalence Relation:} Partitioning $G$ into equivalence classes under $x \sim y \iff \exists h \in H \colon xh = y$ and establishing the bijection $\phi \colon H \to E$, $\phi(h) = xh$.
+    \item \textbf{The Equivalence Relation:} Partitioning $G$ into equivalence classes under $x \sim y \iff \exists h \in H \colon xh = y$ and establishing the bijection $\phi \colon H \to E$, $\phi(h) = xh$.
     \item \textbf{Cycle Decompositions and Partitions:} Dynamic visualization of cycles in $S_n$ and the deep connection between cycle decompositions and integer partitions.
     \item \textbf{Rotational Symmetry Groups of Geometric Solids:} Counting symmetries of the Platonic solids via face stabilization, establishing the geometric isomorphisms $\operatorname{Rot}(\text{Cube}) \cong S_4$ via body diagonals and $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$ via vertex permutations.
 \end{itemize}
@@ -426,7 +426,7 @@ x \sim y \stackrel{\text{def}}{\iff} \exists h \in H \text{ such that } xh = y.
 \end{equation}
 
 \begin{steps}[Left vs. Right Coset Conventions]
-Because $G$ is not assumed to be Abelian, the equation $xh = y$ places $h$ on the right, defining what is conventionally known as the \newterm{left coset} relation (since $y \in xH$). Placing $h$ on the left ($hx = y$) yields an entirely symmetric theory of right cosets ($Hx$). The proof of Lagrange's Theorem works identically under either convention.
+Going beyond the lecture: because $G$ is not assumed to be Abelian, the equation $xh = y$ places $h$ on the right, defining what is conventionally known as the \newterm{left coset} relation (since $y \in xH$). Placing $h$ on the left ($hx = y$) yields an entirely symmetric theory of right cosets ($Hx$). The proof of Lagrange's Theorem works identically under either convention.
 \end{steps}
 \end{content}
 
@@ -508,7 +508,7 @@ Since $\sim$ is an equivalence relation, the fundamental theorem of equivalence 
 \[
 G = E_1 \;\dot{\cup}\; E_2 \;\dot{\cup}\; \dots \;\dot{\cup}\; E_k,
 \]
-where $k$ is the total number of distinct equivalence classes (cosets).
+where $k$ is the total number of distinct equivalence classes.
 
 \definecolor{figBlue}{HTML}{076090} % RGB (7, 96, 144): petrol blue (MidnightBlue)
 \definecolor{figGreen}{HTML}{3C8252} % RGB (60, 130, 82): dark green (ForestGreen!70!black)
@@ -600,7 +600,7 @@ Assuming that \cref{clm:class-cardinality} holds, we substitute $|E_i| = |H|$ in
     &= \sum_{i=1}^k |H| \nonumber \\
     &= k \cdot |H|. \label{eq:lagrange-index-formula}
 \end{align}
-Since $k$ is an integer (the number of cosets), equation \eqref{eq:lagrange-index-formula} directly implies:
+Since $k$ is an integer (the number of equivalence classes), equation \eqref{eq:lagrange-index-formula} directly implies:
 \[
 |H| \bigm| |G|.
 \]
@@ -608,7 +608,7 @@ This completes the proof of Lagrange's Theorem, modulo proving \cref{clm:class-c
 \end{proof}
 
 \begin{steps}[The Concept of Group Index]
-The integer $k$, representing the number of distinct cosets of $H$ in $G$, is called the \newterm{index} of $H$ in $G$, conventionally written as:
+Going beyond the lecture: the integer $k$, representing the number of distinct equivalence classes, is called the \newterm{index} of $H$ in $G$, conventionally written as:
 \[
 [G : H] := k = \frac{|G|}{|H|}.
 \]
@@ -746,7 +746,7 @@ Let $G$ be a finite group whose order $|G| = p$ is a prime number. Then the only
 \end{corollary}
 
 \begin{steps}[Classification of Groups of Prime Order]
-By Lagrange's Theorem, if $H \le G$, then $|H| \mid p$. Since $p$ is prime, the only positive divisors of $p$ are $1$ and $p$. Thus:
+Going beyond the lecture: By Lagrange's Theorem, if $H \le G$, then $|H| \mid p$. Since $p$ is prime, the only positive divisors of $p$ are $1$ and $p$. Thus:
 \begin{itemize}
     \item \textbf{Case $|H| = 1$:} then $H = \{e\}$.
     \item \textbf{Case $|H| = p$:} then $H = G$.
@@ -1282,7 +1282,7 @@ The group of rotational symmetries of a regular tetrahedron is isomorphic to the
     \item \textbf{Standing Focus in Finite Group Theory:} Emphasis on finite, non-Abelian groups alongside prototype extreme families: symmetric groups $S_n$ (order $n!$, non-Abelian for $n \ge 3$) and cyclic groups $\mathbb{Z}_n$ (order $n$, Abelian).
     \item \textbf{Element Orders and Cyclic Subgroups:} For any element $x \in G$ in a finite group, its order $\operatorname{Ord}(x) := \min \{m \ge 1 \mid x^m = e\}$ is well-defined, and the generated subgroup $\langle x \rangle = \{e, x, \dots, x^{\operatorname{Ord}(x)-1}\}$ satisfies $|\langle x \rangle| = \operatorname{Ord}(x)$ with $\langle x \rangle \cong (\mathbb{Z}_{\operatorname{Ord}(x)}, +, [0])$.
     \item \textbf{Lagrange's Theorem:} For any finite group $G$ and subgroup $H \le G$, the order of $H$ divides the order of $G$, i.e., $|H| \mid |G|$. Consequently, $\operatorname{Ord}(x) \mid |G|$ for all $x \in G$, and every group of prime order $p$ is cyclic ($G \cong \mathbb{Z}_p$) with no non-trivial proper subgroups.
-    \item \textbf{Coset Equivalence and Proof Architecture:} The relation $x \sim y \iff \exists h \in H \colon xh = y$ defines an equivalence relation whose equivalence classes partition $G$. For any class $E$ and representative $x \in E$, the map $\phi \colon H \to E$, $\phi(h) = xh$, is a bijection (injective by group cancellation, surjective by definition of $\sim$). Thus, $|E| = |H|$, yielding $|G| = [G : H] \cdot |H|$.
+    \item \textbf{The Equivalence Relation and the Proof:} The relation $x \sim y \iff \exists h \in H \colon xh = y$ defines an equivalence relation whose equivalence classes partition $G$. For any class $E$ and representative $x \in E$, the map $\phi \colon H \to E$, $\phi(h) = xh$, is a bijection (injective by group cancellation, surjective by definition of $\sim$). Thus, $|E| = |H|$, yielding $|G| = [G : H] \cdot |H|$.
     \item \textbf{Cycle Decompositions and Partitions:} Every permutation in $S_n$ uniquely decomposes into disjoint cycles. The multiset of cycle lengths forms an integer partition of $n$, connecting the conjugacy structure of $S_n$ to additive combinatorics.
     \item \textbf{Rotational Symmetries of Platonic Solids:}
     \begin{itemize}

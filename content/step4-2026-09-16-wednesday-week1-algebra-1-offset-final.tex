@@ -11,7 +11,7 @@ In this lecture, we bridge arithmetic and abstract algebra by exploring the foll
 \begin{itemize}
     \item \textbf{Gaussian Integers and Primes:} Comparing factorization and units in $\mathbb{Z}$ and $\mathbb{Z}[i]$, and establishing how the primality of an ordinary integer prime in $\mathbb{Z}[i]$ connects directly to Fermat's two-square theorem (an odd prime $p$ is a sum of two squares $a^2 + b^2$ if and only if $p \equiv 1 \pmod 4$).
     \item \textbf{Axioms and Elementary Properties of Rings:} Formalizing the ring axioms $(R, +, \cdot, 0, 1)$, deriving fundamental arithmetic identities such as $0 \cdot a = 0$ and $(-1) \cdot a = -a$, analyzing the degenerate zero ring ($1 = 0$), and defining scalar multiples by integers.
-    \item \textbf{Ring Homomorphisms:} Defining structure-preserving maps between rings, explaining why identity preservation ($f(1) = 1$) must be explicitly required while $f(0) = 0$ is automatic, and exploring canonical examples including standard subring inclusions, modular reduction $\mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$, and the initial evaluation map $\mathbb{Z} \to R$.
+    \item \textbf{Ring Homomorphisms:} Defining structure-preserving maps between rings, explaining why identity preservation ($f(1) = 1$) must be explicitly required while $f(0) = 0$ is automatic, and exploring canonical examples including standard subring inclusions, modular reduction $\mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$, and the canonical map $\mathbb{Z} \to R$.
     \item \textbf{Ideals and Field Structure:} Introducing the kernel $\ker(f)$, defining ideals $I \subset R$ via additive closure and multiplicative absorption, proving that every kernel is an ideal, and classifying the ideals of a field (establishing that fields possess only $\{0\}$ and $F$).
     \item \textbf{Outlook:} Connecting the existence of bases in infinite-dimensional vector spaces to Zorn's lemma and the Axiom of Choice.
 \end{itemize}
@@ -90,7 +90,7 @@ In Week~6 the two words are separated: what is defined here is an \emph{irreduci
 \end{definition}
 
 \begin{steps}[Algebraic Intuition: The Concept of Associates]
-In a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique-factorization}, or $\mathbb{Z}[i]$, as the course shows later), factorizations into irreducible elements are unique up to multiplication by invertible elements (\newterm{units}) and order. Two elements $x, y \in R$ are called \newterm{associates} if $x = u \cdot y$ for some unit $u \in \mathcal{U}_R$.
+Going beyond the lecture: in a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique-factorization}, or $\mathbb{Z}[i]$, as the course shows later), factorizations into irreducible elements are unique up to multiplication by units and order. Two elements $x, y \in R$ are called \newterm{associates} if $x = u \cdot y$ for some unit $u \in \mathcal{U}_R$.
 \begin{itemize}
     \item \textbf{Associates in $\mathbb{Z}$:} The only units are $\pm 1$, meaning every prime $p$ has two associates: $p$ and $-p$.
     \item \textbf{Associates in {$\mathbb{Z}[i]$}:} Since $i \cdot (-i) = 1$ (i.e., $(-i) \cdot i = 1$), the imaginary units $i$ and $-i$ are also units. Consequently, every Gaussian integer $q$ has four associates:
@@ -100,18 +100,8 @@ In a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique
 \end{itemize}
 \end{steps}
 
-\begin{steps}[Verification of Invertibility via the Algebraic Norm]
-The elements $\pm 1, \pm i$ are clearly invertible in $\mathbb{Z}[i]$ since $(\pm 1)^2 = 1$ and $i \cdot (-i) = -i^2 = 1$.
-
-To confirm that these are the \emph{only} units in $\mathbb{Z}[i]$, we use the multiplicative field norm $N \colon \mathbb{Z}[i] \to \mathbb{Z}_{\ge 0}$ defined by:
-\[
-N(a + bi) := (a + bi)\overline{(a + bi)} = a^2 + b^2.
-\]
-If $\alpha \in \mathbb{Z}[i]$ is a unit, there exists $\beta \in \mathbb{Z}[i]$ such that $\alpha \beta = 1$. Taking the norm on both sides gives:
-\[
-N(\alpha) N(\beta) = N(\alpha \beta) = N(1) = 1.
-\]
-Since $N(\alpha), N(\beta) \in \mathbb{Z}_{\ge 0}$, we must have $N(\alpha) = a^2 + b^2 = 1$. The only integer solutions to $a^2 + b^2 = 1$ are $(a, b) \in \{(\pm 1, 0), (0, \pm 1)\}$, corresponding precisely to $\pm 1$ and $\pm i$. The lecturer writes out this argument in Week~3, there with the complex modulus $|a + bi| = \sqrt{N(a + bi)}$ (\cref{prop:units-gaussian-integers}).
+\begin{steps}[Why $\pm 1$ and $\pm i$ Are Invertible]
+The elements $\pm 1, \pm i$ are invertible in $\mathbb{Z}[i]$ since $(\pm 1)^2 = 1$ and $i \cdot (-i) = -i^2 = 1$. That there are no others is proved in Week~3 (\cref{prop:units-gaussian-integers}).
 \end{steps}
 \end{content}
 
@@ -194,47 +184,37 @@ This argument will show that if you want $p$ to stay prime... so, if $p$ factors
 \end{speech}
 
 \begin{content}[Reduction to the Sum of Two Squares]
-Multiplying the two conjugate factors together yields an ordinary integer:
+Since $a + bi$ and $a - bi$ both divide $p$, their product divides $p$; this step already needs a statement about unique factorization:
 \[
-(a + bi)(a - bi) = a^2 + b^2 \in \mathbb{Z}.
+(a + bi)(a - bi) \mid p.
 \]
-Using the field norm $N(x + yi) = x^2 + y^2 = (x + yi)(x - yi)$, which is multiplicative, the equation $p = (a + bi)z$ implies:
+The product is an ordinary integer:
 \[
-N(p) = p^2 = N(a + bi) \cdot N(z) = (a^2 + b^2) \cdot N(z).
+(a + bi)(a - bi) = a^2 + b^2 \in \mathbb{Z}, \qquad \text{so} \qquad a^2 + b^2 \mid p.
 \]
-Since $p$ is a prime in $\mathbb{Z}$, the integer $a^2 + b^2$ dividing $p^2$ is $1$, $p$ or $p^2$. But $a^2 + b^2 = 1$ would make $a + bi$ a unit (as $(a + bi)(a - bi) = 1$), and $a^2 + b^2 = p^2$ would force $N(z) = 1$, making $z$ a unit and $a + bi = p z^{-1}$ an associate of $p$. So if $a + bi$ is neither a unit nor an associate of $p$, then:
+Since $p$ is prime and $a + bi$ is not a unit, this gives:
 \begin{equation}\label{eq:sum-of-squares-condition}
-a^2 + b^2 = p.
+p = a^2 + b^2.
 \end{equation}
 
-\begin{steps}[Rigorous Derivation via the Multiplicative Norm]
-The blackboard derivation outlines the necessity of $p$ being a sum of two squares. Rigorously, this follows from the multiplicative norm:
-\begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Norm Equation:} If $p = z \cdot (a + bi)$ with $z = c + di$, taking norms yields:
-    \[
-    p^2 = N(p) = N(z) N(a + bi) = (c^2 + d^2)(a^2 + b^2).
-    \]
-    \item \textbf{Non-Trivial Factors:} Because $a + bi$ is not a unit, $N(a + bi) = a^2 + b^2 > 1$. Because $z$ is not a unit, $N(z) = c^2 + d^2 > 1$.
-    \item \textbf{Prime Factorization in $\mathbb{Z}$:} Since $p$ is prime in $\mathbb{Z}$, the only divisors of $p^2$ in $\mathbb{Z}_{>0}$ are $1, p, p^2$. Thus, we must have:
-    \[
-    a^2 + b^2 = p \quad \text{and} \quad c^2 + d^2 = p.
-    \]
-\end{enumerate}
-\end{steps}
-
 \begin{steps}[Connection Between Gaussian Primes and Sums of Squares]
-This algebraic deduction establishes a profound bridge:
 \begin{itemize}
-    \item If an integer prime $p$ factors non-trivially in $\mathbb{Z}[i]$ as $p = (a + bi)(a - bi)$, then $p$ must be expressible as the sum of two integer squares: $p = a^2 + b^2$.
-    \item By contrapositive, if $p$ cannot be expressed as the sum of two squares, it cannot factor non-trivially into non-unit Gaussian integers, and hence $p$ must remain prime in $\mathbb{Z}[i]$.
-    \item Conversely, $p = a^2 + b^2$ gives the factorization $p = (a + bi)(a - bi)$ with $N(a \pm bi) = p > 1$, so neither factor is a unit. Hence, $p$ stays prime in $\mathbb{Z}[i]$ \emph{if and only if} $p$ is not a sum of two squares.
+    \item If an integer prime $p$ factors non-trivially in $\mathbb{Z}[i]$, then $p$ must be a sum of two integer squares: $p = a^2 + b^2$.
+    \item By contrapositive, if $p$ cannot be expressed as the sum of two squares, it cannot factor non-trivially in $\mathbb{Z}[i]$, and hence $p$ must stay prime in $\mathbb{Z}[i]$.
+    \item Going beyond the lecture: conversely, $p = a^2 + b^2$ gives the factorization $p = (a + bi)(a - bi)$, and neither factor is a unit, since the units $\pm 1, \pm i$ have length $1$ while $|a \pm bi| = \sqrt{p} > 1$. Hence, $p$ stays prime in $\mathbb{Z}[i]$ \emph{if and only if} $p$ is not a sum of two squares.
 \end{itemize}
 \end{steps}
 \end{content}
 
-\begin{aiNote}[Intermediate Steps Added by Transcriber]
-% [Refined by Gemini 4 Argon]
-The lecturer argues that both $a + bi$ and $a - bi$ divide $p$, so their product $a^2 + b^2$ divides $p$, and remarks that this step \qt{already requires some statement about unique factorization} (\cref{fact:pre-unique-factorization}, or Euclid's lemma, \cref{fact:pre-euclid}). Even with unique factorization in $\mathbb{Z}[i]$, deducing $z \bar{z} \mid p$ from $z \mid p$ and $\bar{z} \mid p$ for an irreducible $z = a + bi$ additionally requires that $z$ and $\bar{z}$ are not associates (for instance, $3 \mid 3$ and $\bar{3} = 3 \mid 3$, yet $3 \cdot \bar{3} = 9 \nmid 3$; and for $p = 2$, $1 + i$ and $1 - i = -i(1 + i)$ are associates, with $(1 + i)(1 - i) = 2 \mid 2$ holding only because $2 = -i(1 + i)^2$ is ramified). The norm computation above reaches \eqref{eq:sum-of-squares-condition} directly without either requirement: it only uses $N(zw) = N(z) \, N(w)$ and the primality of $p$ in $\mathbb{Z}$.
+\begin{aiNote}[Beyond the Lecture: A Proof with the Norm]
+% [PERSISTENT, ADDITION]
+The step from $a + bi \mid p$ and $a - bi \mid p$ to $(a + bi)(a - bi) \mid p$ needs more than unique factorization (\cref{fact:pre-unique-factorization}, or Euclid's lemma, \cref{fact:pre-euclid}): for an irreducible $z = a + bi$, the elements $z$ and $\bar{z}$ must also not be associates. For instance, $3 \mid 3$ and $\bar{3} = 3 \mid 3$, yet $3 \cdot \bar{3} = 9 \nmid 3$. For $p = 2$, the elements $1 + i$ and $1 - i = -i(1 + i)$ are associates, and $(1 + i)(1 - i) = 2 \mid 2$ holds only because $2 = -i(1 + i)^2$.
+
+Textbooks avoid this with the \newterm{field norm} $N(x + yi) := (x + yi)(x - yi) = x^2 + y^2$, which is multiplicative: $N(zw) = N(z) \, N(w)$. The lecturer does not use it. His \qt{norm} is the length $|x + yi| = \sqrt{x^2 + y^2}$ (Week~3, \cref{prop:units-gaussian-integers}), and $N$ is its square. If $p = z (a + bi)$ with non-units $z$ and $a + bi$, taking norms gives
+\[
+p^2 = N(p) = N(z) \, N(a + bi), \qquad N(z) > 1, \quad N(a + bi) > 1.
+\]
+Since $p$ is prime in $\mathbb{Z}$, the only positive divisors of $p^2$ are $1$, $p$ and $p^2$, so $N(a + bi) = a^2 + b^2 = p$. This reaches \eqref{eq:sum-of-squares-condition} directly.
 \end{aiNote}
 
 \subsection{Fermat's Theorem on Sums of Two Squares}
@@ -256,7 +236,7 @@ We had an example yesterday, I remind you; the answer yesterday had to do with $
 Let $p$ be an odd integer prime ($p > 2$).
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item If $p \equiv 3 \pmod 4$, then $p$ cannot be written as the sum of two squares ($p \neq a^2 + b^2$). Consequently, $p$ remains prime in $\mathbb{Z}[i]$.
-    \item If $p \equiv 1 \pmod 4$, then $p$ can be written uniquely (up to sign and order) as the sum of two squares:
+    \item If $p \equiv 1 \pmod 4$, then $p$ can be written as the sum of two squares:
     \[
     p = a^2 + b^2 = (a + bi)(a - bi) \quad (a, b \in \mathbb{Z}).
     \]
@@ -264,30 +244,26 @@ Let $p$ be an odd integer prime ($p > 2$).
 \end{enumerate}
 \end{theorem}
 
-\begin{example}[{Decomposition of $5$ vs. Primality of $3$ in $\mathbb{Z}[i]$}]\label[example]{ex:primes-5-and-3}
-\begin{itemize}
-    \item \textbf{The prime $5$:} Since $5 \equiv 1 \pmod 4$, we have:
-    \[
-    5 = 2^2 + 1^2 = (2 + i)(2 - i).
-    \]
-    Thus, $5$ is composite in $\mathbb{Z}[i]$.
-    \item \textbf{The prime $3$:} Since $3 \equiv 3 \pmod 4$, and squares modulo $4$ can only be $0$ or $1$ ($0^2 \equiv 0$, $1^2 \equiv 1$, $2^2 \equiv 0$, $3^2 \equiv 1$), the sum of two squares can only be $0, 1$, or $2 \pmod 4$. Hence, $a^2 + b^2 \equiv 3 \pmod 4$ has no integer solutions, and $3$ remains prime in $\mathbb{Z}[i]$.
-\end{itemize}
+\begin{example}[{Decomposition of $5$ in $\mathbb{Z}[i]$}]\label[example]{ex:prime-5-gaussian}
+Since $5 \equiv 1 \pmod 4$, we have:
+\[
+5 = 2^2 + 1^2 = (2 + i)(2 - i).
+\]
+Thus, $5$ does not stay prime in $\mathbb{Z}[i]$.
 \end{example}
 
-\begin{steps}[Classification of Integer Primes in {$\mathbb{Z}[i]$}]
-Every integer prime $p \in \mathbb{Z}$ falls into one of three categories in $\mathbb{Z}[i]$:
+\end{content}
+
+\begin{aiNote}[{Beyond the Lecture: The Three Kinds of Primes in $\mathbb{Z}[i]$}]
+% [PERSISTENT, ADDITION]
+The lecturer calls part (i) of \cref{thm:fermat-two-squares} easy and leaves it open. It follows from squares modulo $4$: they are only $0$ or $1$ ($0^2 \equiv 0$, $1^2 \equiv 1$, $2^2 \equiv 0$, $3^2 \equiv 1$), so a sum of two squares is $0$, $1$ or $2 \pmod 4$. For example, $3$ stays prime in $\mathbb{Z}[i]$. The representation in part (ii) is unique up to sign and order.
+
+The even prime is not covered by the theorem. Every integer prime falls into one of three classes in $\mathbb{Z}[i]$:
 \begin{description}
-    \item[Ramified Prime:] \textbf{$p = 2$:} $2 = 1^2 + 1^2 = (1 + i)(1 - i) = -i(1 + i)^2$.
+    \item[Ramified Prime:] \textbf{$p = 2$:} $2 = 1^2 + 1^2 = (1 + i)(1 - i)$, and since $1 - i = -i(1 + i)$, in fact $2 = -i \, (1 + i)^2$.
     \item[Split Primes:] \textbf{$p \equiv 1 \pmod 4$:} $p = a^2 + b^2 = (a + bi)(a - bi)$ splits into two distinct non-associate Gaussian primes (e.g., $5, 13, 17, 29$).
     \item[Inert Primes:] \textbf{$p \equiv 3 \pmod 4$:} $p$ cannot be written as $a^2 + b^2$, so $p$ remains prime in $\mathbb{Z}[i]$ (e.g., $3, 7, 11, 19, 23$).
 \end{description}
-\end{steps}
-\end{content}
-
-\begin{aiNote}[Beyond the Lecture: The Prime $2$]
-% [PERSISTENT, ADDITION]
-The even prime is not covered by \cref{thm:fermat-two-squares}: $2 = 1^2 + 1^2 = (1 + i)(1 - i)$, and since $1 - i = -i(1 + i)$, in fact $2 = -i \, (1 + i)^2$, so $2$ does not stay prime in $\mathbb{Z}[i]$.
 \end{aiNote}
 
 \begin{hidden}
@@ -324,7 +300,7 @@ A \newterm{ring} is a tuple $(R, +, \cdot, 0, 1)$ consisting of a set $R$, two b
         \item \textbf{Commutativity:} $\forall a, b \in R \colon a + b = b + a$.
     \end{itemize}
 
-    \item \textbf{Multiplicative Monoid Axioms} (a monoid is a set with an associative operation and a neutral element, \cref{def:pre-group}):
+    \item \textbf{Multiplicative Axioms:}
     Multiplication is associative and possesses a unit element $1$:
     \begin{itemize}
         \item \textbf{Associativity:} $\forall a, b, c \in R \colon (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
@@ -341,9 +317,9 @@ A \newterm{ring} is a tuple $(R, +, \cdot, 0, 1)$ consisting of a set $R$, two b
 \end{definition}
 
 \begin{steps}[Structural Synthesis of the Ring Axioms]
-Summarizing the additive structure compactly as an abelian group $(R, +, 0)$ packages four standard axioms (associativity, commutativity, neutral element, and inverses) into a single standard algebraic concept. The distributive laws act as the essential bridge coupling the additive abelian group structure with the multiplicative monoid structure.
+Summarizing the additive structure compactly as an abelian group $(R, +, 0)$ packages four standard axioms (associativity, commutativity, neutral element, and inverses) into a single standard algebraic concept. The distributive laws are the only link between the additive structure and the multiplicative structure.
 
-Two words that are easy to mix up: \emph{abelian} refers to the addition ($a + b = b + a$ is part of the axioms), whereas \emph{commutative ring} refers to the multiplication. The definition above does not require $a \cdot b = b \cdot a$; the standing convention of this course adds it (\cref{rem:ring-convention}). Nor does it require $1 \neq 0$: the case $1 = 0$ is allowed and treated in \cref{prop:zero-ring}.
+Going beyond the lecture: two words are easy to mix up. \emph{Abelian} refers to the addition ($a + b = b + a$ is part of the axioms), whereas \emph{commutative ring} refers to the multiplication. The definition above does not require $a \cdot b = b \cdot a$; the standing convention of this course adds it (\cref{rem:ring-convention}). Nor does it require $1 \neq 0$: the case $1 = 0$ is allowed and treated in \cref{prop:zero-ring}.
 \end{steps}
 \end{content}
 
@@ -396,7 +372,7 @@ So, it's a rather degenerate case: if you have a ring where $1 = 0$, then all el
 
 \begin{content}[The Degenerate Zero Ring]
 \begin{proposition}[Characterization of the Zero Ring]\label[proposition]{prop:zero-ring}
-Let $R$ be a ring. If $1 = 0$ in $R$, then $R$ is the trivial ring containing only a single element:
+Let $R$ be a ring. If $1 = 0$ in $R$, then $R$ consists of a single element:
 \[
 R = \{0\}.
 \]
@@ -413,10 +389,15 @@ R = \{0\}.
 \]
 \end{proof}
 
-\begin{remark}[The Zero Ring in Abstract Algebra]
-The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fields strictly require $1 \neq 0$, the general definition of a ring intentionally admits $1 = 0$ so that the category of rings has a terminal object (the zero ring: every ring has exactly one homomorphism to it) and quotient rings $\faktor{R}{I}$ remain rings even when $I = R$. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
+\begin{remark}[The Zero Ring]
+The ring $R = \{0\}$ is called the \newterm{zero ring}. It is a degenerate case, but it stays allowed because it fits well in certain statements of theorems. Definitions that must exclude it say so explicitly, as for integral domains (\cref{def:integral-domain}, Week~2).
 \end{remark}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Where the Zero Ring Fits]
+% [PERSISTENT, ADDITION]
+While fields strictly require $1 \neq 0$, the definition of a ring admits $1 = 0$ so that the category of rings has a terminal object (the zero ring: every ring has exactly one homomorphism to it) and quotient rings $\faktor{R}{I}$ remain rings even when $I = R$.
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:12:50
@@ -431,7 +412,7 @@ The trivial ring $R = \{0\}$ is often called the \newterm{zero ring}. While fiel
 \begin{speech}[00:12:43 - 00:15:05]
 Other things that are kind of convention: if you take $-1$... $1$ is in the ring because it's part of the data \inlinemetanote{writes: $1 \in R$}. Because of the additive structure, the group axioms say that there exists an additive inverse. So, by convention, $-1$ is by definition the additive inverse of $1$ \inlinemetanote{writes: $-1$ by def the add. inv. of $1$}, and you can prove that it's unique. Maybe I leave that as an exercise. Given the ring, there's $1$, and there's the additive inverse. Additive inverses are unique, you can prove that. So, that's $-1$.
 
-And then $-a$, for any element, is defined to be $(-1) \times a$ \inlinemetanote{writes: $-a := (-1) \cdot a$}; this is not a surprising definition.
+And then $-a$, for any element, is defined to be $(-1) \times a$ \inlinemetanote{writes: $-a \stackrel{\text{def}}{=} (-1) \cdot a$}; this is not a surprising definition.
 
 And then the little lemma --- maybe it doesn't even get to be called a lemma --- is that $-a$ is the additive inverse of $a$ \inlinemetanote{writes: Lemma: $-a$ is the additive inverse of $a.$}. That's very convenient; it would be really unpleasant if that weren't the case.
 
@@ -452,7 +433,7 @@ Let $R$ be a ring.
     \]
     \item For any element $a \in R$, we define:
     \begin{equation}\label{eq:def-negative-a}
-    -a := (-1) \cdot a.
+    -a \stackrel{\text{def}}{=} (-1) \cdot a.
     \end{equation}
 \end{enumerate}
 \end{definition}
@@ -476,7 +457,7 @@ Since $a + \bigl((-1) \cdot a\bigr) = 0$, the element $(-1) \cdot a$ satisfies t
 \end{proof}
 
 \begin{steps}[Two Meanings of $-a$, One Element]
-The ring axioms (\cref{def:ring}) already write $-a$ for the additive inverse of $a$ in the group $(R, +, 0)$, while \cref{def:negative-elements} defines $-a := (-1) \cdot a$. There is no circularity: the axioms only assert that an additive inverse exists, and it is unique; the definition of $-1$ uses just that. \Cref{lem:additive-inverse-product} then shows that the product $(-1) \cdot a$ \emph{is} this unique inverse, so the two meanings of $-a$ name the same element.
+Going beyond the lecture: the ring axioms (\cref{def:ring}) already write $-a$ for the additive inverse of $a$ in the group $(R, +, 0)$, while \cref{def:negative-elements} defines $-a$ as $(-1) \cdot a$. There is no circularity: the axioms only assert that an additive inverse exists, and it is unique; the definition of $-1$ uses just that. \Cref{lem:additive-inverse-product} then shows that the product $(-1) \cdot a$ \emph{is} this unique inverse, so the two meanings of $-a$ name the same element.
 \end{steps}
 \end{content}
 
@@ -519,11 +500,11 @@ The equality $n \cdot (-a) = -(n \cdot a)$ holds for $n > 0$: adding $-a$ to its
 \end{remark}
 
 \begin{steps}[A Harmless Clash of Notation]
-In $n \cdot a$ the factor $n$ is an integer, not an element of $R$, so this dot is not the ring multiplication. The two readings never conflict: $0 \cdot a = 0_R$ holds for the integer $0$ by definition and for the ring element $0$ by \cref{prop:mult-by-zero}, and in general $n \cdot a = (n \cdot 1_R) \cdot a$ by the distributive law.
+Going beyond the lecture: in $n \cdot a$ the factor $n$ is an integer, not an element of $R$, so this dot is not the ring multiplication. The two readings never conflict: $0 \cdot a = 0_R$ holds for the integer $0$ by definition and for the ring element $0$ by \cref{prop:mult-by-zero}, and in general $n \cdot a = (n \cdot 1_R) \cdot a$ by the distributive law.
 \end{steps}
 
 \begin{definition}[Canonical Map from $\mathbb{Z}$ into a Ring]\label[definition]{def:canonical-map-z}
-For every ring $R$, there exists a canonical map $\phi \colon \mathbb{Z} \to R$ defined by evaluating integer multiples on the multiplicative unit $1_R$:
+For every ring $R$, there exists a canonical map $\phi \colon \mathbb{Z} \to R$ given by the integer multiples of the multiplicative unit $1_R$:
 \[
 \phi(n) := n \cdot 1_R.
 \]
@@ -563,7 +544,7 @@ If you look in the literature about what the definition of a ring is, of course 
 
 \begin{content}[Convention: Commutative Rings with Unit]
 \begin{remark}[Standing Convention for Rings in this Course]\label[remark]{rem:ring-convention}
-In the general mathematical literature, rings are not necessarily required to have commutative multiplication, nor are they always required to possess a multiplicative identity $1$ (sometimes called \newterm{rngs} or pseudo-rings).
+In the general mathematical literature, rings are not necessarily required to have commutative multiplication, nor are they always required to possess a multiplicative identity $1$.
 
 \par\vspace{1ex}\noindent
 \textbf{Standing Convention:} In this course, unless explicitly stated otherwise, the term \newterm{ring} will always designate a \textbf{commutative ring with unit}: a ring with unit $1$ in the sense of \cref{def:ring} such that $a \cdot b = b \cdot a$ for all $a, b \in R$. The zero ring ($1 = 0$, \cref{prop:zero-ring}) is still allowed.
@@ -624,7 +605,7 @@ Let $R_1$ and $R_2$ be rings. A mapping $f \colon R_1 \to R_2$ is called a \newt
 \end{definition}
 
 \begin{steps}[Comparison to Linear Algebra and Group Theory]
-Condition \textbf{(i)} asserts that $f$ is a group homomorphism between the additive groups $(R_1, +)$ and $(R_2, +)$, mirroring the linearity condition $T(u + v) = T(u) + T(v)$ from linear algebra. Condition \textbf{(ii)} ensures compatibility with the multiplicative monoid structure. Condition \textbf{(iii)} explicitly guarantees that the multiplicative unit of the domain maps to the multiplicative unit of the codomain.
+Condition \textbf{(i)} asserts that $f$ is a group homomorphism between the additive groups $(R_1, +)$ and $(R_2, +)$, mirroring the linearity condition $T(u + v) = T(u) + T(v)$ from linear algebra. Condition \textbf{(ii)} ensures compatibility with the multiplication. Condition \textbf{(iii)} explicitly guarantees that the multiplicative unit of the domain maps to the multiplicative unit of the codomain.
 \end{steps}
 \end{content}
 
@@ -696,19 +677,11 @@ So, it's not a good idea to think about this, but the fact of the matter is: we 
 \qt{We don't have mult.\ inverses in $R$, so we can't use that argument.}
 \end{center}
 
-\begin{proposition}[Multiplicative Idempotence of \texorpdfstring{$f(1)$}{f(1)}]\label[proposition]{prop:f1-idempotent}
-Let $f \colon R_1 \to R_2$ satisfy conditions \textbf{(i)} and \textbf{(ii)} of a ring homomorphism. Because $1_{R_1} \cdot 1_{R_1} = 1_{R_1}$, multiplicativity implies:
-\begin{equation}\label{eq:f1-idempotent}
-f(1_{R_1}) = f(1_{R_1} \cdot 1_{R_1}) = f(1_{R_1}) \cdot f(1_{R_1}) = f(1_{R_1})^2.
-\end{equation}
-Thus, $f(1_{R_1})$ is an \newterm{idempotent} element in $R_2$. However, because elements in a general ring do not necessarily possess multiplicative inverses, we cannot cancel $f(1_{R_1})$ to deduce that $f(1_{R_1}) = 1_{R_2}$.
-\end{proposition}
-
 \begin{steps}[Why $f(1) = 1$ Does Not Follow from $f(ab) = f(a)f(b)$]
 One might wonder why $f(1) = 1$ is required as an explicit axiom in \cref{def:ring-homomorphism}, whereas $f(0) = 0$ is a provable theorem.
 \begin{itemize}
     \item \textbf{Additive Case:} In the additive group $(R_2, +)$, every element has an additive inverse. Hence, from $f(0) = f(0) + f(0)$, we can subtract $f(0)$ to obtain $f(0) = 0$.
-    \item \textbf{Multiplicative Case:} Using multiplicativity, we know that $f(1) = f(1 \cdot 1) = f(1) \cdot f(1)$. However, in a general ring $R_2$, $f(1)$ does not necessarily possess a multiplicative inverse! While $x^2 = x$ in a field (or in a division ring, where every non-zero element is invertible but multiplication need not commute) implies $x \in \{0, 1\}$, in a general ring there can be non-trivial idempotents ($e^2 = e$ with $e \neq 0, 1$), or $f(1)$ could simply equal $0$.
+    \item \textbf{Multiplicative Case:} Using multiplicativity, we know that $f(1) = f(1 \cdot 1) = f(1) \cdot f(1)$. However, in a general ring $R_2$, $f(1)$ does not necessarily possess a multiplicative inverse! Going beyond the lecture: while $x^2 = x$ in a field implies $x \in \{0, 1\}$, in a general ring there can be non-trivial \emph{idempotents} ($e^2 = e$ with $e \neq 0, 1$), or $f(1)$ could simply equal $0$.
 \end{itemize}
 No cleverer argument can help either: the zero map in \cref{ex:zero-map-non-unital} satisfies the first two conditions but not $f(1) = 1$.
 \end{steps}
@@ -747,7 +720,7 @@ This kind of mathematics that's on this kind of foundational, definitional level
 
 \begin{content}[The Canonical Homomorphism \texorpdfstring{$\mathbb{Z} \to R$}{Z -> R}]
 \begin{example}[Canonical Homomorphism from the Integers]\label[example]{ex:canonical-hom-z-to-r}
-For any ring $(R, +, \cdot,\allowbreak 0_R, 1_R)$, the canonical evaluation map:
+For any ring $(R, +, \cdot,\allowbreak 0_R, 1_R)$, the canonical map:
 \[
 \phi \colon \mathbb{Z} \to R, \quad \phi(n) := n \cdot 1_R
 \]
@@ -773,7 +746,7 @@ is a ring homomorphism.
 \end{itemize}
 
 \begin{steps}[The General Check the Lecturer Leaves to You]
-The two computations above are instances of two identities, valid for all $m, n \in \mathbb{Z}$:
+Going beyond the lecture: the two computations above are instances of two identities, valid for all $m, n \in \mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Additivity:} $(m + n) \cdot 1_R = m \cdot 1_R + n \cdot 1_R$. For $m, n \ge 0$ both sides are a sum of $m + n$ copies of $1_R$ (associativity of $+$); the cases with negative $m$ or $n$ follow by adding inverses on both sides (\cref{def:integer-multiples}, \cref{rem:negative-multiples}).
     \item \textbf{Multiplicativity:} $(m \cdot 1_R)(n \cdot 1_R) = (mn) \cdot 1_R$. Expanding the left side with the distributive laws gives $|mn|$ products $1_R \cdot 1_R = 1_R$, taken with the sign of $mn$, exactly as in the computation for $2 \cdot 3 = 6$.
@@ -781,9 +754,6 @@ The two computations above are instances of two identities, valid for all $m, n 
 Together with $\phi(1) = 1_R$, this proves that $\phi$ is a ring homomorphism.
 \end{steps}
 
-\begin{steps}[Universal Initial Property of $\mathbb{Z}$]
-In category theory, this property establishes that $\mathbb{Z}$ is the \newterm{initial object} in the category of rings (\cref{ex:cat-rings}, Week~2): for every ring $R$, there exists a \emph{unique} ring homomorphism from $\mathbb{Z}$ to $R$.
-\end{steps}
 \end{content}
 
 \begin{hidden}
@@ -814,7 +784,7 @@ and their single-variable polynomial rings:
 \begin{equation}\label{eq:poly-inclusions}
 \mathbb{Z}[x] \hookrightarrow \mathbb{Q}[x] \hookrightarrow \mathbb{R}[x] \hookrightarrow \mathbb{C}[x]
 \end{equation}
-are all injective ring homomorphisms. For any subring $S \subseteq R$ (defined formally in Week~2, \cref{def:subring}), the inclusion map $\iota \colon S \hookrightarrow R$ defined by $\iota(s) = s$ is a ring homomorphism because $S$ inherits the operations and the unit $1_S = 1_R$ directly from $R$.
+are all ring homomorphisms: an inclusion does not change addition or multiplication of the smaller ring, and $1$ goes to $1$.
 \end{example}
 \end{content}
 
@@ -842,15 +812,19 @@ with additive identity $\bar{0}$ and multiplicative identity $\bar{1}$. Here $\b
 \end{definition}
 
 \begin{steps}[Why the Operations Are Well-Defined]
-The formulas use representatives $a, b$ of the classes, so they must not depend on that choice. If $\bar{a} = \bar{a}'$ and $\bar{b} = \bar{b}'$, say $a' = a + kn$ and $b' = b + \ell n$, then
+Going beyond the lecture: the formulas use representatives $a, b$ of the classes, so they must not depend on that choice. If $\bar{a} = \bar{a}'$ and $\bar{b} = \bar{b}'$, say $a' = a + kn$ and $b' = b + \ell n$, then
 \[
 a' + b' = (a + b) + (k + \ell) n, \qquad a' b' = ab + (a \ell + k b + k \ell n) n,
 \]
 so $\overline{a' + b'} = \overline{a + b}$ and $\overline{a' b'} = \overline{ab}$. The ring axioms are then inherited from $\mathbb{Z}$, and so is commutativity. For $n = 1$ one gets the zero ring $\{\bar{0}\}$.
 \end{steps}
 
-\begin{example}[The Two-Element Field $\faktor{\mathbb{Z}}{2\mathbb{Z}}$]\label[example]{ex:z2-ring}
-For $n = 2$, $\faktor{\mathbb{Z}}{2\mathbb{Z}} = \{\bar{0}, \bar{1}\}$ is the smallest non-trivial commutative ring with unit ($1 \neq 0$). The addition and multiplication tables are given by:
+\begin{example}[The Ring $\faktor{\mathbb{Z}}{2\mathbb{Z}}$]\label[example]{ex:z2-ring}
+For $n = 2$, $\faktor{\mathbb{Z}}{2\mathbb{Z}} = \{\bar{0}, \bar{1}\}$ is a ring with two elements, zero and one.
+\end{example}
+
+\begin{steps}[Addition and Multiplication in $\faktor{\mathbb{Z}}{2\mathbb{Z}}$]
+Going beyond the lecture: the two tables are:
 \begin{center}
 \begin{tabular}{c|cc}
 $+$ & $\bar{0}$ & $\bar{1}$ \\ \hline
@@ -864,27 +838,21 @@ $\bar{0}$ & $\bar{0}$ & $\bar{0}$ \\
 $\bar{1}$ & $\bar{0}$ & $\bar{1}$
 \end{tabular}
 \end{center}
-This is a non-trivial commutative ring with unit despite containing only two elements.
-\end{example}
+\end{steps}
 
 \begin{proposition}[Canonical Projection Homomorphism]\label[proposition]{prop:canonical-projection}
-The reduction map modulo $n$ (written $f$ on the board):
-\begin{equation}\label{eq:canonical-projection}
-\pi \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}, \quad a \mapsto \bar{a} := a \bmod n
-\end{equation}
+The reduction map modulo $n$:
+\[
+f \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}, \quad f(a) = \bar{a}
+\]
 is a surjective ring homomorphism.
 \end{proposition}
-
-\begin{proof}
-For any $a, b \in \mathbb{Z}$:
-\begin{enumerate}[label=\textbf{(\roman*)}]
-    \item \textbf{Additivity:} $\pi(a + b) = \overline{a + b} = \bar{a} + \bar{b} = \pi(a) + \pi(b)$.
-    \item \textbf{Multiplicativity:} $\pi(a \cdot b) = \overline{a \cdot b} = \bar{a} \cdot \bar{b} = \pi(a) \cdot \pi(b)$.
-    \item \textbf{Unit Preservation:} $\pi(1) = \bar{1}$.
-\end{enumerate}
-Surjectivity holds because every residue class $\bar{k} \in \faktor{\mathbb{Z}}{n\mathbb{Z}}$ is the image of the integer $k \in \mathbb{Z}$.
-\end{proof}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Why the Reduction Map Is a Homomorphism]
+% [PERSISTENT, ADDITION]
+The lecturer states this without proof. For $a, b \in \mathbb{Z}$, the operations on residue classes give $f(a + b) = \overline{a + b} = \bar{a} + \bar{b} = f(a) + f(b)$ and $f(a \cdot b) = \overline{a \cdot b} = \bar{a} \cdot \bar{b} = f(a) \cdot f(b)$, and $f(1) = \bar{1}$. Every residue class $\bar{k}$ is the image of $k \in \mathbb{Z}$, so $f$ is surjective.
+\end{aiNote}
 
 \section{The Kernel of a Ring Homomorphism and Ideals}
 \subsection{Definition of the Kernel}
@@ -920,27 +888,25 @@ Let $R_1, R_2$ be rings and let $f \colon R_1 \to R_2$ be a ring homomorphism. T
 \end{definition}
 
 \begin{example}[Kernel of the Modular Reduction Homomorphism]\label[example]{ex:kernel-of-projection}
-For the canonical projection $\pi \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$ given by $\pi(a) = \bar{a}$, an integer $a$ maps to $\bar{0}$ if and only if $a$ is a multiple of $n$. Hence:
+For the homomorphism $f \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}$ given by $f(a) = \bar{a}$, an integer $a$ maps to $\bar{0}$ if and only if $a$ is a multiple of $n$. Hence:
 \begin{equation}\label{eq:kernel-zn}
-\ker(\pi) = n\mathbb{Z} := \{ k \cdot n \mid k \in \mathbb{Z} \}.
+\ker(f) = n\mathbb{Z} := \{ k \cdot n \mid k \in \mathbb{Z} \}.
 \end{equation}
 \end{example}
 
 \begin{steps}[The Kernel as a Group Kernel]
-Since $f$ respects addition and $f(0_{R_1}) = 0_{R_2}$ (\cref{prop:homomorphism-preserves-zero}), $\ker(f)$ is the kernel of the group homomorphism $f \colon (R_1, +, 0) \to (R_2, +, 0)$ in the sense of Week~2 (\cref{def:kernel}). The multiplication is what makes the ring kernel special, see \cref{prop:properties-of-kernel}.
+Going beyond the lecture: since $f$ respects addition and $f(0_{R_1}) = 0_{R_2}$ (\cref{prop:homomorphism-preserves-zero}), $\ker(f)$ is the kernel of the group homomorphism $f \colon (R_1, +, 0) \to (R_2, +, 0)$ in the sense of Week~2 (\cref{def:kernel}). The multiplication is what makes the ring kernel special, see \cref{prop:properties-of-kernel}.
 \end{steps}
 \end{content}
 
 \begin{insight}[Kernels versus Images in Ring Theory]
-In linear algebra, the kernel and image of a linear map $T \colon V \to W$ enjoy a symmetric status: both are vector subspaces, connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{Im}(T)$ (\cref{fact:pre-rank-nullity}).
-
-In ring theory, however, their algebraic roles diverge profoundly:
-\begin{itemize}
-    \item The image $\operatorname{Im}(f) \subseteq R_2$ is merely a \textbf{subring} of the codomain.
-    \item The kernel $\ker(f) \subseteq R_1$ is not merely a subring, but an \textbf{ideal} of the domain: it is closed under addition and absorbs multiplication from the entire ring ($r \cdot a \in \ker(f)$ for all $r \in R_1$ and $a \in \ker(f)$).
-\end{itemize}
-This absorption property makes the kernel the precise algebraic structure needed to construct quotient rings $\faktor{R_1}{\ker(f)}$ and establish the First Isomorphism Theorem for rings ($\faktor{R_1}{\ker(f)} \cong \operatorname{Im}(f)$, Week~4, \cref{thm:first-isomorphism-theorem-statement}).
+In linear algebra, the kernel and image of a linear map $T \colon V \to W$ are on similar footing: both are vector subspaces. In ring theory, the kernel turns out to be much more important than the image: $\ker(f) \subseteq R_1$ is an \textbf{ideal} of the domain, closed under addition and absorbing multiplication from the entire ring ($r \cdot a \in \ker(f)$ for all $r \in R_1$ and $a \in \ker(f)$).
 \end{insight}
+
+\begin{aiNote}[Beyond the Lecture: Image and Quotient]
+% [PERSISTENT, ADDITION]
+In linear algebra, the two are connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{Im}(T)$ (\cref{fact:pre-rank-nullity}). In ring theory, the image $\operatorname{Im}(f) \subseteq R_2$ is only a subring of the codomain, while the absorption property of the kernel is what the quotient ring $\faktor{R_1}{\ker(f)}$ and the First Isomorphism Theorem ($\faktor{R_1}{\ker(f)} \cong \operatorname{Im}(f)$, Week~4, \cref{thm:first-isomorphism-theorem-statement}) need.
+\end{aiNote}
 
 \subsection{Properties of the Kernel}
 
@@ -1066,7 +1032,7 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
 \end{center}
 
 \begin{steps}[Ideals as the Ring-Theoretic Analogue of Normal Subgroups and Subspaces]
-In linear algebra, kernels of linear maps are vector subspaces ($T(u + v) = T(u) + T(v)$ and $T(c v) = c T(v)$). A vector subspace $W \subseteq V$ is closed under vector addition ($w_1 + w_2 \in W$) and scalar multiplication by field scalars ($\lambda \cdot w \in W$ for $\lambda \in k$).
+Going beyond the lecture: in linear algebra, kernels of linear maps are vector subspaces ($T(u + v) = T(u) + T(v)$ and $T(c v) = c T(v)$). A vector subspace $W \subseteq V$ is closed under vector addition ($w_1 + w_2 \in W$) and scalar multiplication by field scalars ($\lambda \cdot w \in W$ for $\lambda \in k$).
 
 In group theory, kernels of group homomorphisms are normal subgroups ($g N g^{-1} \subseteq N$).
 
@@ -1189,7 +1155,7 @@ Therefore, $F \subseteq I$, which forces $I = F$.
 \end{proof}
 
 \begin{steps}[Implications for Field Homomorphisms]
-A direct consequence of this theorem is that every ring homomorphism $f \colon F \to R$ from a field $F$ to a non-zero ring $R$ is automatically \textbf{injective}:
+Going beyond the lecture: a direct consequence of this theorem is that every ring homomorphism $f \colon F \to R$ from a field $F$ to a non-zero ring $R$ is automatically \textbf{injective}:
 \[
 \ker(f) \subset F \text{ an ideal} \implies \ker(f) = \{0\} \quad (\text{since } f(1_F) = 1_R \neq 0_R \implies \ker(f) \neq F).
 \]
@@ -1203,7 +1169,7 @@ Because $\ker(f) = \{0\}$, field homomorphisms into non-zero rings are always em
 The lecturer's humorous pedagogical quip --- that \qt{fields are sellouts because they have lost all their ideals} --- highlights an essential contrast between field theory and ring theory:
 \begin{itemize}
     \item In a field $F$, the abundance of units ($\mathcal{U}_F = F \setminus \{0\}$) destroys all non-trivial ideals, as any non-zero element $a \in I$ immediately pulls the identity into the ideal: $1 = a^{-1} \cdot a \in I$ (with $r = a^{-1} \in F$ and $a \in I$), forcing $I = F$.
-    \item In general rings (such as $\mathbb{Z}$ or polynomial rings), the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $\faktor{R}{I}$ and algebraic geometry.
+    \item Rings can have quite a number of ideals. The simplest example are the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$.
 \end{itemize}
 \end{insight}
 
@@ -1227,20 +1193,15 @@ Does $V$ have a basis \inlinemetanote{writes: Does $V$ have a basis?}?
 Let $V$ be a vector space over a field $k$. Does $V$ always have a basis?
 \end{question}
 
-\begin{steps}[Finite-Dimensional versus Infinite-Dimensional Vector Spaces]
-\begin{itemize}
-    \item \textbf{Finite-Dimensional Spaces:} In standard first-year linear algebra, if $V$ is spanned by finitely many vectors, an explicit basis is easily constructed by extracting a maximal linearly independent subset.
-    \item \textbf{Infinite-Dimensional Spaces:} When $V$ is infinite-dimensional (e.g., function spaces such as $C(\mathbb{R}, \mathbb{R})$ or $\mathbb{R}^\mathbb{N}$), constructing an explicit (Hamel) basis by hand is impossible. Proving that \emph{every} vector space possesses a basis requires non-constructive set-theoretic axioms---specifically, \newterm{Zorn's Lemma}, which is equivalent to the Axiom of Choice ($\text{AC}$).
-\end{itemize}
-\end{steps}
-
-\begin{remark}[Infinite-Dimensional Vector Spaces and the Axiom of Choice]\label[remark]{rem:zorns-lemma-basis}
-For finite-dimensional vector spaces, the existence of a basis is constructive via Gaussian elimination or the Steinitz exchange lemma (\cref{fact:pre-basis}). For arbitrary, infinite-dimensional vector spaces (such as function spaces $C(\mathbb{R}, \mathbb{R})$ or sequence spaces $\mathbb{R}^\mathbb{N}$), the assertion that \emph{every vector space possesses a basis} (known as a \newterm{Hamel basis}) cannot be proven constructively in Zermelo--Fraenkel set theory ($\text{ZF}$). It is logically equivalent to the \newterm{Axiom of Choice} ($\text{AC}$) and is standardly established by applying \newterm{Zorn's Lemma} to the poset of linearly independent subsets ordered by inclusion.
+\begin{remark}[Infinite-Dimensional Vector Spaces]\label[remark]{rem:zorns-lemma-basis}
+A finite-dimensional vector space has a basis. For an infinite-dimensional vector space, the traditional way to get a basis is an application of \newterm{Zorn's Lemma}, which is related to the \newterm{axiom of choice} in logic.
 \end{remark}
 \end{content}
 
 \begin{aiNote}[Beyond the Lecture: How Zorn's Lemma Gives a Basis]
 % [PERSISTENT, ADDITION]
+For finite-dimensional vector spaces, a basis comes from extracting a maximal linearly independent subset, for example via Gaussian elimination or the Steinitz exchange lemma (\cref{fact:pre-basis}). For infinite-dimensional spaces such as $C(\mathbb{R}, \mathbb{R})$ or $\mathbb{R}^\mathbb{N}$, the statement that every vector space has a basis (a \newterm{Hamel basis}) cannot be proven constructively in Zermelo--Fraenkel set theory ($\text{ZF}$): it is equivalent to the axiom of choice ($\text{AC}$).
+
 Zorn's lemma says: if $P$ is a non-empty partially ordered set (\cref{def:pre-partial-order}) in which every chain (totally ordered subset) has an upper bound in $P$, then $P$ has a maximal element. For a vector space $V$ over a field $k$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item Let $P$ be the set of linearly independent subsets of $V$, ordered by inclusion. It is non-empty, since $\emptyset \in P$.
@@ -1262,11 +1223,11 @@ Okay, and I think that's it. All right, so... \inlinemetanote{puts down the chal
 This lecture established core bridges connecting concrete arithmetic with axiomatic ring theory:
 \begin{itemize}
     \item \textbf{Gaussian Integers $\mathbb{Z}[i]$ and Primes:} The ring $\mathbb{Z}[i] = \{a + bi \mid a, b \in \mathbb{Z}\}$ possesses four units $\{\pm 1, \pm i\}$. An ordinary prime $p \in \mathbb{Z}$ factors in $\mathbb{Z}[i]$ if and only if $p = a^2 + b^2$, which occurs precisely when $p = 2$ or $p \equiv 1 \pmod 4$ (Fermat's two-square theorem). Integer primes $p \equiv 3 \pmod 4$ remain prime in $\mathbb{Z}[i]$.
-    \item \textbf{Rings and Elementary Arithmetic:} A ring $(R, +, \cdot, 0, 1)$ consists of an additive abelian group $(R, +, 0)$ and a multiplicative monoid $(R, \cdot, 1)$ coupled by the distributive laws. Distributivity yields the universal identities $0 \cdot a = 0$ and $(-1) \cdot a = -a$. When $1 = 0$, the ring collapses to the degenerate zero ring $R = \{0\}$.
-    \item \textbf{Canonical Evaluation Map $\mathbb{Z} \to R$:} Defining integer multiples $n \cdot a$ yields the unique canonical ring homomorphism $\phi \colon \mathbb{Z} \to R$ with $\phi(n) = n \cdot 1_R$, establishing $\mathbb{Z}$ as the initial object in the category of unital rings.
+    \item \textbf{Rings and Elementary Arithmetic:} A ring $(R, +, \cdot, 0, 1)$ consists of an additive abelian group $(R, +, 0)$ and an associative multiplication with unit $1$, linked by the distributive laws. Distributivity yields the universal identities $0 \cdot a = 0$ and $(-1) \cdot a = -a$. When $1 = 0$, the ring collapses to the degenerate zero ring $R = \{0\}$.
+    \item \textbf{Canonical Map $\mathbb{Z} \to R$:} Defining integer multiples $n \cdot a$ yields the canonical ring homomorphism $\phi \colon \mathbb{Z} \to R$ with $\phi(n) = n \cdot 1_R$, which requires no choices.
     \item \textbf{Ring Homomorphisms:} A ring homomorphism preserves addition, multiplication, and the multiplicative identity ($f(1) = 1$). While $f(0) = 0$ is automatic via additive group cancellation, $f(1) = 1$ must be explicitly axiomatized because elements in arbitrary rings generally lack multiplicative inverses.
     \item \textbf{Ideals and Kernels:} An ideal $I \subset R$ is an additive subgroup that multiplicatively absorbs the entire ambient ring ($r \cdot a \in I$ for all $a \in I, r \in R$). The kernel $\ker(f) = f^{-1}(\{0\})$ of every ring homomorphism is an ideal.
-    \item \textbf{Ideals in Fields:} Because every non-zero element in a field $F$ is invertible, any non-zero ideal contains $1_F$ and equals $F$. Thus, fields have only the trivial ideals $\{0\}$ and $F$, ensuring that every homomorphism from a field into a non-zero ring is injective.
-    \item \textbf{Outlook on Zorn's Lemma:} The fundamental problem of whether every infinite-dimensional vector space possesses a basis relies on non-constructive set theory via Zorn's Lemma.
+    \item \textbf{Ideals in Fields:} Because every non-zero element in a field $F$ is invertible, any non-zero ideal contains $1_F$ and equals $F$. Thus, fields have only the ideals $\{0\}$ and $F$.
+    \item \textbf{Outlook on Zorn's Lemma:} Whether every infinite-dimensional vector space has a basis is traditionally settled with Zorn's Lemma, which is related to the axiom of choice.
 \end{itemize}
 \end{overview}
