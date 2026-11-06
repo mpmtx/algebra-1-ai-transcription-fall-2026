@@ -457,17 +457,18 @@ We must show that for any irreducible polynomial $p \in R[x]$, the principal ide
 \textbf{Case 1 ($\deg(p) = 0$):}
 If $\deg(p) = 0$, then $p \in R$ is a non-zero, non-unit constant polynomial. Since $p$ is irreducible in $R[x]$, it is also irreducible in $R$. Because $R$ is a UFD, every irreducible element in $R$ is a prime element (\cref{exer:irred-prime-ufd}), which implies that the quotient ring $R/(p)$ is an integral domain (\cref{prop:quotient-integral-domain-prime}).
 
-Consider the canonical reduction homomorphism:
-\[
-\pi \colon R[x] \to (R/(p))[x], \quad \sum a_i x^i \mapsto \sum \bar{a}_i x^i.
-\]
-The kernel of $\pi$ is precisely the ideal $(p) \subset R[x]$. By the First Isomorphism Theorem:
-\[
-R[x]/(p) \cong (R/(p))[x].
-\]
-Since $R/(p)$ is an integral domain, the polynomial ring $(R/(p))[x]$ is also an integral domain (\cref{thm:domain-poly-power-series}). Therefore, $R[x]/(p)$ is an integral domain, which proves that $(p)$ is a prime ideal in $R[x]$.
+The lecturer does not repeat the argument here: this case was settled in the previous lecture (Week~6, Wednesday).
 \end{proof}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: A Second Proof for Constants]
+% [PERSISTENT]
+The lecture settles this case by looking at coefficients (Week~6, Wednesday). A shorter argument: the reduction homomorphism
+\[
+\pi \colon R[x] \to (R/(p))[x], \quad \sum a_i x^i \mapsto \sum \bar{a}_i x^i
+\]
+has kernel $(p) \subset R[x]$, so $R[x]/(p) \cong (R/(p))[x]$ by the First Isomorphism Theorem. Since $R/(p)$ is an integral domain, so is $(R/(p))[x]$ (\cref{thm:domain-poly-power-series}), and therefore $(p)$ is a prime ideal in $R[x]$.
+\end{aiNote}
 
 \subsection{Case 2: Positive Degree Irreducibles and the Field of Fractions}
 
@@ -1612,20 +1613,20 @@ For any integer $n \ge 1$, we denote by $[n]$ the canonical $n$-element set:
 \begin{definition}[Symmetric Group $S_n$]\label[definition]{def:symmetric-group}
 The \newterm{symmetric group on $n$ elements}, denoted $S_n$, is the group whose underlying set is the collection of all bijections (permutations) of $[n]$ onto itself:
 \begin{equation}\label{eq:symmetric-group-set}
-S_n := \operatorname{Bij}([n], [n]) = \bigl\{ f \colon [n] \to [n] \;\big|\; f \text{ is bijective} \bigr\},
+S_n := \bigl\{ f \colon [n] \to [n] \;\big|\; f \text{ is bijective} \bigr\},
 \end{equation}
-equipped with the binary operation of function composition $\circ$ and identity element $\operatorname{id}_{[n]}$:
+equipped with the binary operation of function composition $\circ$ and identity element $\operatorname{Id}_{[n]}$:
 \[
-(S_n, \circ, \operatorname{id}_{[n]}).
+(S_n, \circ, \operatorname{Id}_{[n]}).
 \]
 \end{definition}
 
 \begin{steps}[Verification of Group Axioms for $S_n$]
-Going beyond the lecture: the triple $(S_n, \circ, \operatorname{id}_{[n]})$ satisfies the group axioms:
+Going beyond the lecture: the triple $(S_n, \circ, \operatorname{Id}_{[n]})$ satisfies the group axioms:
 \begin{itemize}
     \item \textbf{Closure:} The composition of two bijections is a bijection: $f, g \in S_n \implies f \circ g \in S_n$.
     \item \textbf{Associativity:} Function composition is universally associative: $(f \circ g) \circ h = f \circ (g \circ h)$.
-    \item \textbf{Identity:} The identity function $\operatorname{id}_{[n]}(i) = i$ satisfies $\operatorname{id}_{[n]} \circ f = f \circ \operatorname{id}_{[n]} = f$ for all $f \in S_n$.
+    \item \textbf{Identity:} The identity function $\operatorname{Id}_{[n]}(i) = i$ satisfies $\operatorname{Id}_{[n]} \circ f = f \circ \operatorname{Id}_{[n]} = f$ for all $f \in S_n$.
     \item \textbf{Inverses:} Every bijection $f$ admits a unique two-sided inverse function $f^{-1} \in S_n$.
 \end{itemize}
 \end{steps}
@@ -1846,7 +1847,7 @@ Since $|S_3| = 3! = 6$, the symmetric group $S_3$ consists of exactly six permut
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity Permutation (Three 1-cycles):}
     \[
-    \operatorname{id} = (1)(2)(3).
+    \operatorname{Id} = (1)(2)(3).
     \]
     \item \textbf{Transpositions (One 2-cycle and One 1-cycle):}
     \[
@@ -1878,7 +1879,7 @@ And, you know, this way I picked some way to break symmetry, but you could also 
 \begin{notation}[Suppression of 1-Cycles]\label[notation]{not:omitting-1-cycles}
 In standard mathematical practice, 1-cycles (fixed points) are omitted from the cycle decomposition:
 \begin{itemize}
-    \item The identity permutation is denoted $e$ or $\operatorname{id}$.
+    \item The identity permutation is denoted $e$ or $\operatorname{Id}$.
     \item A transposition $(i \, j)(k)$ is written compactly as $(i \, j)$, with the tacit understanding that $k$ is fixed.
 \end{itemize}
 Under this standard convention, the elements of $S_3$ are recorded as:
@@ -2183,7 +2184,7 @@ It's how many times you have to apply the group operation to itself to get back 
 
 \begin{content}
 \begin{definition}[Order of a Group Element]\label[definition]{def:element-order}
-Let $G$ be a finite group and let $x \in G$. The \newterm{order} of $x$, denoted $\operatorname{Ord}(x)$ (or $|x|$), is the smallest positive integer $m \in \mathbb{Z}_{>0}$ such that:
+Let $G$ be a finite group and let $x \in G$. The \newterm{order} of $x$, denoted $\operatorname{Ord}(x)$, is the smallest positive integer $m \in \mathbb{Z}_{>0}$ such that:
 \begin{equation}\label{eq:element-order-def}
 \operatorname{Ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
 \end{equation}
@@ -2366,7 +2367,7 @@ This lecture bridged the culmination of ring theory with the foundational princi
     \end{itemize}
     \item \textbf{The Symmetric Group $S_n$ and Cycle Notation:}
     \begin{itemize}
-        \item $S_n = \operatorname{Bij}([n], [n])$ has order $|S_n| = n!$.
+        \item $S_n$ has order $|S_n| = n!$.
         \item Function composition is applied right-to-left: $(f \circ g)(x) = f(g(x))$.
         \item Products of permutations are efficiently manipulated using disjoint cycle notation; $S_3$ is the smallest non-abelian group.
     \end{itemize}

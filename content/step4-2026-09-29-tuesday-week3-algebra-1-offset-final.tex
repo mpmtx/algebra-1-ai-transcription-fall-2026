@@ -106,7 +106,7 @@ This lecture investigates the transition from commutative rings to fields and po
     \item \textbf{Euler's Totient Function $\phi(m)$:} Definition as the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, with explicit computations for prime powers $\phi(p) = p-1$ and $\phi(p^2) = p(p-1)$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} Rigorous formulation of $\mathbb{Q}$ as the smallest field containing $\mathbb{Z}$, and the unique extension of ring embeddings into fields.
     \item \textbf{Construction of the Field of Fractions $\operatorname{Frac}(R)$:} Generalization to arbitrary integral domains via equivalence classes of formal pairs $(x, y) \in R \times (R \setminus \{0\})$, verification of well-defined operations, and canonical embedding $i \colon R \hookrightarrow \operatorname{Frac}(R)$.
-    \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}(i) = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}[\frac{1}{3}]$, and self-isomorphism for existing fields $\operatorname{Frac}(K) \cong K$.
+    \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}(i) = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}[\frac{1}{3}]$, and self-isomorphism for existing fields $\operatorname{Frac}(R) \cong R$.
     \item \textbf{Polynomial Rings $R[x]$:} Intuitive formulation via formal linear combinations, rigorous foundation using sequences in $R^{\mathbb{N}_0}$ that are eventually zero, componentwise addition, and Cauchy product multiplication.
 \end{itemize}
 \end{overview}
@@ -289,7 +289,7 @@ The lecturer's \qt{norm} is the length $\sqrt{a^2 + b^2}$ of a complex number, a
 \begin{speech}[00:05:14 - 00:07:18]
 We did a much more interesting example last time, which was also with proof, but since various people asked me about it afterwards, I want to do just another example. And that was this ring: $\faktor{\mathbb{Z}}{m\mathbb{Z}}$. \inlinemetanote{writes: $\faktor{\mathbb{Z}}{m\mathbb{Z}}$} That's a nice ring, and so it has a group of units: $\operatorname{Unit}(\faktor{\mathbb{Z}}{m\mathbb{Z}})$. \inlinemetanote{writes: $\to \text{Units } \faktor{\mathbb{Z}}{m\mathbb{Z}}$}
 
-This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{gcd}(x, m) = 1$. \inlinemetanote{writes: $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\faktor{\mathbb{Z}}{7\mathbb{Z}}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
+This was a result I proved last time (Recall: \cref{thm:units-z-mod-m}): the units, this is equal to those classes such that $\operatorname{GCD}(x, m) = 1$. \inlinemetanote{writes: $= \{\bar{x} \mid (x, m) = 1\}$} And as I said, it's standard here to say $m$ is at least $2$, so we're not with the zero ring. \inlinemetanote{draws a box around $m \ge 2$} That's the units, and these are the residue classes which are relatively prime. And I did an example last time (Recall: $\faktor{\mathbb{Z}}{7\mathbb{Z}}$, \cref{ex:units-z7z}). This is a very interesting thing to study; it's just not a trivial thing.
 
 In the sense that, one might say that if I take here the additive structure, \inlinemetanote{writes: $\faktor{\mathbb{Z}}{m\mathbb{Z}} \to (\faktor{\mathbb{Z}}{m\mathbb{Z}}, +, 0)$} this is very simple to think about. It's just adding up integers $\bmod m$. In some sense, most people learn about this under one name or the other in school. But this thing --- the units --- are more complicated, are more interesting. \inlinemetanote{writes \qt{units are more interesting}}
 
@@ -332,16 +332,16 @@ First of all, let's do $10$. What is this? Well, the answer is $4$ --- you just 
 \begin{proposition}[Units in the Residue Class Ring]\label[proposition]{prop:units-mod-m-w3}
 Let $m \in \mathbb{Z}_{\ge 2}$. The group of units of the residue class ring $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ (frequently denoted by $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$ or $R^*$ for general rings) consists of those residue classes whose representatives are coprime to $m$ (on the board: $(x, m) = 1$):
 \begin{equation}\label{eq:units-mod-m}
-(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \operatorname{Unit}(\faktor{\mathbb{Z}}{m\mathbb{Z}}) = \{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \mid \gcd(x, m) = 1 \}.
+(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \operatorname{Unit}(\faktor{\mathbb{Z}}{m\mathbb{Z}}) = \{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \mid \operatorname{GCD}(x, m) = 1 \}.
 \end{equation}
 \end{proposition}
 
 \begin{example}[Computing the Units of $\faktor{\mathbb{Z}}{10\mathbb{Z}}$]\label[example]{ex:units-z10z}
 Consider the ring $\faktor{\mathbb{Z}}{10\mathbb{Z}} = \{ \bar{0}, \bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}, \bar{7}, \bar{8}, \bar{9} \}$. To find the units, we eliminate all classes that share a common divisor with $10$ greater than $1$:
 \begin{itemize}
-    \item \textbf{Class $\bar{0}$:} $\gcd(0, 10) = 10 \ne 1$ (eliminate $\bar{0}$),
-    \item \textbf{Even classes:} $\gcd(2, 10) = 2$, $\gcd(4, 10) = 2$, $\gcd(6, 10) = 2$, $\gcd(8, 10) = 2$ (eliminate $\bar{2}, \bar{4}, \bar{6}, \bar{8}$),
-    \item \textbf{Class $\bar{5}$:} $\gcd(5, 10) = 5$ (eliminate $\bar{5}$).
+    \item \textbf{Class $\bar{0}$:} $\operatorname{GCD}(0, 10) = 10 \ne 1$ (eliminate $\bar{0}$),
+    \item \textbf{Even classes:} $\operatorname{GCD}(2, 10) = 2$, $\operatorname{GCD}(4, 10) = 2$, $\operatorname{GCD}(6, 10) = 2$, $\operatorname{GCD}(8, 10) = 2$ (eliminate $\bar{2}, \bar{4}, \bar{6}, \bar{8}$),
+    \item \textbf{Class $\bar{5}$:} $\operatorname{GCD}(5, 10) = 5$ (eliminate $\bar{5}$).
 \end{itemize}
 The remaining coprime residue classes form the group of units:
 \[
@@ -356,7 +356,7 @@ This is an abelian group of order $4$ under multiplication modulo $10$. For inst
 
 \begin{aiNote}[{Notation: The Lecturer Adds $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$}]
 % [PERSISTENT]
-The lecturer changes his notation again here. For the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ he now writes $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, which the board calls the usual notation, and adds that $R^*$ could denote units. The condition $\gcd(x, m) = 1$ of Week~2 now appears on the board as $(x, m) = 1$. The next lecture goes back to $\operatorname{Unit}(R)$.
+The lecturer changes his notation again here. For the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ he now writes $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, which the board calls the usual notation, and adds that $R^*$ could denote units. The condition $\operatorname{GCD}(x, m) = 1$ of Week~2 now appears on the board as $(x, m) = 1$. The next lecture goes back to $\operatorname{Unit}(R)$.
 \end{aiNote}
 
 \section{Euler's Totient Function}
@@ -408,7 +408,7 @@ So, we have to take away $p - 1$, so, the answer is $p^2 - p$. \inlinemetanote{w
 \begin{definition}[Euler's Totient Function]\label[definition]{def:eulers-totient}
 The \newterm{Euler totient function} (or Euler's $\phi$-function) $\phi \colon \mathbb{Z}_{\ge 1} \to \mathbb{Z}_{\ge 1}$ is defined as the order of the group of units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def}
-\phi(m) \stackrel{\text{def}}{=} |(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \gcd(x, m) = 1 \}.
+\phi(m) \stackrel{\text{def}}{=} |(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \operatorname{GCD}(x, m) = 1 \}.
 \end{equation}
 \end{definition}
 
@@ -1608,15 +1608,15 @@ Those are really the basic facts.
 
 \begin{content}
 \begin{proposition}[Field of Fractions of a Field]\label[proposition]{prop:frac-of-a-field}
-Let $K$ be a field. Then the canonical inclusion $i \colon K \hookrightarrow \operatorname{Frac}(K)$ is an isomorphism of fields:
+Let $R$ be a field. Then the canonical inclusion $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an isomorphism of fields:
 \begin{equation}\label{eq:frac-field-itself}
-\operatorname{Frac}(K) \cong K.
+\operatorname{Frac}(R) \cong R.
 \end{equation}
 \end{proposition}
 
 \begin{proof}
-By \cref{prop:i-is-homomorphism}, $i \colon K \hookrightarrow \operatorname{Frac}(K)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(K)$ with $x, y \in K$ and $y \ne 0$.
-Since $K$ is a field, $y$ has a multiplicative inverse $y^{-1} \in K$. Then:
+By \cref{prop:i-is-homomorphism}, $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(R)$ with $x, y \in R$ and $y \ne 0$.
+Since $R$ is a field, $y$ has a multiplicative inverse $y^{-1} \in R$. Then:
 \[
 (x, y) \equiv (x y^{-1}, 1) \iff x \cdot 1 = (x y^{-1}) \cdot y = x.
 \]
@@ -1624,7 +1624,7 @@ Consequently:
 \[
 [(x, y)] = [(x y^{-1}, 1)] = i(x y^{-1}).
 \]
-Every element of $\operatorname{Frac}(K)$ is the image of the element $x y^{-1} \in K$. Hence, $i$ is surjective and constitutes a field isomorphism.
+Every element of $\operatorname{Frac}(R)$ is the image of the element $x y^{-1} \in R$. Hence, $i$ is surjective and constitutes a field isomorphism.
 \end{proof}
 \end{content}
 
@@ -1957,7 +1957,7 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \operatorname{GCD}(x, m) = 1\}$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.

@@ -106,7 +106,7 @@ This lecture explores the foundational structure of finite groups, culminating i
     \item \textbf{Lagrange's Theorem:} Formulation and proof that $|H|$ divides $|G|$ for any subgroup $H \le G$, establishing that element orders divide group orders and that prime-order groups have no non-trivial proper subgroups.
     \item \textbf{The Equivalence Relation:} Partitioning $G$ into equivalence classes under $x \sim y \iff \exists h \in H \colon xh = y$ and establishing the bijection $\phi \colon H \to E$, $\phi(h) = xh$.
     \item \textbf{Cycle Decompositions and Partitions:} Dynamic visualization of cycles in $S_n$ and the deep connection between cycle decompositions and integer partitions.
-    \item \textbf{Rotational Symmetry Groups of Geometric Solids:} Counting symmetries of the Platonic solids via face stabilization, establishing the geometric isomorphisms $\operatorname{Rot}(\text{Cube}) \cong S_4$ via body diagonals and $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$ via vertex permutations.
+    \item \textbf{Rotational Symmetry Groups of Geometric Solids:} Counting symmetries of the Platonic solids by counting faces, establishing the geometric isomorphisms $\operatorname{Rot}(\text{Cube}) \cong S_4$ via body diagonals and $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$ via vertex permutations.
 \end{itemize}
 \end{overview}
 
@@ -332,7 +332,7 @@ Evaluating the orders of representative elements:
 \begin{align*}
 \sigma = (1\ 2)(3) &\rightsquigarrow \operatorname{Ord}(\sigma) = 2, && \text{and } 2 \mid 6, \\
 \tau = (1\ 2\ 3) &\rightsquigarrow \operatorname{Ord}(\tau) = 3, && \text{and } 3 \mid 6, \\
-\operatorname{id} &\rightsquigarrow \operatorname{Ord}(\operatorname{id}) = 1, && \text{and } 1 \mid 6.
+\operatorname{Id} &\rightsquigarrow \operatorname{Ord}(\operatorname{Id}) = 1, && \text{and } 1 \mid 6.
 \end{align*}
 In every case, the order of the element divides the order of the group:
 \[
@@ -1025,8 +1025,8 @@ A \newterm{Platonic solid} is a regular, convex polyhedron in three-dimensional 
 \end{tikzpicture}
 \end{center}
 
-\begin{steps}[The Orbit-Stabilizer Counting Logic for Rotational Symmetries]
-For each Platonic solid $P$, the rotational symmetry group $\operatorname{Rot}(P) \le \mathrm{SO}(3)$ can move any face to any other face (it acts transitively on the faces), and the rotations that keep a chosen face in place are the rotations about the axis through its centre. The order of the group therefore satisfies:
+\begin{steps}[Counting the Rotations Face by Face]
+Going beyond the lecture: for each Platonic solid $P$, the rotational symmetry group $\operatorname{Rot}(P)$ can move any face to any other face (it acts transitively on the faces), and the rotations that keep a chosen face in place are the rotations about the axis through its centre. The order of the group therefore satisfies:
 \[
 |\operatorname{Rot}(P)| = (\text{rotational symmetries preserving a chosen face}) \times (\text{total number of faces}).
 \]
@@ -1194,7 +1194,7 @@ Every rotation $g \in \operatorname{Rot}(\text{Cube})$ maps vertices to vertices
 We claim that $\Phi$ is an isomorphism:
 \begin{itemize}
     \item \textbf{Injectivity} (left to the students in the lecture):
-    Suppose $g \in \ker(\Phi)$, so $g$ maps each long diagonal to itself, possibly reversing it. For the cube $[-1, 1]^3$ the diagonals have directions $v_1 = (1, 1, 1)$, $v_2 = (1, 1, -1)$, $v_3 = (1, -1, 1)$, $v_4 = (-1, 1, 1)$, so $g v_i = \varepsilon_i v_i$ with $\varepsilon_i = \pm 1$. Since $v_1, v_2, v_3$ form a basis and $v_4 = v_1 - v_2 - v_3$, comparing $g v_4 = \varepsilon_1 v_1 - \varepsilon_2 v_2 - \varepsilon_3 v_3$ with $\varepsilon_4 v_4$ forces $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \varepsilon_4$, so $g = \pm \operatorname{id}$. As $-\operatorname{id}$ has determinant $-1$, it is not a rotation; hence $g = \operatorname{id}$, $\ker(\Phi) = \{\operatorname{id}\}$, and $\Phi$ is injective.
+    Suppose $g \in \ker(\Phi)$, so $g$ maps each long diagonal to itself, possibly reversing it. For the cube $[-1, 1]^3$ the diagonals have directions $v_1 = (1, 1, 1)$, $v_2 = (1, 1, -1)$, $v_3 = (1, -1, 1)$, $v_4 = (-1, 1, 1)$, so $g v_i = \varepsilon_i v_i$ with $\varepsilon_i = \pm 1$. Since $v_1, v_2, v_3$ form a basis and $v_4 = v_1 - v_2 - v_3$, comparing $g v_4 = \varepsilon_1 v_1 - \varepsilon_2 v_2 - \varepsilon_3 v_3$ with $\varepsilon_4 v_4$ forces $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \varepsilon_4$, so $g = \pm \operatorname{Id}$. As $-\operatorname{Id}$ has determinant $-1$, it is not a rotation; hence $g = \operatorname{Id}$, $\ker(\Phi) = \{\operatorname{Id}\}$, and $\Phi$ is injective.
     \item \textbf{Surjectivity:}
     We have established that $|\operatorname{Rot}(\text{Cube})| = 24$ and $|S_4| = 4! = 24$. Since $\Phi$ is an injective homomorphism between two finite groups of the same cardinality:
     \[

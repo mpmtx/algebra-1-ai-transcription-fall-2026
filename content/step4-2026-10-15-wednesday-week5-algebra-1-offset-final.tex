@@ -98,9 +98,9 @@ In this lecture, we complete the general ideal-theoretic formulation of the Chin
     \item \textbf{The Canonical Product Homomorphism:} Definition of the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ and verification of well-definedness via the ideal inclusions $IJ \subseteq I, J$.
     \item \textbf{Failure of Isomorphism for Non-Coprime Ideals:} A concrete counterexample in $\mathbb{Z}$ with $I = (4)$ and $J = (6)$, illustrating that $\phi$ fails to be either injective or surjective when ideals are not coprime.
     \item \textbf{The Chinese Remainder Theorem:} Proof that coprimality ($I + J = (1)$) implies that $\phi$ is an isomorphism, utilizing the partition of unity identity $i + j = 1$.
-    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi(n)$ alongside the irregular prime $691$ and Bernoulli numbers.
-    \item \textbf{Polynomial Rings over Fields:} Rigorous definition of the degree function on $K[x]$, the convention of leaving $\deg(0)$ undefined, and polynomial long division with remainder.
-    \item \textbf{Principal Ideal Domains (PIDs):} Proof via well-ordering of degrees that every ideal in $K[x]$ is principal, the formal definition of a PID, and non-examples such as $\mathbb{Z}[x]$ and $\mathbb{C}[x, y]$.
+    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi^{\text{tot}}(n)$ alongside the irregular prime $691$ and Bernoulli numbers.
+    \item \textbf{Polynomial Rings over Fields:} Rigorous definition of the degree function on $k[x]$, the convention of leaving $\deg(0)$ undefined, and polynomial long division with remainder.
+    \item \textbf{Principal Ideal Domains (PIDs):} Proof via well-ordering of degrees that every ideal in $k[x]$ is principal, the formal definition of a PID, and non-examples such as $\mathbb{Z}[x]$ and $\mathbb{C}[x, y]$.
 \end{itemize}
 \end{overview}
 
@@ -132,7 +132,7 @@ And this is always a homomorphism: $\phi$ is a homomorphism in general \inlineme
 Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals.
 \begin{itemize}
     \item \textbf{Sum of Ideals:} $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, \, j \in J \}$ is the smallest ideal of $R$ containing both $I$ and $J$.
-    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{k=1}^m i_k j_k \;\middle|\; m \in \mathbb{N}, \, i_k \in I, \, j_k \in J \right\}$ is an ideal of $R$ satisfying $IJ \subseteq I \cap J \subseteq I, J$.
+    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \, i_r \in I, \, j_r \in J \right\}$ is an ideal of $R$ satisfying $IJ \subseteq I \cap J \subseteq I, J$.
 \end{itemize}
 
 \begin{definition}[Canonical Product Homomorphism]\label[definition]{def:canonical-crt-map}
@@ -230,8 +230,8 @@ The canonical homomorphism is:
 \begin{steps}[Algebraic Reason for the Failure]
 Going beyond the lecture: notice that $| \faktor{\mathbb{Z}}{24\mathbb{Z}} | = 24$, whereas $| \faktor{\mathbb{Z}}{4\mathbb{Z}} \times \faktor{\mathbb{Z}}{6\mathbb{Z}} | = 4 \times 6 = 24$. Even though the two finite rings have the exact same cardinality, $\phi$ fails to be bijective because:
 \begin{enumerate}[label=\textbf{(\alph*)}]
-    \setcounter{enumi}{0} \item The sum of the ideals is $(4) + (6) = \gcd(4, 6)\mathbb{Z} = 2\mathbb{Z} \neq \mathbb{Z}$, so $4$ and $6$ are not coprime.
-    \setcounter{enumi}{1} \item The kernel of the map $\phi$ is $I \cap J = \operatorname{lcm}(4, 6)\mathbb{Z} = 12\mathbb{Z}$, which strictly contains the product ideal $IJ = 24\mathbb{Z}$.
+    \setcounter{enumi}{0} \item The sum of the ideals is $(4) + (6) = \operatorname{GCD}(4, 6)\mathbb{Z} = 2\mathbb{Z} \neq \mathbb{Z}$, so $4$ and $6$ are not coprime.
+    \setcounter{enumi}{1} \item The kernel of the map $\phi$ is $I \cap J = \operatorname{LCM}(4, 6)\mathbb{Z} = 12\mathbb{Z}$, which strictly contains the product ideal $IJ = 24\mathbb{Z}$.
 \end{enumerate}
 \end{steps}
 \end{content}
@@ -426,9 +426,9 @@ So, this says that if I just write this theorem, the Chinese Remainder Theorem f
 
 \begin{content}
 \begin{corollary}[Chinese Remainder Theorem for Coprime Integers]\label[corollary]{cor:crt-integers}
-Let $R = \mathbb{Z}$, and let $a, b \in \mathbb{Z}$ be coprime integers, i.e., $\gcd(a, b) = 1$. By Bézout's identity, this is equivalent to coprime principal ideals:
+Let $R = \mathbb{Z}$, and let $a, b \in \mathbb{Z}$ be coprime integers, i.e., $\operatorname{GCD}(a, b) = 1$. By Bézout's identity, this is equivalent to coprime principal ideals:
 \[
-(a) + (b) = (\gcd(a, b)) = (1) = \mathbb{Z}.
+(a) + (b) = (\operatorname{GCD}(a, b)) = (1) = \mathbb{Z}.
 \]
 Since the product of principal ideals in $\mathbb{Z}$ is $(a)(b) = (ab)$, \cref{thm:crt-two-ideals} yields a ring isomorphism:
 \begin{equation}\label{eq:crt-integers-formula}
@@ -453,11 +453,11 @@ Okay? So, I don't know whether this was... I mean, whatever happens in school is
 
 \begin{content}[Iterated Factoring and Prime-Power Decomposition]
 \begin{example}[Iterated Decomposition of \texorpdfstring{$\faktor{\mathbb{Z}}{(105)}$}{Z/(105)}]\label[example]{ex:crt-105}
-Consider $n = 105 = 3 \cdot 5 \cdot 7$. Grouping the factors as $a = 3$ and $b = 35$, with $\gcd(3, 35) = 1$:
+Consider $n = 105 = 3 \cdot 5 \cdot 7$. Grouping the factors as $a = 3$ and $b = 35$, with $\operatorname{GCD}(3, 35) = 1$:
 \[
 \faktor{\mathbb{Z}}{105\mathbb{Z}} \cong \faktor{\mathbb{Z}}{3\mathbb{Z}} \times \faktor{\mathbb{Z}}{35\mathbb{Z}}.
 \]
-Since $\gcd(5, 7) = 1$, we decompose $\faktor{\mathbb{Z}}{35\mathbb{Z}} \cong \faktor{\mathbb{Z}}{5\mathbb{Z}} \times \faktor{\mathbb{Z}}{7\mathbb{Z}}$, which yields:
+Since $\operatorname{GCD}(5, 7) = 1$, we decompose $\faktor{\mathbb{Z}}{35\mathbb{Z}} \cong \faktor{\mathbb{Z}}{5\mathbb{Z}} \times \faktor{\mathbb{Z}}{7\mathbb{Z}}$, which yields:
 \[
 \faktor{\mathbb{Z}}{105\mathbb{Z}} \cong \faktor{\mathbb{Z}}{3\mathbb{Z}} \times \faktor{\mathbb{Z}}{5\mathbb{Z}} \times \faktor{\mathbb{Z}}{7\mathbb{Z}}.
 \]
@@ -468,7 +468,7 @@ Let $n \in \mathbb{N}_{\ge 2}$ have the prime factorization into distinct primes
 \begin{equation}\label{eq:n-prime-factorization}
 n = p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}, \quad k_i \ge 1.
 \end{equation}
-Since $\gcd(p_i^{k_i}, p_j^{k_j}) = 1$ for all $i \neq j$, induction on $r$ gives the canonical ring isomorphism:
+Since $\operatorname{GCD}(p_i^{k_i}, p_j^{k_j}) = 1$ for all $i \neq j$, induction on $r$ gives the canonical ring isomorphism:
 \begin{equation}\label{eq:crt-prime-power-isom}
 \faktor{\mathbb{Z}}{n\mathbb{Z}} \xrightarrow{\quad \sim \quad} \faktor{\mathbb{Z}}{p_1^{k_1}\mathbb{Z}} \times \faktor{\mathbb{Z}}{p_2^{k_2}\mathbb{Z}} \times \dots \times \faktor{\mathbb{Z}}{p_r^{k_r}\mathbb{Z}} = \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}.
 \end{equation}
@@ -479,7 +479,7 @@ Going beyond the lecture: while distinct prime powers $p_i^{k_i}$ and $p_j^{k_j}
 \[
 \faktor{\mathbb{Z}}{p^2\mathbb{Z}} \not\cong \faktor{\mathbb{Z}}{p\mathbb{Z}} \times \faktor{\mathbb{Z}}{p\mathbb{Z}},
 \]
-because $\gcd(p, p) = p \neq 1$. The ring $\faktor{\mathbb{Z}}{p^2\mathbb{Z}}$ contains non-zero nilpotent elements ($p + p^2\mathbb{Z} \neq 0$, but $(p + p^2\mathbb{Z})^2 = 0$), whereas $\faktor{\mathbb{Z}}{p\mathbb{Z}} \times \faktor{\mathbb{Z}}{p\mathbb{Z}}$ is a direct product of fields and has no non-zero nilpotents.
+because $\operatorname{GCD}(p, p) = p \neq 1$. The ring $\faktor{\mathbb{Z}}{p^2\mathbb{Z}}$ contains non-zero nilpotent elements ($p + p^2\mathbb{Z} \neq 0$, but $(p + p^2\mathbb{Z})^2 = 0$), whereas $\faktor{\mathbb{Z}}{p\mathbb{Z}} \times \faktor{\mathbb{Z}}{p\mathbb{Z}}$ is a direct product of fields and has no non-zero nilpotents.
 \end{steps}
 \end{content}
 
@@ -522,7 +522,7 @@ If I take $\phi$ of a power of a prime \inlinemetanote{erases part of the lower 
 
 Well, this is all the numbers in $\mathbb{Z} \bmod p^k \mathbb{Z}$ that are relatively... all the numbers that are relatively prime to $p^k$ that are less than $p^k$. And how are you going to be a common factor? You have to have a $p$ in it. And so, how many people have $p$'s in it? Well, exactly $1/p$ of these has $p$ in it. So, the answer is $p^k - p^{k-1}$ \inlinemetanote{writes: $= p^k - p^{k-1}$}, or you can write this as $p^{k-1}(p - 1)$ \inlinemetanote{writes: $= p^{k-1}(p - 1)$}. Okay?
 
-So, that gives a solution, a kind of formula to this Euler totient. It says that if I want to know what this totient function is, that's the order of the units \inlinemetanote{writes: $\phi(n) = |\operatorname{Unit}(\faktor{\mathbb{Z}}{n})| =$}, this is equal to the product from $i = 1$ to $r$, in that language, of $p_i^{k_i - 1}(p_i - 1)$ \inlinemetanote{writes: $= \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$}. That's a pretty good formula for it, probably the fastest way to calculate it.
+So, that gives a solution, a kind of formula to this Euler totient. It says that if I want to know what this totient function is, that's the order of the units \inlinemetanote{writes: $\phi^{\text{tot}}(n) = |\operatorname{Unit}(\faktor{\mathbb{Z}}{n})| =$}, this is equal to the product from $i = 1$ to $r$, in that language, of $p_i^{k_i - 1}(p_i - 1)$ \inlinemetanote{writes: $= \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$}. That's a pretty good formula for it, probably the fastest way to calculate it.
 
 Uh, but it's a confusing formula, like you might think... okay, so, this is the part that I view as perhaps related to things that may have been in school.
 \end{speech}
@@ -533,9 +533,9 @@ Uh, but it's a confusing formula, like you might think... okay, so, this is the 
 
 \begin{content}[Derivation of Euler's Product Formula]
 \begin{definition}[Euler's Totient Function]\label[definition]{def:euler-totient}
-The \newterm{Euler totient function} $\phi(n)$ (on the board with a small \qt{tot} on the $\phi$) counts the number of invertible elements in the ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$:
+The \newterm{Euler totient function} $\phi^{\text{tot}}(n)$ counts the number of invertible elements in the ring $\faktor{\mathbb{Z}}{n\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def-w5wed}
-\phi(n) \stackrel{\text{def}}{=} \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \gcd(m, n) = 1 \} \right|.
+\phi^{\text{tot}}(n) \stackrel{\text{def}}{=} \left| \operatorname{Unit}\left(\faktor{\mathbb{Z}}{n\mathbb{Z}}\right) \right| = \left| \{ m \in \{1, \dots, n\} \mid \operatorname{GCD}(m, n) = 1 \} \right|.
 \end{equation}
 \end{definition}
 
@@ -546,11 +546,11 @@ For a prime power $p^k$ ($k \ge 1$), the elements in $\{1, 2, \dots, p^k\}$ that
 \]
 There are exactly $\frac{p^k}{p} = p^{k-1}$ such multiples. Subtracting these from the total of $p^k$ elements gives:
 \begin{equation}\label{eq:phi-prime-power}
-\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1) = p^k \left(1 - \frac{1}{p}\right).
+\phi^{\text{tot}}(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1) = p^k \left(1 - \frac{1}{p}\right).
 \end{equation}
 Since the order of a direct product of finite groups is the product of their orders, taking cardinalities in \eqref{eq:units-zn-formula} yields:
 \begin{equation}\label{eq:euler-general-formula}
-\phi(n) = \prod_{i=1}^r \phi\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right).
+\phi^{\text{tot}}(n) = \prod_{i=1}^r \phi^{\text{tot}}\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right).
 \end{equation}
 \end{theorem}
 \end{content}
@@ -578,7 +578,7 @@ B_{12} = -\frac{691}{2730}.
 \end{example}
 
 \begin{steps}[Irreversibility of Euler's Totient Function]
-Going beyond the lecture: even though the prime factorization of $n$ determines $\phi(n)$ via formula \eqref{eq:euler-general-formula}, one cannot generally reconstruct $n$ from $\phi(n)$. The presence of the terms $(p_i - 1)$ mixes new prime factors (such as $23$ appearing in $\phi(691) = 690$) that have no relation to the original prime $p = 691$. In modern cryptography (e.g., the RSA cryptosystem), the computational difficulty of finding $\phi(n) = (p - 1)(q - 1)$ without knowing the prime factors $p$ and $q$ of a large integer $n = pq$ provides the trapdoor mechanism for secure encryption.
+Going beyond the lecture: even though the prime factorization of $n$ determines $\phi^{\text{tot}}(n)$ via formula \eqref{eq:euler-general-formula}, one cannot generally reconstruct $n$ from $\phi^{\text{tot}}(n)$. The presence of the terms $(p_i - 1)$ mixes new prime factors (such as $23$ appearing in $\phi(691) = 690$) that have no relation to the original prime $p = 691$. In modern cryptography (e.g., the RSA cryptosystem), the computational difficulty of finding $\phi^{\text{tot}}(n) = (p - 1)(q - 1)$ without knowing the prime factors $p$ and $q$ of a large integer $n = pq$ provides the trapdoor mechanism for secure encryption.
 \end{steps}
 \end{content}
 
@@ -594,16 +594,16 @@ The prime $691$ is the prototypical example of an \newterm{irregular prime}. In 
 \begin{speech}[00:22:20 - 00:23:46]
 And so, the last topic of the week, which is going to go on to next week, has to do with polynomials \inlinemetanote{writes: Polynomials}.
 
-And we've talked about these things in various ways, but I'll try to say it now clearly from the beginning. So, we start with $K$ is a field \inlinemetanote{writes: $K$ is a field}.
+And we've talked about these things in various ways, but I'll try to say it now clearly from the beginning. So, we start with $k$ is a field \inlinemetanote{writes: $k$ is a field}.
 
-And we've discussed before there is a ring which is polynomials in one variable \inlinemetanote{writes: $K[x]$ polys in a single variable} with coefficients in $K$ \inlinemetanote{writes: with coeffs in $K$}.
+And we've discussed before there is a ring which is polynomials in one variable \inlinemetanote{writes: $k[x]$ polys in a single variable} with coefficients in $k$ \inlinemetanote{writes: with coeffs in $k$}.
 
-Okay. And now here is something that one has to just state a little bit carefully: it's the degree of a polynomial. We've said it kind of informally, but now I'm going to say it carefully, and there's only one point that's... All right, so, we would like to define the degree of a polynomial \inlinemetanote{writes: $\deg(f(x))$}. This seems kind of silly to even talk about, but we're going to say. So, we have some element of this ring \inlinemetanote{writes: $f(x) \in K[x]$}, and we want to find the degree of the polynomial.
+Okay. And now here is something that one has to just state a little bit carefully: it's the degree of a polynomial. We've said it kind of informally, but now I'm going to say it carefully, and there's only one point that's... All right, so, we would like to define the degree of a polynomial \inlinemetanote{writes: $\deg(f(x))$}. This seems kind of silly to even talk about, but we're going to say. So, we have some element of this ring \inlinemetanote{writes: $f(x) \in k[x]$}, and we want to find the degree of the polynomial.
 \end{speech}
 
 \begin{hidden}
 % timestamp: 00:05:00
-% topic: Definition of polynomial rings K[x] and the degree function
+% topic: Definition of polynomial rings k[x] and the degree function
 % board_state: def:polynomial-ring, def:degree-polynomial
 % next_goal: Define the degree for non-zero polynomials and discuss deg(0)
 % open_loops: none
@@ -636,27 +636,27 @@ I think that's the only thing I'm going to say about polynomials that most peopl
 \end{speech}
 
 \begin{content}
-\recap{Polynomial rings were defined in Week~3 (\cref{def:poly-ring-informal}, \cref{def:polynomial-ring-w3wed}), division with remainder in $\mathbb{Q}[x]$ was used in Week~4 (\cref{lem:poly-division-algorithm}), and division with remainder for polynomials is among the prerequisites (\cref{fact:pre-poly-division}). The lecturer now treats $K[x]$ over a field systematically.}
+\recap{Polynomial rings were defined in Week~3 (\cref{def:poly-ring-informal}, \cref{def:polynomial-ring-w3wed}), division with remainder in $\mathbb{Q}[x]$ was used in Week~4 (\cref{lem:poly-division-algorithm}), and division with remainder for polynomials is among the prerequisites (\cref{fact:pre-poly-division}). The lecturer now treats $k[x]$ over a field systematically.}
 \end{content}
 
 \begin{content}[Polynomial Ring and the Degree of a Polynomial]
 \begin{definition}[Polynomial Ring over a Field]\label[definition]{def:poly-ring-k}
-Let $K$ be a field. The \newterm{polynomial ring in one variable} over $K$, denoted by $K[x]$, is the set of formal expressions:
+Let $k$ be a field. The \newterm{polynomial ring in one variable} over $k$, denoted by $k[x]$, is the set of formal expressions:
 \begin{equation}\label{eq:poly-general-form}
-f(x) = \sum_{i=0}^n c_i x^i = c_0 + c_1 x + c_2 x^2 + \dots + c_n x^n, \quad c_i \in K,
+f(x) = \sum_{i=0}^n c_i x^i = c_0 + c_1 x + c_2 x^2 + \dots + c_n x^n, \quad c_i \in k,
 \end{equation}
 equipped with standard polynomial addition and Cauchy product multiplication.
 \end{definition}
 
 \begin{definition}[Degree of a Polynomial]\label[definition]{def:poly-degree}
-Let $f(x) \in K[x]$.
+Let $f(x) \in k[x]$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Non-Zero Polynomials:} If $f(x) \neq 0$, write $f(x) = \sum_{i=0}^n c_i x^i$. The \newterm{degree} of $f$, denoted by $\deg(f)$ or $\deg(f(x))$, is the highest index $d \in \mathbb{N}_0$ such that the coefficient $c_d \neq 0$:
     \begin{equation}\label{eq:deg-formula}
     \deg(f) = d \quad :\iff \quad c_d \neq 0 \quad \text{and} \quad c_i = 0 \quad \forall i > d.
     \end{equation}
-    The non-zero element $c_d \in K \setminus \{0\}$ is called the \newterm{leading coefficient}.
-    \setcounter{enumi}{1} \item \textbf{Non-Zero Constants:} For any non-zero constant $c \in K \setminus \{0\}$, we have $\deg(c) = 0$.
+    The non-zero element $c_d \in k \setminus \{0\}$ is called the \newterm{leading coefficient}.
+    \setcounter{enumi}{1} \item \textbf{Non-Zero Constants:} For any non-zero constant $c \in k \setminus \{0\}$, we have $\deg(c) = 0$.
     \setcounter{enumi}{2} \item \textbf{The Zero Polynomial:} For the zero polynomial $f(x) = 0$, the degree is explicitly:
     \begin{equation}\label{eq:deg-zero}
     \deg(0) \longleftarrow \text{Undefined}.
@@ -669,7 +669,7 @@ There are several conventions here. The one the lecturer calls correct, because 
 \end{remark}
 
 \begin{steps}[Why the Leading Coefficient Recipe Fails for Zero]
-The algorithmic recipe for the degree requires identifying the \qt{highest non-zero coefficient $c_d$}. For the zero polynomial $0 \in K[x]$, all coefficients in $0 = \sum 0 \cdot x^i$ are identically zero, so no such index $d$ exists.
+The algorithmic recipe for the degree requires identifying the \qt{highest non-zero coefficient $c_d$}. For the zero polynomial $0 \in k[x]$, all coefficients in $0 = \sum 0 \cdot x^i$ are identically zero, so no such index $d$ exists.
 \end{steps}
 \end{content}
 
@@ -685,7 +685,7 @@ Okay, so, very important for us, and I'm not going to review it because you defi
 
 So, is polynomial long division \inlinemetanote{writes: Poly long div}.
 
-It says the following. So, suppose... and the twist here is it's now for any field, but the fact of the matter is whatever you learned in school also applies here. So, suppose we have two polynomials $f$ and $g$ in this polynomial ring \inlinemetanote{writes: $f(x), g(x) \in K[x]$}. So, coefficients in a field, that's important.
+It says the following. So, suppose... and the twist here is it's now for any field, but the fact of the matter is whatever you learned in school also applies here. So, suppose we have two polynomials $f$ and $g$ in this polynomial ring \inlinemetanote{writes: $f(x), g(x) \in k[x]$}. So, coefficients in a field, that's important.
 
 And we're going to do division, so when division, you always have to assume somebody's not zero. This one's not zero \inlinemetanote{writes: $g \neq 0$}. You can't divide by zero.
 
@@ -693,9 +693,9 @@ Then polynomial long division says that there exist unique polynomials \inlineme
 \end{speech}
 
 \begin{content}[Polynomial Long Division (Division with Remainder)]
-\begin{theorem}[{Polynomial Long Division in $K[x]$}]\label[theorem]{thm:poly-long-division}
-Let $K$ be a field, and let $f(x), g(x) \in K[x]$ with $g(x) \neq 0$.
-Then there exist uniquely determined polynomials $q(x), r(x) \in K[x]$ such that:
+\begin{theorem}[{Polynomial Long Division in $k[x]$}]\label[theorem]{thm:poly-long-division}
+Let $k$ be a field, and let $f(x), g(x) \in k[x]$ with $g(x) \neq 0$.
+Then there exist uniquely determined polynomials $q(x), r(x) \in k[x]$ such that:
 \begin{equation}\label{eq:poly-long-division}
 f(x) = q(x) g(x) + r(x),
 \end{equation}
@@ -728,7 +728,7 @@ Okay, good. As I said, I think I went to school, but it's been a long time.
 
 So, maybe something that you didn't emphasize in school is the uniqueness, so, maybe we talk a little bit about that.
 
-So, this says that if I have... \inlinemetanote{writes \qt{$f(x) = q(x) g(x) + r(x)$} and below \qt{$\tilde{q}(x) g(x) + \tilde{r}(x)$}}
+So, this says that if I have... \inlinemetanote{writes \qt{$f(x) = q(x) g(x) + r(x)$} and below \qt{$\hat{q}(x) g(x) + \hat{r}(x)$}}
 \end{speech}
 
 \begin{speech}[00:30:46 - 00:32:21]
@@ -746,32 +746,32 @@ All right. \inlinemetanote{erases the long division example on the blackboard}
 Suppose there exist two representations for $f(x)$ upon division by $g(x) \neq 0$:
 \begin{align}
 f(x) &= q(x) g(x) + r(x), \label{eq:rep1} \\
-f(x) &= \tilde{q}(x) g(x) + \tilde{r}(x), \label{eq:rep2}
+f(x) &= \hat{q}(x) g(x) + \hat{r}(x), \label{eq:rep2}
 \end{align}
-where both remainder polynomials $r(x)$ and $\tilde{r}(x)$ satisfy condition \eqref{eq:poly-remainder-condition}.
+where both remainder polynomials $r(x)$ and $\hat{r}(x)$ satisfy condition \eqref{eq:poly-remainder-condition}.
 Subtracting \eqref{eq:rep2} from \eqref{eq:rep1} gives:
 \begin{equation}\label{eq:uniqueness-diff}
-0 = \bigl(q(x) - \tilde{q}(x)\bigr) g(x) + \bigl(r(x) - \tilde{r}(x)\bigr) \implies \bigl(q(x) - \tilde{q}(x)\bigr) g(x) = \tilde{r}(x) - r(x).
+0 = \bigl(q(x) - \hat{q}(x)\bigr) g(x) + \bigl(r(x) - \hat{r}(x)\bigr) \implies \bigl(q(x) - \hat{q}(x)\bigr) g(x) = \hat{r}(x) - r(x).
 \end{equation}
-We show that $q(x) - \tilde{q}(x) = 0$:
+We show that $q(x) - \hat{q}(x) = 0$:
 \begin{itemize}
-    \item \textbf{Case $q \neq \tilde{q}$:} Assume for contradiction that $q(x) - \tilde{q}(x) \neq 0$. Since $K$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
+    \item \textbf{Case $q \neq \hat{q}$:} Assume for contradiction that $q(x) - \hat{q}(x) \neq 0$. Since $k$ is a field and $g(x) \neq 0$, the degree of a product equals the sum of the degrees:
     \[
-    \deg\Bigl(\bigl(q(x) - \tilde{q}(x)\bigr) g(x)\Bigr) = \deg(q - \tilde{q}) + \deg(g) \ge \deg(g).
+    \deg\Bigl(\bigl(q(x) - \hat{q}(x)\bigr) g(x)\Bigr) = \deg(q - \hat{q}) + \deg(g) \ge \deg(g).
     \]
-    \item \textbf{Degree Contradiction:} On the other hand, each of $r(x)$ and $\tilde{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\tilde{r}(x) - r(x)$ is therefore either zero or satisfies:
+    \item \textbf{Degree Contradiction:} On the other hand, each of $r(x)$ and $\hat{r}(x)$ is either zero or has degree strictly less than $\deg(g)$. The difference $\hat{r}(x) - r(x)$ is therefore either zero or satisfies:
     \[
-    \deg(\tilde{r} - r) \le \max\bigl(\deg(\tilde{r}), \, \deg(r)\bigr) < \deg(g).
+    \deg(\hat{r} - r) \le \max\bigl(\deg(\hat{r}), \, \deg(r)\bigr) < \deg(g).
     \]
 \end{itemize}
-This forces $\deg(g) \le \deg\bigl((q - \tilde{q})g\bigr) = \deg(\tilde{r} - r) < \deg(g)$, an impossible contradiction.
+This forces $\deg(g) \le \deg\bigl((q - \hat{q})g\bigr) = \deg(\hat{r} - r) < \deg(g)$, an impossible contradiction.
 Therefore:
 \[
-q(x) - \tilde{q}(x) = 0 \implies q(x) = \tilde{q}(x).
+q(x) - \hat{q}(x) = 0 \implies q(x) = \hat{q}(x).
 \]
 Substituting this back into \eqref{eq:uniqueness-diff} yields:
 \[
-0 \cdot g(x) = \tilde{r}(x) - r(x) \implies \tilde{r}(x) - r(x) = 0 \implies r(x) = \tilde{r}(x).
+0 \cdot g(x) = \hat{r}(x) - r(x) \implies \hat{r}(x) - r(x) = 0 \implies r(x) = \hat{r}(x).
 \]
 Hence, the quotient $q(x)$ and remainder $r(x)$ are uniquely determined.
 \end{proof}
@@ -779,35 +779,35 @@ Hence, the quotient $q(x)$ and remainder $r(x)$ are uniquely determined.
 
 \begin{aiNote}[Beyond the Lecture: Existence Proof for Polynomial Long Division]
 % [PERSISTENT, ADDITION]
-The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $K$ is a field, $b_m \in K \setminus \{0\}$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
+The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $k$ is a field, $b_m \in k \setminus \{0\}$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
 \end{aiNote}
 
-\subsection{Every Ideal in \texorpdfstring{$K[x]$}{K[x]} is Principal}
+\subsection{Every Ideal in \texorpdfstring{$k[x]$}{k[x]} is Principal}
 
 \begin{speech}[00:32:21 - 00:34:09]
 But this is an extremely important way to think about these polynomials. I mean, the long division is just an important thing. It sounds silly, but it's important.
 
 It seems like if you went to high school in Basel, you should learn about the Bernoulli numbers, though. If I were in charge of the curriculum... \inlinemetanote{erases the middle chalkboard}
 
-Okay, so, let us say now some things maybe you haven't thought about. So, let $I$ be an ideal \inlinemetanote{writes: Let $I \subset K[x]$ be an ideal}, okay? So, any ideal. Then I claim, so, the proposition --- and this is totally fundamental about polynomial rings --- is that there exists a polynomial in $I$ \inlinemetanote{writes: Prop. $\exists f \in I$ such} such that the whole ideal is just generated by that single thing \inlinemetanote{writes: that $I = (f)$}. It's just like the integers. Integers also have this property: if I take any ideal, it's always just the ideal generated by one person.
+Okay, so, let us say now some things maybe you haven't thought about. So, let $I$ be an ideal \inlinemetanote{writes: Let $I \subset k[x]$ be an ideal}, okay? So, any ideal. Then I claim, so, the proposition --- and this is totally fundamental about polynomial rings --- is that there exists a polynomial in $I$ \inlinemetanote{writes: Prop. $\exists f \in I$ such} such that the whole ideal is just generated by that single thing \inlinemetanote{writes: that $I = (f)$}. It's just like the integers. Integers also have this property: if I take any ideal, it's always just the ideal generated by one person.
 
 So, this is called a principal ideal \inlinemetanote{writes: Principal ideal}. A principal ideal is an ideal generated by one element, and this says that every ideal is principal, just like for the integers. There'll be a definition in a moment. So, let's prove this.
 \end{speech}
 
 \begin{content}
-\begin{proposition}[{Principal Ideals in $K[x]$}]\label[proposition]{prop:kx-ideals-principal}
-Let $K$ be a field, and let $I \subseteq K[x]$ be an ideal. Then there exists a polynomial $f \in I$ such that:
+\begin{proposition}[{Principal Ideals in $k[x]$}]\label[proposition]{prop:kx-ideals-principal}
+Let $k$ be a field, and let $I \subseteq k[x]$ be an ideal. Then there exists a polynomial $f \in I$ such that:
 \begin{equation}\label{eq:ideal-generated-single}
-I = (f) = f \cdot K[x] = \{ q(x) f(x) \mid q(x) \in K[x] \}.
+I = (f) = f \cdot k[x] = \{ q(x) f(x) \mid q(x) \in k[x] \}.
 \end{equation}
-That is, every ideal in the polynomial ring $K[x]$ is a \newterm{principal ideal}.
+That is, every ideal in the polynomial ring $k[x]$ is a \newterm{principal ideal}.
 \end{proposition}
 \end{content}
 
 \begin{proofWrapper}[Proof of \cref{prop:kx-ideals-principal}]
 
 \begin{speech}[00:34:09 - 00:35:48]
-Proof. \inlinemetanote{writes: Proof} So, again, we take $I$ \inlinemetanote{writes: $I \subset K[x]$}. We know nothing about $I$ except it's an ideal.
+Proof. \inlinemetanote{writes: Proof} So, again, we take $I$ \inlinemetanote{writes: $I \subset k[x]$}. We know nothing about $I$ except it's an ideal.
 
 So, the first case, which is annoying, is that $I$ could be the zero ideal \inlinemetanote{writes: $I = (0)$}. And then we're okay, we're happy \inlinemetanote{writes: $\implies$ happy, $0 \in I$}, since zero is in $I$, because $I$ is... So, this case is fine.
 
@@ -820,7 +820,7 @@ Because the set of degrees are some set of integers. As long as it's not empty, 
 
 \begin{hidden}
 % timestamp: 00:16:30
-% topic: Proof that every ideal in K[x] is principal
+% topic: Proof that every ideal in k[x] is principal
 % board_state: prop:kx-ideals-principal, selection of minimal degree f in I
 % next_goal: Divide an arbitrary g in I by f and show the remainder is zero
 % open_loops: none
@@ -828,14 +828,10 @@ Because the set of degrees are some set of integers. As long as it's not empty, 
 
 \begin{content}[Case 1 and the Choice of the Minimal Degree Generator]
 \begin{description}
-    \item[Case 1:] \textbf{$I = \{0\}$:} If $I$ contains only the zero polynomial, then $I = (0) = 0 \cdot K[x]$, which is principal.
-    \item[Case 2:] \textbf{$I \neq \{0\}$:} If $I$ contains non-zero elements, consider the non-empty set of non-negative integer degrees:
-    \[
-    \mathcal{D} := \{ \deg(g) \mid g \in I \setminus \{0\} \} \subseteq \mathbb{N}_0.
-    \]
-    By the Well-Ordering Principle of $\mathbb{N}_0$, every non-empty set of non-negative integers has a least element. Let $d_{\min} := \min \mathcal{D}$, and choose an element $f \in I \setminus \{0\}$ such that:
+    \item[Case 1:] \textbf{$I = \{0\}$:} If $I$ contains only the zero polynomial, then $I = (0) = 0 \cdot k[x]$, which is principal.
+    \item[Case 2:] \textbf{$I \neq \{0\}$:} If $I$ contains non-zero elements, pick $f \in I \setminus \{0\}$ whose degree is minimal among all non-zero elements of $I$; this is possible because every non-empty set of non-negative integers has a least element (\cref{fact:pre-well-ordering}):
     \begin{equation}\label{eq:minimal-degree-f}
-    \deg(f) = d_{\min} = \min \{ \deg(g) \mid g \in I, \, g \neq 0 \}.
+    \deg(f) = \min \{ \deg(g) \mid g \in I, \, g \neq 0 \}.
     \end{equation}
 \end{description}
 \end{content}
@@ -871,14 +867,14 @@ So, this is not possible \inlinemetanote{writes: not possible} because of the ch
 So, this thing can't happen. We can cross it out with purple \inlinemetanote{crosses out with purple chalk}. So, it has to be this, and that's the proof.
 \end{speech}
 
-\begin{content}[Full Restatement: Proof that Every Ideal in $K[x]$ is Principal]
+\begin{content}[Full Restatement: Proof that Every Ideal in $k[x]$ is Principal]
 \begin{proof}[Complete Proof of \cref{prop:kx-ideals-principal}]
-Let $I \subseteq K[x]$ be an ideal.
+Let $I \subseteq k[x]$ be an ideal.
 \begin{description}
     \item[Step 1:] \textbf{Zero Ideal:} If $I = \{0\}$, then $I = (0)$ is principal.
     \item[Step 2:] \textbf{Minimal Degree Choice:} If $I \neq \{0\}$, choose $f \in I \setminus \{0\}$ of minimal degree among all non-zero polynomials in $I$.
-    \item[Step 3:] \textbf{First Inclusion ($(f) \subseteq I$):} Clearly, the principal ideal $(f) = f \cdot K[x] \subseteq I$, because $f \in I$ and $I$ is an ideal.
-    \item[Step 4:] \textbf{Reverse Inclusion ($I \subseteq (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in K[x]$ such that:
+    \item[Step 3:] \textbf{First Inclusion ($(f) \subseteq I$):} Clearly, the principal ideal $(f) = f \cdot k[x] \subseteq I$, because $f \in I$ and $I$ is an ideal.
+    \item[Step 4:] \textbf{Reverse Inclusion ($I \subseteq (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in k[x]$ such that:
     \[
     g = q f + r, \quad \text{with } r = 0 \text{ or } \deg(r) < \deg(f).
     \]
@@ -896,7 +892,7 @@ Combining inclusions gives $I = (f)$, proving that $I$ is principal.
 This proof mirrors the classical proof that every ideal in $\mathbb{Z}$ is principal ($I = (n)$):
 \begin{itemize}
     \item \textbf{Ring of Integers $\mathbb{Z}$:} One selects the non-zero element $n \in I$ with the smallest absolute value (or smallest positive integer) and uses integer division with remainder $a = q n + r$ ($0 \le r < |n|$).
-    \item \textbf{Polynomial Ring $K[x]$:} One selects the non-zero polynomial $f \in I$ with the smallest degree and uses polynomial division with remainder $g = q f + r$ ($r = 0$ or $\deg(r) < \deg(f)$).
+    \item \textbf{Polynomial Ring $k[x]$:} One selects the non-zero polynomial $f \in I$ with the smallest degree and uses polynomial division with remainder $g = q f + r$ ($r = 0$ or $\deg(r) < \deg(f)$).
 \end{itemize}
 \end{steps}
 \end{content}
@@ -944,7 +940,7 @@ So, what we've seen in the class so far: $\mathbb{Z}$, I mean, many of them, but
 
 What about $\mathbb{Z} \bmod 6\mathbb{Z}$? \inlinemetanote{writes: $\faktor{\mathbb{Z}}{6\mathbb{Z}}$} Well, no, because it's not a domain \inlinemetanote{writes: not a domain}.
 
-A field is a principal ideal domain. It's kind of a dumb principal ideal domain, because there's not many ideals, but it is \inlinemetanote{writes: A field is a PID, because $(0), (1)$}. Because there are only two ideals in a field: one ideal is this one, and one ideal is that one. So, it's also a principal ideal domain --- not, as I said, not the most interesting way to look at a field. That's an interesting principal ideal domain, and then today we see that if $K$ is a field, then this is a principal ideal domain \inlinemetanote{writes \qt{$k[x] \leftarrow$ PID} and \qt{field} with an arrow pointing to $k$}.
+A field is a principal ideal domain. It's kind of a dumb principal ideal domain, because there's not many ideals, but it is \inlinemetanote{writes: A field is a PID, because $(0), (1)$}. Because there are only two ideals in a field: one ideal is this one, and one ideal is that one. So, it's also a principal ideal domain --- not, as I said, not the most interesting way to look at a field. That's an interesting principal ideal domain, and then today we see that if $k$ is a field, then this is a principal ideal domain \inlinemetanote{writes \qt{$k[x] \leftarrow$ PID} and \qt{field} with an arrow pointing to $k$}.
 \end{speech}
 
 \begin{hidden}
@@ -967,8 +963,8 @@ An integral domain $R$ is called a \newterm{principal ideal domain} (abbreviated
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{The Integers $\mathbb{Z}$ (\textcolor{ForestGreen}{PID}):} Every ideal in $\mathbb{Z}$ has the form $n\mathbb{Z} = (n)$. Since $\mathbb{Z}$ is an integral domain, $\mathbb{Z}$ is a PID.
     \setcounter{enumi}{1} \item \textbf{Quotient Ring \texorpdfstring{$\faktor{\mathbb{Z}}{6\mathbb{Z}}$}{Z/6Z} (\textcolor{BrickRed}{NOT a PID}):} Although every ideal in $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is principal, $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is \emph{not} an integral domain because it contains zero divisors ($2 \cdot 3 \equiv 0 \pmod 6$).
-    \setcounter{enumi}{2} \item \textbf{Any Field $K$ (\textcolor{ForestGreen}{PID}):} If $K$ is a field, its only ideals are $(0)$ and $(1) = K$. Both are principal, and $K$ is an integral domain, so every field is a PID.
-    \setcounter{enumi}{3} \item \textbf{Polynomial Ring $K[x]$ over a Field (\textcolor{ForestGreen}{PID}):} By \cref{prop:kx-ideals-principal}, every ideal in $K[x]$ is principal. Since $K[x]$ has no zero divisors when $K$ is a field, $K[x]$ is a PID.
+    \setcounter{enumi}{2} \item \textbf{Any Field $k$ (\textcolor{ForestGreen}{PID}):} If $k$ is a field, its only ideals are $(0)$ and $(1) = k$. Both are principal, and $k$ is an integral domain, so every field is a PID.
+    \setcounter{enumi}{3} \item \textbf{Polynomial Ring $k[x]$ over a Field (\textcolor{ForestGreen}{PID}):} By \cref{prop:kx-ideals-principal}, every ideal in $k[x]$ is principal. Since $k[x]$ has no zero divisors when $k$ is a field, $k[x]$ is a PID.
 \end{enumerate}
 \end{examples}
 \end{content}
@@ -1010,7 +1006,7 @@ And another way you could do it, if you have a field with polynomials in two var
     consists of all polynomials in $\mathbb{Z}[x]$ whose constant term is even. It cannot be generated by a single polynomial, so $\mathbb{Z}[x]$ is not a PID.
     
     \setcounter{enumi}{1} \item \textbf{Polynomials in Two Variables $\mathbb{C}[x, y]$ (\textcolor{BrickRed}{NOT a PID}):}
-    In the polynomial ring in two variables over $\mathbb{C}$ (or any field $K$), the maximal ideal:
+    In the polynomial ring in two variables over $\mathbb{C}$ (or any field $k$), the maximal ideal:
     \begin{equation}\label{eq:ideal-x-y}
     J := (x, y) = \{ x p(x, y) + y q(x, y) \mid p, q \in \mathbb{C}[x, y] \}
     \end{equation}
@@ -1031,8 +1027,8 @@ Going beyond the lecture: suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z
 \begin{itemize}
     \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subseteq R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without coprimality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
     \item \textbf{Chinese Remainder Theorem:} When $I + J = (1) = R$, there exist $i \in I$ and $j \in J$ such that $i + j = 1$. This partition of unity ensures that $\phi$ is an isomorphism, yielding explicit solutions $z = jx + iy$ to simultaneous systems of congruences.
-    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi(n) = n \prod_{p \mid n} (1 - 1/p)$. The function mixes primes via $p - 1$, preventing direct inversion (a cornerstone of cryptography and connected to irregular primes such as $691 \mid \text{numerator}(B_{12})$).
-    \item \textbf{Polynomial Rings $K[x]$ over Fields:} For a field $K$, polynomials enjoy Euclidean long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
-    \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subseteq K[x]$ is generated by any non-zero element of minimal degree, proving that $K[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
+    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi^{\text{tot}}(n) = n \prod_{p \mid n} (1 - 1/p)$. The function mixes primes via $p - 1$, preventing direct inversion (a cornerstone of cryptography and connected to irregular primes such as $691 \mid \text{numerator}(B_{12})$).
+    \item \textbf{Polynomial Rings $k[x]$ over Fields:} For a field $k$, polynomials enjoy Euclidean long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
+    \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subseteq k[x]$ is generated by any non-zero element of minimal degree, proving that $k[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
 \end{itemize}
 \end{overview}

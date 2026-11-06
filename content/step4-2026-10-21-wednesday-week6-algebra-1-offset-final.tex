@@ -133,7 +133,7 @@ Doesn't it seem like there's an echo? Or not? No? Okay, good.
 \end{speech}
 
 \begin{content}
-\recap{Theorem~B was stated in the previous lecture (\cref{thm:ufd-polynomial-ring}), together with its consequence that $K[x_1, \dots, x_n]$ is a UFD (\cref{ex:multivariate-poly-ufd}). The lecturer restates it.}
+\recap{Theorem~B was stated in the previous lecture (\cref{thm:ufd-polynomial-ring}), together with its consequence that $k[x_1, \dots, x_n]$ is a UFD (\cref{ex:multivariate-poly-ufd}). The lecturer restates it.}
 \end{content}
 
 \begin{content}
@@ -411,7 +411,7 @@ p \mid C(fg).
 \]
 By \cref{exer:irred-prime-ufd}, because $R$ is a UFD, the irreducible element $p$ generates a prime ideal $(p) \subset R$. Consequently, the quotient ring:
 \[
-\overline{R} := R / (p)
+R / (p)
 \]
 is an integral domain (\cref{prop:quotient-integral-domain-prime}).
 The canonical projection homomorphism $\pi \colon R \to R / (p)$ (\cref{def:canonical-quotient-map}) induces a natural ring homomorphism on polynomial rings (by the universal property, \cref{thm:universal-property-polynomial-ring}, sending $x \mapsto x$; it reduces every coefficient):
@@ -419,7 +419,7 @@ The canonical projection homomorphism $\pi \colon R \to R / (p)$ (\cref{def:cano
 \phi \colon R[x] &\to (R/(p))[x], \\
 \sum_{j=0}^m c_j x^j &\mapsto \sum_{j=0}^m \overline{c_j} x^j.
 \end{align*}
-Since $\overline{R}$ is an integral domain, the polynomial ring $\overline{R}[x] = (R/(p))[x]$ is likewise an integral domain (\cref{thm:domain-poly-power-series}).
+Since $R/(p)$ is an integral domain, the polynomial ring $(R/(p))[x]$ is likewise an integral domain (\cref{thm:domain-poly-power-series}).
 Applying $\phi$ to the product $fg$ and using the ring homomorphism property yields:
 \[
 \phi(f) \cdot \phi(g) = \phi(fg).
@@ -940,7 +940,7 @@ And now, if you look at this, everything is in $R$: all the terms here are in th
 \end{speech}
 
 \begin{content}[{Division with Remainder in \texorpdfstring{$Q[x]$}{Q[x]} and Clearing Denominators}]
-Applying division with remainder in $Q[x]$ (\cref{thm:poly-long-division}, with $K = Q$) to divide $f$ and $p$ by $m \neq 0$, there exist unique quotients and remainders $\hat{q}, \hat{r}, \hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$ such that:
+Applying division with remainder in $Q[x]$ (\cref{thm:poly-long-division}, with $k = Q$) to divide $f$ and $p$ by $m \neq 0$, there exist unique quotients and remainders $\hat{q}, \hat{r}, \hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$ such that:
 \begin{align}
 f &= \hat{q} m + \hat{r}, && \text{with } \hat{r} = 0 \text{ or } \deg(\hat{r}) < \deg(m), \label{eq:div-f-Q} \\
 p &= \hat{\hat{q}} m + \hat{\hat{r}}, && \text{with } \hat{\hat{r}} = 0 \text{ or } \deg(\hat{\hat{r}}) < \deg(m). \label{eq:div-p-Q}

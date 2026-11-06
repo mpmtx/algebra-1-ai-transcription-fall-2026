@@ -130,19 +130,19 @@ y = q n + r \quad \text{and} \quad 0 \le r < n.
 \end{fact}
 
 \begin{definition}[Divisibility, Greatest Common Divisor, Primes]\label[definition]{def:pre-divisibility}
-For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\gcd(a, b)$ is the largest integer dividing both (so $\gcd(a, b) \ge 1$, as $1$ divides both); the lecturer also writes $(a, b)$ and, from Week~6 on, $\operatorname{GCD}(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\gcd(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
+For $a, b \in \mathbb{Z}$, $a$ \newterm{divides} $b$, written $a \mid b$, if $b = a c$ for some $c \in \mathbb{Z}$. For $a, b$ not both $0$, $\operatorname{GCD}(a, b)$ is the largest integer dividing both (so $\operatorname{GCD}(a, b) \ge 1$, as $1$ divides both); the lecturer also writes $(a, b)$. The integers $a, b$ are \newterm{coprime} (relatively prime) if $\operatorname{GCD}(a, b) = 1$. A \newterm{prime} is an integer $p \ge 2$ whose only positive divisors are $1$ and $p$.
 \end{definition}
 
 \begin{fact}[Bézout's Identity]\label[fact]{fact:pre-bezout}
 For $a, b \in \mathbb{Z}$, not both $0$, there are $x, y \in \mathbb{Z}$ with
 \[
-a x + b y = \gcd(a, b).
+a x + b y = \operatorname{GCD}(a, b).
 \]
 In particular, $a$ and $b$ are coprime if and only if $a x + b y = 1$ for some $x, y \in \mathbb{Z}$.
 \end{fact}
 
 \begin{steps}[Why It Holds]
-The set $I := \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \gcd(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
+The set $I := \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \operatorname{GCD}(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
 \end{steps}
 
 \begin{fact}[Euclid's Lemma]\label[fact]{fact:pre-euclid}
@@ -150,34 +150,34 @@ Let $p$ be a prime. If $p \mid a b$, then $p \mid a$ or $p \mid b$.
 \end{fact}
 
 \begin{steps}[Why It Holds]
-If $p \nmid a$, then $\gcd(a, p) = 1$, since the only positive divisors of $p$ are $1$ and $p$. By Bézout, $a x + p y = 1$ for some $x, y \in \mathbb{Z}$, so $b = a b \, x + p \, b y$, and $p$ divides both terms on the right.
+If $p \nmid a$, then $\operatorname{GCD}(a, p) = 1$, since the only positive divisors of $p$ are $1$ and $p$. By Bézout, $a x + p y = 1$ for some $x, y \in \mathbb{Z}$, so $b = a b \, x + p \, b y$, and $p$ divides both terms on the right.
 \end{steps}
 
 \begin{example}[The Euclidean Algorithm]\label[example]{ex:pre-euclidean-algorithm}
-The coefficients in Bézout's identity can be computed. Since $\gcd(y, n) = \gcd(n, r)$ whenever $y = q n + r$, repeated division with remainder (\cref{fact:pre-division}) shrinks the pair until the remainder is $0$; the last non-zero remainder is the gcd. For $a = 252$, $b = 198$:
+The coefficients in Bézout's identity can be computed. Since $\operatorname{GCD}(y, n) = \operatorname{GCD}(n, r)$ whenever $y = q n + r$, repeated division with remainder (\cref{fact:pre-division}) shrinks the pair until the remainder is $0$; the last non-zero remainder is the GCD. For $a = 252$, $b = 198$:
 \[
 \begin{aligned}
 252 &= 1 \cdot 198 + 54, &\qquad 198 &= 3 \cdot 54 + 36, \\
 54 &= 1 \cdot 36 + 18, & 36 &= 2 \cdot 18 + 0,
 \end{aligned}
 \]
-so $\gcd(252, 198) = 18$. Solving the equations backwards for the remainders,
+so $\operatorname{GCD}(252, 198) = 18$. Solving the equations backwards for the remainders,
 \[
 18 = 54 - 36 = 54 - (198 - 3 \cdot 54) = 4 \cdot 54 - 198 = 4 \cdot (252 - 198) - 198 = 4 \cdot 252 - 5 \cdot 198.
 \]
-If $\gcd(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{x}$ is the inverse of $\bar{a}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ (\cref{thm:units-z-mod-m}).
+If $\operatorname{GCD}(a, m) = 1$, the same back-substitution gives $a x + m y = 1$, so $\bar{x}$ is the inverse of $\bar{a}$ in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ (\cref{thm:units-z-mod-m}).
 \end{example}
 
 \begin{fact}[Unique Factorization in $\mathbb{Z}$]\label[fact]{fact:pre-unique-factorization}
 Every integer $n \ge 2$ is a product of primes, and this product is unique up to the order of the factors.
 \end{fact}
 
-\begin{fact}[Least Common Multiple, and gcd and lcm from Prime Factorizations]\label[fact]{fact:pre-lcm}
-For non-zero $a, b \in \mathbb{Z}$, $\operatorname{lcm}(a, b)$ is the smallest positive integer divisible by both. Writing $\abs{a} = \prod_i p_i^{n_i}$ and $\abs{b} = \prod_i p_i^{m_i}$ over the same distinct primes $p_i$ (with exponents $n_i, m_i \ge 0$),
+\begin{fact}[Least Common Multiple, and GCD and LCM from Prime Factorizations]\label[fact]{fact:pre-lcm}
+For non-zero $a, b \in \mathbb{Z}$, $\operatorname{LCM}(a, b)$ is the smallest positive integer divisible by both. Writing $\abs{a} = \prod_i p_i^{n_i}$ and $\abs{b} = \prod_i p_i^{m_i}$ over the same distinct primes $p_i$ (with exponents $n_i, m_i \ge 0$),
 \[
-\gcd(a, b) = \prod_i p_i^{\min(n_i, m_i)}, \qquad \operatorname{lcm}(a, b) = \prod_i p_i^{\max(n_i, m_i)}, \qquad \gcd(a, b) \cdot \operatorname{lcm}(a, b) = \abs{a b}.
+\operatorname{GCD}(a, b) = \prod_i p_i^{\min(n_i, m_i)}, \qquad \operatorname{LCM}(a, b) = \prod_i p_i^{\max(n_i, m_i)}, \qquad \operatorname{GCD}(a, b) \cdot \operatorname{LCM}(a, b) = \abs{a b}.
 \]
-Every common divisor of $a$ and $b$ divides $\gcd(a, b)$, and every common multiple is a multiple of $\operatorname{lcm}(a, b)$. Week~6 carries all of this over to unique factorization domains (\cref{thm:gcd-formula-ufd}, \cref{prop:gcd-lcm-product-identity}).
+Every common divisor of $a$ and $b$ divides $\operatorname{GCD}(a, b)$, and every common multiple is a multiple of $\operatorname{LCM}(a, b)$. Week~6 carries all of this over to unique factorization domains (\cref{thm:gcd-formula-ufd}, \cref{prop:gcd-lcm-product-identity}).
 \end{fact}
 
 \begin{definition}[Congruence Modulo $n$]\label[definition]{def:pre-congruence}

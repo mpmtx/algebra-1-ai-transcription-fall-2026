@@ -374,7 +374,7 @@ A map $f \colon G \to \hat{G}$ is a group isomorphism if and only if there exist
 \begin{equation}\label{eq:isom-inverses}
 g \circ f = 1_G \quad \text{and} \quad f \circ g = 1_{\hat{G}},
 \end{equation}
-where $1_G = \operatorname{id}_G$ denotes the identity map of $G$. (For maps of sets, this is the characterization of bijections in \cref{fact:pre-inverse-map}; the new point is that $g$ is again a homomorphism.)
+where $1_G = \operatorname{Id}_G$ denotes the identity map of $G$. (For maps of sets, this is the characterization of bijections in \cref{fact:pre-inverse-map}; the new point is that $g$ is again a homomorphism.)
 \end{proposition}
 
 \begin{proof}
@@ -861,7 +861,7 @@ But for rings, the symmetry is broken. So, one has to concentrate a bit here. An
 
 \begin{content}[Ring Isomorphisms and Symmetry Breaking]
 \begin{definition}[Ring Isomorphism]\label[definition]{def:ring-isomorphism}
-A ring homomorphism $f \colon R \to \hat{R}$ is called a \newterm{ring isomorphism} if $f$ is bijective. Equivalently, $f$ is an isomorphism if and only if there exists a ring homomorphism $g \colon \hat{R} \to R$ such that $g \circ f = \operatorname{id}_R$ and $f \circ g = \operatorname{id}_{\hat{R}}$ (as for groups, \cref{prop:isomorphism-inverse-characterization}).
+A ring homomorphism $f \colon R \to \hat{R}$ is called a \newterm{ring isomorphism} if $f$ is bijective. Equivalently, $f$ is an isomorphism if and only if there exists a ring homomorphism $g \colon \hat{R} \to R$ such that $g \circ f = \operatorname{Id}_R$ and $f \circ g = \operatorname{Id}_{\hat{R}}$ (as for groups, \cref{prop:isomorphism-inverse-characterization}).
 \end{definition}
 
 \begin{steps}[Symmetry Breaking: Groups and Vector Spaces vs. Rings]
@@ -1787,15 +1787,15 @@ Okay, you can think about it.
 
 \begin{content}[The Restriction Homomorphism]
 \begin{definition}[Restriction Homomorphism]\label[definition]{def:restriction-hom}
-Let $U \subseteq \mathbb{R}$ be an open subset (\cref{def:pre-open-closure}; for example, $U = \mathbb{R}_{>0}$). The \newterm{restriction map}
+The \newterm{restriction map}
 \[
-C^\infty(\mathbb{R}) \xrightarrow{\operatorname{Res}} C^\infty(U), \qquad (f \colon \mathbb{R} \to \mathbb{R}) \longmapsto (f_{\operatorname{Res}} := f|_U \colon U \to \mathbb{R}),
+C^\infty(\mathbb{R}) \xrightarrow{\operatorname{Res}} C^\infty(\mathbb{R}_{>0}), \qquad (f \colon \mathbb{R} \to \mathbb{R}) \longmapsto (f_{\operatorname{Res}} := f|_{\mathbb{R}_{>0}} \colon \mathbb{R}_{>0} \to \mathbb{R}),
 \]
 is a ring homomorphism:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item $\operatorname{Res}(f + g) = (f + g)|_U = f|_U + g|_U = \operatorname{Res}(f) + \operatorname{Res}(g)$.
-    \item $\operatorname{Res}(f \cdot g) = (f \cdot g)|_U = f|_U \cdot g|_U = \operatorname{Res}(f) \cdot \operatorname{Res}(g)$.
-    \item $\operatorname{Res}(1_{\mathbb{R}}) = 1_U$.
+    \item $\operatorname{Res}(f + g) = (f + g)|_{\mathbb{R}_{>0}} = f|_{\mathbb{R}_{>0}} + g|_{\mathbb{R}_{>0}} = \operatorname{Res}(f) + \operatorname{Res}(g)$.
+    \item $\operatorname{Res}(f \cdot g) = (f \cdot g)|_{\mathbb{R}_{>0}} = f|_{\mathbb{R}_{>0}} \cdot g|_{\mathbb{R}_{>0}} = \operatorname{Res}(f) \cdot \operatorname{Res}(g)$.
+    \item $\operatorname{Res}(1_{\mathbb{R}}) = 1_{\mathbb{R}_{>0}}$.
 \end{enumerate}
 \end{definition}
 
@@ -1845,7 +1845,7 @@ A \newterm{category} $\operatorname{Cat}$ consists of the following data:
     \item A collection of \newterm{objects}, denoted $\operatorname{Obj}(\operatorname{Cat})$.
     \item For every pair of objects $A, B \in \operatorname{Obj}(\operatorname{Cat})$, a set of \newterm{morphisms} (also called \newterm{homs} or \newterm{arrows}), denoted:
     \[
-    \operatorname{Hom}(A, B) \quad (\text{or } \operatorname{Mor}(A, B)).
+    \operatorname{Hom}(A, B).
     \]
 \end{enumerate}
 \end{definition}
