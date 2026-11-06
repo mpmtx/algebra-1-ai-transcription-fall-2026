@@ -101,7 +101,7 @@ This lecture formally develops the theory of unique factorization domains (UFDs)
 \begin{itemize}
     \item \textbf{Review and Motivation:} We examine why multivariate polynomial rings fail to be principal ideal domains (e.g., $(x, y) \subset k[x, y]$ is non-principal, and $(x^2, xy, y^2)$ requires three generators), motivating the Hilbert Basis Theorem and Emmy Noether's concept of a Noetherian ring.
     \item \textbf{Foundations of Factorization:} The foundational notions of units $\mathcal{U}_R$ and irreducible elements are established for arbitrary integral domains, highlighting the critical distinction between irreducible elements and prime elements in abstract ring theory.
-    \item \textbf{Unique Factorization Domains:} We define UFDs via the existence and uniqueness of irreducible factorizations (up to permutation and unit associates). We examine standard examples ($\mathbb{Z}$, fields $k$, $k[x]$, and multivariate polynomial rings $k[x_1, \dots, x_n]$ via Gauss's Theorem B) and investigate an explicit non-example: the subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ of polynomials lacking a linear term, illuminated by the geometry of the cuspidal cubic curve.
+    \item \textbf{Unique Factorization Domains:} We define UFDs via the existence and uniqueness of irreducible factorizations (up to permutation and unit associates). We examine standard examples ($\mathbb{Z}$, fields $k$, $k[x]$, and multivariate polynomial rings $k[x_1, \dots, x_n]$ via Gauss's Theorem B) and investigate an explicit non-example: the subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ of polynomials lacking a linear term, whose picture, the lecturer says, is a cusp.
     \item \textbf{Proof of Theorem A ($\text{PID} \implies \text{UFD}$):} The core theorem is established across three sequential steps:
     \begin{description}
         \item[Step 1:] \textbf{Uniqueness Property:} If every irreducible element in a domain generates a prime ideal, factorizations into irreducibles are unique up to permutation and unit associates.
@@ -181,7 +181,7 @@ requires at least $3$ generators.
 \end{answer}
 
 \begin{steps}[Why $(x^2, xy, y^2)$ Needs at Least Three Generators]
-Going beyond the lecture: consider the maximal ideal $m = (x, y) \subset k[x, y]$ and the ideal $m I \subseteq I$ (products, \cref{def:product-of-ideals}). The quotient $I / m I$ is a vector space over $k[x, y]/m \cong k$. Every element of $I$ has all its terms of degree $\ge 2$, and every element of $m I$ has all its terms of degree $\ge 3$; so a $k$-linear combination of $x^2, xy, y^2$ lies in $m I$ only if it is $0$, and the images of $x^2, xy, y^2$ are linearly independent: $\dim_k(I / m I) \ge 3$. If $I = (g_1, \dots, g_k)$, then every element of $I$ is $\sum r_i g_i$, and modulo $m I$ only the constant terms of the $r_i$ matter; so the images of $g_1, \dots, g_k$ span $I / m I$, and $k \ge 3$.
+Going beyond the lecture: consider the maximal ideal $m = (x, y) \subset k[x, y]$ and the ideal $m I \subseteq I$ (products, \cref{def:product-of-ideals}). The quotient $I / m I$ is a vector space over $k[x, y]/m \cong k$. Every element of $I$ has all its terms of degree $\ge 2$, and every element of $m I$ has all its terms of degree $\ge 3$; so a $k$-linear combination of $x^2, xy, y^2$ lies in $m I$ only if it is $0$, and the images of $x^2, xy, y^2$ are linearly independent: $\dim_k(I / m I) \ge 3$. If $I = (g_1, \dots, g_s)$, then every element of $I$ is $\sum r_i g_i$, and modulo $m I$ only the constant terms of the $r_i$ matter; so the images of $g_1, \dots, g_s$ span $I / m I$, and $s \ge 3$.
 \end{steps}
 \end{content}
 
@@ -236,7 +236,7 @@ eventually stabilizes, i.e., there exists $N \ge 1$ such that $I_k = I_N$ for al
 \end{content}
 
 \begin{insight}[``Every Great Theorem Becomes a Definition'']
-The lecturer highlights a famous structural motif in modern mathematics: \qt{every great theorem becomes a definition.} David Hilbert proved in 1890 that every ideal in $k[x_1, \dots, x_n]$ is finitely generated (the Basis Theorem). Rather than viewing this solely as a property of polynomial rings, Emmy Noether abstracted this finite generation property into an intrinsic axiom for general rings in the 1920s, creating the notion of a \newterm{Noetherian ring} and establishing the foundational framework for modern commutative algebra and algebraic geometry.
+The lecturer gives a standard slogan: \qt{every great theorem becomes a definition.} This is a perfect example of it: David Hilbert proved that every ideal in $k[x_1, \dots, x_n]$ is finitely generated (the Basis Theorem), and this property became Emmy Noether's definition of a \newterm{Noetherian ring}, the central topic of the Commutative Algebra course.
 \end{insight}
 
 \section{Unique Factorization Domains}
@@ -362,7 +362,7 @@ In high school arithmetic over $\mathbb{Z}$, the words \qt{prime} and \qt{irredu
     \item[Irreducible:] \textbf{$x = yz \implies y \in \mathcal{U}_R \lor z \in \mathcal{U}_R$:} A multiplicative property stating that $x$ cannot be broken into non-trivial factors.
     \item[Prime:] \textbf{$p \mid yz \implies p \mid y \lor p \mid z$:} A divisibility property stating that if $p$ divides a product, it must divide at least one of the factors (equivalent to the principal ideal $(p)$ being a prime ideal).
 \end{description}
-In any integral domain, every prime element is irreducible (\cref{exer:irred-prime-ufd} in the next lecture). The converse fails in general domains: in $\mathbb{Q}[x^2, x^3]$ below, $x^2$ is irreducible but not prime (\cref{ex:r-not-ufd}), and in $\mathbb{Z}[\sqrt{-5}]$ the irreducible $2$ divides $6 = (1 + \sqrt{-5})(1 - \sqrt{-5})$ but neither factor. It holds in every UFD (\cref{exer:irred-prime-ufd}), and in particular in every PID (Step~2 below, \cref{lem:step2-pid-irr-implies-prime}).
+Going beyond the lecture: in any integral domain, every prime element is irreducible (\cref{exer:irred-prime-ufd} in the next lecture). The converse fails in general domains: in $\mathbb{Q}[x^2, x^3]$ below, $x^2$ is irreducible but not prime (\cref{ex:r-not-ufd}), and in $\mathbb{Z}[\sqrt{-5}]$ the irreducible $2$ divides $6 = (1 + \sqrt{-5})(1 - \sqrt{-5})$ but neither factor. It holds in every UFD (\cref{exer:irred-prime-ufd}), and in particular in every PID (Step~2 below, \cref{lem:step2-pid-irr-implies-prime}).
 \end{steps}
 
 \begin{remark}[Week~1 Used \qt{Prime} for \qt{Irreducible}]\label[remark]{rem:week1-prime-means-irreducible}
@@ -400,8 +400,13 @@ I don't know where that photo is, but probably if you asked Lycka, she can put i
 \end{speech}
 
 \begin{insight}[Emmy Noether at the 1932 Zurich ICM]
-The lecturer shares a historical anecdote regarding Emmy Noether, who attended the International Congress of Mathematicians (ICM) in Zurich in September 1932 and gave one of its plenary addresses (\qt{Hyperkomplexe Systeme in ihren Beziehungen zur kommutativen Algebra und zur Zahlentheorie}); according to the lecturer, she spoke in the building where this course is held. The photograph the lecturer mentions shows Noether on a boat on Lake Zurich during that congress.
+The lecturer mentions a great picture of Emmy Noether on a boat in Zurich: she was here in the 1930s for the International Congress of Mathematicians (ICM), and she gave a lecture in this building.
 \end{insight}
+
+\begin{aiNote}[Beyond the Lecture: Noether's Address]
+% [PERSISTENT, ADDITION]
+At the ICM in Zurich in September 1932, Noether gave a plenary address, \qt{Hyperkomplexe Systeme in ihren Beziehungen zur kommutativen Algebra und zur Zahlentheorie}.
+\end{aiNote}
 
 \begin{speech}[00:13:40 - 00:15:05]
 Okay, so, the two properties of factorization. So, we're in the middle of the definition of a UFD, I'm still in the middle of it, so, I have to give you the two properties of the factorization.
@@ -547,9 +552,14 @@ So, first of all: examples. \inlinemetanote{writes: Ex:} This is the best exampl
 
 \begin{content}[The Integers as a UFD]
 \begin{example}[$\mathbb{Z}$ is a UFD]\label[example]{ex:z-ufd}
-The ring of integers $\mathbb{Z}$ is a unique factorization domain (the Fundamental Theorem of Arithmetic, \cref{fact:pre-unique-factorization}, now with signs: the units are $\pm 1$). This also follows from the theory of this week: every ideal of $\mathbb{Z}$ is principal (\cref{thm:ideals-of-z-are-principal}), so $\mathbb{Z}$ is a PID, and therefore by Theorem A (\cref{thm:pid-implies-ufd}) it is a UFD.
+The ring of integers $\mathbb{Z}$ is a unique factorization domain: this is the unique factorization of school (\cref{fact:pre-unique-factorization}), now with signs, since the units are $\pm 1$.
 \end{example}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Integers via Theorem A]
+% [PERSISTENT, ADDITION]
+This statement is also called the Fundamental Theorem of Arithmetic. It also follows from the theory of this week: every ideal of $\mathbb{Z}$ is principal (\cref{thm:ideals-of-z-are-principal}), so $\mathbb{Z}$ is a PID, and therefore a UFD by Theorem A (\cref{thm:pid-implies-ufd}).
+\end{aiNote}
 
 \begin{speech}[00:18:35 - 00:20:20]
 I mean, usually when you learn this in school, no one cares about the signs, because you only talk about positive numbers, and you factor into positive primes, so, the business about the units doesn't play a role. And the second thing is that, of course, there's this reordering, but, you know, you can always with numbers just write them in the increasing order, so, you don't have to worry about that either. So, generally speaking, these matters are silenced in the school treatment.
@@ -626,7 +636,7 @@ This subring... this is a set of all polynomials. So, this subring is defined to
 \begin{definition}[Subring of Polynomials with No Linear Term]\label[definition]{def:poly-no-linear-term}
 We define the subset $R \subset \mathbb{Q}[x]$ as the set of all polynomials with rational coefficients having no linear term (i.e., the coefficient of $x$ is zero):
 \begin{equation}\label{eq:no-linear-term-def}
-R := \bigl\{ p(x) \in \mathbb{Q}[x] \;\big|\; p'(0) = 0 \bigr\} = \bigl\{ a_0 + a_2 x^2 + a_3 x^3 + \dots + a_d x^d \;\big|\; a_i \in \mathbb{Q} \bigr\}.
+R := \bigl\{ a_0 + a_2 x^2 + a_3 x^3 + \dots + a_d x^d \;\big|\; a_i \in \mathbb{Q} \bigr\}.
 \end{equation}
 In other words, $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$.
 \end{definition}
@@ -691,13 +701,17 @@ In the domain $R = \mathbb{Q}[x^2, x^3]$:
     \[
     \mathcal{U}_R = \mathcal{U}_{\mathbb{Q}} = \mathbb{Q} \setminus \{0\}.
     \]
-    \item The elements $x^2$ and $x^3$ are non-zero, non-units, and \newterm{irreducible} in $R$:
-    \begin{itemize}
-        \item If $x^2 = f(x) \cdot g(x)$ with $f, g \in R$, then by degree considerations in $\mathbb{Q}[x]$ we have $\deg(f) + \deg(g) = 2$. In $\mathbb{Q}[x]$, the only factorizations into non-constant polynomials have $\deg(f) = 1$ and $\deg(g) = 1$. But $R$ contains no polynomials of degree $1$. Thus, either $\deg(f) = 0$ or $\deg(g) = 0$, meaning $f \in \mathcal{U}_R$ or $g \in \mathcal{U}_R$. Hence, $x^2$ is irreducible in $R$.
-        \item If $x^3 = f(x) \cdot g(x)$ with $f, g \in R$, then $\deg(f) + \deg(g) = 3$. The only partitions of $3$ into non-negative integers are $3 + 0$ and $2 + 1$. Since $R$ has no elements of degree $1$, any factorization must have one factor of degree $0$, which is a unit in $\mathcal{U}_R$. Hence, $x^3$ is irreducible in $R$.
-    \end{itemize}
+    \item The elements $x^2$ and $x^3$ are non-zero, non-units, and \newterm{irreducible} in $R$.
 \end{enumerate}
 \end{observation}
+
+\begin{steps}[Why $x^2$ and $x^3$ Are Irreducible]
+Going beyond the lecture, which leaves this to the students:
+\begin{itemize}
+    \item If $x^2 = f(x) \cdot g(x)$ with $f, g \in R$, then by degree considerations in $\mathbb{Q}[x]$ we have $\deg(f) + \deg(g) = 2$. In $\mathbb{Q}[x]$, the only factorizations into non-constant polynomials have $\deg(f) = 1$ and $\deg(g) = 1$. But $R$ contains no polynomials of degree $1$. Thus, either $\deg(f) = 0$ or $\deg(g) = 0$, meaning $f \in \mathcal{U}_R$ or $g \in \mathcal{U}_R$. Hence, $x^2$ is irreducible in $R$.
+    \item If $x^3 = f(x) \cdot g(x)$ with $f, g \in R$, then $\deg(f) + \deg(g) = 3$. The only partitions of $3$ into non-negative integers are $3 + 0$ and $2 + 1$. Since $R$ has no elements of degree $1$, any factorization must have one factor of degree $0$, which is a unit in $\mathcal{U}_R$. Hence, $x^3$ is irreducible in $R$.
+\end{itemize}
+\end{steps}
 \end{content}
 
 \begin{speech}[00:26:18 - 00:27:06]
@@ -719,9 +733,11 @@ The element $x^6 \in R$ is non-zero and not a unit, and admits two completely di
 x^6 = \underbrace{x^2 \cdot x^2 \cdot x^2}_{3 \text{ irreducible factors}} = \underbrace{x^3 \cdot x^3}_{2 \text{ irreducible factors}}.
 \end{equation}
 The first factorization contains $n = 3$ irreducible factors, whereas the second contains $m = 2$ irreducible factors. Since $3 \neq 2$, no permutation and unit modification can transform one factorization into the other. Thus, $R$ is not a unique factorization domain.
-
-The same equation shows that the irreducible $x^2$ is not prime in $R$: $x^2$ divides $x^3 \cdot x^3 = x^2 \cdot x^4$ in $R$, but $x^2 \nmid x^3$, since $x^3 = x^2 \cdot h$ forces $h = x \notin R$. This is exactly the property that Step~1 of the proof of Theorem~A (\cref{clm:step1-uniqueness}) needs and that fails here.
 \end{example}
+
+\begin{steps}[The Irreducible $x^2$ Is Not Prime]
+Going beyond the lecture: the same equation shows that the irreducible $x^2$ is not prime in $R$: $x^2$ divides $x^3 \cdot x^3 = x^2 \cdot x^4$ in $R$, but $x^2 \nmid x^3$, since $x^3 = x^2 \cdot h$ forces $h = x \notin R$. This is exactly the property that Step~1 of the proof of Theorem~A (\cref{clm:step1-uniqueness}) needs and that fails here.
+\end{steps}
 \end{content}
 
 \begin{speech}[00:27:06 - 00:28:25]
@@ -837,7 +853,7 @@ Let $R$ be an integral domain, and let $x \in R$ with $x \neq 0$ and $x \notin \
 \end{definition}
 
 \begin{steps}[Terminology Distinction]
-In abstract ring theory, calling an element $x$ \newterm{prime} strictly refers to the ideal-theoretic condition that $(x)$ is a prime ideal in $R$. Calling $x$ \newterm{irreducible} refers to the non-factorability condition. While every prime element in a domain is irreducible, the converse is not true in general domains; establishing that irreducible elements generate prime ideals will be the key to proving uniqueness of factorizations.
+In abstract ring theory, calling an element $x$ \newterm{prime} strictly refers to the ideal-theoretic condition that $(x)$ is a prime ideal in $R$. Calling $x$ \newterm{irreducible} refers to the non-factorability condition. Establishing that irreducible elements generate prime ideals will be the key to proving uniqueness of factorizations.
 \end{steps}
 \end{content}
 
@@ -949,7 +965,7 @@ where $p_1$ and all $q_j$ are irreducible elements in $R$.
     \[
     q_1 \cdot q_2 \cdots q_m \in (p_1).
     \]
-    By generalized induction on the defining property of prime ideals, if a finite product lies in a prime ideal, at least one factor must belong to that ideal:
+    By splitting off one factor at a time in the defining property of prime ideals, if a finite product lies in a prime ideal, at least one factor must belong to that ideal:
     \begin{equation}\label{eq:qj-in-p1}
     \exists j \in \{1, \dots, m\} \quad \text{such that} \quad q_j \in (p_1).
     \end{equation}
@@ -1140,7 +1156,7 @@ p \text{ is irreducible in } R \implies (p) \text{ is prime in } R.
 The proof of Theorem A ($R \text{ is a PID} \implies R \text{ is a UFD}$) is structured into three distinct steps:
 \begin{description}
     \item[Step 1:] \textbf{General Domains:} If in an integral domain every irreducible element generates a prime ideal, then factorizations into irreducibles are unique (Uniqueness Property).
-    \item[Step 2:] \textbf{PIDs (Uniqueness):} In any PID, every irreducible element generates a prime ideal (the proof shows even more: $(a, p) = R$ for every $a \notin (p)$, so $(p)$ is a maximal ideal, \cref{def:maximal-ideal}). Combining Step 2 with Step 1 proves the Uniqueness of factorizations in every PID.
+    \item[Step 2:] \textbf{PIDs (Uniqueness):} In any PID, every irreducible element generates a prime ideal. Combining Step 2 with Step 1 proves the Uniqueness of factorizations in every PID.
     \item[Step 3:] \textbf{PIDs (Existence):} In a PID, every ascending chain of principal ideals stabilizes (the argument of \cref{def:noetherian-ring}); from this one proves that every non-zero, non-unit element factors into a product of irreducibles (Existence Property).
 \end{description}
 \end{steps}
@@ -1322,7 +1338,7 @@ because that's an assumption! This assumption: $ab \in (p)$. \inlinemetanote{poi
 So, we conclude that $b$ is in the ideal generated by $p$. So, we're very happy about that; that's the end of Step 2. Okay? \inlinemetanote{writes: $\implies b \in (p) \quad \square$}
 \end{speech}
 
-\begin{content}[Case 2: $z$ is a Unit and Bézout's Identity in a PID]
+\begin{content}[Case 2: $z$ is a Unit]
 Since $p = \ell \cdot z$ is irreducible and $\ell \notin \mathcal{U}_R$, the only remaining possibility is:
 \begin{equation}\label{eq:part3-z-is-unit}
 z \in \mathcal{U}_R \quad (z \text{ is a unit}).
@@ -1331,7 +1347,7 @@ Since $z$ is an invertible unit, the principal ideal $(z)$ contains $z \cdot z^{
 \begin{equation}\label{eq:part3-ideal-unit}
 I = (a, p) = (z) = (1) = R.
 \end{equation}
-Since $1 \in (a, p)$, there exist elements $n, m \in R$ yielding a \newterm{Bézout identity}:
+Since $1 \in (a, p)$, there exist elements $n, m \in R$ such that:
 \begin{equation}\label{eq:part3-bezout-identity}
 n \cdot a + m \cdot p = 1.
 \end{equation}
@@ -1348,9 +1364,14 @@ Since ideals are closed under addition, the sum lies in $(p)$:
 \begin{equation}\label{eq:part3-b-in-p-final}
 b = \underbrace{n \cdot (a \cdot b)}_{\in (p)} + \underbrace{(m \cdot b) \cdot p}_{\in (p)} \in (p).
 \end{equation}
-Hence, $b \in (p)$. Since $p$ is not a unit, $(p) \neq R$; so $(p)$ is a prime ideal (\cref{def:prime-ideal}), completing the proof of \cref{lem:step2-pid-irr-implies-prime}. This is the argument of Euclid's lemma in $\mathbb{Z}$ (\cref{fact:pre-euclid}), with the PID property in place of Bézout's identity.
+Hence, $b \in (p)$. Since $p$ is not a unit, $(p) \neq R$; so $(p)$ is a prime ideal (\cref{def:prime-ideal}), completing the proof of \cref{lem:step2-pid-irr-implies-prime}.
 \end{content}
 \end{proofWrapper}
+
+\begin{aiNote}[Beyond the Lecture: Bézout, Euclid and Maximal Ideals]
+% [PERSISTENT, ADDITION]
+The equation $n \cdot a + m \cdot p = 1$ is a \newterm{Bézout identity}, and Step~2 is the argument of Euclid's lemma in $\mathbb{Z}$ (\cref{fact:pre-euclid}), with the PID property in place of Bézout's identity. The proof shows even more: $(a, p) = R$ for every $a \notin (p)$, so $(p)$ is a maximal ideal (\cref{def:maximal-ideal}).
+\end{aiNote}
 
 \begin{speech}[00:56:32 - 00:57:42]
 All right, so, that's Step 1 and Step 2. So, now, we're getting close. \inlinemetanote{wipes the blackboard on the left with a wet sponge}
@@ -1369,7 +1390,7 @@ In the actual development of mathematics, the definitions come at the end of the
 \end{speech}
 
 \begin{insight}[The Organic Evolution of Mathematical Definitions]
-The lecturer reflects on the aesthetic perfection of abstract algebra: calculations and proofs often fit together like interlocking gears. This is not accidental, but the deliberate consequence of historical refinement. Mathematical definitions are rarely conceived at the outset in their modern, streamlined form; rather, they are distilled at the conclusion of extensive mathematical exploration to capture precisely the properties needed to make pivotal theorems work.
+The lecturer asks why everything in this class works out so perfectly, and answers: because of the definitions. In the actual development of mathematics, the definitions come at the end, not at the beginning, so the way it is presented is, in his words, kind of dishonest.
 \end{insight}
 
 \subsection{Step 3: Existence of Factorizations in a PID}
@@ -1453,7 +1474,7 @@ Given $x \in R \setminus (\{0\} \cup \mathcal{U}_R)$:
 We recursively repeat this split on each non-unit factor.
 
 \begin{steps}[Why General Rings Differ from the Integers]
-In $\mathbb{Z}$, a proper factorization $x = y \cdot z$ yields $|y| < |x|$ and $|z| < |x|$. The positive integers are well-ordered, so this splitting process must terminate after finitely many steps. In an arbitrary PID, however, there is no intrinsic norm or ordering on elements; termination must instead be deduced from the algebraic structure of the ideals.
+In $\mathbb{Z}$, a proper factorization $x = y \cdot z$ yields $|y| < |x|$ and $|z| < |x|$. The positive integers are well-ordered, so this splitting process must terminate after finitely many steps. In an arbitrary PID, however, there is no such ordering of the elements; termination must instead be deduced from the algebraic structure of the ideals.
 \end{steps}
 \end{content}
 
@@ -1821,7 +1842,7 @@ This completes Step 3 and establishes \cref{lem:part3-step3-existence}.
 \begin{steps}[Summary of the Three-Step Proof]
 \begin{description}
     \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} In any domain where irreducible elements are prime, factorizations into irreducibles are unique up to permutation and associates (\textbf{Uniqueness}).
-    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} In a PID, every irreducible element generates a maximal ideal, hence a prime ideal (\cref{cor:maximal-is-prime}). By Step 1, factorizations in a PID are unique.
+    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} In a PID, every irreducible element generates a prime ideal. By Step 1, factorizations in a PID are unique.
     \item[Step 3:] \textbf{\cref{lem:part3-step3-existence}:} In a PID, there is no strictly ascending infinite chain of principal ideals (every ascending chain stabilizes), ruling out infinite factorization branches and proving that every non-zero non-unit admits a factorization into irreducibles (\textbf{Existence}).
 \end{description}
 \end{steps}
@@ -1871,7 +1892,7 @@ Equivalently, $z \mid x \iff (x) \subseteq (z)$.
 \end{notation}
 
 \begin{definition}[Greatest Common Divisor (GCD)]\label[definition]{def:gcd-ufd}
-Let $R$ be a unique factorization domain (UFD), and let $x, y \in R \setminus \{0\}$. An element $z \in R$ is called a \newterm{greatest common divisor} of $x$ and $y$ (written $z \sim \operatorname{GCD}(x, y)$) if the following two conditions hold:
+Let $R$ be a unique factorization domain (UFD), and let $x, y \in R \setminus \{0\}$. An element $z \in R$ is called a \newterm{greatest common divisor} of $x$ and $y$ (written $z = \operatorname{GCD}(x, y)$) if the following two conditions hold:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Common Divisor:} $z \mid x$ and $z \mid y$.
     \item \textbf{Greatest Divisor:} If $w \in R$ satisfies $w \mid x$ and $w \mid y$, then $w \mid z$.
@@ -1913,7 +1934,6 @@ Let $R$ be an integral domain. Two elements $p, \hat{p} \in R$ are called \newte
 \begin{equation}\label{eq:part4-associate-def}
 p \sim \hat{p} :\iff \exists u \in \mathcal{U}_R \quad \text{such that} \quad p = u \cdot \hat{p}.
 \end{equation}
-Equivalently, $p \sim \hat{p} \iff (p) = (\hat{p})$.
 \end{definition}
 
 \begin{hidden}
@@ -1966,6 +1986,11 @@ In any UFD, the relation of being associate is an equivalence relation on the se
 \end{itemize}
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Associates and Ideals]
+% [PERSISTENT, ADDITION]
+In an integral domain, $p \sim \hat{p} \iff (p) = (\hat{p})$.
+\end{aiNote}
 
 \subsection{Formulas for GCD and LCM in Terms of Factorizations}
 
@@ -2032,7 +2057,7 @@ z \sim \operatorname{GCD}(x, y) \iff z = w \cdot \prod_{i=1}^k p_i^{\min(n_i, m_
 \end{theorem}
 
 \begin{steps}[Why the Formula Holds]
-Write $d := \prod_i p_i^{\min(n_i, m_i)}$; it divides $x$ and $y$. The key fact is: \emph{in a UFD, a non-zero $w$ divides $x$ if and only if every irreducible factor of $w$ is associate to some $p_i$, with exponent at most $n_i$.} (If $x = w t$, factor $w$ and $t$ into irreducibles; their concatenation is a factorization of $x$, and uniqueness matches it with $u \, p_1^{n_1} \cdots p_k^{n_k}$.) So a common divisor $w$ of $x$ and $y$ has the form $w = v \prod_i p_i^{e_i}$ with $v \in \mathcal{U}_R$ and $e_i \le \min(n_i, m_i)$, hence $w \mid d$. If $z$ is another greatest common divisor, then $z \mid d$ and $d \mid z$, so $z = w d$ and $d = w' z$ give $d = w' w d$, and cancelling $d \neq 0$ shows that $w$ is a unit.
+Going beyond the lecture: write $d := \prod_i p_i^{\min(n_i, m_i)}$; it divides $x$ and $y$. The key fact is: \emph{in a UFD, a non-zero $w$ divides $x$ if and only if every irreducible factor of $w$ is associate to some $p_i$, with exponent at most $n_i$.} (If $x = w t$, factor $w$ and $t$ into irreducibles; their concatenation is a factorization of $x$, and uniqueness matches it with $u \, p_1^{n_1} \cdots p_k^{n_k}$.) So a common divisor $w$ of $x$ and $y$ has the form $w = v \prod_i p_i^{e_i}$ with $v \in \mathcal{U}_R$ and $e_i \le \min(n_i, m_i)$, hence $w \mid d$. If $z$ is another greatest common divisor, then $z \mid d$ and $d \mid z$, so $z = w d$ and $d = w' z$ give $d = w' w d$, and cancelling $d \neq 0$ shows that $w$ is a unit.
 \end{steps}
 
 \begin{example}[GCD Computation for $6$ and $4$ in $\mathbb{Z}$]\label[example]{ex:part4-gcd-6-4}
@@ -2063,7 +2088,7 @@ Okay?
 
 \begin{content}[Definition and Formula for the Least Common Multiple]
 \begin{definition}[Least Common Multiple (LCM)]\label[definition]{def:lcm-ufd}
-Let $R$ be a unique factorization domain, and let $x, y \in R \setminus \{0\}$. An element $\ell \in R$ is called a \newterm{least common multiple} of $x$ and $y$ (written $\ell \sim \operatorname{LCM}(x, y)$) if:
+Let $R$ be a unique factorization domain, and let $x, y \in R \setminus \{0\}$. An element $\ell \in R$ is called a \newterm{least common multiple} of $x$ and $y$ (written $\ell = \operatorname{LCM}(x, y)$) if:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Common Multiple:} $x \mid \ell$ and $y \mid \ell$.
     \item \textbf{Least Multiple:} If $w \in R$ satisfies $x \mid w$ and $y \mid w$, then $\ell \mid w$.
@@ -2111,8 +2136,8 @@ Let $R$ be a unique factorization domain. For any two non-zero elements $x, y \i
 That is, there exists a unit $u \in \mathcal{U}_R$ such that $\operatorname{GCD}(x, y) \cdot \operatorname{LCM}(x, y) = u \cdot x \cdot y$.
 \end{proposition}
 
-\begin{proof}
-Using the canonical factorizations \eqref{eq:part4-x-grouped-fact} and \eqref{eq:part4-y-grouped-fact}:
+\begin{steps}[Why the Identity Holds]
+Going beyond the lecture: using the canonical factorizations \eqref{eq:part4-x-grouped-fact} and \eqref{eq:part4-y-grouped-fact}:
 \begin{align*}
 \operatorname{GCD}(x, y) \cdot \operatorname{LCM}(x, y) &\sim \left( \prod_{i=1}^k p_i^{\min(n_i, m_i)} \right) \cdot \left( \prod_{i=1}^k p_i^{\max(n_i, m_i)} \right) \\
 &= \prod_{i=1}^k p_i^{\min(n_i, m_i) + \max(n_i, m_i)}.
@@ -2122,14 +2147,15 @@ For any two real numbers (or non-negative integers), $\min(n_i, m_i) + \max(n_i,
 \prod_{i=1}^k p_i^{\min(n_i, m_i) + \max(n_i, m_i)} = \prod_{i=1}^k p_i^{n_i + m_i} = \left( \prod_{i=1}^k p_i^{n_i} \right) \cdot \left( \prod_{i=1}^k p_i^{m_i} \right) \sim x \cdot y.
 \]
 This establishes the identity up to multiplication by units.
-\end{proof}
+\end{steps}
+\end{content}
 
-\begin{remark}[The GCD as a Linear Combination: PIDs versus UFDs]\label[remark]{rem:gcd-bezout-pid}
+\begin{aiNote}[Beyond the Lecture: The GCD as a Linear Combination]
+% [PERSISTENT, ADDITION]
 In a PID, the ideal $(x, y)$ is principal, say $(x, y) = (d)$. Then $d$ is a greatest common divisor of $x$ and $y$: it divides both, as $x, y \in (d)$; and every common divisor $w$ of $x$ and $y$ divides every element $a x + b y$ of $(x, y)$, in particular $d$. Since $d \in (x, y)$, we get \newterm{Bézout's identity} $d = a x + b y$ for some $a, b \in R$, as in $\mathbb{Z}$ (\cref{fact:pre-bezout}).
 
 In a UFD that is not a PID this fails. In $k[x, y]$, the elements $x$ and $y$ are non-associate irreducibles, so $\operatorname{GCD}(x, y) \sim 1$, but $(x, y) \neq (1)$ (\cref{ans:kx-ky-pid}): $1$ is not of the form $a x + b y$. Likewise $\operatorname{GCD}(2, x) \sim 1$ in $\mathbb{Z}[x]$, while $(2, x)$ is a proper ideal (\cref{ex:non-pids}). In a general UFD, greatest common divisors exist (\cref{thm:gcd-formula-ufd}) but need not be linear combinations.
-\end{remark}
-\end{content}
+\end{aiNote}
 
 \section{Formal Power Series as a PID}
 
@@ -2175,13 +2201,13 @@ Consequently, if $I \subseteq k[[x]]$ is a non-zero ideal, let $d := \min \{ \op
 This lecture established the core structural theorems linking principal ideal domains and unique factorization domains:
 \begin{itemize}
     \item \textbf{Ideals and Polynomials:} While univariate polynomial rings $k[x]$ over a field are PIDs, multivariate polynomial rings $k[x_1, \dots, x_n]$ are never PIDs for $n \ge 2$ (e.g., $(x, y)$ is non-principal, and $(x^2, xy, y^2)$ requires three generators). By the Hilbert Basis Theorem, they are Noetherian rings (every ideal is finitely generated).
-    \item \textbf{Factorization Terminology:} In an integral domain $R$, an irreducible element cannot be factored into two non-units ($x = yz \implies y \in \mathcal{U}_R \lor z \in \mathcal{U}_R$). A prime element generates a principal prime ideal ($p \mid ab \implies p \mid a \lor p \mid b$). Every prime element is irreducible; the converse holds in UFDs (and, by Step~2, in PIDs) but fails in general, e.g.\ for $x^2 \in \mathbb{Q}[x^2, x^3]$.
-    \item \textbf{Unique Factorization Domains:} A domain is a UFD if every non-zero, non-unit factors into irreducibles (Existence) uniquely up to permutation and unit associates (Uniqueness). The subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ (the coordinate ring of the cuspidal cubic) fails to be a UFD because $x^6 = (x^2)^3 = (x^3)^2$.
+    \item \textbf{Factorization Terminology:} In an integral domain $R$, an irreducible element cannot be factored into two non-units ($x = yz \implies y \in \mathcal{U}_R \lor z \in \mathcal{U}_R$). A prime element generates a principal prime ideal ($p \mid ab \implies p \mid a \lor p \mid b$). In a PID, every irreducible element generates a prime ideal (Step~2).
+    \item \textbf{Unique Factorization Domains:} A domain is a UFD if every non-zero, non-unit factors into irreducibles (Existence) uniquely up to permutation and unit associates (Uniqueness). The subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ (whose picture is a cusp) fails to be a UFD because $x^6 = (x^2)^3 = (x^3)^2$.
     \item \textbf{Theorem A ($\text{PID} \implies \text{UFD}$):}
     \begin{description}
         \item[Step 1:] \textbf{Uniqueness Criterion:} Irreducible implies prime yields uniqueness of factorizations.
-        \item[Step 2:] \textbf{Irreducible Implies Prime:} In a PID, every irreducible element generates a maximal (hence prime) ideal, establishing uniqueness.
-        \item[Step 3:] \textbf{Ascending Chain Condition:} By the ACC on principal ideals in a PID, any strictly ascending chain $(x_0) \subsetneq (x_1) \subsetneq \dots$ terminates because the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$ is principal, forcing $(x_N) = J$. This rules out infinite factorization branches and establishes existence.
+        \item[Step 2:] \textbf{Irreducible Implies Prime:} In a PID, every irreducible element generates a prime ideal, establishing uniqueness.
+        \item[Step 3:] \textbf{No Infinite Chains:} In a PID, a strictly ascending chain $(x_0) \subsetneq (x_1) \subsetneq \dots$ cannot go on forever, because the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$ is principal, forcing $(x_N) = J$. This rules out infinite factorization branches and establishes existence.
     \end{description}
     \item \textbf{GCD, LCM, and Power Series:} GCDs and LCMs exist in any UFD via minimum and maximum exponents of prime factorizations (unique up to units), satisfying $\operatorname{GCD}(x, y) \cdot \operatorname{LCM}(x, y) \sim x \cdot y$. Finally, formal power series rings $k[[x]]$ are PIDs, hence UFDs.
 \end{itemize}

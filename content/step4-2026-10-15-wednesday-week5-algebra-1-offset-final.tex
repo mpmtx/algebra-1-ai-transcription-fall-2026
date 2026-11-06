@@ -97,8 +97,8 @@ In this lecture, we complete the general ideal-theoretic formulation of the Chin
 \begin{itemize}
     \item \textbf{The Canonical Product Homomorphism:} Definition of the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ and verification of well-definedness via the ideal inclusions $IJ \subseteq I, J$.
     \item \textbf{Failure of Isomorphism for Non-Coprime Ideals:} A concrete counterexample in $\mathbb{Z}$ with $I = (4)$ and $J = (6)$, illustrating that $\phi$ fails to be either injective or surjective when ideals are not coprime.
-    \item \textbf{The Chinese Remainder Theorem:} Proof that coprimality ($I + J = (1)$) implies that $\phi$ is an isomorphism, utilizing the partition of unity identity $i + j = 1$.
-    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi^{\text{tot}}(n)$ alongside the irregular prime $691$ and Bernoulli numbers.
+    \item \textbf{The Chinese Remainder Theorem:} Proof that coprimality ($I + J = (1)$) implies that $\phi$ is an isomorphism, using the identity $i + j = 1$.
+    \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi^{\text{tot}}(n)$ alongside the prime $691$ and the Bernoulli number $B_{12}$.
     \item \textbf{Polynomial Rings over Fields:} Rigorous definition of the degree function on $k[x]$, the convention of leaving $\deg(0)$ undefined, and polynomial long division with remainder.
     \item \textbf{Principal Ideal Domains (PIDs):} Proof via well-ordering of degrees that every ideal in $k[x]$ is principal, the formal definition of a PID, and non-examples such as $\mathbb{Z}[x]$ and $\mathbb{C}[x, y]$.
 \end{itemize}
@@ -131,8 +131,8 @@ And this is always a homomorphism: $\phi$ is a homomorphism in general \inlineme
 \begin{content}[The Canonical Product Homomorphism]
 Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals.
 \begin{itemize}
-    \item \textbf{Sum of Ideals:} $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, \, j \in J \}$ is the smallest ideal of $R$ containing both $I$ and $J$.
-    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \, i_r \in I, \, j_r \in J \right\}$ is an ideal of $R$ satisfying $IJ \subseteq I \cap J \subseteq I, J$.
+    \item \textbf{Sum of Ideals:} $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, \, j \in J \}$ is an ideal of $R$.
+    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \, i_r \in I, \, j_r \in J \right\}$ is an ideal of $R$ with $IJ \subseteq I$ and $IJ \subseteq J$, so $IJ \subseteq I \cap J$.
 \end{itemize}
 
 \begin{definition}[Canonical Product Homomorphism]\label[definition]{def:canonical-crt-map}
@@ -231,7 +231,7 @@ The canonical homomorphism is:
 Going beyond the lecture: notice that $| \faktor{\mathbb{Z}}{24\mathbb{Z}} | = 24$, whereas $| \faktor{\mathbb{Z}}{4\mathbb{Z}} \times \faktor{\mathbb{Z}}{6\mathbb{Z}} | = 4 \times 6 = 24$. Even though the two finite rings have the exact same cardinality, $\phi$ fails to be bijective because:
 \begin{enumerate}[label=\textbf{(\alph*)}]
     \setcounter{enumi}{0} \item The sum of the ideals is $(4) + (6) = \operatorname{GCD}(4, 6)\mathbb{Z} = 2\mathbb{Z} \neq \mathbb{Z}$, so $4$ and $6$ are not coprime.
-    \setcounter{enumi}{1} \item The kernel of the map $\phi$ is $I \cap J = \operatorname{LCM}(4, 6)\mathbb{Z} = 12\mathbb{Z}$, which strictly contains the product ideal $IJ = 24\mathbb{Z}$.
+    \setcounter{enumi}{1} \item The intersection $I \cap J = \operatorname{LCM}(4, 6)\mathbb{Z} = 12\mathbb{Z}$ strictly contains the product ideal $IJ = 24\mathbb{Z}$, and the kernel of $\phi$ consists of the classes of the elements of $I \cap J$, so it is not zero.
 \end{enumerate}
 \end{steps}
 \end{content}
@@ -546,14 +546,19 @@ For a prime power $p^k$ ($k \ge 1$), the elements in $\{1, 2, \dots, p^k\}$ that
 \]
 There are exactly $\frac{p^k}{p} = p^{k-1}$ such multiples. Subtracting these from the total of $p^k$ elements gives:
 \begin{equation}\label{eq:phi-prime-power}
-\phi^{\text{tot}}(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1) = p^k \left(1 - \frac{1}{p}\right).
+\phi^{\text{tot}}(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1).
 \end{equation}
 Since the order of a direct product of finite groups is the product of their orders, taking cardinalities in \eqref{eq:units-zn-formula} yields:
 \begin{equation}\label{eq:euler-general-formula}
-\phi^{\text{tot}}(n) = \prod_{i=1}^r \phi^{\text{tot}}\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right).
+\phi^{\text{tot}}(n) = \prod_{i=1}^r \phi^{\text{tot}}\left(p_i^{k_i}\right) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1).
 \end{equation}
 \end{theorem}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Formula with Fractions]
+% [PERSISTENT, ADDITION]
+Textbooks often write these formulas as $\phi(p^k) = p^k \left(1 - \frac{1}{p}\right)$ and $\phi(n) = n \prod_{i=1}^r \left(1 - \frac{1}{p_i}\right)$.
+\end{aiNote}
 
 \begin{speech}[00:20:45 - 00:22:20]
 It's a formula that almost looks like if you know what this totient thing, since all the primes are here, it seems like you could reconstruct the actual number, because all its prime factorization is here. But it's not true! It's because of these $(p_i - 1)$'s. They confuse the issue. Like if you take a prime number... well, I can tell you a personal thing: my favorite prime number.
@@ -565,13 +570,13 @@ Have you ever heard of this prime number? It's like one of the most famous prime
 Okay, so, I think this is more or less what I wanted to say about the Chinese Remainder Theorem.
 \end{speech}
 
-\begin{content}[The Irregular Prime 691 and Bernoulli Numbers]
+\begin{content}[The Prime 691 and Bernoulli Numbers]
 \begin{example}[Euler's Totient on the Prime 691]\label[example]{ex:prime-691}
 For the prime $p = 691$, the value of Euler's totient function is:
 \begin{equation}\label{eq:phi-691}
 \phi(691) = 691 - 1 = 690 = 2 \cdot 3 \cdot 5 \cdot 23.
 \end{equation}
-The prime $691$ is famous in algebraic number theory as the numerator of the 12th Bernoulli number $B_{12}$:
+The prime $691$ is famous in mathematics as the numerator of the 12th Bernoulli number $B_{12}$:
 \begin{equation}\label{eq:bernoulli-12}
 B_{12} = -\frac{691}{2730}.
 \end{equation}
@@ -888,7 +893,7 @@ Let $I \subseteq k[x]$ be an ideal.
 Combining inclusions gives $I = (f)$, proving that $I$ is principal.
 \end{proof}
 
-\begin{steps}[Parallel with the Euclidean Algorithm in $\mathbb{Z}$]
+\begin{steps}[Parallel with the Integers]
 This proof mirrors the classical proof that every ideal in $\mathbb{Z}$ is principal ($I = (n)$):
 \begin{itemize}
     \item \textbf{Ring of Integers $\mathbb{Z}$:} One selects the non-zero element $n \in I$ with the smallest absolute value (or smallest positive integer) and uses integer division with remainder $a = q n + r$ ($0 \le r < |n|$).
@@ -962,12 +967,17 @@ An integral domain $R$ is called a \newterm{principal ideal domain} (abbreviated
 \begin{examples}[Examples and Non-Examples of PIDs]\label[examples]{ex:pid-overview}
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{The Integers $\mathbb{Z}$ (\textcolor{ForestGreen}{PID}):} Every ideal in $\mathbb{Z}$ has the form $n\mathbb{Z} = (n)$. Since $\mathbb{Z}$ is an integral domain, $\mathbb{Z}$ is a PID.
-    \setcounter{enumi}{1} \item \textbf{Quotient Ring \texorpdfstring{$\faktor{\mathbb{Z}}{6\mathbb{Z}}$}{Z/6Z} (\textcolor{BrickRed}{NOT a PID}):} Although every ideal in $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is principal, $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is \emph{not} an integral domain because it contains zero divisors ($2 \cdot 3 \equiv 0 \pmod 6$).
+    \setcounter{enumi}{1} \item \textbf{Quotient Ring \texorpdfstring{$\faktor{\mathbb{Z}}{6\mathbb{Z}}$}{Z/6Z} (\textcolor{BrickRed}{NOT a PID}):} $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is \emph{not} an integral domain because it contains zero divisors ($2 \cdot 3 \equiv 0 \pmod 6$).
     \setcounter{enumi}{2} \item \textbf{Any Field $k$ (\textcolor{ForestGreen}{PID}):} If $k$ is a field, its only ideals are $(0)$ and $(1) = k$. Both are principal, and $k$ is an integral domain, so every field is a PID.
     \setcounter{enumi}{3} \item \textbf{Polynomial Ring $k[x]$ over a Field (\textcolor{ForestGreen}{PID}):} By \cref{prop:kx-ideals-principal}, every ideal in $k[x]$ is principal. Since $k[x]$ has no zero divisors when $k$ is a field, $k[x]$ is a PID.
 \end{enumerate}
 \end{examples}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Ideals of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$]
+% [PERSISTENT, ADDITION]
+Every ideal of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is principal. The ring fails to be a PID only because it is not an integral domain.
+\end{aiNote}
 
 \subsection{Rings that are Not Principal Ideal Domains}
 
@@ -1003,14 +1013,14 @@ And another way you could do it, if you have a field with polynomials in two var
     \begin{equation}\label{eq:ideal-2-x}
     I := (2, x) = \{ 2 p(x) + x q(x) \mid p(x), q(x) \in \mathbb{Z}[x] \}
     \end{equation}
-    consists of all polynomials in $\mathbb{Z}[x]$ whose constant term is even. It cannot be generated by a single polynomial, so $\mathbb{Z}[x]$ is not a PID.
+    cannot be generated by a single polynomial, so $\mathbb{Z}[x]$ is not a PID.
     
     \setcounter{enumi}{1} \item \textbf{Polynomials in Two Variables $\mathbb{C}[x, y]$ (\textcolor{BrickRed}{NOT a PID}):}
-    In the polynomial ring in two variables over $\mathbb{C}$ (or any field $k$), the maximal ideal:
+    In the polynomial ring in two variables over $\mathbb{C}$ (or any field $k$), the ideal:
     \begin{equation}\label{eq:ideal-x-y}
     J := (x, y) = \{ x p(x, y) + y q(x, y) \mid p, q \in \mathbb{C}[x, y] \}
     \end{equation}
-    consisting of all polynomials without constant term, requires at least two generators. No single polynomial in $\mathbb{C}[x, y]$ can divide both $x$ and $y$ simultaneously while generating all elements in $J$; a proof is given at the start of Week~6 (\cref{ans:kx-ky-pid}).
+    requires at least two generators. No single polynomial in $\mathbb{C}[x, y]$ can divide both $x$ and $y$ simultaneously while generating all elements in $J$; a proof is given at the start of Week~6 (\cref{ans:kx-ky-pid}).
 \end{enumerate}
 \end{examples}
 
@@ -1019,16 +1029,16 @@ Prove that the ideal $(2, x) \subset \mathbb{Z}[x]$ is not principal.
 \end{exercise}
 
 \begin{steps}[Proof Hint for \cref{exer:prove-2-x-not-principal}]
-Going beyond the lecture: suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but $(2, x)$ contains only polynomials with even constant terms, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
+Going beyond the lecture: suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but every element $2 p(x) + x q(x)$ of $(2, x)$ has an even constant term, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
 \end{steps}
 \end{content}
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subseteq R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without coprimality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
-    \item \textbf{Chinese Remainder Theorem:} When $I + J = (1) = R$, there exist $i \in I$ and $j \in J$ such that $i + j = 1$. This partition of unity ensures that $\phi$ is an isomorphism, yielding explicit solutions $z = jx + iy$ to simultaneous systems of congruences.
-    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi^{\text{tot}}(n) = n \prod_{p \mid n} (1 - 1/p)$. The function mixes primes via $p - 1$, preventing direct inversion (a cornerstone of cryptography and connected to irregular primes such as $691 \mid \text{numerator}(B_{12})$).
-    \item \textbf{Polynomial Rings $k[x]$ over Fields:} For a field $k$, polynomials enjoy Euclidean long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
+    \item \textbf{Chinese Remainder Theorem:} When $I + J = (1) = R$, there exist $i \in I$ and $j \in J$ such that $i + j = 1$. This equation ensures that $\phi$ is an isomorphism, yielding explicit solutions $z = jx + iy$ to simultaneous systems of congruences.
+    \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi^{\text{tot}}(n) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$. The terms $p_i - 1$ mix the primes, so $n$ cannot be recovered from this value (for example $\phi^{\text{tot}}(691) = 690$).
+    \item \textbf{Polynomial Rings $k[x]$ over Fields:} For a field $k$, polynomials have long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
     \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subseteq k[x]$ is generated by any non-zero element of minimal degree, proving that $k[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
 \end{itemize}
 \end{overview}

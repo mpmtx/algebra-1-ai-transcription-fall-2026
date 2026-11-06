@@ -234,7 +234,7 @@ And the reason is because for all of the binomial coefficients, $\binom{p}{a}$, 
 So, you'll always have... if you look at the exponent being prime in this binomial theorem, all of the middle coefficients here will all have that prime in it. So, if I look at it in $\faktor{\mathbb{Z}}{p\mathbb{Z}}$, I get this great formula where there's no... So, this is a well-known formula, it will come up. Okay. So, that's an aside about the binomial formula.
 \end{speech}
 
-\begin{content}[The Freshman's Dream in Characteristic \texorpdfstring{$p$}{p}]
+\begin{content}[The Binomial Formula Modulo \texorpdfstring{$p$}{p}]
 \begin{lemma}[Divisibility of Binomial Coefficients by a Prime]\label[lemma]{lem:prime-divides-binomial}
 Let $p$ be a prime number. For every integer $a \in \{1, 2, \dots, p-1\}$, the prime $p$ divides the binomial coefficient $\binom{p}{a}$:
 \begin{equation}\label{eq:prime-divides-binom}
@@ -299,7 +299,7 @@ Lowest term, exactly. You could have used the lowest term here, but psychologica
 But, okay, so, this is also an integral domain.
 \end{speech}
 
-\begin{content}[Integral Domain Properties: Degrees vs. Orders]
+\begin{content}[Integral Domain Properties: Highest and Lowest Terms]
 \begin{theorem}[Preservation of the Integral Domain Property]\label[theorem]{thm:domain-poly-power-series}
 If $R$ is an integral domain, then:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
@@ -317,16 +317,12 @@ Since $1 \neq 0$ in $R$, also $1 \neq 0$ in $R[x]$ and in $R[[x]]$; it remains t
     a_n b_m x^{n+m}.
     \]
     Since $R$ is an integral domain, $a_n b_m \neq 0$. Thus, $f g \neq 0$ and $\deg(f g) = \deg(f) + \deg(g)$.
-    \item \textbf{For $R[[x]]$ (Lowest Degree / Order Term):}
-    A formal power series does not have a maximal degree, but every non-zero series $f = \sum_{k=0}^\infty a_k x^k$ has a well-defined \newterm{order} (minimal non-zero index):
-    \[
-    \operatorname{ord}(f) := \min \{ k \in \mathbb{N} \mid a_k \neq 0 \}.
-    \]
-    We write $f = x^n (a_n + a_{n+1} x + \dots)$ with $a_n \neq 0$, and $g = x^m (b_m + b_{m+1} x + \dots)$ with $b_m \neq 0$. The lowest non-vanishing term of the Cauchy product (\cref{def:power-series-multiplication}) is:
+    \item \textbf{For $R[[x]]$ (Lowest Term):}
+    A power series does not have a highest term, but every non-zero series has a lowest term. We write $f = x^n (a_n + a_{n+1} x + \dots)$ with $a_n \neq 0$, and $g = x^m (b_m + b_{m+1} x + \dots)$ with $b_m \neq 0$. The lowest non-vanishing term of the Cauchy product (\cref{def:power-series-multiplication}) is:
     \[
     a_n b_m x^{n+m}.
     \]
-    Since $R$ is an integral domain, $a_n b_m \neq 0$. Consequently, $f g \neq 0$ with $\operatorname{ord}(f g) = \operatorname{ord}(f) + \operatorname{ord}(g)$.
+    Since $R$ is an integral domain, $a_n b_m \neq 0$. Consequently, $f g \neq 0$.
 \end{enumerate}
 \end{proof}
 \end{content}
@@ -342,7 +338,7 @@ So, maybe rational functions with coefficients in $R$. This is polynomials with 
 \end{speech}
 
 \begin{content}[The Field of Rational Functions]
-Recall that for any integral domain $R$, its \newterm{field of fractions} $\operatorname{Frac}(R)$ consists of equivalence classes of formal quotients $\frac{a}{b}$ with $a, b \in D$ and $b \neq 0$ (\cref{def:field-of-fractions}).
+Recall that for any integral domain $R$, its \newterm{field of fractions} $\operatorname{Frac}(R)$ consists of equivalence classes of formal quotients $\frac{a}{b}$ with $a, b \in R$ and $b \neq 0$ (\cref{def:field-of-fractions}).
 
 \begin{definition}[Field of Rational Functions $R(x)$]\label[definition]{def:rational-functions}
 Let $R$ be an integral domain, so that $R[x]$ is an integral domain (\cref{thm:domain-poly-power-series}). The field of fractions of the polynomial ring $R[x]$ is denoted by round parentheses $R(x)$ and is called the \newterm{field of rational functions}:
@@ -426,12 +422,12 @@ So, anyway, that's just this comment here. This field of Laurent series, it turn
 \begin{theorem}[Algebraic Characterization of $R((x))$]\label[theorem]{thm:laurent-field-isomorphism}
 When $K$ is a field, the set of formal Laurent series with finitely many negative powers forms a field under formal addition and multiplication, and is naturally isomorphic to the field of fractions of $K[[x]]$:
 \begin{equation}\label{eq:laurent-isomorphism}
-\operatorname{Frac}(K[[x]]) \cong K((x)) = K[[x]][x^{-1}].
+\operatorname{Frac}(K[[x]]) \cong K((x)).
 \end{equation}
 \end{theorem}
 
 \begin{steps}[Why Invertibility Holds and Why Infinitely Many Negative Terms Fail]
-Going beyond the lecture:
+Going beyond the lecture, which only sketches both points:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Invertibility in $K((x))$:}
     Any non-zero Laurent series can be factored as $f(x) = x^k u(x)$, where $k \in \mathbb{Z}$ is the minimal index with $a_k \neq 0$, and $u(x) = a_k + a_{k+1} x + \dots \in K[[x]]$ with $a_k \neq 0$. Since $K$ is a field, the leading coefficient $a_k$ is a unit in $K$, so $u(x)$ is an invertible unit in the power series ring $K[[x]]$ (\cref{thm:units-power-series-ring}). Its multiplicative inverse is:
@@ -450,7 +446,7 @@ Going beyond the lecture:
 
 \begin{aiNote}[Beyond the Lecture: Why $K$ Must Be a Field]
 % [PERSISTENT, ADDITION]
-For an integral domain $R$ that is not a field, the Laurent series with coefficients in $R$ do not form a field, so they cannot be all of $R((x)) = \operatorname{Frac}(R[[x]])$. For $R = \mathbb{Z}$, the constant series $2$ has no inverse among the Laurent series over $\mathbb{Z}$: comparing constant terms in $2 \cdot g = 1$ would give $2 c_0 = 1$ with $c_0 \in \mathbb{Z}$. Yet $\frac{1}{2}$ lies in $\operatorname{Frac}(\mathbb{Z}[[x]])$. In general, the Laurent series over $R$ form a subring of $\operatorname{Frac}(R[[x]])$, via $x^{-N} g \mapsto \frac{g}{x^N}$, and the two coincide precisely when $R$ is a field.
+For an integral domain $R$ that is not a field, the Laurent series with coefficients in $R$ do not form a field, so they cannot be all of $R((x)) = \operatorname{Frac}(R[[x]])$. For $R = \mathbb{Z}$, the constant series $2$ has no inverse among the Laurent series over $\mathbb{Z}$: comparing constant terms in $2 \cdot g = 1$ would give $2 c_0 = 1$ with $c_0 \in \mathbb{Z}$. Yet $\frac{1}{2}$ lies in $\operatorname{Frac}(\mathbb{Z}[[x]])$. In general, the Laurent series over $R$ form a subring of $\operatorname{Frac}(R[[x]])$, via $x^{-N} g \mapsto \frac{g}{x^N}$, and the two coincide precisely when $R$ is a field. For a field $K$, one can also write $K((x)) = K[[x]][x^{-1}]$.
 \end{aiNote}
 
 \begin{hidden}
@@ -840,7 +836,7 @@ So, the question is: how do I name an element? \inlinemetanote{writes: How do I 
 \begin{definition}[The Quotient Set \texorpdfstring{$\faktor{R}{I}$}{R/I}]\label[definition]{def:quotient-set}
 The underlying set of the quotient ring $\faktor{R}{I}$ is defined as the set of all equivalence classes of $R$ with respect to the equivalence relation $\equiv_I$:
 \begin{equation}\label{eq:quotient-set-def}
-\faktor{R}{I} := \faktor{R}{{\equiv_I}} = \{ [x] \mid x \in R \}.
+\faktor{R}{I} := \{ \bar{x} \mid x \in R \}.
 \end{equation}
 \end{definition}
 \end{content}
@@ -862,16 +858,16 @@ An element of $\faktor{R}{I}$ is an equivalence class containing elements of $R$
     \item[1. Overline Notation:] \textbf{$\bar{x} \in \faktor{R}{I}$:} Denoted $\bar{x} \in \faktor{R}{I}$. This is compact and mirrors the notation used for residue classes $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ (\cref{def:residue-class-ring}).
     \item[2. Shift Notation:] \textbf{$x + I \subseteq R$:} Explicitly writing the equivalence class as an affine shift of the ideal:
     \begin{equation}\label{eq:coset-explicit-def}
-    [x] = x + I := \{ x + i \mid i \in I \} \subseteq R.
+    \bar{x} = x + I := \{ x + i \mid i \in I \} \subseteq R.
     \end{equation}
     Since $y \equiv x \iff y - x = i \in I \iff y = x + i$, the equivalence class of $x$ is literally the subset $x + I$.
-    \item[3. Bare Representative:] \textbf{$[x]$ or $x \in \faktor{R}{I}$:} Writing simply $[x]$ or, by abuse of notation, $x \in \faktor{R}{I}$. While by far the most common in advanced algebra, this requires carefully tracking whether $x$ represents an individual ring element in $R$ or an entire equivalence class in $\faktor{R}{I}$ (the \qt{data type} in one's head).
+    \item[3. Bare Representative:] \textbf{$x \in \faktor{R}{I}$:} Writing simply $x \in \faktor{R}{I}$, by abuse of notation. While by far the most common, this requires carefully tracking whether $x$ represents an individual ring element in $R$ or an entire equivalence class in $\faktor{R}{I}$ (the \qt{data type} in one's head).
 \end{description}
 \end{content}
 
 \begin{aiNote}[Terminology: Cosets]
 % [PERSISTENT]
-Many textbooks call the set $x + I$ a \emph{coset} of $I$. The lecture does not use this word: the lecturer says equivalence class or residue class. These notes follow him.
+Many textbooks call the set $x + I$ a \emph{coset} of $I$. The lecture does not use this word: the lecturer says equivalence class or residue class. These notes follow him. In that language, the operations defined below read $(x + I) + (y + I) = (x + y) + I$ and $(x + I) \cdot (y + I) = (x \cdot y) + I$.
 \end{aiNote}
 
 \subsection{Step 2 \& 3: Distinguished Elements and the Well-Definedness of Addition}
@@ -898,7 +894,7 @@ The distinguished neutral elements in the quotient ring $\faktor{R}{I}$ are defi
 \begin{definition}[Addition on \texorpdfstring{$\faktor{R}{I}$}{R/I}]\label[definition]{def:addition-quotient}
 For any two equivalence classes $\bar{x}, \bar{y} \in \faktor{R}{I}$, their sum is defined by adding representatives in $R$:
 \begin{equation}\label{eq:addition-quotient-formula}
-\bar{x} + \bar{y} \stackrel{\text{def}}{=} \overline{x + y}, \quad \text{or equivalently} \quad (x + I) + (y + I) \stackrel{\text{def}}{=} (x + y) + I.
+\bar{x} + \bar{y} \stackrel{\text{def}}{=} \overline{x + y}.
 \end{equation}
 \end{definition}
 \end{content}
@@ -948,7 +944,7 @@ Thus, the sum is independent of representatives.
 \end{proof}
 
 \begin{steps}[The Quotient Additive Group]
-Since addition is well-defined, associativity, commutativity, the identity $\bar{0}$, and inverses $-\bar{x} = \overline{-x}$ all inherit directly from $(R, +, 0)$. Hence, $(\faktor{R}{I}, +, \bar{0})$ forms an abelian group.
+Going beyond the lecture, which leaves this to the students: since addition is well-defined, associativity, commutativity, the identity $\bar{0}$, and inverses $-\bar{x} = \overline{-x}$ all inherit directly from $(R, +, 0)$. Hence, $(\faktor{R}{I}, +, \bar{0})$ forms an abelian group.
 \end{steps}
 \end{content}
 
@@ -978,7 +974,7 @@ And it is in $I$, and here finally we use the fact that if you have an element o
 \begin{definition}[Multiplication on \texorpdfstring{$\faktor{R}{I}$}{R/I}]\label[definition]{def:multiplication-quotient}
 For equivalence classes $\bar{x}, \bar{y} \in \faktor{R}{I}$, their product is defined by multiplying representatives in $R$:
 \begin{equation}\label{eq:multiplication-quotient-def}
-\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=} \overline{x \cdot y}, \quad \text{or equivalently} \quad (x + I) \cdot (y + I) \stackrel{\text{def}}{=} (x \cdot y) + I.
+\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=} \overline{x \cdot y}.
 \end{equation}
 \end{definition}
 \end{content}
@@ -1009,11 +1005,11 @@ Since $(I, +, 0)$ is closed under addition:
 \[
 i y + j x + i j \in I \implies \overline{x y + i y + j x + i j} = \overline{x y} = \bar{x} \cdot \bar{y}.
 \]
-Therefore, multiplication on $\faktor{R}{I}$ is strictly well-defined.
+Therefore, multiplication on $\faktor{R}{I}$ is well-defined.
 \end{proof}
 
 \begin{steps}[Why Subrings Fail and Ideals are Necessary]
-If $I$ were merely an additive subgroup or a subring (closed under multiplication within itself, but not absorbing arbitrary elements of $R$), the terms $i y$ and $j x$ would generally fail to lie in $I$, causing the multiplication on equivalence classes to collapse! \textbf{This step is the sole reason why ideals, rather than general subrings, are required to define quotient rings.}
+Going beyond the lecture: if $I$ were merely an additive subgroup or a subring (closed under multiplication within itself, but not absorbing arbitrary elements of $R$), the terms $i y$ and $j x$ would generally fail to lie in $I$, causing the multiplication on equivalence classes to collapse! \textbf{This step is the sole reason why ideals, rather than general subrings, are required to define quotient rings.}
 \end{steps}
 \end{content}
 
@@ -1093,15 +1089,15 @@ equipped with the operations on classes:
 forms a commutative ring with identity.
 \end{theorem}
 
-\begin{proof}
-Having proven that addition and multiplication are well-defined, the remaining ring axioms follow directly from the ring axioms of $R$ applied to representatives:
+\begin{steps}[The Remaining Ring Axioms]
+Going beyond the lecture, which checks the identity and leaves the rest to the students: having proven that addition and multiplication are well-defined, the remaining ring axioms follow directly from the ring axioms of $R$ applied to representatives:
 \begin{itemize}
     \item \textbf{Multiplicative Identity:} $\bar{1} \cdot \bar{x} = \overline{1 \cdot x} = \bar{x}$ for all $\bar{x} \in \faktor{R}{I}$.
     \item \textbf{Associativity:} $(\bar{x} \cdot \bar{y}) \cdot \bar{z} = \overline{(x y) z} = \overline{x (y z)} = \bar{x} \cdot (\bar{y} \cdot \bar{z})$.
     \item \textbf{Distributivity:} $\bar{x} \cdot (\bar{y} + \bar{z}) = \overline{x (y + z)} = \overline{x y + x z} = (\bar{x} \cdot \bar{y}) + (\bar{x} \cdot \bar{z})$.
     \item \textbf{Commutativity:} $\bar{x} \cdot \bar{y} = \overline{x y} = \overline{y x} = \bar{y} \cdot \bar{x}$.
 \end{itemize}
-\end{proof}
+\end{steps}
 \end{content}
 
 \begin{hidden}
@@ -1300,7 +1296,7 @@ Using the definitions of the classes in $\faktor{R}{\ker(f)}$ and the ring homom
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Preservation of Zero:}
     \[
-    \bar{f}(\bar{0}) = f(0_R) = 0_S.
+    \bar{f}(\bar{0}) \stackrel{\text{def}}{=} f(0_R) = 0_S.
     \]
     \item \textbf{Preservation of Identity:}
     \[
@@ -1663,11 +1659,16 @@ Is the quotient ring $\faktor{\mathbb{Q}[x]}{(x^2 + 1)}$ an integral domain?
 
 \begin{answer}
 \textbf{Yes! In fact, it is a field.}
-Notice that the factorization $x^2 + 1 = (x + i)(x - i)$ used over $\mathbb{C}$ is unavailable in $\mathbb{Q}[x]$, because $i \notin \mathbb{Q}$. In fact, $x^2 + 1$ is \newterm{irreducible} over $\mathbb{Q}$: it is not a product of two non-constant polynomials in $\mathbb{Q}[x]$, because such a factorization would consist of two linear factors and give a rational root of $x^2 + 1$. We will prove that $\faktor{\mathbb{Q}[x]}{(x^2 + 1)}$ is isomorphic to the field of Gaussian rationals $\mathbb{Q}[i]$.
+Notice that the factorization $x^2 + 1 = (x + i)(x - i)$ used over $\mathbb{C}$ is unavailable in $\mathbb{Q}[x]$, because $i \notin \mathbb{Q}$. We will prove that $\faktor{\mathbb{Q}[x]}{(x^2 + 1)}$ is isomorphic to the field of Gaussian rationals $\mathbb{Q}[i]$.
 \end{answer}
 \end{content}
 
-\subsection{Construction of the Evaluation Homomorphism at \texorpdfstring{$i$}{i}}
+\begin{aiNote}[Beyond the Lecture: $x^2 + 1$ Has No Factorization over $\mathbb{Q}$]
+% [PERSISTENT, ADDITION]
+The polynomial $x^2 + 1$ is not a product of two non-constant polynomials in $\mathbb{Q}[x]$: such a factorization would consist of two linear factors and give a rational root of $x^2 + 1$. In the language of Week~6, it is irreducible in $\mathbb{Q}[x]$ (\cref{def:irreducible}).
+\end{aiNote}
+
+\subsection{Evaluation at \texorpdfstring{$i$}{i}}
 
 \begin{speech}[01:20:56 - 01:22:36]
 We know the complex numbers, so, we write it down. \inlinemetanote{writes: $\mathbb{C}$} And I take $\mathbb{Q}$... \inlinemetanote{writes: $\mathbb{Q} \to \mathbb{C}$} $\mathbb{Q}$ embeds in the complex numbers. There is no doubt about that. And now I look at the polynomial ring. \inlinemetanote{writes \qt{$\cap$} and \qt{$\mathbb{Q}[x]$} under $\mathbb{Q}$} 
@@ -1693,7 +1694,7 @@ So, as I said, you can just prove that from scratch in your head here, because I
 % open_loops: none
 \end{hidden}
 
-\begin{content}[The Evaluation Homomorphism at \texorpdfstring{$i$}{i}]
+\begin{content}[Evaluation at \texorpdfstring{$i$}{i}]
 Let $\iota \colon \mathbb{Q} \hookrightarrow \mathbb{C}$ denote the canonical inclusion of fields. By the universal property of polynomial rings (\cref{thm:universal-property-polynomial-ring}), specifying the image of the indeterminate $x$ uniquely determines a ring homomorphism extending $\iota$.
 
 \begin{center}
@@ -1713,8 +1714,8 @@ Let $\iota \colon \mathbb{Q} \hookrightarrow \mathbb{C}$ denote the canonical in
 \end{tikzpicture}
 \end{center}
 
-\begin{definition}[Evaluation Homomorphism at $i$]\label[definition]{def:evaluation-homomorphism-i}
-We define the \newterm{evaluation homomorphism} at the imaginary unit $i \in \mathbb{C}$ by:
+\begin{definition}[Evaluation at $i$]\label[definition]{def:evaluation-homomorphism-i}
+We define the homomorphism given by evaluation at the imaginary unit $i \in \mathbb{C}$:
 \begin{equation}\label{eq:eval-homomorphism-def}
 f \colon \mathbb{Q}[x] \longrightarrow \mathbb{C}, \qquad f(p(x)) := p(i).
 \end{equation}
@@ -1732,7 +1733,7 @@ The middle equalities, such as $(p \cdot q)(i) = p(i) \cdot q(i)$, are not autom
 \end{steps}
 \end{content}
 
-\subsection{Image of the Evaluation Homomorphism and the First Isomorphism Theorem}
+\subsection{The Image of Evaluation at \texorpdfstring{$i$}{i} and the First Isomorphism Theorem}
 
 \begin{speech}[01:22:36 - 01:23:27]
 What is the image of this? \inlinemetanote{writes: What is $\operatorname{Im}(f) = ?$} 
@@ -1758,7 +1759,7 @@ So, now it would be nice to know what this kernel is. What is the kernel? \inlin
 
 \begin{content}[Image of $f$ and Application of the First Isomorphism Theorem]
 \begin{proposition}[Image of the Evaluation Map]\label[proposition]{prop:image-eval-map}
-The image of the evaluation homomorphism $f \colon \mathbb{Q}[x] \to \mathbb{C}$ is the field of Gaussian rationals (\cref{ex:frac-gaussian-integers}):
+The image of the homomorphism $f \colon \mathbb{Q}[x] \to \mathbb{C}$ is the field of Gaussian rationals (\cref{ex:frac-gaussian-integers}):
 \begin{equation}\label{eq:image-gaussian-rationals}
 \operatorname{Im}(f) = \mathbb{Q}[i] := \{ a + b i \mid a, b \in \mathbb{Q} \} \subset \mathbb{C}.
 \end{equation}
@@ -1887,7 +1888,7 @@ Okay. Made it in time. That's it. \inlinemetanote{puts down the chalk and conclu
 
 \begin{content}[Proof that \texorpdfstring{$\ker(f) = (x^2+1)$}{ker(f) = (x^2+1)} and Final Isomorphism]
 \begin{theorem}[Equality of Kernel and Principal Ideal]\label[theorem]{thm:kernel-equals-ideal}
-The kernel of the evaluation homomorphism $f \colon \mathbb{Q}[x] \to \mathbb{C}$ at $i$ is precisely the principal ideal generated by $x^2 + 1$:
+The kernel of the homomorphism $f \colon \mathbb{Q}[x] \to \mathbb{C}$ is precisely the principal ideal generated by $x^2 + 1$:
 \begin{equation}\label{eq:kernel-equals-ideal}
 \ker(f) = (x^2 + 1).
 \end{equation}
@@ -1935,7 +1936,7 @@ In particular, $\faktor{\mathbb{Q}[x]}{(x^2 + 1)}$ is an integral domain and a f
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Several Variables and the Binomial Formula:} $R[x, y]$ consists of the finite sums $\sum a_{i,j} x^i y^j$, or equivalently $R[x, y] = (R[x])[y]$. The binomial formula $(x + y)^n = \sum_{a=0}^n x^{n-a} y^a \binom{n}{a}$ holds in every commutative ring; since $p \mid \binom{p}{a}$ for $0 < a < p$, it becomes $(x + y)^p = x^p + y^p$ over $\faktor{\mathbb{Z}}{p\mathbb{Z}}$.
-    \item \textbf{Polynomial and Power Series Rings:} The rings $R[x]$ and $R[[x]]$ preserve the integral domain property of $R$, relying on the highest-degree terms and lowest-degree orders, respectively.
+    \item \textbf{Polynomial and Power Series Rings:} The rings $R[x]$ and $R[[x]]$ preserve the integral domain property of $R$, relying on the highest term and the lowest term, respectively.
     \item \textbf{Laurent Series and Rational Functions:} The field of rational functions $R(x)$ is $\operatorname{Frac}(R[x])$, while over a field $K$ the field of formal Laurent series $K((x))$ (finitely many negative powers) is naturally isomorphic to $\operatorname{Frac}(K[[x]])$.
     \item \textbf{Ideals and Well-Defined Quotients:} An ideal $I \subset R$ requires additive closure and multiplicative absorption ($R \cdot I \subseteq I$). In constructing the quotient ring $\faktor{R}{I}$, the additive subgroup condition guarantees well-defined addition, while the absorption property is strictly required to ensure well-defined multiplication of classes.
     \item \textbf{The First Isomorphism Theorem for Rings:} Every ring homomorphism $f \colon R \to S$ induces a canonical ring isomorphism $\bar{f} \colon \faktor{R}{\ker(f)} \overset{\cong}{\to} \operatorname{Im}(f)$ via $\bar{x} \mapsto f(x)$.

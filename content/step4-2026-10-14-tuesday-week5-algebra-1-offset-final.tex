@@ -98,7 +98,7 @@ In this lecture, we explore the structural theory of ideals in commutative rings
 \begin{itemize}
     \item \textbf{The Ideal Correspondence and Quotients of Quotients:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, and use it to describe a quotient of a quotient: $\faktor{\left(\faktor{R}{K}\right)}{J} \cong \faktor{R}{q^{-1}(J)}$.
     \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{m}$ is a field if and only if $m$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
-    \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine non-prime ideals via smooth functions with compact support $C_c^\infty(\mathbb{R}) \subset C^\infty(\mathbb{R})$.
+    \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine a non-prime ideal: the smooth functions with compact support inside $C^\infty(\mathbb{R})$.
     \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and coprime ideals ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
 \end{itemize}
 \end{overview}
@@ -116,9 +116,9 @@ And the correspondence we proved last time, which I said, it's just absolutely f
 \end{speech}
 
 \begin{content}[The Correspondence Theorem for Ideals: Setup]
-Let $R$ be a ring and $K \subset R$ an ideal. Consider the canonical quotient projection map:
+Let $R$ be a ring and $K \subset R$ an ideal. Consider the quotient map:
 \begin{equation}\label{eq:canonical-quotient-map}
-q \colon R \to \faktor{R}{K}, \quad x \mapsto [x] = x + K.
+q \colon R \to \faktor{R}{K}, \quad x \mapsto \bar{x} = x + K.
 \end{equation}
 
 We define the following sets of ideals:
@@ -147,10 +147,10 @@ So, one more step of this is that this is a way to just, if you have ideals here
 
 \begin{content}[The Correspondence Theorem for Ideals: Bijection]
 \begin{theorem}[Ideal Correspondence Theorem]\label[theorem]{thm:ideal-correspondence}
-Let $R$ be a ring and $K \subset R$ an ideal, with canonical projection $q \colon R \to \faktor{R}{K}$. The assignment:
+Let $R$ be a ring and $K \subset R$ an ideal, with quotient map $q \colon R \to \faktor{R}{K}$. The assignment:
 \begin{equation}\label{eq:ideal-bijection}
 \begin{aligned}
-\Phi \colon \operatorname{cl}_K(R) &\longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right) \\
+\operatorname{cl}_K(R) &\longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right) \\
 I &\longmapsto q(I) = \faktor{I}{K} \\
 q^{-1}(J) &\mathrel{\reflectbox{$\longmapsto$}} J
 \end{aligned}
@@ -307,13 +307,18 @@ Depending on whether one starts from the ideal $J \subset \faktor{R}{K}$ or the 
     \[
     \boxed{\faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{q(I)}}
     \]
-    \setcounter{enumi}{2} \item \textbf{Going beyond the lecture, the textbook formulation (writing $q(I) = \faktor{I}{K}$), known as the Third Isomorphism Theorem:}
+    \setcounter{enumi}{2} \item \textbf{The way it is usually seen in books (writing $q(I) = \faktor{I}{K}$):}
     \[
     \faktor{R}{I} \cong \faktor{\left(\faktor{R}{K}\right)}{\left(\faktor{I}{K}\right)}
     \]
 \end{enumerate}
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Name]
+% [PERSISTENT, ADDITION]
+Textbooks call this statement the Third Isomorphism Theorem. The lecturer gives it no name.
+\end{aiNote}
 
 \begin{overview}[On the Board: Informal Fraction Mnemonic]
 The lecturer writes down an informal arithmetic mnemonic to remember the cancellation of quotient rings:
@@ -594,7 +599,7 @@ We combine \cref{prop:field-zero-maximal} with the Ideal Correspondence Theorem 
 \end{proof}
 
 \begin{steps}[Why the Bijection Yields the Equivalence]
-Under the canonical projection $q \colon R \to \faktor{R}{m}$, the bijection:
+Under the quotient map $q \colon R \to \faktor{R}{m}$, the bijection:
 \[
 \operatorname{cl}_m(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{m}\right)
 \]
@@ -691,7 +696,7 @@ equipped with the partial order:
 \begin{equation}\label{eq:poset-inclusion-order}
 I \le J \stackrel{\text{def}}{\iff} I \subseteq J \quad (\text{written on the board as } I \subset J).
 \end{equation}
-Two proper ideals $I, J \in \operatorname{cl}^*(R)$ are incomparable if neither $I \subseteq J$ nor $J \subseteq I$ holds (for instance, in $\mathbb{Z}$, the ideals $(2)$ and $(3)$ are incomparable).
+Two proper ideals $I, J \in \operatorname{cl}^*(R)$ are incomparable if neither $I \subseteq J$ nor $J \subseteq I$ holds.
 \end{example}
 \end{content}
 
@@ -755,7 +760,7 @@ For the set $S = \operatorname{cl}^*(R)$ equipped with the subset relation $\sub
     \setcounter{enumi}{1} \item \textbf{Antisymmetry:} For any $I, J \in \operatorname{cl}^*(R)$, if $I \subseteq J$ and $J \subseteq I$, then $I = J$ by definition of set equality.
     \setcounter{enumi}{2} \item \textbf{Transitivity:} For any $I, J, K \in \operatorname{cl}^*(R)$, if $I \subseteq J$ and $J \subseteq K$, then $I \subseteq K$.
 \end{enumerate}
-Thus, $(\operatorname{cl}^*(R), \subseteq)$ is rigorously a poset.
+Thus, $(\operatorname{cl}^*(R), \subseteq)$ is a poset.
 \end{example}
 \end{content}
 
@@ -791,10 +796,10 @@ Let $R$ be a ring. An ideal $m \subset R$ is a maximal ideal of $R$ in the sense
 \begin{steps}[Maximal Element vs. Maximum / Greatest Element]
 Going beyond the lecture: it is crucial to distinguish between a \textbf{maximal element} and a \textbf{greatest element} (or maximum):
 \begin{itemize}
-    \item \textbf{Greatest Element (Maximum):} An element $m \in S$ such that $y \le m$ for \emph{all} $y \in S$. A greatest element must be comparable to every element in the poset.
+    \item \textbf{Greatest Element (Maximum):} An element $g \in S$ such that $y \le g$ for \emph{all} $y \in S$. A greatest element must be comparable to every element in the poset.
     \item \textbf{Maximal Element:} An element $x \in S$ such that \emph{no} element strictly exceeds it ($x \le y \implies x = y$). There can be multiple incomparable maximal elements in a poset!
 \end{itemize}
-In $(\operatorname{cl}^*(R), \subseteq)$, there is generally no greatest element, but there can be many distinct maximal ideals (e.g., in $\mathbb{Z}$, the ideals $(2), (3), (5), \dots$ are all maximal elements of $\operatorname{cl}^*(\mathbb{Z})$).
+In $(\operatorname{cl}^*(R), \subseteq)$, there is generally no greatest element, but there can be many distinct maximal ideals (e.g., in $\mathbb{Z}$, the ideals $(2), (3), (5), \dots$ are all maximal elements of $\operatorname{cl}^*(\mathbb{Z})$, and $(2)$ and $(3)$ are incomparable).
 \end{steps}
 
 \begin{center}
@@ -890,8 +895,8 @@ That's the definition of a chain. That's the abstract definition of a chain, and
 \end{speech}
 
 \begin{content}
-\begin{definition}[Chain / Totally Ordered Subset]\label[definition]{def:chain-poset}
-Let $(S, \le)$ be a partially ordered set. A subset $T \subseteq S$ is called a \newterm{chain} (or \newterm{totally ordered subset}) if every two elements in $T$ are comparable:
+\begin{definition}[Chain]\label[definition]{def:chain-poset}
+Let $(S, \le)$ be a partially ordered set. A subset $T \subseteq S$ is called a \newterm{chain} if every two elements in $T$ are comparable:
 \begin{equation}\label{eq:chain-condition}
 \forall x, y \in T \colon \quad x \le y \quad \lor \quad y \le x.
 \end{equation}
@@ -979,7 +984,7 @@ Okay, that's it.
 
 \begin{content}[Bounding Chains of Ideals and the Existence of Maximal Ideals]
 \begin{lemma}[Chains of Proper Ideals Are Bounded]\label[lemma]{lem:chains-ideals-bounded}
-Let $R$ be a non-zero ring and let $T \subseteq \operatorname{cl}^*(R)$ be a chain of proper ideals. Then the union:
+Let $R$ be a non-zero ring and let $T \subseteq \operatorname{cl}^*(R)$ be a non-empty chain of proper ideals. Then the union:
 \begin{equation}\label{eq:union-of-chain-ideals}
 K := \bigcup_{I \in T} I
 \end{equation}
@@ -1005,14 +1010,14 @@ Every non-zero commutative ring $R \neq 0$ contains at least one maximal ideal.
 Let $R \neq 0$ be a non-zero ring. Consider the poset $S = \operatorname{cl}^*(R)$ of proper ideals ordered by inclusion.
 \begin{itemize}
     \item Since $R \neq 0$, the zero ideal $(0)$ is a proper ideal ($(0) \neq R$), so $S = \operatorname{cl}^*(R)$ is non-empty.
-    \item By \cref{lem:chains-ideals-bounded}, every chain $T \subseteq S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$.
+    \item By \cref{lem:chains-ideals-bounded}, every non-empty chain $T \subseteq S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$; the empty chain is bounded by any element of $S$.
 \end{itemize}
 By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one maximal element $m$. By \cref{prop:max-element-ideal-equiv}, $m$ is a maximal ideal of $R$.
 \end{proof}
 
 \begin{steps}[Why the Chain Property is Crucial for Unions of Ideals]
-Going beyond the lecture: in general, the union of two arbitrary ideals $I_1 \cup I_2$ is almost \textbf{never} an ideal! For example, in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$, but not $2 + 3 = 5$.
-The union $\bigcup_{I \in T} I$ is an ideal \textbf{if and only if} the collection $T$ is directed, which is guaranteed because $T$ is a chain: any two elements $a, b \in K$ are trapped inside a common larger ideal $I_{\max} \in T$, allowing additive closure to hold.
+Going beyond the lecture: in general, the union of two ideals $I_1 \cup I_2$ need not be an ideal. For example, in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$, but not $2 + 3 = 5$.
+For a chain $T$, the union $\bigcup_{I \in T} I$ is an ideal: any two elements $a, b \in K$ lie in one common ideal of $T$, so additive closure holds.
 \end{steps}
 \end{content}
 
@@ -1067,8 +1072,13 @@ Actually, I don't like the idea that the work in math I do is dependent on these
 \end{content}
 
 \begin{insight}[The Martian Thought Experiment and Non-Constructive Mathematics]
-The lecturer highlights a fundamental philosophical dilemma in algebra: the existence of maximal ideals relies on Zorn's Lemma, which is logically equivalent to the Axiom of Choice ($\text{AC}$). Consequently, the proof is entirely non-constructive. It asserts that every non-zero commutative ring possesses a maximal ideal, but provides no algebraic algorithm to identify or construct it. A mathematician operating within constructive set theory (such as a hypothetical \qt{Martian} whose foundational framework excludes $\text{AC}$) could not accept this proof. In geometric algebra, however (such as coordinate rings of algebraic varieties), maximal ideals correspond directly to geometric points via Hilbert's Nullstellensatz, enabling explicit constructive proofs without invoking Zorn's Lemma.
+The lecturer highlights a fundamental philosophical dilemma in algebra: the existence of maximal ideals relies on Zorn's Lemma, which is a form of the Axiom of Choice. Consequently, the proof gives no hint of how to construct a maximal ideal. A \qt{Martian} from a different mathematical culture, with different foundations, could have the same definition of rings and say that the statement cannot be proved. In the specialized classes of rings the lecturer works with, maximal ideals can be constructed by other methods, without Zorn's Lemma.
 \end{insight}
+
+\begin{aiNote}[Beyond the Lecture: Rings Where No Zorn Is Needed]
+% [PERSISTENT, ADDITION]
+In coordinate rings of algebraic varieties, for example, maximal ideals correspond to points by Hilbert's Nullstellensatz, so they can be written down without Zorn's Lemma.
+\end{aiNote}
 
 \section{Prime Ideals}
 
@@ -1104,7 +1114,7 @@ Let $R$ be a commutative ring and let $P \subset R$ be an ideal. Then $P$ is a \
 \end{definition}
 
 \begin{steps}[Contrapositive Formulation of the Prime Condition]
-The prime condition written on the board:
+Going beyond the lecture: the prime condition written on the board:
 \[
 a \notin P \land b \notin P \implies a b \notin P
 \]
@@ -1442,10 +1452,10 @@ Okay? That's kind of a fun example.
 \begin{example}[Compactly Supported Functions Do Not Form a Prime Ideal]\label[example]{ex:compact-support-not-prime-p4}
 Let $R = C^\infty(\mathbb{R})$ be the ring of smooth functions under pointwise operations. Consider the ideal of functions with compact support (Week~2, \cref{def:compact-support-ideal}, \cref{prop:compact-support-ideal}):
 \begin{equation}\label{eq:compact-support-ideal-p4}
-I = C_c^\infty(\mathbb{R}) := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact} \}.
+I := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact} \}.
 \end{equation}
 \begin{question}
-Is $I = C_c^\infty(\mathbb{R})$ a prime ideal of $C^\infty(\mathbb{R})$?
+Is $I$ a prime ideal of $C^\infty(\mathbb{R})$?
 \end{question}
 \begin{answer}
 \textcolor{BrickRed}{\textbf{No}}, $I$ is not a prime ideal.
@@ -1466,8 +1476,8 @@ Is $I = C_c^\infty(\mathbb{R})$ a prime ideal of $C^\infty(\mathbb{R})$?
 % - Collisions: none; paths and labels are well-separated vertically.
 % \end{hidden}
     \draw[->, thick, gray!70] (-3.2, 0) -- (4.2, 0) node[right, text=black] {$\mathbb{R}$};
-    \draw[thick] (1, 0.08) -- (1, -0.08) node[below, font=\small] {$1$};
-    \draw[thick] (2, 0.08) -- (2, -0.08) node[below, font=\small] {$2$};
+    \draw[thick] (1, 0.08) -- (1, -0.08) node[below, font=\small] {$0$};
+    \draw[thick] (2, 0.08) -- (2, -0.08) node[below, font=\small] {$1$};
     
     % Function a(x) in BrickRed
     \draw[ultra thick, BrickRed, domain=1:2, samples=40] 
@@ -1495,21 +1505,26 @@ Is $I = C_c^\infty(\mathbb{R})$ a prime ideal of $C^\infty(\mathbb{R})$?
 \begin{proof}[Verification of Counterexample]
 We construct two smooth functions $a, b \in C^\infty(\mathbb{R})$:
 \begin{align*}
-a(x) &= \begin{cases} > 0 & \text{for } x < 2, \\ 0 & \text{for } x \ge 2, \end{cases} \\
-b(x) &= \begin{cases} 0 & \text{for } x \le 1, \\ > 0 & \text{for } x > 1. \end{cases}
+a(x) &= \begin{cases} > 0 & \text{for } x < 1, \\ 0 & \text{for } x \ge 1, \end{cases} \\
+b(x) &= \begin{cases} 0 & \text{for } x \le 0, \\ > 0 & \text{for } x > 0. \end{cases}
 \end{align*}
 Then:
 \begin{itemize}
-    \item $\operatorname{supp}(a) = (-\infty, 2]$ is unbounded, so $a \notin C_c^\infty(\mathbb{R})$.
-    \item $\operatorname{supp}(b) = [1, \infty)$ is unbounded, so $b \notin C_c^\infty(\mathbb{R})$.
-    \item However, their pointwise product satisfies $(a \cdot b)(x) = 0$ for all $x \notin [1, 2]$. Thus, $\operatorname{supp}(a \cdot b) \subseteq [1, 2]$ is compact, which means:
+    \item $\operatorname{supp}(a) = (-\infty, 1]$ is unbounded, so $a \notin I$.
+    \item $\operatorname{supp}(b) = [0, \infty)$ is unbounded, so $b \notin I$.
+    \item However, their pointwise product satisfies $(a \cdot b)(x) = 0$ for all $x \notin [0, 1]$. Thus, $\operatorname{supp}(a \cdot b) \subseteq [0, 1]$ is compact, which means:
     \[
-    a \cdot b \in C_c^\infty(\mathbb{R}).
+    a \cdot b \in I.
     \]
 \end{itemize}
-Since $a \notin I$ and $b \notin I$, yet $a b \in I$, the ideal $I = C_c^\infty(\mathbb{R})$ is not a prime ideal.
+Since $a \notin I$ and $b \notin I$, yet $a b \in I$, the ideal $I$ is not a prime ideal.
 \end{proof}
 \end{content}
+
+\begin{aiNote}[Notation: Compactly Supported Functions]
+% [PERSISTENT]
+Many textbooks write $C_c^\infty(\mathbb{R})$ for this ideal, and Week~2 of these notes does too (\cref{def:compact-support-ideal}). The lecturer calls it $I$.
+\end{aiNote}
 
 \section{The Chinese Remainder Theorem}
 
@@ -1542,7 +1557,6 @@ z &\equiv x \pmod a, \\
 z &\equiv y \pmod b.
 \end{aligned}
 \end{equation}
-Moreover, the solution $z$ is uniquely determined modulo $ab$.
 \end{theorem}
 \end{content}
 
@@ -1565,7 +1579,7 @@ z &\equiv 2 \pmod 5, \\
 z &\equiv 1 \pmod 7.
 \end{aligned}
 \end{equation}
-Since $\operatorname{GCD}(5, 7) = 1$, the Chinese Remainder Theorem guarantees the existence of a unique solution modulo $5 \cdot 7 = 35$.
+Since $\operatorname{GCD}(5, 7) = 1$, the Chinese Remainder Theorem guarantees a solution.
 
 Testing successive integers congruent to $2 \pmod 5$:
 \[
@@ -1579,9 +1593,14 @@ Evaluating these candidates modulo $7$:
 17 &\equiv 3 \pmod 7 && (\text{fails}) \\
 22 &\equiv 1 \pmod 7 && (\text{\textcolor{ForestGreen}{success!}})
 \end{align*}
-Thus, $z = 22$ is a solution, and the complete set of solutions in $\mathbb{Z}$ is $z \equiv 22 \pmod{35}$.
+Thus, $z = 22$ is a solution.
 \end{example}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Uniqueness of the Solution]
+% [PERSISTENT, ADDITION]
+The solution is unique modulo $ab$: this follows from the injectivity of $\phi$ in the next lecture (\cref{thm:crt-two-ideals}). In this example, the solutions are exactly the integers $z \equiv 22 \pmod{35}$.
+\end{aiNote}
 
 \subsection{Operations on Ideals: Sum, Product, and Coprimality}
 
@@ -1912,8 +1931,8 @@ All right, so, we don't have much time, but I should be able to prove at least h
 The map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ is a ring homomorphism.
 \end{lemma}
 
-\begin{proof}
-Let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
+\begin{steps}[Checking the Homomorphism Property]
+Going beyond the lecture, which leaves this to the students: let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Additive Homomorphism:}
     \begin{align*}
@@ -1934,8 +1953,8 @@ Let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
     \phi(1 + IJ) = (1 + I, \ 1 + J) = 1_{\faktor{R}{I} \times \faktor{R}{J}}.
     \]
 \end{enumerate}
-Thus, $\phi$ is a unital ring homomorphism.
-\end{proof}
+Thus, $\phi$ is a ring homomorphism.
+\end{steps}
 \end{content}
 
 \subsubsection{Proof of Injectivity}
@@ -2015,7 +2034,7 @@ This proves $\ker(\phi) = \{ \bar{0} \}$, and hence $\phi$ is injective.
 \end{proof}
 
 \begin{steps}[The Essential Mechanism of the Injectivity Proof]
-The proof reveals that for any two coprime ideals $I$ and $J$ in a commutative ring:
+Going beyond the lecture: the proof shows that for any two coprime ideals $I$ and $J$ in a commutative ring:
 \[
 I \cap J = I J.
 \]
@@ -2036,6 +2055,6 @@ This identity $I \cap J = I J$ ensures that $\ker(\phi) = \faktor{(I \cap J)}{IJ
     \item \textbf{Maximal Ideals and Fields:} An ideal $m \subset R$ is maximal if and only if $\faktor{R}{m}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
     \item \textbf{Maximal Ideals via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
     \item \textbf{Prime Ideals and Integral Domains:} An ideal $P \subset R$ is prime if and only if $\faktor{R}{P}$ is an integral domain. Consequently, every maximal ideal is prime, and every non-zero commutative ring possesses at least one prime ideal.
-    \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the coprimality decomposition $1 = i + j$, establishing that $I \cap J = IJ$.
+    \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the decomposition $1 = i + j$, multiplied by $z$.
 \end{itemize}
 \end{overview}

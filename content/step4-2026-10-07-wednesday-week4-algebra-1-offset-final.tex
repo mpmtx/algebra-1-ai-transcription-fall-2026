@@ -41,9 +41,9 @@
 \begin{overview}[Context and Overview]
 In this lecture, we explore the algebraic architecture of quotient rings and the structural behavior of ideals under ring homomorphisms:
 \begin{itemize}
-    \item \textbf{Review of Quotient Rings and the Canonical Projection:} We revisit the construction of $\faktor{R}{I}$ for an ideal $I \subset R$, the well-definedness of its operations, and the canonical quotient homomorphism $q \colon R \to \faktor{R}{I}$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
-    \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} We prove that the preimage (pullback) $f^{-1}(J)$ of an ideal $J \subset S$ under any ring homomorphism $f \colon R \to S$ is always an ideal of $R$, whereas forward images generally fail to be ideals unless the map is surjective.
-    \item \textbf{The Correspondence Theorem for Ideals:} We formulate and rigorously prove the correspondence of ideals, establishing an inclusion-preserving bijection between the ideals of the quotient ring $\faktor{R}{K}$ and the ideals of $R$ containing the modulo ideal $K$.
+    \item \textbf{Review of Quotient Rings and the Quotient Map:} We revisit the construction of $\faktor{R}{I}$ for an ideal $I \subset R$ and the quotient map $q \colon R \to \faktor{R}{I}$ with $\ker(q) = I$. We also recall the First Isomorphism Theorem for rings.
+    \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} We prove that the preimage (pullback) $f^{-1}(J)$ of an ideal $J \subset S$ under any ring homomorphism $f \colon R \to S$ is always an ideal of $R$, whereas images of ideals generally fail to be ideals.
+    \item \textbf{The Correspondence Theorem for Ideals:} We prove the correspondence of ideals: a bijection between the ideals of the quotient ring $\faktor{R}{K}$ and the ideals of $R$ containing $K$.
     \item \textbf{Maximal Ideals and Fields:} We introduce maximal proper ideals, examine concrete examples in $\mathbb{Z}$, and establish the characterization that a ring $R$ is a field if and only if the zero ideal $(0)$ is maximal.
 \end{itemize}
 \end{overview}
@@ -79,19 +79,11 @@ Equipped with the operations:
 \bar{x} + \bar{y} &\stackrel{\text{def}}{=} \overline{x + y}, \label{eq:quotient-add} \\
 \bar{x} \cdot \bar{y} &\stackrel{\text{def}}{=} \overline{x \cdot y}, \label{eq:quotient-mult}
 \end{align}
-additive identity $\bar{0} = 0 + I = I$, and multiplicative identity $\bar{1} = 1 + I$, the algebraic structure $(\faktor{R}{I}, +, \cdot, \bar{0}, \bar{1})$ forms a well-defined ring.
+additive identity $\bar{0} = 0 + I = I$, and multiplicative identity $\bar{1} = 1 + I$, the structure $(\faktor{R}{I}, +, \cdot, \bar{0}, \bar{1})$ is a ring.
 \end{definition}
-
-\begin{steps}[Well-Definedness of Operations on Classes]
-The well-definedness of addition and multiplication relies directly on $I$ being an ideal:
-\begin{itemize}
-    \item \textbf{Addition:} If $\bar{x} = \bar{x}'$ and $\bar{y} = \bar{y}'$, then $x - x' \in I$ and $y - y' \in I$. Since $I$ is an additive subgroup, $(x + y) - (x' + y') = (x - x') + (y - y') \in I$, so $\overline{x + y} = \overline{x' + y'}$.
-    \item \textbf{Multiplication:} We have $x y - x' y' = (x - x')y + x'(y - y')$. Since $I$ absorbs elements of $R$ from both sides, $(x - x')y \in I$ and $x'(y - y') \in I$, which implies their sum lies in $I$, hence $\overline{x y} = \overline{x' y'}$.
-\end{itemize}
-\end{steps}
 \end{content}
 
-\subsection{The Canonical Quotient Map}
+\subsection{The Quotient Map}
 
 \begin{speech}[00:01:10 - 00:02:45]
 So, then something I didn't say as explicitly, but will be the topic today, is that there is a map called the quotient map. We'll discuss this today. I didn't say this yesterday, but: \inlinemetanote{writes: (ii) $q \colon R \to \faktor{R}{I}$} $R$ to $\faktor{R}{I}$, and this map takes an element here to its equivalence class: \inlinemetanote{writes: $q(x) = \bar{x}$} $q(x) = \bar{x}$.
@@ -107,14 +99,14 @@ And the same is for multiplication. This is in some sense a review of the defini
 
 \begin{content}
 \begin{definition}[Quotient Map]\label[definition]{def:canonical-quotient-map}
-Let $R$ be a ring and $I \subset R$ an ideal. The \newterm{canonical quotient map} (or projection map) is defined by:
+Let $R$ be a ring and $I \subset R$ an ideal. The \newterm{quotient map} is defined by:
 \begin{equation}\label{eq:quotient-map-def}
 q \colon R \to \faktor{R}{I}, \quad x \mapsto q(x) := \bar{x} = x + I.
 \end{equation}
 \end{definition}
 
 \begin{claim}[Homomorphism Property of the Quotient Map]\label[claim]{clm:q-is-homomorphism}
-The projection map $q \colon R \to \faktor{R}{I}$ is a ring homomorphism.
+The quotient map $q \colon R \to \faktor{R}{I}$ is a ring homomorphism.
 \end{claim}
 
 \begin{proof}
@@ -175,9 +167,9 @@ $I$. It kind of has to be $I$ \inlinemetanote{writes: $I$} because, you know, th
 For this, we have to find those elements \inlinemetanote{writes: Find those $x \in R$ such that} --- those $x$ in $R$ --- such that $q(x)$, which equals $\bar{x}$, is equal to zero \inlinemetanote{writes: $q(x) = \bar{x} = \bar{0}$}; and zero is the equivalence class of $I$. So, this is the same thing as $x$ being in $I$ \inlinemetanote{writes: $\bar{x} = \bar{0} \iff x \in I$}. So, it's $I$. It's good to understand that.
 \end{speech}
 
-\begin{content}[Properties of the Canonical Quotient Map]
+\begin{content}[Properties of the Quotient Map]
 \begin{proposition}[Surjectivity and Kernel of the Quotient Map]\label[proposition]{prop:properties-of-q}
-Let $R$ be a ring, $I \subset R$ an ideal, and $q \colon R \to \faktor{R}{I}$ the canonical quotient homomorphism. Then:
+Let $R$ be a ring, $I \subset R$ an ideal, and $q \colon R \to \faktor{R}{I}$ the quotient map. Then:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item $q$ is surjective.
     \item $\ker(q) = I$.
@@ -278,7 +270,7 @@ However, taking $q = \frac{1}{2} \in \mathbb{Q}$ and $x = 2 \in 2\mathbb{Z}$, we
 \[
 q \cdot x = \frac{1}{2} \cdot 2 = 1 \notin 2\mathbb{Z}.
 \]
-Thus, direct images under ring homomorphisms generally fail to absorb external ring elements unless the map is surjective.
+Thus, the image of an ideal under a ring homomorphism need not be an ideal. Going beyond the lecture: under a surjective homomorphism it is an ideal, by the argument given below for the quotient map.
 \end{steps}
 \end{content}
 
@@ -456,7 +448,7 @@ That is, the ideals of the quotient ring $\faktor{R}{K}$ are in exact one-to-one
 \begin{steps}[Conceptual Meaning of the Bijection]
 This theorem reveals the internal structure of quotient rings:
 \begin{itemize}
-    \item \textbf{Ideals in \texorpdfstring{$\faktor{R}{K}$}{R/K} Are Pre-Existing Ideals in $R$:} One does not need to search for new, exotic ideals in the quotient ring $\faktor{R}{K}$. Every ideal in $\faktor{R}{K}$ arises directly from an ideal of $R$ that happens to contain the modulo ideal $K$.
+    \item \textbf{Ideals in \texorpdfstring{$\faktor{R}{K}$}{R/K} Are Pre-Existing Ideals in $R$:} One does not need to search for new, exotic ideals in the quotient ring $\faktor{R}{K}$. Every ideal in $\faktor{R}{K}$ arises directly from an ideal of $R$ that happens to contain $K$.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -613,13 +605,13 @@ So, now I've checked it. I've checked that this is well-defined. So, they're bot
 
 \begin{content}[Ideal Absorption under Multiplication]
 Let $\bar{r} \in \faktor{R}{K}$ be an arbitrary element of the quotient ring, and let $\bar{x} \in q(I)$ with $x \in I$.
-Because the canonical quotient map $q \colon R \to \faktor{R}{K}$ is \textbf{surjective}, the element $\bar{r}$ possesses a preimage $r \in R$ such that $q(r) = \bar{r}$.
+Because the quotient map $q \colon R \to \faktor{R}{K}$ is \textbf{surjective}, the element $\bar{r}$ has a preimage $r \in R$ such that $q(r) = \bar{r}$.
 
 Since $I$ is an ideal of $R$, it absorbs multiplication by any ring element:
 \[
 r \in R, \ x \in I \implies r \cdot x \in I.
 \]
-Applying the quotient homomorphism $q$:
+Applying the quotient map $q$:
 \[
 q(r \cdot x) \in q(I) \implies \overline{r \cdot x} = \bar{r} \cdot \bar{x} \in q(I).
 \]
@@ -945,7 +937,6 @@ Let $R$ be a ring. A subset $m \subset R$ is called a \newterm{maximal ideal} if
     m = \hat{m}.
     \]
 \end{enumerate}
-In other words, $m$ is a maximal element of the set of proper ideals of $R$, ordered by inclusion (\cref{def:pre-partial-order}).
 \end{definition}
 
 \begin{notation}[$\subset$ on the Board]
@@ -960,12 +951,7 @@ Consider the ring of integers $\mathbb{Z}$:
     4\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}.
     \]
     Since $2\mathbb{Z}$ is a proper ideal strictly containing $4\mathbb{Z}$, the ideal $4\mathbb{Z} = (4)$ (\cref{def:ideal-generated-by-elements}) is not maximal.
-    \item \textbf{The Ideals $p\mathbb{Z}$ for Primes $p$ Are Maximal:} For any prime number $p$, the principal ideal $p\mathbb{Z} = (p)$ is a maximal ideal:
-    \[
-    p\mathbb{Z} \subseteq I \subsetneq \mathbb{Z} \implies I = p\mathbb{Z}.
-    \]
-    Indeed, every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subseteq n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$.
-    Thus, the maximal ideals of $\mathbb{Z}$ are precisely the ideals $p\mathbb{Z}$ for prime numbers $p$: the remaining ideals are not maximal, since $m\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $m = ab$ with $1 < a < m$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
+    \item \textbf{The Ideals $p\mathbb{Z}$ for Primes $p$:} The maximal ideals of $\mathbb{Z}$ are the principal ideals $p\mathbb{Z} = (p)$ for prime numbers $p$.
 \end{itemize}
 \end{examples}
 
@@ -989,6 +975,11 @@ R \text{ is a field} \iff (0) \text{ is a maximal ideal of } R.
 Many textbooks write a maximal ideal as $\mathfrak{m}$. The lecturer writes a plain $m$ on the board, here and in Week~5, and these notes follow him.
 \end{aiNote}
 
+\begin{aiNote}[Beyond the Lecture: Why the Maximal Ideals of $\mathbb{Z}$ Are the $p\mathbb{Z}$]
+% [PERSISTENT, ADDITION]
+The lecture states this without proof. Every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subseteq n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$. The remaining ideals are not maximal: $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $n = ab$ with $1 < a < n$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
+\end{aiNote}
+
 \begin{aiNote}[Beyond the Lecture: Completing the Backward Direction and Quotients by Maximal Ideals]
 % [PERSISTENT, ADDITION — refined by Gemini 4 Argon]
 Suppose $(0)$ is a maximal ideal of $R$, so that $R \neq \{0\}$. For any non-zero element $x \in R \setminus \{0\}$, the principal ideal $(x)$ (\cref{def:ideal-generated-by-elements}) strictly contains $(0)$. By maximality of $(0)$, $(x)$ cannot be a proper ideal, forcing $(x) = R$. Therefore, $1 \in (x)$, meaning there exists $y \in R$ such that $x y = 1$, so every non-zero element is invertible and $R$ is a field.
@@ -998,9 +989,9 @@ Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Cor
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Quotient Rings and Canonical Projection:} For any ideal $I \subset R$, the quotient $\faktor{R}{I}$ is a well-defined ring under the operations on classes $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The canonical projection $q \colon R \to \faktor{R}{I}$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$.
-    \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} Under any ring homomorphism $f \colon R \to S$, the preimage $f^{-1}(J)$ of an ideal $J \subset S$ is always an ideal of $R$. Conversely, direct images $f(I)$ generally fail to be ideals (e.g., $2\mathbb{Z} \subset \mathbb{Z} \hookrightarrow \mathbb{Q}$), unless the homomorphism is surjective.
-    \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the lattice of ideals in $\faktor{R}{K}$ is in canonical inclusion-preserving bijection with the lattice of ideals in $R$ containing $K$:
+    \item \textbf{Quotient Rings and the Quotient Map:} For any ideal $I \subset R$, the quotient $\faktor{R}{I}$ is a ring under the operations on classes $\bar{x} + \bar{y} = \overline{x+y}$ and $\bar{x} \bar{y} = \overline{x y}$. The quotient map $q \colon R \to \faktor{R}{I}$ with $x \mapsto \bar{x}$ is a surjective ring homomorphism with $\ker(q) = I$. By the First Isomorphism Theorem, every homomorphism $f \colon R \to S$ induces an isomorphism $\faktor{R}{\ker(f)} \cong \operatorname{Im}(f)$.
+    \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} Under any ring homomorphism $f \colon R \to S$, the preimage $f^{-1}(J)$ of an ideal $J \subset S$ is always an ideal of $R$. Conversely, direct images $f(I)$ generally fail to be ideals (e.g., $2\mathbb{Z} \subset \mathbb{Z} \hookrightarrow \mathbb{Q}$).
+    \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the ideals of $\faktor{R}{K}$ are in canonical bijection with the ideals of $R$ containing $K$:
     \[
     \operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
     \]
