@@ -613,7 +613,7 @@ And this last statement says $f$ is injective if and only if the kernel is the z
 \begin{definition}[The Zero Ideal]\label[definition]{def:zero-ideal}
 In any ring $R$, the singleton set consisting solely of the additive neutral element:
 \begin{equation}\label{eq:zero-ideal-def}
-(0) = \{0\}
+(0) := \{0\}
 \end{equation}
 is an ideal of $R$, called the \newterm{zero ideal}. It is also written simply as $0$.
 \end{definition}
@@ -756,7 +756,7 @@ Anyway, that's the symbol. And so, formally now, you have to check it's an equiv
 \begin{definition}[Congruence Modulo an Ideal]\label[definition]{def:congruence-modulo-ideal}
 Let $R$ be a ring and $I \subset R$ an ideal. For elements $x, y \in R$, we define the relation of \newterm{congruence modulo $I$} (denoted $x \equiv_I y$ or simply $x \equiv y$) by:
 \begin{equation}\label{eq:congruence-def}
-x \equiv y \iff x - y \in I.
+x \equiv y :\iff x - y \in I.
 \end{equation}
 In words, we say that \qt{$x$ is equivalent to $y$ modulo $I$}.
 \end{definition}
@@ -978,7 +978,7 @@ And it is in $I$, and here finally we use the fact that if you have an element o
 \begin{definition}[Multiplication on \texorpdfstring{$\faktor{R}{I}$}{R/I}]\label[definition]{def:multiplication-quotient}
 For equivalence classes $\bar{x}, \bar{y} \in \faktor{R}{I}$, their product is defined by multiplying representatives in $R$:
 \begin{equation}\label{eq:multiplication-quotient-def}
-\bar{x} \cdot \bar{y} := \overline{x \cdot y}, \quad \text{or equivalently} \quad (x + I) \cdot (y + I) := (x \cdot y) + I.
+\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=} \overline{x \cdot y}, \quad \text{or equivalently} \quad (x + I) \cdot (y + I) := (x \cdot y) + I.
 \end{equation}
 \end{definition}
 \end{content}
@@ -1243,7 +1243,7 @@ And actually I wrote out all the steps. In my experience in teaching, it doesn't
 \begin{content}[Definition of $\bar{f}$ and Proof of Well-Definedness]
 We define the induced map:
 \begin{equation}\label{eq:induced-map-def}
-\bar{f} \colon \faktor{R}{\ker(f)} \longrightarrow S, \qquad \bar{f}(\bar{x}) := f(x).
+\bar{f} \colon \faktor{R}{\ker(f)} \longrightarrow S, \qquad \bar{f}(\bar{x}) \stackrel{\text{def}}{=} f(x).
 \end{equation}
 
 \begin{claim}[$\bar{f}$ is Well-Defined]\label[claim]{clm:fbar-well-defined}
@@ -1400,7 +1400,7 @@ Let $\bar{x} \in \ker(\bar{f}) \subseteq \faktor{R}{\ker(f)}$. By definition of 
 \[
 \bar{f}(\bar{x}) = 0_S.
 \]
-Using the definition of the map $\bar{f}(\bar{x}) := f(x)$, this means:
+Using the definition of the map $\bar{f}(\bar{x}) \stackrel{\text{def}}{=} f(x)$, this means:
 \[
 f(x) = 0_S \implies x \in \ker(f).
 \]

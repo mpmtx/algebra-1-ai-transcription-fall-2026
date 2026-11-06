@@ -408,7 +408,7 @@ So, we have to take away $p - 1$, so, the answer is $p^2 - p$. \inlinemetanote{w
 \begin{definition}[Euler's Totient Function]\label[definition]{def:eulers-totient}
 The \newterm{Euler totient function} (or Euler's $\phi$-function) $\phi \colon \mathbb{Z}_{\ge 1} \to \mathbb{Z}_{\ge 1}$ is defined as the order of the group of units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$:
 \begin{equation}\label{eq:totient-def}
-\phi(m) := |(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \gcd(x, m) = 1 \}.
+\phi(m) \stackrel{\text{def}}{=} |(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*| = \#\{ x \in \{0, 1, \dots, m-1\} \mid \gcd(x, m) = 1 \}.
 \end{equation}
 \end{definition}
 
@@ -569,7 +569,7 @@ When we write this, it means various things: it means in particular this one's n
 \begin{definition}[Candidate Map for Field Embedding]\label[definition]{def:candidate-map-g}
 Let $f \colon \mathbb{Z} \to F$ be an injective ring homomorphism into a field $F$. For a rational number represented by $\frac{x}{y} \in \mathbb{Q}$ with $x, y \in \mathbb{Z}$ and $y \ne 0$, we define:
 \begin{equation}\label{eq:candidate-g-def}
-g\left(\frac{x}{y}\right) := f(x) \cdot f(y)^{-1} = \frac{f(x)}{f(y)} \in F.
+g\left(\frac{x}{y}\right) \stackrel{\text{def}}{=} f(x) \cdot f(y)^{-1} = \frac{f(x)}{f(y)} \in F.
 \end{equation}
 \end{definition}
 
@@ -923,7 +923,7 @@ This is the first part where we have to do a little bit of algebra. The first tw
 \begin{definition}[Equivalence Relation on $S$]\label[definition]{def:equiv-relation-S}
 On the set $S = \{ (x, y) \in R \times R \mid y \ne 0 \}$, we define the relation $\equiv$ by:
 \begin{equation}\label{eq:equiv-relation-formula}
-(x_1, y_1) \equiv (x_2, y_2) :\iff x_1 y_2 = x_2 y_1 \quad (\text{in } R).
+(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1 \quad (\text{in } R).
 \end{equation}
 \end{definition}
 
@@ -1228,7 +1228,7 @@ The zero element and multiplicative unit in $F$ are defined by:
 \begin{definition}[Addition on $F$]\label[definition]{def:addition-F}
 For any two equivalence classes $[(x_1, y_1)]$, $[(x_2, y_2)] \in F$, addition is defined by:
 \begin{equation}\label{eq:addition-F-formula}
-[(x_1, y_1)] + [(x_2, y_2)] := [(x_1 y_2 + x_2 y_1, y_1 y_2)].
+[(x_1, y_1)] + [(x_2, y_2)] \stackrel{\text{def}}{=} [(x_1 y_2 + x_2 y_1, y_1 y_2)].
 \end{equation}
 \end{definition}
 
@@ -1302,7 +1302,7 @@ You also have to check it for multiplication. So, it's just a bunch of checking.
 \begin{definition}[Multiplication on $F$]\label[definition]{def:multiplication-F}
 For any $[(x_1, y_1)], [(x_2, y_2)] \in F$, multiplication is defined by:
 \begin{equation}\label{eq:multiplication-F-formula}
-[(x_1, y_1)] \cdot [(x_2, y_2)] := [(x_1 x_2, y_1 y_2)].
+[(x_1, y_1)] \cdot [(x_2, y_2)] \stackrel{\text{def}}{=} [(x_1 x_2, y_1 y_2)].
 \end{equation}
 \end{definition}
 
@@ -1769,7 +1769,7 @@ Under the sequence model \eqref{eq:poly-formal-sequence}:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Indeterminate $x$:} The indeterminate $x$ corresponds to the elementary sequence with $1$ in position $1$:
     \begin{equation}\label{eq:x-as-sequence}
-    x = (0, 1, 0, 0, \dots).
+    x := (0, 1, 0, 0, \dots).
     \end{equation}
     \item \textbf{Constant Elements:} For any $a \in R$, the constant polynomial corresponds to the sequence:
     \begin{equation}\label{eq:constant-as-sequence}
