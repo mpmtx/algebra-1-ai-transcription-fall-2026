@@ -883,15 +883,15 @@ So, the next topic, related to the ideas here, is the notion of a maximal ideal.
 \section{Maximal Ideals}
 
 \begin{speech}[00:37:56 - 00:40:01]
-Okay, so there are different ways to define a maximal ideal. The most simple one is that \inlinemetanote{writes: Notion of a maximal ideal $\mathfrak{m} \subset R$}:
+Okay, so there are different ways to define a maximal ideal. The most simple one is that \inlinemetanote{writes: Notion of a maximal ideal $m \subset R$}:
 
-\textbf{(i)} $\mathfrak{m}$ is an ideal, of course. \inlinemetanote{writes: (i) $\mathfrak{m}$ is ideal} This is going to be a definition: maximal ideal. To be a maximal ideal, of course, you have to be an ideal.
+\textbf{(i)} $m$ is an ideal, of course. \inlinemetanote{writes: (i) $m$ is ideal} This is going to be a definition: maximal ideal. To be a maximal ideal, of course, you have to be an ideal.
 
-\textbf{(ii)} This ideal is not allowed to be the whole thing. So this normally is said that you should be a proper ideal \inlinemetanote{writes: (ii) $\mathfrak{m} \neq R$ (proper ideal)}. Normally you'd say that in one: $\mathfrak{m}$ is a proper ideal, which means it's an ideal that's not the whole thing. Because the whole thing is cheating, it turns out, for a maximal ideal.
+\textbf{(ii)} This ideal is not allowed to be the whole thing. So this normally is said that you should be a proper ideal \inlinemetanote{writes: (ii) $m \neq R$ (proper ideal)}. Normally you'd say that in one: $m$ is a proper ideal, which means it's an ideal that's not the whole thing. Because the whole thing is cheating, it turns out, for a maximal ideal.
 
-\textbf{(iii)} And this is the maximal property: if I have another ideal, another proper ideal \inlinemetanote{writes: (iii) If $\hat{\mathfrak{m}} \subset R$, $\hat{\mathfrak{m}}$ proper ideal}, which has the property that $\mathfrak{m}$ is inside it... \inlinemetanote{writes: which has the property $\mathfrak{m} \subset \hat{\mathfrak{m}}$}
+\textbf{(iii)} And this is the maximal property: if I have another ideal, another proper ideal \inlinemetanote{writes: (iii) If $\hat{m} \subset R$, $\hat{m}$ proper ideal}, which has the property that $m$ is inside it... \inlinemetanote{writes: which has the property $m \subset \hat{m}$}
 
-When I use this notation, I hope this is clear: this means that this is a subset of that. It's just silent on whether it's equal or not. Is that how you use it? You know, so this means that this is a subset of that. It could be equal; in fact, it's okay. If you wanted to be specific, you could say like that --- that means it's not equal. Anyway, it's important here. So, which has the property that whenever this is inside that, that actually means they're equal \inlinemetanote{writes: $\implies \mathfrak{m} = \hat{\mathfrak{m}}$}.
+When I use this notation, I hope this is clear: this means that this is a subset of that. It's just silent on whether it's equal or not. Is that how you use it? You know, so this means that this is a subset of that. It could be equal; in fact, it's okay. If you wanted to be specific, you could say like that --- that means it's not equal. Anyway, it's important here. So, which has the property that whenever this is inside that, that actually means they're equal \inlinemetanote{writes: $\implies m = \hat{m}$}.
 
 That's the maximality property. It's saying that, well, first of all, it's a proper ideal; and the second one says there's nobody above it that's a proper ideal. Is that clear? So, the reason why you want to rule out $R$ always is because $R$ is the biggest ideal, and no one ever beats $R$ because it's the whole ring. So it kind of has an unfair role in that.
 \end{speech}
@@ -936,16 +936,16 @@ And the reason for this is: first of all, you know $R$ is not the zero ring. A f
 
 \begin{content}[Definition of Maximal Ideals and Examples]
 \begin{definition}[Maximal Ideal]\label[definition]{def:maximal-ideal}
-Let $R$ be a ring. A subset $\mathfrak{m} \subset R$ is called a \newterm{maximal ideal} if:
+Let $R$ be a ring. A subset $m \subset R$ is called a \newterm{maximal ideal} if:
 \begin{enumerate}[label=\textbf{(\roman*)}]
-    \item $\mathfrak{m}$ is an ideal of $R$.
-    \item $\mathfrak{m} \neq R$ ($\mathfrak{m}$ is a \newterm{proper ideal}).
-    \item Whenever $\hat{\mathfrak{m}} \subset R$ is a proper ideal of $R$ with $\mathfrak{m} \subset \hat{\mathfrak{m}}$, then:
+    \item $m$ is an ideal of $R$.
+    \item $m \neq R$ ($m$ is a \newterm{proper ideal}).
+    \item Whenever $\hat{m} \subset R$ is a proper ideal of $R$ with $m \subset \hat{m}$, then:
     \[
-    \mathfrak{m} = \hat{\mathfrak{m}}.
+    m = \hat{m}.
     \]
 \end{enumerate}
-In other words, $\mathfrak{m}$ is a maximal element of the set of proper ideals of $R$, ordered by inclusion (\cref{def:pre-partial-order}).
+In other words, $m$ is a maximal element of the set of proper ideals of $R$, ordered by inclusion (\cref{def:pre-partial-order}).
 \end{definition}
 
 \begin{notation}[$\subset$ on the Board]
@@ -984,11 +984,16 @@ R \text{ is a field} \iff (0) \text{ is a maximal ideal of } R.
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Notation: Maximal Ideals]
+% [PERSISTENT]
+Many textbooks write a maximal ideal as $\mathfrak{m}$. The lecturer writes a plain $m$ on the board, here and in Week~5, and these notes follow him.
+\end{aiNote}
+
 \begin{aiNote}[Beyond the Lecture: Completing the Backward Direction and Quotients by Maximal Ideals]
 % [PERSISTENT, ADDITION — refined by Gemini 4 Argon]
 Suppose $(0)$ is a maximal ideal of $R$, so that $R \neq \{0\}$. For any non-zero element $x \in R \setminus \{0\}$, the principal ideal $(x)$ (\cref{def:ideal-generated-by-elements}) strictly contains $(0)$. By maximality of $(0)$, $(x)$ cannot be a proper ideal, forcing $(x) = R$. Therefore, $1 \in (x)$, meaning there exists $y \in R$ such that $x y = 1$, so every non-zero element is invertible and $R$ is a field.
 
-Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}) immediately yields the fundamental characterization of maximal ideals via quotient rings: for any ideal $\mathfrak{m} \subset R$, the quotient ring $\faktor{R}{\mathfrak{m}}$ is a field if and only if $(\bar{0}) = q(\mathfrak{m})$ is a maximal ideal in $\faktor{R}{\mathfrak{m}}$, which holds if and only if $\mathfrak{m} = q^{-1}((\bar{0}))$ is a maximal ideal in $R$.
+Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}) immediately yields the fundamental characterization of maximal ideals via quotient rings: for any ideal $m \subset R$, the quotient ring $\faktor{R}{m}$ is a field if and only if $(\bar{0}) = q(m)$ is a maximal ideal in $\faktor{R}{m}$, which holds if and only if $m = q^{-1}((\bar{0}))$ is a maximal ideal in $R$.
 \end{aiNote}
 
 \begin{overview}[Summary of Key Concepts]
@@ -1000,6 +1005,6 @@ Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Cor
     \operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
     \]
     Surjectivity of $q$ ensures $q(q^{-1}(J)) = J$, while the condition $K \subset I$ ensures $q^{-1}(q(I)) = I$.
-    \item \textbf{Maximal Ideals and Fields:} An ideal $\mathfrak{m} \subsetneq R$ is maximal if no proper ideal strictly contains it. In $\mathbb{Z}$, the maximal ideals are precisely the ideals $p\mathbb{Z}$ for primes $p$. A commutative ring $R$ is a field if and only if the zero ideal $(0)$ is a maximal ideal.
+    \item \textbf{Maximal Ideals and Fields:} An ideal $m \subsetneq R$ is maximal if no proper ideal strictly contains it. In $\mathbb{Z}$, the maximal ideals are precisely the ideals $p\mathbb{Z}$ for primes $p$. A commutative ring $R$ is a field if and only if the zero ideal $(0)$ is a maximal ideal.
 \end{itemize}
 \end{overview}

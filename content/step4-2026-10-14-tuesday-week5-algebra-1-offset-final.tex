@@ -97,7 +97,7 @@
 In this lecture, we explore the structural theory of ideals in commutative rings and their corresponding quotient rings:
 \begin{itemize}
     \item \textbf{The Ideal Correspondence and Quotients of Quotients:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, and use it to describe a quotient of a quotient: $\faktor{\left(\faktor{R}{K}\right)}{J} \cong \faktor{R}{q^{-1}(J)}$.
-    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{M}$ is a field if and only if $M$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
+    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ and prove that $\faktor{R}{m}$ is a field if and only if $m$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
     \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine non-prime ideals via smooth functions with compact support $C_c^\infty(\mathbb{R}) \subset C^\infty(\mathbb{R})$.
     \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and coprime ideals ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
 \end{itemize}
@@ -348,11 +348,11 @@ Clearly, $\operatorname{cl}^*(R) \subset \operatorname{cl}(R)$ is obtained by ex
 \end{content}
 
 \begin{speech}[00:11:04 - 00:12:36]
-And then we say --- and this is a definition ---: $M$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $M \subset R$ is a maximal ideal $\stackrel{\text{def}}{\iff}$}. The first is that $M$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $M \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $M$ is not the full ring \inlinemetanote{writes: $(M \neq R)$}, okay?
+And then we say --- and this is a definition ---: $m$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $m \subset R$ is a maximal ideal $\stackrel{\text{def}}{\iff}$}. The first is that $m$ is in this $\operatorname{cl}^*(R)$ \inlinemetanote{writes: 1. $m \in \operatorname{cl}^*(R)$}. This is just a fancy way of saying that $m$ is not the full ring \inlinemetanote{writes: $(m \neq R)$}, okay?
 
 Maximal ideals are not allowed to be the full ring. This is a source of standard confusion, but it's really important in the definition. Maximal ideals are not the full ring --- that's cheating for a maximal ideal.
 
-And the second is it's maximal: That means that for any other ideal in here \inlinemetanote{writes: 2. $\forall \hat{M} \in \operatorname{cl}^*(R)$}, if $\hat{M}$ contains $M$, this means that $\hat{M} = M$ \inlinemetanote{writes: if $\hat{M} \supset M \implies \hat{M} = M$}. Okay?
+And the second is it's maximal: That means that for any other ideal in here \inlinemetanote{writes: 2. $\forall \hat{m} \in \operatorname{cl}^*(R)$}, if $\hat{m}$ contains $m$, this means that $\hat{m} = m$ \inlinemetanote{writes: if $\hat{m} \supset m \implies \hat{m} = m$}. Okay?
 
 So, if you view this set of ideals as some kind of tournament where one ideal is a better player than the other if it contains that ideal, then this maximal ideal says you're kind of at the top: No one beats you; no one's on top of you. If anyone tries to be on top of you, they have to be equal.
 
@@ -363,20 +363,20 @@ And you can see why we throw out $R$ here, because $R$ would be on top of everyb
 \recap{Maximal ideals were defined in the previous lecture (\cref{def:maximal-ideal}); the lecturer restates the definition here.}
 
 \begin{definition}[Maximal Ideal]\label[definition]{def:maximal-ideal-w5}
-Let $R$ be a ring and let $M \subset R$ be an ideal. Then $M$ is a \newterm{maximal ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
+Let $R$ be a ring and let $m \subset R$ be an ideal. Then $m$ is a \newterm{maximal ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \setcounter{enumi}{0} \item \textbf{Properness:} $M \in \operatorname{cl}^*(R)$, i.e., $M \neq R$.
-    \setcounter{enumi}{1} \item \textbf{Maximality:} For every proper ideal $\hat{M} \in \operatorname{cl}^*(R)$,
+    \setcounter{enumi}{0} \item \textbf{Properness:} $m \in \operatorname{cl}^*(R)$, i.e., $m \neq R$.
+    \setcounter{enumi}{1} \item \textbf{Maximality:} For every proper ideal $\hat{m} \in \operatorname{cl}^*(R)$,
     \[
-    \hat{M} \supseteq M \implies \hat{M} = M.
+    \hat{m} \supseteq m \implies \hat{m} = m.
     \]
 \end{enumerate}
-Equivalently, there are no ideals strictly between $M$ and $R$: if $I$ is an ideal of $R$ with $M \subseteq I \subseteq R$, then $I = M$ or $I = R$.
+Equivalently, there are no ideals strictly between $m$ and $R$: if $I$ is an ideal of $R$ with $m \subseteq I \subseteq R$, then $I = m$ or $I = R$.
 \end{definition}
 \end{content}
 
 \begin{insight}[The \qt{Tournament} Intuition for Maximal Ideals]
-The lecturer visualizes the partially ordered set of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ as a tournament: an ideal $\hat{M}$ \qt{beats} $M$ if $\hat{M} \supset M$. A maximal ideal is an undefeated player at the very top: no proper ideal strictly contains it. The entire ring $R$ is excluded from the competition by definition; otherwise, $R$ would trivialise the concept by containing every ideal.
+The lecturer visualizes the partially ordered set of proper ideals $(\operatorname{cl}^*(R), \subseteq)$ as a tournament: an ideal $\hat{m}$ \qt{beats} $m$ if $\hat{m} \supset m$. A maximal ideal is an undefeated player at the very top: no proper ideal strictly contains it. The entire ring $R$ is excluded from the competition by definition; otherwise, $R$ would trivialise the concept by containing every ideal.
 \end{insight}
 
 \subsection{Fields and the Zero Ideal}
@@ -528,20 +528,20 @@ So, that's the proof the other way. If I assume that zero is a maximal ideal, I 
 
 I have now proven this proposition: $R$ is a field if and only if $(0)$ is a maximal ideal.
 
-The next proposition, which is a kind of strengthening of that one, is: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{M}$ is a field $\iff M \subset R$ is a maximal ideal}.
+The next proposition, which is a kind of strengthening of that one, is: $R \bmod m$ is a field if and only if $m \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{m}$ is a field $\iff m \subset R$ is a maximal ideal}.
 
 That's a strengthening of this statement: That says $R$ is a field if zero is a maximal ideal; actually I say it for any ideal here: This is a field if and only if that's a maximal ideal. Okay?
 
-In particular, if I take this statement and specialize to $M = (0)$, I get that statement \inlinemetanote{writes: specialize to $M = 0$}, because $R \bmod (0)$ is $R$. So, this is the more general one; we prove this next.
+In particular, if I take this statement and specialize to $m = (0)$, I get that statement \inlinemetanote{writes: specialize to $m = 0$}, because $R \bmod (0)$ is $R$. So, this is the more general one; we prove this next.
 \end{speech}
 
 \begin{content}[Characterization of Maximal Ideals via Field Quotients]
 \begin{proposition}[Maximal Ideals via Field Quotients]\label[proposition]{prop:quotient-field-maximal}
-Let $R$ be a ring and $M \subset R$ an ideal. Then the quotient ring $\faktor{R}{M}$ is a field if and only if $M$ is a maximal ideal of $R$.
+Let $R$ be a ring and $m \subset R$ an ideal. Then the quotient ring $\faktor{R}{m}$ is a field if and only if $m$ is a maximal ideal of $R$.
 \end{proposition}
 
-\begin{steps}[Specialization to $M = (0)$]
-Notice that \cref{prop:quotient-field-maximal} directly generalizes \cref{prop:field-zero-maximal}: specializing $M = (0)$ yields:
+\begin{steps}[Specialization to $m = (0)$]
+Notice that \cref{prop:quotient-field-maximal} directly generalizes \cref{prop:field-zero-maximal}: specializing $m = (0)$ yields:
 \[
 \faktor{R}{(0)} \cong R \text{ is a field} \iff (0) \subset R \text{ is a maximal ideal}.
 \]
@@ -555,9 +555,9 @@ This is somehow one of the reasons that maximal ideals are very important, becau
 \begin{speech}[00:22:36 - 00:23:14]
 Okay, so, we want to prove that.
 
-The proof is: $R \bmod M$ is a field if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod M$ is a maximal ideal \inlinemetanote{writes \qt{Proof: $\faktor{R}{M}$ is a field $\iff (0) \subset \faktor{R}{M}$ is a max ideal} on the upper board}.
+The proof is: $R \bmod m$ is a field if and only if --- now we use this proposition that's already on the board --- if and only if $(0)$ in $R \bmod m$ is a maximal ideal \inlinemetanote{writes \qt{Proof: $\faktor{R}{m}$ is a field $\iff (0) \subset \faktor{R}{m}$ is a max ideal} on the upper board}.
 
-We've proven this --- already proven, right? \inlinemetanote{writes: already proven} I just use this proposition here for $R \bmod M$. Okay? Yeah.
+We've proven this --- already proven, right? \inlinemetanote{writes: already proven} I just use this proposition here for $R \bmod m$. Okay? Yeah.
 \end{speech}
 
 \begin{student}[Student Question]
@@ -565,21 +565,21 @@ Could you say what you wrote down as specialize?
 \end{student}
 
 \begin{speech}[00:23:17 - 00:23:57]
-Specialize this thing to the ideal $M = (0)$. If you specialize to $(0)$, then $R$ at the top is $R \bmod (0)$, which is $R$, and it says $R$ is a field if and only if $(0)$ is a maximal ideal, which is what we have here. So, that's strictly more general than this.
+Specialize this thing to the ideal $m = (0)$. If you specialize to $(0)$, then $R$ at the top is $R \bmod (0)$, which is $R$, and it says $R$ is a field if and only if $(0)$ is a maximal ideal, which is what we have here. So, that's strictly more general than this.
 
 But we're going to use this --- that's why I strategically left it on the board. With my years of professorial experience, you know. \inlinemetanote{laughter}
 
-So, here $R \bmod M$ is a field, and we just use the statement for a field: This is a field if and only if $(0)$ is a maximal ideal. All right?
+So, here $R \bmod m$ is a field, and we just use the statement for a field: This is a field if and only if $(0)$ is a maximal ideal. All right?
 \end{speech}
 
 \begin{speech}[00:23:57 - 00:25:02]
-Now, the next statement is that $(0)$ is a maximal ideal here if and only if $M$ is a maximal ideal in $R$ \inlinemetanote{writes: $\iff M \subset R$ is a max ideal}.
+Now, the next statement is that $(0)$ is a maximal ideal here if and only if $m$ is a maximal ideal in $R$ \inlinemetanote{writes: $\iff m \subset R$ is a max ideal}.
 
-And this statement is the bijection that I said should be deep in your brain. Because ideals in this quotient correspond to ideals in $R$ which contain $M$, right? So, if this is maximal, there's nothing over zero, and this means that there's nothing here over $M$.
+And this statement is the bijection that I said should be deep in your brain. Because ideals in this quotient correspond to ideals in $R$ which contain $m$, right? So, if this is maximal, there's nothing over zero, and this means that there's nothing here over $m$.
 
 Because of that bijection that I started this lecture with, which we proved last time. Okay? So, this has to do with the bijection \inlinemetanote{writes: $\iff$ bijection}.
 
-The bijection says any ideal here corresponds to ideals here that contain $M$. And this is saying that if this is a maximal ideal, then there aren't any ideals here above zero, and there's nothing here above $M$. It's just exactly the bijection.
+The bijection says any ideal here corresponds to ideals here that contain $m$. And this is saying that if this is a maximal ideal, then there aren't any ideals here above zero, and there's nothing here above $m$. It's just exactly the bijection.
 
 So, that's the proof of this proposition.
 \end{speech}
@@ -588,27 +588,27 @@ So, that's the proof of this proposition.
 \begin{proof}[Proof of \cref{prop:quotient-field-maximal}]
 We combine \cref{prop:field-zero-maximal} with the Ideal Correspondence Theorem (\cref{thm:ideal-correspondence}):
 \begin{align*}
-\faktor{R}{M} \text{ is a field} &\iff (0) \subset \faktor{R}{M} \text{ is a maximal ideal} && (\text{by \cref{prop:field-zero-maximal}}) \\
-&\iff M \subset R \text{ is a maximal ideal} && (\text{by \cref{thm:ideal-correspondence}}).
+\faktor{R}{m} \text{ is a field} &\iff (0) \subset \faktor{R}{m} \text{ is a maximal ideal} && (\text{by \cref{prop:field-zero-maximal}}) \\
+&\iff m \subset R \text{ is a maximal ideal} && (\text{by \cref{thm:ideal-correspondence}}).
 \end{align*}
 \end{proof}
 
 \begin{steps}[Why the Bijection Yields the Equivalence]
-Under the canonical projection $q \colon R \to \faktor{R}{M}$, the bijection:
+Under the canonical projection $q \colon R \to \faktor{R}{m}$, the bijection:
 \[
-\operatorname{cl}_M(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{M}\right)
+\operatorname{cl}_m(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{m}\right)
 \]
-preserves strict inclusions and identifies the zero ideal $(0) \in \operatorname{cl}(\faktor{R}{M})$ with $M = q^{-1}((0)) \in \operatorname{cl}_M(R)$.
+preserves strict inclusions and identifies the zero ideal $(0) \in \operatorname{cl}(\faktor{R}{m})$ with $m = q^{-1}((0)) \in \operatorname{cl}_m(R)$.
 Therefore:
 \begin{itemize}
-    \item $(0)$ is maximal in $\faktor{R}{M} \iff$ there are no ideals strictly between $(0)$ and $\faktor{R}{M}$.
-    \item By the correspondence, there are no ideals strictly between $M$ and $R \iff M$ is maximal in $R$.
+    \item $(0)$ is maximal in $\faktor{R}{m} \iff$ there are no ideals strictly between $(0)$ and $\faktor{R}{m}$.
+    \item By the correspondence, there are no ideals strictly between $m$ and $R \iff m$ is maximal in $R$.
 \end{itemize}
 \end{steps}
 \end{content}
 
 \begin{speech}[00:25:02 - 00:26:03]
-And that's one of the ways that the idea of a maximal ideal is important. If you have a ring $R$ --- this is another way to say it --- you have this ring $R$ \inlinemetanote{writes: $R$}, you have this set of proper ideals $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $\operatorname{cl}^*(R)$}, and the ones in here, the maximal ideals here, are exactly those ideals for which the quotient is a field \inlinemetanote{writes: max ideals are exactly those ideals for which $\faktor{R}{M}$ is a field}.
+And that's one of the ways that the idea of a maximal ideal is important. If you have a ring $R$ --- this is another way to say it --- you have this ring $R$ \inlinemetanote{writes: $R$}, you have this set of proper ideals $\operatorname{cl}^*(R)$ \inlinemetanote{writes: $\operatorname{cl}^*(R)$}, and the ones in here, the maximal ideals here, are exactly those ideals for which the quotient is a field \inlinemetanote{writes: max ideals are exactly those ideals for which $\faktor{R}{m}$ is a field}.
 
 That's actually a very normal way of thinking about it. You could take this as the definition, even.
 
@@ -620,13 +620,13 @@ On the blackboard, the lecturer summarizes the characterization of maximal ideal
 \begin{align*}
 R \qquad \operatorname{cl}^*(R) \qquad & \\
 &\Big\downarrow \\
-&\text{max ideals here are exactly those ideals for which } \faktor{R}{M} \text{ is a field.}
+&\text{max ideals here are exactly those ideals for which } \faktor{R}{m} \text{ is a field.}
 \end{align*}
 
 \begin{corollary}[Alternative Characterization of Maximal Ideals]\label[corollary]{cor:maximal-ideal-quotient-char}
 Let $R$ be a ring. By \cref{prop:quotient-field-maximal}, the set of maximal ideals of $R$ is precisely the collection of proper ideals whose quotient ring is a field:
 \begin{equation}\label{eq:max-ideals-field-quotients}
-\operatorname{MaxSpec}(R) = \left\{ M \in \operatorname{cl}^*(R) \;\middle|\; \faktor{R}{M} \text{ is a field} \right\}.
+\operatorname{MaxSpec}(R) = \left\{ m \in \operatorname{cl}^*(R) \;\middle|\; \faktor{R}{m} \text{ is a field} \right\}.
 \end{equation}
 \end{corollary}
 \end{content}
@@ -785,7 +785,7 @@ In words: no element in $S$ is strictly greater than $x$.
 \end{definition}
 
 \begin{proposition}[Equivalence with Maximal Ideals]\label[proposition]{prop:max-element-ideal-equiv}
-Let $R$ be a ring. An ideal $M \subset R$ is a maximal ideal of $R$ in the sense of \cref{def:maximal-ideal-w5} if and only if $M$ is a maximal element of the poset $(\operatorname{cl}^*(R), \subseteq)$.
+Let $R$ be a ring. An ideal $m \subset R$ is a maximal ideal of $R$ in the sense of \cref{def:maximal-ideal-w5} if and only if $m$ is a maximal element of the poset $(\operatorname{cl}^*(R), \subseteq)$.
 \end{proposition}
 
 \begin{steps}[Maximal Element vs. Maximum / Greatest Element]
@@ -1007,7 +1007,7 @@ Let $R \neq 0$ be a non-zero ring. Consider the poset $S = \operatorname{cl}^*(R
     \item Since $R \neq 0$, the zero ideal $(0)$ is a proper ideal ($(0) \neq R$), so $S = \operatorname{cl}^*(R)$ is non-empty.
     \item By \cref{lem:chains-ideals-bounded}, every chain $T \subseteq S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$.
 \end{itemize}
-By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one maximal element $M$. By \cref{prop:max-element-ideal-equiv}, $M$ is a maximal ideal of $R$.
+By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one maximal element $m$. By \cref{prop:max-element-ideal-equiv}, $m$ is a maximal ideal of $R$.
 \end{proof}
 
 \begin{steps}[Why the Chain Property is Crucial for Unions of Ideals]
@@ -1193,7 +1193,7 @@ Then we want to prove a theorem like the field theorem that says: \inlinemetanot
 
 $R \bmod P$ is an integral domain --- this is a proposition --- $R \bmod P$ is an integral domain if and only if $P \subset R$ is a prime ideal \inlinemetanote{writes: $\iff P \subset R$ is a prime ideal}.
 
-I want to prove this, and I remind you of the proposition from the first lecture, which I have not had the skill enough to leave on the board: $R \bmod M$ is a field if and only if $M \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{M}$ is a field $\iff M \subset R$ is a max ideal}.
+I want to prove this, and I remind you of the proposition from the first lecture, which I have not had the skill enough to leave on the board: $R \bmod m$ is a field if and only if $m \subset R$ is a maximal ideal \inlinemetanote{writes: Prop: $\faktor{R}{m}$ is a field $\iff m \subset R$ is a max ideal}.
 
 This was the statement that we already proved just a few minutes ago, and this is the analogous statement for integral domains. Everything is just analogous: Here we want to consider which ideals have quotients that are fields, and the answer is those are the maximal ideals; and here we ask which ideals have the property that the quotient is an integral domain, and those are the prime ideals, okay? So, we have to prove this one. But the parallelism here should be clear.
 \end{speech}
@@ -1207,7 +1207,7 @@ Let $R$ be a commutative ring and $P \subset R$ an ideal. Then the quotient ring
 \begin{overview}[Parallelism: Maximal Ideals vs. Prime Ideals]
 The two fundamental classes of ideals in commutative ring theory correspond precisely to key algebraic properties of their quotient rings:
 \begin{align*}
-\faktor{R}{M} \text{ is a field} &\iff M \subset R \text{ is a maximal ideal}, \\
+\faktor{R}{m} \text{ is a field} &\iff m \subset R \text{ is a maximal ideal}, \\
 \faktor{R}{P} \text{ is an integral domain} &\iff P \subset R \text{ is a prime ideal}.
 \end{align*}
 \end{overview}
@@ -1355,9 +1355,9 @@ Some consequences of this --- and this is maybe related to the question before -
 
 From this, you can draw some conclusions.
 
-For example: $M \subset R$ is maximal implies that $M$ is prime \inlinemetanote{writes: $M \subset R$ is max $\implies M \subset R$ is prime}.
+For example: $m \subset R$ is maximal implies that $m$ is prime \inlinemetanote{writes: $m \subset R$ is max $\implies m \subset R$ is prime}.
 
-Because if $M$ is maximal, then $R \bmod M$ is a field, every field is an integral domain, and that means that $M$ must be prime, all right?
+Because if $m$ is maximal, then $R \bmod m$ is a field, every field is an integral domain, and that means that $m$ must be prime, all right?
 
 This is just a linguistic consequence of these two.
 
@@ -1370,14 +1370,14 @@ All right.
 
 \begin{content}[Maximal Ideals are Prime]
 \begin{corollary}[Maximal Ideals are Prime]\label[corollary]{cor:maximal-is-prime}
-Let $R$ be a commutative ring and $M \subset R$ an ideal. If $M$ is a maximal ideal, then $M$ is a prime ideal:
+Let $R$ be a commutative ring and $m \subset R$ an ideal. If $m$ is a maximal ideal, then $m$ is a prime ideal:
 \begin{equation}\label{eq:max-implies-prime}
-M \text{ maximal} \implies M \text{ prime}.
+m \text{ maximal} \implies m \text{ prime}.
 \end{equation}
 \end{corollary}
 
 \begin{proof}
-If $M \subset R$ is a maximal ideal, then by \cref{prop:quotient-field-maximal}, the quotient ring $\faktor{R}{M}$ is a field. Since every field is an integral domain, $\faktor{R}{M}$ is an integral domain. By \cref{prop:quotient-integral-domain-prime}, this implies that $M$ is a prime ideal.
+If $m \subset R$ is a maximal ideal, then by \cref{prop:quotient-field-maximal}, the quotient ring $\faktor{R}{m}$ is a field. Since every field is an integral domain, $\faktor{R}{m}$ is an integral domain. By \cref{prop:quotient-integral-domain-prime}, this implies that $m$ is a prime ideal.
 \end{proof}
 
 \begin{corollary}[Existence of Prime Ideals]\label[corollary]{cor:existence-of-prime-ideals}
@@ -1385,7 +1385,7 @@ Every non-zero commutative ring $R \neq 0$ contains at least one prime ideal.
 \end{corollary}
 
 \begin{proof}
-By \cref{thm:krulls-theorem-maximal-ideals}, every non-zero commutative ring $R \neq 0$ possesses at least one maximal ideal $M$. By \cref{cor:maximal-is-prime}, $M$ is also a prime ideal.
+By \cref{thm:krulls-theorem-maximal-ideals}, every non-zero commutative ring $R \neq 0$ possesses at least one maximal ideal $m$. By \cref{cor:maximal-is-prime}, $m$ is also a prime ideal.
 \end{proof}
 \end{content}
 
@@ -2033,7 +2033,7 @@ This identity $I \cap J = I J$ ensures that $\ker(\phi) = \faktor{(I \cap J)}{IJ
 \begin{itemize}
     \item \textbf{Ideal Correspondence Theorem:} For an ideal $K \subset R$, the projection $q \colon R \to \faktor{R}{K}$ induces an inclusion-preserving bijection between ideals of $R$ containing $K$ and all ideals of the quotient $\faktor{R}{K}$.
     \item \textbf{Quotients of Quotients:} For an ideal $K \subset R$ and an ideal $J \subset \faktor{R}{K}$, there is a canonical ring isomorphism $\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}$.
-    \item \textbf{Maximal Ideals and Fields:} An ideal $M \subset R$ is maximal if and only if $\faktor{R}{M}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
+    \item \textbf{Maximal Ideals and Fields:} An ideal $m \subset R$ is maximal if and only if $\faktor{R}{m}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
     \item \textbf{Maximal Ideals via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\operatorname{cl}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
     \item \textbf{Prime Ideals and Integral Domains:} An ideal $P \subset R$ is prime if and only if $\faktor{R}{P}$ is an integral domain. Consequently, every maximal ideal is prime, and every non-zero commutative ring possesses at least one prime ideal.
     \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the coprimality decomposition $1 = i + j$, establishing that $I \cap J = IJ$.
