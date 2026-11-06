@@ -283,13 +283,13 @@ In particular, $k[[x]]$ is a discrete valuation ring (DVR), hence a PID and a UF
 \subsection{Content of a Polynomial and Primitive Polynomials}
 
 \begin{speech}[00:06:53 - 00:08:12]
-Okay, so, now let's go back to the proof. So, the ideas of this proof, there were several new ideas, which I'll just comment on, so, we're going to use them. If I have $f$ as a polynomial \inlinemetanote{writes: $f \in R[x]$}, and $f$ is not zero \inlinemetanote{writes: $f \neq 0$} --- we don't like factoring zeros --- if $f$ is not zero, then we defined the content \inlinemetanote{writes: $C(f) = \operatorname{GCD}($ non-zero coeff of $f) \subset R$}. This is the content of $f$, that's the words for it \inlinemetanote{writes: content of $f$}, and it equals the GCD of the non-zero coefficients of $f$. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero, and that's the GCD, and it's only defined up to a unit.
+Okay, so, now let's go back to the proof. So, the ideas of this proof, there were several new ideas, which I'll just comment on, so, we're going to use them. If I have $f$ as a polynomial \inlinemetanote{writes: $f \in R[x]$}, and $f$ is not zero \inlinemetanote{writes: $f \neq 0$} --- we don't like factoring zeros --- if $f$ is not zero, then we defined the content \inlinemetanote{writes: $C(f) \overset{\text{unit}}{=} \operatorname{GCD}($nonzero coeffs of $f)$}. This is the content of $f$, that's the words for it \inlinemetanote{writes: content of $f$}, and it equals the GCD of the non-zero coefficients of $f$. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero, and that's the GCD, and it's only defined up to a unit.
 
-And the ways we think about this is given any $f$ --- always non-zero --- $f$ non-zero, then we can write $f$ is equal to the content, or we just pull out the GCD, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes: $f \in R[x], f \neq 0 \implies f = C(f) \cdot f_0$ and labels $f_0$ as primitive}. And the definition of the term primitive was the content is equal to $1$, up to a unit \inlinemetanote{writes: $C(f_0) = 1$ up to unit}. Okay? So, this is review from last time (Recall: \cref{def:content-poly}, \cref{def:primitive-poly}).
+And the ways we think about this is given any $f$ --- always non-zero --- $f$ non-zero, then we can write $f$ is equal to the content, or we just pull out the GCD, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes: $f \in R[x], f \neq 0 \implies f = C(f) \cdot f^*$ and labels $f^*$ as primitive}. And the definition of the term primitive was the content is equal to $1$, up to a unit \inlinemetanote{writes: $C(f^*) \overset{\text{unit}}{=} 1$}. Okay? So, this is review from last time (Recall: \cref{def:content-poly}, \cref{def:primitive-poly}).
 \end{speech}
 
 \begin{content}
-\recap{Content and primitive polynomials were defined in the previous lecture (\cref{def:content-poly}, \cref{def:primitive-poly}), with the decomposition $f = C(f) f^*$ of \cref{prop:canonical-decomp}. This lecture writes $f_0$ or $m^*$ for the primitive part.}
+\recap{Content and primitive polynomials were defined in the previous lecture (\cref{def:content-poly}, \cref{def:primitive-poly}), with the decomposition $f = C(f) f^*$ of \cref{prop:canonical-decomp}.}
 \end{content}
 
 \begin{content}
@@ -301,15 +301,15 @@ Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=
     C(f) := \operatorname{gcd}(a_0, a_1, \dots, a_n) \in R,
     \]
     which is well-defined up to multiplication by a unit in $\mathcal{U}_R$.
-    \item A polynomial $f_0 \in R[x]$ is called \newterm{primitive} if its content is a unit:
+    \item A polynomial $f^* \in R[x]$ is called \newterm{primitive} if its content is a unit:
     \[
-    C(f_0) = 1 \quad (\text{up to units in } \mathcal{U}_R).
+    C(f^*) = 1 \quad (\text{up to units in } \mathcal{U}_R).
     \]
     \item Every non-zero polynomial $f \in R[x]$ admits a canonical factorization:
     \begin{equation}\label{eq:content-primitive-decomposition}
-    f = C(f) \cdot f_0,
+    f = C(f) \cdot f^*,
     \end{equation}
-    where $C(f) \in R$ and $f_0 \in R[x]$ is a primitive polynomial.
+    where $C(f) \in R$ and $f^* \in R[x]$ is a primitive polynomial.
 \end{enumerate}
 \end{definition}
 \end{content}

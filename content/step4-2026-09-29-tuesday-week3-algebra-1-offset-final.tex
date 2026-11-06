@@ -126,7 +126,7 @@ Whenever you see a ring, you immediately have these two groups. And this one is 
 \end{speech}
 
 \begin{content}[The Group of Units]
-\recap{Units and the group of units were introduced in Week~2 as $\mathcal{U}_R$ (\cref{def:unit-ring}, \cref{prop:group-of-units}), with $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ in the example; the lecturer now writes $\operatorname{Unit}_R$, also $\operatorname{Unit}(R)$ below.}
+\recap{Units and the group of units were introduced in Week~2 as $\mathcal{U}_R$ (\cref{def:unit-ring}, \cref{prop:group-of-units}), with $\operatorname{Unit}(\mathbb{Z}/7\mathbb{Z})$ in the example.}
 
 Let $(R, +, \cdot, 0, 1)$ be a ring with unity. Associated with $R$ are two natural canonical groups:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
@@ -143,6 +143,11 @@ Under ring multiplication, $(\operatorname{Unit}(R), \cdot, 1)$ forms a group wi
 The group of units is closed under multiplication: if $x, z \in \operatorname{Unit}(R)$ with inverses $x^{-1}, z^{-1} \in R$, then $(xz)(z^{-1}x^{-1}) = 1$, so $xz \in \operatorname{Unit}(R)$. Associativity is inherited from the ring, and the multiplicative identity $1$ is invertible since $1 \cdot 1 = 1$.
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Notation: The Lecturer Changes $\mathcal{U}_R$ to $\operatorname{Unit}_R$]
+% [PERSISTENT]
+The lecturer changes his own notation here. Week~2 wrote $\mathcal{U}_R$ for the group of units (\cref{prop:group-of-units}); from now on the board has $\operatorname{Unit}_R$, and he says $\operatorname{Unit}(R)$. Both mean the same group.
+\end{aiNote}
 
 \subsection{Units in the Integers and the Gaussian Integers}
 
@@ -346,6 +351,11 @@ This is an abelian group of order $4$ under multiplication modulo $10$. For inst
 \]
 \end{example}
 \end{content}
+
+\begin{aiNote}[{Notation: The Lecturer Adds $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$}]
+% [PERSISTENT]
+The lecturer changes his notation again here. For the units of $\faktor{\mathbb{Z}}{m\mathbb{Z}}$ he now writes $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, which the board calls the usual notation, and adds that $R^*$ could denote units. The condition $\gcd(x, m) = 1$ of Week~2 now appears on the board as $(x, m) = 1$. The next lecture goes back to $\operatorname{Unit}(R)$.
+\end{aiNote}
 
 \section{Euler's Totient Function}
 
