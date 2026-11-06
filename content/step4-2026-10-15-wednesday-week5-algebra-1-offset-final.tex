@@ -659,8 +659,8 @@ Let $f(x) \in K[x]$.
     \begin{equation}\label{eq:deg-formula}
     \deg(f) := d \iff c_d \neq 0 \quad \text{and} \quad c_i = 0 \quad \forall i > d.
     \end{equation}
-    The non-zero element $c_d \in K^\times$ is called the \newterm{leading coefficient}.
-    \setcounter{enumi}{1} \item \textbf{Non-Zero Constants:} For any non-zero constant $c \in K^\times$, we have $\deg(c) = 0$.
+    The non-zero element $c_d \in K \setminus \{0\}$ is called the \newterm{leading coefficient}.
+    \setcounter{enumi}{1} \item \textbf{Non-Zero Constants:} For any non-zero constant $c \in K \setminus \{0\}$, we have $\deg(c) = 0$.
     \setcounter{enumi}{2} \item \textbf{The Zero Polynomial:} For the zero polynomial $f(x) = 0$, the degree is explicitly:
     \begin{equation}\label{eq:deg-zero}
     \deg(0) := \text{undefined}.
@@ -778,7 +778,7 @@ Hence, the quotient $q(x)$ and remainder $r(x)$ are uniquely determined.
 
 \begin{aiNote}[Beyond the Lecture: Existence Proof for Polynomial Long Division]
 % [PERSISTENT, ADDITION]
-The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $K$ is a field, $b_m \in K^\times$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
+The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $K$ is a field, $b_m \in K \setminus \{0\}$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
 \end{aiNote}
 
 \subsection{Every Ideal in \texorpdfstring{$K[x]$}{K[x]} is Principal}

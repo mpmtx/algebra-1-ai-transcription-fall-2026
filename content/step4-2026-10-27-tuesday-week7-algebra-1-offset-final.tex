@@ -232,7 +232,7 @@ Let $I \subseteq k[[x]]$ be an ideal.
     \[
     f(x) = a_m x^m + a_{m+1} x^{m+1} + \dots = x^m \underbrace{(a_m + a_{m+1} x + \dots)}_{=: u(x)}, \quad a_m \in k \setminus \{0\}.
     \]
-    Since $a_m \neq 0$, the series $u(x)$ has an invertible constant term in $k$, which implies that $u(x)$ is a unit in $k[[x]]$ (i.e., $u(x) \in k[[x]]^\times$, \cref{thm:units-power-series-ring}).
+    Since $a_m \neq 0$, the series $u(x)$ has an invertible constant term in $k$, which implies that $u(x)$ is a unit in $k[[x]]$ (i.e., $u(x) \in \mathcal{U}_{k[[x]]}$, \cref{thm:units-power-series-ring}).
 \end{description}
 The remaining step, $I = (x^m)$, is left to the students (\cref{exer:ideals-power-series}).
 \end{proof}
@@ -289,7 +289,7 @@ And the ways we think about this is given any $f$ --- always non-zero --- $f$ no
 \end{speech}
 
 \begin{content}
-\recap{Content and primitive polynomials were defined in the previous lecture (\cref{def:content-poly}, \cref{def:primitive-poly}), with the decomposition $f = c(f) f^*$ of \cref{prop:canonical-decomp}. This lecture writes $C(f)$ for the content and $f_0$ or $m^*$ for the primitive part.}
+\recap{Content and primitive polynomials were defined in the previous lecture (\cref{def:content-poly}, \cref{def:primitive-poly}), with the decomposition $f = C(f) f^*$ of \cref{prop:canonical-decomp}. This lecture writes $f_0$ or $m^*$ for the primitive part.}
 \end{content}
 
 \begin{content}
@@ -300,10 +300,10 @@ Let $R$ be a UFD and let $f \in R[x]$ be a non-zero polynomial, $f(x) = \sum_{i=
     \[
     C(f) := \operatorname{gcd}(a_0, a_1, \dots, a_n) \in R,
     \]
-    which is well-defined up to multiplication by a unit in $R^\times$.
+    which is well-defined up to multiplication by a unit in $\mathcal{U}_R$.
     \item A polynomial $f_0 \in R[x]$ is called \newterm{primitive} if its content is a unit:
     \[
-    C(f_0) = 1 \quad (\text{up to units in } R^\times).
+    C(f_0) = 1 \quad (\text{up to units in } \mathcal{U}_R).
     \]
     \item Every non-zero polynomial $f \in R[x]$ admits a canonical factorization:
     \begin{equation}\label{eq:content-primitive-decomposition}
@@ -423,9 +423,9 @@ So, that's just the definition, just to remind you. So, we have to prove that wh
 
 \begin{content}
 \begin{definition}[Irreducible Element]\label[definition]{def:irreducible-w7tue}
-Let $R$ be an integral domain. A non-zero, non-unit element $p \in R \setminus (\{0\} \cup R^\times)$ is called \newterm{irreducible} if:
+Let $R$ be an integral domain. A non-zero, non-unit element $p \in R \setminus (\{0\} \cup \mathcal{U}_R)$ is called \newterm{irreducible} if:
 \[
-p = a \cdot b \implies a \in R^\times \text{ or } b \in R^\times.
+p = a \cdot b \implies a \in \mathcal{U}_R \text{ or } b \in \mathcal{U}_R.
 \]
 \end{definition}
 \end{content}
@@ -812,13 +812,13 @@ p = m^* \cdot B.
 \end{equation}
 Since $p$ is assumed to be irreducible in $R[x]$ (\cref{def:irreducible-w7tue}), every factorization of $p$ must contain a unit. This yields a dichotomy:
 \[
-m^* \in R[x]^\times \quad \text{or} \quad B \in R[x]^\times.
+m^* \in \mathcal{U}_{R[x]} \quad \text{or} \quad B \in \mathcal{U}_{R[x]}.
 \]
 
-\textbf{Exclusion of $B \in R[x]^\times$:}
+\textbf{Exclusion of $B \in \mathcal{U}_{R[x]}$:}
 Suppose for contradiction that $B$ is a unit in $R[x]$:
 \[
-B \in R[x]^\times \implies m^* = B^{-1} \cdot p \implies p \sim m^*.
+B \in \mathcal{U}_{R[x]} \implies m^* = B^{-1} \cdot p \implies p \sim m^*.
 \]
 Since $m^* \mid f$ from \eqref{eq:mstar-divides-f}, this would imply:
 \[
@@ -830,7 +830,7 @@ f \in (p) \quad \text{contradicts} \quad f \notin (p). \quad \lightning
 \]
 Therefore, $B$ cannot be a unit. Consequently, the first branch must hold:
 \begin{equation}\label{eq:mstar-is-unit}
-m^* \in R[x]^\times.
+m^* \in \mathcal{U}_{R[x]}.
 \end{equation}
 \end{content}
 
@@ -851,11 +851,11 @@ So, we're almost done now.
 \begin{content}[Attainment of the Sub-Goal: $m \in R$]
 Since $R$ is an integral domain, the units of the polynomial ring $R[x]$ are exactly the units of the base ring (\cref{thm:units-polynomial-ring-integral-domain}):
 \[
-(R[x])^\times = R^\times.
+\mathcal{U}_{R[x]} = \mathcal{U}_R.
 \]
 Therefore, \eqref{eq:mstar-is-unit} implies:
 \[
-m^* \in R^\times \subset R.
+m^* \in \mathcal{U}_R \subset R.
 \]
 Since $m = C(m) \cdot m^*$ and $C(m) \in R$, we obtain:
 \begin{equation}\label{eq:m-in-R-established}
@@ -960,15 +960,15 @@ p = C(p) \cdot p^*, \qquad C(p) \in R, \quad C(p^*) = 1.
 \]
 Since $p$ is irreducible in $R[x]$:
 \[
-C(p) \in R[x]^\times \quad \text{or} \quad p^* \in R[x]^\times.
+C(p) \in \mathcal{U}_{R[x]} \quad \text{or} \quad p^* \in \mathcal{U}_{R[x]}.
 \]
 Since $C(p)$ is a constant scalar, $\deg(p^*) = \deg(p) > 0$. Any element of positive degree in $R[x]$ cannot be a unit (units in $R[x]$ must have degree $0$). Thus:
 \[
-p^* \notin R[x]^\times.
+p^* \notin \mathcal{U}_{R[x]}.
 \]
 Therefore, $C(p)$ must be a unit in $R$:
 \[
-C(p) \in R^\times.
+C(p) \in \mathcal{U}_R.
 \]
 By definition (\cref{def:content-poly-w7tue}), this means that $p$ is primitive:
 \[
@@ -1138,7 +1138,7 @@ Throughout the extensive division and clearing arguments of Case 2, the assumpti
 \[
 p = C(p) \cdot p^* \quad \text{with } p \text{ irreducible}.
 \]
-Because $\deg(p) > 0$, the primitive part $p^*$ has $\deg(p^*) = \deg(p) > 0$, which prevents $p^*$ from being an invertible constant unit in $R[x]^\times = R^\times$. This forced $C(p) \in R^\times$, proving that $p$ is primitive. As the lecturer notes, this hypothesis acts like a soccer player who sits on the bench for the entire match only to score the decisive goal in the final minute.
+Because $\deg(p) > 0$, the primitive part $p^*$ has $\deg(p^*) = \deg(p) > 0$, which prevents $p^*$ from being an invertible constant unit in $\mathcal{U}_{R[x]} = \mathcal{U}_R$. This forced $C(p) \in \mathcal{U}_R$, proving that $p$ is primitive. As the lecturer notes, this hypothesis acts like a soccer player who sits on the bench for the entire match only to score the decisive goal in the final minute.
 \end{remark}
 \end{content}
 

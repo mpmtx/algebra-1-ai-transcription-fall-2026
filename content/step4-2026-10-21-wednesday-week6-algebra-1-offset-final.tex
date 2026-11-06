@@ -104,9 +104,9 @@ The lecture is organized into two primary components:
     \item \textbf{Foundational Preliminaries:}
     \begin{itemize}
         \item Review of the equivalence between irreducible elements and prime elements in any UFD.
-        \item Definition and computation of the \newterm{content} $c(f)$ of a non-zero polynomial, uniquely determined up to associates in $R$.
-        \item Canonical decomposition $f = c(f) \cdot f^*$ into content and a \newterm{primitive} polynomial $f^*$.
-        \item Proof of \emph{Gauss's Lemma}: the product of primitive polynomials is primitive ($c(f) \sim 1 \land c(g) \sim 1 \implies c(fg) \sim 1$).
+        \item Definition and computation of the \newterm{content} $C(f)$ of a non-zero polynomial, uniquely determined up to associates in $R$.
+        \item Canonical decomposition $f = C(f) \cdot f^*$ into content and a \newterm{primitive} polynomial $f^*$.
+        \item Proof of \emph{Gauss's Lemma}: the product of primitive polynomials is primitive ($C(f) \sim 1 \land C(g) \sim 1 \implies C(fg) \sim 1$).
         \item Divisibility property of primitive polynomials: for primitive $g \in R[x]$, $g \mid bf \implies g \mid f$ for any non-zero scalar $b \in R$.
     \end{itemize}
     \item \textbf{Proof of Gauss's Theorem (Theorem B):}
@@ -176,7 +176,7 @@ The second half is the generalization of Euclid's lemma (\cref{fact:pre-euclid})
 \begin{speech}[00:01:51 - 00:02:55]
 Okay, so, there's a new notion here which is content, which is an extremely useful notion. \inlinemetanote{writes: Content} And the idea here is if I have a polynomial here --- and for this discussion of content, I don't consider the zero polynomial \inlinemetanote{writes: $f \in R[x], f \neq 0$} ---, I write $f$ as $a_0$, a constant term, a linear term, and so on, and at some point it stops, because a polynomial always stops. \inlinemetanote{writes: $f = a_0 + a_1 x + \dots + a_n x^n$}
 
-Then, this is the definition: the content --- so, the word for that is the content --- is equal to the $\operatorname{GCD}$ of these elements here: $a_0, a_1, \dots, a_n$. \inlinemetanote{writes: $\operatorname{Def.} c(f) = \operatorname{GCD}(a_0, a_1, \dots, a_n)$} Okay?
+Then, this is the definition: the content --- so, the word for that is the content --- is equal to the $\operatorname{GCD}$ of these elements here: $a_0, a_1, \dots, a_n$. \inlinemetanote{writes: $\operatorname{Def.} C(f) = \operatorname{GCD}(a_0, a_1, \dots, a_n)$} Okay?
 
 So, why are we allowed to consider $\operatorname{GCD}$? It's because this $R$ is a UFD. I should say this content, and for the whole lecture today, $R$ is a UFD. \inlinemetanote{writes \qt{$R$ is a UFD} above} Okay?
 \end{speech}
@@ -187,9 +187,9 @@ Let $R$ be a unique factorization domain, and let $f \in R[x] \setminus \{0\}$ b
 \[
 f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \in R[x].
 \]
-The \newterm{content} of $f$, denoted $c(f)$, is defined as the greatest common divisor of all the non-zero coefficients of $f$:
+The \newterm{content} of $f$, denoted $C(f)$, is defined as the greatest common divisor of all the non-zero coefficients of $f$:
 \begin{equation}\label{eq:content-def}
-c(f) := \operatorname{GCD}(a_0, a_1, \dots, a_n).
+C(f) := \operatorname{GCD}(a_0, a_1, \dots, a_n).
 \end{equation}
 \end{definition}
 \end{content}
@@ -213,43 +213,43 @@ Let $R$ be a UFD. Every non-zero coefficient $a_j \neq 0$ admits a unique prime 
 \[
 a_j = u_j \prod_{i=1}^m p_i^{k_{ij}},
 \]
-where $u_j \in R^\times$ is a unit, $p_1, \dots, p_m$ are pairwise non-associate irreducible (prime) elements, and $k_{ij} \ge 0$.
+where $u_j \in \mathcal{U}_R$ is a unit, $p_1, \dots, p_m$ are pairwise non-associate irreducible (prime) elements, and $k_{ij} \ge 0$.
 The greatest common divisor of several elements is defined as for two (\cref{def:gcd-ufd}: a common divisor that every common divisor divides), and the argument of \cref{thm:gcd-formula-ufd} gives it by minimal exponents. So the greatest common divisor of the non-zero coefficients is:
 \begin{equation}\label{eq:gcd-prime-powers}
 \operatorname{GCD}(a_0, a_1, \dots, a_n) = \prod_{i=1}^m p_i^{\min \{ k_{ij} \mid a_j \neq 0 \}}.
 \end{equation}
 
 \begin{remark}[Ambiguity Up to Units]\label[remark]{rem:content-unit-ambiguity}
-Because the greatest common divisor in an arbitrary UFD is uniquely determined only up to multiplication by an invertible element (unit) in $R^\times$, the content $c(f)$ is formally defined only up to associates (\cref{def:associate-elements}) in $R$: it is well defined as an associate class, an element of the quotient set of $R$ by the equivalence relation $\sim$ (\cref{def:pre-quotient-set}), sometimes written
+Because the greatest common divisor in an arbitrary UFD is uniquely determined only up to multiplication by an invertible element (unit) in $\mathcal{U}_R$, the content $C(f)$ is formally defined only up to associates (\cref{def:associate-elements}) in $R$: it is well defined as an associate class, an element of the quotient set of $R$ by the equivalence relation $\sim$ (\cref{def:pre-quotient-set}), sometimes written
 \[
-c(f) \in R / R^\times.
+C(f) \in R / \mathcal{U}_R.
 \]
-By standard convention, we write $c(f) = d$ to mean that $c(f)$ is associate to $d$, or we fix a canonical choice of associates whenever one is naturally available (such as positive integers in $\mathbb{Z}$ or monic polynomials in $F[x]$).
+By standard convention, we write $C(f) = d$ to mean that $C(f)$ is associate to $d$, or we fix a canonical choice of associates whenever one is naturally available (such as positive integers in $\mathbb{Z}$ or monic polynomials in $F[x]$).
 \end{remark}
 \end{content}
 
 \subsection{Canonical Decomposition of Polynomials}
 
 \begin{speech}[00:04:53 - 00:06:10]
-All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ ---, then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = c(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes \qt{$R[x]$} under $f$, \qt{$R$} under $c(f)$, and \qt{$R[x]$} under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
+All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ ---, then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = C(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes \qt{$R[x]$} under $f$, \qt{$R$} under $C(f)$, and \qt{$R[x]$} under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
 
-And if you think about this, what happens for this polynomial? What is the content of this polynomial? What do you think the answer to that is? It's just like I take the coefficients, they have a $\operatorname{GCD}$, I divide out the $\operatorname{GCD}$... yeah, one, yeah. \inlinemetanote{writes: What is $c(f^*) = 1$} So, the answer is, this is one. And whenever I say something like this or whenever it's written, people will just write this, but what is meant is that this is up to multiplication by a unit, one, because that depends on how you did it. Because you've just taken out all of the common divisors, what's left is just units.
+And if you think about this, what happens for this polynomial? What is the content of this polynomial? What do you think the answer to that is? It's just like I take the coefficients, they have a $\operatorname{GCD}$, I divide out the $\operatorname{GCD}$... yeah, one, yeah. \inlinemetanote{writes: What is $C(f^*) \overset{\text{unit}}{=} 1$} So, the answer is, this is one. And whenever I say something like this or whenever it's written, people will just write this, but what is meant is that this is up to multiplication by a unit, one, because that depends on how you did it. Because you've just taken out all of the common divisors, what's left is just units.
 \end{speech}
 
 \begin{content}
 \begin{proposition}[Factorization into Content and Primitive Part]\label[proposition]{prop:canonical-decomp}
 Let $R$ be a UFD and let $f \in R[x] \setminus \{0\}$. Then $f$ can be factored as:
 \begin{equation}\label{eq:f-cf-fstar}
-f = c(f) \cdot f^*,
+f = C(f) \cdot f^*,
 \end{equation}
-where $c(f) \in R$ and $f^* \in R[x]$. Furthermore, the content of $f^*$ satisfies:
+where $C(f) \in R$ and $f^* \in R[x]$. Furthermore, the content of $f^*$ satisfies:
 \begin{equation}\label{eq:c-fstar-one}
-c(f^*) \sim 1 \quad (\text{up to a unit in } R).
+C(f^*) \sim 1 \quad (\text{up to a unit in } R).
 \end{equation}
 \end{proposition}
 
 \begin{steps}[Algebraic Justification]
-Let $f(x) = \sum_{j=0}^n a_j x^j$ with $c(f) = d \in R$. By definition of the greatest common divisor, $d \mid a_j$ for all $j \in \{0, \dots, n\}$. Therefore, each quotient $a_j^* := a_j / d$ belongs to $R$, defining the polynomial:
+Let $f(x) = \sum_{j=0}^n a_j x^j$ with $C(f) = d \in R$. By definition of the greatest common divisor, $d \mid a_j$ for all $j \in \{0, \dots, n\}$. Therefore, each quotient $a_j^* := a_j / d$ belongs to $R$, defining the polynomial:
 \[
 f^*(x) := \sum_{j=0}^n a_j^* x^j \in R[x].
 \]
@@ -260,7 +260,7 @@ If an irreducible element $p \in R$ divided every non-zero coefficient $a_j^*$ o
 \begin{speech}[00:06:10 - 00:07:13]
 So, example. Let's say $R$ is the integers, that's maybe our favorite ring that's a UFD, and I take some polynomial in the integers. Okay, let's say $17x^{17} + 289$. \inlinemetanote{writes: Example: $R = \mathbb{Z}, f = 17x^{17} + 289$} Okay, how about this polynomial? What's the content of this polynomial?
 
-Well, you can take the $17$ out --- this is maybe excessive $17$s: $x^{17} + 17$, because $289$ is the square of $17$, as you surely know. \inlinemetanote{writes: $= 17(x^{17} + 17)$} So, the content is $17$. \inlinemetanote{writes: $c(f) = 17$}
+Well, you can take the $17$ out --- this is maybe excessive $17$s: $x^{17} + 17$, because $289$ is the square of $17$, as you surely know. \inlinemetanote{writes: $= 17(x^{17} + 17)$} So, the content is $17$. \inlinemetanote{writes: $C(f) = 17$}
 
 So, it's not a complicated notion, but it's going to be important. Whenever we have a polynomial with coefficients in $R$, we can somehow take out the $\operatorname{GCD}$ of all the coefficients, just like we did here --- just take it out. That's all this content is.
 \end{speech}
@@ -275,13 +275,13 @@ Since $289 = 17^2$, the coefficients are $a_{17} = 17$, $a_0 = 289$, and all int
 \[
 f(x) = 17 \cdot (x^{17} + 17).
 \]
-Therefore, the content is $c(f) = 17$ (up to the units $\pm 1$), and the remaining factor is $f^*(x) = x^{17} + 17$. This primitive part is even irreducible in $\mathbb{Q}[x]$, by \newterm{Eisenstein's criterion} at $p = 17$ ($17$ divides every coefficient except the leading one, and $17^2 \nmid 17$), a criterion these notes have not covered so far.
+Therefore, the content is $C(f) = 17$ (up to the units $\pm 1$), and the remaining factor is $f^*(x) = x^{17} + 17$. This primitive part is even irreducible in $\mathbb{Q}[x]$, by \newterm{Eisenstein's criterion} at $p = 17$ ($17$ divides every coefficient except the leading one, and $17^2 \nmid 17$), a criterion these notes have not covered so far.
 \end{example}
 \end{content}
 
 \begin{hidden}
 % timestamp: 00:07:13
-% topic: Content of polynomials and canonical decomposition f = c(f) f*
+% topic: Content of polynomials and canonical decomposition f = C(f) f*
 % board_state: thm:ufd-polynomial-ring-w6wed, exer:irred-prime-ufd, def:content-poly, prop:canonical-decomp, ex:content-integers
 % next_goal: Define primitive polynomials and state Gauss's Lemma
 % open_loops: none
@@ -290,18 +290,18 @@ Therefore, the content is $c(f) = 17$ (up to the units $\pm 1$), and the remaini
 \subsection{Primitive Polynomials}
 
 \begin{speech}[00:07:13 - 00:08:12]
-So, there's a definition that's important. Definition: $g \in R[x]$, $g \neq 0$, is primitive --- that's the word that's being defined --- if the content of $g$ is equal to one, and of course I always mean up to a unit, okay? \inlinemetanote{writes: Def. $g \in R[x], g \neq 0$ is primitive if $c(g) = 1$ (up to unit)}
+So, there's a definition that's important. Definition: $g \in R[x]$, $g \neq 0$, is primitive --- that's the word that's being defined --- if the content of $g$ is equal to one, and of course I always mean up to a unit, okay? \inlinemetanote{writes: Def. $g \in R[x]$, $g \neq 0$, is primitive if $C(g) \overset{\text{unit}}{=} 1$}
 
 That's the notion, that's the definition of primitive. Primitive are those polynomials where, if I take their coefficients, there's no $\operatorname{GCD}$. Like this one here. \inlinemetanote{points at $x^{17} + 17$} $17$ is $\operatorname{GCD}$; this one has no $\operatorname{GCD}$, because of a one and a $17$.
 
-So, in particular, if I take this $f \neq 0$, and I take $f = c(f) \cdot f^*$, this one is primitive. \inlinemetanote{writes \qt{primitive} under $f^*$} Okay?
+So, in particular, if I take this $f \neq 0$, and I take $f = C(f) \cdot f^*$, this one is primitive. \inlinemetanote{writes \qt{primitive} under $f^*$} Okay?
 \end{speech}
 
 \begin{content}
 \begin{definition}[Primitive Polynomial]\label[definition]{def:primitive-poly}
 Let $R$ be a UFD. A non-zero polynomial $g \in R[x] \setminus \{0\}$ is called \newterm{primitive} if its content is a unit in $R$:
 \begin{equation}\label{eq:primitive-def}
-c(g) \sim 1.
+C(g) \sim 1.
 \end{equation}
 In other words, the non-zero coefficients of $g$ share no common non-unit divisors in $R$.
 \end{definition}
@@ -309,7 +309,7 @@ In other words, the non-zero coefficients of $g$ share no common non-unit diviso
 \begin{observation}[Primitive Factor in Canonical Decomposition]\label[observation]{obs:fstar-primitive}
 For any non-zero polynomial $f \in R[x] \setminus \{0\}$, the polynomial factor $f^*$ in the canonical decomposition:
 \[
-f = c(f) \cdot f^*
+f = C(f) \cdot f^*
 \]
 is always a primitive polynomial in $R[x]$. For instance, in \cref{ex:content-integers}, the polynomial $x^{17} + 17 \in \mathbb{Z}[x]$ is primitive because $\operatorname{GCD}(1, 17) = 1$.
 \end{observation}
@@ -318,7 +318,7 @@ is always a primitive polynomial in $R[x]$. For instance, in \cref{ex:content-in
 \begin{speech}[00:08:12 - 00:10:10]
 And the next simple observation is: suppose $f = \gamma \cdot g$, where $\gamma$ is a scalar and $g$ is a polynomial that is primitive. \inlinemetanote{writes: Suppose $f = \gamma \cdot g, \gamma \in R, g \in R[x]$ primitive} Okay, suppose I have any expression, where $f$ is just some polynomial in $R[x]$, always not zero, and I write this polynomial as some scalar times a polynomial which is primitive. We already know one way to do that. Here, I've written it as some scalar times a polynomial that's primitive.
 
-And the answer is that if I do this, it must be the case that this content is equal to $\gamma$ up to a unit, and $f^*$ is equal to $g$, again, up to a unit. \inlinemetanote{writes: $\implies c(f) \sim \gamma, f^* \sim g$} And the reason is because this is the $\operatorname{GCD}$ of all the coefficients. If I'm able to take this scalar out, then this scalar must divide the $\operatorname{GCD}$, because it's a divisor and it should divide the greatest common divisor. And if there's anything left over, then this wouldn't be primitive.
+And the answer is that if I do this, it must be the case that this content is equal to $\gamma$ up to a unit, and $f^*$ is equal to $g$, again, up to a unit. \inlinemetanote{writes: $\implies C(f) \sim \gamma, f^* \sim g$} And the reason is because this is the $\operatorname{GCD}$ of all the coefficients. If I'm able to take this scalar out, then this scalar must divide the $\operatorname{GCD}$, because it's a divisor and it should divide the greatest common divisor. And if there's anything left over, then this wouldn't be primitive.
 
 So, you just have to think about it. There's actually nothing going on in these statements except understanding this move of taking out the $\operatorname{GCD}$ from all of the coefficients. So, this is going to be useful for us.
 
@@ -333,24 +333,24 @@ f = \gamma \cdot g,
 \end{equation}
 where $\gamma \in R \setminus \{0\}$ and $g \in R[x]$ is a primitive polynomial. Then:
 \begin{equation}\label{eq:gamma-is-content}
-\gamma \sim c(f) \quad \text{and} \quad g \sim f^* \quad (\text{up to units in } R).
+\gamma \sim C(f) \quad \text{and} \quad g \sim f^* \quad (\text{up to units in } R).
 \end{equation}
 \end{proposition}
 
 \begin{proof}
 Let $g(x) = \sum_{j=0}^n b_j x^j$. Then $f(x) = \sum_{j=0}^n (\gamma b_j) x^j$. Computing the content of $f$ using the properties of the greatest common divisor yields:
 \[
-c(f) = \operatorname{GCD}(\gamma b_0, \dots, \gamma b_n) \sim \gamma \cdot \operatorname{GCD}(b_0, \dots, b_n) = \gamma \cdot c(g).
+C(f) = \operatorname{GCD}(\gamma b_0, \dots, \gamma b_n) \sim \gamma \cdot \operatorname{GCD}(b_0, \dots, b_n) = \gamma \cdot C(g).
 \]
-Since $g$ is primitive, $c(g) \sim 1$, which immediately implies:
+Since $g$ is primitive, $C(g) \sim 1$, which immediately implies:
 \[
-c(f) \sim \gamma \cdot 1 = \gamma.
+C(f) \sim \gamma \cdot 1 = \gamma.
 \]
-Writing $\gamma = u \cdot c(f)$ for some unit $u \in R^\times$, substituting back into \eqref{eq:f-gamma-g} gives:
+Writing $\gamma = u \cdot C(f)$ for some unit $u \in \mathcal{U}_R$, substituting back into \eqref{eq:f-gamma-g} gives:
 \[
-c(f) \cdot f^* = f = u c(f) \cdot g \implies c(f)(f^* - u g) = 0.
+C(f) \cdot f^* = f = u C(f) \cdot g \implies C(f)(f^* - u g) = 0.
 \]
-Since $R[x]$ is an integral domain and $c(f) \neq 0$, it follows that $f^* = u g$, so $g \sim f^*$.
+Since $R[x]$ is an integral domain and $C(f) \neq 0$, it follows that $f^* = u g$, so $g \sim f^*$.
 \end{proof}
 \end{content}
 
@@ -370,15 +370,15 @@ Okay, the proof of this by now for us is also very simple.
 \begin{lemma}[Gauss's Lemma]\label[lemma]{lem:gauss-lemma}
 Let $R$ be a unique factorization domain. If $f, g \in R[x]$ are primitive polynomials, then their product $fg \in R[x]$ is also a primitive polynomial:
 \begin{equation}\label{eq:gauss-lemma}
-c(f) \sim 1 \quad \text{and} \quad c(g) \sim 1 \implies c(fg) \sim 1.
+C(f) \sim 1 \quad \text{and} \quad C(g) \sim 1 \implies C(fg) \sim 1.
 \end{equation}
 \end{lemma}
 \end{content}
 
 \begin{speech}[00:11:20 - 00:13:25]
-So, we're going to proceed by contradiction. So, assume that the content of the product is not a unit. \inlinemetanote{writes: Proof: Contradiction. Assume $c(fg)$ is not a unit.} All right?
+So, we're going to proceed by contradiction. So, assume that the content of the product is not a unit. \inlinemetanote{writes: Proof: Contradiction. Assume $C(fg)$ is not a unit.} All right?
 
-Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: Then $\exists p \in R$ prime s.t. $p \mid c(fg)$ in UFD} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
+Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: Then $\exists p \in R$ prime s.t. $p \mid C(fg)$ in UFD} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
 
 And then comes the idea in the proof: for this prime is irreducible, so that implies that the ideal is a prime ideal --- that's that exercise (Recall: \cref{exer:irred-prime-ufd}). \inlinemetanote{writes: $p$ is irred $\iff (p)$ is prime ideal} And then we do something interesting, which is we look at this map, a homomorphism from $R[x]$ to... So, there's a quotient map $R$ to $R \pmod p$. \inlinemetanote{writes: $R \to R/(p)$} That's the quotient map from previous weeks (Recall: \cref{def:canonical-quotient-map}). That's a homomorphism. And that also gives me a homomorphism from polynomials by just applying this quotient map to the coefficients of the polynomials. \inlinemetanote{writes: $R[x] \to (R/(p))[x]$} And this is a ring homomorphism.
 
@@ -399,10 +399,10 @@ To understand this proof, you have to remember all these constructions: that giv
 
 \begin{content}
 \begin{proof}[Proof of \cref{lem:gauss-lemma}]
-We proceed by contradiction. Suppose that $fg$ is not primitive. Then its content $c(fg)$ is not a unit in $R$.
-Since $R$ is a UFD and $c(fg) \neq 0$ is a non-unit, there exists an irreducible element $p \in R$ such that:
+We proceed by contradiction. Suppose that $fg$ is not primitive. Then its content $C(fg)$ is not a unit in $R$.
+Since $R$ is a UFD and $C(fg) \neq 0$ is a non-unit, there exists an irreducible element $p \in R$ such that:
 \[
-p \mid c(fg).
+p \mid C(fg).
 \]
 By \cref{exer:irred-prime-ufd}, because $R$ is a UFD, the irreducible element $p$ generates a prime ideal $(p) \subset R$. Consequently, the quotient ring:
 \[
@@ -419,7 +419,7 @@ Applying $\phi$ to the product $fg$ and using the ring homomorphism property yie
 \[
 \phi(f) \cdot \phi(g) = \phi(fg).
 \]
-Because $p \mid c(fg)$, the prime $p$ divides every coefficient of $fg$. Therefore, every coefficient of $fg$ maps to $0$ in $R/(p)$, which implies:
+Because $p \mid C(fg)$, the prime $p$ divides every coefficient of $fg$. Therefore, every coefficient of $fg$ maps to $0$ in $R/(p)$, which implies:
 \[
 \phi(fg) = 0 \in (R/(p))[x].
 \]
@@ -427,7 +427,7 @@ Thus, in the integral domain $(R/(p))[x]$, we have:
 \[
 \phi(f) \cdot \phi(g) = 0 \implies \phi(f) = 0 \quad \text{or} \quad \phi(g) = 0.
 \]
-If $\phi(f) = 0$, then every coefficient of $f$ is divisible by $p$, meaning $p \mid c(f)$, which contradicts the assumption that $f$ is primitive ($c(f) \sim 1$). Similarly, if $\phi(g) = 0$, then $p \mid c(g)$, contradicting the assumption that $g$ is primitive.
+If $\phi(f) = 0$, then every coefficient of $f$ is divisible by $p$, meaning $p \mid C(f)$, which contradicts the assumption that $f$ is primitive ($C(f) \sim 1$). Similarly, if $\phi(g) = 0$, then $p \mid C(g)$, contradicting the assumption that $g$ is primitive.
 This contradiction proves that $fg$ must be primitive.
 \end{proof}
 \end{content}
@@ -469,7 +469,7 @@ The first time you see these things, you just have to follow, but then you can t
 
 We know that $g$ divides $bf$. That's the assumption. This is just language: $g$ divides $bf$ means that there exists some $h$ such that $bf = gh$ --- maybe $hg$, doesn't matter, but okay. \inlinemetanote{writes: Proof: $g \mid bf \implies \exists h \in R[x]: bf = hg$} That's what it means to say that $g$ divides $bf$. All right.
 
-And now, we take the content of both sides. Well, take the content of this side: it says this polynomial here is the content of $bf$ times $f^*$, and I can take $h$ and take the content of $h$ times $h^* g$. \inlinemetanote{writes: $c(bf) f^* = c(h) h^* g$} Okay? So, this is just rewriting the left-hand side and the right-hand side in the contents.
+And now, we take the content of both sides. Well, take the content of this side: it says this polynomial here is the content of $bf$ times $f^*$, and I can take $h$ and take the content of $h$ times $h^* g$. \inlinemetanote{writes: $C(bf) f^* = C(h) h^* g$} Okay? So, this is just rewriting the left-hand side and the right-hand side in the contents.
 
 Now, by the lemma of Gauss, we think about this object here: $h^* g$. $h^*$ is primitive because that's what you do when you take $h$. $h$ may not be primitive, but we took the content of $h$ out, so $h^*$ is primitive. $g$ is primitive by assumption. So, then by Gauss upstairs (Recall: \cref{lem:gauss-lemma}), $h^* \times g$ is primitive. \inlinemetanote{writes: $h^* g: h^*$ primitive, $g$ primitive $\implies h^* g$ is primitive by Gauss} Okay?
 \end{speech}
@@ -477,7 +477,7 @@ Now, by the lemma of Gauss, we think about this object here: $h^* g$. $h^*$ is p
 \begin{speech}[00:17:55 - 00:19:24]
 So, then we look at this equation: this is primitive, and this is primitive. And I said that whenever we have such an equation where we have the primitive part times the content, then the only possibility is that the primitives are equal up to a unit (Recall: \cref{prop:primitive-decomp-uniqueness}). This is a content equation: this is a primitive times some content. That was one of the comments up there.
 
-So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \sim h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = c(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f$ since $f = c(f) f^*$} If you divide $f^*$, you also divide $f$.
+So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \sim h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = C(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f$ since $f = C(f) f^*$} If you divide $f^*$, you also divide $f$.
 
 So, that's the proof of this too. Now with these preliminaries, we can finally prove Gauss's theorem.
 \end{speech}
@@ -490,22 +490,22 @@ bf = hg.
 \end{equation}
 We express each side in terms of its canonical decomposition into content and primitive part:
 \begin{align*}
-\text{Left-hand side:} \quad bf &= c(bf) \cdot (bf)^* \sim b \cdot c(f) \cdot f^*, \\
-\text{Right-hand side:} \quad hg &= (c(h) \cdot h^*) \cdot g = c(h) \cdot (h^* g).
+\text{Left-hand side:} \quad bf &= C(bf) \cdot (bf)^* \sim b \cdot C(f) \cdot f^*, \\
+\text{Right-hand side:} \quad hg &= (C(h) \cdot h^*) \cdot g = C(h) \cdot (h^* g).
 \end{align*}
 By \cref{obs:fstar-primitive}, $h^*$ is primitive. Since $g$ is primitive by assumption, Gauss's Lemma (\cref{lem:gauss-lemma}) implies that the product $h^* g$ is primitive:
 \[
-c(h^* g) \sim 1.
+C(h^* g) \sim 1.
 \]
 Equating the two decompositions gives:
 \[
-c(bf) \cdot f^* = c(h) \cdot (h^* g).
+C(bf) \cdot f^* = C(h) \cdot (h^* g).
 \]
 On both sides, we have a scalar in $R$ multiplied by a primitive polynomial ($f^*$ on the left, and $h^* g$ on the right). By the uniqueness of the primitive decomposition (\cref{prop:primitive-decomp-uniqueness}), the primitive parts must be associate in $R[x]$:
 \[
 f^* \sim h^* g.
 \]
-Hence, $g \mid f^*$ in $R[x]$. Since $f = c(f) \cdot f^*$, it follows immediately that:
+Hence, $g \mid f^*$ in $R[x]$. Since $f = C(f) \cdot f^*$, it follows immediately that:
 \[
 g \mid f \quad \text{in } R[x].
 \]
@@ -557,7 +557,7 @@ To establish that $R[x]$ is a UFD (\cref{def:ufd}), we must prove two fundamenta
 \begin{speech}[00:21:44 - 00:23:58]
 For this there's a ground case and an induction.
 
-The ground case is: suppose $f \in R[x]$... \inlinemetanote{writes: Ground case:} Here $f$ is not zero, not a unit, and suppose the degree of $f$ is zero. \inlinemetanote{writes: Suppose $f \in R[x], f \neq 0$, not unit, and suppose $\deg(f) = 0$}
+The ground case is: suppose $f \in R[x]$... \inlinemetanote{writes: Ground case:} Here $f$ is not zero, not a unit, and suppose the degree of $f$ is zero. \inlinemetanote{writes: Suppose $f \in R[x], f \neq 0, \text{unit}$ and suppose $\deg(f) = 0$}
 
 We're going to prove existence based on induction of the degree of the polynomial. All right? The polynomials have degree in any ring, so we're going to start with the case where the degree is zero. What does that mean, the degree is zero? If $f$ is a degree-zero polynomial, then it's like $a_0$ plus nothing else. So, this means $f$ is a scalar, actually. This means $f$ is just a scalar and it lives in $R$. \inlinemetanote{writes: $f = a_0 \implies$ This means $f \in R$} A degree-zero polynomial is just a scalar.
 
@@ -592,13 +592,13 @@ Thus, $g, h \in R$. Because $q$ is irreducible in $R$, either $g$ or $h$ must be
 \begin{speech}[00:23:58 - 00:25:57]
 The induction case is slightly more interesting.
 
-In the induction case, suppose we have this $f \in R[x]$, not zero, not equal to zero or a unit. \inlinemetanote{writes: Induction case: Suppose $f \in R[x], f \neq 0 \text{ unit}, \deg(f) > 0$} And now the degree of $f$ is positive. We want to show that there exists a factorization into irreducibles in the polynomial ring. And now we actually have to do something. We didn't here, because that was just assumption.
+In the induction case, suppose we have this $f \in R[x]$, not zero, not equal to zero or a unit. \inlinemetanote{writes: Induction case: Suppose $f \in R[x] \neq 0, \text{unit}$, $\deg(f) > 0$} And now the degree of $f$ is positive. We want to show that there exists a factorization into irreducibles in the polynomial ring. And now we actually have to do something. We didn't here, because that was just assumption.
 
 Let us see.
 
-As far as Theorem B is concerned, this is the first moment where an idea is needed. We need to prove existence. We're not necessarily a scalar, so we can't just use the assumption; we're some actual bona fide polynomial, so we have here $f$. And the idea here is we know one thing that I taught at the beginning of the class: we can write $f$ as $c(f)$ times $f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: $f = c(f) \cdot f^*$} That's the content, and this is primitive. \inlinemetanote{writes \qt{primitive} above $f^*$} Okay?
+As far as Theorem B is concerned, this is the first moment where an idea is needed. We need to prove existence. We're not necessarily a scalar, so we can't just use the assumption; we're some actual bona fide polynomial, so we have here $f$. And the idea here is we know one thing that I taught at the beginning of the class: we can write $f$ as $C(f)$ times $f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: $f = C(f) \cdot f^*$} That's the content, and this is primitive. \inlinemetanote{writes \qt{primitive} above $f^*$} Okay?
 
-So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes \qt{$R$} under $c(f)$} and this is in $R[x]$ \inlinemetanote{writes \qt{$R[x]$} under $f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
+So, we need to factor $f$. We need to show there exists a factorization of $f$ into irreducibles for $R[x]$. We already have a kind of factorization here. And remember, this is a scalar \inlinemetanote{writes \qt{$R$} under $C(f)$} and this is in $R[x]$ \inlinemetanote{writes \qt{$R[x]$} under $f^*$}. And since the degree of $f$ is positive, the degree of this is positive. So, I just write that explicitly: the degree of $f^*$ is equal to the degree of $f$, which is positive \inlinemetanote{writes: $\deg(f^*) = \deg(f) > 0$}, because this is just a scalar, okay?
 
 Now, we have to think: what could happen here? So, what could happen? \inlinemetanote{writes: What could happen?}
 \end{speech}
@@ -608,20 +608,20 @@ Now, we have to think: what could happen here? So, what could happen? \inlinemet
 Suppose $f \in R[x]$ is a non-zero, non-unit polynomial with $\deg(f) > 0$.
 By \cref{prop:canonical-decomp}, $f$ can be decomposed into its content and primitive part:
 \[
-f = c(f) \cdot f^*,
+f = C(f) \cdot f^*,
 \]
-where $c(f) \in R \setminus \{0\}$ and $f^* \in R[x]$ is a primitive polynomial ($c(f^*) \sim 1$).
-Since $c(f)$ is a non-zero scalar, $\deg(c(f)) = 0$. By additivity of degrees in the integral domain $R[x]$:
+where $C(f) \in R \setminus \{0\}$ and $f^* \in R[x]$ is a primitive polynomial ($C(f^*) \sim 1$).
+Since $C(f)$ is a non-zero scalar, $\deg(C(f)) = 0$. By additivity of degrees in the integral domain $R[x]$:
 \[
-\deg(f) = \deg(c(f)) + \deg(f^*) = 0 + \deg(f^*) \implies \deg(f^*) = \deg(f) > 0.
+\deg(f) = \deg(C(f)) + \deg(f^*) = 0 + \deg(f^*) \implies \deg(f^*) = \deg(f) > 0.
 \]
-If $c(f) \in R$ is not a unit, the UFD property of $R$ guarantees that $c(f)$ factors into a product of irreducible elements in $R$, each of which remains irreducible in $R[x]$. Therefore, to obtain a complete factorization of $f$ into irreducibles in $R[x]$, it suffices to factor the primitive polynomial $f^*$.
+If $C(f) \in R$ is not a unit, the UFD property of $R$ guarantees that $C(f)$ factors into a product of irreducible elements in $R$, each of which remains irreducible in $R[x]$. Therefore, to obtain a complete factorization of $f$ into irreducibles in $R[x]$, it suffices to factor the primitive polynomial $f^*$.
 \end{content}
 
 \begin{speech}[00:25:57 - 00:27:36]
 Well, one thing that could happen --- the first case --- is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x]$ is irred.} Okay?
 
-If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = c(f) \cdot f^*$. \inlinemetanote{writes: $f = c(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD in $R$, factor into irreds} under $c(f)$} Okay?
+If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = C(f) \cdot f^*$. \inlinemetanote{writes: $f = C(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD in $R$, factor into irreds} under $C(f)$} Okay?
 
 So, then we're done, because we have irreducibles and irreducibles, so we are done. We are done with this case. \inlinemetanote{writes: We are done with this case}
 
@@ -632,10 +632,10 @@ This is not really a surprise: at the very beginning, anything in $R$ we can alr
 \textbf{Case (i): $f^*$ is irreducible in $R[x]$.}
 If $f^*$ is already irreducible in $R[x]$, then:
 \begin{description}
-    \item[Unit Content:] \textbf{$c(f) \in R^\times$:} If $c(f) \in R^\times$ is a unit, then $f = c(f) f^*$ is associate to $f^*$ and is therefore itself irreducible in $R[x]$.
-    \item[Non-Unit Content:] \textbf{$c(f) \notin R^\times$:} If $c(f) \notin R^\times$, then $c(f)$ is a non-zero, non-unit scalar in the UFD $R$. Thus, $c(f)$ factors into a finite product of irreducible elements in $R$:
+    \item[Unit Content:] \textbf{$C(f) \in \mathcal{U}_R$:} If $C(f) \in \mathcal{U}_R$ is a unit, then $f = C(f) f^*$ is associate to $f^*$ and is therefore itself irreducible in $R[x]$.
+    \item[Non-Unit Content:] \textbf{$C(f) \notin \mathcal{U}_R$:} If $C(f) \notin \mathcal{U}_R$, then $C(f)$ is a non-zero, non-unit scalar in the UFD $R$. Thus, $C(f)$ factors into a finite product of irreducible elements in $R$:
     \[
-    c(f) = q_1 \cdot q_2 \cdots q_k \quad (q_i \in R \text{ irreducible in } R).
+    C(f) = q_1 \cdot q_2 \cdots q_k \quad (q_i \in R \text{ irreducible in } R).
     \]
     Since each $q_i$ remains irreducible in $R[x]$, the product:
     \[
@@ -665,7 +665,7 @@ Because $R$ is an integral domain, the degree is additive on products of non-zer
 \deg(f^*) = \deg(A) + \deg(B).
 \]
 \begin{itemize}
-    \item \textbf{The Desired Induction Step:} If both $\deg(A) < \deg(f^*) = \deg(f)$ and $\deg(B) < \deg(f^*) = \deg(f)$, then by the induction hypothesis, both $A$ and $B$ factor into products of irreducible elements in $R[x]$. Multiplying these factorizations together would immediately produce a factorization of $f^*$, and hence of $f = c(f) f^*$.
+    \item \textbf{The Desired Induction Step:} If both $\deg(A) < \deg(f^*) = \deg(f)$ and $\deg(B) < \deg(f^*) = \deg(f)$, then by the induction hypothesis, both $A$ and $B$ factor into products of irreducible elements in $R[x]$. Multiplying these factorizations together would immediately produce a factorization of $f^*$, and hence of $f = C(f) f^*$.
     \item \textbf{The Potential Degree Obstacle:} The induction hypothesis fails if one of the factors, say $A$, has degree zero:
     \[
     \deg(A) = 0 \implies A \in R.
@@ -705,9 +705,9 @@ Since $A$ is not a unit in $R[x]$ by assumption, $a$ is not a unit in $R$.
 Because $a$ divides $f^* = aB$ in $R[x]$, $a$ must divide every coefficient of $f^*$.
 Consequently, $a$ divides the content of $f^*$:
 \[
-a \mid c(f^*) \quad \text{in } R.
+a \mid C(f^*) \quad \text{in } R.
 \]
-However, $f^*$ is primitive (\cref{def:primitive-poly}), which means $c(f^*) \sim 1$. Thus, $a \mid 1$ in $R$, implying that $a \in R^\times$ is a unit in $R$.
+However, $f^*$ is primitive (\cref{def:primitive-poly}), which means $C(f^*) \sim 1$. Thus, $a \mid 1$ in $R$, implying that $a \in \mathcal{U}_R$ is a unit in $R$.
 This contradicts the fact that $A$ is not a unit in $R[x]$.
 \end{proof}
 
@@ -720,7 +720,7 @@ Because $\deg(A) + \deg(B) = \deg(f^*) = \deg(f)$, it follows that:
 \[
 \deg(A) < \deg(f) \quad \text{and} \quad \deg(B) < \deg(f).
 \]
-By the induction hypothesis on the degree, both $A$ and $B$ factor into products of irreducible elements in $R[x]$. Therefore, $f^* = AB$ factors into irreducibles, and combining this with the irreducible factorization of the scalar content $c(f) \in R$ yields a complete factorization of $f = c(f) f^*$ into irreducible elements in $R[x]$.
+By the induction hypothesis on the degree, both $A$ and $B$ factor into products of irreducible elements in $R[x]$. Therefore, $f^* = AB$ factors into irreducibles, and combining this with the irreducible factorization of the scalar content $C(f) \in R$ yields a complete factorization of $f = C(f) f^*$ into irreducible elements in $R[x]$.
 This completes the proof of Step 1 (Existence of Factorization).
 \end{steps}
 \end{content}
@@ -781,9 +781,9 @@ Okay, so, this is what we have to prove. And to start, there's a case that helps
 
 This case means that $p$ is a scalar: $p \in R$. \inlinemetanote{writes: $p \in R$} All right.
 
-What do we have here? We need to prove this implication. $fg$ is equal to the content of $f$ times $f^*$ times the content of $g$ times $g^*$. \inlinemetanote{writes: $fg = c(f) f^* \cdot c(g) g^*$} I just used the content equation for $f$, the content equation for $g$, and then I put them in order here: content of $f$, content of $g$, $f^*$, $g^*$. \inlinemetanote{writes: $= c(f) c(g) f^* g^*$} All right?
+What do we have here? We need to prove this implication. $fg$ is equal to the content of $f$ times $f^*$ times the content of $g$ times $g^*$. \inlinemetanote{writes: $fg = C(f) f^* \cdot C(g) g^*$} I just used the content equation for $f$, the content equation for $g$, and then I put them in order here: content of $f$, content of $g$, $f^*$, $g^*$. \inlinemetanote{writes: $= C(f) C(g) f^* g^*$} All right?
 
-And the second thing says that $p$ divides this: $p$ divides the whole thing \inlinemetanote{writes: $p \mid c(f) c(g) f^* g^*$} --- content of $f$, content of $g$, times these polynomials $f^*$, $g^*$.
+And the second thing says that $p$ divides this: $p$ divides the whole thing \inlinemetanote{writes: $p \mid C(f) C(g) f^* g^*$} --- content of $f$, content of $g$, times these polynomials $f^*$, $g^*$.
 
 Now, $f^*$ is primitive because that's what happens when you extract the content. \inlinemetanote{writes \qt{primitive} under $f^*$} This one is also primitive \inlinemetanote{writes \qt{primitive} under $g^*$} --- that's what happens when you extract the content. So, the whole thing is primitive. \inlinemetanote{writes \qt{primitive} under $f^* g^*$} That's by the Gauss claim (Recall: \cref{lem:gauss-lemma}): Gauss says that the whole thing is primitive. \inlinemetanote{writes: Gauss $\implies f^* g^*$ is primitive}
 \end{speech}
@@ -796,17 +796,17 @@ Since $p$ is irreducible in $R[x]$, it is irreducible in $R$ (a factorization in
 Suppose $p \mid fg$ in $R[x]$ and $p \nmid f$.
 Decomposing $f$ and $g$ into their content and primitive parts:
 \[
-f = c(f) \cdot f^* \quad \text{and} \quad g = c(g) \cdot g^*,
+f = C(f) \cdot f^* \quad \text{and} \quad g = C(g) \cdot g^*,
 \]
 where $f^*, g^* \in R[x]$ are primitive, we express the product $fg$ as:
 \[
-fg = \bigl(c(f) f^*\bigr) \cdot \bigl(c(g) g^*\bigr) = \bigl(c(f) c(g)\bigr) \cdot (f^* g^*).
+fg = \bigl(C(f) f^*\bigr) \cdot \bigl(C(g) g^*\bigr) = \bigl(C(f) C(g)\bigr) \cdot (f^* g^*).
 \]
 By Gauss's Lemma (\cref{lem:gauss-lemma}), since $f^*$ and $g^*$ are primitive, their product:
 \[
 f^* g^* \in R[x] \quad \text{is also primitive}.
 \]
-Since $p \mid fg$, the scalar $p$ divides the polynomial $\bigl(c(f) c(g)\bigr) \cdot (f^* g^*)$ in $R[x]$.
+Since $p \mid fg$, the scalar $p$ divides the polynomial $\bigl(C(f) C(g)\bigr) \cdot (f^* g^*)$ in $R[x]$.
 \end{content}
 
 \begin{speech}[00:34:58 - 00:36:57]
@@ -816,13 +816,13 @@ There must be one coefficient of this polynomial which $p$ does not divide. $p$ 
 
 So, there's some coefficient, let's say $a_{17}$. That's the coefficient \inlinemetanote{writes: $a_{17}$ is the coeff.} of $f^* g^*$ \inlinemetanote{writes: of $f^* g^*$} which $p$ does not divide. \inlinemetanote{writes: which $p$ does not divide} I could put a variable there too, but $17$ in this class is kind of a variable anyway. $p$ does not divide.
 
-This means that $p$ does not divide $a_{17}$ \inlinemetanote{writes: $p \nmid a_{17}$}, but $p$ divides all of these things together: it divides $c(f) c(g) a_{17}$. \inlinemetanote{writes: $p \mid c(f) c(g) a_{17}$} Because it must divide all of this, but it doesn't divide $a_{17}$.
+This means that $p$ does not divide $a_{17}$ \inlinemetanote{writes: $p \nmid a_{17}$}, but $p$ divides all of these things together: it divides $C(f) C(g) a_{17}$. \inlinemetanote{writes: $p \mid C(f) C(g) a_{17}$} Because it must divide all of this, but it doesn't divide $a_{17}$.
 
 These are all scalars now, and we have unique factorization. So, $p$ doesn't divide that.
 
-$p$ doesn't divide the content of $f$ either, because if $p$ divided the content of $f$, then $f$ would be in this ideal \inlinemetanote{writes: $f \notin (p) \implies p \nmid c(f)$}, because $f = c(f) \cdot f^*$. If $p$ divided the content of $f$, $f$ would be in that ideal, but it's not.
+$p$ doesn't divide the content of $f$ either, because if $p$ divided the content of $f$, then $f$ would be in this ideal \inlinemetanote{writes: $f \notin (p) \implies p \nmid C(f)$}, because $f = C(f) \cdot f^*$. If $p$ divided the content of $f$, $f$ would be in that ideal, but it's not.
 
-So, it doesn't divide that, doesn't divide that. By unique factorization, $p$ must divide the content of $g$ \inlinemetanote{writes: $p \mid c(g)$}, and this implies $p$ divides the polynomial $g$ \inlinemetanote{writes: $\implies p \mid g$}, which says that $g$ is in the ideal. \inlinemetanote{writes: $\implies g \in (p)$}
+So, it doesn't divide that, doesn't divide that. By unique factorization, $p$ must divide the content of $g$ \inlinemetanote{writes: $p \mid C(g)$}, and this implies $p$ divides the polynomial $g$ \inlinemetanote{writes: $\implies p \mid g$}, which says that $g$ is in the ideal. \inlinemetanote{writes: $\implies g \in (p)$}
 
 So, that handles the degree-zero case, and I have five minutes, and I will do the last case, hopefully.
 \end{speech}
@@ -837,26 +837,26 @@ Since $f^* g^*$ is primitive, $\operatorname{GCD}(d_0, \dots, d_N) \sim 1$. Ther
 \[
 p \nmid d_k \quad \text{in } R.
 \]
-Because $p \mid fg$ with $p \in R$ a constant, $p$ must divide every coefficient of $fg = c(f) c(g) (f^* g^*)$ in $R$. In particular, the $k$-th coefficient gives:
+Because $p \mid fg$ with $p \in R$ a constant, $p$ must divide every coefficient of $fg = C(f) C(g) (f^* g^*)$ in $R$. In particular, the $k$-th coefficient gives:
 \begin{equation}\label{eq:p-divides-coeff}
-p \mid c(f) c(g) d_k \quad \text{in } R.
+p \mid C(f) C(g) d_k \quad \text{in } R.
 \end{equation}
 Since $p$ is a prime element in the UFD $R$, \eqref{eq:p-divides-coeff} implies:
 \[
-p \mid c(f) \quad \text{or} \quad p \mid c(g) \quad \text{or} \quad p \mid d_k.
+p \mid C(f) \quad \text{or} \quad p \mid C(g) \quad \text{or} \quad p \mid d_k.
 \]
-We already know $p \nmid d_k$. Moreover, if $p \mid c(f)$, then $c(f) = p \cdot r$ for some $r \in R$, which implies:
+We already know $p \nmid d_k$. Moreover, if $p \mid C(f)$, then $C(f) = p \cdot r$ for some $r \in R$, which implies:
 \[
-f = c(f) f^* = p \cdot (r f^*) \implies p \mid f \quad \text{in } R[x] \implies f \in (p),
+f = C(f) f^* = p \cdot (r f^*) \implies p \mid f \quad \text{in } R[x] \implies f \in (p),
 \]
 directly contradicting the hypothesis that $f \notin (p)$.
 Consequently, we must have:
 \[
-p \mid c(g) \quad \text{in } R.
+p \mid C(g) \quad \text{in } R.
 \]
-Writing $c(g) = p \cdot s$ for some $s \in R$, we conclude:
+Writing $C(g) = p \cdot s$ for some $s \in R$, we conclude:
 \[
-g = c(g) g^* = p \cdot (s g^*) \implies p \mid g \quad \text{in } R[x] \implies g \in (p).
+g = C(g) g^* = p \cdot (s g^*) \implies p \mid g \quad \text{in } R[x] \implies g \in (p).
 \]
 This proves that every irreducible constant element $p \in R$ generates a prime ideal in $R[x]$.
 \end{proof}
@@ -961,7 +961,7 @@ So, these cases are not possible, and they must be zero. So, actually these term
 
 So, we have $b' f = q' m$ \inlinemetanote{writes: $b' f = q' m$} and $b'' p = q'' m$. \inlinemetanote{writes: $b'' p = q'' m$}
 
-And we can write this on the right-hand side as a content: this equals $q' c(m) m^*$ \inlinemetanote{writes: $= q' c(m) m^*$}, and this is $q'' c(m) m^*$. \inlinemetanote{writes: $= q'' c(m) m^*$}
+And we can write this on the right-hand side as a content: this equals $q' C(m) m^*$ \inlinemetanote{writes: $= q' C(m) m^*$}, and this is $q'' C(m) m^*$. \inlinemetanote{writes: $= q'' C(m) m^*$}
 
 So, that means $m^*$, which is primitive, divides this product.
 
@@ -1002,10 +1002,10 @@ Substituting $r' = 0$ and $r'' = 0$ into \eqref{eq:cleared-f-div} and \eqref{eq:
 b' f &= q' m, \label{eq:exact-bprime-f} \\
 b'' p &= q'' m. \label{eq:exact-bprime-p}
 \end{align}
-Expressing $m$ via its canonical content decomposition $m = c(m) \cdot m^*$, where $c(m) \in R$ and $m^* \in R[x]$ is primitive, equations \eqref{eq:exact-bprime-f} and \eqref{eq:exact-bprime-p} become:
+Expressing $m$ via its canonical content decomposition $m = C(m) \cdot m^*$, where $C(m) \in R$ and $m^* \in R[x]$ is primitive, equations \eqref{eq:exact-bprime-f} and \eqref{eq:exact-bprime-p} become:
 \begin{align}
-b' f &= q' \cdot c(m) \cdot m^*, \label{eq:div-bprime-f-mstar} \\
-b'' p &= q'' \cdot c(m) \cdot m^*. \label{eq:div-bprime-p-mstar}
+b' f &= q' \cdot C(m) \cdot m^*, \label{eq:div-bprime-f-mstar} \\
+b'' p &= q'' \cdot C(m) \cdot m^*. \label{eq:div-bprime-p-mstar}
 \end{align}
 Thus, the primitive polynomial $m^* \in R[x]$ satisfies:
 \[
@@ -1029,9 +1029,9 @@ The bell ended the lecture a few minutes before the end of the proof (\qt{I'll d
 \begin{steps}[Completion of the Argument for $\deg(p) > 0$]
 At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ is the primitive part of the element $m \in I = (p, f)$ of minimal degree.
 \begin{description}
-    \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in R^\times$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
-    \item[Step 2:] \textbf{$m$ is a Non-Zero Constant:} Since $m = c(m) \cdot m^*$ with both factors in $R$, $m =: c \in R \setminus \{0\}$; this is the claim $\deg(m) = 0$ written on the board.
-    \item[Step 3:] \textbf{$p$ is Primitive:} $p = c(p) \cdot p^*$ with $\deg(p^*) = \deg(p) > 0$, so $p^*$ is not a unit, and the irreducibility of $p$ forces $c(p)$ to be a unit.
+    \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in \mathcal{U}_R$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
+    \item[Step 2:] \textbf{$m$ is a Non-Zero Constant:} Since $m = C(m) \cdot m^*$ with both factors in $R$, $m =: c \in R \setminus \{0\}$; this is the claim $\deg(m) = 0$ written on the board.
+    \item[Step 3:] \textbf{$p$ is Primitive:} $p = C(p) \cdot p^*$ with $\deg(p^*) = \deg(p) > 0$, so $p^*$ is not a unit, and the irreducibility of $p$ forces $C(p)$ to be a unit.
     \item[Step 4:] \textbf{Deducing $g \in (p)$:} Because $c = m \in I = (p, f)$, there exist polynomials $A, B \in R[x]$ such that:
     \[
     c = A p + B f.
@@ -1054,13 +1054,13 @@ Together with Case~1, every irreducible element $p \in R[x]$ is prime (and $(p) 
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Content of a Polynomial:} For a UFD $R$ and non-zero polynomial $f(x) = \sum_{j=0}^n a_j x^j \in R[x] \setminus \{0\}$, the content is $c(f) := \operatorname{GCD}(a_0, \dots, a_n) \in R / R^\times$, determined uniquely up to units in $R$.
-    \item \textbf{Primitive Polynomials:} A polynomial $g \in R[x]$ is primitive if $c(g) \sim 1$. Every non-zero polynomial factors uniquely up to units as $f = c(f) \cdot f^*$, where $f^*$ is primitive.
-    \item \textbf{Gauss's Lemma:} If $f, g \in R[x]$ are primitive, then their product $fg$ is primitive ($c(fg) \sim 1$). The proof utilizes reduction modulo a prime ideal $(p) \subset R$, exploiting the fact that $(R/(p))[x]$ is an integral domain.
+    \item \textbf{Content of a Polynomial:} For a UFD $R$ and non-zero polynomial $f(x) = \sum_{j=0}^n a_j x^j \in R[x] \setminus \{0\}$, the content is $C(f) := \operatorname{GCD}(a_0, \dots, a_n) \in R / \mathcal{U}_R$, determined uniquely up to units in $R$.
+    \item \textbf{Primitive Polynomials:} A polynomial $g \in R[x]$ is primitive if $C(g) \sim 1$. Every non-zero polynomial factors uniquely up to units as $f = C(f) \cdot f^*$, where $f^*$ is primitive.
+    \item \textbf{Gauss's Lemma:} If $f, g \in R[x]$ are primitive, then their product $fg$ is primitive ($C(fg) \sim 1$). The proof utilizes reduction modulo a prime ideal $(p) \subset R$, exploiting the fact that $(R/(p))[x]$ is an integral domain.
     \item \textbf{Divisibility by Primitive Polynomials:} If $g \in R[x]$ is primitive and $g \mid bf$ for some non-zero scalar $b \in R$, then $g \mid f$ in $R[x]$.
     \item \textbf{Gauss's Theorem on Polynomial Rings:} If $R$ is a UFD, then $R[x]$ is a UFD:
     \begin{description}
-        \item[Step 1:] \textbf{Existence of Factorization:} Proven by induction on polynomial degree. Factoring $f = c(f) f^*$ reduces the problem to primitive polynomials; reducibility $f^* = AB$ cannot yield degree-zero non-unit factors because $c(f^*) \sim 1$, ensuring strictly decreasing degrees $\deg(A), \deg(B) < \deg(f)$.
+        \item[Step 1:] \textbf{Existence of Factorization:} Proven by induction on polynomial degree. Factoring $f = C(f) f^*$ reduces the problem to primitive polynomials; reducibility $f^* = AB$ cannot yield degree-zero non-unit factors because $C(f^*) \sim 1$, ensuring strictly decreasing degrees $\deg(A), \deg(B) < \deg(f)$.
         \item[Step 2:] \textbf{Uniqueness of Factorization:} Proven by showing that every irreducible element is prime. Constant irreducibles ($\deg(p) = 0$) are handled by Gauss's Lemma and prime divisibility in $R$; positive-degree irreducibles ($\deg(p) > 0$) are analyzed using division with remainder in $Q[x] = (\operatorname{Frac}(R))[x]$ and clearing denominators. The bell ended the lecture just before the last step ($\deg(m) = 0$, hence $g \in (p)$), which the next lecture completes (\cref{thm:ufd-polynomial-ring-w7tue}); the aiNote at the end of the proof gives it.
     \end{description}
 \end{itemize}

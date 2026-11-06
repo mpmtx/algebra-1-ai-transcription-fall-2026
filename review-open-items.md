@@ -1,25 +1,17 @@
 # Open items from the final review
 
-The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, and a review on 5 November 2026 item 6. Item 5 is settled and removed; the numbers of the others are unchanged.
+The final review of the lecture notes (12–13 October 2026) fixed what it found in commit `fd085cf`, except three spots that can only be settled against the lecture recordings, which are not on this computer. Each one needs a few seconds of audio; item 3 also needs the video. A second review (23 October 2026) added item 4, and a review on 5 November 2026 item 6. Items 1 and 5 are settled and removed; the numbers of the others are unchanged.
 
-None of these recordings is on this computer now. The file `10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4` in `D:\Download backup\Downloads\Algebra_I\` is the book's 10-15 Wednesday lecture, not the 10-14 Tuesday lecture of items 4 and 6.
+None of these recordings is complete on this computer now. `D:\Download backup\Downloads\Algebra_I\Nicht bestätigt 441694.crdownload` is the 22 September recording, but it stops at about 01:15, before item 2. The file `10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4` in `D:\Download backup\Downloads\Algebra_I\` is the book's 10-15 Wednesday lecture, not the 10-14 Tuesday lecture of items 4 and 6.
 
 When an item is settled, fix it, rebuild `algebra-1.pdf`, and delete the item from this file (or the whole file, once all are done).
 
-## 1. Week 2 Tuesday: "the origin of this $n$"
-
-- **Where:** [`content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex`, line 1330](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L1330), near the end of the speech block `[00:50:20 - 00:50:43]` (line 1327).
-- **Current text:** "Okay, but that's the origin of this $n$. So, we have to prove something."
-- **Suspected:** "the origin of this **name**". The lecturer has just explained where the word "ideal" comes from (ideal numbers, Hilbert's epitaph); an $n$ has nothing to refer to there.
-- **Check:** recording `2026-09-22-tuesday-week2-algebra-1.mp4`, 00:50:20–00:50:43.
-- **Fix if confirmed:** replace `this $n$` with `this name`.
-
 ## 2. Week 2 Tuesday: "there's a motion giving a vector space another one"
 
-- **Where:** [same file, line 2408](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L2408), in the speech block `[01:30:08 - 01:30:50]` (line 2403).
+- **Where:** [`content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex`, line 2408](content/step4-2026-09-22-tuesday-week2-algebra-1-offset-final.tex#L2408), in the speech block `[01:30:08 - 01:30:50]` (line 2403).
 - **Current text:** "I'm just saying there's a motion giving a vector space another one, and that's the double dual, and it's functorial in this sense."
 - **Suspected:** "there's a **notion** giving a vector space another one". "Motion" makes no sense here.
-- **Check:** same recording, 01:30:08–01:30:50.
+- **Check:** recording `2026-09-22-tuesday-week2-algebra-1.mp4`, 01:30:08–01:30:50.
 - **Fix if confirmed:** replace `motion` with `notion`.
 
 ## 3. Week 4 Wednesday: two speech blocks overlap by 10 seconds

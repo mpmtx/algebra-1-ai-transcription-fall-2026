@@ -634,7 +634,7 @@ We want to establish whether:
 \[
 g\left(\frac{x_1}{y_1}\right) \overset{?}{=} g\left(\frac{x_2}{y_2}\right) \iff \frac{f(x_1)}{f(y_1)} \overset{?}{=} \frac{f(x_2)}{f(y_2)}.
 \]
-Since $y_1, y_2 \ne 0$ and $f$ is injective, $f(y_1) \ne 0$ and $f(y_2) \ne 0$. Multiplying both sides by $f(y_1)f(y_2) \in F^\times$ (clearing denominators) yields an equivalent equality in $F$:
+Since $y_1, y_2 \ne 0$ and $f$ is injective, $f(y_1) \ne 0$ and $f(y_2) \ne 0$. Multiplying both sides by $f(y_1)f(y_2) \in F \setminus \{0\}$ (clearing denominators) yields an equivalent equality in $F$:
 \begin{align}
 \frac{f(x_1)}{f(y_1)} = \frac{f(x_2)}{f(y_2)} &\iff f(x_1) \cdot f(y_2) = f(x_2) \cdot f(y_1) \nonumber \\
 &\iff f(x_1 y_2) = f(x_2 y_1) && \text{(since $f$ is a ring homomorphism)} \nonumber \\
@@ -1945,7 +1945,7 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $R^\times = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
+    \item \textbf{The Group of Units $\operatorname{Unit}(R)$ (also denoted $U(R)$, $R^\times$, or $R^*$):} The set of multiplicatively invertible elements $\operatorname{Unit}(R) = \{x \in R \mid \exists y \in R \colon xy = 1\}$ forms an abelian group under ring multiplication. Key examples include $\mathbb{Z}^* = \{\pm 1\}$, $\mathbb{Z}[i]^* = \{\pm 1, \pm i\}$ (characterized via the norm $N(a+bi) = a^2 + b^2 = 1$), and $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^* = \{\bar{x} \mid \gcd(x, m) = 1\}$.
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^k) = p^k - p^{k-1} = p^k(1 - 1/p)$ for prime powers.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \iff x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.

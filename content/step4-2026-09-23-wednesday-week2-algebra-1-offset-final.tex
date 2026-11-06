@@ -799,7 +799,7 @@ In the ring of integers $\mathbb{Z}$, the only elements possessing multiplicativ
 \begin{remark}[Linguistic Distinction in Mathematical English]\label[remark]{rem:unit-terminology}
 In mathematical English, the word \qt{unit} carries three distinct grammatical usages depending on the article:
 \begin{itemize}
-    \item \textbf{\qt{The units} (Plural):} Refers to the entire set of all invertible elements in the ring $R$, denoted $\mathcal{U}_R$ or $R^\times$. For $\mathbb{Z}$, the units are $\{1, -1\}$.
+    \item \textbf{\qt{The units} (Plural):} Refers to the entire set of all invertible elements in the ring $R$, denoted $\mathcal{U}_R$ (also written $R^\times$). For $\mathbb{Z}$, the units are $\{1, -1\}$.
     \item \textbf{\qt{The unit} (Singular, Definite Article):} Refers specifically to the multiplicative identity element $1_R \in R$.
     \item \textbf{\qt{A unit} (Singular, Indefinite Article):} Refers to an arbitrary invertible element $u \in R$ (i.e., any element $u \in \mathcal{U}_R$). For $\mathbb{Z}$, \qt{a unit} could be either $1$ or $-1$.
 \end{itemize}
@@ -927,7 +927,7 @@ And so, the thing we've learned is that this unit group, the units of $\faktor{\
 \begin{theorem}[Units in $\faktor{\mathbb{Z}}{m\mathbb{Z}}$]\label[theorem]{thm:units-z-mod-m}
 Let $m \in \mathbb{Z}_{>0}$ be a positive integer. An element $\bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}}$ is a unit if and only if $x$ and $m$ are coprime (this does not depend on the representative $x$, since $\operatorname{gcd}(x + km, m) = \operatorname{gcd}(x, m)$):
 \begin{equation}\label{eq:units-z-mod-m}
-\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = (\faktor{\mathbb{Z}}{m\mathbb{Z}})^\times = \left\{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
+\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}} = \left\{ \bar{x} \in \faktor{\mathbb{Z}}{m\mathbb{Z}} \;\big|\; \operatorname{gcd}(x, m) = 1 \right\}.
 \end{equation}
 The order of this group is given by Euler's totient function $\phi(m) := |\mathcal{U}_{\faktor{\mathbb{Z}}{m\mathbb{Z}}}|$ (named by the lecturer in Week~3, \cref{def:eulers-totient}).
 \end{theorem}
@@ -995,7 +995,7 @@ Consider the quotient ring $\faktor{\mathbb{Z}}{7\mathbb{Z}}$. The elements of t
 Since $7$ is a prime number, every non-zero residue class $\bar{x} \in \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}$ satisfies $\operatorname{gcd}(x, 7) = 1$. The zero class $\bar{0}$ is not coprime to $7$ (since $\operatorname{gcd}(0, 7) = 7 \neq 1$, or for example $14 \equiv 0 \pmod 7$ where $\operatorname{gcd}(14, 7) = 7$).
 Consequently, the group of units is:
 \begin{equation}\label{eq:units-z7z-set}
-\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) = (\faktor{\mathbb{Z}}{7\mathbb{Z}})^\times = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
+\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}) = \{\bar{1}, \bar{2}, \bar{3}, \bar{4}, \bar{5}, \bar{6}\}.
 \end{equation}
 The order of the unit group is $|\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}})| = \phi(7) = 7 - 1 = 6$.
 \end{example}
@@ -1097,7 +1097,7 @@ You should check my powers of $3$, and then after you take the power of $3$, you
 
 This great 20th-century Hungarian mathematician (Paul Erd\H{o}s) said that if numbers aren't beautiful, I don't know what is. That's kind of the mathematical perspective on numbers.
 
-We have here the units of $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ \inlinemetanote{writes \qt{$(\operatorname{Unit}(\faktor{\mathbb{Z}}{7\mathbb{Z}}), \cdot, \bar{1})$}}, and then there's another group, which is $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ with $+$ and $\bar{0}$ \inlinemetanote{writes \qt{$(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$}}, and I claim these are isomorphic \inlinemetanote{writes \qt{$\cong$}}.
+We have here the units of $\faktor{\mathbb{Z}}{7\mathbb{Z}}$ \inlinemetanote{writes \qt{$(\operatorname{Unit}_{\faktor{\mathbb{Z}}{7\mathbb{Z}}}, \cdot, \bar{1})$}}, and then there's another group, which is $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ with $+$ and $\bar{0}$ \inlinemetanote{writes \qt{$(\faktor{\mathbb{Z}}{6\mathbb{Z}}, +, \bar{0})$}}, and I claim these are isomorphic \inlinemetanote{writes \qt{$\cong$}}.
 
 This is the units with multiplication and $1$. This group is isomorphic to that group. And what is the isomorphism? It's written on the board.
 \end{speech}

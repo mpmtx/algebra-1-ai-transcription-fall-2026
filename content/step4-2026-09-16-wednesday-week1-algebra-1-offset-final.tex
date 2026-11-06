@@ -65,11 +65,11 @@ An element $u$ in a ring is called a \newterm{unit} if it possesses a multiplica
 \begin{itemize}
     \item \textbf{Units in $\mathbb{Z}$:} The group of units in $\mathbb{Z}$ consists of exactly two elements:
     \[
-    \mathbb{Z}^\times = \{1, -1\} = \{\pm 1\}.
+    \mathcal{U}_{\mathbb{Z}} = \{1, -1\} = \{\pm 1\}.
     \]
     \item \textbf{Units in {$\mathbb{Z}[i]$}:} The group of units in $\mathbb{Z}[i]$ consists of exactly four elements:
     \[
-    \mathbb{Z}[i]^\times = \{1, -1, i, -i\} = \{\pm 1, \pm i\}.
+    \mathcal{U}_{\mathbb{Z}[i]} = \{1, -1, i, -i\} = \{\pm 1, \pm i\}.
     \]
 \end{itemize}
 \end{proposition}
@@ -90,7 +90,7 @@ In Week~6 the two words are separated: what is defined here is an \emph{irreduci
 \end{definition}
 
 \begin{steps}[Algebraic Intuition: The Concept of Associates]
-In a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique-factorization}, or $\mathbb{Z}[i]$, as the course shows later), factorizations into irreducible elements are unique up to multiplication by invertible elements (\newterm{units}) and order. Two elements $x, y \in R$ are called \newterm{associates} if $x = u \cdot y$ for some unit $u \in R^\times$.
+In a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique-factorization}, or $\mathbb{Z}[i]$, as the course shows later), factorizations into irreducible elements are unique up to multiplication by invertible elements (\newterm{units}) and order. Two elements $x, y \in R$ are called \newterm{associates} if $x = u \cdot y$ for some unit $u \in \mathcal{U}_R$.
 \begin{itemize}
     \item \textbf{Associates in $\mathbb{Z}$:} The only units are $\pm 1$, meaning every prime $p$ has two associates: $p$ and $-p$.
     \item \textbf{Associates in {$\mathbb{Z}[i]$}:} Since $i \cdot (-i) = 1$ (i.e., $(-i) \cdot i = 1$), the imaginary units $i$ and $-i$ are also units. Consequently, every Gaussian integer $q$ has four associates:
@@ -117,7 +117,7 @@ Since $N(\alpha), N(\beta) \in \mathbb{Z}_{\ge 0}$, we must have $N(\alpha) = a^
 
 \begin{aiNote}[Beyond the Lecture: Prime vs.\ Irreducible Elements]
 % [PERSISTENT, ADDITION — Gemini 4 Argon]
-In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R$ whose only divisors are units and associates ($q = xy \implies x \in R^\times$ or $y \in R^\times$) is called \newterm{irreducible}, whereas $q$ is called \newterm{prime} if $q \mid xy \implies q \mid x$ or $q \mid y$. Every prime element is irreducible, but in an arbitrary integral domain the converse can fail. In unique factorization domains such as $\mathbb{Z}$ and $\mathbb{Z}[i]$ (studied later in the course), the two notions coincide, which is why the lecture uses \qt{prime} for both.
+In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R$ whose only divisors are units and associates ($q = xy \implies x \in \mathcal{U}_R$ or $y \in \mathcal{U}_R$) is called \newterm{irreducible}, whereas $q$ is called \newterm{prime} if $q \mid xy \implies q \mid x$ or $q \mid y$. Every prime element is irreducible, but in an arbitrary integral domain the converse can fail. In unique factorization domains such as $\mathbb{Z}$ and $\mathbb{Z}[i]$ (studied later in the course), the two notions coincide, which is why the lecture uses \qt{prime} for both.
 \end{aiNote}
 
 \subsection{When Does a Rational Prime Remain Prime in \texorpdfstring{$\mathbb{Z}[i]$}{Z[i]}?}
@@ -1202,7 +1202,7 @@ Because $\ker(f) = \{0\}$, field homomorphisms into non-zero rings are always em
 \begin{insight}[Fields as \qt{Sellouts}]
 The lecturer's humorous pedagogical quip --- that \qt{fields are sellouts because they have lost all their ideals} --- highlights an essential contrast between field theory and ring theory:
 \begin{itemize}
-    \item In a field $F$, the abundance of units ($F^\times = F \setminus \{0\}$) destroys all non-trivial ideals, as any non-zero element $a \in I$ immediately pulls the identity into the ideal: $1 = a^{-1} \cdot a \in I$ (with $r = a^{-1} \in F$ and $a \in I$), forcing $I = F$.
+    \item In a field $F$, the abundance of units ($\mathcal{U}_F = F \setminus \{0\}$) destroys all non-trivial ideals, as any non-zero element $a \in I$ immediately pulls the identity into the ideal: $1 = a^{-1} \cdot a \in I$ (with $r = a^{-1} \in F$ and $a \in I$), forcing $I = F$.
     \item In general rings (such as $\mathbb{Z}$ or polynomial rings), the scarcity of units allows rich, complex lattices of proper non-zero ideals to flourish (e.g., the ideals $n\mathbb{Z} \subset \mathbb{Z}$, which by \cref{thm:ideals-of-z-are-principal} are all the ideals of $\mathbb{Z}$), which form the foundational building blocks for quotient rings $\faktor{R}{I}$ and algebraic geometry.
 \end{itemize}
 \end{insight}
