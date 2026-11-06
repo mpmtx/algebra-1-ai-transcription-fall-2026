@@ -359,7 +359,7 @@ English.
 \begin{speech}[00:11:49 - 00:12:43]
 English, okay. Well, that's no problem then.
 
-And there's another way to say this: $f$ is a group isomorphism \inlinemetanote{writes \qt{$f$ is group isom.}} if and only if \inlinemetanote{writes \qt{iff}} there exists an inverse --- there exists a group homomorphism in the other direction. There exists a group homomorphism \inlinemetanote{writes: $\exists \, g \colon \hat{G} \to G$ is hom.} such that if I do $f$ first and then $g$, I get the identity on the first group; and if I do $g$ first and then $f$, I get the identity on the second group. \inlinemetanote{writes \qt{such that $g \circ f = 1_G$, $f \circ g = 1_{\hat{G}}$}}
+And there's another way to say this: $f$ is a group isomorphism \inlinemetanote{writes \qt{$f$ is group isom.}} if and only if \inlinemetanote{writes: $\iff$} there exists an inverse --- there exists a group homomorphism in the other direction. There exists a group homomorphism \inlinemetanote{writes: $\exists \, g \colon \hat{G} \to G$ is hom.} such that if I do $f$ first and then $g$, I get the identity on the first group; and if I do $g$ first and then $f$, I get the identity on the second group. \inlinemetanote{writes \qt{such that $g \circ f = 1_G$, $f \circ g = 1_{\hat{G}}$}}
 
 These are equivalent, okay? So, if you have the bottom, it's certainly bijective, because you have the forward and backward maps. And if you have the top, since it's bijective, there exists an inverse function, and you have to show that that's a homomorphism, which I leave to you to show. I hope this is clear.
 \end{speech}
@@ -687,7 +687,7 @@ Then the inverse is also in the kernel: \inlinemetanote{writes \qt{then $x^{-1} 
 
 And how are we going to prove this? I'm not going to go through this proof, but you have to start out like this: \inlinemetanote{writes: $f(x \cdot x^{-1})$} $f(x \cdot x^{-1})$. That's the one thing you know. On the one hand, this is $f(e)$, and that's $\hat{e}$. \inlinemetanote{writes: $= f(e) = \hat{e}$} On the other hand, this is $f(x) \cdot f(x^{-1})$, \inlinemetanote{writes: $= f(x) \cdot f(x^{-1})$} and $x$ is assumed to be in the kernel, so, this is equal to... Actually, I'm finishing it now, unfortunately. \inlinemetanote{writes: $= \hat{e} \cdot f(x^{-1}) = f(x^{-1})$}
 
-So, we get that the neutral element is equal to the neutral element times that, so, that must be the neutral element, okay? This implies that $x^{-1} \in \operatorname{ker}(f)$. \inlinemetanote{writes: $\hat{e} = f(x^{-1}) \implies x^{-1} \in \operatorname{ker}(f)$} Is that clear? We have the neutral element, we do all this chain of things, and we get that the neutral element is the neutral element times this. We could go one more if we want to be really explicit: then we have the full chain, the neutral element is equal to that.
+So, we get that the neutral element is equal to the neutral element times that, so, that must be the neutral element, okay? This implies that $x^{-1} \in \operatorname{ker}(f)$. \inlinemetanote{writes: $\implies f(x^{-1}) = \hat{e}$} Is that clear? We have the neutral element, we do all this chain of things, and we get that the neutral element is the neutral element times this. We could go one more if we want to be really explicit: then we have the full chain, the neutral element is equal to that.
 
 So, the kernel enjoys these three properties: it contains the neutral element of $G$, the source group; it's closed under the group product; and it's closed under inverses.
 \end{speech}
@@ -749,12 +749,17 @@ Associativity holds automatically for elements in $H$ because it holds for all e
 \end{steps}
 \end{content}
 
+\begin{aiNote}[Notation: Subgroups]
+% [PERSISTENT]
+The lecturer writes $H \subset G$ and says that $H$ is a subgroup. The sign $H \le G$ in the boxes of these notes is the textbook one.
+\end{aiNote}
+
 \subsection{Kernel and Image as Subgroups}
 
 \begin{speech}[00:26:29 - 00:28:05]
-And now we've proven a little lemma here --- proposition, or however you want to call it: The kernel of $f$ is a subgroup of $G$: \inlinemetanote{writes \qt{Prop The $\operatorname{ker}(f)$ is subgroup $\le G$}}. Is that clear?
+And now we've proven a little lemma here --- proposition, or however you want to call it: The kernel of $f$ is a subgroup of $G$: \inlinemetanote{writes \qt{Prop The $\operatorname{ker}(f)$ is subgroup of $G$}}. Is that clear?
 
-That's the investigation of the kernel and the notion of a subgroup, but there's also the image. And so, proposition --- and I leave this for you, you can prove it: The image of $f$ is a subgroup of $\hat{G}$, \inlinemetanote{writes \qt{Prop The $\operatorname{Im}(f)$ is subgroup $\le \hat{G}$}} okay?
+That's the investigation of the kernel and the notion of a subgroup, but there's also the image. And so, proposition --- and I leave this for you, you can prove it: The image of $f$ is a subgroup of $\hat{G}$, \inlinemetanote{writes \qt{Prop The $\operatorname{Im}(f)$ is subgroup of $\hat{G}$}} okay?
 
 How do you prove this? You just check that the image contains the neutral element. It has to, because the neutral element from the first group goes to the neutral element of the second group, so, the image has to contain the neutral element. And then you have to check that if you have two elements in the image, when you apply the group law for $\hat{G}$, they stay in the image; and the same for inverses. The proofs are all just the same: you just follow your nose. There's only one thing you can do, and you can do it.
 \end{speech}
@@ -1190,7 +1195,7 @@ Take $x^2$, and multiply by $x$.
 \begin{speech}[00:45:48 - 00:46:21]
 $x^2$ is in this, \inlinemetanote{writes: $x^2 \in \mathbb{Z}[x^2]$} and if it were an ideal, then I should be able to take any $r$ in the ring and multiply it by this $x^2$. So, if I take any $r$ in the ring and multiply by $x^2$, it should stay in here if it were an ideal: \inlinemetanote{writes: $r \in \mathbb{Z}[x] \implies r \cdot x^2 \in \mathbb{Z}[x^2]$}.
 
-I could take $r$ to be $x$, \inlinemetanote{writes: $r = x$} and then this would be odd and wouldn't be in there, okay? \inlinemetanote{writes: $x \cdot x^2 = x^3 \notin \mathbb{Z}[x^2]$} You can check for yourself.
+I could take $r$ to be $x$, and then this would be odd and wouldn't be in there, okay? You can check for yourself.
 
 These are not supposed to be hard questions; it's just about whether you have absorbed the definitions. Which, as I said, is not an easy task.
 \end{speech}
@@ -1400,7 +1405,7 @@ If you want to prove it, you have to think: well, okay, Case $1$... \inlinemetan
 
 Case $1$ is that $I$ could be just the zero set. That's fine. And this means it's $0$ times $\mathbb{Z}$. It's kind of a degenerate case, but that's possible. And that's an ideal: zero is an ideal.
 
-Case $2$ is that $I$ has some non-zero element. \inlinemetanote{writes \qt{Case (2) $I$ has some non-zero element}} It has to have zero, because $I$ is an additive subgroup. If it has only zero, you're in this case. If you're not in this case, you have to have some non-zero element. Let's call that element $x$: \inlinemetanote{writes: $x \in I, x \neq 0, x \in \mathbb{Z}$}.
+Case $2$ is that $I$ has some non-zero element. \inlinemetanote{writes \qt{Case (ii) $I$ has some non-zero element}} It has to have zero, because $I$ is an additive subgroup. If it has only zero, you're in this case. If you're not in this case, you have to have some non-zero element. Let's call that element $x$: \inlinemetanote{writes: $x \in I$, $x \in \mathbb{Z}$}.
 \end{speech}
 
 \begin{content}[Case Analysis: Zero vs. Non-Zero Ideal]
@@ -1412,7 +1417,7 @@ There exists $x \in I$ with $x \neq 0$.
 \end{content}
 
 \begin{speech}[00:52:00 - 00:53:05]
-Now, $x$ is an integer. It has a non-zero element, so, $x$ is an integer; then we can multiply by $\pm 1$ and get a positive integer: \inlinemetanote{writes: $\pm 1 \cdot x \implies$ get $x \in \mathbb{Z}_{>0}$}. One of these is a positive integer.
+Now, $x$ is an integer. It has a non-zero element, so, $x$ is an integer; then we can multiply by $\pm 1$ and get a positive integer: \inlinemetanote{writes: $\to \pm 1$, get $\pm x \in \mathbb{Z}_{>0}$}. One of these is a positive integer.
 
 So, if it has a non-zero element, then $I$ has a positive integer: \inlinemetanote{writes \qt{$I$ has positive integer}}. I hope that's clear.
 \end{speech}
@@ -1456,7 +1461,7 @@ Suppose not: \inlinemetanote{writes \qt{Suppose not}}. Then there's some element
 
 There's only one thing you can do now, which is the division algorithm. The division algorithm says $y$ is equal to some multiple of $n$ plus a remainder term, right? \inlinemetanote{writes: $y = qn + r$ by division} That's long division.
 
-And the important part of this remainder term is that $0 \le r < n$: \inlinemetanote{writes: $0 \le r < n$}.
+And the important part of this remainder term is that $0 \le r < n$: \inlinemetanote{writes \qt{$0 < r < n$}, a slip for $0 \le r < n$}.
 \end{speech}
 
 \begin{content}[Division Algorithm Setup]
@@ -1874,7 +1879,7 @@ The lecturer writes $\operatorname{Cat}$ for any category and $\widehat{\operato
 \begin{speech}[01:07:57 - 01:09:08]
 Of course, there are some conditions this has to satisfy, but before I give you the conditions, I will give you the model: for example, the category of groups: \inlinemetanote{writes \qt{category of Groups}}.
 
-The category of groups is a category. This category has objects, \inlinemetanote{writes \qt{Objects = grp}} and the objects are groups: \inlinemetanote{writes: $(G, \cdot, e)$}.
+The category of groups is a category. This category has objects, \inlinemetanote{writes \qt{Objects $\leftarrow$ are}} and the objects are groups: \inlinemetanote{writes: $(G, \cdot, e)$}.
 
 An object is a group; that means it's a group with an operation and a neutral element. Those are the objects. When you think about the category of groups, somehow you think about this world where all these groups are: they're all over the place, lots of different groups; every possible group is in here. That's in the category.
 
@@ -1907,7 +1912,7 @@ There, the objects are rings, as we've defined in this class, meaning the object
 
 And the homs, which will not surprise you, are ring homomorphisms: \inlinemetanote{writes \qt{are ring homs}}.
 
-From last year, you could consider the category of vector spaces over whatever field you want --- say, vector spaces over the complex numbers: \inlinemetanote{writes \qt{Category of Vector Spaces/$\mathbb{C}$}}. In the category of vector spaces over the complex numbers, the objects are vector spaces over the complex numbers, and the homs are linear maps: \inlinemetanote{writes \qt{Homs are lin. maps}}.
+From last year, you could consider the category of vector spaces over whatever field you want --- say, vector spaces over the complex numbers: \inlinemetanote{writes \qt{Category of Vector Spaces/$\mathbb{C}$}}. In the category of vector spaces over the complex numbers, the objects are vector spaces over the complex numbers, and the homs are linear maps.
 
 Those are all examples of categories.
 \end{speech}

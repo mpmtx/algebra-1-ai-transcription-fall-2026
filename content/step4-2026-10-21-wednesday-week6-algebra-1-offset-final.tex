@@ -324,7 +324,7 @@ is always a primitive polynomial in $R[x]$. For instance, in \cref{ex:content-in
 \begin{speech}[00:08:12 - 00:10:10]
 And the next simple observation is: suppose $f = \gamma \cdot g$, where $\gamma$ is a scalar and $g$ is a polynomial that is primitive. \inlinemetanote{writes: Suppose $f = \gamma \cdot g, \gamma \in R, g \in R[x]$ primitive} Okay, suppose I have any expression, where $f$ is just some polynomial in $R[x]$, always not zero, and I write this polynomial as some scalar times a polynomial which is primitive. We already know one way to do that. Here, I've written it as some scalar times a polynomial that's primitive.
 
-And the answer is that if I do this, it must be the case that this content is equal to $\gamma$ up to a unit, and $f^*$ is equal to $g$, again, up to a unit. \inlinemetanote{writes: $\implies C(f) \sim \gamma, f^* \sim g$} And the reason is because this is the $\operatorname{GCD}$ of all the coefficients. If I'm able to take this scalar out, then this scalar must divide the $\operatorname{GCD}$, because it's a divisor and it should divide the greatest common divisor. And if there's anything left over, then this wouldn't be primitive.
+And the answer is that if I do this, it must be the case that this content is equal to $\gamma$ up to a unit, and $f^*$ is equal to $g$, again, up to a unit. \inlinemetanote{writes: $\implies C(f) \overset{\text{unit}}{=} \gamma, f^* \overset{\text{unit}}{=} g$} And the reason is because this is the $\operatorname{GCD}$ of all the coefficients. If I'm able to take this scalar out, then this scalar must divide the $\operatorname{GCD}$, because it's a divisor and it should divide the greatest common divisor. And if there's anything left over, then this wouldn't be primitive.
 
 So, you just have to think about it. There's actually nothing going on in these statements except understanding this move of taking out the $\operatorname{GCD}$ from all of the coefficients. So, this is going to be useful for us.
 
@@ -384,9 +384,9 @@ C(f) \sim 1 \quad \text{and} \quad C(g) \sim 1 \implies C(fg) \sim 1.
 \begin{speech}[00:11:20 - 00:13:25]
 So, we're going to proceed by contradiction. So, assume that the content of the product is not a unit. \inlinemetanote{writes: Proof: Contradiction. Assume $C(fg)$ is not a unit.} All right?
 
-Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: Then $\exists p \in R$ prime s.t. $p \mid C(fg)$ in UFD} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
+Then there exists some prime that divides this content by the unique factorization property. \inlinemetanote{writes: then $\exists p \mid C(fg)$ by UFD} Because if I have some element that's not a unit, I can factorize it. Primitive stuff is always non-zero, because to be primitive you're not zero. So, if it were not primitive, then this would not be a unit, because being primitive is if and only if this is a unit. So, then there exists some prime that divides it.
 
-And then comes the idea in the proof: for this prime is irreducible, so that implies that the ideal is a prime ideal --- that's that exercise (Recall: \cref{exer:irred-prime-ufd}). \inlinemetanote{writes: $p$ is irred $\iff (p)$ is prime ideal} And then we do something interesting, which is we look at this map, a homomorphism from $R[x]$ to... So, there's a quotient map $R$ to $R \pmod p$. \inlinemetanote{writes: $R \to R/(p)$} That's the quotient map from previous weeks (Recall: \cref{def:canonical-quotient-map}). That's a homomorphism. And that also gives me a homomorphism from polynomials by just applying this quotient map to the coefficients of the polynomials. \inlinemetanote{writes: $R[x] \to (R/(p))[x]$} And this is a ring homomorphism.
+And then comes the idea in the proof: for this prime is irreducible, so that implies that the ideal is a prime ideal --- that's that exercise (Recall: \cref{exer:irred-prime-ufd}). \inlinemetanote{writes: $p$ irr $\implies (p)$ is prime ideal} And then we do something interesting, which is we look at this map, a homomorphism from $R[x]$ to... So, there's a quotient map $R$ to $R \pmod p$. \inlinemetanote{writes: $R \to R/(p)$} That's the quotient map from previous weeks (Recall: \cref{def:canonical-quotient-map}). That's a homomorphism. And that also gives me a homomorphism from polynomials by just applying this quotient map to the coefficients of the polynomials. \inlinemetanote{writes: $R[x] \to (R/(p))[x]$} And this is a ring homomorphism.
 
 Now, this is an integral domain. \inlinemetanote{writes \qt{int. domain} under $R/(p)$ and $(R/(p))[x]$} Why is it an integral domain? It's because this is a prime ideal. Prime ideal means this is an integral domain (Recall: \cref{prop:quotient-integral-domain-prime}). All right?
 \end{speech}
@@ -483,7 +483,7 @@ Now, by the lemma of Gauss, we think about this object here: $h^* g$. $h^*$ is p
 \begin{speech}[00:17:55 - 00:19:24]
 So, then we look at this equation: this is primitive, and this is primitive. And I said that whenever we have such an equation where we have the primitive part times the content, then the only possibility is that the primitives are equal up to a unit (Recall: \cref{prop:primitive-decomp-uniqueness}). This is a content equation: this is a primitive times some content. That was one of the comments up there.
 
-So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \sim h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = C(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f$ since $f = C(f) f^*$} If you divide $f^*$, you also divide $f$.
+So, this means that $f^*$, up to units, is this. \inlinemetanote{writes: $f^* \overset{\text{unit}}{=} h^* g$} The consequence is that $g$ divides $f^*$, because that's what this equation means. And this means $g$ divides $f$, since $f = C(f) f^*$ (Recall: \cref{prop:canonical-decomp}). \inlinemetanote{writes: so $g \mid f^* \implies g \mid f$ since $f = C(f) f^*$} If you divide $f^*$, you also divide $f$.
 
 So, that's the proof of this too. Now with these preliminaries, we can finally prove Gauss's theorem.
 \end{speech}
@@ -541,7 +541,7 @@ Okay, so, we want to prove: $R$ is a UFD implies $R[x]$ is a UFD. \inlinemetanot
 
 There's no shortcut to that: we have to prove existence and uniqueness to prove it's a UFD.
 
-So, let us start this time with existence. Step 1 is the existence result. \inlinemetanote{writes: STEP 1 $\exists$}
+So, let us start this time with existence. Step 1 is the existence result. \inlinemetanote{writes: STEP I $\exists$}
 \end{speech}
 
 \begin{content}[Statement of Theorem B and Two-Part Strategy]
@@ -569,7 +569,7 @@ We're going to prove existence based on induction of the degree of the polynomia
 
 So, you can imagine, in this ground case, we need to factor something in $R$. How are we going to do that? Well, we can't do that; we just assumed that from the beginning: $R$ is a unique factorization domain. So, we can just factor it.
 
-We can factor $f$, since it's a scalar, into some irreducible factors: \inlinemetanote{writes: We can factor $f$, since it's a scalar, $f = q_1 \dots q_m$, irred. in $R$} irreducibles in $R$. And every irreducible in $R$ --- these are also irreducibles in $R[x]$, \inlinemetanote{writes: these are also irreducibles in $R[x]$} because irreducibility is a condition on what happens when you factor. And if you have a scalar, when you factor you don't get any $x$'s, because the $x$'s would never go.
+We can factor $f$, since it's a scalar, into some irreducible factors: \inlinemetanote{writes: We factor $f = q_1 \cdots q_n$, irreducible in $R$} irreducibles in $R$. And every irreducible in $R$ --- these are also irreducibles in $R[x]$, \inlinemetanote{writes: these are also irreducibles in $R[x]$} because irreducibility is a condition on what happens when you factor. And if you have a scalar, when you factor you don't get any $x$'s, because the $x$'s would never go.
 
 All right? So, that's the ground case. In the ground case, we have degree zero, and then it's just a scalar. We don't really do anything; all we do is just take this assumption: it's a UFD, so we can factor the scalars. So, actually nothing happened in this ground case.
 \end{speech}
@@ -627,7 +627,7 @@ If $C(f) \in R$ is not a unit, the UFD property of $R$ guarantees that $C(f)$ fa
 \begin{speech}[00:25:57 - 00:27:36]
 Well, one thing that could happen --- the first case --- is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x]$ is irred.} Okay?
 
-If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = C(f) \cdot f^*$. \inlinemetanote{writes: $f = C(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD in $R$, factor into irreds} under $C(f)$} Okay?
+If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = C(f) \cdot f^*$. \inlinemetanote{writes: $f = C(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD of $R$} under $C(f)$} Okay?
 
 So, then we're done, because we have irreducibles and irreducibles, so we are done. We are done with this case. \inlinemetanote{writes: We are done with this case}
 
@@ -748,7 +748,7 @@ So, you see how cunning this definition was. As I said, if you're working on thi
 \begin{speech}[00:31:28 - 00:33:17]
 Okay, so, now we have to prove the uniqueness, and the path to proving uniqueness was already explained in the previous lecture.
 
-Step 2: prove uniqueness. \inlinemetanote{writes: STEP 2 Prove !} We already had shown a method to prove uniqueness: we already had shown that if $p$ irreducible implies $p$ prime, then uniqueness holds. \inlinemetanote{writes \qt{We already have shown: If $p$ irr $\implies (p) \subset R[x]$ prime} and, on the next line, \qt{the uniqueness holds}} Because that was one of our steps yesterday (Recall: \cref{clm:step1-uniqueness}): if I have any ring where irreducible implies prime, then I get uniqueness.
+Step 2: prove uniqueness. \inlinemetanote{writes: Step. Prove (!)} We already had shown a method to prove uniqueness: we already had shown that if $p$ irreducible implies $p$ prime, then uniqueness holds. \inlinemetanote{writes \qt{We already have shown: If $p$ irr $\implies (p) \subset R[x]$ prime} and, on the next line, \qt{the uniqueness holds}} Because that was one of our steps yesterday (Recall: \cref{clm:step1-uniqueness}): if I have any ring where irreducible implies prime, then I get uniqueness.
 
 So, I have to prove this now. That's the last thing I have to do.
 
@@ -937,7 +937,7 @@ But we want to be in $R$! We want to be in the ring $R$, and these things can ha
 
 So, if we just multiply by the denominators, I get an equation: $b' f = q' m + r'$, \inlinemetanote{writes: $b' f = q' m + r'$} and similarly $b'' p = q'' m + r''$. \inlinemetanote{writes: $b'' p = q'' m + r''$}
 
-And now, if you look at this, everything is in $R$: all the terms here are in the ring $R$. \inlinemetanote{writes: $b', b'' \in R; q', q'', r', r'' \in R[x]$}
+And now, if you look at this, everything is in $R$: all the terms here are in the ring $R$. \inlinemetanote{writes: Everything in $R$}
 \end{speech}
 
 \begin{content}[{Division with Remainder in \texorpdfstring{$Q[x]$}{Q[x]} and Clearing Denominators}]

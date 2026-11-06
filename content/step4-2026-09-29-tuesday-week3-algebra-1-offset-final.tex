@@ -106,7 +106,7 @@ This lecture investigates the transition from commutative rings to fields and po
     \item \textbf{Euler's Totient Function $\phi(m)$:} Definition as the order of $(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*$, with explicit computations for prime powers $\phi(p) = p-1$ and $\phi(p^2) = p(p-1)$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} Rigorous formulation of $\mathbb{Q}$ as the smallest field containing $\mathbb{Z}$, and the unique extension of ring embeddings into fields.
     \item \textbf{Construction of the Field of Fractions $\operatorname{Frac}(R)$:} Generalization to arbitrary integral domains via equivalence classes of formal pairs $(x, y) \in R \times (R \setminus \{0\})$, verification of well-defined operations, and canonical embedding $i \colon R \hookrightarrow \operatorname{Frac}(R)$.
-    \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}(i) = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}[\frac{1}{3}]$, and self-isomorphism for existing fields $\operatorname{Frac}(R) \cong R$.
+    \item \textbf{Concrete Quotient Fields:} Field of fractions of $\mathbb{Z}$, the Gaussian rationals $\mathbb{Q}[i] = \operatorname{Frac}(\mathbb{Z}[i])$, subrings of $\mathbb{Q}$ such as $\mathbb{Z}_{1/3}$, and self-isomorphism for existing fields $\operatorname{Frac}(R) \cong R$.
     \item \textbf{Polynomial Rings $R[x]$:} Intuitive formulation via formal linear combinations, rigorous foundation using sequences in $R^{\mathbb{N}_0}$ that are eventually zero, componentwise addition, and Cauchy product multiplication.
 \end{itemize}
 \end{overview}
@@ -281,7 +281,7 @@ Conversely, $1 \cdot 1 = 1$, $(-1)(-1) = 1$, and $i(-i) = 1$, so all four elemen
 
 \begin{aiNote}[Beyond the Lecture: The Norm in Textbooks]
 % [PERSISTENT, ADDITION]
-The lecturer's \qt{norm} is the length $\sqrt{a^2 + b^2}$ of a complex number, and he squares the equation only at the end. Textbooks usually work with the square directly: the \emph{field norm} $N(a + bi) = a^2 + b^2$ of $\mathbb{Q}(i)$ over $\mathbb{Q}$ is multiplicative, $N(zw) = N(z) N(w)$, and takes non-negative integer values on $\mathbb{Z}[i]$. So $zw = 1$ gives $N(z) N(w) = N(1) = 1$ in one step, hence $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
+The lecturer's \qt{norm} is the length $\sqrt{a^2 + b^2}$ of a complex number, and he squares the equation only at the end. Textbooks usually work with the square directly: the \emph{field norm} $N(a + bi) = a^2 + b^2$ of $\mathbb{Q}[i]$ over $\mathbb{Q}$ is multiplicative, $N(zw) = N(z) N(w)$, and takes non-negative integer values on $\mathbb{Z}[i]$. So $zw = 1$ gives $N(z) N(w) = N(1) = 1$ in one step, hence $N(z) = 1$. The only lattice points on the circle of radius $1$ are the four points shown above.
 \end{aiNote}
 
 \subsection{The Group of Units of \texorpdfstring{$\faktor{\mathbb{Z}}{m\mathbb{Z}}$}{Z/mZ}}
@@ -832,7 +832,7 @@ Transitivity.
 \begin{speech}[00:40:21 - 00:41:00]
 The transitive property. It says that if we have $x$ related to $y$ and $y$ related to $z$, then $x$ is related to $z$. \inlinemetanote{writes: $x \equiv y \land y \equiv z \implies x \equiv z$, transitive} That's the whole thing of equivalence relations. It comes up many times in mathematics, and it will come up again in this course, so, if you have not seen it, think about it.
 
-And the main thing we use about this equivalence relation is that if I have $T$ with this equivalence relation, then I have another set --- sometimes it's called this --- which is the set of equivalence classes. \inlinemetanote{writes: $T_{/\equiv} =$ set of equivalence classes} That's going to be very important for us.
+And the main thing we use about this equivalence relation is that if I have $T$ with this equivalence relation, then I have another set --- sometimes it's called this --- which is the set of equivalence classes. \inlinemetanote{writes: $T_{\equiv} = \{$set of equiv.\ classes$\}$} That's going to be very important for us.
 
 Whenever we have a set with an equivalence relation, that equivalence relation divides the set up into equivalence classes --- disjoint equivalence classes, okay? And this thing here is the set of equivalence classes. There's three objects in this kind of abstract situation: there's the set that we start with, there's the equivalence relation, and then there's the set of equivalence classes.
 \end{speech}
@@ -939,7 +939,7 @@ Crucially, formula \eqref{eq:equiv-relation-formula} involves only multiplicatio
 \begin{speech}[00:44:08 - 00:45:05]
 The first is: if I take $(x_1, y_1)$, this is equivalent to $(x_1, y_1)$. \inlinemetanote{writes: $(x_1, y_1) \equiv (x_1, y_1)$} And why is this? Because by definition this is equal to $x_1 y_1 = x_1 y_1$, \inlinemetanote{writes: $\iff x_1 y_1 = x_1 y_1$ \checkmark} so, we're very happy about that. There was nothing to do here.
 
-You also have to check the symmetric property: that if we have $(x_1, y_1) \equiv (x_2, y_2)$, then the other way around is fine, and it'll just be the same equation. There's nothing to check about that. \inlinemetanote{writes: $x_1 y_2 = x_2 y_1 \iff x_2 y_1 = x_1 y_2$ \checkmark}
+You also have to check the symmetric property: that if we have $(x_1, y_1) \equiv (x_2, y_2)$, then the other way around is fine, and it'll just be the same equation. There's nothing to check about that.
 
 The interesting one is the transitive property. \inlinemetanote{writes \qt{Transitive}} This is the only fun one to check. We start with this one: \inlinemetanote{writes \qt{$(x_1, y_1) \equiv (x_2, y_2)$} and \qt{$(x_2, y_2) \equiv (x_3, y_3)$}} these are the inputs.
 
@@ -988,7 +988,7 @@ The lecturer writes \qt{HG G 65.1} on the far right of the chalkboard and inform
 \end{note}
 
 \begin{speech}[00:45:33 - 00:47:00]
-We come to this point that's kind of fun and interesting. We started with an integral domain, and led by the analogy with the rational numbers, we come to start defining this field as some equivalence class of pairs. And I should have said this --- I did say it, but I didn't write it: the way to think about this \inlinemetanote{writes \qt{Think of as $x_1/y_1$ or $x/y$}} --- this is the mathematical text --- you think of this pair in $S$ as $x/y$, okay? Just like with the integers.
+We come to this point that's kind of fun and interesting. We started with an integral domain, and led by the analogy with the rational numbers, we come to start defining this field as some equivalence class of pairs. And I should have said this --- I did say it, but I didn't write it: the way to think about this \inlinemetanote{writes \qt{Think of as $\frac{x}{y} \leftarrow (x, y) \in S$}} --- this is the mathematical text --- you think of this pair in $S$ as $x/y$, okay? Just like with the integers.
 
 As an object, it's this formal object. And then there was this proposal, which was correct, of how to define the equivalence relation. And now we actually need to check something: is it an equivalence relation?
 
@@ -1004,7 +1004,7 @@ The correct answer is we're supposed to multiply here. The clever thing is to mu
 
 This is kind of good: we see the $x_1 y_3$ here. Can you see what we have to do next? This is actually algebra. What?
 \inlinemetanote{inaudible answer from a student}
-Yeah, you could do that, but why don't we just take this $y_2 y_3$ here and use this equation? It's the same thing. So, we take the $y_2 y_3$ and use this equation to flip them. This is all about subscripts, and I should just tell you that subscripts have always been difficult for me. Do you accept that? Because I just took this and flipped them using this equation. \inlinemetanote{writes: $x_1 y_3 y_2 = x_3 y_2 y_1$}
+Yeah, you could do that, but why don't we just take this $y_2 y_3$ here and use this equation? It's the same thing. So, we take the $y_2 y_3$ and use this equation to flip them. This is all about subscripts, and I should just tell you that subscripts have always been difficult for me. Do you accept that? Because I just took this and flipped them using this equation. \inlinemetanote{writes \qt{$x_3 y_1 y_2$} under $x_2 y_1 y_3$}
 \end{speech}
 
 \begin{speech}[00:48:40 - 00:50:02]
@@ -1082,7 +1082,7 @@ This was almost like the first piece of algebra in this class, I think. I don't 
 \subsection{Construction of the Field of Fractions}
 
 \begin{speech}[00:51:06 - 00:52:35]
-Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R$ int. domain} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots$ with $\equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F = S_{\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{/\equiv}$}
+Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R$ int. domain} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots$ with $\equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F = S_{\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{\equiv}$}
 
 Is it completely clear what this thing is? We defined $S$, we defined an equivalence relation, and we took great pains to check all of its properties, so, we get the set of equivalence classes and that is $F$.
 \end{speech}
@@ -1092,7 +1092,7 @@ Is it completely clear what this thing is? We defined $S$, we defined an equival
 \begin{speech}[00:52:35 - 00:53:14]
 Then we need to do a lot of things. But let's start by defining the map which is the inclusion from $R$ to $F$, \inlinemetanote{writes: $R \to F$} because we said this $F$ should be a field that contains $R$. That means we have to have some way of getting points from $R$ to $F$. And what's that way going to be?
 
-This $\iota$, the inclusion: we have to put $R$ in $F$. \inlinemetanote{writes \qt{We have to put $R$ in $F$}} This is by $\iota$. Normally people don't even write it, but if I have an element of $R$, we have to put it into $F$. That means we have to assign it an equivalence class in this set. What are we going to do? Yeah?
+This $\iota$, the inclusion: we have to put $R$ in $F$. \inlinemetanote{writes \qt{We have to put $R \stackrel{i}{\to} F$}} This is by $\iota$. Normally people don't even write it, but if I have an element of $R$, we have to put it into $F$. That means we have to assign it an equivalence class in this set. What are we going to do? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -1291,9 +1291,9 @@ So, this shows that if I pick different equivalence classes here, the result doe
 \subsection{Compatibility of the Operations with the Canonical Embedding}
 
 \begin{speech}[01:05:45 - 01:07:25]
-Then you have to check that these definitions are compatible with $R$. They're just all defined that way, meaning we have to check \inlinemetanote{writes \qt{Check $\iota \colon R \to F$ is a hom of rings}} that this $\iota \colon R \to F$ is a homomorphism of rings.
+Then you have to check that these definitions are compatible with $R$. They're just all defined that way, meaning we have to check \inlinemetanote{writes \qt{Check $i \colon R \to F$ is a hom of rings}} that this $\iota \colon R \to F$ is a homomorphism of rings.
 
-Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes: $r + \hat{r} \stackrel{\iota}{\mapsto} (r + \hat{r}, 1)$} and you go by $\iota$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes: $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
+Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes: $r + \hat{r} \stackrel{i}{\longrightarrow} (r + \hat{r}, 1)$} and you go by $\iota$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes: $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
 
 You also have to check it for multiplication. So, it's just a bunch of checking. By here, all the cards are played, and you just have to check everything.
 \end{speech}
@@ -1468,7 +1468,7 @@ $\mathbb{Q}$ adjoined $i$.
 \end{student}
 
 \begin{speech}[01:10:46 - 01:11:48]
-Yeah, so, the answer is $\mathbb{Q}(i)$, \inlinemetanote{writes: $\mathbb{Q}(i) = \{a + bi \mid a, b \in \mathbb{Q}\}$} which is equal to the set $a + bi$ where $a$ and $b$ are in $\mathbb{Q}$.
+Yeah, so, the answer is $\mathbb{Q}[i]$, \inlinemetanote{writes: $\mathbb{Z}[i] \subset \mathbb{Q}[i] \rightsquigarrow \{a + bi \mid a, b \in \mathbb{Q}\}$} which is equal to the set $a + bi$ where $a$ and $b$ are in $\mathbb{Q}$.
 
 It's correct, but to check this is correct, you have to do a bunch of things: one is you have to show this is a field --- you can invert --- and then you have to show that this sits inside, and everything here is a ratio of that. It's all true. But that's the answer here, and requires some checking.
 
@@ -1478,7 +1478,7 @@ All right, this is correct.
 \subsection{Fields of Fractions of Intermediate Rings and Fields}
 
 \begin{speech}[01:11:48 - 01:12:32]
-What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Z}[\frac{1}{3}] \subset \mathbb{Q}$}
+What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Z}_{1/3} \subset \mathbb{Q}$}
 
 This ring is the set $a / 3^b$, where $a \in \mathbb{Z}$ and $b \ge 0$, right? \inlinemetanote{writes: $\{a / 3^b \mid a \in \mathbb{Z}, b \ge 0\}$}
 
@@ -1516,17 +1516,17 @@ For the ring of integers $\mathbb{Z}$:
 \begin{example}[The Gaussian Integers]\label[example]{ex:frac-gaussian-integers}
 For the ring of Gaussian integers $\mathbb{Z}[i] = \{ a + bi \mid a, b \in \mathbb{Z} \}$:
 \[
-\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i) := \{ a + bi \mid a, b \in \mathbb{Q} \}.
+\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}[i] := \{ a + bi \mid a, b \in \mathbb{Q} \}.
 \]
-The field $\mathbb{Q}(i)$ is called the field of \newterm{Gaussian rationals}.
+The field $\mathbb{Q}[i]$ is called the field of \newterm{Gaussian rationals}.
 \end{example}
 
 \begin{example}[Denominators that Are Powers of $3$]\label[example]{ex:frac-triadic}
-Consider the ring $\mathbb{Z}[\frac{1}{3}]$ (the case $k = 3$ of the generalization after \cref{ex:dyadic-rationals-subring}), defined by:
+Consider the ring $\mathbb{Z}_{1/3}$ (the case $k = 3$ of the generalization after \cref{ex:dyadic-rationals-subring}), defined by:
 \[
 \mathbb{Z}\left[\frac{1}{3}\right] := \left\{ \frac{a}{3^b} \;\middle|\; a \in \mathbb{Z}, \ b \in \mathbb{Z}_{\ge 0} \right\} \subset \mathbb{Q}.
 \]
-Since $\mathbb{Z} \subset \mathbb{Z}[\frac{1}{3}] \subset \mathbb{Q}$, any fraction of elements from $\mathbb{Z}[\frac{1}{3}]$ is already a rational number, and every rational number $\frac{p}{q}$ can be written as a quotient of elements in $\mathbb{Z} \subset \mathbb{Z}[\frac{1}{3}]$. Thus:
+Since $\mathbb{Z} \subset \mathbb{Z}_{1/3} \subset \mathbb{Q}$, any fraction of elements from $\mathbb{Z}_{1/3}$ is already a rational number, and every rational number $\frac{p}{q}$ can be written as a quotient of elements in $\mathbb{Z} \subset \mathbb{Z}_{1/3}$. Thus:
 \[
 \operatorname{Frac}\left(\mathbb{Z}\left[\frac{1}{3}\right]\right) = \mathbb{Q}.
 \]
@@ -1548,7 +1548,7 @@ Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \m
 % \end{hidden}
     % Ring Tower on Left
     \node[MidnightBlue, font=\bfseries] (Z) at (0, 0) {$\mathbb{Z}$};
-    \node[MidnightBlue, font=\bfseries] (Z3) at (0, 1.3) {$\mathbb{Z}[\frac{1}{3}]$};
+    \node[MidnightBlue, font=\bfseries] (Z3) at (0, 1.3) {$\mathbb{Z}_{1/3}$};
     \node[BrickRed, font=\bfseries] (Qleft) at (0, 2.6) {$\mathbb{Q}$};
 
     \draw[right hook->, thick, MidnightBlue] (Z) -- (Z3);
@@ -1572,9 +1572,9 @@ It is well-defined: $(r, s) \equiv (r', s')$ means $r s' = r' s$, hence $r s^{-1
 \end{steps}
 \end{content}
 
-\begin{aiNote}[{Beyond the Lecture: Universal Property of $\operatorname{Frac}(R)$ and $\operatorname{Frac}(\mathbb{Z}[i]) \cong \mathbb{Q}(i)$}]
+\begin{aiNote}[{Beyond the Lecture: Universal Property of $\operatorname{Frac}(R)$ and $\operatorname{Frac}(\mathbb{Z}[i]) \cong \mathbb{Q}[i]$}]
 % [PERSISTENT, ADDITION — Gemini 4 Argon]
-The proof of \cref{thm:universal-property-q} carries over verbatim from $\mathbb{Z} \subset \mathbb{Q}$ to any integral domain $R$ and its canonical embedding $\iota \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto \frac{r}{1}$: for every injective ring homomorphism $f \colon R \hookrightarrow K$ into a field $K$, there exists a unique ring homomorphism $g \colon \operatorname{Frac}(R) \to K$ with $g \circ \iota = f$, given by $g\bigl(\frac{r}{s}\bigr) = f(r) f(s)^{-1}$ (which is injective because $\operatorname{Frac}(R)$ is a field). In particular, for $\mathbb{Z}[i] \subset \mathbb{Q}(i) := \{a + bi \mid a, b \in \mathbb{Q}\} \subset \mathbb{C}$, every non-zero element $a + bi \in \mathbb{Q}(i)$ has $a^2 + b^2 > 0$ in $\mathbb{Q}$ and inverse $(a + bi)^{-1} = \frac{a}{a^2+b^2} - \frac{b}{a^2+b^2}i \in \mathbb{Q}(i)$, so $\mathbb{Q}(i)$ is a field. By the universal property, the inclusion $\mathbb{Z}[i] \hookrightarrow \mathbb{Q}(i)$ extends to an injective homomorphism $\Phi \colon \operatorname{Frac}(\mathbb{Z}[i]) \hookrightarrow \mathbb{Q}(i)$. Since every $\frac{a_1}{b_1} + \frac{a_2}{b_2}i = \frac{a_1 b_2 + a_2 b_1 i}{b_1 b_2}$ is a ratio of elements in $\mathbb{Z}[i]$, $\Phi$ is also surjective, proving $\operatorname{Frac}(\mathbb{Z}[i]) \cong \mathbb{Q}(i)$ (\cref{ex:frac-gaussian-integers}).
+Textbooks usually write the field $\mathbb{Q}[i]$ of these notes as $\mathbb{Q}(i)$, and the ring $\mathbb{Z}_{1/3}$ as $\mathbb{Z}[\frac{1}{3}]$. The proof of \cref{thm:universal-property-q} carries over verbatim from $\mathbb{Z} \subset \mathbb{Q}$ to any integral domain $R$ and its canonical embedding $\iota \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto \frac{r}{1}$: for every injective ring homomorphism $f \colon R \hookrightarrow K$ into a field $K$, there exists a unique ring homomorphism $g \colon \operatorname{Frac}(R) \to K$ with $g \circ \iota = f$, given by $g\bigl(\frac{r}{s}\bigr) = f(r) f(s)^{-1}$ (which is injective because $\operatorname{Frac}(R)$ is a field). In particular, for $\mathbb{Z}[i] \subset \mathbb{Q}[i] := \{a + bi \mid a, b \in \mathbb{Q}\} \subset \mathbb{C}$, every non-zero element $a + bi \in \mathbb{Q}[i]$ has $a^2 + b^2 > 0$ in $\mathbb{Q}$ and inverse $(a + bi)^{-1} = \frac{a}{a^2+b^2} - \frac{b}{a^2+b^2}i \in \mathbb{Q}[i]$, so $\mathbb{Q}[i]$ is a field. By the universal property, the inclusion $\mathbb{Z}[i] \hookrightarrow \mathbb{Q}[i]$ extends to an injective homomorphism $\Phi \colon \operatorname{Frac}(\mathbb{Z}[i]) \hookrightarrow \mathbb{Q}[i]$. Since every $\frac{a_1}{b_1} + \frac{a_2}{b_2}i = \frac{a_1 b_2 + a_2 b_1 i}{b_1 b_2}$ is a ratio of elements in $\mathbb{Z}[i]$, $\Phi$ is also surjective, proving $\operatorname{Frac}(\mathbb{Z}[i]) \cong \mathbb{Q}[i]$ (\cref{ex:frac-gaussian-integers}).
 \end{aiNote}
 
 \begin{speech}[01:13:22 - 01:14:49]
@@ -1961,7 +1961,7 @@ In the lecture introduction, the professor remarked that \qt{in some sense even 
     \item \textbf{Euler's Totient Function $\phi(m)$:} Defined as the order $|(\faktor{\mathbb{Z}}{m\mathbb{Z}})^*|$, with explicit values $\phi(p) = p - 1$ and $\phi(p^2) = p^2 - p$.
     \item \textbf{Universal Property of $\mathbb{Q}$:} As the minimal field containing the integral domain $\mathbb{Z}$, any injective ring homomorphism $f \colon \mathbb{Z} \to F$ into a field $F$ factors uniquely through an injective field homomorphism $g \colon \mathbb{Q} \to F$ defined by $g(x/y) = f(x)f(y)^{-1}$.
     \item \textbf{Field of Fractions $\operatorname{Frac}(R)$:} For any integral domain $R$, the field of fractions is constructed as the quotient of formal pairs $S = R \times (R \setminus \{0\})$ by the cross-multiplication equivalence relation $(x_1, y_1) \equiv (x_2, y_2) \stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$. Transitivity and the non-vanishing of the denominators $y_1 y_2 \neq 0$ crucially rely on the zero-divisor-free property of $R$.
-    \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}(i)$, $\operatorname{Frac}(\mathbb{Z}[\frac{1}{3}]) = \mathbb{Q}$, and $\operatorname{Frac}(R) \cong R$ for any existing field $R$.
+    \item \textbf{Canonical Inclusion and Examples:} The map $i \colon R \hookrightarrow \operatorname{Frac}(R)$, $r \mapsto [(r, 1)]$, is an injective ring embedding. Examples include $\operatorname{Frac}(\mathbb{Z}) = \mathbb{Q}$, $\operatorname{Frac}(\mathbb{Z}[i]) = \mathbb{Q}[i]$, $\operatorname{Frac}(\mathbb{Z}_{1/3}) = \mathbb{Q}$, and $\operatorname{Frac}(R) \cong R$ for any existing field $R$.
     \item \textbf{Polynomial Rings $R[x]$:} For a commutative ring with unity $R$, the polynomial ring $R[x]$ is formally defined as the ring of sequences $(a_k)_{k \in \mathbb{N}_0}$ in $R^{\mathbb{N}_0}$ that are eventually zero. It is equipped with componentwise addition and Cauchy product multiplication $c_k = \sum_{i=0}^k a_i b_{k-i}$, with indeterminate $x = (0, 1, 0, 0, \dots)$.
 \end{itemize}
 \end{overview}
