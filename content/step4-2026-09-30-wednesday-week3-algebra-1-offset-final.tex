@@ -413,13 +413,13 @@ Let $f(x) = \sum_{i=0}^n a_i x^i$ and $g(x) = \sum_{j=0}^m b_j x^j$. Using the C
 \end{align}
 Furthermore, $\hat{\phi}(1) = \phi(1) = 1_S$. Thus, $\hat{\phi}$ is a ring homomorphism.
 
-\begin{steps}[Uniqueness]
-Going beyond the lecture, which states uniqueness on the board without proving it: any ring homomorphism $\psi \colon R[x] \to S$ satisfying conditions \textbf{(1)} and \textbf{(2)} of \cref{thm:universal-property-polynomial-ring} must preserve sums and products:
+\begin{proof}[Uniqueness (beyond the lecture)]
+The lecture states uniqueness on the board without proving it. Any ring homomorphism $\psi \colon R[x] \to S$ satisfying conditions \textbf{(1)} and \textbf{(2)} of \cref{thm:universal-property-polynomial-ring} must preserve sums and products:
 \[
 \psi\left( \sum_{i=0}^n a_i x^i \right) = \sum_{i=0}^n \psi(a_i) \psi(x)^i = \sum_{i=0}^n \phi(a_i) y^i = \hat{\phi}\left( \sum_{i=0}^n a_i x^i \right).
 \]
 Hence $\psi = \hat{\phi}$, proving uniqueness.
-\end{steps}
+\end{proof}
 \end{content}
 
 \end{proofWrapper}
@@ -794,8 +794,8 @@ So, you know, you have to decide how you interact with math; but formally, if yo
 \begin{content}[{Ring Structure of \texorpdfstring{$R[[x]]$}{R[[x]]}}]
 Equipped with addition \eqref{eq:power-series-addition} and multiplication \eqref{eq:power-series-mult}, the tuple $(R[[x]], +, \cdot, 0, 1)$ forms a commutative ring with unit $1_{R[[x]]}$.
 
-\begin{steps}[Verification of Ring Axioms]
-Going beyond the lecture, which leaves this to the students:
+\begin{proof}[Verification of Ring Axioms (beyond the lecture)]
+The lecture leaves this to the students.
 \begin{itemize}
     \item \textbf{Abelian Group under Addition:} Follows immediately from component-wise addition inheriting associativity, commutativity, and inverses from $(R, +)$.
     \item \textbf{Commutativity of Multiplication:} By substituting $j = k - i$:
@@ -808,7 +808,7 @@ Going beyond the lecture, which leaves this to the students:
     \]
     which establishes $((f \cdot g) \cdot h)_n = (f \cdot (g \cdot h))_n$ for all $n \in \mathbb{N}$.
 \end{itemize}
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{speech}[00:31:28 - 00:32:38]

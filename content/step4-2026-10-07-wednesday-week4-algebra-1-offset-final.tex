@@ -955,6 +955,10 @@ Consider the ring of integers $\mathbb{Z}$:
 \end{itemize}
 \end{examples}
 
+\begin{proof}[Proof that the maximal ideals of $\mathbb{Z}$ are the $p\mathbb{Z}$ (beyond the lecture)]
+The lecture states this without proof. Every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subseteq n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$. The remaining ideals are not maximal: $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $n = ab$ with $1 < a < n$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
+\end{proof}
+
 \begin{proposition}[Characterization of Fields via the Zero Ideal]\label[proposition]{prop:field-zero-ideal-maximal}
 Let $R$ be a ring. Then $R$ is a field if and only if the zero ideal $(0) = \{0\}$ is a maximal ideal in $R$:
 \begin{equation}\label{eq:field-iff-zero-maximal}
@@ -965,7 +969,7 @@ R \text{ is a field} \iff (0) \text{ is a maximal ideal of } R.
 \begin{steps}[Why \texorpdfstring{$(0)$}{(0)} Being Maximal Characterizes Fields]
 \begin{itemize}
     \item \textbf{Forward Direction ($\implies$):} If $F$ is a field, its only ideals are $(0)$ and $F$ (\cref{thm:ideals-in-a-field}). Since $(0) \neq F$ (because $1 \neq 0$ in a field, \cref{def:field}), $(0)$ is the unique proper ideal, hence maximal: the only proper ideal containing $(0)$ is $(0)$ itself.
-    \item \textbf{Backward Direction ($\impliedby$):} If $(0)$ is maximal, then $(0)$ is a proper ideal, so $(0) \neq R \implies R \neq \{0\}$ (ruling out the trivial zero ring). The lecturer stops here and explains in the next lecture why $R$ must then be a field.
+    \item \textbf{Backward Direction ($\impliedby$):} If $(0)$ is maximal, then $(0)$ is a proper ideal, so $(0) \neq R \implies R \neq \{0\}$ (ruling out the trivial zero ring). The lecturer stops here and explains in the next lecture why $R$ must then be a field (\cref{prop:field-zero-maximal}): for a non-zero $x \in R$, the principal ideal $(x)$ (\cref{def:ideal-generated-by-elements}) strictly contains $(0)$, so $(x) = R$ by maximality; hence $x y = 1$ for some $y \in R$, and every non-zero element is invertible.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -975,15 +979,8 @@ R \text{ is a field} \iff (0) \text{ is a maximal ideal of } R.
 Many textbooks write a maximal ideal as $\mathfrak{m}$. The lecturer writes a plain $m$ on the board, here and in Week~5, and these notes follow him.
 \end{aiNote}
 
-\begin{aiNote}[Beyond the Lecture: Why the Maximal Ideals of $\mathbb{Z}$ Are the $p\mathbb{Z}$]
-% [PERSISTENT, ADDITION]
-The lecture states this without proof. Every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subseteq n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$. The remaining ideals are not maximal: $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $n = ab$ with $1 < a < n$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
-\end{aiNote}
-
-\begin{aiNote}[Beyond the Lecture: Completing the Backward Direction and Quotients by Maximal Ideals]
+\begin{aiNote}[Beyond the Lecture: Quotients by Maximal Ideals]
 % [PERSISTENT, ADDITION — refined by Gemini 4 Argon]
-Suppose $(0)$ is a maximal ideal of $R$, so that $R \neq \{0\}$. For any non-zero element $x \in R \setminus \{0\}$, the principal ideal $(x)$ (\cref{def:ideal-generated-by-elements}) strictly contains $(0)$. By maximality of $(0)$, $(x)$ cannot be a proper ideal, forcing $(x) = R$. Therefore, $1 \in (x)$, meaning there exists $y \in R$ such that $x y = 1$, so every non-zero element is invertible and $R$ is a field.
-
 Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Correspondence Theorem (\cref{prop:correspondence-theorem-ideals}) immediately yields the fundamental characterization of maximal ideals via quotient rings: for any ideal $m \subset R$, the quotient ring $\faktor{R}{m}$ is a field if and only if $(\bar{0}) = q(m)$ is a maximal ideal in $\faktor{R}{m}$, which holds if and only if $m = q^{-1}((\bar{0}))$ is a maximal ideal in $R$.
 \end{aiNote}
 

@@ -251,11 +251,14 @@ Since $5 \equiv 1 \pmod 4$, we have:
 Thus, $5$ does not stay prime in $\mathbb{Z}[i]$.
 \end{example}
 
+\begin{proof}[Proof of part (i) (beyond the lecture)]
+The lecture calls part (i) easy and leaves it open. Squares modulo $4$ are only $0$ or $1$ ($0^2 \equiv 0$, $1^2 \equiv 1$, $2^2 \equiv 0$, $3^2 \equiv 1$), so a sum of two squares is $0$, $1$ or $2 \pmod 4$, and a prime $p \equiv 3 \pmod 4$ is not of the form $a^2 + b^2$. By the lecture's argument \eqref{eq:sum-of-squares-condition}, a prime that factors in $\mathbb{Z}[i]$ is a sum of two squares, so $p$ stays prime in $\mathbb{Z}[i]$; for example, $3$ does.
+\end{proof}
 \end{content}
 
 \begin{aiNote}[{Beyond the Lecture: The Three Kinds of Primes in $\mathbb{Z}[i]$}]
 % [PERSISTENT, ADDITION]
-The lecturer calls part (i) of \cref{thm:fermat-two-squares} easy and leaves it open. It follows from squares modulo $4$: they are only $0$ or $1$ ($0^2 \equiv 0$, $1^2 \equiv 1$, $2^2 \equiv 0$, $3^2 \equiv 1$), so a sum of two squares is $0$, $1$ or $2 \pmod 4$. For example, $3$ stays prime in $\mathbb{Z}[i]$. The representation in part (ii) is unique up to sign and order.
+The representation in part (ii) of \cref{thm:fermat-two-squares} is unique up to sign and order.
 
 The even prime is not covered by the theorem. Every integer prime falls into one of three classes in $\mathbb{Z}[i]$:
 \begin{description}
@@ -744,14 +747,14 @@ is a ring homomorphism.
     \end{align*}
 \end{itemize}
 
-\begin{steps}[The General Check the Lecturer Leaves to You]
-Going beyond the lecture: the two computations above are instances of two identities, valid for all $m, n \in \mathbb{Z}$:
+\begin{proof}[The General Check (beyond the lecture)]
+The lecture works out two examples and leaves the general check to the students. The two computations above are instances of two identities, valid for all $m, n \in \mathbb{Z}$:
 \begin{itemize}
     \item \textbf{Additivity:} $(m + n) \cdot 1_R = m \cdot 1_R + n \cdot 1_R$. For $m, n \ge 0$ both sides are a sum of $m + n$ copies of $1_R$ (associativity of $+$); the cases with negative $m$ or $n$ follow by adding inverses on both sides (\cref{def:integer-multiples}, \cref{rem:negative-multiples}).
     \item \textbf{Multiplicativity:} $(m \cdot 1_R)(n \cdot 1_R) = (mn) \cdot 1_R$. Expanding the left side with the distributive laws gives $|mn|$ products $1_R \cdot 1_R = 1_R$, taken with the sign of $mn$, exactly as in the computation for $2 \cdot 3 = 6$.
 \end{itemize}
 Together with $\phi(1) = 1_R$, this proves that $\phi$ is a ring homomorphism.
-\end{steps}
+\end{proof}
 
 \end{content}
 
@@ -810,13 +813,13 @@ equipped with modular addition and multiplication:
 with additive identity $\bar{0}$ and multiplicative identity $\bar{1}$. Here $\bar{a}$ denotes the residue class of $a \in \mathbb{Z}$, and $\bar{a} = \bar{b}$ if and only if $n \mid (a - b)$ (congruence modulo $n$, \cref{def:pre-congruence,fact:pre-residue-classes}).
 \end{definition}
 
-\begin{steps}[Why the Operations Are Well-Defined]
-Going beyond the lecture: the formulas use representatives $a, b$ of the classes, so they must not depend on that choice. If $\bar{a} = \bar{a}'$ and $\bar{b} = \bar{b}'$, say $a' = a + kn$ and $b' = b + \ell n$, then
+\begin{proof}[Why the Operations Are Well-Defined (beyond the lecture)]
+The lecture states this without proof. The formulas use representatives $a, b$ of the classes, so they must not depend on that choice. If $\bar{a} = \bar{a}'$ and $\bar{b} = \bar{b}'$, say $a' = a + kn$ and $b' = b + \ell n$, then
 \[
 a' + b' = (a + b) + (k + \ell) n, \qquad a' b' = ab + (a \ell + k b + k \ell n) n,
 \]
 so $\overline{a' + b'} = \overline{a + b}$ and $\overline{a' b'} = \overline{ab}$. The ring axioms are then inherited from $\mathbb{Z}$, and so is commutativity. For $n = 1$ one gets the zero ring $\{\bar{0}\}$.
-\end{steps}
+\end{proof}
 
 \begin{example}[The Ring $\faktor{\mathbb{Z}}{2\mathbb{Z}}$]\label[example]{ex:z2-ring}
 For $n = 2$, $\faktor{\mathbb{Z}}{2\mathbb{Z}} = \{\bar{0}, \bar{1}\}$ is a ring with two elements, zero and one.
@@ -846,12 +849,11 @@ f \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}, \quad f(a) = \bar{a}
 \]
 is a surjective ring homomorphism.
 \end{proposition}
-\end{content}
 
-\begin{aiNote}[Beyond the Lecture: Why the Reduction Map Is a Homomorphism]
-% [PERSISTENT, ADDITION]
-The lecturer states this without proof. For $a, b \in \mathbb{Z}$, the operations on residue classes give $f(a + b) = \overline{a + b} = \bar{a} + \bar{b} = f(a) + f(b)$ and $f(a \cdot b) = \overline{a \cdot b} = \bar{a} \cdot \bar{b} = f(a) \cdot f(b)$, and $f(1) = \bar{1}$. Every residue class $\bar{k}$ is the image of $k \in \mathbb{Z}$, so $f$ is surjective.
-\end{aiNote}
+\begin{proof}[Proof (beyond the lecture)]
+The lecture states this without proof. For $a, b \in \mathbb{Z}$, the operations on residue classes give $f(a + b) = \overline{a + b} = \bar{a} + \bar{b} = f(a) + f(b)$ and $f(a \cdot b) = \overline{a \cdot b} = \bar{a} \cdot \bar{b} = f(a) \cdot f(b)$, and $f(1) = \bar{1}$. Every residue class $\bar{k}$ is the image of $k \in \mathbb{Z}$, so $f$ is surjective.
+\end{proof}
+\end{content}
 
 \section{The Kernel of a Ring Homomorphism and Ideals}
 \subsection{Definition of the Kernel}

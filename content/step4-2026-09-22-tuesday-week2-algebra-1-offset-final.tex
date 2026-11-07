@@ -383,8 +383,8 @@ where $1_G = \operatorname{Id}_G$ denotes the identity map of $G$. (For maps of 
 \textbf{Direction ($\Rightarrow$):} Suppose $f$ is a bijective group homomorphism. As a bijection, there exists a unique set-theoretic inverse map $g = f^{-1} \colon \hat{G} \to G$ satisfying \eqref{eq:isom-inverses}. That $g$ is a homomorphism is left to the students.
 \end{proof}
 
-\begin{steps}[Why the Inverse Is a Homomorphism]
-Going beyond the lecture, which leaves this to the students: let $\hat{a}, \hat{b} \in \hat{G}$, and let $a = g(\hat{a})$, $b = g(\hat{b}) \in G$. Then $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $f$ is a homomorphism:
+\begin{proof}[Why the Inverse Is a Homomorphism (beyond the lecture)]
+The lecture leaves this to the students. Let $\hat{a}, \hat{b} \in \hat{G}$, and let $a = g(\hat{a})$, $b = g(\hat{b}) \in G$. Then $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $f$ is a homomorphism:
 \[
 f(ab) = f(a)f(b) = \hat{a}\hat{b}.
 \]
@@ -393,7 +393,7 @@ Applying $g = f^{-1}$ to both sides:
 g(\hat{a}\hat{b}) = ab = g(\hat{a})g(\hat{b}).
 \]
 Thus, $g$ is a group homomorphism.
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{hidden}
@@ -783,8 +783,8 @@ is a subgroup of the codomain:
 \]
 \end{proposition}
 
-\begin{steps}[Why the Image Is a Subgroup]
-Going beyond the lecture, which leaves this to the students: we verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
+\begin{proof}[Why the Image Is a Subgroup (beyond the lecture)]
+The lecture leaves this to the students. We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} By \cref{prop:hom-preserves-identity}, $f(e) = \hat{e}$. Since $e \in G$, $\hat{e} \in \operatorname{Im}(f)$.
     \item \textbf{Closure under Multiplication:} Let $\hat{a}, \hat{b} \in \operatorname{Im}(f)$. Then there exist $a, b \in G$ such that $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $G$ is a group, $ab \in G$, and by the homomorphism property:
@@ -798,7 +798,7 @@ Going beyond the lecture, which leaves this to the students: we verify the three
     By uniqueness of inverses in $\hat{G}$, $(\hat{x})^{-1} = f(x^{-1}) \in \operatorname{Im}(f)$.
 \end{enumerate}
 Thus, $\operatorname{Im}(f) \le \hat{G}$.
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{hidden}
@@ -997,8 +997,8 @@ Formally, you just have to take this, start checking everything, and use the def
 \end{speech}
 
 \begin{content}[Verification of the Subring Axioms for the Image]
-\begin{steps}[Why the Image Is a Subring]
-Going beyond the lecture, which checks $\hat{0}$ and $\hat{1}$ and leaves the rest to the students: we verify conditions (i)--(iii) of \cref{def:subring} for $\operatorname{Im}(f) \subset \hat{R}$:
+\begin{proof}[Why the Image Is a Subring (beyond the lecture)]
+The lecture checks $\hat{0}$ and $\hat{1}$ and leaves the rest to the students. We verify conditions (i)--(iii) of \cref{def:subring} for $\operatorname{Im}(f) \subset \hat{R}$:
 \begin{enumerate}[label=\textbf{(\roman*)}]
     \item \textbf{Neutral Elements:}
     \begin{itemize}
@@ -1013,7 +1013,7 @@ Going beyond the lecture, which checks $\hat{0}$ and $\hat{1}$ and leaves the re
     \item \textbf{Additive Inverses:} For $\hat{x} = f(x) \in \operatorname{Im}(f)$, we have $-\hat{x} = -f(x) = f(-x) \in \operatorname{Im}(f)$; here $f(-x) = -f(x)$ because group homomorphisms preserve inverses (shown in the proof of \cref{prop:image-is-subgroup}). Associativity, commutativity and distributivity hold identically as they are inherited from $\hat{R}$.
 \end{enumerate}
 Therefore, $\operatorname{Im}(f)$ is a subring of $\hat{R}$.
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{insight}[Broken Symmetry: Subrings vs. Ideals]

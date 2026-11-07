@@ -1242,10 +1242,12 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism.
 \end{enumerate}
 \end{lemma}
 
-\begin{proof}[Proof (part 2 beyond the lecture)]
-\textbf{1. Surjectivity:} By definition, $f$ is surjective if every $y \in G_2$ has a pre-image $x \in G_1$ with $f(x) = y$, which is precisely the statement $\operatorname{Im}(f) = G_2$.
+\begin{proof}[Proof of (1)]
+By definition, $f$ is surjective if every $y \in G_2$ has a pre-image $x \in G_1$ with $f(x) = y$, which is precisely the statement $\operatorname{Im}(f) = G_2$.
+\end{proof}
 
-\textbf{2. Injectivity (beyond the lecture):} The lecture leaves this part to the students.
+\begin{proof}[Proof of (2) (beyond the lecture)]
+The lecture leaves this part to the students.
 
 \textbf{($\implies$):} Assume $f$ is injective. If $x \in \ker(f)$, then $f(x) = e_2 = f(e_1)$. Since $f$ is injective, this forces $x = e_1$. Hence $\ker(f) = \{e_1\}$.
 
@@ -2366,7 +2368,7 @@ The generating function of the partition function $p(n)$ is given by the formal 
 \end{equation}
 \end{theorem}
 
-\begin{steps}[Algebraic Derivation via Geometric Series (beyond the lecture)]
+\begin{proof}[Algebraic Derivation via Geometric Series (beyond the lecture)]
 The lecture leaves this to the students. Write $k$ for the index of the product and expand each factor with the geometric series $\frac{1}{1 - q^k} = \sum_{m_k=0}^\infty (q^k)^{m_k}$:
 \begin{align*}
 \prod_{k=1}^\infty \frac{1}{1 - q^k} &= \prod_{k=1}^\infty \left( 1 + q^k + q^{2k} + q^{3k} + \dots \right) \\
@@ -2377,7 +2379,7 @@ The coefficient of $q^n$ in this product counts the number of non-negative integ
 1 \cdot m_1 + 2 \cdot m_2 + 3 \cdot m_3 + \dots = n.
 \]
 Interpreting $m_k$ as the number of parts of size $k$, this is precisely the definition of a partition of $n$. Hence the coefficient of $q^n$ is $p(n)$.
-\end{steps}
+\end{proof}
 \end{content}
 
 % [WORD-CHECKED: the recording says "7k + 6" (clip 01:27:55-01:28:17, heard by the user), as on the board; he corrects it to 7k + 5 at 01:29:12, so the text keeps the spoken slip and the aiNote at the end explains it.]

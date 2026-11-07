@@ -705,8 +705,8 @@ g(1_\mathbb{Q}) &= 1_F. \label{eq:g-unit}
 \end{align}
 \end{claim}
 
-\begin{steps}[Why $g$ Is a Field Homomorphism]
-Going beyond the lecture, which leaves this to the students: let $q_1 = \frac{x_1}{y_1}$ and $q_2 = \frac{x_2}{y_2}$ with $x_i, y_i \in \mathbb{Z}$ and $y_i \ne 0$.
+\begin{proof}[Why $g$ Is a Field Homomorphism (beyond the lecture)]
+The lecture leaves this to the students. Let $q_1 = \frac{x_1}{y_1}$ and $q_2 = \frac{x_2}{y_2}$ with $x_i, y_i \in \mathbb{Z}$ and $y_i \ne 0$.
 
 \paragraph{1. Verification of Additivity \eqref{eq:g-add}:}
 Adding fractions according to standard rational arithmetic:
@@ -755,7 +755,7 @@ Since $f \colon \mathbb{Z} \to F$ is a unital ring homomorphism, $f(1_\mathbb{Z}
 g(1_\mathbb{Q}) = \frac{1_F}{1_F} = 1_F,
 \]
 establishing \eqref{eq:g-unit}. Thus $g$ is a field homomorphism.
-\end{steps}
+\end{proof}
 \end{content}
 
 \section{The Field of Fractions of an Integral Domain}
@@ -1236,8 +1236,8 @@ For any two equivalence classes $[(x_1, y_1)]$, $[(x_2, y_2)] \in F$, addition i
 Addition on $F$ as given in \eqref{eq:addition-F-formula} is well-defined.
 \end{proposition}
 
-\begin{steps}[Why Addition Is Well-Defined]
-Going beyond the lecture, which checks the denominator and leaves the independence of the representatives to the students: we verify two essential requirements:
+\begin{proof}[Why Addition Is Well-Defined (beyond the lecture)]
+The lecture checks the denominator and leaves the independence of the representatives to the students. We verify two essential requirements:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Legitimacy of the Denominator:} For $(x_1 y_2 + x_2 y_1, y_1 y_2)$ to lie in $S$, we must have $y_1 y_2 \ne 0$. Since $(x_1, y_1), (x_2, y_2) \in S$, we know $y_1 \ne 0$ and $y_2 \ne 0$. Because $R$ is an \textbf{integral domain}, the product of two non-zero elements is non-zero:
     \[
@@ -1261,7 +1261,7 @@ Going beyond the lecture, which checks the denominator and leaves the independen
     \end{align*}
     This establishes equivalence, confirming that addition is independent of the choice of representative.
 \end{enumerate}
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsection{Definition and Well-Definedness of Multiplication on \texorpdfstring{$F$}{F}}
@@ -1356,18 +1356,16 @@ Evaluating the definitions directly:
 Injectivity was already established in \cref{prop:inclusion-injective}.
 \end{proof}
 
-\begin{steps}[Multiplicative Inverses in $F$]
-Going beyond the lecture: to confirm that $F$ is indeed a field, let $[(x, y)] \in F$ with $[(x, y)] \ne 0_F = [(0, 1)]$. Then $(x, y) \not\equiv (0, 1) \implies x \cdot 1 \ne 0 \cdot y \implies x \ne 0$. Thus, $(y, x) \in S$, and:
+\begin{proof}[Multiplicative Inverses in $F$ (beyond the lecture)]
+The lecture leaves the field axioms, inverses included, to the students (\qt{a lot of long and boring work}). To confirm that $F$ is indeed a field, let $[(x, y)] \in F$ with $[(x, y)] \ne 0_F = [(0, 1)]$. Then $(x, y) \not\equiv (0, 1) \implies x \cdot 1 \ne 0 \cdot y \implies x \ne 0$. Thus, $(y, x) \in S$, and:
 \[
 [(x, y)] \cdot [(y, x)] = [(xy, yx)] = [(1, 1)] = 1_F.
 \]
 Therefore, every non-zero element in $F$ possesses a multiplicative inverse $[(x, y)]^{-1} = [(y, x)]$.
-\end{steps}
-\end{content}
+\end{proof}
 
-\begin{aiNote}[Beyond the Lecture: The Remaining Field Axioms]
-% [PERSISTENT, ADDITION]
-The lecture checks that the operations are well-defined and that non-zero elements have inverses; the other axioms of a field reduce to computations in $R$ on representatives. The key tool is that $(x s, y s) \equiv (x, y)$ for every $s \neq 0$, since $x s \cdot y = x \cdot y s$: a common non-zero factor can be cancelled.
+\begin{proof}[The Remaining Field Axioms (beyond the lecture)]
+The lecture leaves these checks to the students as well; they reduce to computations in $R$ on representatives. The key tool is that $(x s, y s) \equiv (x, y)$ for every $s \neq 0$, since $x s \cdot y = x \cdot y s$: a common non-zero factor can be cancelled.
 \begin{itemize}
     \item \textbf{Commutativity} of $+$ and $\cdot$ is visible in the formulas of \cref{def:addition-F} and \cref{def:multiplication-F}, since $R$ is commutative.
     \item \textbf{Associativity:} both ways of bracketing a sum of three classes give the same class,
@@ -1386,7 +1384,8 @@ The lecture checks that the operations are well-defined and that non-zero elemen
     and the two right-hand sides are the same class after cancelling the factor $y_1 \neq 0$.
     \item \textbf{$0_F \neq 1_F$:} $(0, 1) \not\equiv (1, 1)$, since $0 \cdot 1 \neq 1 \cdot 1$ in the integral domain $R$.
 \end{itemize}
-\end{aiNote}
+\end{proof}
+\end{content}
 
 \subsection{Summary of the Field of Fractions Construction}
 
@@ -1614,8 +1613,8 @@ Let $R$ be a field. Then the canonical inclusion $i \colon R \hookrightarrow \op
 \end{equation}
 \end{proposition}
 
-\begin{steps}[Why $i$ Is an Isomorphism]
-Going beyond the lecture, which leaves this to the students: by \cref{prop:i-is-homomorphism}, $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(R)$ with $x, y \in R$ and $y \ne 0$.
+\begin{proof}[Why $i$ Is an Isomorphism (beyond the lecture)]
+The lecture leaves this to the students. By \cref{prop:i-is-homomorphism}, $i \colon R \hookrightarrow \operatorname{Frac}(R)$ is an injective field homomorphism. To establish surjectivity, let $[(x, y)] \in \operatorname{Frac}(R)$ with $x, y \in R$ and $y \ne 0$.
 Since $R$ is a field, $y$ has a multiplicative inverse $y^{-1} \in R$. Then:
 \[
 (x, y) \equiv (x y^{-1}, 1) \iff x \cdot 1 = (x y^{-1}) \cdot y = x.
@@ -1625,7 +1624,7 @@ Consequently:
 [(x, y)] = [(x y^{-1}, 1)] = i(x y^{-1}).
 \]
 Every element of $\operatorname{Frac}(R)$ is the image of the element $x y^{-1} \in R$. Hence, $i$ is surjective and constitutes a field isomorphism.
-\end{steps}
+\end{proof}
 \end{content}
 
 \section{Polynomial Rings}

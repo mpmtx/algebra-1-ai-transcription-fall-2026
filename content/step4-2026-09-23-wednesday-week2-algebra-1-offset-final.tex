@@ -322,14 +322,14 @@ f \circ g_1 = f \circ g_2 \implies g_1 = g_2.
     \node at (2.2, -1.0) {\footnotesize $f \circ g_1 = f \circ g_2 \implies g_1 = g_2 \quad (\text{Categorical Injective})$};
 \end{tikzpicture}\par}
 
-\begin{steps}[Why Monomorphisms Characterize Injectivity]
-Going beyond the lecture, which leaves this to the students: in the category of sets ($\mathbf{Set}$), suppose $f \colon A \to B$ is a monomorphism. To test whether $f$ is injective on points $a_1, a_2 \in A$, let $X = \{*\}$ be a one-element set and define two maps $g_1, g_2 \colon \{*\} \to A$ by $g_1(*) := a_1$ and $g_2(*) := a_2$.
+\begin{proof}[Why Monomorphisms Characterize Injectivity (beyond the lecture)]
+The lecture leaves this to the students (\qt{I leave this for you to think about}). In the category of sets ($\mathbf{Set}$), suppose $f \colon A \to B$ is a monomorphism. To test whether $f$ is injective on points $a_1, a_2 \in A$, let $X = \{*\}$ be a one-element set and define two maps $g_1, g_2 \colon \{*\} \to A$ by $g_1(*) := a_1$ and $g_2(*) := a_2$.
 Then $(f \circ g_1)(*) = f(a_1)$ and $(f \circ g_2)(*) = f(a_2)$. Thus:
 \[
 f(a_1) = f(a_2) \implies f \circ g_1 = f \circ g_2 \implies g_1 = g_2 \implies a_1 = a_2.
 \]
 Hence, left-cancellation with respect to arbitrary test objects $X$ precisely recovers element-wise injectivity without mentioning elements. Conversely, an injective $f$ is a monomorphism: if $f \circ g_1 = f \circ g_2$, then $f(g_1(x)) = f(g_2(x))$ for every $x \in X$, so $g_1(x) = g_2(x)$ by injectivity, that is, $g_1 = g_2$.
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{speech}[00:08:27 - 00:09:20]

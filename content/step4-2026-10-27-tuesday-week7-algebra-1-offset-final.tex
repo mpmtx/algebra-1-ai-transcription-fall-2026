@@ -1570,8 +1570,8 @@ Since $e_1 \cdot e_1 = e_1$ in $G_1$, applying the homomorphism property \eqref{
 This proves \eqref{eq:hom-preserves-id}. The lecturer leaves \eqref{eq:hom-preserves-inv} to the students: it is the same argument.
 \end{proof}
 
-\begin{steps}[Preservation of Inverses]
-Going beyond the lecture, which leaves this to the students: for any $x \in G_1$, by definition $x \cdot x^{-1} = e_1$. Applying $f$:
+\begin{proof}[Preservation of Inverses (beyond the lecture)]
+The lecture leaves this to the students. For any $x \in G_1$, by definition $x \cdot x^{-1} = e_1$. Applying $f$:
     \[
     f(x) \cdot f(x^{-1}) = f(x \cdot x^{-1}) = f(e_1) = e_2.
     \]
@@ -1580,7 +1580,7 @@ Going beyond the lecture, which leaves this to the students: for any $x \in G_1$
     \[
     f(x^{-1}) = \bigl(f(x)\bigr)^{-1}.
     \]
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{hidden}
@@ -1628,15 +1628,15 @@ equipped with the binary operation of function composition $\circ$ and identity 
 \]
 \end{definition}
 
-\begin{steps}[Verification of Group Axioms for $S_n$]
-Going beyond the lecture: the triple $(S_n, \circ, \operatorname{Id}_{[n]})$ satisfies the group axioms:
+\begin{proof}[Verification of Group Axioms for $S_n$ (beyond the lecture)]
+The lecture gives the definition and leaves the group axioms to the students. The triple $(S_n, \circ, \operatorname{Id}_{[n]})$ satisfies the group axioms:
 \begin{itemize}
     \item \textbf{Closure:} The composition of two bijections is a bijection: $f, g \in S_n \implies f \circ g \in S_n$.
     \item \textbf{Associativity:} Function composition is universally associative: $(f \circ g) \circ h = f \circ (g \circ h)$.
     \item \textbf{Identity:} The identity function $\operatorname{Id}_{[n]}(i) = i$ satisfies $\operatorname{Id}_{[n]} \circ f = f \circ \operatorname{Id}_{[n]} = f$ for all $f \in S_n$.
     \item \textbf{Inverses:} Every bijection $f$ admits a unique two-sided inverse function $f^{-1} \in S_n$.
 \end{itemize}
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsection{Composition Order and Diagrams of Bijections}

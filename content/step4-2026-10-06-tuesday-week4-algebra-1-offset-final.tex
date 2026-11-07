@@ -163,8 +163,8 @@ For two indeterminates $x$ and $y$, the polynomial ring $R[x, y]$ can be defined
 \end{enumerate}
 \end{definition}
 
-\begin{steps}[Equivalence of Definitions]
-Going beyond the lecture, which leaves this check to the students: both constructions yield canonically isomorphic rings:
+\begin{proof}[Equivalence of Definitions (beyond the lecture)]
+The lecture leaves this check to the students. Both constructions yield canonically isomorphic rings:
 \[
 (R[x])[y] \cong R[x, y] \cong (R[y])[x].
 \]
@@ -172,7 +172,7 @@ In the iterative perspective, an element is a polynomial $P(y) = \sum_{j=0}^m p_
 \[
 R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \]
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsection{The Binomial Formula in Commutative Rings}
@@ -210,8 +210,8 @@ For $n = 2$, distributivity and commutativity ($y x = x y$) give:
 \]
 \end{example}
 
-\begin{steps}[Proof by Induction]
-Going beyond the lecture: the general identity follows by induction on $n$. For $n = 0$, both sides equal $1 = \binom{0}{0}$. For the induction step:
+\begin{proof}[Proof by Induction (beyond the lecture)]
+The lecture expands $(x + y)^2$ and says that induction does the rest. The general identity follows by induction on $n$. For $n = 0$, both sides equal $1 = \binom{0}{0}$. For the induction step:
 \begin{align*}
 (x + y)^{n+1} &= (x + y) \sum_{a=0}^n \binom{n}{a} x^{n-a} y^a \\
 &= \sum_{a=0}^n \binom{n}{a} x^{n+1-a} y^a + \sum_{a=0}^n \binom{n}{a} x^{n-a} y^{a+1} \\
@@ -219,7 +219,7 @@ Going beyond the lecture: the general identity follows by induction on $n$. For 
 &= \sum_{k=0}^{n+1} \binom{n+1}{k} x^{n+1-k} y^k,
 \end{align*}
 using Pascal's identity $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ (\cref{fact:pre-binomial}).
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsection{The Binomial Formula for a Prime Exponent (in textbooks: Frobenius Identity)}
@@ -427,7 +427,7 @@ When $K$ is a field, the set of formal Laurent series with finitely many negativ
 \end{theorem}
 
 \begin{steps}[Why Invertibility Holds and Why Infinitely Many Negative Terms Fail]
-Going beyond the lecture, which only sketches both points:
+The lecture sketches both points; in detail:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Invertibility in $K((x))$:}
     Any non-zero Laurent series can be factored as $f(x) = x^k u(x)$, where $k \in \mathbb{Z}$ is the minimal index with $a_k \neq 0$, and $u(x) = a_k + a_{k+1} x + \dots \in K[[x]]$ with $a_k \neq 0$. Since $K$ is a field, the leading coefficient $a_k$ is a unit in $K$, so $u(x)$ is an invertible unit in the power series ring $K[[x]]$ (\cref{thm:units-power-series-ring}). Its multiplicative inverse is:
@@ -943,9 +943,9 @@ Since $(I, +, 0)$ is an additive subgroup, $i, j \in I$ implies $i + j \in I$. T
 Thus, the sum is independent of representatives.
 \end{proof}
 
-\begin{steps}[The Quotient Additive Group]
-Going beyond the lecture, which leaves this to the students: since addition is well-defined, associativity, commutativity, the identity $\bar{0}$, and inverses $-\bar{x} = \overline{-x}$ all inherit directly from $(R, +, 0)$. Hence, $(\faktor{R}{I}, +, \bar{0})$ forms an abelian group.
-\end{steps}
+\begin{proof}[The Quotient Additive Group (beyond the lecture)]
+The lecture leaves this to the students. Since addition is well-defined, associativity, commutativity, the identity $\bar{0}$, and inverses $-\bar{x} = \overline{-x}$ all inherit directly from $(R, +, 0)$. Hence, $(\faktor{R}{I}, +, \bar{0})$ forms an abelian group.
+\end{proof}
 \end{content}
 
 \begin{speech}[00:42:05 - 00:43:13]
@@ -1089,15 +1089,15 @@ equipped with the operations on classes:
 forms a commutative ring with identity.
 \end{theorem}
 
-\begin{steps}[The Remaining Ring Axioms]
-Going beyond the lecture, which checks the identity and leaves the rest to the students: having proven that addition and multiplication are well-defined, the remaining ring axioms follow directly from the ring axioms of $R$ applied to representatives:
+\begin{proof}[The Remaining Ring Axioms (beyond the lecture)]
+The lecture checks the identity and leaves the rest to the students. Having proven that addition and multiplication are well-defined, the remaining ring axioms follow directly from the ring axioms of $R$ applied to representatives:
 \begin{itemize}
     \item \textbf{Multiplicative Identity:} $\bar{1} \cdot \bar{x} = \overline{1 \cdot x} = \bar{x}$ for all $\bar{x} \in \faktor{R}{I}$.
     \item \textbf{Associativity:} $(\bar{x} \cdot \bar{y}) \cdot \bar{z} = \overline{(x y) z} = \overline{x (y z)} = \bar{x} \cdot (\bar{y} \cdot \bar{z})$.
     \item \textbf{Distributivity:} $\bar{x} \cdot (\bar{y} + \bar{z}) = \overline{x (y + z)} = \overline{x y + x z} = (\bar{x} \cdot \bar{y}) + (\bar{x} \cdot \bar{z})$.
     \item \textbf{Commutativity:} $\bar{x} \cdot \bar{y} = \overline{x y} = \overline{y x} = \bar{y} \cdot \bar{x}$.
 \end{itemize}
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{hidden}

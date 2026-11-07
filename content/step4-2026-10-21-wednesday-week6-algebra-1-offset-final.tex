@@ -161,14 +161,14 @@ And this exercise allows us to conflate, if we're in a UFD, then these two notio
 Let $R$ be a unique factorization domain, and let $p \in R \setminus \{0\}$. Prove that $p$ is an irreducible element if and only if the principal ideal $(p) = pR$ is a prime ideal (or equivalently, $p$ is a prime element).
 \end{exercise}
 
-\begin{steps}[Proof Outline for the Exercise]
-Going beyond the lecture: in any integral domain $R$, a prime element is always irreducible:
+\begin{proof}[Proof Outline for the Exercise (beyond the lecture)]
+The lecture leaves this as an exercise (\qt{I don't do it here}). In any integral domain $R$, a prime element is always irreducible:
 \begin{itemize}
     \item \textbf{Prime implies Irreducible:} If $(p)$ is prime and $p = ab$, then $ab \in (p)$, so $p \mid a$ or $p \mid b$. If $p \mid a$, write $a = pr$. Then $p = prb \implies 1 = rb$, so $b$ is a unit in $R$. Thus, $p$ is irreducible.
     \item \textbf{Irreducible implies Prime (requires UFD):} Suppose $p$ is irreducible and $p \mid ab$. Then $ab = pc$ for some $c \in R$. If $a = 0$ or $b = 0$, there is nothing to prove; if $a$ is a unit, then $p \mid a^{-1} a b = b$, and similarly if $b$ is a unit. Otherwise, factoring $a, b$ (and $c$, unless it is a unit) into products of irreducible elements, the irreducible element $p$ appearing on the right-hand side must, by uniqueness of factorization up to associates, be associate to one of the irreducible factors of $a$ or of $b$. Hence, $p \mid a$ or $p \mid b$, which implies $(p)$ is a prime ideal.
 \end{itemize}
 The second half is the generalization of Euclid's lemma (\cref{fact:pre-euclid}) to UFDs; for PIDs it was proved directly as Step~2 of Theorem~A (\cref{lem:step2-pid-irr-implies-prime}). The first half, together with Step~1 of Theorem~A (\cref{clm:step1-uniqueness}), shows: a domain in which every non-zero non-unit has a factorization into irreducibles is a UFD if and only if every irreducible element is prime.
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsection{The Content of a Polynomial}
@@ -1026,13 +1026,15 @@ Here the lecture stops, at the bell. The proof that $\deg(m) = 0$, and from it $
 \end{steps}
 \end{content}
 
-\begin{aiNote}[Beyond the Lecture: Completion of the Proof of Case 2]
-% [PERSISTENT, ADDITION]
+\begin{content}
 % The pipeline's "End of Lecture / Board State Checkpoint" note stood here. Resolved on 2026-10-24:
 % the lecture ended normally at the bell, and the cut-off argument is completed below, as the
 % lecturer announced for the next lecture. The checkpoint's board state is the last content box above.
-The bell ended the lecture a few minutes before the end of the proof (\qt{I'll do it next time}). The remaining argument, which the next lecture gives in full (\cref{thm:ufd-polynomial-ring-w7tue}), runs as follows; it uses only the results of this lecture.
+% Since 2026-11-07 unmarked steps, not an addition: the prompt fills in a proof cut short by the
+% end of the lecture with the lecturer's own argument, which the next lecture gives.
 \begin{steps}[Completion of the Argument for $\deg(p) > 0$]
+The bell ended the lecture a few minutes before the end of the proof (\qt{I'll do it next time}). The remaining argument, which the next lecture gives in full (\cref{thm:ufd-polynomial-ring-w7tue}), runs as follows; it uses only the results of this lecture.
+
 At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ is the primitive part of the element $m \in I = (p, f)$ of minimal degree.
 \begin{description}
     \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in \mathcal{U}_R$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
@@ -1054,7 +1056,7 @@ At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ 
 \end{description}
 Together with Case~1, every irreducible element $p \in R[x]$ is prime (and $(p) \neq R[x]$, since $p$ is not a unit). By Step~1 of Theorem~A (\cref{clm:step1-uniqueness}), factorizations in $R[x]$ are therefore unique; with the existence proved in Step~1 above, this concludes the proof of Gauss's Theorem (\cref{thm:ufd-polynomial-ring-w6wed}).
 \end{steps}
-\end{aiNote}
+\end{content}
 
 \end{proofWrapper}
 

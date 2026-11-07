@@ -1626,8 +1626,8 @@ I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, j \in J \} \subset R.
 \end{equation}
 \end{definition}
 
-\begin{steps}[Verification of the Ideal Axioms for $I + J$]
-Going beyond the lecture: to confirm that $I + J$ is an ideal of $R$:
+\begin{proof}[Verification of the Ideal Axioms for $I + J$ (beyond the lecture)]
+The lecture checks $0 \in I + J$ and leaves the rest to the students (\qt{I leave all those checks for you}). To confirm that $I + J$ is an ideal of $R$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Non-emptiness and Zero:} Since $0 \in I$ and $0 \in J$, we have $0 = 0 + 0 \in I + J$.
     \setcounter{enumi}{1} \item \textbf{Additive Closure:} Let $x, y \in I + J$. Then $x = i_1 + j_1$ and $y = i_2 + j_2$ for some $i_1, i_2 \in I$ and $j_1, j_2 \in J$. Using the associativity and commutativity of addition in $R$:
@@ -1641,7 +1641,7 @@ Going beyond the lecture: to confirm that $I + J$ is an ideal of $R$:
     \]
 \end{enumerate}
 Thus, $I + J$ is indeed an ideal of $R$. In fact, $I + J$ is the smallest ideal containing both $I$ and $J$.
-\end{steps}
+\end{proof}
 \end{content}
 
 \begin{speech}[01:12:09 - 01:14:12]
@@ -1931,8 +1931,8 @@ All right, so, we don't have much time, but I should be able to prove at least h
 The map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ is a ring homomorphism.
 \end{lemma}
 
-\begin{steps}[Checking the Homomorphism Property]
-Going beyond the lecture, which leaves this to the students: let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
+\begin{proof}[Checking the Homomorphism Property (beyond the lecture)]
+The lecture leaves this to the students. Let $\bar{z}_1 = z_1 + IJ$ and $\bar{z}_2 = z_2 + IJ$ in $\faktor{R}{IJ}$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Additive Homomorphism:}
     \begin{align*}
@@ -1954,7 +1954,7 @@ Going beyond the lecture, which leaves this to the students: let $\bar{z}_1 = z_
     \]
 \end{enumerate}
 Thus, $\phi$ is a ring homomorphism.
-\end{steps}
+\end{proof}
 \end{content}
 
 \subsubsection{Proof of Injectivity}

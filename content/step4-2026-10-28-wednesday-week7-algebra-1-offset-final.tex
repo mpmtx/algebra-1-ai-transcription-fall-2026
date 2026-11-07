@@ -292,15 +292,15 @@ Hence, $\langle x \rangle$ is a subgroup of $G$.
 \end{proof}
 
 \begin{corollary}[Isomorphism with Additive Cyclic Groups]\label[corollary]{cor:cyclic-subgroup-isomorphism}
-Let $G$ be a finite group and $x \in G$ with $m = \operatorname{Ord}(x)$. Then the subgroup $\langle x \rangle$ is isomorphic to the additive cyclic group $(\mathbb{Z}_m, +, 0)$:
+Let $G$ be a finite group and $x \in G$ with $m = \operatorname{Ord}(x)$. Then the subgroup $\langle x \rangle$ is isomorphic to the additive cyclic group $(\faktor{\mathbb{Z}}{m\mathbb{Z}}, +, 0)$:
 \[
-\langle x \rangle \cong (\mathbb{Z}_m, +, 0).
+\langle x \rangle \cong (\faktor{\mathbb{Z}}{m\mathbb{Z}}, +, 0).
 \]
 In particular, $|\langle x \rangle| = \operatorname{Ord}(x)$.
 \end{corollary}
 
 \begin{steps}[Why the Map Is an Isomorphism]
-Going beyond the lecture, which reads this off the product rule: the assignment $\psi \colon \mathbb{Z}_m \to \langle x \rangle$ defined by $\psi(\bar{k}) := x^k$ is well-defined because $x^m = e$. It is surjective by definition of $\langle x \rangle$, and since both sets have cardinality $m$ (\cref{lem:cyclic-subgroup-order}), it is bijective. Furthermore,
+The lecture reads this off the product rule. The assignment $\psi \colon \faktor{\mathbb{Z}}{m\mathbb{Z}} \to \langle x \rangle$ defined by $\psi(\bar{k}) := x^k$ is well-defined because $x^m = e$. It is surjective by definition of $\langle x \rangle$, and since both sets have cardinality $m$ (\cref{lem:cyclic-subgroup-order}), it is bijective. Furthermore,
 \[
 \psi(\bar{k} + \bar{\ell}) = \psi(\overline{k + \ell}) = x^{k+\ell} = x^k \cdot x^\ell = \psi(\bar{k}) \cdot \psi(\bar{\ell}),
 \]
@@ -750,7 +750,7 @@ Going beyond the lecture: By Lagrange's Theorem, if $H \le G$, then $|H| \mid p$
     \item \textbf{Case $|H| = 1$:} then $H = \{e\}$.
     \item \textbf{Case $|H| = p$:} then $H = G$.
 \end{itemize}
-Furthermore, choosing any non-identity element $x \in G \setminus \{e\}$, its generated subgroup $\langle x \rangle$ must have order $> 1$, forcing $|\langle x \rangle| = p$, and thus $\langle x \rangle = G$. Consequently, every group of prime order is cyclic: $G \cong \mathbb{Z}_p$.
+Furthermore, choosing any non-identity element $x \in G \setminus \{e\}$, its generated subgroup $\langle x \rangle$ must have order $> 1$, forcing $|\langle x \rangle| = p$, and thus $\langle x \rangle = G$. Consequently, every group of prime order is cyclic: $G \cong \faktor{\mathbb{Z}}{p\mathbb{Z}}$.
 \end{steps}
 \end{content}
 
@@ -1198,9 +1198,9 @@ Every rotation $g \in \operatorname{Rot}(\text{Cube})$ maps vertices to vertices
 We claim that $\phi$ is an isomorphism. Both groups have order $24$, so if $\phi$ is injective, then it is also surjective. For this, a non-trivial rotation must not fix all the long diagonals, which is left to the students.
 \end{proof}
 
-\begin{steps}[Injectivity of $\phi$]
-Going beyond the lecture, which leaves this to the students: suppose $g \in \ker(\phi)$, so $g$ maps each long diagonal to itself, possibly reversing it. For the cube $[-1, 1]^3$ the diagonals have directions $v_1 = (1, 1, 1)$, $v_2 = (1, 1, -1)$, $v_3 = (1, -1, 1)$, $v_4 = (-1, 1, 1)$, so $g v_i = \varepsilon_i v_i$ with $\varepsilon_i = \pm 1$. Since $v_1, v_2, v_3$ form a basis and $v_4 = v_1 - v_2 - v_3$, comparing $g v_4 = \varepsilon_1 v_1 - \varepsilon_2 v_2 - \varepsilon_3 v_3$ with $\varepsilon_4 v_4$ forces $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \varepsilon_4$, so $g = \pm \operatorname{Id}$. As $-\operatorname{Id}$ has determinant $-1$, it is not a rotation; hence $g = \operatorname{Id}$, $\ker(\phi) = \{\operatorname{Id}\}$, and $\phi$ is injective.
-\end{steps}
+\begin{proof}[Injectivity of $\phi$ (beyond the lecture)]
+The lecture leaves this to the students. Suppose $g \in \ker(\phi)$, so $g$ maps each long diagonal to itself, possibly reversing it. For the cube $[-1, 1]^3$ the diagonals have directions $v_1 = (1, 1, 1)$, $v_2 = (1, 1, -1)$, $v_3 = (1, -1, 1)$, $v_4 = (-1, 1, 1)$, so $g v_i = \varepsilon_i v_i$ with $\varepsilon_i = \pm 1$. Since $v_1, v_2, v_3$ form a basis and $v_4 = v_1 - v_2 - v_3$, comparing $g v_4 = \varepsilon_1 v_1 - \varepsilon_2 v_2 - \varepsilon_3 v_3$ with $\varepsilon_4 v_4$ forces $\varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \varepsilon_4$, so $g = \pm \operatorname{Id}$. As $-\operatorname{Id}$ has determinant $-1$, it is not a rotation; hence $g = \operatorname{Id}$, $\ker(\phi) = \{\operatorname{Id}\}$, and $\phi$ is injective.
+\end{proof}
 \end{content}
 
 \subsection{The Rotational Symmetry Group of the Tetrahedron and \texorpdfstring{$A_4$}{A4}}

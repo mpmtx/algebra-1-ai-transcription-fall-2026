@@ -780,12 +780,11 @@ Substituting this back into \eqref{eq:uniqueness-diff} yields:
 \]
 Hence, the quotient $q(x)$ and remainder $r(x)$ are uniquely determined.
 \end{proof}
-\end{content}
 
-\begin{aiNote}[Beyond the Lecture: Existence Proof for Polynomial Long Division]
-% [PERSISTENT, ADDITION]
-The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $k$ is a field, $b_m \in k \setminus \{0\}$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
-\end{aiNote}
+\begin{proof}[Proof of Existence for \cref{thm:poly-long-division} (beyond the lecture)]
+The lecture does not prove existence (\qt{I'm not going to talk about how to prove it}) and starts one long division example. The existence of $q(x)$ and $r(x)$ is proved by induction on the degree of $f(x)$. If $\deg(f) < \deg(g)$ or $f = 0$, we set $q(x) = 0$ and $r(x) = f(x)$. If $\deg(f) = n \ge m = \deg(g)$, write $f(x) = a_n x^n + \dots$ and $g(x) = b_m x^m + \dots$. Since $k$ is a field, $b_m \in k \setminus \{0\}$ is invertible. The polynomial $f_1(x) := f(x) - a_n b_m^{-1} x^{n-m} g(x)$ has degree strictly less than $n$ (or is zero). By the induction hypothesis, $f_1(x) = q_1(x) g(x) + r(x)$ with $\deg(r) < \deg(g)$ or $r = 0$, which yields $f(x) = \bigl(a_n b_m^{-1} x^{n-m} + q_1(x)\bigr) g(x) + r(x)$.
+\end{proof}
+\end{content}
 
 \subsection{Every Ideal in \texorpdfstring{$k[x]$}{k[x]} is Principal}
 
@@ -1028,9 +1027,9 @@ And another way you could do it, if you have a field with polynomials in two var
 Prove that the ideal $(2, x) \subset \mathbb{Z}[x]$ is not principal.
 \end{exercise}
 
-\begin{steps}[Proof Hint for \cref{exer:prove-2-x-not-principal}]
-Going beyond the lecture: suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but every element $2 p(x) + x q(x)$ of $(2, x)$ has an even constant term, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
-\end{steps}
+\begin{proof}[Proof Hint for \cref{exer:prove-2-x-not-principal} (beyond the lecture)]
+The lecture leaves this as an exercise. Suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but every element $2 p(x) + x q(x)$ of $(2, x)$ has an even constant term, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
+\end{proof}
 \end{content}
 
 \begin{overview}[Summary of Key Concepts]
