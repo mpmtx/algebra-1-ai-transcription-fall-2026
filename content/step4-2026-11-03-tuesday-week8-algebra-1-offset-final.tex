@@ -1,4 +1,11 @@
 % ==========================================
+% Built into the book on 2026-11-07 by Claude (claude-opus-5-5), from the pipeline's step-4
+% output below: week-tagged labels, \recap lines and recall anchors for Weeks 2, 4 and 7, all 245
+% board notes compared with 22 frames (the board writes Sign, the subset sign, def over =, and
+% p(7k+6), p(11k+7), both corrected by him at the end), proofs he did not give marked "Going beyond
+% the lecture", names and facts he did not use moved to aiNotes, and the fixes of a review.
+% ==========================================
+% ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-11-03-2026-tuesday-week8-algebra_I-offset-final.tex
 % Input: step3-11-03-2026-tuesday-week8-algebra_I-offset-speech_refined.tex
@@ -97,10 +104,10 @@
 This lecture develops the foundational theory of group homomorphisms, quotient groups, and conjugacy classes, drawing systematic parallels with linear algebra and ring theory:
 \begin{itemize}
     \item \textbf{Group Homomorphisms:} Definition of group homomorphisms, the subgroup properties of the image $\operatorname{Im}(f) \le G_2$ and kernel $\ker(f) \le G_1$, and injectivity/surjectivity criteria.
-    \item \textbf{Permutation Representation \& Sign Homomorphism:} Construction of the matrix homomorphism $\Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q})$ and its composition with the determinant to yield the sign homomorphism $\operatorname{sgn} \colon S_n \to \{+1, -1\}$.
-    \item \textbf{The Alternating Group $A_n$:} Characterization of even and odd permutations, cycle decomposition into transpositions, the structure of $A_4$ ($|A_4| = 12$), and its geometric isomorphism with the rotational symmetry group of the regular tetrahedron ($\operatorname{Rot}(\Delta) \cong A_4$).
-    \item \textbf{Normal Subgroups \& Quotient Groups:} The definition of normal subgroups ($N \trianglelefteq G$), the non-normal subgroup $K = \{e, (1\,2)\} \le S_3$, the construction of the quotient group $G/N$ via cosets, and the proof that normality is the exact condition needed for coset multiplication to be well-defined.
-    \item \textbf{The First Isomorphism Theorem:} Formulation and proof of $G_1/\ker(f) \cong \operatorname{Im}(f)$, presented alongside its counterparts in linear algebra (vector spaces) and ring theory (ideals).
+    \item \textbf{The Matrix Homomorphism \& the Sign:} Construction of the matrix homomorphism $\Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q})$ and its composition with the determinant to yield the sign homomorphism $\operatorname{Sign} \colon S_n \to \{+1, -1\}$.
+    \item \textbf{The Alternating Group $A_n$:} Characterization of even and odd permutations, cycle decomposition into transpositions, the structure of $A_4$ ($|A_4| = 12$), and its geometric isomorphism with the rotational symmetry group of the regular tetrahedron ($\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$).
+    \item \textbf{Normal Subgroups \& Quotient Groups:} The definition of normal subgroups, the non-normal subgroup $K = \{e, (1\,2)\} \le S_3$, the construction of the quotient group $G/N$ from the equivalence classes of $N$, and the proof that normality makes its product well defined.
+    \item \textbf{The First Isomorphism Theorem:} Statement of $G_1/\ker(f) \cong \operatorname{Im}(f)$ (the proof is left for the next lecture), presented alongside its counterparts in linear algebra (vector spaces) and ring theory (ideals).
     \item \textbf{Conjugacy Classes \& Integer Partitions:} The conjugacy equivalence relation, Jordan normal form in $\mathrm{GL}_n(\mathbb{C})$, the bijection between conjugacy classes of $S_n$ and integer partitions of $n$, Euler's generating function product formula, and Ramanujan's partition congruences.
 \end{itemize}
 \end{overview}
@@ -115,6 +122,8 @@ Homs of groups. So, this means we think about the image, the kernel, the first i
 \end{speech}
 
 \begin{content}
+\recap{Group homomorphisms were defined in Week~2 (\cref{def:group-homomorphism}) and again in the previous week (\cref{def:group-homomorphism-w7tue}), which showed $f(e_1) = e_2$ and left $f(x^{-1}) = f(x)^{-1}$ to the students (\cref{prop:hom-preserves-structure}).}
+
 \begin{definition}[Group Homomorphism]\label[definition]{def:group-homomorphism-w8tue}
 Let $(G_1, \cdot_1, e_1)$ and $(G_2, \cdot_2, e_2)$ be groups. A mapping $f \colon G_1 \to G_2$ is called a \newterm{group homomorphism} (or simply \newterm{homomorphism}) if for all $x, y \in G_1$:
 \begin{equation}\label{eq:homomorphism-property}
@@ -130,10 +139,12 @@ When the operations are understood from context, we drop the subscripts and writ
 \begin{speech}[00:00:37 - 00:01:16]
 So, we start with a homomorphism from one group to another group \inlinemetanote{writes: $f \colon G_1 \to G_2$}. So, this group here is some $G_1$ with some product and some neutral element \inlinemetanote{writes: $(G_1, \cdot_1, e_1)$}, and this is $G_2$ with some product and some neutral element \inlinemetanote{writes: $(G_2, \cdot_2, e_2)$}.
 
-And I remind you that the homomorphism condition is that $f(x \cdot y)$ is equal to $f(x) \cdot f(y)$ \inlinemetanote{writes: $f(x \cdot y) = f(x) \cdot f(y)$} for all $x, y$ in $G_1$ \inlinemetanote{writes: $\forall x, y \in G_1$}. And this product, of course, then is in $G_1$, and this product is in $G_2$. So, that's the homomorphism definition. Okay.
+And I remind you that the homomorphism condition is that $f(x \cdot y)$ is equal to $f(x) \cdot f(y)$ \inlinemetanote{writes: $f(xy) = f(x) \cdot f(y)$} for all $x, y$ in $G_1$ \inlinemetanote{writes: $\forall x, y \in G_1$}. And this product, of course, then is in $G_1$, and this product is in $G_2$. So, that's the homomorphism definition. Okay.
 \end{speech}
 
 \begin{content}[The Image of a Homomorphism]
+\recap{Week~2 stated this and left the proof to the students (\cref{prop:image-is-subgroup}).}
+
 \begin{proposition}[The Image is a Subgroup]\label[proposition]{prop:image-subgroup}
 Let $f \colon G_1 \to G_2$ be a group homomorphism. Then the image of $f$, defined as
 \[
@@ -152,7 +163,7 @@ I remind you: for a linear map, the image is a sub-vector space, and for a ring 
 
 And so, the proof of this: well, what do we have to prove? We have to check the properties of a subgroup \inlinemetanote{writes: proof: Check properties of subgp}.
 
-The first one is that $f(e_1)$ is equal to $e_2$ (i.e., $f(e_1) = e_2$) \inlinemetanote{writes: $f(e_1) = e_2$}. That's something we had already derived about homomorphisms. So, this implies that $e_2$ is in the image of $f$ \inlinemetanote{writes: $\implies e_2 \in \operatorname{Im}(f)$}. That's one of the properties: in order for a subset to be a subgroup, the neutral element must be there, and the neutral element is the image of the neutral element.
+The first one is that $f(e_1)$ is equal to $e_2$ (i.e., $f(e_1) = e_2$) \inlinemetanote{writes: $f(e_1) = e_2$}. That's something we had already derived about homomorphisms (Recall: \cref{prop:hom-preserves-structure}). So, this implies that $e_2$ is in the image of $f$ \inlinemetanote{writes: $\implies e_2 \in \operatorname{Im}(f)$}. That's one of the properties: in order for a subset to be a subgroup, the neutral element must be there, and the neutral element is the image of the neutral element.
 
 The second is that if I take... let's say, I take $a$ and $b$ in the image \inlinemetanote{writes: $a, b \in \operatorname{Im}(f)$}, we must check that $a \cdot b$ is in the image \inlinemetanote{writes: we must check that $a \cdot b \in \operatorname{Im}(f)$}. And the proof of this is that: let $x$ and $y$ in $G_1$ be such that \inlinemetanote{writes: let $x, y \in G_1$ s.t.}...
 \end{speech}
@@ -246,13 +257,13 @@ So, we have to check these kinds of things a couple of times today, and I did th
 This is not a surprise: it says when you have this homomorphism, the image is a subgroup. So, more interesting than that claim --- which is, as I said, there's nothing to this proof, every line just writes itself, you just have to make sure you don't fall off the path...
 \end{speech}
 
-\section{The Permutation Representation of the Symmetric Group}
+\section{The Matrix Homomorphism of the Symmetric Group}
 \subsection{The Matrix Homomorphism from \texorpdfstring{$S_n$}{S\_n}}
 
 \begin{speech}[00:06:22 - 00:08:04]
 So, much more interesting are some examples. As I said, the guiding, most interesting example is the symmetric group.
 
-And there is an extremely important homomorphism in mathematics: it's from the symmetric group to $\mathrm{GL}_n$ --- and let me just put $\mathbb{Q}$ here; you have a lot of choices for what this is, but let's just put $\mathbb{Q}$ because you studied linear algebra over fields \inlinemetanote{writes: $S_n \xrightarrow{\Phi_{\mathrm{mat}}} \mathrm{GL}_n(\mathbb{Q})$}.
+And there is an extremely important homomorphism in mathematics: it's from the symmetric group to $\mathrm{GL}_n$ --- and let me just put $\mathbb{Q}$ here; you have a lot of choices for what this is, but let's just put $\mathbb{Q}$ because you studied linear algebra over fields \inlinemetanote{writes: $\Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q})$}.
 
 So, first of all, do we remember what this is? I defined this before: this is the group of $n \times n$ invertible matrices with rational coefficients \inlinemetanote{writes: group of $n \times n$ invertible mat. with $\mathbb{Q}$-coeff.}. And it has matrix multiplication and it has the identity matrix \inlinemetanote{writes: $(\mathrm{GL}_n(\mathbb{Q}), \cdot, I_n)$}. So, are you happy with this group? We discussed it as an example in the beginning of class. But this is a group, in some sense, you should be happy with from linear algebra: it's just that the matrices are invertible and you multiply them.
 
@@ -262,15 +273,17 @@ So, elements here are bijections from the $n$-element set to the $n$-element set
 \end{speech}
 
 \begin{content}[The Groups \texorpdfstring{$S_n$}{S\_n} and \texorpdfstring{$\mathrm{GL}_n(\mathbb{Q})$}{GL\_n(Q)}]
+\recap{The symmetric group was defined in the previous week (\cref{def:symmetric-group}), with $[n] = \{1, \dots, n\}$ (\cref{not:n-element-set}) and products read from right to left (\cref{rem:composition-order}).}
+
 We consider the mapping
 \[
 \Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q}),
 \]
-where the domain and codomain groups are defined as:
+where the domain and codomain groups are:
 \begin{itemize}
-    \item \textbf{Symmetric Group $S_n$:} The group of all bijections from the finite set $[n] := \{1, \dots, n\}$ to itself under function composition:
+    \item \textbf{Symmetric Group $S_n$:} The group of all bijections from the set $[n] = \{1, \dots, n\}$ to itself under composition:
     \[
-    S_n := \operatorname{Sym}(\{1, \dots, n\}) = \{\sigma \colon [n] \to [n] \mid \sigma \text{ is bijective}\}.
+    S_n = \{\sigma \colon [n] \to [n] \mid \sigma \text{ is bijective}\}.
     \]
     \item \textbf{General Linear Group $\mathrm{GL}_n(\mathbb{Q})$:} The group of all invertible $n \times n$ matrices with coefficients in the field of rational numbers $\mathbb{Q}$, equipped with matrix multiplication and identity element $I_n$:
     \[
@@ -294,12 +307,12 @@ Okay, what do you think I'm going to write here? Well, the thing about an elemen
 \begin{speech}[00:09:44 - 00:10:45]
 So, do you understand this? This is like the standard kind of thing a pure mathematician writes without thinking. And to understand it, you have to just understand how to take apart these things.
 
-The notation is always a tiny bit sloppy, it's not perfect notation, because to write perfect notation is too much work. So, maybe a more perfect notation would be you take here... so, it eats this symmetric group, this gives a matrix, and maybe you should put parentheses here: that whole matrix acts on $v_i$ \inlinemetanote{writes: $(\Phi_{\mathrm{mat}}(\sigma))(v_i)$}, that's less ambiguous. But no one writes this, because it's just too much... it's too much people write that.
+The notation is always a tiny bit sloppy, it's not perfect notation, because to write perfect notation is too much work. So, maybe a more perfect notation would be you take here... so, it eats this symmetric group, this gives a matrix, and maybe you should put parentheses here: that whole matrix acts on $v_i$ \inlinemetanote{writes \qt{$(\Phi_{\mathrm{mat}}(\sigma))(v_i)$} and crosses it out}, that's less ambiguous. But no one writes this, because it's just too much... it's too much people write that.
 \end{speech}
 
 \begin{content}[Definition of \texorpdfstring{$\Phi_{\mathrm{mat}}$}{Phi\_mat} on Basis Vectors]
-\begin{definition}[Permutation Representation $\Phi_{\mathrm{mat}}$]\label[definition]{def:permutation-representation}
-Let $\{v_1, \dots, v_n\}$ denote the standard canonical basis of the vector space $\mathbb{Q}^n$:
+\begin{definition}[The Matrix Homomorphism $\Phi_{\mathrm{mat}}$]\label[definition]{def:permutation-representation}
+Let $\{v_1, \dots, v_n\}$ denote the standard basis of the vector space $\mathbb{Q}^n$:
 \begin{align*}
 v_1 &:= (1, 0, \dots, 0)^T, \\
 v_2 &:= (0, 1, 0, \dots, 0)^T, \\
@@ -329,13 +342,13 @@ Okay, so, this is just the definition, so, we have to check that this map is a h
 
 So, what's the homomorphism property? On the one hand, I have to see what happens when I send the composition in $S_n$. So, these are two elements of $S_n$, and I compose them in $S_n$, and then I send that to a vector \inlinemetanote{writes: $\Phi_{\mathrm{mat}}(\hat{\sigma}\sigma)(v_i)$}.
 
-And the other thing I can do --- this is the homomorphism property I have to check --- is whether that's the same thing as this matrix... so, this is a matrix, now this is matrix multiplication, and then in the end it can also eat $v_i$ \inlinemetanote{writes: $= (\Phi_{\mathrm{mat}}(\hat{\sigma}) \cdot \Phi_{\mathrm{mat}}(\sigma))(v_i)$}. So, I have to check whether these two things are equal, all right?
+And the other thing I can do --- this is the homomorphism property I have to check --- is whether that's the same thing as this matrix... so, this is a matrix, now this is matrix multiplication, and then in the end it can also eat $v_i$ \inlinemetanote{writes: $\stackrel{?}{=} \Phi_{\mathrm{mat}}(\hat{\sigma}) \cdot \Phi_{\mathrm{mat}}(\sigma)(v_i)$}. So, I have to check whether these two things are equal, all right?
 
-Well, what is this by definition? This is $v$, and then this composition is still an element of $S_n$, so, this composition can eat an index \inlinemetanote{writes: $= v_{\hat{\sigma}\sigma(i)}$}.
+Well, what is this by definition? This is $v$, and then this composition is still an element of $S_n$, so, this composition can eat an index \inlinemetanote{writes: $\stackrel{\text{def}}{=} v_{\hat{\sigma}\sigma(i)}$}.
 
-And what is this one? Well, first I do this \inlinemetanote{points at inner matrix multiplication}, so, again by definition... so, we know what the answer for this is, this is $v_{\sigma(i)}$ \inlinemetanote{writes: $= \Phi_{\mathrm{mat}}(\hat{\sigma})(v_{\sigma(i)})$}. And then I apply the definition again: it's this one acting on that, it's $v$ of $\hat{\sigma}$ eating $\sigma(i)$ \inlinemetanote{writes: $= v_{\hat{\sigma}(\sigma(i))}$}.
+And what is this one? Well, first I do this \inlinemetanote{points at inner matrix multiplication}, so, again by definition... so, we know what the answer for this is, this is $v_{\sigma(i)}$ \inlinemetanote{writes: $= \Phi_{\mathrm{mat}}(\hat{\sigma}) v_{\sigma(i)}$}. And then I apply the definition again: it's this one acting on that, it's $v$ of $\hat{\sigma}$ eating $\sigma(i)$ \inlinemetanote{writes: $= v_{\hat{\sigma}(\sigma(i))}$}.
 
-So, simplifying the right-hand side gets $v_{\hat{\sigma}(\sigma(i))}$, and this is $\hat{\sigma} \circ \sigma$ eating $i$. But these things are equal because that's the definition of what composition is in the symmetric group. So, this is equal by definition of composition in $S_n$ \inlinemetanote{writes: by definition of composition in $S_n$}.
+So, simplifying the right-hand side gets $v_{\hat{\sigma}(\sigma(i))}$, and this is $\hat{\sigma} \circ \sigma$ eating $i$. But these things are equal because that's the definition of what composition is in the symmetric group. So, this is equal by definition of composition in $S_n$ \inlinemetanote{writes \qt{def $\circ$ in $S_n$} over a double arrow between the two results}.
 \end{speech}
 
 \begin{speech}[00:12:42 - 00:13:38]
@@ -416,13 +429,13 @@ And the last one, $(1\,3\,2)$ \inlinemetanote{writes: $\Phi_{\mathrm{mat}}((1\,3
 So, that's totally explicit now. This is just doing that, writing it out. And as I said, you can think about it however you want, but that's the answer, and it's for all.
 \end{speech}
 
-\begin{content}[The Six Permutation Matrices of \texorpdfstring{$S_3$}{S\_3}]
-\begin{example}[Permutation Matrices in $S_3$]\label[example]{ex:s3-matrices}
+\begin{content}[The Six Matrices of \texorpdfstring{$S_3$}{S\_3}]
+\begin{example}[The Matrices $\Phi_{\mathrm{mat}}(\sigma)$ for $S_3$]\label[example]{ex:s3-matrices}
 The symmetric group $S_3$ consists of $3! = 6$ elements, written in cycle notation as:
 \[
 S_3 = \{e, (1\,2), (1\,3), (2\,3), (1\,2\,3), (1\,3\,2)\}.
 \]
-Under $\Phi_{\mathrm{mat}} \colon S_3 \to \mathrm{GL}_3(\mathbb{Q})$, each element maps to an explicit $3 \times 3$ permutation matrix whose $j$-th column is the standard basis vector $v_{\sigma(j)}$:
+Under $\Phi_{\mathrm{mat}} \colon S_3 \to \mathrm{GL}_3(\mathbb{Q})$, each element maps to the $3 \times 3$ matrix whose $j$-th column is the standard basis vector $v_{\sigma(j)}$:
 \begin{align}
 \Phi_{\mathrm{mat}}(e) &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, &
 \Phi_{\mathrm{mat}}((1\,2)) &= \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \label{eq:s3-transp1} \\
@@ -433,16 +446,21 @@ Under $\Phi_{\mathrm{mat}} \colon S_3 \to \mathrm{GL}_3(\mathbb{Q})$, each eleme
 \end{align}
 \end{example}
 
-\begin{steps}[How to Read Permutation Matrices by Columns]
-For any $\sigma \in S_3$, the $j$-th column of $\Phi_{\mathrm{mat}}(\sigma)$ corresponds to the image of the $j$-th basis vector $v_j$, which is $v_{\sigma(j)}$:
+\begin{steps}[How to Read the Matrices by Columns]
+For any $\sigma \in S_3$, the $j$-th column of $\Phi_{\mathrm{mat}}(\sigma)$ is the image of the $j$-th basis vector $v_j$, which is $v_{\sigma(j)}$. For $\sigma = (1\,2\,3)$:
 \begin{itemize}
     \item \textbf{Column 1 ($1 \mapsto 2$):} $v_2 = (0, 1, 0)^T$.
     \item \textbf{Column 2 ($2 \mapsto 3$):} $v_3 = (0, 0, 1)^T$.
     \item \textbf{Column 3 ($3 \mapsto 1$):} $v_1 = (1, 0, 0)^T$.
 \end{itemize}
-This immediately yields the matrix shown in \eqref{eq:s3-3cycles}.
+This yields the matrix of $(1\,2\,3)$ in \eqref{eq:s3-3cycles}.
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Textbook Names]
+% [PERSISTENT, ADDITION]
+Textbooks call $\Phi_{\mathrm{mat}}$ the \emph{permutation representation} of $S_n$, and its matrices \emph{permutation matrices}. The lecturer says \qt{matrix homomorphism} and \qt{the matrix for this $(1\,2)$}.
+\end{aiNote}
 
 \section{The Determinant and Sign Homomorphisms}
 \subsection{The Determinant Homomorphism}
@@ -473,7 +491,7 @@ If $A \in \mathrm{GL}_n(\mathbb{Q})$, then $\det(A) \in \mathbb{Q}$ and $\det(A)
 \begin{equation}\label{eq:det-multiplicative}
 \det(A \cdot B) = \det(A) \cdot \det(B).
 \end{equation}
-Since $\det(I_n) = 1$, the determinant is a group homomorphism.
+This is exactly the homomorphism property \eqref{eq:homomorphism-property}, so the determinant is a group homomorphism.
 \end{proof}
 \end{content}
 
@@ -583,7 +601,7 @@ To show it's this one, you just have to find one element that has determinant $-
 
 So, that proves that the image of this... so, that's the proposition here: the image of this is equal to the subgroup $\{+1, -1\}$ \inlinemetanote{writes: Prop. $\operatorname{Im}(\hat{\Phi}_{\mathrm{mat}}) = \{\pm 1\}$}.
 
-Okay, and so, then we change the notation for everything. This is the standard mathematical notation: it's called, of course, the sign. So, the standard notation is that there is a homomorphism from $S_n$ to the group $\{+1, -1\}$ --- this is the group with multiplication --- and this homomorphism is called the sign, which really makes sense, because you're assigning every permutation a sign \inlinemetanote{writes: Standard notation: $\operatorname{Sgn} \colon S_n \to \{\pm 1\}$}. And in the language of this lecture, the sign is by definition this homomorphism $\hat{\Phi}_{\mathrm{mat}}$ \inlinemetanote{writes: $\operatorname{Sgn} := \hat{\Phi}_{\mathrm{mat}}$}, okay?
+Okay, and so, then we change the notation for everything. This is the standard mathematical notation: it's called, of course, the sign. So, the standard notation is that there is a homomorphism from $S_n$ to the group $\{+1, -1\}$ --- this is the group with multiplication --- and this homomorphism is called the sign, which really makes sense, because you're assigning every permutation a sign \inlinemetanote{writes: Standard notation: $\operatorname{Sign} \colon S_n \to \{\pm 1\}$}. And in the language of this lecture, the sign is by definition this homomorphism $\hat{\Phi}_{\mathrm{mat}}$ \inlinemetanote{writes: $\operatorname{Sign} \stackrel{\text{def}}{=} \hat{\Phi}_{\mathrm{mat}}$}, okay?
 \end{speech}
 
 \begin{content}[The Image of \texorpdfstring{$\hat{\Phi}_{\mathrm{mat}}$}{Phi\_mat\_hat} and the Sign Homomorphism]
@@ -597,7 +615,7 @@ For $n \ge 2$, the image of the composite homomorphism $\hat{\Phi}_{\mathrm{mat}
 \begin{proof}
 Since $S_n$ is a finite group of order $n!$, its image $\operatorname{Im}(\hat{\Phi}_{\mathrm{mat}})$ must be a finite subgroup of $(\mathbb{Q}^*, \cdot, 1)$. The only non-trivial finite subgroup of $\mathbb{Q}^*$ is $\{1, -1\}$, since any rational number $q \in \mathbb{Q}^* \setminus \{1, -1\}$ has infinite order (powers $|q|^k \to \infty$ or $|q|^k \to 0$ as $k \to \infty$).
 
-To show that $\operatorname{Im}(\hat{\Phi}_{\mathrm{mat}}) = \{1, -1\}$, it suffices to exhibit a single permutation $\sigma \in S_n$ with $\hat{\Phi}_{\mathrm{mat}}(\sigma) = -1$. Consider the transposition $\tau = (1\,2) \in S_n$. Its permutation matrix $\Phi_{\mathrm{mat}}((1\,2))$ swaps the first two standard basis vectors $v_1, v_2$ and fixes $v_3, \dots, v_n$:
+To show that $\operatorname{Im}(\hat{\Phi}_{\mathrm{mat}}) = \{1, -1\}$, it suffices to exhibit a single permutation $\sigma \in S_n$ with $\hat{\Phi}_{\mathrm{mat}}(\sigma) = -1$. Consider the transposition $\tau = (1\,2) \in S_n$. Its matrix $\Phi_{\mathrm{mat}}((1\,2))$ swaps the first two standard basis vectors $v_1, v_2$ and fixes $v_3, \dots, v_n$:
 \begin{equation}\label{eq:transposition-matrix}
 \Phi_{\mathrm{mat}}((1\,2)) = \begin{pmatrix}
 0 & 1 & 0 & \cdots & 0 \\
@@ -621,19 +639,24 @@ Since $\hat{\Phi}_{\mathrm{mat}}(e) = 1 \in \operatorname{Im}(\hat{\Phi}_{\mathr
 \end{proof}
 
 \begin{definition}[Sign Homomorphism]\label[definition]{def:sign-homomorphism}
-The \newterm{sign homomorphism} (or \newterm{signature}) $\operatorname{sgn} \colon S_n \to \{+1, -1\}$ is defined as:
+The \newterm{sign} $\operatorname{Sign} \colon S_n \to \{+1, -1\}$ is the homomorphism
 \begin{equation}\label{eq:sign-def}
-\operatorname{sgn} := \hat{\Phi}_{\mathrm{mat}} = \det \circ \Phi_{\mathrm{mat}}.
+\operatorname{Sign} \stackrel{\text{def}}{=} \hat{\Phi}_{\mathrm{mat}} = \det \circ \Phi_{\mathrm{mat}}.
 \end{equation}
 \end{definition}
 \end{content}
+
+\begin{aiNote}[Notation: The Sign]
+% [PERSISTENT]
+The board writes $\operatorname{Sign}$, for the map and for its values ($\operatorname{Sign}(\sigma) = +1$), and these notes follow it. Textbooks write $\operatorname{sgn}(\sigma)$, and some call it the \emph{signature} of $\sigma$.
+\end{aiNote}
 
 \subsection{Even and Odd Permutations}
 
 \begin{speech}[00:23:44 - 00:24:35]
 And so, that's kind of an interesting thing: for every permutation you get a sign, and the language is that permutations are even or odd.
 
-If you have $\sigma$ in $S_n$ \inlinemetanote{writes: $\sigma \in S_n$}, then $\sigma$ is called even or odd; it's even if and only if the sign is $+1$ \inlinemetanote{writes: even $\iff \operatorname{Sgn}(\sigma) = +1$}, and it's odd if and only if the sign is $-1$ \inlinemetanote{writes: odd $\iff \operatorname{Sgn}(\sigma) = -1$}.
+If you have $\sigma$ in $S_n$ \inlinemetanote{writes: $\sigma \in S_n$}, then $\sigma$ is called even or odd; it's even if and only if the sign is $+1$ \inlinemetanote{writes: even $\iff \operatorname{Sign}(\sigma) = +1$}, and it's odd if and only if the sign is $-1$ \inlinemetanote{writes: odd $\iff \operatorname{Sign}(\sigma) = -1$}.
 
 And what we've seen here is the two-cycle, where we just move two elements, that is always odd. And moreover, this is a homomorphism, so, that means that if you take a product of permutations, the sign is multiplicative. So, we'll get back to that.
 \end{speech}
@@ -642,15 +665,15 @@ And what we've seen here is the two-cycle, where we just move two elements, that
 \begin{definition}[Even and Odd Permutations]\label[definition]{def:even-odd-permutations}
 Let $\sigma \in S_n$ be a permutation. Then $\sigma$ is called:
 \begin{itemize}
-    \item \textbf{Even:} \newterm{even} if $\operatorname{sgn}(\sigma) = +1$,
-    \item \textbf{Odd:} \newterm{odd} if $\operatorname{sgn}(\sigma) = -1$.
+    \item \textbf{Even:} \newterm{even} if $\operatorname{Sign}(\sigma) = +1$,
+    \item \textbf{Odd:} \newterm{odd} if $\operatorname{Sign}(\sigma) = -1$.
 \end{itemize}
 \end{definition}
 
 \begin{observation}[Sign of Transpositions and Multiplicativity]\label[observation]{obs:transposition-sign}
-Any transposition $(i\,j) \in S_n$ (with $i \neq j$) has sign $-1$ and is therefore an odd permutation. Furthermore, because $\operatorname{sgn}$ is a group homomorphism, the sign of a composition of permutations is multiplicative:
+Any transposition $(i\,j) \in S_n$ (with $i \neq j$) has sign $-1$ and is therefore an odd permutation. Furthermore, because $\operatorname{Sign}$ is a group homomorphism, the sign of a composition of permutations is multiplicative:
 \begin{equation}\label{eq:sign-multiplicative}
-\operatorname{sgn}(\sigma \circ \tau) = \operatorname{sgn}(\sigma) \cdot \operatorname{sgn}(\tau) \quad \text{for all } \sigma, \tau \in S_n.
+\operatorname{Sign}(\sigma \circ \tau) = \operatorname{Sign}(\sigma) \cdot \operatorname{Sign}(\tau) \quad \text{for all } \sigma, \tau \in S_n.
 \end{equation}
 Consequently:
 \begin{itemize}
@@ -675,16 +698,18 @@ Well, that's the absolute standard mathematical notation: the sign of a permutat
 \begin{speech}[00:25:42 - 00:27:00]
 Okay, so, then we come back to the analysis of the homomorphisms.
 
-So, we have here $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$}, and the first proposition was that the image is a subgroup \inlinemetanote{writes: Prop: $\operatorname{Im}(f) \le G_2$ is a subgroup}, and we checked this. That's already done. And I should have said that we never used anything about finite groups here, right? That was not used.
+So, we have here $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$}, and the first proposition was that the image is a subgroup \inlinemetanote{writes: Prop: $\operatorname{Im}(f) \subset G_2$ is a subgroup}, and we checked this. That's already done. And I should have said that we never used anything about finite groups here, right? That was not used.
 
-So, the next proposition you can guess is that the kernel --- which I'll define in a moment --- is a subgroup \inlinemetanote{writes: Prop: $\ker(f) \le G_1$ is a subgroup}. And here, the definition --- we've defined it before --- the kernel of $f$ is equal to all those people in $G_1$ such that when you apply $f$ to them, you get $e_2$, right? \inlinemetanote{writes: Def: $\ker(f) := \{x \in G_1 \mid f(x) = e_2\}$}
+So, the next proposition you can guess is that the kernel --- which I'll define in a moment --- is a subgroup \inlinemetanote{writes: Prop: $\ker(f) \subset G_1$ is a subgroup}. And here, the definition --- we've defined it before --- the kernel of $f$ is equal to all those people in $G_1$ such that when you apply $f$ to them, you get $e_2$, right? \inlinemetanote{writes: Def: $\ker(f) = \{x \in G_1 \mid f(x) = e_2\}$}
 
-So, that's the definition, and this kernel is a subgroup. And this is proven in the same way; I won't prove this one at all, I leave this for you, so you can check \inlinemetanote{writes: you check}. There's nothing there to really do.
+So, that's the definition, and this kernel is a subgroup. And this is proven in the same way; I won't prove this one at all, I leave this for you, so you can check \inlinemetanote{writes: You can check}. There's nothing there to really do.
 
 You have to check that $e_1$ is there, the product is there, so, I leave this to you. I did the first one very carefully.
 \end{speech}
 
 \begin{content}
+\recap{The kernel was defined in Week~2 (\cref{def:kernel}), which also stated that it is a subgroup (\cref{prop:kernel-is-subgroup}).}
+
 \begin{definition}[Kernel of a Group Homomorphism]\label[definition]{def:kernel-w8tue}
 Let $f \colon G_1 \to G_2$ be a group homomorphism. The \newterm{kernel} of $f$, denoted $\ker(f)$, is the pre-image of the neutral element $e_2 \in G_2$:
 \begin{equation}\label{eq:kernel-def-w8tue}
@@ -697,7 +722,7 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism. Then $\ker(f)$ is a subgroup
 \end{proposition}
 
 \begin{proof}
-We check the three subgroup axioms:
+Going beyond the lecture, which leaves this to the students: we check the three subgroup axioms.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity Element:} Since $f(e_1) = e_2$, we have $e_1 \in \ker(f)$.
     \item \textbf{Closure under Products:} Let $x, y \in \ker(f)$, so $f(x) = e_2$ and $f(y) = e_2$. By the homomorphism property:
@@ -722,11 +747,11 @@ Therefore, $\ker(f)$ is a subgroup of $G_1$.
 \end{hidden}
 
 \begin{speech}[00:27:00 - 00:28:00]
-Okay. So, if we go back to the example then: the sign from $S_n$ to this $\{\pm 1\}$ \inlinemetanote{writes: $\operatorname{Sgn} \colon S_n \to \{\pm 1\}$}. I write it as $\{\pm 1\}$ to indicate it's a group with multiplication.
+Okay. So, if we go back to the example then: the sign from $S_n$ to this $\{\pm 1\}$ \inlinemetanote{writes: $\operatorname{Sign} \colon S_n \to \{\pm 1\}$}. I write it as $\{\pm 1\}$ to indicate it's a group with multiplication.
 
 This $\{\pm 1\}$, this group is isomorphic to $\mathbb{Z}/2\mathbb{Z}$ with addition and $0$ \inlinemetanote{writes: $\cong (\mathbb{Z}/2\mathbb{Z}, +, \bar{0})$}, right? Where $+1$ goes to $\bar{0}$ and $-1$ goes to $\bar{1}$ \inlinemetanote{writes: $+1 \mapsto \bar{0}, -1 \mapsto \bar{1}$}. It's another way to think about it. Is that clear? But it's more natural to write it as $\{\pm 1\}$ here because we call it the sign.
 
-Okay, so, what is the kernel? The kernel of the sign, the kernel of the sign homomorphism \inlinemetanote{writes: What is the $\ker$ of $\operatorname{Sgn}$ hom.?}?
+Okay, so, what is the kernel? The kernel of the sign, the kernel of the sign homomorphism \inlinemetanote{writes: What is the $\ker$ of $\operatorname{Sign}$ hom.?}?
 
 Well, we don't know what it is, but we know at least it's a subgroup, right? By that second proposition.
 \end{speech}
@@ -736,7 +761,7 @@ So, there's a definition: and this is a very important group, $A_n$ \inlinemetan
 
 You know, there's a little bit of some kind of botany in this group theory where all these groups have names --- it's like collecting plants. And it goes a long way, but there's no way to get around it: there's some kind of collection of groups, mathematicians have studied them for a long time, and we've agreed upon names. And part of the subject, if you want to understand it, is you have to learn some names.
 
-So, this is called $A_n$, and $A_n$ is for alternating group \inlinemetanote{writes: $A_n$ inside $S_n$}, and this $A_n$ is by definition the kernel of the sign homomorphism \inlinemetanote{writes: $A_n \stackrel{\mathrm{def}}{=} \ker(\operatorname{Sgn})$}.
+So, this is called $A_n$, and $A_n$ is for alternating group, and this $A_n$ is by definition the kernel of the sign homomorphism \inlinemetanote{writes: $A_n \stackrel{\mathrm{def}}{=} \ker(\operatorname{Sign})$}.
 
 In other words, equivalently, $A_n$ is equal to the subgroup of even permutations \inlinemetanote{writes: $A_n = \text{the subgroup of even permutations}$}. Because the even ones are $1$, that's in the kernel, so, that's another way to think about it.
 
@@ -745,15 +770,15 @@ So, let us see what they are here.
 
 \begin{content}
 \begin{definition}[Alternating Group]\label[definition]{def:alternating-group}
-Let $n \ge 2$. The \newterm{alternating group} on $n$ elements, denoted $A_n$, is the kernel of the sign homomorphism $\operatorname{sgn} \colon S_n \to \{+1, -1\}$:
+Let $n \ge 2$. The \newterm{alternating group} on $n$ elements, denoted $A_n$, is the kernel of the sign homomorphism $\operatorname{Sign} \colon S_n \to \{+1, -1\}$:
 \begin{equation}\label{eq:alternating-group-def}
-A_n := \ker(\operatorname{sgn}) = \{ \sigma \in S_n \mid \operatorname{sgn}(\sigma) = +1 \}.
+A_n \stackrel{\text{def}}{=} \ker(\operatorname{Sign}) = \{ \sigma \in S_n \mid \operatorname{Sign}(\sigma) = +1 \}.
 \end{equation}
 Equivalently, $A_n$ is the subgroup of all even permutations in $S_n$.
 \end{definition}
 
 \begin{remark}[Multiplicative \texorpdfstring{$\{\pm 1\}$}{plus-minus 1} vs. Additive \texorpdfstring{$\mathbb{Z}/2\mathbb{Z}$}{Z/2Z}]\label[remark]{rem:z2z-isomorphism}
-The multiplicative group $(\{+1, -1\}, \cdot, 1)$ is canonically isomorphic to the cyclic group $(\mathbb{Z}/2\mathbb{Z}, +, \bar{0})$ via the isomorphism:
+The multiplicative group $(\{+1, -1\}, \cdot, 1)$ is isomorphic to the group $(\mathbb{Z}/2\mathbb{Z}, +, \bar{0})$ via the isomorphism:
 \[
 \psi \colon \{+1, -1\} \to \mathbb{Z}/2\mathbb{Z}, \qquad \psi(+1) = \bar{0}, \quad \psi(-1) = \bar{1}.
 \]
@@ -781,7 +806,7 @@ So, first of all, there's the neutral element \inlinemetanote{writes: $e$}. And 
 
 So, then, there's the two-cycles: there's six of them: $(1\,2), (1\,3), (1\,4), (2\,3), (2\,4), (3\,4)$ \inlinemetanote{writes the six transpositions in a column}.
 
-So, that's $4$ choose $2$, there's six two-cycles. When I write this, I don't write the ones that don't do anything. I could write them, and maybe I will, sometimes. But here I've chosen not to write them, just to save chalk.
+So, that's $4$ choose $2$, there's six two-cycles. When I write this, I don't write the ones that don't do anything (Recall: \cref{not:omitting-1-cycles}). I could write them, and maybe I will, sometimes. But here I've chosen not to write them, just to save chalk.
 
 All right. And so, what we decided also: the signs of all of these, these all have sign $-1$ \inlinemetanote{writes: $-1$}. Maybe I'll try a new pedagogical strategy: I'll write the sign in red \inlinemetanote{rewrites $+1$ and $-1$ in red chalk}.
 
@@ -870,21 +895,21 @@ Any cycle of length $\ell \ge 2$ can be factored into a product of $\ell - 1$ tr
 \end{equation}
 Consequently, the sign of an $\ell$-cycle is given by:
 \begin{equation}\label{eq:sign-of-ell-cycle}
-\operatorname{sgn}\bigl((a_1\, a_2\, \dots\, a_\ell)\bigr) = (-1)^{\ell - 1}.
+\operatorname{Sign}\bigl((a_1\, a_2\, \dots\, a_\ell)\bigr) = (-1)^{\ell - 1}.
 \end{equation}
 \end{lemma}
 
 \begin{proof}
-We trace the action of the composition of transpositions from right to left on each element $a_j$:
+Going beyond the lecture, which checks $(a\,b\,c) = (a\,b)(b\,c)$ and leaves the general case to the students: we trace the product from right to left (\cref{rem:composition-order}) on each entry $a_j$; elements outside the cycle are fixed by every factor.
 \begin{itemize}
     \item \textbf{Element $a_1$:} The first $\ell - 2$ transpositions $(a_{\ell-1}\, a_\ell), \dots, (a_2\, a_3)$ fix $a_1$. Then the final transposition $(a_1\, a_2)$ sends $a_1 \mapsto a_2$.
     \item \textbf{Element $a_j$ ($1 < j < \ell$):} The transpositions $(a_{\ell-1}\, a_\ell), \dots, (a_j\, a_{j+1})$ fix $a_j$ until $(a_j\, a_{j+1})$ is reached, which sends $a_j \mapsto a_{j+1}$. The subsequent transpositions $(a_{j-1}\, a_j), \dots, (a_1\, a_2)$ do not contain $a_{j+1}$ and thus fix it. Therefore $a_j \mapsto a_{j+1}$.
     \item \textbf{Element $a_\ell$:} The first transposition $(a_{\ell-1}\, a_\ell)$ maps $a_\ell \mapsto a_{\ell-1}$. Then each successive transposition $(a_{k-1}\, a_k)$ maps $a_k \mapsto a_{k-1}$, cascading all the way down to $(a_1\, a_2)$, which maps $a_2 \mapsto a_1$. Hence $a_\ell \mapsto a_1$.
 \end{itemize}
 This exactly matches the permutation $(a_1\, a_2\, \dots\, a_\ell)$.
-Since $\operatorname{sgn}$ is a group homomorphism and each transposition has sign $-1$:
+Since $\operatorname{Sign}$ is a group homomorphism and each transposition has sign $-1$:
 \[
-\operatorname{sgn}\bigl((a_1\, a_2\, \dots\, a_\ell)\bigr) = \prod_{k=1}^{\ell-1} \operatorname{sgn}\bigl((a_k\, a_{k+1})\bigr) = (-1)^{\ell-1}.
+\operatorname{Sign}\bigl((a_1\, a_2\, \dots\, a_\ell)\bigr) = \prod_{k=1}^{\ell-1} \operatorname{Sign}\bigl((a_k\, a_{k+1})\bigr) = (-1)^{\ell-1}.
 \]
 \end{proof}
 
@@ -914,7 +939,7 @@ This is all somehow stuff that you have to learn, you know, you have to make you
 
 So, first of all, and these are all the partitions. The numbers we have are $1$ \inlinemetanote{points to $e$}, and then there is $6$ \inlinemetanote{points to transpositions}, and then there's $3$ here \inlinemetanote{points to $2+2$ column}, and here is $8$ \inlinemetanote{points to $3+1$ column}.
 
-And then we have to find the last partitions... that's the only possible cycle left, and this equals $24$ \inlinemetanote{writes: $1 + 6 + 3 + 8 + \dots = 24$}. So, you can figure out how many things I have to write here, right? And the answer is $6$. So, I have to write $6$.
+And then we have to find the last partitions... that's the only possible cycle left, and this equals $24$ \inlinemetanote{writes: $1 + 6 + 3 + 8 + \square = 24$}. So, you can figure out how many things I have to write here, right? And the answer is $6$. So, I have to write $6$.
 
 And of course, one of them is $(1\,2\,3\,4)$ \inlinemetanote{writes: $(1\,2\,3\,4)$}. That's one of them.
 \end{speech}
@@ -924,7 +949,7 @@ And the reason this is $6$ --- so, I'm not going to write all six, I could, but.
 
 It's the question of: if you have a long cycle like this, how many different ones can you write with the same indices? And this problem, if you study combinatorics, is the problem of knights on the round table. Have you seen this problem?
 
-It's a kind of standard high school problem where you have a table, and you have some knights with different names: A, B, C... I don't know \inlinemetanote{draws a circle representing a round table with seated knights A, B, C, D}. You have some knights on the round table. And you want to know, if you're arranging a dinner party, how many different ways can you seat them?
+It's a kind of standard high school problem where you have a table, and you have some knights with different names: A, B, C... I don't know \inlinemetanote{draws a circle representing a round table with seated knights A, B, C, D, E}. You have some knights on the round table. And you want to know, if you're arranging a dinner party, how many different ways can you seat them?
 
 And the idea is that the rotational symmetry doesn't matter, because they're still seated in the same way. And the answer is: if you have $k$ knights, you can put them anywhere you want, that's $k!$, but if you rotate it, it's equivalent. So, a bunch of these are the same, and that's divided by $k$. So, the answer to this knight problem is $(k-1)!$ \inlinemetanote{writes: $\frac{k!}{k} = (k-1)!$}.
 
@@ -954,25 +979,20 @@ In particular, for $\ell = 4$, the number of full $4$-cycles in $S_4$ is:
 \definecolor{figBlue}{HTML}{07608E} % RGB (7, 96, 142): petrol blue (MidnightBlue)
 \definecolor{figLightGray}{HTML}{A6A6A5} % RGB (166, 166, 165): light gray (gray!70)
 \begin{hidden}
-- Canvas: no scale, cm; round table circle of radius 1.4cm centered at (0, 0); picture spans x in [-2.5, 2.5], y in [-2.0, 2.2]
-- Order: (1) round table circle; (2) seating points for 4 knights at angles 90, 0, 270, 180; (3) curved arrow indicating rotational equivalence; (4) labels last
-- Coordinates: Table centered at (0, 0), radius 1.4. Points at (0, 1.4), (1.4, 0), (0, -1.4), (-1.4, 0).
-- Labels: "A" above at (0, 1.55), "B" right at (1.55, 0), "C" below at (0, -1.55), "D" left at (-1.55, 0).
-  Rotational arrow: arc from 40 deg to 10 deg at radius 1.8cm.
-- Collisions: All labels sit 0.15cm outside the table perimeter.
+- Canvas: no scale, cm; round table circle of radius 1.4cm centered at (0, 0); picture spans x in [-2.2, 2.4], y in [-2.0, 2.2]
+- Board: five knights A, B, C, D, E around the circle, clockwise from the upper left (frame 00:41:59).
+- Order: (1) round table circle; (2) seats at 162, 90, 18, -54, -126 deg; (3) curved arrow for rotation; (4) labels last
+- Labels: radial, 0.2cm outside the circle; the arrow runs from 60 to 30 deg at radius 1.95cm, between B and C.
+- Collisions: checked in the render.
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth, font=\small]
     \draw[thick, figLightGray] (0, 0) circle (1.4cm);
-    \fill (0, 1.4) circle (2pt);
-    \fill (1.4, 0) circle (2pt);
-    \fill (0, -1.4) circle (2pt);
-    \fill (-1.4, 0) circle (2pt);
-    \draw[->, thick, figBlue] (45:1.8) arc (45:10:1.8);
-    \node[anchor=south] at (0, 1.55) {$A$};
-    \node[anchor=west] at (1.55, 0) {$B$};
-    \node[anchor=north] at (0, -1.55) {$C$};
-    \node[anchor=east] at (-1.55, 0) {$D$};
+    \foreach \a/\l in {162/A, 90/B, 18/C, -54/D, -126/E} {
+        \fill (\a:1.4) circle (2pt);
+        \node at (\a:1.75) {$\l$};
+    }
+    \draw[->, thick, figBlue] (60:1.95) arc (60:30:1.95);
 \end{tikzpicture}
 \end{center}
 
@@ -992,22 +1012,22 @@ So, it's this one \inlinemetanote{circles $e$ in red chalk} --- in the alternati
 
 So, that's totally explicit. This $A_4$ inside $S_4$ has order $12$ \inlinemetanote{writes: $A_4 \subset S_4$, order $12$}, right? Because $8 + 3 + 1 = 12$.
 
-And by the theorem we proved last week (i.e., Lagrange's Theorem), whatever its order is, it has to divide the order of $S_4$, and the order of $S_4$ is $24$, so, it's at least reasonable, because $12$ does divide $24$.
+And by the theorem we proved last week (Recall: \cref{thm:lagrange}), whatever its order is, it has to divide the order of $S_4$, and the order of $S_4$ is $24$, so, it's at least reasonable, because $12$ does divide $24$.
 \end{speech}
 
 \begin{content}[Classification of the Elements of \texorpdfstring{$S_4$}{S\_4} and Structure of \texorpdfstring{$A_4$}{A\_4}]
 We summarize the $24$ elements of $S_4$ classified by their cycle partitions:
 \begin{center}
 \renewcommand{\arraystretch}{1.25}
-\begin{tabular}{ccccc}
+\begin{tabular}{c>{\centering\arraybackslash}p{5.6cm}ccc}
 \toprule
-\textbf{Partition} & \textbf{Permutations in Cycle Notation} & \textbf{Count} & \textbf{Sign} $\operatorname{sgn}(\sigma)$ & \textbf{In $A_4$?} \\
+\textbf{Partition} & \textbf{Permutations} & \textbf{Count} & \textbf{Sign} & \textbf{In $A_4$?} \\
 \midrule
 $1+1+1+1$ & $e = (1)(2)(3)(4)$ & $1$ & \textcolor{ForestGreen}{$\mathbf{+1}$} & \textcolor{ForestGreen}{\textbf{Yes}} \\
-$2+1+1$ & $(1\,2), (1\,3), (1\,4), (2\,3), (2\,4), (3\,4)$ & $6$ & \textcolor{BrickRed}{$\mathbf{-1}$} & No \\
-$2+2$ & $(1\,2)(3\,4), (1\,3)(2\,4), (1\,4)(2\,3)$ & $3$ & \textcolor{ForestGreen}{$\mathbf{+1}$} & \textcolor{ForestGreen}{\textbf{Yes}} \\
-$3+1$ & \parbox{5.8cm}{\centering $(4)(1\,2\,3), (4)(1\,3\,2), (3)(1\,2\,4), (3)(1\,4\,2),$\\$(2)(1\,3\,4), (2)(1\,4\,3), (1)(2\,3\,4), (1)(2\,4\,3)$} & $8$ & \textcolor{ForestGreen}{$\mathbf{+1}$} & \textcolor{ForestGreen}{\textbf{Yes}} \\
-$4$ & $(1\,2\,3\,4), (1\,2\,4\,3), (1\,3\,2\,4), (1\,3\,4\,2), (1\,4\,2\,3), (1\,4\,3\,2)$ & $6$ & \textcolor{BrickRed}{$\mathbf{-1}$} & No \\
+$2+1+1$ & $(1\,2)$, $(1\,3)$, $(1\,4)$, $(2\,3)$, $(2\,4)$, $(3\,4)$ & $6$ & \textcolor{BrickRed}{$\mathbf{-1}$} & No \\
+$2+2$ & $(1\,2)(3\,4)$, $(1\,3)(2\,4)$, $(1\,4)(2\,3)$ & $3$ & \textcolor{ForestGreen}{$\mathbf{+1}$} & \textcolor{ForestGreen}{\textbf{Yes}} \\
+$3+1$ & $(4)(1\,2\,3)$, $(4)(1\,3\,2)$, $(3)(1\,2\,4)$, $(3)(1\,4\,2)$, $(2)(1\,3\,4)$, $(2)(1\,4\,3)$, $(1)(2\,3\,4)$, $(1)(2\,4\,3)$ & $8$ & \textcolor{ForestGreen}{$\mathbf{+1}$} & \textcolor{ForestGreen}{\textbf{Yes}} \\
+$4$ & $(1\,2\,3\,4)$, $(1\,2\,4\,3)$, $(1\,3\,2\,4)$, $(1\,3\,4\,2)$, $(1\,4\,2\,3)$, $(1\,4\,3\,2)$ & $6$ & \textcolor{BrickRed}{$\mathbf{-1}$} & No \\
 \midrule
 \textbf{Total} & $1 + 6 + 3 + 8 + 6 = 24$ & $24$ & & $|A_4| = \mathbf{12}$ \\
 \bottomrule
@@ -1022,7 +1042,7 @@ The order of $A_4$ is:
 \[
 |A_4| = 1 + 3 + 8 = 12.
 \]
-In accordance with Lagrange's theorem, $|A_4| = 12$ divides $|S_4| = 24$, giving index $[S_4 : A_4] = 2$.
+In accordance with Lagrange's theorem (\cref{thm:lagrange}), $|A_4| = 12$ divides $|S_4| = 24$: exactly half of the permutations in $S_4$ are even.
 \end{content}
 
 \subsubsection{Geometric Realization: Rotational Symmetries of the Tetrahedron}
@@ -1030,9 +1050,9 @@ In accordance with Lagrange's theorem, $|A_4| = 12$ divides $|S_4| = 24$, giving
 \begin{speech}[00:40:27 - 00:42:00]
 And you've seen this group! If you take the rotational symmetries of the tetrahedron... I'll try to draw it slightly better this time \inlinemetanote{draws a regular tetrahedron}.
 
-That's the tetrahedron. So, we discussed this group of rotational symmetries of the tetrahedron \inlinemetanote{writes: $\operatorname{Rot}(\Delta)$}, and we said that the order of this group is $12$ \inlinemetanote{writes: $|\operatorname{Rot}(\Delta)| = 12$}. And we also know that this group sits inside the symmetric group $S_4$ \inlinemetanote{writes: $\operatorname{Rot}(\Delta) \subset S_4$}, because every rotation moves the four vertices. Is that clear? It's a subgroup of $S_4$, and has order $12$.
+That's the tetrahedron. So, we discussed this group of rotational symmetries of the tetrahedron \inlinemetanote{writes: $\operatorname{Rot}(\triangle)$}, and we said that the order of this group is $12$ \inlinemetanote{writes: $|\operatorname{Rot}(\triangle)| = 12$}. And we also know that this group sits inside the symmetric group $S_4$ \inlinemetanote{writes: $\operatorname{Rot}(\triangle) \subset S_4$}, because every rotation moves the four vertices. Is that clear? It's a subgroup of $S_4$, and has order $12$.
 
-So, it seems pretty likely it's going to be this group, but all you have to do to check it's this group is just to show --- maybe \qt{see} is a better word --- to see every rotation gives an even permutation of the four vertices \inlinemetanote{writes: all you have to do is see every rotation gives an even perm. of the 4 vert.}.
+So, it seems pretty likely it's going to be this group, but all you have to do to check it's this group is just to show --- maybe \qt{see} is a better word --- to see every rotation gives an even permutation of the four vertices \inlinemetanote{writes: To check $\operatorname{Rot}(\triangle) = A_4$, all you have to do is see every rotation gives an even permut. of 4 verts}.
 \end{speech}
 
 \begin{speech}[00:42:00 - 00:44:00]
@@ -1051,11 +1071,13 @@ Anyway, you should think about it. I said part of geometry is about a camera in 
 And you can get three of them, because there's three different ways to do it. So, from the point of view of mathematics, I've given you a totally complete proof that the rotational symmetries is $A_4$, but there's a lot of little things you should check for yourself to make sure you believe every step of it.
 \end{speech}
 
-\begin{content}[Geometric Isomorphism: \texorpdfstring{$\operatorname{Rot}(\Delta) \cong A_4$}{Rot(Delta) = A4}]
+\begin{content}[Geometric Isomorphism: \texorpdfstring{$\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$}{Rot(Tetrahedron) = A4}]
+\recap{The previous week found that the rotations of the tetrahedron form a group of order $12$ inside $S_4$, acting on the four vertices, and named it $A_4$ before $A_4$ was defined (\cref{thm:tetrahedron-isomorphism}).}
+
 \begin{theorem}[Rotational Symmetries of the Regular Tetrahedron]\label[theorem]{thm:rot-tetrahedron-a4}
-The group of orientation-preserving rotational symmetries of a regular tetrahedron $\Delta$, denoted $\operatorname{Rot}(\Delta)$, is isomorphic to the alternating group $A_4$:
+The group of rotational symmetries of a regular tetrahedron, $\operatorname{Rot}(\text{Tetrahedron})$, is isomorphic to the alternating group $A_4$:
 \begin{equation}\label{eq:tetrahedron-isomorphism}
-\operatorname{Rot}(\Delta) \cong A_4.
+\operatorname{Rot}(\text{Tetrahedron}) \cong A_4.
 \end{equation}
 \end{theorem}
 
@@ -1084,7 +1106,7 @@ The group of orientation-preserving rotational symmetries of a regular tetrahedr
   M_AD = (1.1, 1.45), M_BC = (-0.85, -0.95).
   Axis extends from M_BC - 0.5 * (1.95, 2.4)/3.09 = (-1.17, -1.34) to M_AD + 0.5 * ... = (1.42, 1.84).
   Drawn in dashed figRed with 180-deg rotation arrow.
-- Labels: "A" above (0, 2.85), "B" left (-2.2, -0.6), "C" below (0.3, -1.5), "D" right (2.35, 0.2).
+- Labels: "A" left of the vertex at (-0.12, 2.8), clear of the rotation arrow above it (render checked), "B" left (-2.2, -0.6), "C" below (0.3, -1.5), "D" right (2.35, 0.2).
   Axis labels outside the tetrahedron in empty space.
 \end{hidden}
 \begin{center}
@@ -1128,33 +1150,33 @@ The group of orientation-preserving rotational symmetries of a regular tetrahedr
     \fill (D) circle (2pt);
 
     % Vertex labels
-    \node[anchor=south] at (0, 2.85) {$A$};
+    \node[anchor=east] at (-0.12, 2.8) {$A$};
     \node[anchor=east] at (-2.15, -0.6) {$B$};
     \node[anchor=north] at (0.3, -1.45) {$C$};
     \node[anchor=west] at (2.35, 0.2) {$D$};
 \end{tikzpicture}
 \end{center}
 
-\begin{proof}[Proof that $\operatorname{Rot}(\Delta) \cong A_4$]
-Every rotational symmetry of the regular tetrahedron $\Delta$ induces a permutation of its four vertices $\{A, B, C, D\}$, defining an injective group homomorphism:
+\begin{proof}[Proof that $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$]
+Every rotational symmetry of the regular tetrahedron induces a permutation of its four vertices $\{A, B, C, D\}$; as in the previous week (\cref{thm:tetrahedron-isomorphism}), this gives an injective group homomorphism:
 \[
-\rho \colon \operatorname{Rot}(\Delta) \hookrightarrow S_4.
+\rho \colon \operatorname{Rot}(\text{Tetrahedron}) \hookrightarrow S_4.
 \]
 We classify the $12$ rotational symmetries by their geometric axes:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} The trivial rotation fixes all $4$ vertices, corresponding to $e \in A_4$ ($1$ element).
     \item \textbf{Face-Vertex Rotations ($3$-Cycles):} There are $4$ vertices, each paired with an opposite triangular face. Rotation by $120^\circ$ or $240^\circ$ around the axis connecting a vertex to the centroid of the opposite face fixes that vertex and cyclically permutes the remaining $3$ vertices. This yields $4 \times 2 = 8$ distinct $3$-cycles. By \cref{lem:cycle-to-transpositions}, every $3$-cycle has sign $(-1)^{3-1} = +1$, so all $8$ lie in $A_4$.
-    \item \textbf{Edge-Edge Skewer Rotations (Double Transpositions):} There are $6$ edges of $\Delta$, forming $3$ pairs of mutually opposite, disjoint edges (e.g., $AD$ and $BC$). Rotating by $180^\circ$ around the axis passing through the midpoints of two opposite edges simultaneously swaps the endpoints of both edges:
+    \item \textbf{Skewer Rotations (Type $2+2$):} There are $6$ edges of the tetrahedron, forming $3$ pairs of mutually opposite, disjoint edges (e.g., $AD$ and $BC$). Rotating by $180^\circ$ around the axis passing through the midpoints of two opposite edges simultaneously swaps the endpoints of both edges:
     \[
     (A\,D)(B\,C).
     \]
-    This yields $3$ rotations of cycle type $2+2$. The sign is $(-1) \cdot (-1) = +1$, so all $3$ lie in $A_4$.
+    This yields $3$ rotations of type $2+2$. The sign is $(-1) \cdot (-1) = +1$, so all $3$ lie in $A_4$.
 \end{enumerate}
 Because every rotational symmetry induces an even permutation, the image of $\rho$ lies entirely inside the alternating group:
 \[
 \operatorname{Im}(\rho) \subseteq A_4.
 \]
-Since $|\operatorname{Rot}(\Delta)| = 1 + 8 + 3 = 12$ and $|A_4| = 12$, the injective map $\rho$ is surjective, establishing the isomorphism $\operatorname{Rot}(\Delta) \cong A_4$.
+Since $|\operatorname{Rot}(\text{Tetrahedron})| = 1 + 8 + 3 = 12$ and $|A_4| = 12$, the injective map $\rho$ is surjective, establishing the isomorphism $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$.
 \end{proof}
 \end{content}
 
@@ -1180,9 +1202,9 @@ The lecturer takes a brief mid-lecture pause. While stepping away, he pushes the
 \begin{speech}[00:44:18 - 00:45:55]
 Okay, so, we go back to the general situation. We have $G_1$ is a group, $G_2$ is a group, and we have $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$}. And in these general statements that I wrote, there was no condition that $G_1$ and $G_2$ are finite; they're just groups.
 
-So, the first statement was: the image of $f$ in $G_2$ is a subgroup \inlinemetanote{writes: $\operatorname{Im}(f) \le G_2$ is a subgp}.
+So, the first statement was: the image of $f$ in $G_2$ is a subgroup \inlinemetanote{writes: $\operatorname{Im}(f) \subset G_2$ is subgp}.
 
-The second one was: the kernel of $f$ in $G_1$ is a subgroup \inlinemetanote{writes: $\ker(f) \le G_1$ is a subgp}.
+The second one was: the kernel of $f$ in $G_1$ is a subgroup \inlinemetanote{writes: $\ker(f) \subset G_1$ is subgp}.
 
 And I just remind you: the kernel is those elements that go to the neutral element here. There was a question about that.
 
@@ -1223,7 +1245,8 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism.
 \begin{proof}
 \textbf{1. Surjectivity:} By definition, $f$ is surjective if every $y \in G_2$ has a pre-image $x \in G_1$ with $f(x) = y$, which is precisely the statement $\operatorname{Im}(f) = G_2$.
 
-\textbf{2. Injectivity:}
+\textbf{2. Injectivity:} Going beyond the lecture, which leaves this part to the students.
+
 \textbf{($\implies$):} Assume $f$ is injective. If $x \in \ker(f)$, then $f(x) = e_2 = f(e_1)$. Since $f$ is injective, this forces $x = e_1$. Hence $\ker(f) = \{e_1\}$.
 
 \textbf{($\impliedby$):} Assume $\ker(f) = \{e_1\}$. Let $x, y \in G_1$ such that $f(x) = f(y)$. Multiplying by $f(y)^{-1} = f(y^{-1})$ in $G_2$:
@@ -1245,7 +1268,7 @@ Therefore, $f$ is injective.
 
 $N$ inside $G$ is a normal subgroup. So, I'm defining normal subgroup. This is the definition \inlinemetanote{writes: $\iff \text{Def}$}:
 
-The first point is, of course, $N$ is a subgroup \inlinemetanote{writes: $\bullet\ N \le G$ is a subgroup}. That's hardly a surprise.
+The first point is, of course, $N$ is a subgroup \inlinemetanote{writes: $\bullet\ N \subset G$ is a subgroup}. That's hardly a surprise.
 
 And the second is the actual interesting part of the definition, and it says: if I take any person in $G$ and anyone in $N$ \inlinemetanote{writes: $\forall x \in G, \forall n \in N$}, then if I do a conjugation --- conjugation is this: take $x \cdot n \cdot x^{-1}$ --- this stays in $N$ \inlinemetanote{writes: $x n x^{-1} \in N$}. So, that's the conclusion, all right?
 
@@ -1259,28 +1282,33 @@ So, are there any questions about this definition?
 
 It's a definition, but it's super important for group theory, in particular for today. And the reason is...
 
-Proposition: the kernel of $f$ inside $G_1$ is a normal subgroup \inlinemetanote{writes: Prop: $\ker(f) \le G_1$ is a normal subgroup}.
+Proposition: the kernel of $f$ inside $G_1$ is a normal subgroup \inlinemetanote{writes: Prop: $\ker(f) \subset G_1$ is a normal subgroup}.
 
 All right, so, I will say a little bit about... when we study these homomorphisms for vector spaces, then the kernel and image are both vector spaces, and there's nothing more than that. When we study this for rings, the kernel is not a ring, it's an ideal. There was already a twist there. And for groups, the kernel is a subgroup, but it's not any subgroup: it has to be a normal subgroup. It's a very special kind of subgroup.
 \end{speech}
 
 \begin{content}
 \begin{definition}[Normal Subgroup]\label[definition]{def:normal-subgroup}
-Let $G$ be a group. A subgroup $N \le G$ is called a \newterm{normal subgroup} of $G$, denoted by
-\[
-N \trianglelefteq G,
-\]
-if it is stable under conjugation by all elements of $G$:
+Let $G$ be a group. A subgroup $N \le G$ is called a \newterm{normal subgroup} of $G$ if it is stable under conjugation by all elements of $G$:
 \begin{equation}\label{eq:normal-subgroup-condition}
 \forall x \in G, \ \forall n \in N \colon \quad x \cdot n \cdot x^{-1} \in N.
 \end{equation}
-Equivalently, $x N x^{-1} \subseteq N$ for all $x \in G$ (or $x N = N x$, meaning left and right cosets coincide).
 \end{definition}
 
 \begin{steps}[Conjugation and Normal Subgroups]
-Conjugating an element $n \in N$ by $x \in G$ yields $x n x^{-1}$. While in an abelian group conjugation is trivial ($x n x^{-1} = n x x^{-1} = n$), in non-abelian groups $x n x^{-1}$ is generally distinct from $n$. The normality condition requires that although $x n x^{-1}$ may differ from $n$, it must still remain inside the subset $N$.
+Conjugating an element $n \in N$ by $x \in G$ yields $x n x^{-1}$. In a commutative group conjugation does nothing ($x n x^{-1} = n x x^{-1} = n$), but in general $x n x^{-1}$ differs from $n$. The normality condition requires that although $x n x^{-1}$ may differ from $n$, it must still remain inside the subset $N$.
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Notation: Normal Subgroups]
+% [PERSISTENT]
+The lecturer writes \qt{$N \subset G$ is a normal subgroup} in words, and these notes keep to words. Textbooks write $N \trianglelefteq G$ or $N \lhd G$, the sign many of them also use for ideals.
+\end{aiNote}
+
+\begin{aiNote}[Beyond the Lecture: Other Forms of Normality]
+% [PERSISTENT, ADDITION]
+Textbooks often state the condition for all of $N$ at once: $x N x^{-1} \subseteq N$ for every $x \in G$, where $x N x^{-1} = \{x n x^{-1} \mid n \in N\}$. Applied to $x^{-1}$ as well, it gives $x N x^{-1} = N$, which is the same as $x N = N x$. The class $x N$ of $x$ (\cref{def:coset-set}) is called a \emph{left coset} of $N$, and $N x$ a \emph{right coset}; so a subgroup is normal exactly when its left and right cosets agree. \Cref{lem:commutation-normality} uses this equality one element at a time: $n_1 y \in N y = y N$.
+\end{aiNote}
 
 \subsection{The Kernel as a Normal Subgroup}
 
@@ -1297,19 +1325,16 @@ All right? So, we apply $f$ to $x n x^{-1}$ \inlinemetanote{writes: $f(x n x^{-1
 
 And now what do we do? Well, we know that $n$ is in the kernel, so, this is the neutral element for the second one, right? So, this is equal to $f(x)$, and now we put the neutral element here, $e_2$ \inlinemetanote{writes: $= f(x) e_2 f(x^{-1})$}, because $n$ is in the kernel \inlinemetanote{writes: $n \in \ker(f)$}, okay?
 
-And the neutral element doesn't do anything, we can just erase it, right? So, it goes away --- that's the property of the neutral element, because $e_2$ is neutral \inlinemetanote{writes: $e_2 \text{ is neutral}$}.
+And the neutral element doesn't do anything, we can just erase it, right? So, it goes away --- that's the property of the neutral element, because $e_2$ is neutral \inlinemetanote{writes: $e_2 \in G_2$}.
 
-And this thing goes away too, because we know that $f(x^{-1})$ is the inverse of $f(x)$ (Recall: \cref{eq:hom-inverse}). We did that at the beginning of the class. Or if you really want to be pedantic, you can then use this property: $f(x) \cdot f(x)^{-1} = e_2$ \inlinemetanote{writes: $= f(x) f(x)^{-1} = e_2$}.
+And this thing goes away too, because we know that $f(x^{-1})$ is the inverse of $f(x)$ (Recall: \cref{eq:hom-inverse}). We did that at the beginning of the class. Or if you really want to be pedantic, you can then use this property \inlinemetanote{writes: $= f(x x^{-1}) = f(e_1) = e_2$}.
 
 So, that's the complete proof that says that when I take any element of the kernel and I take any element of $G$, if I consider the conjugation, I stay in the kernel, because when I apply $f$ to it, I still get $e_2$.
 \end{speech}
 
 \begin{content}[The Kernel is Always a Normal Subgroup]
 \begin{proposition}[Normality of the Kernel]\label[proposition]{prop:kernel-normal}
-Let $f \colon G_1 \to G_2$ be a group homomorphism. Then $\ker(f)$ is a normal subgroup of $G_1$:
-\begin{equation}\label{eq:kernel-normal}
-\ker(f) \trianglelefteq G_1.
-\end{equation}
+Let $f \colon G_1 \to G_2$ be a group homomorphism. Then $\ker(f)$ is a normal subgroup of $G_1$.
 \end{proposition}
 
 \begin{proof}
@@ -1320,10 +1345,10 @@ Let $x \in G_1$ and $n \in \ker(f)$ be arbitrary. To determine whether the conju
 f(x \cdot n \cdot x^{-1}) &= f(x) \cdot f(n) \cdot f(x^{-1}) && \text{(homomorphism property applied twice)} \nonumber \\
 &= f(x) \cdot e_2 \cdot f(x^{-1}) && \text{(since $n \in \ker(f) \implies f(n) = e_2$)} \nonumber \\
 &= f(x) \cdot f(x^{-1}) && \text{(since $e_2$ is the neutral element in $G_2$)} \nonumber \\
-&= f(x) \cdot \bigl(f(x)\bigr)^{-1} && \text{(by \eqref{eq:hom-inverse}, $f(x^{-1}) = f(x)^{-1}$)} \nonumber \\
+&= f(x \cdot x^{-1}) = f(e_1) && \text{(homomorphism property; or use \eqref{eq:hom-inverse})} \nonumber \\
 &= e_2. \label{eq:kernel-normality-proof}
 \end{align}
-Since $f(x \cdot n \cdot x^{-1}) = e_2$, we conclude that $x \cdot n \cdot x^{-1} \in \ker(f)$. Therefore, $\ker(f) \trianglelefteq G_1$.
+Since $f(x \cdot n \cdot x^{-1}) = e_2$, we conclude that $x \cdot n \cdot x^{-1} \in \ker(f)$. Therefore, $\ker(f)$ is a normal subgroup of $G_1$.
 \end{proof}
 \end{content}
 
@@ -1339,8 +1364,8 @@ Since $f(x \cdot n \cdot x^{-1}) = e_2$, we conclude that $x \cdot n \cdot x^{-1
 Notice the escalating hierarchy of kernels across abstract algebra:
 \begin{itemize}
     \item \textbf{Linear Algebra:} A linear map between vector spaces $T \colon V \to W$ has a kernel $\ker(T)$ that is an arbitrary sub-vector space; every sub-vector space is the kernel of a projection map.
-    \item \textbf{Ring Theory:} A ring homomorphism $\phi \colon R \to S$ has a kernel that is \emph{not} merely a subring, but an \emph{ideal} ($I \triangleleft R$).
-    \item \textbf{Group Theory:} A group homomorphism $f \colon G_1 \to G_2$ has a kernel that is \emph{not} an arbitrary subgroup, but a \emph{normal subgroup} ($N \trianglelefteq G_1$). Normal subgroups play precisely the role in group theory that ideals play in ring theory.
+    \item \textbf{Ring Theory:} A ring homomorphism $\phi \colon R \to S$ has a kernel that is \emph{not} merely a subring, but an \emph{ideal}.
+    \item \textbf{Group Theory:} A group homomorphism $f \colon G_1 \to G_2$ has a kernel that is \emph{not} an arbitrary subgroup, but a \emph{normal subgroup}. Normal subgroups play precisely the role in group theory that ideals play in ring theory.
 \end{itemize}
 \end{insight}
 
@@ -1351,7 +1376,7 @@ So, in some sense... yeah, I don't want to say things that are distracting, but 
 
 So, you might ask: is it the case that every subgroup is normal? And I'm kind of implying that that's not the case. So, what's an example?
 
-Example: if I take $S_3$ and I take the subgroup which is the neutral element of $S_3$ and $(1\,2)$ \inlinemetanote{writes: Example: $S_3$, $K = \{e, (1\,2)\} \le S_3$}, this is a subgroup in $S_3$, because if I take the square of this, it's the neutral element.
+Example: if I take $S_3$ and I take the subgroup which is the neutral element of $S_3$ and $(1\,2)$ \inlinemetanote{writes: Example: $S_3$, $K = \{e, (1\,2)\} \subset S_3$}, this is a subgroup in $S_3$, because if I take the square of this, it's the neutral element.
 
 Do you accept this is a subgroup of $S_3$?
 
@@ -1384,10 +1409,7 @@ K := \{e, (1\,2)\} \le S_3.
 \]
 Since $(1\,2)^2 = e$, $K$ is a valid subgroup of order $2$.
 \begin{claim}\label[claim]{clm:k-not-normal}
-$K$ is not a normal subgroup of $S_3$:
-\[
-K \not\trianglelefteq S_3.
-\]
+$K$ is not a normal subgroup of $S_3$.
 \end{claim}
 \begin{proof}
 To disprove normality, it suffices to find a single element $x \in S_3$ and $n \in K$ such that $x n x^{-1} \notin K$.
@@ -1396,7 +1418,7 @@ Take $n = (1\,2) \in K$ and choose $x = (1\,3) \in S_3$. Since every transpositi
 (1\,3) \circ (1\,2) \circ (1\,3)^{-1} &= (1\,3) \circ (1\,2) \circ (1\,3) \\
 &= (2\,3).
 \end{align*}
-Since $(2\,3) \notin \{e, (1\,2)\} = K$, the subgroup $K$ is not stable under conjugation. Thus $K \not\trianglelefteq S_3$.
+Since $(2\,3) \notin \{e, (1\,2)\} = K$, the subgroup $K$ is not stable under conjugation. Thus $K$ is not normal in $S_3$.
 \end{proof}
 \end{example}
 
@@ -1405,7 +1427,7 @@ By \cref{prop:kernel-normal}, the kernel of any group homomorphism must be a nor
 \end{observation}
 \end{content}
 
-\section{Quotient Groups and the Canonical Quotient Map}
+\section{Quotient Groups and the Quotient Map}
 \subsection{Construction and Statement of the Quotient Theorem}
 
 \begin{speech}[00:53:13 - 00:55:00]
@@ -1415,7 +1437,7 @@ Let's do this slowly. We start with an abstract statement:
 
 Let $N$ in $G$ be a normal subgroup \inlinemetanote{writes: Let $N \subset G$ be a normal subgroup}.
 
-Then we will construct --- and this will be very similar to the way we construct quotient rings and the quotient map --- a quotient group, which is called $G / N$ \inlinemetanote{writes: a quotient group $(G/N, \cdot, \bar{e})$}, which has its own product and its own neutral element, and a quotient homomorphism \inlinemetanote{writes: and quotient hom $q \colon G \to G/N$} with the property that the kernel of the quotient homomorphism is exactly the normal subgroup we started with \inlinemetanote{writes: with the property that $\ker(q) = N$}.
+Then we will construct --- and this will be very similar to the way we construct quotient rings and the quotient map (Recall: \cref{def:quotient-ring-w4wed}, \cref{def:canonical-quotient-map}) --- a quotient group, which is called $G / N$ \inlinemetanote{writes: Then we will construct $(G/N, \cdot, \bar{e})$}, which has its own product and its own neutral element, and a quotient homomorphism \inlinemetanote{writes: and quotient hom $q \colon G \to G/N$} with the property that the kernel of the quotient homomorphism is exactly the normal subgroup we started with \inlinemetanote{writes: with the property that $\ker(q) = N$}.
 
 This says that if you're not normal, you cannot be a kernel of a homomorphism.
 
@@ -1428,13 +1450,13 @@ So, as usual, you have to concentrate to pick up the slight differences.
 
 \begin{content}[The Quotient Group Theorem]
 \begin{theorem}[Existence of the Quotient Group and Quotient Map]\label[theorem]{thm:quotient-group}
-Let $G$ be a group and $N \trianglelefteq G$ a normal subgroup. Then:
+Let $G$ be a group and $N \le G$ a normal subgroup. Then:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item There exists a unique group structure on the set of cosets $G/N$, denoted $(G/N, \cdot, \bar{e})$, where the product is defined by:
+    \item The set $G/N$ of equivalence classes of $\sim_N$ (\cref{def:coset-set}) is a group $(G/N, \cdot, \bar{e})$ with the product
     \begin{equation}\label{eq:quotient-product-def}
-    \bar{x} \cdot \bar{y} := \overline{x \cdot y} \quad \text{for all } x, y \in G.
+    \bar{x} \cdot \bar{y} \stackrel{\text{def}}{=} \overline{x \cdot y} \quad \text{for all } x, y \in G.
     \end{equation}
-    \item The canonical projection map
+    \item The quotient map
     \begin{equation}\label{eq:quotient-map-def-w8tue}
     q \colon G \to G/N, \qquad q(x) := \bar{x}
     \end{equation}
@@ -1459,21 +1481,21 @@ A subgroup can be quotiented out if and only if it is normal.
 \begin{speech}[00:55:00 - 00:56:55]
 All right, so, Step~1 is we have to construct the quotient group \inlinemetanote{writes: Step 1: Construct quotient group $(G/N, \cdot, \bar{e})$}. And we've done this actually already: this is always done by an equivalence relation, and we've seen the equivalence relation before.
 
-Remember from last week \inlinemetanote{writes: Recall the eq. rel.} the equivalence relation with respect to a subgroup $N$: that says that $x$ is equivalent to $y$ if and only if $y = x n$ for some $n$ in the subgroup, okay? (Recall: left cosets of $N$, \cref{def:coset-set}) \inlinemetanote{writes: $x \sim y \iff y = x n \text{ for some } n \in N$}
+Remember from last week \inlinemetanote{writes: Remember the $\sim_N$} the equivalence relation with respect to a subgroup $N$: that says that $x$ is equivalent to $y$ if and only if $y = x n$ for some $n$ in the subgroup, okay? (Recall: \cref{prop:equiv-relation-subgroup}) \inlinemetanote{writes: $x \sim y \iff y = x n \text{ for some } n \in N$}
 
 That was the equivalence relation from last week. Do you remember it?
 
 And the proof that this was an equivalence relation required $N$ to be a subgroup. It did not require $N$ to be a normal subgroup; it just required $N$ to be a subgroup. The normality condition is crucial, and it's going to come later.
 
-Anyway, just because it's a subgroup, we have this equivalence relation, and so, we define the set $G / N$ to be the set of equivalence classes of this relation \inlinemetanote{writes: Def: $G/N = \text{set of equiv. classes of this rel.}$}, okay? We used this construction to prove Lagrange's theorem last time.
+Anyway, just because it's a subgroup, we have this equivalence relation, and so, we define the set $G / N$ to be the set of equivalence classes of this relation \inlinemetanote{writes: Def: $G/N = \text{set of equiv. classes of } \sim_N$}, okay? We used this construction to prove Lagrange's theorem last time.
 
 But the discussion today is slightly different in two ways: one is that we're going to be using it for a normal subgroup, not just any subgroup. And the second is, for Lagrange's theorem, the whole point of it was proving some divisibility, which had to do with finite groups, and there's nothing here about finite groups --- I haven't made any assumptions about finite groups here.
 \end{speech}
 
-\begin{content}[The Coset Equivalence Relation]
-\recap{For any subgroup $H \le G$, the relation defined by $x \sim y \iff y = x h$ for some $h \in H$ is an equivalence relation on $G$. The equivalence classes $[x] = x H := \{x h \mid h \in H\}$ are the left cosets of $H$ in $G$.}
+\begin{content}[The Equivalence Relation of a Subgroup]
+\recap{This is the equivalence relation of the previous lecture (\cref{eq:coset-equiv-relation}, \cref{prop:equiv-relation-subgroup}), where it served the proof of Lagrange's theorem (\cref{thm:lagrange}).}
 
-\begin{definition}[The Set of Cosets $G/N$]\label[definition]{def:coset-set}
+\begin{definition}[The Set $G/N$]\label[definition]{def:coset-set}
 Let $G$ be a group and $N \le G$ a subgroup. We define the equivalence relation $\sim_N$ on $G$ by:
 \begin{equation}\label{eq:coset-rel}
 x \sim_N y \iff x^{-1} y \in N \iff y = x n \quad \text{for some } n \in N.
@@ -1485,7 +1507,7 @@ G/N := \{ [x] \mid x \in G \} = \{ x N \mid x \in G \}.
 \end{definition}
 
 \begin{steps}[Lagrange versus Quotient Groups]
-In the proof of Lagrange's theorem, the decomposition $G = \bigsqcup_{x \in R} x H$ partitioned $G$ into disjoint cosets of equal cardinality $|H|$, yielding $|G| = [G : H] \cdot |H|$ for finite groups. Here, no finiteness assumption is made on $G$ or $N$. Furthermore, for a general subgroup $H$, the set of cosets $G/H$ does not possess a natural group multiplication; normality of $N$ is required to endow $G/N$ with a well-defined group operation.
+In the proof of Lagrange's theorem (\cref{thm:lagrange}), all classes of this relation have $|H|$ elements, which gives $|H| \mid |G|$ for a finite group $G$. Here nothing is assumed finite, and $N$ will be normal: that is what makes the product on $G/N$, defined next, well defined.
 \end{steps}
 \end{content}
 
@@ -1498,7 +1520,7 @@ In the proof of Lagrange's theorem, the decomposition $G = \bigsqcup_{x \in R} x
 \end{hidden}
 
 \begin{note}[Blackboard Transition]
-The lecturer pauses speaking from 00:14:15 to 00:14:55 to completely erase the right half of the lower chalkboard with a sponge, preparing a clean writing surface to define the product on $G/N$ and verify its well-definedness.
+The lecturer pauses speaking from 00:56:55 to 00:57:35 to completely erase the right half of the lower chalkboard with a sponge, preparing a clean writing surface to define the product on $G/N$ and verify its well-definedness.
 \end{note}
 
 \subsection{Step 2: Defining the Multiplication on \texorpdfstring{$G/N$}{G/N}}
@@ -1510,13 +1532,13 @@ Let's try to do that.
 
 There's the usual discussion of names, how to name things in the equivalence classes.
 
-Here I have $G / N$ \inlinemetanote{writes: $\bar{x} \in G/N$}, and we name things by saying $\bar{x}$ here, where $x$ is in $G$ and $\bar{x}$ is the equivalence class of $x$ under the equivalence relation \inlinemetanote{writes: $x \in G, \bar{x} \text{ is the equiv. class of } x \text{ under the eq. rel.}$}.
+Here I have $G / N$ \inlinemetanote{writes: $\bar{x} \in G/N$}, and we name things by saying $\bar{x}$ here, where $x$ is in $G$ and $\bar{x}$ is the equivalence class of $x$ under the equivalence relation \inlinemetanote{writes: $x \in G, \bar{x} \text{ is the equiv. class of } x \text{ under } \sim_N$}.
 
 That's one convention. Another convention is you just write $x N$ is an element of $G / N$ \inlinemetanote{writes: $xN \in G/N$}, because the actual equivalence class, as we said before, is just all the people who are $x$ times some element of $N$. So, it's just another way of writing it.
 
 I'll tend to use this notation because it's slightly more efficient, but if you look, sometimes people will write this.
 
-Okay, so, the main issue \inlinemetanote{writes: Main issue:} is to define the group product. We take some element here: we want to define $\bar{x} \cdot \bar{y}$ \inlinemetanote{writes: $\bar{x} \cdot \bar{y} :=$}.
+Okay, so, the main issue \inlinemetanote{writes: Main issue:} is to define the group product. We take some element here: we want to define $\bar{x} \cdot \bar{y}$ \inlinemetanote{writes: $\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=}$}.
 
 All right, so, what do you think we're going to define this as? This is not a hard question. Yeah?
 \end{speech}
@@ -1547,25 +1569,25 @@ Because I'm trying to define a multiplication on the level of equivalence classe
 So, now we have to check. It looks extremely unlikely. Are these the same equivalence classes?
 \end{speech}
 
-\begin{content}[Notations for Cosets and the Proposed Multiplication]
-\begin{notation}[Representing Cosets in $G/N$]\label[notation]{not:coset-notation}
-Let $N \le G$ and $x \in G$. Two common notations represent the equivalence class of $x$:
+\begin{content}[Names for the Classes and the Proposed Multiplication]
+\begin{notation}[Names for the Classes in $G/N$]\label[notation]{not:coset-notation}
+Let $N \le G$ and $x \in G$. Two notations name the equivalence class of $x$ under $\sim_N$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Bar Notation:} $\bar{x} := [x] \in G/N$.
-    \item \textbf{Coset Notation:} $x N := \{ x n \mid n \in N \} \in G/N$.
+    \item \textbf{Bar Notation:} $\bar{x} \in G/N$.
+    \item \textbf{Product Notation:} $x N = \{ x n \mid n \in N \} \in G/N$, the elements $x$ times an element of $N$.
 \end{enumerate}
-In this lecture, we predominantly use the compact bar notation $\bar{x}$.
+In this lecture, we mostly use the bar notation $\bar{x}$.
 \end{notation}
 
 \begin{definition}[Multiplication on $G/N$]\label[definition]{def:coset-multiplication}
 For any $\bar{x}, \bar{y} \in G/N$, we define their group product by:
 \begin{equation}\label{eq:coset-prod}
-\bar{x} \cdot \bar{y} := \overline{x \cdot y}.
+\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=} \overline{x \cdot y}.
 \end{equation}
 \end{definition}
 
 \begin{question}[The Well-Definedness Problem]\label[question]{q:well-definedness}
-Since a coset can have multiple representatives ($\bar{x} = \overline{x n_1}$ and $\bar{y} = \overline{y n_2}$ for any $n_1, n_2 \in N$), does the product depend on the choice of representatives? That is, does the equality
+Since a class has many names ($\bar{x} = \overline{x n_1}$ and $\bar{y} = \overline{y n_2}$ for any $n_1, n_2 \in N$), does the product depend on the choice of representatives? That is, does the equality
 \begin{equation}\label{eq:check-well-defined}
 \overline{x \cdot y} \stackrel{?}{=} \overline{x n_1 \cdot y n_2}
 \end{equation}
@@ -1604,14 +1626,14 @@ So, let's do this carefully, since this is kind of the crucial part.
 
 \begin{content}[The Normality Commutation Trick]
 \begin{lemma}[Commutation via Normality]\label[lemma]{lem:commutation-normality}
-Let $N \trianglelefteq G$. For any $y \in G$ and any $n_1 \in N$, there exists an element $\hat{n}_1 \in N$ such that:
+Let $N$ be a normal subgroup of $G$. For any $y \in G$ and any $n_1 \in N$, there exists an element $\hat{n}_1 \in N$ such that:
 \begin{equation}\label{eq:commutation-trick}
 n_1 \cdot y = y \cdot \hat{n}_1.
 \end{equation}
 \end{lemma}
 
 \begin{proof}
-Since $N \trianglelefteq G$ is stable under conjugation by all elements of $G$, we conjugate $n_1 \in N$ by $y^{-1} \in G$:
+Since $N$ is normal, it is stable under conjugation by all elements of $G$; we conjugate $n_1 \in N$ by $y^{-1} \in G$:
 \begin{equation}\label{eq:conjugation-y-inv}
 \hat{n}_1 := y^{-1} \cdot n_1 \cdot y \in N.
 \end{equation}
@@ -1623,7 +1645,7 @@ This gives the commutation relation $n_1 \cdot y = y \cdot \hat{n}_1$ with $\hat
 \end{proof}
 
 \begin{steps}[Why Normality is Indispensable for Multiplication]
-In general non-abelian groups, elements $n_1 \in N$ and $y \in G$ do not commute ($n_1 y \neq y n_1$). However, normality guarantees that $N y = y N$. While we cannot simply swap $n_1$ and $y$, we can slide $y$ to the left at the cost of replacing $n_1$ with a conjugated partner $\hat{n}_1 \in N$. This modified swap is sufficient to resolve the well-definedness problem.
+In general, elements $n_1 \in N$ and $y \in G$ do not commute ($n_1 y \neq y n_1$). We cannot simply swap $n_1$ and $y$, but normality lets us slide $y$ to the left at the cost of replacing $n_1$ with a conjugated partner $\hat{n}_1 \in N$. This modified swap is sufficient to resolve the well-definedness problem.
 \end{steps}
 \end{content}
 
@@ -1670,7 +1692,7 @@ Since $N \le G$ is closed under multiplication, $n_3 := \hat{n}_1 \cdot n_2 \in 
 \[
 (x n_1) \cdot (y n_2) = (x y) \cdot n_3 \quad \text{with } n_3 \in N.
 \]
-By the definition of the coset equivalence relation \eqref{eq:coset-rel}, this implies:
+By the definition of $\sim_N$ in \eqref{eq:coset-rel}, this implies:
 \[
 x n_1 y n_2 \sim_N x y \implies \overline{x n_1 y n_2} = \overline{x y}.
 \]
@@ -1678,14 +1700,14 @@ Thus, the product $\overline{x n_1} \cdot \overline{y n_2} = \overline{x y}$ is 
 \end{proof}
 \end{content}
 
-\subsection{The Canonical Quotient Homomorphism}
+\subsection{The Quotient Homomorphism}
 
 \begin{speech}[01:05:28 - 01:08:00]
 And of course, what is going to be the neutral element? It's the equivalence class of the neutral element \inlinemetanote{writes: $(G/N, \cdot, \bar{e})$}.
 
 And the rest is just checking a bunch of compatibilities for the construction, which I leave to you. This was the exciting part.
 
-So, then, I leave the other checks to you \inlinemetanote{writes: I leave the other checks to you}. There's not much to do here. You have to check that $(\bar{x})^{-1} = \overline{x^{-1}}$ (Recall: \cref{prop:quotient-group-axioms}) \inlinemetanote{writes: $(\bar{x})^{-1} = \overline{x^{-1}}$}, and some other things like that to check the group axioms. But all of it is straightforward. The interesting step is that it's well-defined, and that's where we use the normality.
+So, then, I leave the other checks to you \inlinemetanote{writes: I leave the other checks to you}. There's not much to do here. You have to check that $(\bar{x})^{-1} = \overline{x^{-1}}$ \inlinemetanote{writes: $(\bar{x})^{-1} = \overline{x^{-1}}$}, and some other things like that to check the group axioms. But all of it is straightforward. The interesting step is that it's well-defined, and that's where we use the normality.
 
 Okay, so, we have this $G / N$, and then there's the map $G \to G / N$ \inlinemetanote{writes: $G \xrightarrow{q} G/N$}. This is the definition of the quotient map \inlinemetanote{writes: def of $q$:}: I have to define it for every element of $G$, and how are you going to define this?
 
@@ -1702,15 +1724,17 @@ And they're proven just the same way we proved it for rings, and you've proved i
 So, again, maybe I leave it to you this time.
 \end{speech}
 
-\begin{content}[The Quotient Group and Canonical Projection]
+\begin{content}[The Quotient Group and the Quotient Map]
 \begin{proposition}[Group Axioms for $G/N$]\label[proposition]{prop:quotient-group-axioms}
-Let $N \trianglelefteq G$. The pair $(G/N, \cdot)$ equipped with the multiplication $\bar{x} \cdot \bar{y} := \overline{x y}$ is a group with neutral element $\bar{e} = N$ and inverses given by:
+Let $N$ be a normal subgroup of $G$. The pair $(G/N, \cdot)$ with the multiplication $\bar{x} \cdot \bar{y} = \overline{x y}$ is a group with neutral element $\bar{e} = N$ and inverses given by:
 \begin{equation}\label{eq:quotient-inverse}
 (\bar{x})^{-1} = \overline{x^{-1}}.
 \end{equation}
 \end{proposition}
 
 \begin{proof}
+Going beyond the lecture, which leaves these checks to the students.
+
 \textbf{1. Associativity:} For all $\bar{x}, \bar{y}, \bar{z} \in G/N$:
 \[
 (\bar{x} \cdot \bar{y}) \cdot \bar{z} = \overline{x y} \cdot \bar{z} = \overline{(x y) z} = \overline{x (y z)} = \bar{x} \cdot \overline{y z} = \bar{x} \cdot (\bar{y} \cdot \bar{z}).
@@ -1726,8 +1750,8 @@ Let $N \trianglelefteq G$. The pair $(G/N, \cdot)$ equipped with the multiplicat
 Hence $(\bar{x})^{-1} = \overline{x^{-1}}$.
 \end{proof}
 
-\begin{proposition}[Properties of the Canonical Quotient Map]\label[proposition]{prop:canonical-quotient-map}
-The canonical projection
+\begin{proposition}[Properties of the Quotient Map]\label[proposition]{prop:canonical-quotient-map}
+The quotient map
 \[
 q \colon G \to G/N, \qquad q(x) := \bar{x}
 \]
@@ -1740,6 +1764,8 @@ satisfies:
 \end{proposition}
 
 \begin{proof}
+Going beyond the lecture, which leaves this to the students.
+
 \textbf{1. Homomorphism:} For all $x, y \in G$, by definition of the multiplication on $G/N$:
 \[
 q(x \cdot y) = \overline{x \cdot y} = \bar{x} \cdot \bar{y} = q(x) \cdot q(y).
@@ -1772,13 +1798,13 @@ All right, so, then we come to this First Isomorphism Theorem, which is exactly 
 \begin{speech}[01:08:45 - 01:10:50]
 So, let $f \colon G_1 \to G_2$ be a group homomorphism \inlinemetanote{writes: First Isom Thm for Groups} \inlinemetanote{writes: let $f \colon G_1 \to G_2$ be a group hom.}.
 
-Then the First Isomorphism Theorem is that $G_1 / \ker(f)$ is isomorphic to the image of $f$ \inlinemetanote{writes: then $G_1 / \ker(f) \cong \operatorname{Im}(f)$}. Okay?
+Then the First Isomorphism Theorem is that $G_1 / \ker(f)$ is isomorphic to the image of $f$ \inlinemetanote{writes \qt{then $G / \ker(f) \cong \operatorname{Im}(f)$}, a slip for $G_1 / \ker(f)$}. Okay?
 
 So, that was what we had for rings, and also for vector spaces. In fact, the diagram here... and the proof is just the same in all of these things. But maybe I just review the diagram: this is a review of three times first isomorphism \inlinemetanote{writes: Review $3 \times 1^{\mathrm{st}}$ isom}.
 
 The first time you see it is if $f \colon V_1 \to V_2$ is a linear transformation \inlinemetanote{writes: $f \colon V_1 \to V_2$ lin. trans. of vector spaces/F} of vector spaces over some field $F$.
 
-Then the First Isomorphism Theorem says that we have here $V_1, V_2$ \inlinemetanote{writes: $V_1 \xrightarrow{f} V_2$}, and then inside here is the kernel of $f$ --- that is a subspace \inlinemetanote{writes: $\ker(f) \le V_1$} --- then we have the quotient map to $V_1$ modulo the kernel of $f$ \inlinemetanote{writes: $V_1 \xrightarrow{q} V_1/\ker(f)$}, and this is the image of $f$, that's inside $V_2$ \inlinemetanote{writes: $\operatorname{Im}(f) \le V_2$}, and this is an isomorphism \inlinemetanote{writes: $\cong$ arrow from $V_1/\ker(f)$ to $\operatorname{Im}(f)$}.
+Then the First Isomorphism Theorem says that we have here $V_1, V_2$ \inlinemetanote{writes: $V_1 \longrightarrow V_2$}, and then inside here is the kernel of $f$ --- that is a subspace \inlinemetanote{writes: $\ker(f) \subset V_1$} --- then we have the quotient map to $V_1$ modulo the kernel of $f$ \inlinemetanote{writes: $V_1 \to V_1/\ker(f)$}, and this is the image of $f$, that's inside $V_2$ \inlinemetanote{writes: $\operatorname{Im}(f) \subset V_2$}, and this is an isomorphism \inlinemetanote{writes: $\cong$ arrow from $V_1/\ker(f)$ to $\operatorname{Im}(f)$}.
 
 Okay? So, that's the First Isomorphism Theorem in linear algebra. Was it called that? Or I don't know, maybe not?
 \end{speech}
@@ -1789,15 +1815,14 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism. Then the quotient group $G_1
 \begin{equation}\label{eq:first-isom-thm}
 G_1 / \ker(f) \cong \operatorname{Im}(f).
 \end{equation}
-Specifically, the mapping $\bar{f} \colon G_1 / \ker(f) \to \operatorname{Im}(f)$ defined by
-\begin{equation}\label{eq:induced-iso-map}
-\bar{f}(\bar{x}) := f(x) \quad \text{for all } x \in G_1
-\end{equation}
-is a well-defined group isomorphism, and $f = \iota \circ \bar{f} \circ q$, where $q \colon G_1 \to G_1/\ker(f)$ is the canonical quotient projection and $\iota \colon \operatorname{Im}(f) \hookrightarrow G_2$ is the inclusion homomorphism.
 \end{theorem}
 
 \begin{proof}
-Set $K := \ker(f) \trianglelefteq G_1$.
+Going beyond the lecture, which says that the proof is the same as for rings and returns to it in the next lecture. Set $K := \ker(f)$, a normal subgroup of $G_1$ by \cref{prop:kernel-normal}, and define $\bar{f} \colon G_1 / K \to \operatorname{Im}(f)$ by
+\begin{equation}\label{eq:induced-iso-map}
+\bar{f}(\bar{x}) := f(x) \quad \text{for all } x \in G_1.
+\end{equation}
+
 \textbf{1. Well-Definedness and Injectivity:}
 Let $\bar{x}, \bar{y} \in G_1 / K$. Then:
 \begin{align*}
@@ -1816,7 +1841,7 @@ Using the definition of multiplication in $G_1 / K$ and the homomorphism propert
 \]
 \textbf{3. Surjectivity:}
 By definition, any element in $\operatorname{Im}(f)$ has the form $f(x)$ for some $x \in G_1$. Then $\bar{f}(\bar{x}) = f(x)$, so $\bar{f}$ is surjective onto $\operatorname{Im}(f)$.
-Thus, $\bar{f}$ is a bijective group homomorphism, proving $G_1 / \ker(f) \cong \operatorname{Im}(f)$.
+Thus, $\bar{f}$ is a bijective group homomorphism, proving $G_1 / \ker(f) \cong \operatorname{Im}(f)$. With $q \colon G_1 \to G_1/K$ the quotient map and $\iota \colon \operatorname{Im}(f) \hookrightarrow G_2$ the inclusion, $f = \iota \circ \bar{f} \circ q$: this is the triangle the lecturer draws for all three cases below.
 \end{proof}
 \end{content}
 
@@ -1833,13 +1858,13 @@ Thus, $\bar{f}$ is a bijective group homomorphism, proving $G_1 / \ker(f) \cong 
 \begin{speech}[01:10:50 - 01:12:40]
 That's for linear algebra.
 
-For ring theory, we had the same thing: here $R_1$ is a ring \inlinemetanote{writes: $R_1$}, there's a ring homomorphism, that's the image of $f$ \inlinemetanote{writes: $R_1 \xrightarrow{f} \operatorname{Im}(f) \le R_2$} --- that's in $R_2$ --- and there's the kernel; the kernel is now an ideal \inlinemetanote{writes: $\ker(f) \triangleleft R_1$, ideal}.
+For ring theory, we had the same thing: here $R_1$ is a ring \inlinemetanote{writes: $R_1$}, there's a ring homomorphism, that's the image of $f$ \inlinemetanote{writes: $R_1 \longrightarrow \operatorname{Im}(f) \subset R_2$} --- that's in $R_2$ --- and there's the kernel; the kernel is now an ideal \inlinemetanote{writes: $\ker(f) \subset R_1$, Ideal}.
 
-So, then, there's the quotient map from $R_1$ to $R_1$ modulo the kernel of $f$ \inlinemetanote{writes: $R_1 \xrightarrow{q} R_1/\ker(f)$}, and that's isomorphic to the image \inlinemetanote{writes: $\cong$ arrow to $\operatorname{Im}(f)$}. That was the First Isomorphism Theorem for rings.
+So, then, there's the quotient map from $R_1$ to $R_1$ modulo the kernel of $f$ \inlinemetanote{writes: $R_1 \to R_1/\ker(f)$}, and that's isomorphic to the image \inlinemetanote{writes: $\cong$ arrow to $\operatorname{Im}(f)$}. That was the First Isomorphism Theorem for rings (Recall: \cref{thm:first-isomorphism-theorem-statement}).
 
 And for groups, that's the one we're in the middle of proving. The issue here was: the kernel is always just a vector space, it's exactly the same flavor as all the objects. Here the kernel is different, it's an ideal --- that was the twist here.
 
-For groups, again, it's the same picture: we have $G_1$, it maps to the image of $f$ inside $G_2$ \inlinemetanote{writes: $G_1 \xrightarrow{f} \operatorname{Im}(f) \le G_2$}, and $G_1$ maps to $G_1 \bmod \ker(f)$ \inlinemetanote{writes: $G_1 \xrightarrow{q} G_1/\ker(f)$}. The kernel of $f$ is a subgroup, but what's special here is it's a normal subgroup \inlinemetanote{writes: $\ker(f) \le G_1$ normal}, and this is isomorphic \inlinemetanote{writes: $\cong$ arrow}.
+For groups, again, it's the same picture: we have $G_1$, it maps to the image of $f$ inside $G_2$ \inlinemetanote{writes: $G_1 \longrightarrow \operatorname{Im}(f) \subset G_2$}, and $G_1$ maps to $G_1 \bmod \ker(f)$ \inlinemetanote{writes: $G_1 \to G_1/\ker(f)$}. The kernel of $f$ is a subgroup, but what's special here is it's a normal subgroup \inlinemetanote{writes: $\ker(f) \subset G_1$, Normal}, and this is isomorphic \inlinemetanote{writes: $\cong$ arrow}.
 
 So, that's three times the First Isomorphism Theorem, and they're formally the same. One thinks of them as basically the same structure, and the part you have to be careful about is that the nature of the kernel is a little bit different in the three cases.
 \end{speech}
@@ -1866,35 +1891,35 @@ So, that's three times the First Isomorphism Theorem, and they're formally the s
   (1) Horizontal arrows f and diagonal arrows q, \cong for all three tiers
   (2) Node texts (Domain, Quotient, Image, Kernel labels)
 - Labels:
-  Tier 1: \ker(f) \le V_1 (subspace) | V_1 | V_1/\ker(f) | \operatorname{Im}(f) \le V_2
-  Tier 2: \ker(f) \triangleleft R_1 (ideal) | R_1 | R_1/\ker(f) | \operatorname{Im}(f) \le R_2
-  Tier 3: \ker(f) \trianglelefteq G_1 (normal) | G_1 | G_1/\ker(f) | \operatorname{Im}(f) \le G_2
+  Tier 1: \ker(f) \subset V_1 (subspace) | V_1 | V_1/\ker(f) | \operatorname{Im}(f) \subset V_2
+  Tier 2: \ker(f) \subset R_1 (ideal) | R_1 | R_1/\ker(f) | \operatorname{Im}(f) \subset R_2
+  Tier 3: \ker(f) \subset G_1 (normal) | G_1 | G_1/\ker(f) | \operatorname{Im}(f) \subset G_2
 - Collisions: Ample clearance of > 0.6cm between tiers; all arrow labels sit 0.15cm clear of arrow shafts.
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth, font=\small]
     % --- Tier 1: Vector Spaces (Linear Algebra) ---
-    \node[anchor=east, align=right] at (2.4, 6.0) {\textbf{Vector Spaces / $F$:}\\$\ker(f) \le V_1$ \footnotesize(subspace)};
+    \node[anchor=east, align=right] at (2.4, 6.0) {\textbf{Vector Spaces / $F$:}\\$\ker(f) \subset V_1$ \footnotesize(subspace)};
     \node (V1) at (3.3, 6.0) {$V_1$};
-    \node (V2) at (8.6, 6.0) {$\operatorname{Im}(f) \le V_2$};
+    \node (V2) at (8.6, 6.0) {$\operatorname{Im}(f) \subset V_2$};
     \node (VQ) at (4.8, 4.9) {$V_1/\ker(f)$};
     \draw[->, thick, figBlue] (V1) -- node[above] {$f$} (V2);
     \draw[->, thick, figBlue] (V1) -- node[below left=-1pt] {$q$} (VQ);
     \draw[->, thick, figOrange] (VQ) -- node[below right=-1pt] {$\cong$} (V2);
 
     % --- Tier 2: Ring Theory ---
-    \node[anchor=east, align=right] at (2.4, 3.6) {\textbf{Ring Theory:}\\$\ker(f) \triangleleft R_1$ \footnotesize(\textbf{ideal})};
+    \node[anchor=east, align=right] at (2.4, 3.6) {\textbf{Ring Theory:}\\$\ker(f) \subset R_1$ \footnotesize(\textbf{ideal})};
     \node (R1) at (3.3, 3.6) {$R_1$};
-    \node (R2) at (8.6, 3.6) {$\operatorname{Im}(f) \le R_2$};
+    \node (R2) at (8.6, 3.6) {$\operatorname{Im}(f) \subset R_2$};
     \node (RQ) at (4.8, 2.5) {$R_1/\ker(f)$};
     \draw[->, thick, figBlue] (R1) -- node[above] {$f$} (R2);
     \draw[->, thick, figBlue] (R1) -- node[below left=-1pt] {$q$} (RQ);
     \draw[->, thick, figOrange] (RQ) -- node[below right=-1pt] {$\cong$} (R2);
 
     % --- Tier 3: Group Theory ---
-    \node[anchor=east, align=right] at (2.4, 1.2) {\textbf{Group Theory:}\\$\ker(f) \trianglelefteq G_1$ \footnotesize(\textbf{normal})};
+    \node[anchor=east, align=right] at (2.4, 1.2) {\textbf{Group Theory:}\\$\ker(f) \subset G_1$ \footnotesize(\textbf{normal})};
     \node (G1) at (3.3, 1.2) {$G_1$};
-    \node (G2) at (8.6, 1.2) {$\operatorname{Im}(f) \le G_2$};
+    \node (G2) at (8.6, 1.2) {$\operatorname{Im}(f) \subset G_2$};
     \node (GQ) at (4.8, 0.1) {$G_1/\ker(f)$};
     \draw[->, thick, figBlue] (G1) -- node[above] {$f$} (G2);
     \draw[->, thick, figBlue] (G1) -- node[below left=-1pt] {$q$} (GQ);
@@ -1903,15 +1928,11 @@ So, that's three times the First Isomorphism Theorem, and they're formally the s
 \end{center}
 
 \begin{steps}[The Essential Difference: The Nature of the Kernel]
-In all three settings, the First Isomorphism Theorem decomposes a homomorphism into a canonical projection onto the quotient followed by an isomorphism onto the image:
-\[
-f = \iota \circ \bar{f} \circ q.
-\]
-The subtle structural variation lies entirely in the algebraic nature of $\ker(f)$:
+In all three settings the diagram is the same triangle: the quotient map $q$ goes down to the quotient, and the isomorphism goes from the quotient to the image of $f$. The difference lies in the nature of $\ker(f)$:
 \begin{itemize}
-    \item \textbf{Vector Spaces:} The kernel is an ordinary sub-vector space; no extra structure is required because vector space addition is abelian.
-    \item \textbf{Rings:} The kernel is an \emph{ideal} ($I \triangleleft R$), closed under absorption of external ring multiplication ($R \cdot I \subseteq I$).
-    \item \textbf{Groups:} The kernel is a \emph{normal subgroup} ($N \trianglelefteq G$), closed under conjugation by all ambient elements ($G N G^{-1} \subseteq N$).
+    \item \textbf{Vector Spaces:} The kernel is a sub-vector space, the same kind of object as $V_1$.
+    \item \textbf{Rings:} The kernel is not a subring but an \emph{ideal}: it absorbs multiplication by all of $R_1$.
+    \item \textbf{Groups:} The kernel is a subgroup, and more: a \emph{normal subgroup}, stable under conjugation by all of $G_1$.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -1936,7 +1957,7 @@ So, if we have $x$ and $y$ in a group $G$ are conjugate \inlinemetanote{writes: 
 
 And one can say that a normal subgroup is a group that, if it contains an element, contains all of the element's conjugates. That's another way of just saying what a normal subgroup is. So, I can maybe say that in words:
 
-$N$ in $G$ is a normal subgroup \inlinemetanote{writes: $N \le G$ is a normal subgroup} if and only if, of course, $N$ is a subgroup \inlinemetanote{writes: $N$ subgroup}, and if $n$ is in $N$, then all the conjugates of $n$ are also in $N$ \inlinemetanote{writes: if $n \in N$ then all conjugates of $n$ are also in $N$}.
+$N$ in $G$ is a normal subgroup \inlinemetanote{writes: $N \subset G$ is a normal subgroup} if and only if, of course, $N$ is a subgroup \inlinemetanote{writes: $N$ subgroup}, and if $n$ is in $N$, then all the conjugates of $n$ are also in $N$ \inlinemetanote{writes: if $n \in N$ then all conjugates of $n$ are also in $N$}.
 
 That's just a restatement of the definition of normal subgroup.
 \end{speech}
@@ -1954,11 +1975,10 @@ z \cdot x \cdot z^{-1} = y.
 \end{definition}
 
 \begin{proposition}[Normality via Conjugate Closure]\label[proposition]{prop:normal-subgroup-conjugates}
-A subgroup $N \le G$ is normal ($N \trianglelefteq G$) if and only if $N$ is closed under taking conjugates in $G$:
+A subgroup $N \le G$ is normal if and only if $N$ contains all conjugates of its elements:
 \begin{equation}\label{eq:normality-conjugate-closure}
 n \in N \implies z \cdot n \cdot z^{-1} \in N \quad \text{for all } z \in G.
 \end{equation}
-Equivalently, $N$ is normal if and only if $N$ is a union of conjugacy classes of $G$.
 \end{proposition}
 \end{content}
 
@@ -1982,24 +2002,24 @@ Well, one thing you're not surprised by: the neutral element is by itself. The n
 
 \begin{content}[Partition of a Group into Conjugacy Classes]
 \begin{proposition}[Conjugacy is an Equivalence Relation]\label[proposition]{prop:conjugacy-equiv-rel}
-The relation $\sim_{\mathrm{conj}}$ is an equivalence relation on $G$:
+The relation $\sim_{\mathrm{conj}}$ is an equivalence relation on $G$.
+\end{proposition}
+
+\begin{proof}
+Going beyond the lecture, which states this without proof.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Reflexivity:} For any $x \in G$, $e \cdot x \cdot e^{-1} = x$, so $x \sim_{\mathrm{conj}} x$.
     \item \textbf{Symmetry:} If $y = z x z^{-1}$, then $x = z^{-1} y z = z^{-1} y (z^{-1})^{-1}$, so $y \sim_{\mathrm{conj}} x$.
     \item \textbf{Transitivity:} If $y = z_1 x z_1^{-1}$ and $w = z_2 y z_2^{-1}$, then $w = (z_2 z_1) x (z_2 z_1)^{-1}$, so $x \sim_{\mathrm{conj}} w$.
 \end{enumerate}
-\end{proposition}
+\end{proof}
 
 \begin{definition}[Conjugacy Class]\label[definition]{def:conjugacy-class}
-The equivalence class of an element $x \in G$ under $\sim_{\mathrm{conj}}$ is called the \newterm{conjugacy class} of $x$, denoted $\operatorname{Cl}(x)$ or $\mathcal{C}(x)$:
+The equivalence class of an element $x \in G$ under $\sim_{\mathrm{conj}}$ is called the \newterm{conjugacy class} of $x$:
 \begin{equation}\label{eq:conjugacy-class-def}
-\operatorname{Cl}(x) := \{ z \cdot x \cdot z^{-1} \mid z \in G \}.
+\{ z \cdot x \cdot z^{-1} \mid z \in G \}.
 \end{equation}
-The group $G$ partitions into a disjoint union of its conjugacy classes:
-\[
-G = \bigsqcup_{x \in \mathcal{R}} \operatorname{Cl}(x),
-\]
-where $\mathcal{R}$ is a set of conjugacy class representatives.
+As for every equivalence relation, $G$ is the disjoint union of its conjugacy classes.
 \end{definition}
 
 \definecolor{figBlue}{HTML}{07608E} % RGB (7, 96, 142): petrol blue (MidnightBlue)
@@ -2031,8 +2051,6 @@ where $\mathcal{R}$ is a set of conjugacy class representatives.
     \fill (-2.1, 0) circle (2pt) node[anchor=south] {$\{e\}$};
 
     % Other conjugacy classes
-    \node at (-0.85, 0.2) {$\operatorname{Cl}(x_1)$};
-    \node at (0.45, 0.2) {$\operatorname{Cl}(x_2)$};
 
     % Callout for conjugacy classes
     \draw[->, thick, figBlue] (3.4, -0.8) to[bend left=15] (1.8, -0.4);
@@ -2040,8 +2058,8 @@ where $\mathcal{R}$ is a set of conjugacy class representatives.
 \end{tikzpicture}
 \end{center}
 
-\begin{observation}[The Central Role of the Identity]\label[observation]{obs:identity-conjugacy-class}
-For the neutral element $e \in G$, conjugation by any $z \in G$ yields $z e z^{-1} = z z^{-1} = e$. Thus, $\operatorname{Cl}(e) = \{e\}$ is always a singleton set. More generally, an element $x \in G$ forms a singleton conjugacy class $\operatorname{Cl}(x) = \{x\}$ if and only if $z x z^{-1} = x$ for all $z \in G$ (i.e., $x z = z x$), which means $x$ belongs to the center of the group, $Z(G)$.
+\begin{observation}[The Class of the Neutral Element]\label[observation]{obs:identity-conjugacy-class}
+For the neutral element $e \in G$, conjugation by any $z \in G$ yields $z e z^{-1} = z z^{-1} = e$. Thus the conjugacy class of $e$ is $\{e\}$.
 \end{observation}
 \end{content}
 
@@ -2060,7 +2078,7 @@ And what is the answer? How are conjugacy classes indexed in $\mathrm{GL}_n(\mat
 
 Exactly: Jordan normal form! That's the answer. That's in fact the whole point of that!
 
-So, if you look at $\mathrm{GL}_n(\mathbb{C})$ \inlinemetanote{writes: $(\mathrm{GL}_n(\mathbb{C}), \cdot, I)$}, this is a group with matrix multiplication and identity, and the statement is that the conjugacy classes \inlinemetanote{writes: Conjugacy classes} of this group are in bijective correspondence with the Jordan normal form \inlinemetanote{writes: $\xleftrightarrow{1-1} \mathrm{JNF}$}. That's the whole purpose of the Jordan normal form: how to index the conjugacy classes.
+So, if you look at $\mathrm{GL}_n(\mathbb{C})$ \inlinemetanote{writes: $(\mathrm{GL}_n(\mathbb{C}), \cdot, \operatorname{Id})$}, this is a group with matrix multiplication and identity, and the statement is that the conjugacy classes \inlinemetanote{writes: Conjugacy classes} of this group are in bijective correspondence with the Jordan normal form \inlinemetanote{writes: $\xleftrightarrow{\text{bij}} \mathrm{JNF}$}. That's the whole purpose of the Jordan normal form: how to index the conjugacy classes.
 
 So, that's a really cool answer, and that's the group-theoretic meaning of it. You're just trying to figure out what the conjugacy classes are. Because in linear algebra this conjugacy stuff is about change of basis, or whatever it's called there. But it's just conjugacy in the group.
 \end{speech}
@@ -2071,7 +2089,7 @@ In the general linear group $\mathrm{GL}_n(\mathbb{C})$, two invertible matrices
 \[
 P \cdot A \cdot P^{-1} = B.
 \]
-In linear algebra, this is precisely the definition of \newterm{matrix similarity}, representing the fact that $A$ and $B$ represent the same linear transformation under a change of basis.
+In linear algebra, this is a change of basis: $A$ and $B$ describe the same linear map in two bases.
 \end{observation}
 
 \begin{fact}[Classification of Conjugacy Classes via Jordan Normal Form]\label[fact]{fact:jordan-normal-form-conjugacy}
@@ -2079,9 +2097,14 @@ The conjugacy classes of the group $\mathrm{GL}_n(\mathbb{C})$ are in bijective 
 \begin{equation}\label{eq:gln-jnf-bijection}
 \text{Conjugacy classes of } \mathrm{GL}_n(\mathbb{C}) \;\xleftrightarrow{\,1-1\,}\; \text{Jordan Normal Forms (JNF)}.
 \end{equation}
-Every matrix $A \in \mathrm{GL}_n(\mathbb{C})$ is conjugate to a unique Jordan matrix $J$, which serves as the canonical representative of the conjugacy class $\operatorname{Cl}(A)$.
+Every matrix $A \in \mathrm{GL}_n(\mathbb{C})$ is conjugate to a Jordan matrix $J$, unique up to the order of its blocks, so $J$ can stand for the conjugacy class of $A$.
 \end{fact}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: More on Conjugacy Classes]
+% [PERSISTENT, ADDITION]
+Textbooks write the conjugacy class of $x$ as $\operatorname{Cl}(x)$ or $x^G$. An element $x$ is alone in its class exactly when $z x z^{-1} = x$ for all $z \in G$, that is, when $x$ commutes with every element of $G$; these elements form the \emph{center} $Z(G)$. The restatement in \cref{prop:normal-subgroup-conjugates} says that a subgroup is normal exactly when it is a union of conjugacy classes. And conjugate matrices in $\mathrm{GL}_n(\mathbb{C})$ are called \emph{similar} in linear algebra.
+\end{aiNote}
 
 \subsection{Conjugacy Classes in the Symmetric Group and Partitions}
 
@@ -2120,7 +2143,7 @@ Yeah.
 \end{student}
 
 \begin{speech}[01:20:09 - 01:20:26]
-No, there's many more than that. I did one thing: if you take this two-cycle and you conjugate it \inlinemetanote{writes: $(1\,3)(1\,2)(1\,3) = (2\,3)$}, you get another two-cycle. I did this calculation. This means that this cycle and that cycle are in the same conjugacy class.
+No, there's many more than that. I did one thing: if you take this two-cycle and you conjugate it, you get another two-cycle. I did this calculation. This means that this cycle and that cycle are in the same conjugacy class.
 
 Yeah?
 \end{speech}
@@ -2132,7 +2155,7 @@ Partitions?
 \begin{speech}[01:20:28 - 01:22:35]
 Partitions! This is the correct answer. This is one of the reasons why the partitions are so intimately related here.
 
-So, the answer to this is that the conjugacy classes of $S_n$ are in bijective correspondence with the partitions of $n$ \inlinemetanote{writes: Conjugacy classes of $S_n \xleftrightarrow{1-1} \text{Partitions of } n$}.
+So, the answer to this is that the conjugacy classes of $S_n$ are in bijective correspondence with the partitions of $n$ \inlinemetanote{writes: Conjugacy classes of $S_n \longleftrightarrow \text{Partitions of } n$}.
 
 And this correspondence is by the cycle decomposition: if you have an element, you get a cycle decomposition, which is a partition. And so, you have to show that if you have an element with a cycle decomposition and you conjugate it, it stays the same cycle decomposition. That's what you have to show: that conjugacy does not change the cycle decomposition.
 
@@ -2209,13 +2232,12 @@ z \sigma z^{-1} = \bigl(z(a_1)\, z(a_2)\, \dots\, z(a_\ell)\bigr)\bigl(z(b_1)\, 
 \end{lemma}
 
 \begin{proof}
-Let $j = z(a_k)$ be an element in the support of the conjugate permutation. We evaluate $(z \sigma z^{-1})(j)$ step by step:
+Going beyond the lecture, which works out one example, $z (1\,2\,3) z^{-1} = (6\,8\,17)$, and leaves the general case to the students. Let $a_k$ be an entry of one of the cycles of $\sigma$, with $a_{k+1}$ the next entry of that cycle ($a_1$ after the last one), and let $j = z(a_k)$. Then
 \[
 (z \sigma z^{-1})(j) = z\bigl(\sigma(z^{-1}(j))\bigr) = z\bigl(\sigma(a_k)\bigr) = z(a_{k+1}).
 \]
-For the last entry $a_\ell$, $z(\sigma(a_\ell)) = z(a_1)$.
-If $j \notin z(\operatorname{supp}(\sigma))$, then $z^{-1}(j)$ is fixed by $\sigma$, so $z(\sigma(z^{-1}(j))) = z(z^{-1}(j)) = j$.
-Hence $z \sigma z^{-1}$ acts as the cycle $\bigl(z(a_1)\, z(a_2)\, \dots\, z(a_\ell)\bigr)$.
+If $j$ is not of this form, then $z^{-1}(j)$ is fixed by $\sigma$, so $(z \sigma z^{-1})(j) = z(z^{-1}(j)) = j$.
+Hence $z \sigma z^{-1}$ is the product of the cycles $\bigl(z(a_1)\, \dots\, z(a_\ell)\bigr)\bigl(z(b_1)\, \dots\, z(b_m)\bigr)\cdots$.
 \end{proof}
 \end{content}
 
@@ -2233,7 +2255,7 @@ So, if you think about this example carefully, you'll see that there's nothing h
 
 \begin{content}[Classification of Conjugacy Classes in $S_n$ via Partitions]
 \begin{theorem}[Conjugacy Classes in the Symmetric Group]\label[theorem]{thm:sn-conjugacy-classes-partitions}
-Let $n \ge 1$. Two permutations $\sigma, \tau \in S_n$ are conjugate in $S_n$ if and only if they have the exact same cycle type (i.e., identical cycle lengths in their disjoint cycle decompositions).
+Let $n \ge 1$. Two permutations $\sigma, \tau \in S_n$ are conjugate in $S_n$ if and only if their disjoint cycle decompositions have the same cycle lengths, that is, give the same partition of $n$.
 Consequently, there is a natural bijective correspondence:
 \begin{equation}\label{eq:sn-conjugacy-partitions-bijection}
 \text{Conjugacy classes of } S_n \;\xleftrightarrow{\,1-1\,}\; \text{Partitions of } n.
@@ -2244,7 +2266,7 @@ Consequently, there is a natural bijective correspondence:
 \begin{itemize}
     \item \textbf{Well-Definedness:} By \cref{lem:conjugation-relabeling}, conjugating $\sigma$ by $z$ preserves the lengths of all cycles in its disjoint cycle decomposition. Thus, all elements in a given conjugacy class share the same cycle partition of $n$.
     \item \textbf{Surjectivity:} Given any partition $\lambda = (\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_r)$ of $n$, one can immediately write down a permutation having disjoint cycles of lengths $\lambda_1, \dots, \lambda_r$.
-    \item \textbf{Injectivity:} If two permutations $\sigma, \tau$ have the same cycle structure $\sigma = (a_1 \dots a_k)\dots$ and $\tau = (b_1 \dots b_k)\dots$, we explicitly construct the conjugating element $z \in S_n$ by declaring $z(a_i) := b_i$. Then by \eqref{eq:cycle-conjugate-relabeling}, $z \sigma z^{-1} = \tau$.
+    \item \textbf{Injectivity:} If two permutations $\sigma, \tau$ have the same cycle lengths, $\sigma = (a_1 \dots a_k)\dots$ and $\tau = (b_1 \dots b_k)\dots$ (with the cycles of length $1$ written out too), we explicitly construct the conjugating element $z \in S_n$ by declaring $z(a_i) := b_i$. Then by \eqref{eq:cycle-conjugate-relabeling}, $z \sigma z^{-1} = \tau$.
 \end{itemize}
 \end{steps}
 \end{content}
@@ -2280,14 +2302,13 @@ For an integer $n \ge 1$, the \newterm{partition function} $p(n)$ counts the num
 \begin{equation}\label{eq:partition-def}
 p(n) := \# \left\{ (\lambda_1, \dots, \lambda_k) \in \mathbb{N}^k \;\middle|\; \lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_k \ge 1, \ \sum_{i=1}^k \lambda_i = n \right\}.
 \end{equation}
-By convention, $p(0) := 1$.
 \end{definition}
 
 \begin{example}[Values of $p(n)$ for Small $n$]\label[example]{ex:small-partitions}
 The first few values of $p(n)$ are:
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ccl}
+\begin{tabular}{cc>{\raggedright\arraybackslash}p{9cm}}
 \toprule
 $n$ & $p(n)$ & \textbf{Partitions} \\
 \midrule
@@ -2296,7 +2317,7 @@ $2$ & $2$ & $2, \ 1+1$ \\
 $3$ & $3$ & $3, \ 2+1, \ 1+1+1$ \\
 $4$ & $5$ & $4, \ 3+1, \ 2+2, \ 2+1+1, \ 1+1+1+1$ \\
 $5$ & $7$ & $5, \ 4+1, \ 3+2, \ 3+1+1, \ 2+2+1, \ 2+1+1+1, \ 1+1+1+1+1$ \\
-$6$ & $11$ & $6, \ 5+1, \ 4+2, \ 4+1+1, \ 3+3, \ 3+2+1, \ 3+1+1+1, \ 2+2+2, \ 2+2+1+1, \dots$ \\
+$6$ & $11$ & $6, \ 5+1, \ 4+2, \ 4+1+1, \ 3+3, \ 3+2+1, \ 3+1+1+1, \ 2+2+2, \ 2+2+1+1, \ 2+1+1+1+1, \ 1+1+1+1+1+1$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2341,12 +2362,12 @@ And then I leave it to you: you can walk in Euler's footsteps and prove this thi
 \begin{theorem}[Euler's Product Formula for the Partition Function]\label[theorem]{thm:euler-partition-product}
 The generating function of the partition function $p(n)$ is given by the formal power series identity:
 \begin{equation}\label{eq:euler-partition-product}
-1 + \sum_{n=1}^\infty p(n) q^n = \prod_{k=1}^\infty \frac{1}{1 - q^k}.
+1 + \sum_{n \ge 1} p(n) q^n = \prod_{n \ge 1} \frac{1}{1 - q^n}.
 \end{equation}
 \end{theorem}
 
 \begin{steps}[Algebraic Derivation via Geometric Series]
-Expanding each factor on the right-hand side using the geometric series formula $\frac{1}{1 - q^k} = \sum_{m_k=0}^\infty (q^k)^{m_k}$:
+Going beyond the lecture, which leaves this to the students: write $k$ for the index of the product and expand each factor with the geometric series $\frac{1}{1 - q^k} = \sum_{m_k=0}^\infty (q^k)^{m_k}$:
 \begin{align*}
 \prod_{k=1}^\infty \frac{1}{1 - q^k} &= \prod_{k=1}^\infty \left( 1 + q^k + q^{2k} + q^{3k} + \dots \right) \\
 &= \sum_{m_1, m_2, m_3, \dots \ge 0} q^{1 \cdot m_1 + 2 \cdot m_2 + 3 \cdot m_3 + \dots}.
@@ -2359,16 +2380,17 @@ Interpreting $m_k$ as the number of parts of size $k$, this is precisely the def
 \end{steps}
 \end{content}
 
+% [WORD-SUSPECT: "7k + 5" in the speech; the board first has 7k + 6, which he corrects at 01:29:12, so he may have said "7k + 6" here. Clip 01:27:55-01:28:17 for the user to listen to.]
 \begin{speech}[01:27:25 - 01:29:00]
 Some other crazy things... That's a long time ago.
 
 Ramanujan found lots of crazy things about partitions; I'll tell you a little bit \inlinemetanote{writes: Ramanujan:}.
 
-If you look at the $5$, you can see he says that if you take $p(5k + 4)$, this should be congruent to $0 \bmod 5$ \inlinemetanote{writes: $p(5k + 4) \equiv 0 \pmod 5$}. That's his first congruence, this Ramanujan congruence. If you take $k = 0$, that's what's on the board: $p(4) = 5$.
+If you look at the $5$, you can see he says that if you take $p(5k + 4)$, this should be congruent to $0 \bmod 5$ \inlinemetanote{writes: $p(5k + 4) = 0 \bmod 5$}. That's his first congruence, this Ramanujan congruence. If you take $k = 0$, that's what's on the board: $p(4) = 5$.
 
-And then he also proves that if you take $7k + 5$, this is congruent to $0 \bmod 7$ \inlinemetanote{writes: $p(7k + 5) \equiv 0 \pmod 7$}. That's a really strange thing: that's the first time it occurs ($p(5) = 7$), and he says it's always like that.
+And then he also proves that if you take $7k + 5$, this is congruent to $0 \bmod 7$ \inlinemetanote{writes: $p(7k + 6) = 0 \bmod 7$}. That's a really strange thing: that's the first time it occurs ($p(5) = 7$), and he says it's always like that.
 
-And also $p(11k + 7)$ should be congruent to $0 \bmod 11$ \inlinemetanote{writes: $p(11k + 7) \equiv 0 \pmod{11}$}.
+And also $p(11k + 7)$ should be congruent to $0 \bmod 11$ \inlinemetanote{writes: $p(11k + 7) = 0 \bmod 11$}.
 
 Those are totally wild statements about the properties of partitions. There's a whole list of studies about properties of this partition function; those are just three.
 
@@ -2383,23 +2405,12 @@ And as I said, the whole subject of partitions is intimately connected to the sy
 Okay, good. I'll see you tomorrow. \inlinemetanote{students applaud}
 \end{speech}
 
-\begin{content}[Ramanujan's Partition Congruences (Preliminary Board State)]
-\begin{proposition}[Ramanujan's Partition Congruences (Preliminary)]\label[proposition]{prop:ramanujan-congruences-prelim}
-For all non-negative integers $k \ge 0$, the partition function satisfies the congruences:
-\begin{align}
-p(5k + 4) &\equiv 0 \pmod 5, \label{eq:ram-5-prelim} \\
-p(7k + 5) &\equiv 0 \pmod 7, \label{eq:ram-7-prelim} \\
-p(11k + 7) &\equiv 0 \pmod{11} \quad \textcolor{BrickRed}{\text{(Preliminary Board Slip: written as $7$)}}. \label{eq:ram-11-prelim}
-\end{align}
-\end{proposition}
-\end{content}
-
 \begin{speech}[01:29:00 - 01:29:21]
-This was wrong by the way \inlinemetanote{erases the $7$ in $11k + 7$ and writes $6$}. Ha! $6$, look \inlinemetanote{writes: $p(11k + 6) \equiv 0 \pmod{11}$}. \inlinemetanote{video cuts off}
+This was wrong by the way \inlinemetanote{corrects $7k + 6$ to $7k + 5$ and $11k + 7$ to $11k + 6$}. Ha! $6$, look. \inlinemetanote{video cuts off}
 \end{speech}
 
-\begin{content}[Correction: Ramanujan's Third Congruence]
-\begin{proposition}[Ramanujan's Partition Congruences (Corrected)]\label[proposition]{prop:ramanujan-congruences-corrected}
+\begin{content}[Ramanujan's Partition Congruences]
+\begin{proposition}[Ramanujan's Partition Congruences]\label[proposition]{prop:ramanujan-congruences-corrected}
 For all non-negative integers $k \ge 0$, the partition function satisfies the three famous Ramanujan congruences:
 \begin{align}
 p(5k + 4) &\equiv 0 \pmod 5, \label{eq:ramanujan-5-corrected} \\
@@ -2411,18 +2422,18 @@ p(11k + 6) &\equiv 0 \pmod{11}. \label{eq:ramanujan-11-corrected}
 \checkline[Ramanujan Base Cases]{For $k = 0$: $p(4) = 5 \equiv 0 \pmod 5$, $p(5) = 7 \equiv 0 \pmod 7$, and $p(6) = 11 \equiv 0 \pmod{11}$.}
 \end{content}
 
-\begin{aiNote}[Board Correction: Third Ramanujan Congruence]
+\begin{aiNote}[Board Correction: Two Ramanujan Congruences]
 % [PERSISTENT]
-The lecturer originally wrote $p(11k + 7) \equiv 0 \pmod{11}$ on the blackboard. Right after the students applaud at the end of class, he notices the error, walks back to the chalkboard, and corrects the index to $p(11k + 6) \equiv 0 \pmod{11}$. This matches the base case $k = 0$, where $p(6) = 11 \equiv 0 \pmod{11}$ as recorded in the partition table.
+The lecturer first writes $p(7k + 6) = 0 \bmod 7$ and $p(11k + 7) = 0 \bmod 11$. After the students applaud at the end of class, he walks back to the board and corrects them to $p(7k + 5)$ and $p(11k + 6)$, which match the cases $k = 0$ in the partition table: $p(5) = 7$ and $p(6) = 11$. On the board each congruence reads \qt{$= 0 \bmod m$}; the box writes $\equiv 0 \pmod{m}$.
 \end{aiNote}
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Group Homomorphisms:} A map $f \colon G_1 \to G_2$ preserving products ($f(x y) = f(x) f(y)$) maps identities to identities ($f(e_1) = e_2$) and inverses to inverses ($f(x^{-1}) = f(x)^{-1}$). Its image $\operatorname{Im}(f)$ is a subgroup of $G_2$, and its kernel $\ker(f)$ is a normal subgroup of $G_1$. Homomorphisms satisfy $f$ is injective $\iff \ker(f) = \{e_1\}$ and $f$ is surjective $\iff \operatorname{Im}(f) = G_2$.
-    \item \textbf{Permutation Representation and Sign Homomorphism:} The map $\Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q})$ sending $\sigma \mapsto [v_{\sigma(j)}]$ is an injective homomorphism. Composing with the determinant yields the sign homomorphism $\operatorname{sgn} = \det \circ \Phi_{\mathrm{mat}} \colon S_n \to \{+1, -1\}$. Transpositions have sign $-1$, and an $\ell$-cycle factors into $\ell - 1$ transpositions, giving $\operatorname{sgn}((a_1 \dots a_\ell)) = (-1)^{\ell-1}$.
-    \item \textbf{The Alternating Group $A_n$:} Defined as $A_n := \ker(\operatorname{sgn})$, the subgroup of even permutations of index $[S_n : A_n] = 2$ and order $|A_n| = n!/2$. In $S_4$, $|A_4| = 12$, and $A_4$ is canonically isomorphic to the group of rotational symmetries of the regular tetrahedron ($\operatorname{Rot}(\Delta) \cong A_4$).
-    \item \textbf{Normal Subgroups and Quotient Groups:} A subgroup $N \le G$ is normal ($N \trianglelefteq G$) if $x n x^{-1} \in N$ for all $x \in G$ and $n \in N$. Normality is the exact condition required for the coset multiplication $\bar{x} \cdot \bar{y} := \overline{x y}$ on $G/N$ to be well-defined. The canonical projection $q \colon G \to G/N$ is a surjective homomorphism with $\ker(q) = N$.
-    \item \textbf{The First Isomorphism Theorem:} For any group homomorphism $f \colon G_1 \to G_2$, the induced map $\bar{f} \colon G_1/\ker(f) \to \operatorname{Im}(f)$ is a group isomorphism ($G_1/\ker(f) \cong \operatorname{Im}(f)$), providing a universal decomposition $f = \iota \circ \bar{f} \circ q$. This directly parallels $V_1/\ker(f) \cong \operatorname{Im}(f)$ in linear algebra and $R_1/\ker(f) \cong \operatorname{Im}(f)$ in ring theory.
-    \item \textbf{Conjugacy Classes and Partitions:} Conjugacy ($x \sim_{\mathrm{conj}} y \iff \exists z \in G \colon z x z^{-1} = y$) partitions any group into disjoint conjugacy classes. In $\mathrm{GL}_n(\mathbb{C})$, conjugacy corresponds to matrix similarity and Jordan normal form. In $S_n$, conjugacy corresponds to cycle type, establishing a bijection between conjugacy classes of $S_n$ and integer partitions of $n$. The partition function $p(n)$ is generated by Euler's product $\sum_{n=0}^\infty p(n) q^n = \prod_{k=1}^\infty \frac{1}{1 - q^k}$ and satisfies Ramanujan's congruences modulo $5$, $7$, and $11$.
+    \item \textbf{Group Homomorphisms:} A map $f \colon G_1 \to G_2$ with $f(x y) = f(x) f(y)$ sends $e_1$ to $e_2$ and inverses to inverses, $f(x^{-1}) = f(x)^{-1}$. Its image $\operatorname{Im}(f)$ is a subgroup of $G_2$; its kernel $\ker(f)$ is a subgroup of $G_1$, and even a normal subgroup. Moreover, $f$ is surjective $\iff \operatorname{Im}(f) = G_2$, and $f$ is injective $\iff \ker(f) = \{e_1\}$.
+    \item \textbf{The Matrix Homomorphism and the Sign:} The map $\Phi_{\mathrm{mat}} \colon S_n \to \mathrm{GL}_n(\mathbb{Q})$, $\Phi_{\mathrm{mat}}(\sigma)(v_i) = v_{\sigma(i)}$, is a homomorphism. Composed with the determinant, it gives $\operatorname{Sign} = \det \circ \Phi_{\mathrm{mat}} \colon S_n \to \{\pm 1\}$, whose image is $\{\pm 1\}$. Two-cycles have sign $-1$, and an $\ell$-cycle is a product of $\ell - 1$ two-cycles, so its sign is $(-1)^{\ell - 1}$.
+    \item \textbf{The Alternating Group:} $A_n = \ker(\operatorname{Sign})$ is the subgroup of even permutations. In $S_4$ it has $1 + 3 + 8 = 12$ elements, and it is the group of rotations of the tetrahedron: $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$.
+    \item \textbf{Normal Subgroups and Quotient Groups:} A subgroup $N \le G$ is normal if $x n x^{-1} \in N$ for all $x \in G$ and $n \in N$. Kernels are normal, so $\{e, (1\,2)\} \le S_3$, which is not normal, is not a kernel. For $N$ normal, the product $\bar{x} \cdot \bar{y} = \overline{x y}$ on $G/N$ is well defined, and the quotient map $q \colon G \to G/N$ is a surjective homomorphism with $\ker(q) = N$.
+    \item \textbf{The First Isomorphism Theorem:} For a group homomorphism $f \colon G_1 \to G_2$, $G_1/\ker(f) \cong \operatorname{Im}(f)$: the same triangle as for vector spaces and rings, where only the kind of kernel differs. The proof is left for the next lecture.
+    \item \textbf{Conjugacy Classes and Partitions:} Conjugacy ($x \sim_{\mathrm{conj}} y \iff \exists z \in G \colon z x z^{-1} = y$) is an equivalence relation, and its classes are the conjugacy classes. In $\mathrm{GL}_n(\mathbb{C})$ they correspond to the Jordan normal forms; in $S_n$ to the partitions of $n$, because conjugation only relabels the entries of the cycles. The partition function satisfies Euler's formula $1 + \sum_{n \ge 1} p(n) q^n = \prod_{n \ge 1} \frac{1}{1 - q^n}$ and Ramanujan's congruences modulo $5$, $7$ and $11$.
 \end{itemize}
 \end{overview}
