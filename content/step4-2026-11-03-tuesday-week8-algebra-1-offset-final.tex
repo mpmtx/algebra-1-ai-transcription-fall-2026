@@ -2,8 +2,8 @@
 % Built into the book on 2026-11-07 by Claude (claude-opus-5-5), from the pipeline's step-4
 % output below: week-tagged labels, \recap lines and recall anchors for Weeks 2, 4 and 7, all 245
 % board notes compared with 22 frames (the board writes Sign, the subset sign, def over =, and
-% p(7k+6), p(11k+7), both corrected by him at the end), proofs he did not give marked "Going beyond
-% the lecture", names and facts he did not use moved to aiNotes, and the fixes of a review.
+% p(7k+6), p(11k+7), both corrected by him at the end), proofs he did not give marked "(beyond the lecture)"
+% in the title, names and facts he did not use moved to aiNotes, and the fixes of a review.
 % ==========================================
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
@@ -721,8 +721,8 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism. The \newterm{kernel} of $f$,
 Let $f \colon G_1 \to G_2$ be a group homomorphism. Then $\ker(f)$ is a subgroup of $G_1$, denoted $\ker(f) \le G_1$.
 \end{proposition}
 
-\begin{proof}
-Going beyond the lecture, which leaves this to the students: we check the three subgroup axioms.
+\begin{proof}[Proof (beyond the lecture)]
+The lecture leaves this to the students. We check the three subgroup axioms.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity Element:} Since $f(e_1) = e_2$, we have $e_1 \in \ker(f)$.
     \item \textbf{Closure under Products:} Let $x, y \in \ker(f)$, so $f(x) = e_2$ and $f(y) = e_2$. By the homomorphism property:
@@ -899,8 +899,8 @@ Consequently, the sign of an $\ell$-cycle is given by:
 \end{equation}
 \end{lemma}
 
-\begin{proof}
-Going beyond the lecture, which checks $(a\,b\,c) = (a\,b)(b\,c)$ and leaves the general case to the students: we trace the product from right to left (\cref{rem:composition-order}) on each entry $a_j$; elements outside the cycle are fixed by every factor.
+\begin{proof}[Proof (beyond the lecture)]
+The lecture checks $(a\,b\,c) = (a\,b)(b\,c)$ and leaves the general case to the students. We trace the product from right to left (\cref{rem:composition-order}) on each entry $a_j$; elements outside the cycle are fixed by every factor.
 \begin{itemize}
     \item \textbf{Element $a_1$:} The first $\ell - 2$ transpositions $(a_{\ell-1}\, a_\ell), \dots, (a_2\, a_3)$ fix $a_1$. Then the final transposition $(a_1\, a_2)$ sends $a_1 \mapsto a_2$.
     \item \textbf{Element $a_j$ ($1 < j < \ell$):} The transpositions $(a_{\ell-1}\, a_\ell), \dots, (a_j\, a_{j+1})$ fix $a_j$ until $(a_j\, a_{j+1})$ is reached, which sends $a_j \mapsto a_{j+1}$. The subsequent transpositions $(a_{j-1}\, a_j), \dots, (a_1\, a_2)$ do not contain $a_{j+1}$ and thus fix it. Therefore $a_j \mapsto a_{j+1}$.
@@ -1242,10 +1242,10 @@ Let $f \colon G_1 \to G_2$ be a group homomorphism.
 \end{enumerate}
 \end{lemma}
 
-\begin{proof}
+\begin{proof}[Proof (part 2 beyond the lecture)]
 \textbf{1. Surjectivity:} By definition, $f$ is surjective if every $y \in G_2$ has a pre-image $x \in G_1$ with $f(x) = y$, which is precisely the statement $\operatorname{Im}(f) = G_2$.
 
-\textbf{2. Injectivity:} Going beyond the lecture, which leaves this part to the students.
+\textbf{2. Injectivity (beyond the lecture):} The lecture leaves this part to the students.
 
 \textbf{($\implies$):} Assume $f$ is injective. If $x \in \ker(f)$, then $f(x) = e_2 = f(e_1)$. Since $f$ is injective, this forces $x = e_1$. Hence $\ker(f) = \{e_1\}$.
 
@@ -1732,8 +1732,8 @@ Let $N$ be a normal subgroup of $G$. The pair $(G/N, \cdot)$ with the multiplica
 \end{equation}
 \end{proposition}
 
-\begin{proof}
-Going beyond the lecture, which leaves these checks to the students.
+\begin{proof}[Proof (beyond the lecture)]
+The lecture leaves these checks to the students.
 
 \textbf{1. Associativity:} For all $\bar{x}, \bar{y}, \bar{z} \in G/N$:
 \[
@@ -1763,8 +1763,8 @@ satisfies:
 \end{enumerate}
 \end{proposition}
 
-\begin{proof}
-Going beyond the lecture, which leaves this to the students.
+\begin{proof}[Proof (beyond the lecture)]
+The lecture leaves this to the students.
 
 \textbf{1. Homomorphism:} For all $x, y \in G$, by definition of the multiplication on $G/N$:
 \[
@@ -1817,8 +1817,8 @@ G_1 / \ker(f) \cong \operatorname{Im}(f).
 \end{equation}
 \end{theorem}
 
-\begin{proof}
-Going beyond the lecture, which says that the proof is the same as for rings and gives it in the next lecture (\cref{thm:first-isomorphism-theorem}). Set $K := \ker(f)$, a normal subgroup of $G_1$ by \cref{prop:kernel-normal}, and define $\bar{f} \colon G_1 / K \to \operatorname{Im}(f)$ by
+\begin{proof}[Proof (beyond the lecture)]
+The lecture says that the proof is the same as for rings and gives it in the next lecture (\cref{thm:first-isomorphism-theorem}). Set $K := \ker(f)$, a normal subgroup of $G_1$ by \cref{prop:kernel-normal}, and define $\bar{f} \colon G_1 / K \to \operatorname{Im}(f)$ by
 \begin{equation}\label{eq:induced-iso-map}
 \bar{f}(\bar{x}) := f(x) \quad \text{for all } x \in G_1.
 \end{equation}
@@ -2005,8 +2005,8 @@ Well, one thing you're not surprised by: the neutral element is by itself. The n
 The relation $\sim_{\mathrm{conj}}$ is an equivalence relation on $G$.
 \end{proposition}
 
-\begin{proof}
-Going beyond the lecture, which states this without proof.
+\begin{proof}[Proof (beyond the lecture)]
+The lecture states this without proof.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Reflexivity:} For any $x \in G$, $e \cdot x \cdot e^{-1} = x$, so $x \sim_{\mathrm{conj}} x$.
     \item \textbf{Symmetry:} If $y = z x z^{-1}$, then $x = z^{-1} y z = z^{-1} y (z^{-1})^{-1}$, so $y \sim_{\mathrm{conj}} x$.
@@ -2231,8 +2231,8 @@ z \sigma z^{-1} = \bigl(z(a_1)\, z(a_2)\, \dots\, z(a_\ell)\bigr)\bigl(z(b_1)\, 
 \end{equation}
 \end{lemma}
 
-\begin{proof}
-Going beyond the lecture, which works out one example, $z (1\,2\,3) z^{-1} = (6\,8\,17)$, and leaves the general case to the students until the next lecture (\cref{thm:conjugation-sn-formula}). Let $a_k$ be an entry of one of the cycles of $\sigma$, with $a_{k+1}$ the next entry of that cycle ($a_1$ after the last one), and let $j = z(a_k)$. Then
+\begin{proof}[Proof (beyond the lecture)]
+The lecture works out one example, $z (1\,2\,3) z^{-1} = (6\,8\,17)$, and leaves the general case to the students until the next lecture (\cref{thm:conjugation-sn-formula}). Let $a_k$ be an entry of one of the cycles of $\sigma$, with $a_{k+1}$ the next entry of that cycle ($a_1$ after the last one), and let $j = z(a_k)$. Then
 \[
 (z \sigma z^{-1})(j) = z\bigl(\sigma(z^{-1}(j))\bigr) = z\bigl(\sigma(a_k)\bigr) = z(a_{k+1}).
 \]
@@ -2366,8 +2366,8 @@ The generating function of the partition function $p(n)$ is given by the formal 
 \end{equation}
 \end{theorem}
 
-\begin{steps}[Algebraic Derivation via Geometric Series]
-Going beyond the lecture, which leaves this to the students: write $k$ for the index of the product and expand each factor with the geometric series $\frac{1}{1 - q^k} = \sum_{m_k=0}^\infty (q^k)^{m_k}$:
+\begin{steps}[Algebraic Derivation via Geometric Series (beyond the lecture)]
+The lecture leaves this to the students. Write $k$ for the index of the product and expand each factor with the geometric series $\frac{1}{1 - q^k} = \sum_{m_k=0}^\infty (q^k)^{m_k}$:
 \begin{align*}
 \prod_{k=1}^\infty \frac{1}{1 - q^k} &= \prod_{k=1}^\infty \left( 1 + q^k + q^{2k} + q^{3k} + \dots \right) \\
 &= \sum_{m_1, m_2, m_3, \dots \ge 0} q^{1 \cdot m_1 + 2 \cdot m_2 + 3 \cdot m_3 + \dots}.
