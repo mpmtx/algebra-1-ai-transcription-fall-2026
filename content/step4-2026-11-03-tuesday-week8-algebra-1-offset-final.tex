@@ -1818,7 +1818,7 @@ G_1 / \ker(f) \cong \operatorname{Im}(f).
 \end{theorem}
 
 \begin{proof}
-Going beyond the lecture, which says that the proof is the same as for rings and returns to it in the next lecture. Set $K := \ker(f)$, a normal subgroup of $G_1$ by \cref{prop:kernel-normal}, and define $\bar{f} \colon G_1 / K \to \operatorname{Im}(f)$ by
+Going beyond the lecture, which says that the proof is the same as for rings and gives it in the next lecture (\cref{thm:first-isomorphism-theorem}). Set $K := \ker(f)$, a normal subgroup of $G_1$ by \cref{prop:kernel-normal}, and define $\bar{f} \colon G_1 / K \to \operatorname{Im}(f)$ by
 \begin{equation}\label{eq:induced-iso-map}
 \bar{f}(\bar{x}) := f(x) \quad \text{for all } x \in G_1.
 \end{equation}
@@ -2103,7 +2103,7 @@ Every matrix $A \in \mathrm{GL}_n(\mathbb{C})$ is conjugate to a Jordan matrix $
 
 \begin{aiNote}[Beyond the Lecture: More on Conjugacy Classes]
 % [PERSISTENT, ADDITION]
-Textbooks write the conjugacy class of $x$ as $\operatorname{Cl}(x)$ or $x^G$. An element $x$ is alone in its class exactly when $z x z^{-1} = x$ for all $z \in G$, that is, when $x$ commutes with every element of $G$; these elements form the \emph{center} $Z(G)$. The restatement in \cref{prop:normal-subgroup-conjugates} says that a subgroup is normal exactly when it is a union of conjugacy classes. And conjugate matrices in $\mathrm{GL}_n(\mathbb{C})$ are called \emph{similar} in linear algebra.
+Textbooks write the conjugacy class of $x$ as $\operatorname{Cl}(x)$ or $x^G$. An element $x$ is alone in its class exactly when $z x z^{-1} = x$ for all $z \in G$, that is, when $x$ commutes with every element of $G$; these elements form the \emph{center} $Z(G)$, which the next lecture meets as the kernel of conjugation (\cref{def:center-of-group}). The restatement in \cref{prop:normal-subgroup-conjugates} says that a subgroup is normal exactly when it is a union of conjugacy classes. And conjugate matrices in $\mathrm{GL}_n(\mathbb{C})$ are called \emph{similar} in linear algebra.
 \end{aiNote}
 
 \subsection{Conjugacy Classes in the Symmetric Group and Partitions}
@@ -2232,7 +2232,7 @@ z \sigma z^{-1} = \bigl(z(a_1)\, z(a_2)\, \dots\, z(a_\ell)\bigr)\bigl(z(b_1)\, 
 \end{lemma}
 
 \begin{proof}
-Going beyond the lecture, which works out one example, $z (1\,2\,3) z^{-1} = (6\,8\,17)$, and leaves the general case to the students. Let $a_k$ be an entry of one of the cycles of $\sigma$, with $a_{k+1}$ the next entry of that cycle ($a_1$ after the last one), and let $j = z(a_k)$. Then
+Going beyond the lecture, which works out one example, $z (1\,2\,3) z^{-1} = (6\,8\,17)$, and leaves the general case to the students until the next lecture (\cref{thm:conjugation-sn-formula}). Let $a_k$ be an entry of one of the cycles of $\sigma$, with $a_{k+1}$ the next entry of that cycle ($a_1$ after the last one), and let $j = z(a_k)$. Then
 \[
 (z \sigma z^{-1})(j) = z\bigl(\sigma(z^{-1}(j))\bigr) = z\bigl(\sigma(a_k)\bigr) = z(a_{k+1}).
 \]
