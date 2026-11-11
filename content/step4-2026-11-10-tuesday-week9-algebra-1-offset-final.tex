@@ -1,0 +1,2380 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-11-10-2026-tuesday-week9-Algebra_1-offset-final.tex
+% Input: step3-11-10-2026-tuesday-week9-Algebra_1-offset-speech_refined.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-11-11 10:32:00
+% Thought summaries: step4-11-10-2026-tuesday-week9-Algebra_1-offset-final-thoughts.md
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 218'420 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 218'420 (neu verrechneter Input)
+%   - Output Tokens       : 50'318 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 16'122 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-11-10-2026-tuesday-week9-Algebra_1-offset-speech_refined.tex
+% Input: step2-11-10-2026-tuesday-week9-Algebra_1-offset-merged.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 65535
+% ThinkingBudget: 4096
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-11-11 10:16:34
+% Thought summaries: step3-11-10-2026-tuesday-week9-Algebra_1-offset-speech_refined-thoughts.md
+% Non-speech guard: restored 1 of 66 segments outside speech from the input (input line 277); kept 1 flag line(s)
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 518'122 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 518'122 (neu verrechneter Input)
+%   - Output Tokens       : 50'324 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 27'884 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-11-10-2026-tuesday-week9-Algebra_1-offset-merged.tex
+% Input: step1-11-10-2026-tuesday-week9-Algebra_1-all-offset.tex
+% Model: gemini-3.8-flash
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: MEDIUM
+% Processed on: 2026-11-11 01:07:32
+% Thought summaries: step2-11-10-2026-tuesday-week9-Algebra_1-offset-merged-thoughts.md
+% ------------------------------------------
+% Token Usage (2 Request(s)):
+%   - Total Prompt Tokens : 473'289 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 473'289 (neu verrechneter Input)
+%   - Output Tokens       : 51'684 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 17'724 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 4 part(s) combined
+% Output: step1-11-10-2026-tuesday-week9-Algebra_1-all-offset.tex
+% Source video: 11-10-2026-tuesday-week9-Algebra_1.mp4
+% Model: gemini-3.8-flash
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 65535
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-11-11 00:43:29
+% ------------------------------------------
+% Parts:
+%   - Part 1: 11-10-2026-tuesday-week9-Algebra_1-part1.mp4 | start 00:00:00 | model gemini-3.8-flash | processed 2026-11-10 23:09:43 | prompt 489'355 | output 15'306 | thinking 23'948 | aus Cache
+%   - Part 2: 11-10-2026-tuesday-week9-Algebra_1-part2.mp4 | start 00:20:05 | model gemini-3.8-flash | processed 2026-11-10 23:20:27 | prompt 505'340 | output 20'409 | thinking 32'546 | aus Cache
+%   - Part 3: 11-10-2026-tuesday-week9-Algebra_1-part3.mp4 | start 00:40:10 | model gemini-3.8-flash | processed 2026-11-11 00:34:27 | prompt 526'112 | output 16'069 | thinking 31'366
+%   - Part 4: 11-10-2026-tuesday-week9-Algebra_1-part4.mp4 | start 01:00:15 | model gemini-3.8-flash | processed 2026-11-11 00:43:29 | prompt 542'452 | output 13'411 | thinking 13'418
+% ------------------------------------------
+% Token Usage of this run (2 Request(s)):
+%   - Total Prompt Tokens : 1'068'564 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 1'068'564 (neu verrechneter Input)
+%   - Output Tokens       : 29'480 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 44'784 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 01:24:20
+
+\lecturechapter[9]{Tuesday}{10 Nov}{10 November 2026}{Cosets, Normal Subgroups, Group Actions, and Cayley's Theorem}
+
+\begin{overview}[Course Content Overview]
+This lecture explores foundational structural concepts in group theory, bridging quotient structures, symmetry groups, and group actions:
+\begin{itemize}
+    \item \textbf{Cosets and Normality:} We review the equivalence relation from Lagrange's theorem, formalize left versus right cosets ($xH$ and $Hx$), prove that $xH = Hx$ whenever $H \triangleleft G$, and prove that every subgroup of index $2$ is automatically normal.
+    \item \textbf{The Subgroup Correspondence Theorem:} In direct parallel to the ideal correspondence for quotient rings, we establish the lattice bijection between subgroups of $G$ containing $N \triangleleft G$ and all subgroups of $\faktor{G}{N}$, noting that the correspondence preserves normality.
+    \item \textbf{Groups of Prime Order and Classical Symmetries:} We demonstrate that every group of prime order is cyclic ($G \cong \mathbb{Z}/p\mathbb{Z}$), explore rotational symmetry groups of the Platonic solids ($A_4, S_4, A_5$) via geometric duality, and introduce planar dihedral groups ($D_6 \cong S_3, D_8$).
+    \item \textbf{Testing Group Isomorphisms:} We analyze classical isomorphism questions distinguishing groups via structural invariants (divisibility, cyclic generation, torsion elements, vector space dimensions over $\mathbb{F}_2$ via modulo $2$ reduction, and Hamel bases over $\mathbb{Q}$ yielding $\mathbb{R} \cong \mathbb{C}$ under the Axiom of Choice), concluding with the structure theorem $(\mathbb{Q}^*, \cdot, 1) \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty$.
+    \item \textbf{Group Actions and Permutation Representations:} We define group actions $G \curvearrowright T$ via action maps $\Phi \colon G \times T \to T$ and prove their equivalence to permutation representations $\sigma \colon G \to \operatorname{Sym}(T)$. We analyze canonical examples ($S_n$ on $\{1, \dots, n\}$, rotational actions on simplicial features of the tetrahedron, $\operatorname{GL}_n(\mathbb{C})$ on $\mathbb{C}^n$, and $\operatorname{U}(1)$ on $\mathbb{C}$).
+    \item \textbf{Actions on the Group Itself and Cayley's Theorem:} We study the left translation action ($g \cdot h = gh$) and prove Cayley's Theorem that every finite group of order $n$ embeds into $S_n$. Finally, we investigate the conjugation action ($g \cdot h = ghg^{-1}$), establishing its triviality on abelian groups and previewing its role in the Sylow theorems.
+\end{itemize}
+\end{overview}
+
+\section{Cosets and Quotient Sets}
+
+\subsection{Equivalence Relations and Coset Partitions}
+
+\begin{speech}[00:00:00 - 00:02:05]
+Okay, so, for the past week or two, we've been thinking about groups. So, $G$ is a group \inlinemetanote{writes: $G$ is group} and the idea of a subgroup \inlinemetanote{writes: $H \subset G$ subgroup}.
+
+I wanted to say some things: some things we've said before and also some things maybe said now slightly differently. So, $H$ is a subgroup. We proved this theorem of Lagrange that, in the case where everything is finite, the order of the subgroup divides the order of the group. And in the proof, there was a construction that's very important. So, in the proof of Lagrange \inlinemetanote{writes: In the proof of Lagrange}, we defined an equivalence relation which had to do with $H$, and this was if there exists an $h$ in $H$ such that this holds: \inlinemetanote{writes: $x \sim_H y \stackrel{\text{def}}{\iff} x h = y, \ \exists h \in H$}.
+
+And if you remember, the outcome of this equivalence relation was that it divided the set $G$ into equivalence classes \inlinemetanote{writes: $G$ into equiv. classes} for this equivalence relation, and actually all of those equivalence classes had a size which was in bijective correspondence to $H$. So, the part I wanted to just say here is that here we have $G$... It's very common to use this symbol, which is a quotient symbol. That's a little unfortunate, but it's very common to use this symbol for the set of equivalence classes \inlinemetanote{writes: $\faktor{G}{H} \longleftarrow \text{set of equiv. classes of eq.}$} of our equivalence relation.
+
+And there are two unfortunate things about this notation. One is because, later, we defined a group structure on the set of equivalence classes, but not in the context of a subgroup, but in the context of a normal subgroup.
+\end{speech}
+
+\begin{content}[Review: The Equivalence Relation from Lagrange's Theorem]
+Let $G$ be a group and $H \subset G$ a subgroup.
+
+\begin{definition}[Left Coset Equivalence Relation]\label[definition]{def:left-coset-equivalence}
+We define a binary relation $\sim_H$ on the elements of $G$ by:
+\begin{equation}\label{eq:left-equiv-rel}
+x \sim_H y \overset{\text{def}}{\iff} xh = y \quad \text{for some } h \in H.
+\end{equation}
+Equivalently, $x \sim_H y \iff x^{-1}y \in H$.
+\end{definition}
+
+\begin{steps}[Equivalence Classes and the Partition of $G$]
+The relation $\sim_H$ is an equivalence relation on $G$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Reflexivity:} For all $x \in G$, $x \cdot e = x$ with $e \in H$, so $x \sim_H x$.
+    \item \textbf{Symmetry:} If $x \sim_H y$, then $xh = y$ for some $h \in H$. Multiplying by $h^{-1} \in H$ on the right gives $y h^{-1} = x$, hence $y \sim_H x$.
+    \item \textbf{Transitivity:} If $x \sim_H y$ and $y \sim_H z$, then $xh_1 = y$ and $yh_2 = z$ for $h_1, h_2 \in H$. Substituting yields $x(h_1 h_2) = z$. Since $h_1 h_2 \in H$, it follows that $x \sim_H z$.
+\end{enumerate}
+Consequently, $\sim_H$ partitions the set $G$ into disjoint equivalence classes. The equivalence class containing $x \in G$ is the \newterm{left coset}:
+\[
+[x]_{\sim_H} = \{ y \in G \mid x \sim_H y \} = \{ xh \mid h \in H \} =: xH.
+\]
+Each equivalence class $xH$ is in bijection with $H$ via the mapping $h \mapsto xh$, so $|xH| = |H|$ for every $x \in G$.
+\end{steps}
+
+\begin{notation}[The Quotient Set $\faktor{G}{H}$]\label[notation]{not:quotient-set-gh}
+We denote the set of all equivalence classes of $\sim_H$ by the quotient notation:
+\[
+\faktor{G}{H} \longleftarrow \text{set of equivalence classes of } \sim_H.
+\]
+\end{notation}
+\end{content}
+
+\subsection{Left Cosets vs. Right Cosets}
+
+\begin{speech}[00:02:05 - 00:03:37]
+So, as I said, there are two drawbacks for this notation. First is: if $H$ is a normal subgroup of $G$ \inlinemetanote{writes: $\bullet$ If $H$ is normal subgp of $G$,}, then we proved that this set of equivalence classes carries a product and a neutral element, and this is the quotient group, sorry \inlinemetanote{writes: then we prove $(\faktor{G}{H}, \cdot, e) \text{ eq. quotient group}$}.
+
+When it happens that $H$ is normal, the set of equivalence classes has this additional structure of being a group. If $H$ is not normal, we can still think about the set of equivalence classes, but it's not necessarily a group. So, this is a little confusing. Is this more or less okay?
+
+And there's another level of confusion, which is going to come today, which is: why did we define the set of equivalence classes this way?
+
+Here, the way we defined it is $G \bmod H$ is the set of equivalence classes, and they're what are called the left cosets \inlinemetanote{writes: Left cosets}. They're the sets $xH$ \inlinemetanote{writes: $xH$}, because the way the equivalence relation works is $y$ is equivalent to $x$ if it differs by a multiplication by $h$ on the right. So, this is called a left coset because $x$ sits on the left, okay? Is that clear?
+\end{speech}
+
+\begin{content}[Quotient Set vs. Quotient Group]
+\begin{remark}[The Two Drawbacks of the Notation $\faktor{G}{H}$]\label[remark]{rem:drawbacks-gh-notation}
+The notation $\faktor{G}{H}$ carries two potential sources of confusion:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Group Structure vs. Plain Set:} The set of equivalence classes $\faktor{G}{H}$ is \emph{always} well-defined as a set of subsets partitioning $G$. However, $\faktor{G}{H}$ inherits a natural group operation:
+    \[
+    (xH) \cdot (yH) := (xy)H
+    \]
+    if and only if $H$ is a \newterm{normal subgroup} of $G$ ($H \triangleleft G$). When $H$ is not normal, this operation is ill-defined (depends on the choice of representatives), and $\faktor{G}{H}$ remains merely a partitioned set without group structure.
+    \item \textbf{Left vs. Right Handedness:} Defining equivalence by multiplying by $h \in H$ on the right produces sets of the form $xH$, in which the representative $x$ stands on the left.
+\end{enumerate}
+\end{remark}
+
+\begin{definition}[Left Coset]\label[definition]{def:left-coset}
+For $x \in G$, the \newterm{left coset} of $H$ containing $x$ is:
+\[
+xH := \{ xh \mid h \in H \}.
+\]
+The set of all left cosets is denoted by $(\faktor{G}{H})_L := \{ xH \mid x \in G \}$.
+\end{definition}
+\end{content}
+
+\begin{speech}[00:03:37 - 00:05:35]
+But we could have defined another equivalence relation \inlinemetanote{writes: We could have defined}. So, now we go back and say, be very clear, that this was about the left cosets. We could define another equivalence relation, and maybe I put a hat here or something like this to show it's a different equivalence relation \inlinemetanote{writes: $x \sim_{\widehat{H}} y$}. It's now just the same equation, but you put $h$ on the other side, which in group theory is always a different thing in general. So, this is where $h$ is on this side: \inlinemetanote{writes: $\stackrel{\text{def}}{\iff} hx = y \ \exists h \in H$}.
+
+We could have just started the whole thing, and if you did that, you would prove Lagrange's theorem, just as we did, because left or right doesn't matter that much: you stay all on the other side. You'd get a different proof of Lagrange's theorem, but you'd have a different notion of these cosets.
+
+This is a definition, and if we use this, we get a different notion of cosets \inlinemetanote{writes: $\rightsquigarrow \text{defines notion of cosets}$}. And you can imagine that these are called right cosets. So, this is like $G \bmod H$, and now maybe it's nice to somehow indicate that the theory we're doing is left cosets, and you can do now $G \bmod H$ with right cosets \inlinemetanote{writes: $(\faktor{G}{H})_L$ and $(\faktor{G}{H})_R$}. This is the set of right cosets \inlinemetanote{writes: $\text{set of right cosets}$}.
+
+The equivalence classes here, the set of right cosets, look not like this, but where the element is on the right: \inlinemetanote{writes: $\{ Hx \}$}. Okay? We could have just proven Lagrange's theorem using right cosets. There's nothing particularly important about left or right, okay?
+
+So, this is essentially a confusing discussion that's not telling you any more math, it's just confusing you.
+\end{speech}
+
+\begin{content}[Left and Right Coset Formulations]
+\begin{definition}[Right Coset Equivalence Relation]\label[definition]{def:right-coset-equivalence}
+We can define an alternative equivalence relation $\sim_{\widehat{H}}$ on $G$ by multiplying by $h \in H$ on the left:
+\begin{equation}\label{eq:right-equiv-rel}
+x \sim_{\widehat{H}} y \overset{\text{def}}{\iff} hx = y \quad \text{for some } h \in H.
+\end{equation}
+Equivalently, $x \sim_{\widehat{H}} y \iff yx^{-1} \in H$.
+\end{definition}
+
+\begin{definition}[Right Coset]\label[definition]{def:right-coset}
+The equivalence class of $x \in G$ under $\sim_{\widehat{H}}$ is the \newterm{right coset}:
+\[
+Hx := \{ hx \mid h \in H \}.
+\]
+The set of all right cosets is denoted by $(\faktor{G}{H})_R := \{ Hx \mid x \in G \}$.
+\end{definition}
+
+\begin{steps}[Comparison of Coset Collections]
+On the blackboard, the two parallel notions of coset spaces are summarized as:
+\[
+\left\{
+\begin{aligned}
+(\faktor{G}{H})_L &= \{ \text{left cosets} \} = \{ xH \mid x \in G \}, \\[1ex]
+(\faktor{G}{H})_R &= \{ \text{right cosets} \} = \{ Hx \mid x \in G \}.
+\end{aligned}
+\right.
+\]
+Both collections partition $G$ into subsets of identical cardinality $|H|$. Lagrange's theorem could be proved identically using right cosets instead of left cosets, since the bijection $h \mapsto hx$ demonstrates $|Hx| = |H|$ for every $x \in G$.
+\end{steps}
+\end{content}
+
+\subsection{Equality of Left and Right Cosets for Normal Subgroups}
+
+\begin{speech}[00:05:35 - 00:06:38]
+So, then we come to some kind of new perspectives on that. As I said, the way to think about it is if you have a subgroup of a group, you can consider this equivalence relation on the left, the equivalence relation on the right; you get left cosets, right cosets.
+
+If it happens you're so lucky as your group is normal, then you get a group structure on the set of cosets, and you could say, \qt{Well, do you get a group structure on the right cosets or left cosets?} That's a good question.
+
+And what do you think the answer to that is?
+
+It's a strange question.
+
+So, the answer is a very good answer: if $H$ is a normal subgroup, then the set of left cosets equals the set of right cosets. That's the right answer.
+
+Is that what you were going to say?
+\end{speech}
+
+\begin{student}[Student Answer]
+You already gave the answer.
+\end{student}
+
+\begin{speech}[00:06:39 - 00:06:40]
+What?
+\end{speech}
+
+\begin{student}[Student Answer, continued]
+You already gave the answer.
+\end{student}
+
+\begin{speech}[00:06:41 - 00:07:35]
+I just gave it now! You're too late.
+
+So, if $H$ is a normal subgroup, then we're going to get the left cosets are the same as right cosets \inlinemetanote{writes: If $H$ is a normal subgp of $G$, the lefts are same as right cosets}. This is very philosophically comforting, because it says that you could have taken either of these paths, and you're going to get the same group at the end. And what's the proof of that? So, we have to have a proof \inlinemetanote{writes: Proof:}.
+
+Suppose we have here $H$ inside $G$ is normal \inlinemetanote{writes: $H \subset G$ is normal}, and I take an $x$ in $G$ \inlinemetanote{writes: $x \in G$}, then I consider \inlinemetanote{writes: then I consid.} this left coset \inlinemetanote{writes: $xH$}.
+\end{speech}
+
+\begin{speech}[00:07:35 - 00:09:50]
+So, I consider this left coset and I want to show that it's the right coset. What's an element in here? An element in here is something $xh$, all right? \inlinemetanote{writes: $xh \in xH$}
+
+But then I know, since $H$ is normal \inlinemetanote{writes: $H$ is normal}, this implies that $x h x^{-1}$ is in $H$ \inlinemetanote{writes: $\implies x h x^{-1} \in H$}. That's the definition of normal, right? So, this means that $x h x^{-1}$ is equal to somebody else in $H$, $\widehat{h}$ \inlinemetanote{writes: $x h x^{-1} = \widehat{h}$}. And if I rewrite this, if I right-multiply by $x$, I get this: \inlinemetanote{writes: $xh = \widehat{h}x$}.
+
+So, this means that this element, which was in the left coset, is actually also in the right coset \inlinemetanote{writes: $xh \in Hx$}, okay? And then you can do it the other way around, too, by symmetry.
+
+There's something that's kind of satisfying about that: there are these two paths, you can go left or right, but if you're normal, the left cosets are just the same as the right cosets. And so there's not like two different ideas of quotient groups; it's only one idea of quotient group.
+
+Okay. This was a kind of pedantic point, but it's important. And I would say that some other things about language is that if someone writes $H$ is a subgroup of $G$ \inlinemetanote{writes: $H \subset G$ subgroup}, then you have to decide whether this person means a normal subgroup or any subgroup, and it's a very different way of thinking about groups.
+
+The subgroups, whether it's normal or not, is extremely important. So, when you meet a subgroup, you should decide whether it's normal --- or maybe it's a hard question, you don't know the answer ---, but you should at least consider it, because it changes the way you think about it.
+
+If someone writes $N$ is a subgroup of $G$ \inlinemetanote{writes: $N \subset G$}, this is a strong indication that person means it's normal, but it doesn't always. I'd say that's kind of the convention. So, this usually means normal \inlinemetanote{writes: $\rightsquigarrow \text{usually means normal}$}, but you should ask!
+
+And then often there's some notation with triangles and everything, but, you know, I think the best is when you meet a subgroup, then you should investigate yourself whether the person means it's normal or not.
+\end{speech}
+
+\begin{content}[Left and Right Coset Coincidence for Normal Subgroups]
+\begin{proposition}[Equality of Left and Right Cosets]\label[proposition]{prop:normal-cosets-equal}
+Let $G$ be a group and $H \subset G$ a subgroup. If $H$ is normal in $G$ ($H \triangleleft G$), then for every $x \in G$:
+\begin{equation}\label{eq:coset-equality}
+xH = Hx.
+\end{equation}
+Consequently, $(\faktor{G}{H})_L = (\faktor{G}{H})_R$.
+\end{proposition}
+
+\begin{proof}
+Let $x \in G$. We demonstrate mutual containment $xH \subseteq Hx$ and $Hx \subseteq xH$:
+
+\textbf{Inclusion $xH \subseteq Hx$:}
+Let $y \in xH$. Then $y = xh$ for some $h \in H$. Since $H$ is normal in $G$, the conjugate $x h x^{-1}$ belongs to $H$:
+\[
+x h x^{-1} \in H.
+\]
+Hence, there exists an element $\widehat{h} \in H$ such that:
+\[
+x h x^{-1} = \widehat{h}.
+\]
+Multiplying both sides on the right by $x$, we obtain:
+\[
+xh = \widehat{h}x.
+\]
+Because $\widehat{h} \in H$, the element $\widehat{h}x$ lies in the right coset $Hx$. Thus, $y = xh \in Hx$, which proves $xH \subseteq Hx$.
+
+\textbf{Inclusion $Hx \subseteq xH$:}
+By symmetry, let $y \in Hx$, so $y = hx$ for some $h \in H$. Since $H$ is normal, $x^{-1} h (x^{-1})^{-1} = x^{-1} h x \in H$. Setting $h' := x^{-1} h x \in H$ and multiplying by $x$ on the left yields $xh' = hx = y \in xH$.
+
+Therefore, $xH = Hx$ for all $x \in G$.
+\end{proof}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:09:50
+% topic: Equivalence relations, left vs. right cosets, and equality under normality
+% board_state: def:left-coset-equivalence, def:right-coset-equivalence, prop:normal-cosets-equal
+% next_goal: Introduce index 2 subgroups and prove they are always normal
+% open_loops: none
+\end{hidden}
+
+\begin{content}[Notational Conventions for Subgroups and Normal Subgroups]
+\begin{notation}[Subgroup and Normal Subgroup Symbols]\label[notation]{not:subgroup-symbols}
+Mathematical literature employs the following naming conventions:
+\begin{itemize}
+    \item Writing $H \subset G$ or $H \le G$ designates an arbitrary subgroup of $G$.
+    \item The letter $N$ (as in $N \subset G$) is conventionally reserved for a \newterm{normal subgroup}.
+    \item Many texts write $N \triangleleft G$ or $N \trianglelefteq G$ to explicitly denote normality, whereas the lecture emphasizes verifying the definition $gNg^{-1} = N$ directly.
+\end{itemize}
+\end{notation}
+\end{content}
+
+\section{Subgroups of Index 2}
+
+\subsection{Normality of Index-2 Subgroups}
+
+\begin{speech}[00:09:50 - 00:11:22]
+Okay, and now if you really understood this well, there's a little proposition which is totally standard in group theory \inlinemetanote{writes: Prop.}.
+
+It says: suppose I have a subgroup of index $2$ \inlinemetanote{writes: Suppose $H \subset G$ of index 2}.
+
+As an aside, index $2$ means that the equivalence class $G \bmod H$ --- remember, I'm not assuming it's normal, it's just the set of equivalence classes --- is equal to two things: $H$ and one more \inlinemetanote{writes: (aside: index 2 means $\faktor{G}{H} = \{ H, * \}$)}.
+
+There's just two equivalence classes. That's what index $2$ means. The index is the number of equivalence classes. So, index need not be finite, but if it's finite, it just means there's two equivalence classes. Is that clear? That's what index $2$... So, if you find a subgroup of index $2$, then this implies $H$ must be normal \inlinemetanote{writes: $\implies$ then $H$ must be normal}.
+
+This is the cheapest way to show a subgroup is normal: if you ever have a subgroup that's half the size of the group, it has to be normal.
+
+And the proof of that --- there's actually nothing to this proof except understanding what I said. Let's try to do it, though \inlinemetanote{erases the right chalkboard to prepare for the proof}.
+\end{speech}
+
+\begin{content}[Subgroups of Index 2]
+\begin{definition}[Index of a Subgroup]\label[definition]{def:subgroup-index}
+Let $H$ be a subgroup of $G$. The \newterm{index} of $H$ in $G$, denoted $[G : H]$, is the cardinality of the quotient set of left cosets:
+\[
+[G : H] := |(\faktor{G}{H})_L|.
+\]
+In particular, $[G : H] = 2$ means that there are exactly two left cosets in $G$. Since $eH = H$ is always one coset, the partition consists of $H$ and exactly one other disjoint coset:
+\[
+\faktor{G}{H} = \{ H, G \setminus H \}.
+\]
+\end{definition}
+
+\begin{proposition}[Subgroups of Index 2 Are Normal]\label[proposition]{prop:index-two-normal}
+Suppose $H \subset G$ is a subgroup of index $[G : H] = 2$. Then $H$ is a normal subgroup of $G$ ($H \triangleleft G$).
+\end{proposition}
+\end{content}
+
+\begin{speech}[00:11:22 - 00:13:25]
+Okay, so, we have to prove this result. The proof \inlinemetanote{writes: Proof:} is: let $x$ in $G$ be any element \inlinemetanote{writes: let $x \in G$}... I already used $x$ there, so maybe let $y \in G$ be any element \inlinemetanote{corrects $x$ to $y$, writes: let $y \in G$}, and we consider the one possibility. The first possibility is $y$ is in $N$ \inlinemetanote{writes: $\bullet \ y \in N$}. Then, of course, $y N y^{-1} = N$ \inlinemetanote{writes: $\implies y N y^{-1} = N$}, because when you multiply by $y$, it's already in $N$, so it doesn't get out of $N$, all right?
+
+Then suppose the second possibility is $y$ is not in $N$ \inlinemetanote{writes: $\bullet \ y \notin N$}. Then I consider the left coset $yN$ \inlinemetanote{writes: then I consider $yN$}, and I consider the right coset $Ny$ \inlinemetanote{writes: and I consider $Ny$}.
+
+This coset is not equal to $N$ \inlinemetanote{writes: $yN \neq N$} because $y$ is not in $N$, and this one's not equal to $N$ \inlinemetanote{writes: $Ny \neq N$}.
+
+Although it's index $2$, so that means that both of these things are all the things that are not in $N$, so they have to be equal. The index $2$ hypothesis implies that both the left coset is the other one from $N$ and the right coset is the other one; but there's only two, so they're the same set of elements. This equals this set of elements: \inlinemetanote{writes: $\text{Index 2} \implies yN = Ny$}.
+
+And this actually implies it's stable under conjugation: \inlinemetanote{writes: $\implies yNy^{-1} = N$}.
+
+So, you can check this. This proof is written with some notational convenience. It's correct, but you should go check through it carefully. If it's index $2$, the point is there's only one other coset besides the coset of the neutral element. And if they're equal, that means it stabilizes.
+
+Okay. So, that's one aspect I wanted to emphasize.
+\end{speech}
+
+\begin{content}
+\begin{proof}[Proof of \cref{prop:index-two-normal}]
+Let $y \in G$. To prove that $N$ is normal in $G$, we show that $yNy^{-1} = N$ (or equivalently $yN = Ny$). We consider the two disjoint cases for $y$:
+
+\textbf{Case 1 ($y \in N$):}
+Since $y \in N$ and $N$ is a subgroup, multiplying $N$ on the left by $y$ and on the right by $y^{-1}$ produces elements entirely within $N$. Thus:
+\[
+yNy^{-1} = N.
+\]
+
+\textbf{Case 2 ($y \notin N$):}
+Consider the left coset $yN$ and the right coset $Ny$.
+Since $y \notin N$, neither coset is equal to the subgroup $N$:
+\[
+yN \neq N \quad \text{and} \quad Ny \neq N.
+\]
+By the hypothesis $[G : N] = 2$, $G$ is partitioned by left cosets into exactly two disjoint subsets: $N$ and $G \setminus N$. Because $yN$ is disjoint from $N$, it must be the complement:
+\[
+yN = G \setminus N.
+\]
+Similarly, the right cosets partition $G$ into $N$ and $G \setminus N$, so:
+\[
+Ny = G \setminus N.
+\]
+Comparing the two identities yields:
+\[
+yN = Ny.
+\]
+Multiplying by $y^{-1}$ on the right, we conclude:
+\[
+yNy^{-1} = N.
+\]
+Thus, $yNy^{-1} = N$ for every $y \in G$, proving that $N \triangleleft G$.
+\end{proof}
+\end{content}
+
+\begin{aiNote}[Notation: Variable Switch from $H$ to $N$]
+% [PERSISTENT]
+While the lecturer initially stated \cref{prop:index-two-normal} using the letter $H$ on the upper board, during the proof on the lower board he switches to $N$ to reinforce the convention introduced moments earlier that $N$ denotes a normal subgroup.
+\end{aiNote}
+
+\begin{hidden}
+% timestamp: 00:13:25
+% topic: Subgroups of index 2 are normal
+% board_state: def:subgroup-index, prop:index-two-normal
+% next_goal: Present First Isomorphism Theorem and the Correspondence Theorem
+% open_loops: none
+\end{hidden}
+
+\section{The Correspondence Theorem for Groups}
+
+\subsection{Review: The First Isomorphism Theorem}
+
+\begin{speech}[00:13:25 - 00:15:04]
+The other thing is, there's one more thing about the isomorphism theorems. The next thing we proved was that if we have a homomorphism from one group to another \inlinemetanote{writes: If $f_1 \colon G_1 \to G_2$}, then we know that the kernel \inlinemetanote{writes: $\faktor{G_1}{\ker(f_1)}$} --- this is not only a subgroup, but a normal subgroup, so this quotient exists as a group; this is a group quotient \inlinemetanote{writes: group quot. under $\faktor{G_1}{\ker(f_1)}$}.
+
+And that first isomorphism theorem says that this group quotient is isomorphic to the image of $f_1$ \inlinemetanote{writes: $\cong \operatorname{Im}(f_1)$}, which is a subgroup, all right? That's just repeating.
+
+And in the context of rings, we proved this, but we proved another property about quotient rings.
+
+So, it's a second property I want to emphasize also for groups. I'm not going to prove it, because the proof is just identical. This is one property we proved for both groups and rings. Then there was another property we proved for rings, which I remind you of here, which is: if $R$ is a ring and $I$ is an ideal \inlinemetanote{writes: $I \subset R$ id.}, then we had this quotient map $R$ goes to $R \bmod I$ \inlinemetanote{writes: $R \longrightarrow \faktor{R}{I}$}.
+
+And for our groups, we have here $N$ in $G$ and $N$ is a normal subgroup \inlinemetanote{writes: $N \subset G$, $N$ norm. sub.}, and we have a quotient map $G$ goes to $G \bmod N$ \inlinemetanote{writes: $G \longrightarrow \faktor{G}{N}$}. This is the quotient.
+
+And the part I wanted to remind you of, which we didn't discuss --- which we did discuss for rings, and it's entirely parallel here, and it's really important ---, is this correspondence.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[First Isomorphism Theorem for Groups]\label[theorem]{thm:first-isomorphism-groups}
+Let $f_1 \colon G_1 \to G_2$ be a group homomorphism. Then the kernel $\ker(f_1)$ is a normal subgroup of $G_1$, and the quotient group $\faktor{G_1}{\ker(f_1)}$ is isomorphic to the image $\operatorname{Im}(f_1)$:
+\begin{equation}\label{eq:first-isomorphism-groups}
+\faktor{G_1}{\ker(f_1)} \cong \operatorname{Im}(f_1).
+\end{equation}
+\end{theorem}
+\end{content}
+
+\subsection{The Lattice Correspondence for Rings and Groups}
+
+\begin{speech}[00:15:04 - 00:17:00]
+We put here the set of ideals of $R$ which contain $I$ \inlinemetanote{writes: $\{ \text{set of ideals of } R \text{ which contain } I \}$}, and the result was that there's a bijection here \inlinemetanote{draws double-headed arrow labeled: \text{biject.}}, and this is the set of ideals of $R \bmod I$ \inlinemetanote{writes: $\{ \text{set of ideals of } \faktor{R}{I} \}$}. Okay, so, do you remember this?
+
+And the idea here is if we start on this side, we have an ideal $J$ which contains $I$ in $R$ \inlinemetanote{writes: $J \supset I \subset R$, $J \text{ ideal}$}, the motion here is you just take $q(J)$ \inlinemetanote{writes: $\xrightarrow{q} q(J)$}. On the other hand, if you have some $\widehat{J}$ which is an ideal of $R \bmod I$, the motion back is you take $q^{-1}(\widehat{J})$ \inlinemetanote{writes: $\xleftarrow{q^{-1}} \widehat{J}$}. And this was a bijection. We proved this --- actually, we proved this kind of carefully.
+
+So, I hope you remember that. And it is the absolute natural way to think about and to use backwards and forwards both ways. If you have a quotient object and you want to think about the ideals, more or less, one way or the other, you have to use this correspondence. It'll come up naturally.
+
+And the exact parallel result holds for groups with subgroups. It's just literally the same, and the proof is the same, so I'm not going to give the proof here, but I will at least state it.
+
+Okay, so you can imagine what I'm going to say here. On the left side --- so here's the $G$ side, and that's the quotient goes to $G \bmod N$ \inlinemetanote{writes: $G \longrightarrow \faktor{G}{N}$} ---, on this side is the set of subgroups of $G$ which contain $N$ \inlinemetanote{writes: $\{ \text{set of subgroups of } G \text{ which contain } N \}$}, and this is going to be in bijective correspondence \inlinemetanote{draws double-headed arrow labeled: \text{biject.}} with here the set of all subgroups of $G \bmod N$ \inlinemetanote{writes: $\{ \text{set of all subgroups of } \faktor{G}{N} \}$}, and the...
+\end{speech}
+
+\begin{speech}[00:17:00 - 00:18:50]
+...movements are exactly the same. So, if I start with a subgroup here that contains $N$ \inlinemetanote{writes: $N \subset H \subset G$} --- so this is the subgroup ---, I get to this side by just taking $q$ of the subgroup: \inlinemetanote{writes: $\xrightarrow{q} q(H)$}. And if I start here with any subgroup \inlinemetanote{writes: $\overline{H} \subset \faktor{G}{N}$}, I get back by taking $q^{-1}$ \inlinemetanote{writes: $\xleftarrow{q^{-1}}$}. And the proof that these are bijections is just exactly the same as we did before, and I encourage you to think about that.
+
+And there's even a stronger statement here, because this is just about subgroups, so you could imagine: what happens to the normal subgroups? That's also reasonable. This is just saying this set is bijective to that set. But inside all subgroups of $G$ which contain $N$ are those which are normal. And inside here is also distinguished those which are normal, and this bijection preserves that normality. So, I leave these two things for you to check, all right?
+
+Maybe I just write it: bijection here preserves normality \inlinemetanote{writes: Bijection here preserves normality}.
+
+If you really check all the details here, it's some work, but it's worth it in the sense of understanding the subject. But at this level, the results are kind of parallel to the isomorphism theorems for rings.
+\end{speech}
+
+\begin{content}[The Correspondence Theorem for Rings and Groups]
+\begin{theorem}[Ideal Correspondence Theorem for Rings]\label[theorem]{thm:ideal-correspondence-w9tue}
+Let $R$ be a ring and $I \subset R$ an ideal, with canonical projection $q \colon R \to \faktor{R}{I}$. There is an inclusion-preserving bijection:
+\[
+\begin{aligned}
+\left\{ \text{ideals } J \subset R \text{ with } I \subseteq J \right\} &\overset{\text{bijection}}{\longleftrightarrow} \left\{ \text{ideals of } \faktor{R}{I} \right\} \\
+J &\longmapsto q(J) \\
+q^{-1}(\widehat{J}) &\longmapsfrom \widehat{J}
+\end{aligned}
+\]
+\end{theorem}
+
+\begin{theorem}[Subgroup Correspondence Theorem for Groups]\label[theorem]{thm:subgroup-correspondence}
+Let $G$ be a group, $N \triangleleft G$ a normal subgroup, and $q \colon G \to \faktor{G}{N}$ the canonical quotient homomorphism ($g \mapsto gN$).
+There is an inclusion-preserving bijection:
+\begin{equation}\label{eq:group-correspondence}
+\begin{aligned}
+\left\{ \text{subgroups } H \le G \text{ with } N \subseteq H \right\} &\overset{\text{bijection}}{\longleftrightarrow} \left\{ \text{subgroups of } \faktor{G}{N} \right\} \\
+H &\longmapsto q(H) = \faktor{H}{N} \\
+q^{-1}(\overline{H}) &\longmapsfrom \overline{H}
+\end{aligned}
+\end{equation}
+Furthermore, this bijection preserves normality:
+\begin{equation}\label{eq:correspondence-normality}
+H \triangleleft G \iff q(H) \triangleleft \faktor{G}{N}.
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Explicit Actions of the Correspondence]
+The explicit assignments between the subgroup lattices are:
+\begin{itemize}
+    \item \textbf{Forward Direction ($H \mapsto q(H)$):} For a subgroup $H \le G$ containing $N$, its image is $q(H) = \{ hN \mid h \in H \} = \faktor{H}{N} \le \faktor{G}{N}$.
+    \item \textbf{Inverse Direction ($\overline{H} \mapsto q^{-1}(\overline{H})$):} For any subgroup $\overline{H} \le \faktor{G}{N}$, its preimage $q^{-1}(\overline{H}) = \{ g \in G \mid gN \in \overline{H} \}$ is a subgroup of $G$ containing $N = q^{-1}(\{eN\})$.
+    \item \textbf{Normality Preservation:} Going beyond the lecture: if $H \triangleleft G$, then $q(H) = \faktor{H}{N} \triangleleft \faktor{G}{N}$ by the Third Isomorphism Theorem, which establishes $\faktor{(\faktor{G}{N})}{(\faktor{H}{N})} \cong \faktor{G}{H}$. Conversely, preimages of normal subgroups under homomorphisms are always normal.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:18:50
+% topic: Correspondence theorem for groups and preservation of normality
+% board_state: thm:first-isomorphism-groups, thm:ideal-correspondence-w9tue, thm:subgroup-correspondence
+% next_goal: Discuss groups of prime order and rotational symmetries of Platonic solids
+% open_loops: verification of normality preservation left to students
+\end{hidden}
+
+\section{Groups of Prime Order and Platonic Solids}
+
+\subsection{Groups of Prime Order Are Cyclic}
+
+\begin{speech}[00:18:50 - 00:20:09]
+Okay, then finally a comment which probably should have been made last week: suppose $G$ is a finite group and has order $p$, where $p$ is a prime \inlinemetanote{writes: Suppose $G$ has order $p$, $p$ prime}.
+
+So, it's a group of order $17$, then the claim is: then $G$ must be the cyclic group \inlinemetanote{writes: Then $G$ must be cyclic group $\mathbb{Z}/p\mathbb{Z}, +, 0$}.
+
+There's very few groups of prime order. And the proof of this is: pick any non-neutral element of $G$. Pick any one you want. It has to have one, because prime means two, three... you know, at least two. So, proof \inlinemetanote{writes: Proof:}: $p$ is at least $2$ \inlinemetanote{writes: $p \ge 2$}, so, pick any element $x \in G$ where $x$ is not the neutral element \inlinemetanote{writes: so pick any element $x \in G, x \neq e$}.
+\end{speech}
+
+\begin{speech}[00:20:09 - 00:21:45]
+You can, because it's at least $2$. Then the subgroup generated by $x$ \inlinemetanote{writes: then $\langle x \rangle \subset G$} --- this subgroup has to have an order dividing the order of $G$. There's very few things that divide prime numbers, so it has to actually be the whole thing. It could be $1$ or the prime; it can't be $1$ because it has some element that's not $1$ (i.e., not the neutral element $e$). So, this then has to have the order divide $p$, which means that the order of this could be $1$ or it could be $p$ \inlinemetanote{writes: $|\langle x \rangle| \mid p \implies |\langle x \rangle| = 1 \text{ or } p$}.
+
+This one's ruled out, because we have at least two elements, the one that's not the neutral element and $x$, so it must be this: \inlinemetanote{crosses out 1 and circles $p$, writes: $|\langle x \rangle| = p$}.
+
+So, this means that this must be the whole group \inlinemetanote{writes: $\langle x \rangle = G$}, and then that's the cyclic group, okay? \inlinemetanote{circles $\langle x \rangle = G$}
+
+Those are two pieces of luck you can encounter with groups: if you find a group that's of prime order, then you know what group it is. If you find a subgroup that is half the order of the group, then you know it's normal.
+
+There's a whole subject about classifying groups, and the order of the group is extremely important, of course: the prime divisors of the order. And this is the first step in that direction.
+
+It's not true, by the way, if you have a group of order $p \times q$, where $p$ and $q$ are prime, that it has to be cyclic, because, for example, $S_3$ has order $6$, which is $2 \times 3$, and it's not even commutative.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Groups of Prime Order]\label[proposition]{prop:prime-order-cyclic}
+Let $G$ be a finite group of order $p$, where $p$ is a prime number. Then $G$ is cyclic and isomorphic to the additive group of integers modulo $p$:
+\begin{equation}\label{eq:prime-cyclic}
+G \cong (\mathbb{Z}/p\mathbb{Z}, +, 0).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since $p$ is prime, $p \ge 2$, so there exists at least one element $x \in G$ distinct from the identity $e$ ($x \neq e$).
+Consider the cyclic subgroup generated by $x$:
+\[
+\langle x \rangle = \{ x^k \mid k \in \mathbb{Z} \} \subseteq G.
+\]
+By Lagrange's theorem, the order of the subgroup $|\langle x \rangle|$ divides the order of the group $|G| = p$:
+\[
+|\langle x \rangle| \mid p.
+\]
+Since $p$ is a prime number, its only positive divisors are $1$ and $p$:
+\[
+|\langle x \rangle| \in \{1, p\}.
+\]
+Because $x \neq e$, the subgroup contains at least two distinct elements ($e$ and $x$), so $|\langle x \rangle| \neq 1$. Therefore:
+\[
+|\langle x \rangle| = p.
+\]
+Since $\langle x \rangle$ is a subgroup of $G$ with the exact same finite cardinality as $G$, it must be the entire group:
+\[
+\langle x \rangle = G.
+\]
+Thus, $G$ is generated by $x$, so $G$ is cyclic of order $p$, which implies $G \cong \mathbb{Z}/p\mathbb{Z}$.
+\end{proof}
+
+\begin{example}[Non-Cyclic Group of Order $pq$]\label[example]{ex:non-cyclic-pq}
+The property fails for composite orders $pq$ with distinct primes $p$ and $q$. For example, the symmetric group $S_3$ has order $|S_3| = 6 = 2 \cdot 3$. Since $S_3$ is non-abelian, it is not cyclic ($S_3 \not\cong \mathbb{Z}/6\mathbb{Z}$).
+\end{example}
+\end{content}
+
+\subsection{Rotational Symmetries of Platonic Solids and Duality}
+
+\begin{speech}[00:21:45 - 00:24:02]
+Okay, all right. So, then, I'm not going to say anything more about the Platonic solids, but I'll say some things, because it seems like people have never thought about these Platonic solids before. So, I'll just say a few words. We talked about this one \inlinemetanote{draws a tetrahedron on the board} and we had the rotation group. We've proved that this is $A_4$ \inlinemetanote{writes: $A_4$}.
+
+We proved that this is $S_4$ \inlinemetanote{draws a cube, writes: $S_4$}, if you believe that proof, which was geometric. Then the other one is the eight-sided one \inlinemetanote{draws an octahedron}, which is hard to draw... That's not actually terrible, all right? And the claim is this is also $S_4$ \inlinemetanote{writes: $S_4$}. This is obvious because the Platonic solids --- it's one of their most basic properties, probably due already to the Greeks, certainly due to the Greeks --- have a duality: if you have a Platonic solid, you can take the middle of every face and make that the vertices and connect them, and you get another Platonic solid.
+
+And if you do that with the cube, if you take the midpoint of every face --- there's six faces, right? --- take the midpoint of every face, then you get this octahedron. Can you see that? And if you take this one and you take the midpoint of every triangle --- there are eight of them ---, you get back the cube. That's the duality.
+
+So, you should think about it; it's fun to think about it if you've never seen it. You could say, \qt{Why doesn't this one have a friend?} And the answer is: if you take the midpoint of all of them, you just get back the tetrahedron, so it's self-dual.
+
+This shows that the automorphism groups, if you think about it, have to be the same, because they just tell you how to get from one automorphism to the other.
+
+Then the other ones that are harder to draw are the $12$-sided one \inlinemetanote{writes: 12-sided}, the dodecahedron \inlinemetanote{writes: Dodecahedron}, and the $20$-sided one, the icosahedron \inlinemetanote{writes: 20-sided, Icosahedron}. This one has a face that looks like this \inlinemetanote{draws a pentagon}, and this has a triangular face \inlinemetanote{draws a triangle}. Then they have lots more faces.
+
+These things are also dual. That's kind of fun to think about, all right? I recommend thinking about that. They're also dual, and so their rotational groups are the same. And what is the rotational group? Well, it was an exercise, or maybe it was on the quiz, that this rotational group has order $60$ \inlinemetanote{writes: Rot group has order 60}, and the only interesting group you know of order $60$...
+\end{speech}
+
+\begin{speech}[00:24:02 - 00:25:17]
+...is the alternating group inside $S_5$ \inlinemetanote{writes: $A_5 \le S_5$}, because this has order $120$ and that's exactly half, so it's $60$ \inlinemetanote{writes: $|A_5| = 60$}, and it's a very nice geometric fact that this is $A_5$ \inlinemetanote{writes: $\cong A_5$}.
+
+And the proof of this requires a little bit of work, so I recommend doing it. The best way to do this is go get yourself a model of one of these and think about it. And if you look hard enough --- you know, the way this was proven was finding these four long diagonals and the rotations permuting them, and that giving an isomorphism. Here it's trickier: you have to find five objects in here, and it turns out that the dodecahedron has five inscribed cubes. When you rotate it, you swap around these five inscribed cubes, and you have to do an even permutation; that's an isomorphism. It's incredibly beautiful.
+
+I recommend, if you're interested in it, just go look. You'll find either a reference which will draw you this dodecahedron and the five inscribed cubes, or you can find them yourself, but you have to play with the actual model.
+
+Okay, that's more or less all I want to say about that. And basically, what I'm saying here is that we did all of this except for the actual isomorphism to $A_5$, which is an interesting thing, and I leave that to you to do.
+\end{speech}
+
+\begin{content}[Rotational Symmetries and Duality of Platonic Solids]
+\begin{theorem}[Rotational Symmetries of the Five Platonic Solids]\label[theorem]{thm:platonic-solids-symmetries}
+The orientation-preserving rotational symmetry groups $\operatorname{Rot}(P) \le \operatorname{SO}(3)$ of the five Platonic solids are given by:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Platonic Solid} & \textbf{Faces ($F$)} & \textbf{Vertices ($V$)} & \textbf{Rotation Group} & \textbf{Order} \\
+\midrule
+Tetrahedron (Self-dual) & $4$ triangles & $4$ & $A_4$ & $12$ \\
+Cube & $6$ squares & $8$ & $S_4$ & $24$ \\
+Octahedron (Dual to Cube) & $8$ triangles & $6$ & $S_4$ & $24$ \\
+Dodecahedron & $12$ pentagons & $20$ & $A_5$ & $60$ \\
+Icosahedron (Dual to Dodecahedron) & $20$ triangles & $12$ & $A_5$ & $60$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{theorem}
+
+\definecolor{figBlue}{HTML}{07608E}
+\definecolor{figGreen}{HTML}{3D8252}
+\definecolor{figOrange}{HTML}{CD7E2B}
+\definecolor{figGray}{HTML}{666667}
+\begin{hidden}
+- Canvas: no scale, cm; width spans x in [-0.5, 13.5], y in [-1.5, 3.2]
+- Five panels depicting the blackboard sketches of Platonic solids and face polygons:
+  (1) Tetrahedron at x = 1.0, y = 0.7. Vertices: (1.0, 2.2), (0.0, 0.3), (1.1, 0.0), (1.9, 0.5); label A_4 below.
+  (2) Cube at x = 4.3, y = 0.7. Front square (3.6, 0.2)-(4.8, 1.4), back square (4.1, 0.7)-(5.3, 1.9); label S_4 below.
+  (3) Octahedron at x = 7.6, y = 0.7. Equatorial diamond (6.7, 1.1)-(7.6, 0.7)-(8.5, 1.1)-(7.6, 1.5), top (7.6, 2.2), bottom (7.6, 0.0); label S_4 below.
+  (4) Dodecahedron face (regular pentagon) at x = 10.4, y = 1.0; radius 0.55; label "12-sided" and "Dodecahedron" below.
+  (5) Icosahedron face (triangle) at x = 12.5, y = 1.0; side length 1.2; label "20-sided" and "Icosahedron" below.
+- Duality arrows: bidirectional dashed arrows between Cube and Octahedron, and between Dodecahedron and Icosahedron.
+- Board annotations: Rot group has order 60, A_5 \le S_5, |A_5| = 60, \cong A_5.
+- Collisions: ample margins between all panels (> 0.5cm), text strictly outside polygons.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    % --- 1. Tetrahedron ---
+    \begin{scope}[shift={(1.0, 0.7)}]
+        \coordinate (Ttop) at (0, 1.5);
+        \coordinate (Tleft) at (-1.0, -0.4);
+        \coordinate (Tmid) at (0.1, -0.7);
+        \coordinate (Tright) at (0.9, -0.2);
+        \draw[figBlue] (Ttop) -- (Tleft) -- (Tmid) -- (Ttop);
+        \draw[figBlue] (Ttop) -- (Tright) -- (Tmid);
+        \draw[dashed, figGray] (Tleft) -- (Tright) -- (Ttop);
+        \node[anchor=north] at (0, -0.9) {$A_4$};
+        \node[anchor=south, font=\footnotesize, figGray] at (0, 1.6) {Tetrahedron};
+    \end{scope}
+
+    % --- 2. Cube ---
+    \begin{scope}[shift={(4.3, 0.7)}]
+        \coordinate (C1) at (-0.7, -0.5); \coordinate (C2) at (0.5, -0.5);
+        \coordinate (C3) at (0.5, 0.7);   \coordinate (C4) at (-0.7, 0.7);
+        \coordinate (C5) at (-0.2, -0.1); \coordinate (C6) at (1.0, -0.1);
+        \coordinate (C7) at (1.0, 1.1);   \coordinate (C8) at (-0.2, 1.1);
+        \draw[dashed, figGray] (C5) -- (C6) (C5) -- (C8) (C5) -- (C1);
+        \draw[figBlue] (C1) -- (C2) -- (C3) -- (C4) -- (C1);
+        \draw[figBlue] (C2) -- (C6) -- (C7) -- (C3);
+        \draw[figBlue] (C4) -- (C8) -- (C7);
+        \node[anchor=north] at (0.15, -0.9) {$S_4$};
+        \node[anchor=south, font=\footnotesize, figGray] at (0.15, 1.6) {Cube};
+    \end{scope}
+
+    % --- Duality Arrow: Cube <-> Octahedron ---
+    \draw[<->, dashed, figGreen] (5.6, 1.2) -- node[above, font=\scriptsize, text=figGreen] {dual} (6.4, 1.2);
+
+    % --- 3. Octahedron ---
+    \begin{scope}[shift={(7.6, 0.7)}]
+        \coordinate (Otop) at (0, 1.5);
+        \coordinate (Obot) at (0, -0.7);
+        \coordinate (Oleft) at (-0.9, 0.4);
+        \coordinate (Ofront) at (-0.1, 0.0);
+        \coordinate (Oright) at (0.9, 0.4);
+        \coordinate (Oback) at (0.1, 0.8);
+        \draw[dashed, figGray] (Otop) -- (Oback) -- (Obot) (Oleft) -- (Oback) -- (Oright);
+        \draw[figBlue] (Otop) -- (Oleft) -- (Obot) -- (Ofront) -- (Otop);
+        \draw[figBlue] (Otop) -- (Ofront);
+        \draw[figBlue] (Otop) -- (Oright) -- (Obot);
+        \draw[figBlue] (Oleft) -- (Ofront) -- (Oright);
+        \node[anchor=north] at (0, -0.9) {$S_4$};
+        \node[anchor=south, font=\footnotesize, figGray] at (0, 1.6) {Octahedron};
+    \end{scope}
+
+    % --- 4. Dodecahedron Face (Pentagon) ---
+    \begin{scope}[shift={(10.4, 1.0)}]
+        \foreach \i in {1,...,5} {
+            \coordinate (P\i) at ({72 * (\i - 1) + 18}:0.55cm);
+        }
+        \draw[figBlue] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P1);
+        \node[anchor=north, align=center, font=\small] at (0, -0.7) {12-sided\\(Dodecahedron)};
+    \end{scope}
+
+    % --- Duality Arrow: Dodecahedron <-> Icosahedron ---
+    \draw[<->, dashed, figGreen] (11.2, 1.0) -- node[above, font=\scriptsize, text=figGreen] {dual} (11.7, 1.0);
+
+    % --- 5. Icosahedron Face (Triangle) ---
+    \begin{scope}[shift={(12.5, 1.0)}]
+        \coordinate (TR1) at (90:0.6cm);
+        \coordinate (TR2) at (210:0.6cm);
+        \coordinate (TR3) at (330:0.6cm);
+        \draw[figBlue] (TR1) -- (TR2) -- (TR3) -- (TR1);
+        \node[anchor=north, align=center, font=\small] at (0, -0.7) {20-sided\\(Icosahedron)};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{align}
+\text{Rotational group has order } 60\colon &\quad A_5 \le S_5, \quad |A_5| = \frac{5!}{2} = 60 \label{eq:a5-order} \\
+\operatorname{Rot}(\text{Dodecahedron}) \cong \operatorname{Rot}(\text{Icosahedron}) &\cong A_5 \label{eq:a5-iso}
+\end{align}
+
+\begin{steps}[Geometric Duality and Rotational Symmetries]
+Geometric duality connects Platonic solids by mapping face midpoints of one solid to the vertices of its dual:
+\begin{itemize}
+    \item \textbf{Cube and Octahedron:} A cube has $6$ faces and $8$ vertices; connecting the centers of its $6$ faces forms an octahedron. Conversely, the $8$ triangular faces of an octahedron yield the $8$ vertices of a cube. Any rotational symmetry preserving the cube must preserve its face midpoints, and hence acts as an orientation-preserving symmetry of the dual octahedron. Therefore:
+    \[
+    \operatorname{Rot}(\text{Cube}) \cong \operatorname{Rot}(\text{Octahedron}) \cong S_4.
+    \]
+    The group $S_4$ acts faithfully by permuting the $4$ principal body diagonals connecting opposite pairs of vertices in the cube (or opposite pairs of triangular faces in the octahedron).
+    \item \textbf{Tetrahedron (Self-Dual):} Connecting the centers of the $4$ triangular faces of a regular tetrahedron yields another regular tetrahedron. The rotational group is the alternating group $A_4$ of order $\frac{4!}{2} = 12$, acting on the $4$ vertices.
+    \item \textbf{Dodecahedron and Icosahedron:} Connecting the midpoints of the $12$ pentagonal faces of a regular dodecahedron produces an icosahedron with $12$ vertices and $20$ triangular faces. Their common rotational symmetry group has order $60$ and is isomorphic to the alternating group $A_5$:
+    \[
+    \operatorname{Rot}(\text{Dodecahedron}) \cong \operatorname{Rot}(\text{Icosahedron}) \cong A_5.
+    \]
+    This group acts by permuting the $5$ regular cubes that can be inscribed inside a dodecahedron.
+\end{itemize}
+\end{steps}
+
+\begin{steps}[Geometric Realization of the Isomorphism $\operatorname{Rot}(\text{Dodecahedron}) \cong A_5$]
+To construct the isomorphism with the alternating group $A_5$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Inscribed Cubes:} Exactly $5$ regular cubes can be inscribed within a regular dodecahedron, using subsets of its $20$ vertices (each cube uses $8$ vertices, with each dodecahedral vertex shared by two cubes).
+    \item \textbf{Permutation Action:} Every rotational symmetry of the dodecahedron maps the set of $20$ vertices to itself, permuting the $5$ inscribed cubes. This defines a homomorphism $\Phi \colon \operatorname{Rot}(\text{Dodecahedron}) \to S_5$.
+    \item \textbf{Faithful and Even:} No non-trivial rotation preserves all $5$ cubes simultaneously ($\ker(\Phi) = \{e\}$), so the action is faithful. Furthermore, rotations correspond to even permutations, establishing an injective homomorphism into $A_5$.
+    \item \textbf{Order Comparison:} Since $|\operatorname{Rot}(\text{Dodecahedron})| = 60$ and $|A_5| = 60$, the map $\Phi$ is an isomorphism.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:05:12
+% topic: Rotational groups of Platonic solids, duality, and A_5 isomorphism
+% board_state: thm:platonic-solids-symmetries, eq:a5-order, eq:a5-iso
+% next_goal: Introduce symmetries of planar polygons and the dihedral group D_{2n}
+% open_loops: none
+\end{hidden}
+
+\section{Symmetries of Polygons and Dihedral Groups}
+
+\subsection{Rotations and the Dihedral Group \texorpdfstring{$D_{2n}$}{D\_2n}}
+
+\begin{speech}[00:25:17 - 00:27:10]
+Some more classical symmetry groups that come from objects are if I take an $n$-gon in the plane... \inlinemetanote{draws a polygon} I don't know, that's supposed to be an $n$-gon, right? \inlinemetanote{writes: n-gon} Like, for example, the triangle: I can draw a solid triangle, right? \inlinemetanote{draws an equilateral triangle}
+
+I can rotate it, just rotate it in the plane, just its rotational symmetries. These beautiful Platonic solids are three-dimensional objects, but now I'm talking about things in the plane.
+
+So, I can just rotate it. If I just look at the rotational symmetries of this $n$-gon \inlinemetanote{writes: $\operatorname{Rot}(n\text{-gon})$}, that's not that interesting, because that's just a cyclic group. This is isomorphic to $\mathbb{Z}/n\mathbb{Z}$ \inlinemetanote{writes: $\cong \mathbb{Z}/n\mathbb{Z}$}, because I just rotate by that angle $2\pi/n$. Is that clear? Like here, you just have three rotations; that's a cyclic group.
+
+That's not interesting. Much more interesting is what's called the dihedral group \inlinemetanote{writes: Dihedral}. And the usual indexing of this is dihedral $D_{2n}$ \inlinemetanote{writes: $D_{2n}$}, and this is now just a name: the dihedral group \inlinemetanote{writes: Dihedral group} of order $2n$ \inlinemetanote{writes: of order $2n$}.
+
+And what's the definition? The definition is: this is the symmetries of the $n$-gon \inlinemetanote{writes: Def:} \inlinemetanote{writes: Symmetries of n-gon} --- the same one there --- obtained by both rotations \inlinemetanote{writes: obtained by both rotations} and flips \inlinemetanote{writes: and flips}.
+\end{speech}
+
+\begin{content}[Definition of the Dihedral Group]
+\definecolor{figBlue}{HTML}{07608E}
+\begin{hidden}
+- Canvas: no scale, cm; width spans x in [0, 8.5], y in [-0.5, 3.0]
+- Two figures side-by-side:
+  (1) Regular heptagon / n-gon at x = 2.0, y = 1.3, radius 1.1; labeled "n-gon" inside or to the right.
+  (2) Equilateral triangle at x = 6.0, y = 1.3, radius 1.1; vertices at 90, 210, 330 deg.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    % --- n-gon (regular heptagon) ---
+    \begin{scope}[shift={(2.0, 1.3)}]
+        \foreach \i in {1,...,7} {
+            \coordinate (H\i) at ({360/7 * (\i - 1) + 90}:1.1cm);
+        }
+        \draw[figBlue] (H1) -- (H2) -- (H3) -- (H4) -- (H5) -- (H6) -- (H7) -- (H1);
+        \node[anchor=west] at (1.3, 0) {$n$-gon};
+    \end{scope}
+
+    % --- Triangle ---
+    \begin{scope}[shift={(6.0, 1.3)}]
+        \coordinate (T1) at (90:1.1cm);
+        \coordinate (T2) at (210:1.1cm);
+        \coordinate (T3) at (330:1.1cm);
+        \draw[figBlue] (T1) -- (T2) -- (T3) -- (T1);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{definition}[Rotational Symmetries of a Regular $n$-gon]\label[definition]{def:rotational-ngon}
+Let $P_n \subset \mathbb{R}^2$ be a regular $n$-gon centered at the origin. The group of purely rotational symmetries in the plane is cyclic of order $n$:
+\begin{equation}\label{eq:rot-ngon}
+\operatorname{Rot}(P_n) = \left\langle \rho_{2\pi/n} \right\rangle \cong (\mathbb{Z}/n\mathbb{Z}, +, 0),
+\end{equation}
+generated by the counter-clockwise rotation by angle $\frac{2\pi}{n}$.
+\end{definition}
+
+\begin{definition}[Dihedral Group $D_{2n}$]\label[definition]{def:dihedral-group}
+The \newterm{dihedral group} $D_{2n}$ is the full symmetry group of a regular $n$-gon in $\mathbb{R}^2$, generated by both planar rotations and reflectional flips across lines of symmetry:
+\begin{equation}\label{eq:dihedral-def}
+D_{2n} := \operatorname{Sym}(P_n) = \langle r, s \mid r^n = e, \ s^2 = e, \ srs = r^{-1} \rangle.
+\end{equation}
+The group $D_{2n}$ has order $2n$, comprising $n$ rotations and $n$ reflections.
+\end{definition}
+\end{content}
+
+\begin{aiNote}[Notation: \texorpdfstring{$D_{2n}$ vs. $D_n$}{D\_2n vs. D\_n}]
+% [PERSISTENT]
+Conventions in the literature differ regarding the subscript of dihedral groups:
+\begin{itemize}
+    \item Many modern authors write $D_n$ for the dihedral group of order $2n$, indexing by the number of vertices $n$.
+    \item The convention used on the blackboard in this lecture explicitly indices by the group order: $D_{2n}$ denotes the dihedral group of order $2n$.
+\end{itemize}
+We strictly follow the lecture's notation $D_{2n}$ throughout these notes.
+\end{aiNote}
+
+\subsection{The Dihedral Group \texorpdfstring{$D_6$}{D\_6} of the Equilateral Triangle}
+
+\begin{speech}[00:27:10 - 00:28:40]
+Okay, so, we can just think about this for a moment, but I invite you to think about... this is more interesting. In the language of the class, it's a new group, which is to say we didn't have a name for it before.
+
+The flips are: you draw a line in the plane --- I'll just show it on the board --- and you flip it along that line. And if you do that, you get twice as many elements in the group, because it has order $2n$.
+
+For example, if you have the triangle, \inlinemetanote{draws triangle} there are three rotations: the rotation where you don't do anything, the rotation by $120^\circ$, and one by $240^\circ$. But there are also three flips: you can flip it here \inlinemetanote{draws vertical axis}.
+
+If you flip it, you're really changing it from the view of the plane, meaning that what was on the upside of the plane is now on the downside. Is that clear? So, then I can also flip it here \inlinemetanote{draws second axis}, and I can flip it here \inlinemetanote{draws third axis}.
+
+Well, this should have been like...
+\end{speech}
+
+\begin{speech}[00:28:40 - 00:29:45]
+So, there are six rotations and flips. I can rotate it and I can flip it: I can rotate it a bit, then flip it, then rotate it back, etc.
+
+If it's not obvious to you, you should first think: is it really a group? Meaning that if I do some flips and rotations and flips and rotations, I don't get any more than the six elements. That's true. Is that obvious to you? It's about how does a flip commute with a rotation, so you should think about that.
+
+And so, if you believe that, the order of this group --- well, also by definition --- this is $D_6$ \inlinemetanote{writes: $D_6$} and has order $6$ \inlinemetanote{writes: $|D_6| = 6$}.
+
+And which group do you think this is?
+
+Well, it's going to be $S_3$. There's not so many groups of order $6$, and this $D_6$, it happens, is isomorphic to the symmetric group $S_3$ \inlinemetanote{writes: $D_6 \cong S_3$} by looking at where the vertices go. When you rotate, you could only get a $3$-cycle. But now when you flip, you could also get the $2$-cycles. So, you get the whole group.
+\end{speech}
+
+\begin{content}[Symmetries of the Equilateral Triangle and \texorpdfstring{$D_6 \cong S_3$}{D6 = S3}]
+\definecolor{figBlue}{HTML}{07608E}
+\definecolor{figRed}{HTML}{B5241C}
+\definecolor{figGray}{HTML}{666667}
+\begin{hidden}
+- Canvas: no scale, cm; width spans x in [-2.2, 2.2], y in [-1.5, 2.2]
+- Equilateral triangle centered at (0, 0.2):
+  Vertices at (90:1.6cm) = (0, 1.8), (210:1.6cm) = (-1.386, -0.6), (330:1.6cm) = (1.386, -0.6).
+- 3 reflection axes passing through each vertex and the midpoint of the opposite edge:
+  (1) Vertical axis x = 0 from (0, 2.1) to (0, -0.9).
+  (2) Axis through vertex 2 (210 deg): line from (-1.6, -0.7) to (0.8, 0.7).
+  (3) Axis through vertex 3 (330 deg): line from (1.6, -0.7) to (-0.8, 0.7).
+- Text labels: D_6, |D_6| = 6, D_6 \cong S_3 below triangle.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    \coordinate (V1) at (90:1.6cm);
+    \coordinate (V2) at (210:1.6cm);
+    \coordinate (V3) at (330:1.6cm);
+
+    % Triangle edges
+    \draw[figBlue, line width=1.2pt] (V1) -- (V2) -- (V3) -- (V1);
+
+    % Reflection axes (dashed lines)
+    \draw[dashed, figRed] (0, 2.1) -- (0, -0.9);
+    \draw[dashed, figRed] (-1.6, -0.72) -- (0.8, 0.66);
+    \draw[dashed, figRed] (1.6, -0.72) -- (-0.8, 0.66);
+
+    % Vertices
+    \fill[figBlue] (V1) circle (2pt) (V2) circle (2pt) (V3) circle (2pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{proposition}[Isomorphism $D_6 \cong S_3$]\label[proposition]{prop:d6-iso-s3}
+The dihedral group $D_6$ of the equilateral triangle has order $6$ and is isomorphic to the symmetric group on three letters:
+\begin{equation}\label{eq:d6-iso-s3}
+D_6 \cong S_3.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Label the three vertices of the equilateral triangle as $\{1, 2, 3\}$. Any symmetry $g \in D_6$ is an isometry of the plane mapping the set of vertices into itself, yielding an injective homomorphism $\Psi \colon D_6 \to S_3$:
+\begin{itemize}
+    \item The $3$ planar rotations by $0^\circ, 120^\circ, 240^\circ$ correspond to the identity and the two $3$-cycles $(1\ 2\ 3)$ and $(1\ 3\ 2)$ in $A_3 \le S_3$.
+    \item The $3$ axial reflections (flips) each fix one vertex and swap the other two, corresponding to the three $2$-cycles (transpositions) $(2\ 3)$, $(1\ 3)$, and $(1\ 2)$.
+\end{itemize}
+Since $|D_6| = 6 = |S_3|$ and $\Psi$ is injective, it is an isomorphism.
+\end{proof}
+\end{content}
+
+\subsection{The Dihedral Group \texorpdfstring{$D_8$}{D\_8} of the Square}
+
+\begin{speech}[00:29:45 - 00:30:40]
+But that's not true for the next case, meaning the next case is the square \inlinemetanote{draws a square}. This is now $D_8$ \inlinemetanote{writes: $D_8$}, and it has of course four rotations, and it has 1, 2, 3, 4 flips \inlinemetanote{draws the four reflection axes: horizontal, vertical, and two diagonals}. You can flip in any one of these four axes.
+
+Anyway, that's the dihedral group. And this one now is not $S_4$, because $S_4$ has order $24$ and this only has order $8$.
+
+But that's a group. You can play with it; it's another standard classical group. So, I leave that for you to think about.
+
+That's kind of fun if you've never thought about it before. In all of these things, if you're interested in the symmetries of this, you should go make a model and look at it.
+\end{speech}
+
+\begin{content}[Symmetries of the Square and \texorpdfstring{$D_8$}{D\_8}]
+\definecolor{figBlue}{HTML}{07608E}
+\definecolor{figRed}{HTML}{B5241C}
+\begin{hidden}
+- Canvas: no scale, cm; square centered at (0, 0), side length 2.2cm:
+  Corners at (-1.1, -1.1), (1.1, -1.1), (1.1, 1.1), (-1.1, 1.1).
+- 4 axes of symmetry drawn as dashed red lines:
+  (1) Vertical axis x = 0 from (0, -1.4) to (0, 1.4).
+  (2) Horizontal axis y = 0 from (-1.4, 0) to (1.4, 0).
+  (3) Diagonal axis y = x from (-1.4, -1.4) to (1.4, 1.4).
+  (4) Diagonal axis y = -x from (-1.4, 1.4) to (1.4, -1.4).
+- Text label D_8 below.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    % Square
+    \draw[figBlue, line width=1.2pt] (-1.1, -1.1) rectangle (1.1, 1.1);
+
+    % Four reflection axes
+    \draw[dashed, figRed] (0, -1.45) -- (0, 1.45);
+    \draw[dashed, figRed] (-1.45, 0) -- (1.45, 0);
+    \draw[dashed, figRed] (-1.45, -1.45) -- (1.45, 1.45);
+    \draw[dashed, figRed] (-1.45, 1.45) -- (1.45, -1.45);
+
+    % Vertices
+    \fill[figBlue] (-1.1, -1.1) circle (2pt) (1.1, -1.1) circle (2pt) (1.1, 1.1) circle (2pt) (-1.1, 1.1) circle (2pt);
+    \node[anchor=north] at (0, -1.5) {$D_8$};
+\end{tikzpicture}
+\end{center}
+
+\begin{observation}[$D_8$ Is a Proper Subgroup of $S_4$]\label[observation]{obs:d8-not-s4}
+For $n = 4$, the dihedral group $D_8$ has order:
+\[
+|D_8| = 2 \cdot 4 = 8,
+\]
+consisting of $4$ rotations ($0^\circ, 90^\circ, 180^\circ, 270^\circ$) and $4$ reflections ($2$ edge bisectors and $2$ vertex diagonals). While $D_8$ embeds faithfully into the symmetric group on the $4$ vertices $S_4$, it is a proper subgroup since $|S_4| = 4! = 24$:
+\[
+D_8 \lneq S_4 \quad (\text{index } [S_4 : D_8] = 3).
+\]
+\end{observation}
+\end{content}
+
+\subsection{The Rubik's Cube as a Group Theory Exercise}
+
+\begin{speech}[00:30:40 - 00:32:40]
+Actually, you know, a really good exercise --- I remember, I forgot about this, I used to say this --- a really good exercise in group theory is: go get the Rubik's Cube and solve it. That's just like straight group theory. You know, if you've never done that, just go get the Rubik's Cube and solve it.
+
+The way you solve it --- I mean, you can solve it with education or without education, but now it's too late: it's only for you with education. The whole thing is working in a certain kind of group, and the main issue with the group --- do you know what I'm talking about, the Rubik's Cube?
+
+The main issue with the Rubik's Cube is understanding the commutators. But that's actually a really good exercise: just go buy a Rubik's Cube and solve it. If you can do that, it means you understood a little bit of group theory.
+\end{speech}
+
+\begin{insight}[The Rubik's Cube as a Group Theory Exercise]
+The Rubik's Cube group $\mathcal{R}$ is generated by the six basic $90^\circ$ face rotations $\{F, B, U, D, L, R\}$. A fundamental problem in solving the cube is moving a small set of pieces (e.g., swapping two edge pieces or twisting two corner pieces) without scrambling the rest of the puzzle. Mathematically, this is achieved via \newterm{commutators}:
+\[
+[g, h] := g h g^{-1} h^{-1}.
+\]
+If the support of an operation $g$ and the support of $h$ overlap in only a small subset of the cube, the commutator $[g, h]$ acts non-trivially \emph{only} on that small intersection and acts as the identity everywhere else.
+\end{insight}
+
+\begin{hidden}
+% timestamp: 00:12:35
+% topic: Polygons, dihedral groups D_6 and D_8, Rubik's cube commutators
+% board_state: def:rotational-ngon, def:dihedral-group, prop:d6-iso-s3, obs:d8-not-s4
+% next_goal: Begin series of questions determining whether given pairs of groups are isomorphic
+% open_loops: none
+\end{hidden}
+
+\section{Testing Group Isomorphisms: Classical Questions}
+
+\subsection{Is \texorpdfstring{$(\mathbb{Q}, +, 0)$}{(Q, +, 0)} Isomorphic to \texorpdfstring{$(\mathbb{Z}, +, 0)$}{(Z, +, 0)}?}
+
+\begin{speech}[00:32:40 - 00:34:20]
+So, now some questions that are kind of embarrassing questions to you. We can ask some questions. Question 1 \inlinemetanote{writes: Questions: / Q1} --- and it's important kind of math culture to know the answers to these questions:
+
+Is $\mathbb{Q}$ as an additive group --- so everything here is an additive group, is $\mathbb{Q}$... let me just write it: \inlinemetanote{writes: is $(\mathbb{Q}, +, 0) \stackrel{?}{\cong} (\mathbb{Z}, +, 0)$} --- is $\mathbb{Q}$ isomorphic to $\mathbb{Z}$?
+
+That's kind of an embarrassing question. What's the answer to this?
+
+Well, they're both additive groups, they're both commutative --- if one were not commutative, then they couldn't be isomorphic ---, but they're both commutative, they're both countable.
+
+So, what's the answer? What do you think?
+\end{speech}
+
+\begin{student}[Student Answer]
+I would say yes, because you could just...
+\end{student}
+
+\begin{speech}[00:34:30 - 00:35:55]
+Aha, yeah, so this is why it's embarrassing, because that answer is, while slightly convincing, completely wrong.
+
+The simplest way to see it's wrong is: this group has a very special property. It's called a divisible group \inlinemetanote{writes: divisible group under Q}.
+
+A divisible group has the property that if I take any element of it, and I take any number --- for example, $17$ \inlinemetanote{writes: $x \in \mathbb{Q}, n \in \mathbb{Z}_{\neq 0}$} is a number ---, then I can solve this equation: $17 \cdot y = x$ \inlinemetanote{writes: Sol. $17 \cdot y = x$, $y = \frac{x}{17}$}. I can solve it.
+
+And this makes sense in a group, because this $17$, remember, is just $y + y + \dots + y$ $17$ times. So, this is an equation in the group, and I can always solve it for any number in $\mathbb{Q}$. You agree with that?
+
+I cannot do that here \inlinemetanote{points to $\mathbb{Z}$}.
+
+So, this actually proves they're not isomorphic.
+\end{speech}
+
+\begin{content}[Question 1: Divisibility of the Additive Group of Rationals]
+\begin{question}[Additive Isomorphism between $\mathbb{Q}$ and $\mathbb{Z}$]\label[question]{q:q-iso-z}
+Is the additive group of rational numbers $(\mathbb{Q}, +, 0)$ isomorphic to the additive group of integers $(\mathbb{Z}, +, 0)$?
+\begin{equation}\label{eq:q-iso-z}
+(\mathbb{Q}, +, 0) \overset{?}{\cong} (\mathbb{Z}, +, 0)
+\end{equation}
+\end{question}
+
+\begin{definition}[Divisible Group]\label[definition]{def:divisible-group}
+An abelian group $(G, +, 0)$ is called \newterm{divisible} if for every element $x \in G$ and every non-zero integer $n \in \mathbb{Z}_{\ne 0}$, the equation:
+\begin{equation}\label{eq:divisible-def}
+n \cdot y = \underbrace{y + y + \dots + y}_{n \text{ times}} = x
+\end{equation}
+has at least one solution $y \in G$.
+\end{definition}
+
+\begin{answer}[to \cref{q:q-iso-z}]\label[answer]{ans:q-iso-z}
+\textcolor{BrickRed}{\textbf{No}}, $(\mathbb{Q}, +, 0) \not\cong (\mathbb{Z}, +, 0)$.
+\end{answer}
+
+\begin{proof}[Proof of Non-Isomorphism via Divisibility]
+The property of being a divisible group is an isomorphism invariant.
+\begin{itemize}
+    \item $(\mathbb{Q}, +, 0)$ is divisible: Given any $x \in \mathbb{Q}$ and $n \in \mathbb{Z}_{\ne 0}$, the element $y := \frac{x}{n} \in \mathbb{Q}$ solves $n \cdot y = x$.
+    \item $(\mathbb{Z}, +, 0)$ is not divisible: For $x = 1 \in \mathbb{Z}$ and $n = 2$, there is no integer $y \in \mathbb{Z}$ satisfying $2y = 1$.
+\end{itemize}
+Since divisibility is preserved under group isomorphisms, $(\mathbb{Q}, +, 0) \not\cong (\mathbb{Z}, +, 0)$.
+\end{proof}
+\end{content}
+
+\subsection{Is \texorpdfstring{$(\mathbb{Q}^*, \cdot, 1)$}{(Q*, ., 1)} Isomorphic to \texorpdfstring{$(\mathbb{Z}, +, 0)$}{(Z, +, 0)}?}
+
+\begin{speech}[00:35:55 - 00:37:20]
+So, another embarrassing question is: if I take the rational numbers and I take out zero, and I look at this group \inlinemetanote{writes: $(\mathbb{Q}^*, \cdot, 1) \stackrel{?}{\cong} (\mathbb{Z}, +, 0)$}, is this now isomorphic to $(\mathbb{Z}, +, 0)$? What about this one? This is a question \inlinemetanote{adds question mark}. So, this is the question, and the answer is no \inlinemetanote{writes: No in red}. What happened to my red? Ah, here it is \inlinemetanote{writes: No in red}.
+
+The answer is no.
+
+So, what about this one? This is now --- I take here multiplication. This is a very interesting thing to think about. Do you have an opinion about this?
+\end{speech}
+
+\begin{student}[Student Answer]
+Yeah, I think that element, like to some power, or...
+\end{student}
+
+\begin{speech}[00:37:40 - 00:39:15]
+Yeah, this is generated by one element. You could have used this argument here also. The argument here is that $\mathbb{Z}$ is actually generated by one element, this element: \inlinemetanote{writes: $\langle 1 \rangle$}. So, it's a subgroup generated by a single element.
+
+And here, there's no element that generates everything, because you can have bigger and bigger prime divisors. You could have used this argument here also, by the way. So, it's a different argument.
+
+The argument here is that $\mathbb{Z}$ is generated by a single element \inlinemetanote{writes: $\mathbb{Z}$ is generated by a single element, $\mathbb{Z} = \langle 1 \rangle$} --- for example, $\mathbb{Z}$ is equal to the subgroup generated by $1$ ---, and $\mathbb{Q}^*$ is not generated by a single element \inlinemetanote{writes: $\mathbb{Q}^*$ is not generated by a single element}.
+
+And so, they can't be isomorphic. And why is $\mathbb{Q}^*$ not generated by a single element? Because if you pick your favorite single element, it'll be some rational number $n/m$ \inlinemetanote{writes: $n/m$}, and since it's multiplication, the generation is by powers. So, in the bottom you will never see primes that weren't already there in $m$. But $\mathbb{Q}$ has in principle any prime you want in the bottom.
+
+So, that's an argument.
+\end{speech}
+
+\begin{speech}[00:39:15 - 00:40:55]
+A different argument, by the way --- I mean, there's many ways you can prove it; these are not hard questions, but it forces you to think about some things. Another way to prove this is that there's a neutral element here. That's the neutral element. An isomorphism would have to take that neutral element to $0$. That's what isomorphisms do, right? It's confusing to think about this because this is multiplication on this side, and addition on that side. Formally there's no difficulty, but in practice it's confusing.
+
+So, $\mathbb{Q}^*$ has a special element: it has the element $-1$ \inlinemetanote{writes: $(-1)^2 = 1$}. $-1$ has the property that if I apply the group law to itself, I get $1$, right? And $-1$ is not $1$.
+
+So, that would mean if there were an isomorphism, it would mean that there should be here some element that if I apply the group law to itself, I get $0$, which is not $0$. That's not true, right? So, this is another proof.
+
+This is a way you can prove things are different: by looking for special elements in the structure. I don't know if you understood this proof, but it just said the existence of $-1$. There's no element here that can play that role.
+\end{speech}
+
+\begin{content}[Question 2: Multiplicative Group of Rationals vs. Integers]
+\begin{question}[Multiplicative Isomorphism between $\mathbb{Q}^*$ and $\mathbb{Z}$]\label[question]{q:qstar-iso-z}
+Is the multiplicative group of non-zero rational numbers $(\mathbb{Q}^*, \cdot, 1)$ isomorphic to the additive group of integers $(\mathbb{Z}, +, 0)$?
+\begin{equation}\label{eq:qstar-iso-z}
+(\mathbb{Q}^*, \cdot, 1) \overset{?}{\cong} (\mathbb{Z}, +, 0)
+\end{equation}
+\end{question}
+
+\begin{answer}[to \cref{q:qstar-iso-z}]\label[answer]{ans:qstar-iso-z}
+\textcolor{BrickRed}{\textbf{No}}, $(\mathbb{Q}^*, \cdot, 1) \not\cong (\mathbb{Z}, +, 0)$.
+\end{answer}
+
+\begin{proof}[First Proof: Invariance of Cyclic / Singly Generated Property]
+The additive group $(\mathbb{Z}, +, 0)$ is cyclic, generated by a single element:
+\[
+\mathbb{Z} = \langle 1 \rangle.
+\]
+If $\Phi \colon \mathbb{Z} \to \mathbb{Q}^*$ were an isomorphism, $\mathbb{Q}^* = \langle \Phi(1) \rangle$ would also be cyclic. Let $g = \frac{n}{m} \in \mathbb{Q}^*$ with $\operatorname{gcd}(n, m) = 1$ be any candidate generator. Then:
+\[
+\langle g \rangle = \left\{ \left(\frac{n}{m}\right)^k \;\middle|\; k \in \mathbb{Z} \right\} = \left\{ \frac{n^k}{m^k} \;\middle|\; k \in \mathbb{Z} \right\}.
+\]
+Any prime $p$ appearing in the prime factorization of an element in $\langle g \rangle$ must divide either $n$ or $m$. Since there are infinitely many primes, choose a prime $p \nmid nm$. Then $p \in \mathbb{Q}^*$ cannot be written as $g^k$ for any $k \in \mathbb{Z}$. Thus, $\mathbb{Q}^*$ is not cyclic, so $(\mathbb{Q}^*, \cdot, 1) \not\cong (\mathbb{Z}, +, 0)$.
+\end{proof}
+
+\begin{proof}[Second Proof: Invariance of Torsion Elements]
+In $(\mathbb{Q}^*, \cdot, 1)$, the element $-1$ is a non-trivial element of finite order $2$:
+\[
+(-1) \ne 1 \quad \text{and} \quad (-1)^2 = (-1) \cdot (-1) = 1.
+\]
+If an isomorphism $\Phi \colon \mathbb{Q}^* \to \mathbb{Z}$ existed, the element $a := \Phi(-1) \in \mathbb{Z}$ would satisfy:
+\[
+2a = a + a = \Phi((-1)^2) = \Phi(1) = 0, \quad \text{with } a \ne 0.
+\]
+However, the only integer satisfying $2a = 0$ is $a = 0$. This contradiction demonstrates that $(\mathbb{Q}^*, \cdot, 1) \not\cong (\mathbb{Z}, +, 0)$.
+\end{proof}
+\end{content}
+
+\subsection{Direct Sums of Integers and Invariance of Dimension}
+
+% [TIMESTAMP-SUSPECT: inspect manually — original: 00:35:58 - 00:36:40]
+\begin{speech}[00:35:58 - 00:36:40]
+Okay, what about this one? Is $\mathbb{Z}$ isomorphic to $\mathbb{Z} \oplus \mathbb{Z}$? \inlinemetanote{writes: $\mathbb{Z} \stackrel{?}{\cong} \mathbb{Z} \oplus \mathbb{Z}$}
+
+What's your view on that?
+
+Well, we had a bunch of ways to check, and you can use some of them now.
+
+Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+$\mathbb{Z}$ is still generated by one element, but...
+\end{student}
+
+\begin{speech}[00:36:40 - 00:37:15]
+Yeah, this one is generated by $1$ \inlinemetanote{writes: $\langle 1 \rangle$ under $\mathbb{Z}$}, and this one is not singly generated \inlinemetanote{writes: not singly gen. under $\mathbb{Z} \oplus \mathbb{Z}$}. Because you have to pick two numbers and they have some ratio, and, you know, not everybody has that ratio, right? Is that clear? So, this is also not \inlinemetanote{crosses through $\cong$}.
+
+So, a trickier question...
+
+The answer to this is no \inlinemetanote{writes: No in red}. Sadly, all the answers to all these questions are no, it seems.
+
+How about if I take $\mathbb{Z}$ to some powers, like $17$ --- direct sum of $17$ \inlinemetanote{writes: $\mathbb{Z}^{17}$} ---: is this isomorphic to $\mathbb{Z}$ to something else, like $691$? \inlinemetanote{writes: $\mathbb{Z}^{17} \stackrel{?}{\cong} \mathbb{Z}^{691}$} How about that? That's kind of unlikely. Is that true or not? I mean, this argument is not going to work, because neither of them are singly generated.
+
+So, you need a new argument. Yeah?
+\end{speech}
+
+\begin{student}[Student Answer]
+The first one is generated by $17$ elements, and the other one by $691$.
+\end{student}
+
+% [TIMESTAMP-SUSPECT: estimated without audio — original: 00:37:15 - 00:39:55]
+\begin{speech}[00:37:15 - 00:38:35]
+You're right. So, if it's true, the first one is generated by $17$ elements. But how do you know this one's not generated by $17$ elements?
+
+There are many ways to see this, and the argument is correct. Let me try to give the simplest way.
+
+The argument is that, roughly speaking, there's a $17$ on this side, which is roughly speaking how many generators you need, and this is $691$; you can't somehow match those two. And the difficulty... you know, if these were vector spaces, there's an invariant of a vector space, which is the dimension. You proved --- at least I hope you proved --- if you have two vector spaces over a field, the only way they can be isomorphic as vector spaces is if they have the same dimension. And it's kind of the argument you want to use, but you can't, because these are not vector spaces. So, the trick is: you can make them vector spaces.
+\end{speech}
+
+% [TIMESTAMP-SUSPECT: estimated without audio — original: 00:37:15 - 00:39:55]
+\begin{speech}[00:38:35 - 00:39:55]
+We can look: if you have an abelian group $A$ \inlinemetanote{writes: $A$ abel. gp.}, we can consider $2A$ \inlinemetanote{writes: $2A \subset A$}. That's the subgroup of all things you get by taking twice things in $A$, all right? So, the argument is: if we had an isomorphism \inlinemetanote{writes: If $\mathbb{Z}^{17} \cong \mathbb{Z}^{691}$}, then this would imply that there would be an isomorphism between $2 \times 17$ and $2 \times 691$ \inlinemetanote{writes: $\implies \faktor{\mathbb{Z}^{17}}{2\mathbb{Z}^{17}} \cong \faktor{\mathbb{Z}^{691}}{2\mathbb{Z}^{691}}$}. And now, what are these? This one is actually $(\mathbb{Z}/2\mathbb{Z})^{17}$ \inlinemetanote{writes: $(\mathbb{Z}/2\mathbb{Z})^{17}$}, and this on the right side is $(\mathbb{Z}/2\mathbb{Z})^{691}$ \inlinemetanote{writes: $(\mathbb{Z}/2\mathbb{Z})^{691}$}. Those are what the quotient groups are. And now these are vector spaces! And then your argument can apply. So, then these would have to be isomorphic like this, and then you have to make an argument that this would imply these vector spaces are isomorphic. $\mathbb{Z}/2\mathbb{Z}$ is a field, that's the point: actual vector spaces \inlinemetanote{writes: actual vector spaces / dim as v.s. over $\mathbb{Z}/2\mathbb{Z}$}. And then you could say that's impossible because of the theory of dimension in linear algebra \inlinemetanote{writes: impossible because of dim in lin. alg.}.
+
+So, this is the way to make your argument complete, because then you really have a field, and then you can really talk about dimension. So, the consequence of this is they're never isomorphic unless these numbers are the same.
+\end{speech}
+
+\begin{content}[Questions 3 and 4: Products of Free Abelian Groups]
+\begin{question}[Isomorphism between $\mathbb{Z}$ and $\mathbb{Z} \oplus \mathbb{Z}$]\label[question]{q:z-iso-z2}
+Is the additive group of integers $(\mathbb{Z}, +, 0)$ isomorphic to the direct sum $(\mathbb{Z} \oplus \mathbb{Z}, +, (0, 0))$?
+\begin{equation}\label{eq:z-iso-z2}
+\mathbb{Z} \overset{?}{\cong} \mathbb{Z} \oplus \mathbb{Z}
+\end{equation}
+\end{question}
+
+\begin{answer}[to \cref{q:z-iso-z2}]\label[answer]{ans:z-iso-z2}
+\textcolor{BrickRed}{\textbf{No}}, $\mathbb{Z} \not\cong \mathbb{Z} \oplus \mathbb{Z}$.
+\end{answer}
+
+\begin{proof}
+$\mathbb{Z}$ is cyclic (generated by $1$), whereas $\mathbb{Z} \oplus \mathbb{Z}$ requires at least two generators. Any single element $(a, b) \in \mathbb{Z} \oplus \mathbb{Z}$ generates a cyclic subgroup $\langle (a, b) \rangle = \{ (ka, kb) \mid k \in \mathbb{Z} \}$, which lies on a single line in $\mathbb{Z}^2$ and cannot span the full lattice.
+\end{proof}
+
+\begin{question}[Isomorphism between $\mathbb{Z}^{17}$ and $\mathbb{Z}^{691}$]\label[question]{q:z17-iso-z691}
+Let $k, \ell \in \mathbb{N}_{>0}$ with $k \ne \ell$ (for instance $k = 17$ and $\ell = 691$). Is:
+\begin{equation}\label{eq:z17-iso-z691}
+\mathbb{Z}^{17} \overset{?}{\cong} \mathbb{Z}^{691}
+\end{equation}
+\end{question}
+
+\begin{answer}[to \cref{q:z17-iso-z691}]\label[answer]{ans:z17-iso-z691}
+\textcolor{BrickRed}{\textbf{No}}, $\mathbb{Z}^{17} \not\cong \mathbb{Z}^{691}$.
+\end{answer}
+
+\begin{proof}[Proof via Reduction Modulo 2 and Vector Space Dimension]
+Let $A$ and $B$ be abelian groups. Any group isomorphism $\Phi \colon A \xrightarrow{\cong} B$ maps $2A$ onto $2B$, because $\Phi(2a) = \Phi(a + a) = \Phi(a) + \Phi(a) = 2\Phi(a)$. Consequently, $\Phi$ descends to a group isomorphism of quotients:
+\begin{equation}\label{eq:quotient-mod2-functor}
+\faktor{A}{2A} \cong \faktor{B}{2B}.
+\end{equation}
+For $A = \mathbb{Z}^{17}$ and $B = \mathbb{Z}^{691}$, we evaluate the quotients:
+\[
+\faktor{\mathbb{Z}^{17}}{2\mathbb{Z}^{17}} \cong (\mathbb{Z}/2\mathbb{Z})^{17} \quad \text{and} \quad \faktor{\mathbb{Z}^{691}}{2\mathbb{Z}^{691}} \cong (\mathbb{Z}/2\mathbb{Z})^{691}.
+\]
+The field $\mathbb{F}_2 := \mathbb{Z}/2\mathbb{Z}$ has characteristic $2$, making $(\mathbb{Z}/2\mathbb{Z})^{17}$ and $(\mathbb{Z}/2\mathbb{Z})^{691}$ into vector spaces over $\mathbb{F}_2$. Any group isomorphism between them is automatically $\mathbb{F}_2$-linear:
+\[
+\Phi(0 \cdot v) = 0, \quad \Phi(1 \cdot v) = \Phi(v) = 1 \cdot \Phi(v).
+\]
+By the fundamental theorem of linear algebra, two finite-dimensional vector spaces over the same field are isomorphic if and only if they possess identical dimensions. However:
+\[
+\dim_{\mathbb{F}_2}\bigl((\mathbb{Z}/2\mathbb{Z})^{17}\bigr) = 17 \ne 691 = \dim_{\mathbb{F}_2}\bigl((\mathbb{Z}/2\mathbb{Z})^{691}\bigr).
+\]
+Thus, $(\mathbb{Z}/2\mathbb{Z})^{17} \not\cong (\mathbb{Z}/2\mathbb{Z})^{691}$, which implies $\mathbb{Z}^{17} \not\cong \mathbb{Z}^{691}$. In general, $\mathbb{Z}^k \cong \mathbb{Z}^\ell \iff k = \ell$.
+\end{proof}
+\end{content}
+
+\subsection{Is \texorpdfstring{$(\mathbb{R}, +, 0)$}{(R, +, 0)} Isomorphic to \texorpdfstring{$(\mathbb{C}, +, 0)$}{(C, +, 0)}?}
+
+\begin{speech}[00:40:00 - 00:40:12]
+Okay, so, let's see. How about this question: are $\mathbb{R}$ and the complex numbers isomorphic? \inlinemetanote{writes: is $(\mathbb{R}, +, 0) \stackrel{?}{\cong} (\mathbb{C}, +, 0)$}
+
+What do you think about this one?
+\end{speech}
+
+\begin{student}[Student Answer]
+They are not isomorphic as real vector spaces because of dimension.
+\end{student}
+
+\begin{speech}[00:40:15 - 00:40:43]
+It's a very convincing argument, but it shows that they're not isomorphic as real vector spaces --- but that's not the question!
+
+So, it's true that these two things are not isomorphic as real vector spaces, which you gave an argument for using dimension theory. But it's not the question. I'm asking whether they're isomorphic as abelian groups!
+
+This is a tricky question. Actually, secretly I knew all of you would be tricked by these questions, because I've done this before in my life.
+
+So, can someone give me the right answer then?
+\end{speech}
+
+\begin{student}[Student Answer]
+No?
+\end{student}
+
+\begin{speech}[00:40:46 - 00:42:18]
+Well, no is the wrong answer.
+
+Yes! It's right! This one happens to be yes: \inlinemetanote{writes \qt{yes} in red chalk under $(\mathbb{R}, +, 0) \stackrel{?}{\cong} (\mathbb{C}, +, 0)$}."
+
+So, why is that?
+
+Do you understand why your answer is incorrect? Because you gave a correct answer that they're not isomorphic as real vector spaces, but real vector spaces is more structure than I'm asking for. I'm asking for just an abelian group.
+
+The proof of this is a weird proof. The proof is: let's consider them as $\mathbb{Q}$-vector spaces \inlinemetanote{writes: Let's consider them as $\mathbb{Q}$-vector spaces}.
+
+I have the right to do that! They're both $\mathbb{Q}$-vector spaces.
+
+Every $\mathbb{Q}$-vector space has a basis, and they both have an uncountable basis. It's actually the first uncountable ordinal... and so, they're both $\mathbb{Q}$-vector spaces with bases of the same cardinality! So, they have to be isomorphic. If they're isomorphic as $\mathbb{Q}$-vector spaces, that implies they're also isomorphic \inlinemetanote{writes: $\implies$ addit. gp. $\cong$} as additive groups.
+
+That's a weird proof. Non-constructive, but it uses the fact that every vector space has a basis. If you don't believe that, then there's no proof of this; but if you believe that every vector space has a basis, then I view this as a $\mathbb{Q}$-vector space: it has a basis which is in bijection with the reals, the first uncountable ordinal; this one also has a basis which is in bijective correspondence with the reals. And if you have two vector spaces with bases which are in bijective correspondence, then they're isomorphic.
+
+It's a really weird proof and it doesn't respect the $\mathbb{R}$-structure. Okay, good, that's it.
+\end{speech}
+
+\begin{content}[Question 5: Additive Isomorphism of Reals and Complex Numbers]
+\begin{question}[Additive Isomorphism between $\mathbb{R}$ and $\mathbb{C}$]\label[question]{q:r-iso-c}
+Is the additive group of real numbers $(\mathbb{R}, +, 0)$ isomorphic to the additive group of complex numbers $(\mathbb{C}, +, 0)$?
+\begin{equation}\label{eq:r-iso-c}
+(\mathbb{R}, +, 0) \overset{?}{\cong} (\mathbb{C}, +, 0)
+\end{equation}
+\end{question}
+
+\begin{answer}[to \cref{q:r-iso-c}]\label[answer]{ans:r-iso-c}
+\textcolor{ForestGreen}{\textbf{Yes}}, $(\mathbb{R}, +, 0) \cong (\mathbb{C}, +, 0)$.
+\end{answer}
+
+\begin{proof}[Proof via $\mathbb{Q}$-Vector Spaces and Hamel Bases]
+Both $(\mathbb{R}, +, 0)$ and $(\mathbb{C}, +, 0)$ are torsion-free, divisible abelian groups. By defining scalar multiplication for $\frac{a}{b} \in \mathbb{Q}$ and $v \in \mathbb{R}$ (respectively $\mathbb{C}$) as the unique solution $y$ to $b \cdot y = a \cdot v$, both $\mathbb{R}$ and $\mathbb{C}$ acquire the structure of vector spaces over the field of rational numbers $\mathbb{Q}$.
+
+By the Axiom of Choice (Zorn's Lemma), every vector space over a field possesses a basis (a Hamel basis):
+\begin{itemize}
+    \item Let $\mathcal{B}_{\mathbb{R}}$ be a $\mathbb{Q}$-basis of $\mathbb{R}$.
+    \item Let $\mathcal{B}_{\mathbb{C}}$ be a $\mathbb{Q}$-basis of $\mathbb{C}$.
+\end{itemize}
+We determine the cardinalities of these bases. Since $\mathbb{Q}$ is countable ($|\mathbb{Q}| = \aleph_0$) and every element of a vector space is a finite $\mathbb{Q}$-linear combination of basis vectors:
+\[
+|\mathbb{R}| = \max\{|\mathbb{Q}|, |\mathcal{B}_{\mathbb{R}}|\} = |\mathcal{B}_{\mathbb{R}}|.
+\]
+Because $|\mathbb{R}| = 2^{\aleph_0} = \mathfrak{c}$ (the cardinality of the continuum), it follows that:
+\[
+|\mathcal{B}_{\mathbb{R}}| = \mathfrak{c}.
+\]
+Similarly, as a set, $|\mathbb{C}| = |\mathbb{R}^2| = \mathfrak{c} \cdot \mathfrak{c} = \mathfrak{c}$, so:
+\[
+|\mathcal{B}_{\mathbb{C}}| = \mathfrak{c}.
+\]
+Since $|\mathcal{B}_{\mathbb{R}}| = |\mathcal{B}_{\mathbb{C}}| = \mathfrak{c}$, there exists a bijection between the two bases:
+\[
+\psi \colon \mathcal{B}_{\mathbb{R}} \xrightarrow{\cong} \mathcal{B}_{\mathbb{C}}.
+\]
+Extending $\psi$ by $\mathbb{Q}$-linearity yields an isomorphism of $\mathbb{Q}$-vector spaces:
+\[
+\Psi \colon \mathbb{R} \xrightarrow{\cong} \mathbb{C}.
+\]
+In particular, $\Psi$ preserves addition:
+\[
+\Psi(x + y) = \Psi(x) + \Psi(y) \quad \forall x, y \in \mathbb{R},
+\]
+so $\Psi$ is an isomorphism of the underlying additive abelian groups:
+\[
+(\mathbb{R}, +, 0) \cong (\mathbb{C}, +, 0).
+\]
+\end{proof}
+\end{content}
+
+\begin{aiNote}[Beyond the Lecture: Non-Constructivity and the Axiom of Choice]
+% [PERSISTENT, ADDITION]
+The existence of an additive group isomorphism $\mathbb{R} \cong \mathbb{C}$ depends strictly on the Axiom of Choice (AC). Without AC, it is consistent with ZF set theory that every $\mathbb{Q}$-linear map $\mathbb{R} \to \mathbb{R}$ is Lebesgue measurable (which forces all homomorphisms to be of the form $x \mapsto cx$), in which case $\mathbb{R} \not\cong \mathbb{C}$ as additive groups.
+\end{aiNote}
+
+\subsection{The Structure of the Multiplicative Group \texorpdfstring{$(\mathbb{Q}^*, \cdot, 1)$}{(Q*, ., 1)}}
+
+\begin{speech}[00:42:21 - 00:43:32]
+\inlinemetanote{raises the middle chalkboard, revealing a fresh clean board} Okay, so, the last thing I wanted to point out was --- this is something I leave for an exercise --- is that there's actually a nice understanding of what this is: that's the rational numbers without zero, and multiplication, this group: \inlinemetanote{writes: $(\mathbb{Q}^*, \cdot, 1)$}. And at the end of the last session, we proved that this was not the integers, but this is what it is. So, this is actually something true, as opposed to all the false things I was mostly writing there: this is $\mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty$ \inlinemetanote{writes: $\cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty$}.
+
+I haven't even defined these terms, but I leave this as an exercise for you \inlinemetanote{draws a box around $(\mathbb{Q}^*, \cdot, 1) \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty$}, in the theme of thinking for yourself.
+
+So, the exercise \inlinemetanote{writes: Ex: Understand what is meant by $\mathbb{Z}^\infty$ and prove this.}: understand what is meant by $\mathbb{Z}^\infty$, and prove this. And the hint is: it only uses high school mathematics. All right? But that's an actual answer.
+\end{speech}
+
+\begin{content}[The Structure of the Multiplicative Group of Rationals]
+\begin{highlight}{black}[Chalkboard Box: Structure of $\mathbb{Q}^*$]
+\begin{equation}\label{eq:qstar-structure}
+(\mathbb{Q}^*, \cdot, 1) \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty
+\end{equation}
+\end{highlight}
+
+\begin{exercise}[Structure Theorem for $\mathbb{Q}^*$]\label[exercise]{exer:structure-qstar}
+Understand what is meant by the notation $\mathbb{Z}^\infty$ in \eqref{eq:qstar-structure} and prove that:
+\[
+(\mathbb{Q}^*, \cdot, 1) \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty.
+\]
+\textbf{Hint:} The argument only uses high school mathematics (fundamental theorem of arithmetic).
+\end{exercise}
+
+\begin{proof}[Proof of \cref{exer:structure-qstar} (beyond the lecture)]
+To interpret and prove \eqref{eq:qstar-structure}:
+
+\textbf{Meaning of $\mathbb{Z}^\infty$:} The symbol $\mathbb{Z}^\infty$ denotes the direct sum of countably infinitely many copies of $\mathbb{Z}$ (one for each prime $p \in \mathbb{P} = \{2, 3, 5, 7, 11, \dots\}$):
+\[
+\mathbb{Z}^\infty \coloneqq \bigoplus_{p \in \mathbb{P}} \mathbb{Z} = \left\{ (v_p)_{p \in \mathbb{P}} \in \mathbb{Z}^\mathbb{P} \;\middle|\; v_p = 0 \text{ for all but finitely many } p \right\}.
+\]
+
+\textbf{Unique Prime Factorization:} By the Fundamental Theorem of Arithmetic, every non-zero rational number $q \in \mathbb{Q}^*$ can be factored uniquely as:
+\[
+q = (-1)^s \prod_{p \in \mathbb{P}} p^{v_p(q)},
+\]
+where $s \in \{0, 1\} \cong \mathbb{Z}/2\mathbb{Z}$ determines the sign ($s = 0$ if $q > 0$ and $s = 1$ if $q < 0$), and each exponent $v_p(q) \in \mathbb{Z}$ is the $p$-adic valuation of $q$.
+
+\textbf{Group Isomorphism:} Multiplying two rational numbers corresponds to adding the signs modulo $2$ and adding the prime exponents component-wise:
+\[
+\Phi \colon \mathbb{Q}^* \longrightarrow \mathbb{Z}/2\mathbb{Z} \oplus \bigoplus_{p \in \mathbb{P}} \mathbb{Z}, \quad q \longmapsto \left( s \bmod 2, \ (v_p(q))_{p \in \mathbb{P}} \right).
+\]
+Because prime factorization is unique, $\Phi$ is an isomorphism of groups.
+\end{proof}
+\end{content}
+
+\section{Introduction to Group Actions}
+
+\subsection{Motivation: Symmetries and Groups \texorpdfstring{\protect\qt{in the Wild}}{in the Wild}}
+
+\begin{speech}[00:43:32 - 00:44:24]
+Okay, so, the next topic in the class is like one of the coolest topics in the class, and that's group actions \inlinemetanote{writes: Group actions}.
+
+As I said, groups come from kind of a different space in mathematics than rings, and a lot of how we treat them so far has been similar to the way we think about rings. But they actually come from a different place: they come from symmetries.
+
+And the way this is normally found: if you meet a group that's, so to speak, not in captivity --- a wild group ---, it will almost always occur as a symmetry object. And this is made explicit in this notion of group action, which is another way to say: when you meet a group typically in mathematics, it will be acting.
+\end{speech}
+
+\begin{speech}[00:44:24 - 00:45:35]
+So, for a group action, you need a group \inlinemetanote{writes: $G$ group}, and this could be finite or infinite. A special part of this discussion will be for finite groups, but group actions are for both finite and infinite groups, and they could be abelian or non-abelian; it's just a group.
+
+And then you need a set, $T$ --- this is a set \inlinemetanote{writes: $T$ set} ---, this is the set on which $G$ acts \inlinemetanote{writes: on which $G$ acts}.
+
+And the symbol for a group acting on a set is a great symbol: it's $G$, $T$, and it's like this: \inlinemetanote{writes: $G \curvearrowright T$}. That's kind of fun to draw: that's $G$ acting on $T$.
+
+All right, so, I have to tell you what a group action is.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:05:25
+% topic: Definition of Group Actions
+% board_state: exer:structure-qstar, def:group-action
+% next_goal: Write formal definition of group action and its two axioms
+% open_loops: none
+\end{hidden}
+
+\subsection{Formal Definition and Axioms of a Group Action}
+% Old section name: Definition of a Group Action
+
+\begin{speech}[00:45:35 - 00:47:24]
+So, a group action of $G$ on $T$ is \inlinemetanote{writes: A group action of $G$ on $T$ is} nothing more or less than a map from $G \times T$ to $T$ \inlinemetanote{writes: $\Phi \colon G \times T \to T$}. That's it, okay?
+
+And it satisfies some conditions. The first condition \inlinemetanote{writes: (i)} is that $\Phi$ of the neutral element times any element $t$ is just $t$: \inlinemetanote{writes: $\Phi(e, t) = t$}.
+
+This is where $e \in G$ is the neutral element \inlinemetanote{writes: $e \in G$ neutral} --- I don't have to write this, because that's what my convention has ---, and $t$ is anything \inlinemetanote{writes: $\forall t \in T$}.
+
+This means that when the group acts, the action by the neutral element doesn't do anything.
+
+And the second one \inlinemetanote{writes: (ii)} is this associativity property. For the second one, this is now some notation: we write \inlinemetanote{writes: We write} $\Phi(g, t)$ as just $g \cdot t$ \inlinemetanote{writes: $\Phi(g, t) = g \cdot t$}.
+
+In algebra, typically every operation is just labeled by dot. So, you have to concentrate when you see like $g \cdot t$: this means $t$ is an element of $T$ \inlinemetanote{writes: $t \in T$ under $t$} and $g$ is an element of $G$ \inlinemetanote{writes: $g \in G$ under $g$}, and the dot is that, okay?
+
+To write the second property, it's the associativity property \inlinemetanote{writes: (ii) Associative}. And it's much easier to write in this notation: that if I take $g_1 \cdot t$ and I have $g_2$ \inlinemetanote{writes: $g_2 \cdot (g_1 \cdot t)$}, this is equal to $(g_2 g_1) \cdot t$ \inlinemetanote{writes: $= (g_2 g_1) \cdot t$}.
+
+And to read this, we can put everything explicit: this is the action \inlinemetanote{draws arrow from first $\cdot$ to label \qt{act.}}, this is group multiplication \inlinemetanote{draws arrow from $g_2 g_1$ to label \qt{gp. mult.}}. Here, this is the action \inlinemetanote{draws arrow from dot in $(g_1 \cdot t)$ to label \qt{act.}}, and this is group multiplication \inlinemetanote{draws arrow from outer dot to label \qt{gp. mult.}}.
+
+Okay? Does that make sense? When you have, yeah.
+\end{speech}
+
+\begin{student}[Student Question]
+How is that group multiplication? $g_1 \cdot t$ is an element of $T$.
+\end{student}
+
+\begin{speech}[00:47:28 - 00:47:30]
+Which one?
+\end{speech}
+
+\begin{student}[Student Question, continued]
+$g_2$... on the left.
+\end{student}
+
+\begin{speech}[00:47:33 - 00:47:40]
+Yeah, sorry. I confused myself, yes. \inlinemetanote{corrects \qt{gp. mult.} to \qt{act.}} They're both actions.
+\end{speech}
+
+\begin{speech}[00:47:40 - 00:48:58]
+So, you can write this out in terms of that $\Phi$, but it's a little unpleasant: this would be \inlinemetanote{writes: $\Phi(g_2, \Phi(g_1, t)) = \Phi(g_2 g_1, t)$}.
+
+That's the associativity here, written out explicitly in terms of the action. This is just a translation of that.
+
+In principle, there's never any reason to be confused, because when you have a dot, when you consider group actions, there'll be two things and there could be dots between them. And in principle, there's no reason to be confused, because if both things are group elements, then the dot is group multiplication. If one thing is a group element and the other one is an element of the set $T$, then it's the action.
+
+You're not allowed to put dots between two elements of $T$, because we do not have a map that takes two things in $T$ to something else.
+
+Okay? That's it. A group action is this map that takes an element of the group, an element of $T$ to $T$; for the neutral element, it does nothing, and it has this associativity. The consequences of associativity are great.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Group Action]\label[definition]{def:group-action}
+Let $(G, \cdot, e)$ be a group and $T$ a non-empty set. A \newterm{group action} of $G$ on $T$ (denoted $G \curvearrowright T$) is a mapping:
+\begin{equation}\label{eq:action-map}
+\Phi \colon G \times T \longrightarrow T, \quad (g, t) \longmapsto \Phi(g, t) =: g \cdot t
+\end{equation}
+satisfying the following two axioms:
+\begin{enumerate}[label=\textbf{(\roman*)}]
+    \item \textbf{Identity Action:} For the neutral element $e \in G$ and all $t \in T$:
+    \begin{equation}\label{eq:action-identity}
+    \Phi(e, t) = e \cdot t = t.
+    \end{equation}
+    \item \textbf{Compatibility / Associativity:} For all $g_1, g_2 \in G$ and all $t \in T$:
+    \begin{equation}\label{eq:action-associativity}
+    \Phi(g_2, \Phi(g_1, t)) = \Phi(g_2 g_1, t),
+    \end{equation}
+    or equivalently in dot notation:
+    \begin{equation}\label{eq:action-dot-notation}
+    g_2 \cdot (g_1 \cdot t) = (g_2 g_1) \cdot t.
+    \end{equation}
+\end{enumerate}
+\end{definition}
+
+\begin{steps}[Decoding the Dot Notation in Equation \eqref{eq:action-dot-notation}]
+In equation \eqref{eq:action-dot-notation}, the symbols represent distinct operations:
+\begin{itemize}
+    \item \textbf{Left-Hand Side $g_2 \cdot (g_1 \cdot t)$:}
+    \begin{itemize}
+        \item The inner operation $g_1 \cdot t$ is the \newterm{group action} evaluating to an element of $T$.
+        \item The outer operation $g_2 \cdot (g_1 \cdot t)$ is again the \newterm{group action} of $g_2 \in G$ on the element $(g_1 \cdot t) \in T$.
+    \end{itemize}
+    \item \textbf{Right-Hand Side $(g_2 g_1) \cdot t$:}
+    \begin{itemize}
+        \item The product $g_2 g_1$ is \newterm{group multiplication} inside $G$.
+        \item The outer dot is the \newterm{group action} of the resulting group element $(g_2 g_1) \in G$ on $t \in T$.
+    \end{itemize}
+\end{itemize}
+No operation is defined between elements of $T$: an expression of the form $t_1 \cdot t_2$ for $t_1, t_2 \in T$ is strictly meaningless.
+\end{steps}
+\end{content}
+
+\subsection{Permutations Induced by a Group Action}
+
+\begin{speech}[00:49:15 - 00:50:23]
+\inlinemetanote{erases the left chalkboard} Let me say that first. There are very few hypotheses here, so the consequences of associativity are pretty big.
+
+Let's say $\Phi \colon G \times T \to T$ is a group action \inlinemetanote{writes: $\Phi \colon G \times T \to T$ is a group action.}, and then let $g$ be an element of $G$ \inlinemetanote{writes: and then let $g \in G$,}. Then we can define, say, $\sigma_g$ to be a map from $T$ to $T$ \inlinemetanote{writes: then we can define $\sigma_g \colon T \to T$}, where $\sigma_g(t)$ is equal to $g \cdot t$ \inlinemetanote{writes: where $\sigma_g(t) = g \cdot t$}.
+
+Okay? So, given any element in the group, it kind of spins elements of $T$, all right?
+\end{speech}
+
+\begin{speech}[00:50:23 - 00:52:17]
+And the claim is, because of what we know, that if I take the neutral element, this is the identity map from $T$ to $T$: \inlinemetanote{writes: $\sigma_e = \operatorname{Id} \colon T \to T$}. That's from \textbf{(1)} \inlinemetanote{writes: (1)}. When I take the neutral element, it does nothing to $T$.
+
+And then the other thing is if I take $\sigma_g \circ \sigma_{g^{-1}}$ \inlinemetanote{writes: $\sigma_g \circ \sigma_{g^{-1}}$} --- this is a composition ---, this is equal to $\sigma_{g g^{-1}}$ \inlinemetanote{writes: $= \sigma_{g g^{-1}}$}. So, this is equal to $\sigma_e$ \inlinemetanote{writes: $= \sigma_e$}, and this is equal to the identity: \inlinemetanote{writes: $= \operatorname{Id}$}.
+
+So, if you expand this: if I do $\sigma_g \circ \sigma_{g^{-1}}(t)$ \inlinemetanote{writes: $\sigma_g \circ \sigma_{g^{-1}}(t)$}, this is equal to first doing that \inlinemetanote{writes: $= \sigma_g(\sigma_{g^{-1}}(t))$}, and then doing the next one \inlinemetanote{writes: $= g \cdot (g^{-1} \cdot t)$}, and then by associativity, this is $(g g^{-1}) \cdot t$ \inlinemetanote{writes: $= (g g^{-1}) \cdot t$}, and then this is $e \cdot t$ \inlinemetanote{writes: $= e \cdot t$}, which is $t$ \inlinemetanote{writes: $= t$}.
+
+So, that means for every element, I have some map from $T$ to $T$, and its inverse map is given by doing the group action for the inverse element, right?
+
+In particular, these elements are all bijections. So, the corollary here is that $\sigma_g$ from $T$ to $T$ is a bijection \inlinemetanote{writes: Cor. $\sigma_g \colon T \to T$ is bijection.}.
+
+To show that it's a bijection has these two parts: you need to know that the neutral element does nothing --- it's an identity ---, and then use associativity.
+\end{speech}
+
+\begin{speech}[00:52:17 - 00:53:27]
+So, you can say that for every element of $G$, I get some bijection, which is kind of a symmetry. And that's why this group action can be viewed as some kind of symmetry.
+
+This is all kind of formal. Let's do some examples. But are there questions about this?
+
+Once you get used to this notation, you just use these dots liberally and just don't worry about them. If you're doing things correctly, the dots will always line up in the correct way.
+
+And the main point is: you're not allowed to put any dots between two elements of $T$, because there's no rule, given two elements of $T$, to get a new element. If you ever study group actions and you're writing dots between two elements of $T$, you've done something terribly wrong.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Group Elements Act as Bijections]\label[proposition]{prop:action-induced-bijections}
+Let $\Phi \colon G \times T \to T$ be a group action. For each $g \in G$, define the map:
+\begin{equation}\label{eq:sigma-g-def}
+\sigma_g \colon T \longrightarrow T, \quad t \longmapsto \sigma_g(t) \coloneqq g \cdot t.
+\end{equation}
+Then:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item $\sigma_e = \operatorname{id}_T$.
+    \item For all $g, h \in G$, $\sigma_g \circ \sigma_h = \sigma_{gh}$.
+    \item For every $g \in G$, $\sigma_g$ is a bijection of $T$, with two-sided inverse given by:
+    \[
+    (\sigma_g)^{-1} = \sigma_{g^{-1}}.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We verify the three claims directly from the group action axioms:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item By axiom \textbf{(i)}, $\sigma_e(t) = e \cdot t = t = \operatorname{id}_T(t)$ for all $t \in T$.
+    \item For any $t \in T$, using axiom \textbf{(ii)}:
+    \[
+    (\sigma_g \circ \sigma_h)(t) = \sigma_g(\sigma_h(t)) = g \cdot (h \cdot t) = (gh) \cdot t = \sigma_{gh}(t).
+    \]
+    Thus, $\sigma_g \circ \sigma_h = \sigma_{gh}$.
+    \item Setting $h = g^{-1}$ in property (2) and invoking property (1):
+    \begin{align*}
+    (\sigma_g \circ \sigma_{g^{-1}})(t) &= \sigma_g(\sigma_{g^{-1}}(t)) \\
+    &= g \cdot (g^{-1} \cdot t) \\
+    &= (g g^{-1}) \cdot t \\
+    &= e \cdot t = t = \operatorname{id}_T(t).
+    \end{align*}
+    Hence, $\sigma_g \circ \sigma_{g^{-1}} = \operatorname{id}_T$. Replacing $g$ by $g^{-1}$ shows symmetrically that $\sigma_{g^{-1}} \circ \sigma_g = \operatorname{id}_T$.
+\end{enumerate}
+Since $\sigma_g$ possesses a two-sided inverse map $\sigma_{g^{-1}} \colon T \to T$, it is a bijection.
+\end{proof}
+
+\begin{corollary}[Permutation Representation]\label[corollary]{cor:action-permutation-rep}
+Every group action $G \curvearrowright T$ is equivalent to a group homomorphism into the symmetric group of all permutations on $T$:
+\begin{equation}\label{eq:permutation-representation}
+\Psi \colon G \longrightarrow \operatorname{Sym}(T), \quad g \longmapsto \sigma_g.
+\end{equation}
+\end{corollary}
+
+\begin{steps}[Conceptual Meaning: Symmetries of a Set]
+This theorem reveals the philosophical essence of group actions:
+\begin{itemize}
+    \item Each individual group element $g \in G$ acts as a permutation (\newterm{symmetry}) of the set $T$, transforming each state $t$ into $g \cdot t$.
+    \item Group multiplication in $G$ corresponds precisely to functional composition of bijections: $\sigma_{g_1 g_2} = \sigma_{g_1} \circ \sigma_{g_2}$.
+    \item The group $G$ is realized concretely as a subgroup of symmetries $\operatorname{Im}(\Psi) \le \operatorname{Sym}(T)$, modulo the kernel of elements that act trivially on every element of $T$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:13:17
+% topic: Bijections Induced by Group Actions and Permutation Representations
+% board_state: prop:action-induced-bijections, cor:action-permutation-rep
+% next_goal: Examples of group actions: S_n on {1,...,n}, Rot(Tetrahedron) on vertices/edges/faces
+% open_loops: none
+\end{hidden}
+
+\section{Examples of Group Actions}
+
+\subsection{Canonical Example: The Symmetric Group Action}
+
+\begin{speech}[00:53:40 - 00:55:38]
+\inlinemetanote{erases the middle chalkboard} So, we can do some examples, and usually the examples clear up some of the issues in understanding. The canonical example, the most basic example, is one that you already know.
+
+The most fundamental example --- I don't know, maybe that's an exaggeration, but anyway for this class --- \inlinemetanote{writes: The most fundamental example} is: you take $S_n$, that's our group \inlinemetanote{writes: $S_n$}, and it acts on the set $T$, and the set $T$ is the set of numbers $1, 2$ to $n$ \inlinemetanote{writes: $\times \{1, 2, \dots, n\}$}. This is $T$ \inlinemetanote{writes: $T$ under $\{1, 2, \dots, n\}$}.
+
+There's a canonical action of the symmetric group on the set $1$ to $n$, and so, what do we have to do? We have to say what happens when I have an element of the symmetric group, $\gamma$, and an element of the set from $1$ to $n$: \inlinemetanote{writes: $\Phi \colon S_n \times \{1, \dots, n\} \to \{1, \dots, n\}$ / $\Phi(\gamma, i) = \gamma(i)$}. We just feed this element to the symmetric group, because the symmetric group is the set of bijections from the $n$-element set to itself. So, this defines a group action.
+
+Okay? And then you have to check the two properties. Well, if this were the neutral element of the symmetric group, that neutral element doesn't move anybody, so that's fine. And then you have to check the associativity of the group action, and that is because that's exactly how composition is defined in the symmetric group: the group law in the symmetric group is composition, and that shows the associativity property of this group action.
+
+So, here there are two things to check: check \textbf{(1)} and \textbf{(2)} \inlinemetanote{writes: Check (1) \& (2)}. And when you do it, they both come because of the definitions of the neutral element and composition in the symmetric group \inlinemetanote{writes: both are because of defs. of $e, \circ$ in $S_n$}.
+
+It's good to make sure you understand that. It's kind of the motivation example. You can see to go from this example to the whole definition is not a big leap, actually. So, it's very good to understand this example.
+\end{speech}
+
+\begin{content}
+\begin{example}[Canonical Action of $S_n$ on $\{1, \dots, n\}$]\label[example]{ex:canonical-sn-action}
+Let $G = S_n$ be the symmetric group of degree $n$, and let $T = \{1, 2, \dots, n\}$.
+The \newterm{canonical action} of $S_n$ on $T$ is defined by evaluating the permutation on the index:
+\begin{equation}\label{eq:sn-action-def}
+\Phi \colon S_n \times \{1, \dots, n\} \longrightarrow \{1, \dots, n\}, \quad \Phi(\gamma, i) \coloneqq \gamma(i).
+\end{equation}
+\textbf{Verification of Axioms:}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Neutral Element:} The neutral element of $S_n$ is the identity permutation $e = \operatorname{id}$. Thus:
+    \[
+    \Phi(e, i) = e(i) = i \quad \forall i \in \{1, \dots, n\}.
+    \]
+    \item \textbf{Associativity:} The group operation in $S_n$ is functional composition $\gamma_2 \circ \gamma_1$. Thus, for all $\gamma_1, \gamma_2 \in S_n$ and $i \in \{1, \dots, n\}$:
+    \[
+    \Phi(\gamma_2, \Phi(\gamma_1, i)) = \Phi(\gamma_2, \gamma_1(i)) = \gamma_2(\gamma_1(i)) = (\gamma_2 \circ \gamma_1)(i) = \Phi(\gamma_2 \circ \gamma_1, i).
+    \]
+\end{enumerate}
+Both conditions hold tautologically by the very definition of the symmetric group.
+\end{example}
+\end{content}
+
+\subsection{Geometric Actions: Symmetries of the Tetrahedron}
+
+\begin{speech}[00:55:38 - 00:57:12]
+Another example that we've talked about is if I take, let's say, the tetrahedron \inlinemetanote{draws a tetrahedron, labels vertices $A, B, C, D$}. I can take $G$ to be the rotation group of the tetrahedron \inlinemetanote{writes: $G = \operatorname{Rot}(\text{tetrahedron})$}, which we know is $A_4$, but I don't say what it is, it's not necessary; and $T$ to be the set of vertices, let's say. Let's name these vertices: $A, B, C, D$. So, $T$ to be the set $\{A, B, C, D\}$ \inlinemetanote{writes: $T = \{A, B, C, D\}$ / vertices}.
+
+And then this action, $G \times T \to T$ \inlinemetanote{writes: $\Phi \colon G \times T \to T$}, means if I have a rotation and I have a vertex, then what do I get here? Well, I can just rotate that vertex and get another vertex: \inlinemetanote{writes: $r \cdot v = r(v)$}.
+
+Is that clear? This is how it's acting as a symmetry of the object. Again, to do this, you have to go check carefully all those things are true, and when you do that, you'll find that it's all somehow tautologically true: the neutral element here was the rotation that doesn't do anything. If it doesn't do anything, it just takes the vertex to itself.
+
+And then you have to check the associativity, and the associativity in these groups of symmetries is always a consequence because the group structure is defined by composition, and that's what's needed there. So, you have to check that for yourself carefully that you believe it.
+\end{speech}
+
+\begin{speech}[00:57:12 - 00:58:28]
+Okay, but why should I take the vertices? Why not take some other set? $\widehat{T}$ is the set of edges \inlinemetanote{writes: $\widehat{T} = \{ \text{set of edges} \}$}. I can do that also: the set of edges. Can you see all of the edges here? There's one missing: this one \inlinemetanote{draws missing internal edge in tetrahedron}.
+
+So, the set of edges --- I don't label them all, but there's the six edges here: set of edges, six edges \inlinemetanote{writes: $6$ edges}.
+
+And then there's another action, which is the rotation group \inlinemetanote{writes: $G \times \widehat{T} \to \widehat{T}$}. So, here it's spinning around the edges. Just as before, if you give a rotation and an edge, then you can rotate that edge and get another edge: \inlinemetanote{writes: $r \cdot e = r(e)$}.
+
+That's a different group action with the same geometry.
+
+And there's no reason to stop here: you can also take the set of faces \inlinemetanote{writes: $\widetilde{T} = \text{set of faces}$}. There's four faces, and you can also take $G \times \widetilde{T} \to \widetilde{T}$ \inlinemetanote{writes: $G \times \widetilde{T} \to \widetilde{T}$}, where again, I can rotate a face, and I get the rotated face: \inlinemetanote{writes: $r \cdot f = r(f)$}.
+
+Those are all group actions from this...
+\end{speech}
+
+\begin{content}[Symmetries of the Tetrahedron Acting on Vertices, Edges, and Faces]
+\definecolor{figBlue}{HTML}{07608E}
+\definecolor{figGray}{HTML}{666667}
+\begin{hidden}
+- Canvas: no scale, cm; width spans x in [-1.5, 3.5], y in [-1.0, 3.0]
+- Regular tetrahedron with vertices labeled A, B, C, D:
+  (1) Top vertex A at (1.0, 2.3)
+  (2) Front-left vertex B at (-0.8, 0.2)
+  (3) Bottom-front vertex C at (0.8, -0.4)
+  (4) Right-back vertex D at (2.2, 0.4)
+- Edges:
+  Solid front edges: A--B, A--C, A--D, B--C, C--D.
+  Dashed back edge (internal): B--D.
+- Text labels: A, B, C, D placed outside vertices with clearance > 0.2cm.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    \coordinate (A) at (1.0, 2.3);
+    \coordinate (B) at (-0.8, 0.2);
+    \coordinate (C) at (0.8, -0.4);
+    \coordinate (D) at (2.2, 0.4);
+
+    % Solid front edges
+    \draw[figBlue] (A) -- (B) -- (C) -- (A);
+    \draw[figBlue] (A) -- (D) -- (C);
+
+    % Dashed internal edge
+    \draw[dashed, figGray] (B) -- (D);
+
+    % Vertices
+    \fill[figBlue] (A) circle (2pt) node[anchor=south] {$A$};
+    \fill[figBlue] (B) circle (2pt) node[anchor=east] {$B$};
+    \fill[figBlue] (C) circle (2pt) node[anchor=north] {$C$};
+    \fill[figBlue] (D) circle (2pt) node[anchor=west] {$D$};
+\end{tikzpicture}
+\end{center}
+
+\begin{example}[Actions of the Tetrahedron Rotation Group]\label[example]{ex:tetrahedron-actions}
+Let $G = \operatorname{Rot}(\text{Tetrahedron}) \cong A_4$ be the rotation group of the regular tetrahedron ($|G| = 12$). The single symmetry group $G$ acts naturally on three distinct geometric feature sets:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Action on Vertices ($|T| = 4$):}
+    Let $T = \{A, B, C, D\}$. Any rotation $r \in G$ maps vertices to vertices:
+    \[
+    \Phi_V \colon G \times T \longrightarrow T, \quad (r, v) \longmapsto r \cdot v \coloneqq r(v).
+    \]
+    This action defines an isomorphism $\Psi_V \colon G \xrightarrow{\cong} A_4 \le S_4$.
+    \item \textbf{Action on Edges ($|\widehat{T}| = 6$):}
+    Let $\widehat{T}$ be the set of the $6$ edges $\{AB, AC, AD, BC, BD, CD\}$. Each rotation maps edges to edges:
+    \[
+    \Phi_E \colon G \times \widehat{T} \longrightarrow \widehat{T}, \quad (r, e) \longmapsto r \cdot e \coloneqq r(e).
+    \]
+    This action defines an injective homomorphism $\Psi_E \colon G \hookrightarrow S_6$.
+    \item \textbf{Action on Faces ($|\widetilde{T}| = 4$):}
+    Let $\widetilde{T}$ be the set of the $4$ triangular faces $\{ABC, ABD, ACD, BCD\}$. Each rotation maps faces to faces:
+    \[
+    \Phi_F \colon G \times \widetilde{T} \longrightarrow \widetilde{T}, \quad (r, f) \longmapsto r \cdot f \coloneqq r(f).
+    \]
+    This action induces a permutation representation into $S_4$.
+\end{enumerate}
+\end{example}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:18:18
+% topic: Geometric Group Actions on Simplicial Objects (Tetrahedron)
+% board_state: ex:canonical-sn-action, ex:tetrahedron-actions
+% next_goal: Examples from linear algebra (GL_n(C) on C^n) and complex analysis (U(1) on C)
+% open_loops: none
+\end{hidden}
+
+\subsection{Linear Algebra: Matrix Action on Vector Spaces}
+
+\begin{speech}[00:58:53 - 01:00:03]
+\inlinemetanote{erases the left chalkboard} Another place symmetries come up is in linear algebra. In a sense, a lot of that course is about symmetry; it's just that it's not said that way for some historical reasons. But a lot of the mathematical content about linear algebra is about symmetries of the vector space.
+
+So, the standard action from a linear algebra class is the following group action: you take $\operatorname{GL}_n$ \inlinemetanote{writes: $\operatorname{GL}_n(\mathbb{C})$} --- whatever field, it doesn't really matter, but let's just pick one: $\operatorname{GL}_n(\mathbb{C})$.
+
+Remember, this is the group of invertible $n \times n$ matrices with complex coefficients \inlinemetanote{writes: group of inv. $n \times n$ matrices with $\mathbb{C}$-coeff.}, and it has the neutral element usually called the identity matrix: it's this one \inlinemetanote{writes: $\operatorname{Id} = \begin{pmatrix} 1 & & 0 \\ & \ddots & \\ 0 & & 1 \end{pmatrix}$}. We've discussed this group before, right?
+
+Okay. It acts on the vector space $\mathbb{C}^n$ \inlinemetanote{writes: $\operatorname{GL}_n(\mathbb{C}) \times \mathbb{C}^n$}. And what is this action? It's not going to surprise you what this action is.
+
+Given an element of this group, which is a matrix, and an element here, which is a vector: the matrix acts on the vector \inlinemetanote{writes: $\Phi \colon \operatorname{GL}_n(\mathbb{C}) \times \mathbb{C}^n \to \mathbb{C}^n$, $\Phi(g, v) = g \cdot v$}. That's also dot.
+
+So, this is the matrix acting on the vector \inlinemetanote{draws a square matrix and a column vector}. That's a group action.
+\end{speech}
+
+\begin{content}[Action of the General Linear Group on Vector Spaces]
+\begin{example}[Canonical Action of $\operatorname{GL}_n(\mathbb{C})$ on $\mathbb{C}^n$]\label[example]{ex:gln-action}
+Let $G = \operatorname{GL}_n(\mathbb{C})$ be the general linear group of invertible $n \times n$ matrices with complex entries:
+\[
+\operatorname{GL}_n(\mathbb{C}) = \{ M \in \operatorname{Mat}_{n \times n}(\mathbb{C}) \mid \det(M) \ne 0 \},
+\]
+with neutral element $\operatorname{Id}_n = \begin{pmatrix} 1 & & 0 \\ & \ddots & \\ 0 & & 1 \end{pmatrix}$.
+The group $G$ acts on the vector space $T = \mathbb{C}^n$ by matrix-vector multiplication:
+\begin{equation}\label{eq:gln-action}
+\Phi \colon \operatorname{GL}_n(\mathbb{C}) \times \mathbb{C}^n \longrightarrow \mathbb{C}^n, \quad (g, v) \longmapsto g \cdot v.
+\end{equation}
+Visually, the action corresponds to multiplying an $n \times n$ matrix by a column vector:
+\[
+\begin{pmatrix}
+g_{11} & \cdots & g_{1n} \\
+\vdots & \ddots & \vdots \\
+g_{n1} & \cdots & g_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+v_1 \\
+\vdots \\
+v_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sum_{j=1}^n g_{1j} v_j \\
+\vdots \\
+\sum_{j=1}^n g_{nj} v_j
+\end{pmatrix}.
+\]
+\textbf{Verification of Axioms:}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item $\operatorname{Id}_n \cdot v = v$ for all $v \in \mathbb{C}^n$.
+    \item For all $g_1, g_2 \in \operatorname{GL}_n(\mathbb{C})$ and $v \in \mathbb{C}^n$, associative matrix multiplication yields:
+    \[
+    g_2 \cdot (g_1 \cdot v) = (g_2 g_1) \cdot v.
+    \]
+\end{enumerate}
+\end{example}
+\end{content}
+
+\subsection{Complex Analysis: The Circle Group \texorpdfstring{$\operatorname{U}(1)$}{U(1)} Acting on \texorpdfstring{$\mathbb{C}$}{C}}
+
+\begin{speech}[01:00:03 - 01:01:10]
+A group action which is kind of natural from complex analysis is: you can take $G$ to be... this is just a list of examples, we're going to stop soon.
+
+If you take $G$ to be the unit complex numbers \inlinemetanote{writes: $G = \text{unit complex numbers}$} --- have you thought about this group? It's usually called $\operatorname{U}(1)$ \inlinemetanote{writes: $\operatorname{U}(1)$}, this is the group of complex numbers such that the norm is equal to $1$ \inlinemetanote{writes: $\{ z \in \mathbb{C} \mid |z| = 1 \}$}.
+
+It has a neutral element, because $1$ is in it \inlinemetanote{writes: $1 \in G$}, and its multiplication is multiplication of complex numbers. Are you happy with this group?
+
+If you draw a picture of this group, it's complex numbers of norm $1$, so it looks like this: \inlinemetanote{draws unit circle in the complex plane}.
+
+An element here is equal to $e^{i\theta}$ \inlinemetanote{writes: $z = e^{i\theta}$}, where $\theta$ is a real number.
+\end{speech}
+
+\begin{speech}[01:01:10 - 01:02:25]
+So, it's a nice group. In fact, it's a circle. We haven't discussed this group, but it's a fun group to think about: it gives a group structure on the circle.
+
+The neutral element is here \inlinemetanote{marks $z = e^{i0} = 1$ on real axis}, and so on.
+
+And this thing naturally acts on the complex numbers \inlinemetanote{writes: $G \times \mathbb{C} \to \mathbb{C}$}, again, just by multiplication \inlinemetanote{writes: $z \cdot w$}. It's just multiplication: it just rotates all the complex numbers.
+\end{speech}
+
+\begin{content}[The Unit Circle Group $\operatorname{U}(1)$ Acting on $\mathbb{C}$]
+\definecolor{figBlue}{HTML}{07608E}
+\definecolor{figGreen}{HTML}{3D8252}
+\definecolor{figRed}{HTML}{B5241C}
+\definecolor{figGray}{HTML}{666667}
+\begin{hidden}
+- Canvas: no scale, cm; width spans x in [-2.5, 3.2], y in [-2.2, 2.5]
+- Coordinate axes for the complex plane:
+  Re-axis from (-2.2, 0) to (2.5, 0), labeled Re
+  Im-axis from (0, -2.0) to (0, 2.2), labeled Im
+- Unit circle U(1) centered at (0, 0), radius 1.6cm
+- Points:
+  (1) Neutral element at 0 deg: (1.6, 0), labeled 1 = e^{i0}
+  (2) General element z at 40 deg: (1.6 cos 40, 1.6 sin 40) = (1.226, 1.028), labeled z = e^{i\theta}
+- Angle arc at origin from 0 to 40 deg, radius 0.6cm, labeled \theta
+- Labels clear of axes and circle boundary.
+\end{hidden}
+\begin{center}
+\begin{tikzpicture}[>=Stealth, thick]
+    % Axes
+    \draw[->, figGray] (-2.2, 0) -- (2.5, 0) node[right, text=black] {$\operatorname{Re}$};
+    \draw[->, figGray] (0, -2.0) -- (0, 2.2) node[above, text=black] {$\operatorname{Im}$};
+
+    % Unit Circle U(1)
+    \draw[figBlue, line width=1.3pt] (0, 0) circle (1.6cm);
+
+    % Radius line to z
+    \draw[figGreen, thin] (0, 0) -- (40:1.6cm);
+
+    % Angle arc
+    \draw[figGreen, thin] (0.6, 0) arc (0:40:0.6cm);
+    \node[figGreen, font=\footnotesize] at (20:0.85cm) {$\theta$};
+
+    % Points
+    \fill[figRed] (1.6, 0) circle (2pt) node[anchor=north east, yshift=-1pt] {$1 = e^{i0}$};
+    \fill[figGreen] (40:1.6cm) circle (2pt) node[anchor=south west] {$z = e^{i\theta}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{example}[Action of the Circle Group $\operatorname{U}(1)$ on $\mathbb{C}$]\label[example]{ex:u1-action}
+The \newterm{circle group} $\operatorname{U}(1)$ consists of all unit complex numbers:
+\begin{equation}\label{eq:u1-def}
+\operatorname{U}(1) \coloneqq \{ z \in \mathbb{C} \mid |z| = 1 \} = \{ e^{i\theta} \mid \theta \in \mathbb{R} \},
+\end{equation}
+equipped with standard complex multiplication and neutral element $1 = e^{i0}$.
+The group $\operatorname{U}(1)$ acts on $T = \mathbb{C}$ by standard complex multiplication:
+\begin{equation}\label{eq:u1-action}
+\Phi \colon \operatorname{U}(1) \times \mathbb{C} \longrightarrow \mathbb{C}, \quad (z, w) \longmapsto z \cdot w \coloneqq zw.
+\end{equation}
+Geometrically, for $z = e^{i\theta}$ and $w = r e^{i\varphi}$, the action yields:
+\[
+z \cdot w = e^{i\theta} \cdot r e^{i\varphi} = r e^{i(\theta + \varphi)},
+\]
+which rotates every point in the complex plane counter-clockwise by angle $\theta$ around the origin.
+\end{example}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:22:15
+% topic: Group Actions from Linear Algebra and Complex Analysis
+% board_state: ex:gln-action, ex:u1-action
+% next_goal: Groups acting on themselves (solipsistic actions)
+% open_loops: none
+\end{hidden}
+
+\section{Groups Acting on Themselves}
+
+\subsection{Left Translation Action}
+
+\begin{speech}[01:02:25 - 01:03:35]
+There's an endless list of group actions, but as I said, when you encounter groups in mathematics, typically it's because they're acting as symmetries.
+
+Here, the group is acting as the symmetry of the vector space: $\operatorname{GL}$ is the symmetry of the vector space. Here, the unit complex numbers are rotational symmetries of $\mathbb{C}$. $S_n$ is just defined to be the symmetries of that set $1$ to $n$, so it's basically defined by that group action.
+
+And then there's a different source of group actions, which are very important for us, which are the ways the group can act on itself.
+
+These are slightly solipsistic group actions, but they're very important.
+
+In order to understand this definition, which is kind of simple, the simplest way is to go look at these examples and make sure you believe that the two properties that are required for a group action are true in all of these cases.
+
+So, another source of examples is that of the group acting on itself \inlinemetanote{writes: Another source of examples is that of the $G$-acting on itself}.
+\end{speech}
+
+\begin{speech}[01:03:35 - 01:04:13]
+As I said, this is kind of the group looking inward, because the group itself has a lot of symmetries, so the group can act on itself.
+
+The most basic one here is Example 1 \inlinemetanote{writes: Example 1}: \inlinemetanote{writes: $\Phi \colon G \times G \to G$}...
+
+Now one has to concentrate a little bit: this is the group, and it's acting on itself. So, $T$ is also the group \inlinemetanote{writes: $G$ with arrow to $T$}.
+
+How do you think I'm going to be able to define this? \inlinemetanote{writes: $\Phi(g, h) =$}
+
+How am I going to define this? Yeah.
+\end{speech}
+
+\begin{student}[Student Answer]
+Group multiplication.
+\end{student}
+
+\begin{speech}[01:04:22 - 01:05:40]
+Yeah, what else could I do? All I know about the group is group multiplication; this is group multiplication: \inlinemetanote{writes: $= gh$}.
+
+So, now it's even more confusing.
+
+That's the group acting on itself, just by group multiplication. Sometimes this is called the left action of the group on itself, because $G$ is acting on the left.
+
+Does this make sense? Formally it makes sense. To give an action, I have to have the group, I have to have who it's acting on, and I have to give a map. And in this case, everybody's $G$. That's logically all right, although confusing. And so, I have to give a rule when I take a group element acting on another element of $G$, and it's just multiplication. And this rule better satisfy \textbf{(1)}, which is that if I put the neutral element and it acts on somebody, then that's the somebody. But that's true, because that's how the neutral element acts in $G$ \inlinemetanote{writes: (1) $e \cdot h = h$}.
+
+And the other one is associativity \inlinemetanote{writes: (2) Associativity}.
+
+If I have this action of $g_1$ on $h$, and I put $g_2$ here, this better be this: \inlinemetanote{writes: $g_2 \cdot (g_1 \cdot h) = (g_2 g_1) \cdot h$}. And that's true, because it's associativity in the group. And now all the dots are just group multiplication. Again, there's nothing to check; it's just rewriting the definitions, okay?
+\end{speech}
+
+\begin{content}[Left Translation Action of a Group on Itself]
+\begin{example}[Example 1: Left Translation Action]\label[example]{ex:left-translation-action}
+Let $(G, \cdot, e)$ be a group. We set the target set to be the underlying set of the group itself, $T \coloneqq G$.
+The \newterm{left translation action} (or left regular action) of $G$ on itself is defined by group multiplication:
+\begin{equation}\label{eq:left-action-def}
+\Phi \colon G \times G \longrightarrow G, \quad \Phi(g, h) \coloneqq gh.
+\end{equation}
+\textbf{Verification of Action Axioms:}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Identity Axiom:} For the neutral element $e \in G$ and any $h \in G$:
+    \[
+    \Phi(e, h) = e \cdot h = h.
+    \]
+    \item \textbf{Associativity Axiom:} For all $g_1, g_2 \in G$ and any $h \in G$:
+    \[
+    \Phi(g_2, \Phi(g_1, h)) = g_2 \cdot (g_1 \cdot h) = g_2 (g_1 h) = (g_2 g_1) h = (g_2 g_1) \cdot h = \Phi(g_2 g_1, h),
+    \]
+    which holds directly from the associativity of the binary operation in $G$.
+\end{enumerate}
+\end{example}
+\end{content}
+
+\begin{speech}[01:05:40 - 01:05:43]
+This is actually, as silly as it looks, kind of a fundamental action.
+
+Are there any questions about this action: the $G$-action on itself by left multiplication?
+\end{speech}
+
+\begin{student}[Student Question]
+What is the purpose of this example?
+\end{student}
+
+\begin{speech}[01:05:43 - 01:07:15]
+Okay, it's a good question. I'm going to give you the answer. That's not a question about understanding this example; you're asking why do we think about this example. All right, I will answer that directly.
+
+If you accept this as an example, that everything fits, then I explained also... \inlinemetanote{moves to the right board} that if I take a group action --- so let $G$ be a group, and $T$ be a set \inlinemetanote{writes: Let $G$ be a group and $T$ be a set}, and if I have this group action \inlinemetanote{writes: $G \curvearrowright T$ / $\Phi \colon G \times T \to T$} ---, then I explained that from this group action you get a certain object.
+
+Given this group action --- this just means I have this multiplication map, this action map ---, I explained that to every element $g$ in $G$ \inlinemetanote{writes: $\forall g \in G \implies \sigma_g \colon T \to T$}, I can associate a bijection, $\sigma_g$, from $T$ to $T$. And the rule was that $\sigma_g(t)$ is equal to $g \cdot t$ \inlinemetanote{writes: $\sigma_g(t) = g \cdot t$}.
+
+So, that's a way of associating to every element a bijection, okay?
+
+The set of bijections is a group.
+
+This is an aside \inlinemetanote{writes: Let $\operatorname{Sym}(T)$ be the set of bijections}: let $\operatorname{Sym}(T)$ be the set of bijections \inlinemetanote{writes: $\{ f \colon T \to T \text{ bijection} \}$}.
+
+If $T$ is a finite set, then this is kind of like the things we've thought about; but anyway, for any set, this is a group: \inlinemetanote{writes: $(\operatorname{Sym}(T), \circ, \operatorname{Id}) \text{ group}$}.
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:06:00
+% topic: Left translation action and the student question on its purpose
+% board_state: ex:left-translation-action, def:permutation-group-sym
+% next_goal: Formulate the two equivalent perspectives of group actions
+% open_loops: student asked why we care about the left action of G on itself
+\end{hidden}
+
+\begin{content}[Review: The Symmetric Group $\operatorname{Sym}(T)$]
+\begin{definition}[Symmetric Group of a Set]\label[definition]{def:permutation-group-sym}
+For any non-empty set $T$, the set of all bijections from $T$ to itself is denoted:
+\[
+\operatorname{Sym}(T) \coloneqq \{ f \colon T \to T \mid f \text{ is bijective} \}.
+\]
+Equipped with functional composition $\circ$ and identity element $\operatorname{id}_T$, $(\operatorname{Sym}(T), \circ, \operatorname{id}_T)$ forms a group. When $|T| = n$ is finite, $\operatorname{Sym}(T) \cong S_n$.
+\end{definition}
+\end{content}
+
+\subsection{Two Equivalent Perspectives on Group Actions}
+
+\begin{speech}[01:07:15 - 01:08:59]
+There's a different way to think about group actions --- I'm getting to your question, this just takes a little while. \inlinemetanote{erases the board to the left where Example 1 had been written}
+
+There's a different way to think about group actions which is extremely useful. If you ask how do I think about group actions: half the time it's the way that I already told you, and half the time it's this other way. They're of course logically equivalent, but they have some kind of different connotation.
+
+Way 1 \inlinemetanote{writes: Way 1} is that a group action is given by $\Phi \colon G \times T \to T$ \inlinemetanote{writes: $\Phi \colon G \times T \to T$} that satisfies \textbf{(1)} and \textbf{(2)} \inlinemetanote{writes: that satisfies (1) + (2)}.
+
+Way 2 \inlinemetanote{writes: Way 2} is: a group action is a homomorphism --- let's call it $\sigma$ \inlinemetanote{writes: $\sigma \colon G \to \operatorname{Sym}(T)$} --- from $G$ to $\operatorname{Sym}(T)$, where now we just ask this to be a homomorphism \inlinemetanote{writes: $\sigma \text{ is a homomorphism}$}.
+
+It's a different way of thinking about it: just a homomorphism.
+
+And I claim these are equivalent. Let's try to prove they're equivalent.
+\end{speech}
+
+\begin{speech}[01:08:59 - 01:10:30]
+If we're given Action 1 \inlinemetanote{writes: If given Action 1} --- that's the top one ---, then we have this $\Phi$ from $G \times T$ to $T$ \inlinemetanote{writes: $\Phi \colon G \times T \to T$}, and then I define \inlinemetanote{writes: then I define} $\sigma$ by: $\sigma_g \colon T \to T$ \inlinemetanote{writes: $\sigma \text{ by}$} \inlinemetanote{writes: $\sigma_g \colon T \to T$} the way I said, $\sigma_g(t) = g \cdot t$ \inlinemetanote{writes: $\sigma_g(t) = g \cdot t$}, okay? That gives me a bijection, and so I have this data: I get a bijection for every element of $G$, exactly here, which I've been saying. And the condition of \textbf{(1)} and \textbf{(2)} translates --- I leave this to you to check --- to this being a homomorphism, all right?
+
+The other way \inlinemetanote{writes: If given Action 2} is: if I have given Action in form 2, then I start with this homomorphism $\sigma \colon G \to \operatorname{Sym}(T)$ \inlinemetanote{writes: $\sigma \colon G \to \operatorname{Sym}(T)$}, and then I define \inlinemetanote{writes: then I define} the action $\Phi(g, t)$ \inlinemetanote{writes: $\Phi(g, t) =$}. Okay, what am I going to write here?
+\end{speech}
+
+\begin{speech}[01:10:30 - 01:11:48]
+What I have is this homomorphism. So, what am I going to write here? Well, I need to find a way to have $g$ act on $t$. What I know is how to make $g$ in this $\operatorname{Sym}(T)$, but $\operatorname{Sym}(T)$ is a set of bijections from $T$ to $T$, so it can eat $t$. So, it's that: \inlinemetanote{writes: $\Phi(g, t) = \sigma_g(t)$}.
+
+Okay? This is just a tautological recasting of the data.
+
+Here is the idea of the group as an actor that's spinning $T$, which is kind of a dynamic view of the group. And then you have these two conditions.
+
+The other way is: all you do is take a homomorphism to this set $\operatorname{Sym}(T)$. The set $\operatorname{Sym}(T)$ are the spins of $T$, they're the bijections from $T$ to $T$, so you just take that as a homomorphism. Then the homomorphism has its own conditions, and they turn out to be equivalent to this. And this is the way to go back and forth, okay?
+
+That's a useful thing to think about: slightly philosophical perspective. And as I said, personally I spend about half my time thinking about these two. It depends on what you want to emphasize. But they are just equivalent.
+\end{speech}
+
+\begin{content}[The Two Equivalent Formulations of Group Actions]
+\begin{theorem}[Equivalence of Action Maps and Permutation Representations]\label[theorem]{thm:action-representation-equivalence}
+Let $G$ be a group and $T$ a non-empty set. There is a canonical bijection between:
+\begin{enumerate}[label=\textbf{Way \Roman*:}]
+    \item \textbf{Action Maps:} Mappings $\Phi \colon G \times T \to T$ satisfying:
+    \begin{align}
+    \Phi(e, t) &= t \quad \forall t \in T, \label{eq:way1-id} \\
+    \Phi(g_2, \Phi(g_1, t)) &= \Phi(g_2 g_1, t) \quad \forall g_1, g_2 \in G, \ t \in T. \label{eq:way1-assoc}
+    \end{align}
+    \item \textbf{Permutation Representations:} Group homomorphisms:
+    \begin{equation}\label{eq:way2-hom}
+    \sigma \colon G \longrightarrow \operatorname{Sym}(T).
+    \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We construct explicit maps in both directions and verify they are mutually inverse:
+
+\textbf{Direction $\text{Way I} \implies \text{Way II}$:}
+Given an action map $\Phi$, define for each $g \in G$ the map $\sigma_g \colon T \to T$ by:
+\[
+\sigma_g(t) \coloneqq \Phi(g, t) = g \cdot t.
+\]
+By \cref{prop:action-induced-bijections}, each $\sigma_g$ is a bijection on $T$ (with inverse $\sigma_{g^{-1}}$), so $\sigma_g \in \operatorname{Sym}(T)$. Furthermore, condition \eqref{eq:way1-assoc} implies:
+\[
+\sigma(g_2 g_1)(t) = (g_2 g_1) \cdot t = g_2 \cdot (g_1 \cdot t) = \sigma_{g_2}(\sigma_{g_1}(t)) = (\sigma_{g_2} \circ \sigma_{g_1})(t).
+\]
+Hence, $\sigma(g_2 g_1) = \sigma(g_2) \circ \sigma(g_1)$, proving that $\sigma \colon G \to \operatorname{Sym}(T)$ is a group homomorphism.
+
+\textbf{Direction $\text{Way II} \implies \text{Way I}$:}
+Given a homomorphism $\sigma \colon G \to \operatorname{Sym}(T)$, define the action map $\Phi$ by:
+\[
+\Phi(g, t) \coloneqq \sigma(g)(t) = \sigma_g(t).
+\]
+We verify the two action axioms:
+\begin{itemize}
+    \item Since $\sigma$ is a homomorphism, $\sigma(e) = \operatorname{id}_T$, so $\Phi(e, t) = \operatorname{id}_T(t) = t$.
+    \item For $g_1, g_2 \in G$ and $t \in T$:
+    \[
+    \Phi(g_2 g_1, t) = \sigma(g_2 g_1)(t) = (\sigma(g_2) \circ \sigma(g_1))(t) = \sigma(g_2)(\sigma(g_1)(t)) = \Phi(g_2, \Phi(g_1, t)).
+    \]
+\end{itemize}
+These two constructions are mutually inverse by inspection.
+\end{proof}
+
+\begin{steps}[Dynamic vs. Static Perspectives]
+The two formulations provide complementary intuitions:
+\begin{itemize}
+    \item \textbf{Way I (Dynamic/Geometric):} Views $G$ as an \qt{actor} actively transforming and permuting the elements of the set $T$.
+    \item \textbf{Way II (Structural/Algebraic):} Views the action as a global homomorphism realizing $G$ as a concrete subgroup of permutations inside $\operatorname{Sym}(T)$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:12:00
+% topic: Equivalence of action map and permutation representation
+% board_state: thm:action-representation-equivalence
+% next_goal: Formulate and prove Cayley's Theorem using the left regular action
+% open_loops: student question about the purpose of Example 1 answered via Cayley's Theorem
+\end{hidden}
+
+\section{Cayley's Theorem}
+
+\subsection{Every Finite Group Embeds into a Symmetric Group}
+
+\begin{speech}[01:11:48 - 01:13:45]
+So, we're coming to your question. You asked it $10$ minutes too early in the lecture. \inlinemetanote{erases the upper-left board where $S_n$ and the tetrahedron were drawn}
+
+We come to Example 1, which is the group acting on itself, and let us restrict ourselves to finite groups here. Because we can prove something which, I think, the first time one sees it, is slightly surprising --- especially since we haven't really been doing anything here; all I've been doing is talking. It's been all definitions, but really important definitions.
+
+Let $G$ be a finite group of order $n$, okay? \inlinemetanote{writes: Let $G$ be a finite group of order $n$.} We have a finite group of some order.
+
+Then Example 1 was this group action of $G$ on itself, right? \inlinemetanote{writes: Ex 1: $\Phi \colon G \times G \to G$, $\Phi(g, h) = gh$} This was by $\Phi(g, h) = gh$.
+
+By the equivalence, I can consider this rather as a homomorphism: I translate this to a homomorphism from $G$ to $\operatorname{Sym}(G)$, okay? \inlinemetanote{writes: By equivalence, $\sigma \colon G \to \operatorname{Sym}(G)$}
+
+Because that's what that equivalence was: given this actual group action, I can instead view it as a homomorphism from $G$ to $\operatorname{Sym}(G)$.
+
+Now, what is $\operatorname{Sym}(G)$? $\operatorname{Sym}(G)$ is just $\operatorname{Sym}(n)$, because if it has $n$ elements, the group of bijections from $G$ to $G$ is $S_n$ \inlinemetanote{writes: $= S_n$}. Do you agree?
+\end{speech}
+
+\begin{speech}[01:13:45 - 01:15:28]
+So, it seems like almost from nowhere, I have a homomorphism $\sigma$ from $G$ to $S_n$ \inlinemetanote{writes: I have a $\sigma \colon G \to S_n$}. Like: where did that come from?
+
+But I have it. The data of the group knows some homomorphism from $G$ to $S_n$, okay? And as I said, it's just thinking about the data in a different way. Actually, you can look: I haven't really done anything; it's just about viewing the data.
+
+Now, the thing that's kind of amazing is that this is an injection: \inlinemetanote{writes: Claim: This is an injection. / $\ker(\sigma) = e$}.
+
+That's a claim: an injection, which is to say the kernel of this is just the neutral element. Nobody is going to the kernel here. And why is that?
+
+Let $x \in G$ \inlinemetanote{writes: Let $x \in G$}. We have to answer ourselves: can this bijection from $G$ to $G$ be the identity? \inlinemetanote{writes: Can $\sigma_x \colon G \to G$ be the identity?}
+
+What is the identity? The identity is someone that moves nobody, right?
+
+We can just calculate this bijection on $e$, the neutral element. And what is that? \inlinemetanote{writes: $\sigma_x(e) = x \cdot e = x$}
+
+Well, by definition, it's this. And that's $x$!
+
+And if $x$ were not the neutral element, then $\sigma_x$ is not the identity, okay? \inlinemetanote{writes: if $x \neq e \implies \sigma_x \neq \operatorname{Id}$}
+
+Because, well, just look: it moves the neutral element to $x$!
+\end{speech}
+
+\begin{speech}[01:15:28 - 01:17:10]
+Given just the data of the group, not only do we have this homomorphism of the group to $S_n$ in the finite case, this is an injection.
+
+If it's an injection, as a consequence \inlinemetanote{writes: $G \cong \faktor{G}{\ker} \cong \operatorname{Im} \le S_n$}, $G$ is isomorphic to $G \bmod \ker$, because the kernel is just the neutral element, and that's isomorphic to the image inside $S_n$.
+
+So, we have proven, doing almost nothing really, the following theorem, which is a basic theorem: every finite group \inlinemetanote{writes in a chalk box: Thm: Every finite group $G$ is a subgroup of $S_n$, $n = |G|$.} is a subgroup of some symmetric group, of $S_n$, where $n$ is equal to the order of $G$.
+
+This also justifies why the symmetric groups --- I said they're somehow the richest groups: any group you find, you can always put it in $S_n$.
+
+And you can put it in by doing almost nothing, just understanding what it means to be a group action: it just sits there as a subgroup.
+
+In other words, there's a sense in which if you're studying group theory --- this is not a very useful sense, but there's a sense in which when you're studying group theory ---, you never have to look at any groups besides the symmetric group and their subgroups. That covers every single finite group in the world.
+
+So, this is one of the answers to your question, right?
+\end{speech}
+
+\begin{content}
+\begin{claim}[Injectivity of the Left Regular Representation]\label[claim]{clm:cayley-injective}
+Let $G$ be a group acting on itself by left translation, $\Phi(g, h) = gh$. The associated homomorphism:
+\[
+\sigma \colon G \longrightarrow \operatorname{Sym}(G), \quad g \longmapsto \sigma_g
+\]
+is injective, i.e., $\ker(\sigma) = \{e\}$.
+\end{claim}
+
+\begin{proof}
+Let $x \in \ker(\sigma)$. By definition of the kernel, $\sigma_x = \operatorname{id}_G$.
+Evaluating the bijection $\sigma_x$ on the neutral element $e \in G$:
+\begin{equation}\label{eq:sigma-x-eval-e}
+\sigma_x(e) = xe = x.
+\end{equation}
+On the other hand, since $\sigma_x = \operatorname{id}_G$, we must have:
+\[
+\sigma_x(e) = \operatorname{id}_G(e) = e.
+\]
+Comparing the two expressions gives $x = e$.
+Conversely, if $x \ne e$, then $\sigma_x(e) = x \ne e = \operatorname{id}_G(e)$, which proves that $\sigma_x \ne \operatorname{id}_G$.
+Thus, $\ker(\sigma) = \{e\}$, establishing that $\sigma$ is injective.
+\end{proof}
+
+\begin{theorem}[Cayley's Theorem]\label[theorem]{thm:cayley}
+Every finite group $G$ of order $n = |G|$ is isomorphic to a subgroup of the symmetric group $S_n$:
+\begin{equation}\label{eq:cayley-theorem}
+G \cong \operatorname{Im}(\sigma) \le S_n.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $G$ be a finite group with $|G| = n$.
+By \cref{thm:action-representation-equivalence}, the left translation action of $G$ on itself corresponds to a group homomorphism:
+\[
+\sigma \colon G \longrightarrow \operatorname{Sym}(G).
+\]
+Since $|G| = n$, the symmetric group $\operatorname{Sym}(G)$ is isomorphic to $S_n$.
+By \cref{clm:cayley-injective}, $\ker(\sigma) = \{e\}$, so $\sigma$ is an injective homomorphism.
+Applying the First Isomorphism Theorem for groups (\cref{thm:first-isomorphism-groups}):
+\[
+G \cong \faktor{G}{\ker(\sigma)} = \faktor{G}{\{e\}} \cong \operatorname{Im}(\sigma) \le S_n.
+\]
+Therefore, $G$ is isomorphic to the subgroup $\operatorname{Im}(\sigma)$ of $S_n$.
+\end{proof}
+\end{content}
+
+\subsection{Significance and Limitations of Cayley's Theorem}
+
+\begin{speech}[01:17:10 - 01:18:50]
+You should look at this proof. It's a very strange thing, because when you first see it, you think: how could that be? Because almost nothing has happened. All I've done is somehow taken the definitions and rewritten them in a way that there's been almost no complicated logic at all.
+
+Which is true.
+
+Okay, so that's one of the ways the group acts on itself. \inlinemetanote{erases the lower-left board}
+
+By the way, let me make a comment: why this result was kind of important for the view of groups. If you have a finite group, it's not like some unknowable thing: it has to sit inside the symmetric group. It's not like a total mystery what groups are: they're subgroups of the symmetric groups.
+
+But the problem with this, as you see, is that this group is sitting inside a symmetric group on the size of the group. If you take $A_4$ --- we know $A_4$ already sits in $S_4$ ---, suppose you take a group of order $12$, then this theorem shows that it's a subgroup of the symmetric group $S_{12}$, and that's a pretty big group.
+
+So, there's a kind of price you pay for this theorem, which is: the symmetric group is very big. And that price generally means that, you know, you could say that instead of studying groups of order $12$, I could study subgroups of $S_{12}$. It's better to study groups of order $12$, because $S_{12}$ is too big.
+
+So, it's not so useful in practice. But as a kind of understanding of where groups sit, it's kind of useful.
+\end{speech}
+
+\begin{speech}[01:18:50 - 01:19:30]
+This is considered a kind of basic result in group theory: that if you have a finite group, you can find it as a subgroup of the symmetric group. In particular, you could write some program that enumerates all groups by just taking one symmetric group at a time and enumerating all the subgroups. This program won't get very far, but nevertheless.
+\end{speech}
+
+\begin{insight}[The Philosophical Power and Practical Limit of Cayley's Theorem]
+Cayley's theorem provides a universal classification: \emph{no exotic finite groups exist outside of permutation groups}. Every abstract finite group can be realized concretely as permutations of its own elements.
+
+However, the cost of this universality is astronomical growth in group size:
+\begin{itemize}
+    \item A group of order $12$ (such as $A_4$) embeds via Cayley's theorem into $S_{12}$, which has order:
+    \[
+    12! = 479{,}001{,}600.
+    \]
+    Yet we already know from geometry that $A_4$ embeds into $S_4$, which has order only $4! = 24$.
+    \item Consequently, Cayley's regular embedding $\sigma \colon G \hookrightarrow S_{|G|}$ is rarely the most efficient representation. Rather than studying groups of order $12$ by searching for subgroups inside $S_{12}$, it is far more effective to analyze groups intrinsically or seek representations in much smaller symmetric groups $S_k$ with $k \ll |G|$.
+\end{itemize}
+\end{insight}
+
+\begin{hidden}
+% timestamp: 00:18:00
+% topic: Cayley's Theorem and its implications
+% board_state: clm:cayley-injective, thm:cayley
+% next_goal: Introduce Example 2: Group acting on itself by conjugation
+% open_loops: none
+\end{hidden}
+
+\section{The Conjugation Action}
+
+\subsection{Definition and Verification of the Action by Conjugation}
+
+\begin{speech}[01:19:30 - 01:20:15]
+Okay, the next way the group acts on itself, we've also seen. Example 2 of the group acting on itself is something you've also seen: \inlinemetanote{writes: Example 2}
+
+Example 2: $G$ acts on itself by conjugation \inlinemetanote{writes: $G$ acts on itself by conjugation}.
+
+That one's called the left action of $G$ on itself, because $G$ is acting on the left. This one is: $G$ acts on itself by conjugation. We've also studied this.
+
+And the formula for the action then is $\Phi \colon G \times G \to G$ \inlinemetanote{writes: $\Phi \colon G \times G \to G$}, and it's $\Phi(g, h) = ghg^{-1}$ \inlinemetanote{writes: $\Phi(g, h) = g h g^{-1}$}, okay?
+\end{speech}
+
+\begin{speech}[01:20:15 - 01:21:55]
+So, that's the formula. And then you have to go check whether this formula works. You have to check that \textbf{(1)} is that $\Phi(e, h) = ehe^{-1} = h$ \inlinemetanote{writes: (1) $\Phi(e, h) = e h e^{-1} = h$}. We have to go check that: well, that's $ehe^{-1}$, that's $h$, so that's the identity, that's good.
+
+And then you have to check if I do this $g_1$ on $h$, and then $g_2$: \inlinemetanote{writes: (2) $g_2 \cdot (g_1 \cdot h) = g_2 (g_1 h g_1^{-1}) g_2^{-1}$}.
+
+By definition, this is $g_1 h g_1^{-1}$, and then I do that one: that's $g_2 (g_1 h g_1^{-1}) g_2^{-1}$. That's this side, and you have to check that that equals $g_2 g_1$ acting on $h$: \inlinemetanote{writes: $= (g_2 g_1) h (g_2 g_1)^{-1}$}.
+
+And then you need to know that this is $(g_2 g_1) h$, and what's the question is: what's the inverse of $g_2 g_1$? And that's that: \inlinemetanote{writes: $= g_2 g_1 h g_1^{-1} g_2^{-1}$}. Okay? And that's that.
+\end{speech}
+
+\begin{content}[The Conjugation Action of a Group on Itself]
+\begin{example}[Example 2: Group Acting on Itself by Conjugation]\label[example]{ex:conjugation-action}
+Let $(G, \cdot, e)$ be a group, and set $T \coloneqq G$.
+The \newterm{conjugation action} of $G$ on itself is defined by:
+\begin{equation}\label{eq:conjugation-action-def}
+\Phi \colon G \times G \longrightarrow G, \quad \Phi(g, h) \coloneqq g h g^{-1}.
+\end{equation}
+\textbf{Verification of Action Axioms:}
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Identity Axiom:} For the neutral element $e \in G$ and any $h \in G$:
+    \[
+    \Phi(e, h) = e h e^{-1} = e h e = h.
+    \]
+    \item \textbf{Associativity Axiom:} Let $g_1, g_2 \in G$ and $h \in G$.
+    Evaluating the repeated action using the shoe-sock rule $(g_2 g_1)^{-1} = g_1^{-1} g_2^{-1}$:
+    \begin{align*}
+    g_2 \cdot (g_1 \cdot h) &= g_2 \cdot (g_1 h g_1^{-1}) \\
+    &= g_2 (g_1 h g_1^{-1}) g_2^{-1} \\
+    &= (g_2 g_1) h (g_1^{-1} g_2^{-1}) \\
+    &= (g_2 g_1) h (g_2 g_1)^{-1} \\
+    &= (g_2 g_1) \cdot h.
+    \end{align*}
+    Hence, $\Phi(g_2, \Phi(g_1, h)) = \Phi(g_2 g_1, h)$, satisfying the associativity axiom.
+\end{enumerate}
+\end{example}
+\end{content}
+
+\subsection{Contrast Between Left Translation and Conjugation}
+
+\begin{speech}[01:21:55 - 01:23:48]
+So, that's a whole different action. It's a very different action than Example 1.
+
+And maybe, since I only have a few minutes, instead of writing some theorems, I'll say a little bit about that. They have totally different flavors.
+
+This left action of $G$ on itself is always kind of an interesting action, because every element of $G$ acts non-trivially on itself: it pushes $G$ around. If you have an element of $G$, it can't act trivially on $G$ by left multiplication; it would have to be the identity. So, it's something non-trivial: it's always spinning $G$ around.
+
+Conjugation is different. The amount that an element spins $G$ by conjugation depends on how commutative it is. For example, if $G$ is a commutative group, then nothing is happening here: nothing at all! If $G$ is a commutative group, then... yeah: \inlinemetanote{writes on the board to the right: If $G$ is abelian,}
+
+If $G$ is abelian, then this conjugation action is silly \inlinemetanote{writes: then this conjugation action is silly}. We would say it is trivial \inlinemetanote{writes: is trivial}.
+
+Which means that the action takes $(g, h)$ just to $h$: \inlinemetanote{writes: $\Phi(g, h) = h$}. It just doesn't care what $g$ is. Another way of saying it's trivial is: the corresponding homomorphism from $G$ to $\operatorname{Sym}(G)$ \inlinemetanote{writes: $\sigma \colon G \to \operatorname{Sym}(G)$} is the trivial homomorphism. It takes $\sigma_g$ equal to the neutral element everywhere: \inlinemetanote{writes: $\sigma_g = \operatorname{Id}$}. Nothing at all is happening with it.
+
+Conjugation is a different kind of action: it is interesting only when the group is non-abelian, in which case it can be very interesting, because it tells you in some sense how the non-abelianness of the group is working.
+
+So, they have completely different flavors, even though they just come from the definition of the group.
+
+In particular, you can't use the conjugation action to prove the group is a subgroup of the symmetric group in the same way, because it could be that you're an abelian group, in which case the statement that fails here is this: can you have a bijection which is the identity? For the left group action, you cannot, unless it's the neutral element. But here you could, so you couldn't use this to prove that.
+\end{speech}
+
+\begin{content}[Comparison: Left Regular Action vs. Conjugation Action]
+\begin{proposition}[Triviality of Conjugation on Abelian Groups]\label[proposition]{prop:conjugation-abelian-trivial}
+If $G$ is an abelian group, then the conjugation action of $G$ on itself is trivial:
+\begin{equation}\label{eq:abelian-conjugation-trivial}
+\Phi(g, h) = g h g^{-1} = h g g^{-1} = h \quad \forall g, h \in G.
+\end{equation}
+Equivalently, the induced homomorphism into the symmetric group:
+\begin{equation}\label{eq:trivial-homomorphism}
+\sigma \colon G \longrightarrow \operatorname{Sym}(G), \quad g \longmapsto \sigma_g = \operatorname{id}_G
+\end{equation}
+is the trivial homomorphism mapping every element of $G$ to the identity permutation.
+\end{proposition}
+
+\begin{steps}[Fundamental Differences Between the Two Actions]
+Although both actions use $T = G$, they possess fundamentally distinct algebraic properties:
+\begin{itemize}
+    \item \textbf{Left Translation Action ($\Phi(g, h) = gh$):}
+    \begin{itemize}
+        \item \textbf{Always Faithful:} The only element acting as the identity is $g = e$.
+        \item \textbf{Transitive:} For any $h_1, h_2 \in G$, the element $g = h_2 h_1^{-1}$ maps $h_1$ to $h_2$.
+        \item \textbf{Embeds $G$ into $S_n$:} Generates Cayley's theorem for any group, abelian or non-abelian.
+    \end{itemize}
+    \item \textbf{Conjugation Action ($\Phi(g, h) = ghg^{-1}$):}
+    \begin{itemize}
+        \item \textbf{Measures Non-Commutativity:} The kernel of the action is the \newterm{center} of the group:
+        \[
+        \ker(\sigma) = \{ g \in G \mid ghg^{-1} = h \ \forall h \in G \} = Z(G).
+        \]
+        \item \textbf{Trivial for Abelian Groups:} If $G$ is abelian, $Z(G) = G$, so the kernel is the entire group and the action carries zero information.
+        \item \textbf{Orbits are Conjugacy Classes:} For non-abelian groups, the partition into orbits corresponds to conjugacy classes, playing a central role in character theory and the Sylow theorems.
+    \end{itemize}
+\end{itemize}
+\end{steps}
+\end{content}
+
+\subsection{Course Outlook: The Sylow Theorems}
+
+\begin{speech}[01:23:48 - 01:24:20]
+For this course, we have something like a week and a half more about groups, and it will all be about actions. And the fanciest theorems there traditionally are the Sylow theorems,which have to do with $p$-subgroups. They're proved by studying group actions, and they're all proved in kind of magical ways, in the sense that the funny thing about this group action idea is that it's such a simple idea, but it's incredibly powerful.
+
+Okay, good. So, we stop here. \inlinemetanote{puts down chalk} \inlinemetanote{lecture concludes}
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:23:30
+% topic: Conjugation action and course outlook on Sylow theorems
+% board_state: ex:conjugation-action, prop:conjugation-abelian-trivial
+% next_goal: Conclude the lecture
+% open_loops: none
+\end{hidden}
+
+\begin{overview}[Summary of Key Concepts]
+This lecture completed foundational structural topics in group theory before pivoting to group actions:
+\begin{itemize}
+    \item \textbf{Cosets and Index 2:} A subgroup $H \le G$ partitions $G$ into left cosets $xH$ or right cosets $Hx$. If $H \triangleleft G$, left and right cosets coincide ($xH = Hx$). Furthermore, any subgroup of index $2$ is automatically normal ($[G : H] = 2 \implies H \triangleleft G$).
+    \item \textbf{Subgroup Correspondence Theorem:} The canonical projection $q \colon G \to \faktor{G}{N}$ induces an inclusion-preserving bijection between subgroups of $G$ containing $N$ and subgroups of $\faktor{G}{N}$, which preserves normality in both directions.
+    \item \textbf{Classification of Prime Order Groups and Polyhedral Symmetries:} Every group of prime order $p$ is cyclic ($G \cong \mathbb{Z}/p\mathbb{Z}$). The rotational symmetry groups of the Platonic solids are $A_4$ (tetrahedron), $S_4$ (cube and octahedron via geometric duality), and $A_5$ (dodecahedron and icosahedron via duality and inscribed cubes). Planar regular $n$-gons have rotation group $\mathbb{Z}/n\mathbb{Z}$ and full symmetry dihedral group $D_{2n}$, with $D_6 \cong S_3$ and $D_8 \lneq S_4$.
+    \item \textbf{Isomorphism Invariants:} Groups are distinguished by divisibility ($(\mathbb{Q}, +, 0) \not\cong (\mathbb{Z}, +, 0)$), singly generated / cyclic properties ($(\mathbb{Q}^*, \cdot, 1) \not\cong (\mathbb{Z}, +, 0)$), torsion elements (order $2$ element $-1 \in \mathbb{Q}^*$), and vector space dimension via mod-$2$ reduction ($\mathbb{Z}^k \not\cong \mathbb{Z}^\ell$ for $k \ne \ell$). Under the Axiom of Choice, $(\mathbb{R}, +, 0) \cong (\mathbb{C}, +, 0)$ as additive groups via Hamel bases over $\mathbb{Q}$, while $(\mathbb{Q}^*, \cdot, 1) \cong \mathbb{Z}/2\mathbb{Z} \oplus \mathbb{Z}^\infty$ by unique prime factorization.
+    \item \textbf{Group Actions and Permutation Representations:} An action $G \curvearrowright T$ via $\Phi \colon G \times T \to T$ is equivalent to a homomorphism $\sigma \colon G \to \operatorname{Sym}(T)$ into the symmetric group of bijections on $T$.
+    \item \textbf{Actions on the Group Itself and Cayley's Theorem:} The left regular action $\Phi(g, h) = gh$ is faithful, proving Cayley's Theorem: every finite group of order $n$ embeds into $S_n$ ($G \hookrightarrow S_n$). In contrast, the conjugation action $\Phi(g, h) = ghg^{-1}$ is trivial on abelian groups and measures non-commutativity in general groups.
+\end{itemize}
+\end{overview}
