@@ -613,7 +613,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 % Custom text commands
 \newif\ifinsideqt
 \insideqtfalse
-\newcommand{\qt}[1]{%
+\DeclareRobustCommand{\qt}[1]{%
   \ifinsideqt
     ``#1''%
   \else
@@ -623,7 +623,7 @@ pdfauthor={Prof. Rahul Pandharipande}
     \endgroup
   \fi
 }
-\newcommand{\newterm}[1]{%
+\DeclareRobustCommand{\newterm}[1]{%
   \begingroup
   \ifinsideqt
     \textcolor{TextBoldColor}{``#1''}%
@@ -638,7 +638,7 @@ pdfauthor={Prof. Rahul Pandharipande}
   \fi
   \endgroup
 }
-\newcommand{\inlinemetanote}[1]{%
+\DeclareRobustCommand{\inlinemetanote}[1]{%
   \textcolor{TextMetaNote}{%
     \insideqttrue
     \colorlet{QuoteRed}{TextMetaNote}%
@@ -1243,6 +1243,9 @@ breakable
   \let\proofwrappertoctitle\@firstofone
   \let\cref\proofwrapper@pdfref
   \let\Cref\proofwrapper@pdfref
+  \def\qt#1{\textquotedblleft#1\textquotedblright}%
+  \def\newterm#1{\textquotedblleft#1\textquotedblright}%
+  \def\inlinemetanote#1{[#1]}%
 }
 
 \newcommand{\proofwrapper@fontsize}{%
@@ -1696,5 +1699,6 @@ breakable
 
 % week 9:
 \input{content/step4-2026-11-10-tuesday-week9-algebra-1-offset-final.tex}
+\input{content/step4-2026-11-11-wednesday-week9-algebra-1-offset-final.tex}
 
 \end{document}
