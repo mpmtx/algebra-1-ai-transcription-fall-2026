@@ -297,7 +297,7 @@ So, we have to be careful about the units when we state unique factorization.
 In any domain $R$, two classes of elements are distinguished and excluded from the building blocks of factorization:
 \begin{description}
     \item[The Zero Element:] \textbf{$0 \in R$:} Factorization of zero is degenerate and excluded.
-    \item[The Group of Units:] \textbf{$\mathcal{U}_R \subset R$:} The set of multiplicatively invertible elements (elsewhere also written $R^\times$):
+    \item[The Group of Units:] \textbf{$\mathcal{U}_R \subset R$:} The set of multiplicatively invertible elements:
     \begin{equation}\label{eq:units-def}
     \mathcal{U}_R = \operatorname{Units}(R) := \{ u \in R \mid \exists v \in R \text{ such that } u \cdot v = 1 \}.
     \end{equation}
@@ -2057,7 +2057,7 @@ z \sim \operatorname{GCD}(x, y) \iff z = w \cdot \prod_{i=1}^k p_i^{\min(n_i, m_
 \end{theorem}
 
 \begin{proof}[Why the Formula Holds (beyond the lecture)]
-The lecture states the formula without proof. Write $d := \prod_i p_i^{\min(n_i, m_i)}$; it divides $x$ and $y$. The key fact is: \emph{in a UFD, a non-zero $w$ divides $x$ if and only if every irreducible factor of $w$ is associate to some $p_i$, with exponent at most $n_i$.} (If $x = w t$, factor $w$ and $t$ into irreducibles; their concatenation is a factorization of $x$, and uniqueness matches it with $u \, p_1^{n_1} \cdots p_k^{n_k}$.) So a common divisor $w$ of $x$ and $y$ has the form $w = v \prod_i p_i^{e_i}$ with $v \in \mathcal{U}_R$ and $e_i \le \min(n_i, m_i)$, hence $w \mid d$. If $z$ is another greatest common divisor, then $z \mid d$ and $d \mid z$, so $z = w d$ and $d = w' z$ give $d = w' w d$, and cancelling $d \neq 0$ shows that $w$ is a unit.
+The lecture states the formula without proof. Write $d := \prod_i p_i^{\min(n_i, m_i)}$; it divides $x$ and $y$. The key fact is: \emph{in a UFD, a non-zero $c$ divides $x$ if and only if every irreducible factor of $c$ is associate to some $p_i$, with exponent at most $n_i$.} (If $x = c t$, factor $c$ and $t$ into irreducibles; their concatenation is a factorization of $x$, and uniqueness matches it with $u \, p_1^{n_1} \cdots p_k^{n_k}$.) So a common divisor $c$ of $x$ and $y$ has the form $c = \varepsilon \prod_i p_i^{e_i}$ with $\varepsilon \in \mathcal{U}_R$ and $e_i \le \min(n_i, m_i)$, hence $c \mid d$. If $z$ is another greatest common divisor, then $z \mid d$ and $d \mid z$, so $z = w d$ and $d = w' z$ give $d = w' w d$, and cancelling $d \neq 0$ shows that $w$ is a unit.
 \end{proof}
 
 \begin{example}[GCD Computation for $6$ and $4$ in $\mathbb{Z}$]\label[example]{ex:part4-gcd-6-4}
