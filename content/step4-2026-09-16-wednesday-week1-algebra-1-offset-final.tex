@@ -541,7 +541,7 @@ Let $R_1$ and $R_2$ be two rings \inlinemetanote{writes: let $R_1$ and $R_2$ be 
 
 Now, maybe I'll say a little bit more about these rings. For this class, as I said, if I consider totally abstract rings --- like totally arbitrary rings here \inlinemetanote{points to ring axioms on the upper left board} --- I have not assumed the multiplication is commutative. For a lot of things we don't, and sometimes we do, but when I say \qt{rings} in this class from now on, I will mean a ring that has commutative multiplication \inlinemetanote{writes: Ring: commutative mult.} and always has a unit: $1$ \inlinemetanote{writes: unit $1$}.
 
-If you look in the literature about what the definition of a ring is, of course a ring does not require the multiplication to be commutative, and that's reasonable. If you get off the plane in Tokyo and you meet a mathematician and you say, \qt{I'm working on a ring,} that person will not know whether it's commutative or not; you have to tell them. And also, you can define rings without units. So, the fancy words for this would be a \emph{commutative ring with unit}. That's just telling the person that that's the version of ring you're signing up for. You can study anything you want, but in this class, we will be considering for the most part commutative rings with unit. I just wanted to say that.
+If you look in the literature about what the definition of a ring is, of course a ring does not require the multiplication to be commutative, and that's reasonable. If you get off the plane in Tokyo and you meet a mathematician and you say, \qt{I'm working on a ring,} that person will not know whether it's commutative or not; you have to tell them. And also, you can define rings without units. So, the fancy word for this would be a \emph{commutative ring with unit}. That's just telling the person that that's the version of ring you're signing up for. You can study anything you want, but in this class, we will be considering for the most part commutative rings with unit. I just wanted to say that.
 \end{speech}
 
 \begin{content}[Convention: Commutative Rings with Unit]
@@ -616,7 +616,7 @@ Condition \textbf{(i)} asserts that $f$ is a group homomorphism between the addi
 \begin{speech}[00:20:03 - 00:22:25]
 There are some puzzling aspects about this definition. You could say, \qt{Well, why don't I say it respects the zero?} That's a very reasonable question. So, you could say: what about $f(0)$ \inlinemetanote{writes: What about $f(0)$?}?
 
-Well, we can write $f(0 + 0)$ \inlinemetanote{writes: $f(0+0)$}. I want to use property \textbf{(i)}: $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes: $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes \qt{Condition (i) $\implies$} in front of it}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes: $f(0) = f(0) + f(0)$}, okay?
+Well, we can write $f(0 + 0)$ \inlinemetanote{writes: $f(0+0)$}. I want to use this one (i.e., property \textbf{(i)}): $f(0 + 0) = f(0) + f(0)$ \inlinemetanote{writes: $= f(0) + f(0)$}, right? That's just applying condition \textbf{(i)} of the homomorphism \inlinemetanote{writes \qt{Condition (i) $\implies$} in front of it}. But now, $0 + 0$ is $0$, we know that, because $0$ is the neutral element for addition. So, I can rewrite this as $f(0) = f(0) + f(0)$ \inlinemetanote{writes: $f(0) = f(0) + f(0)$}, okay?
 
 And then I can use left cancellation by taking the inverse. I've said that several times, and I hope you know what I mean by that: if I take such an equation... Let me just do it once formally, because I said it several times. I have one $f(0)$ here and two $f(0)$'s here, and I want to get rid of the $f(0)$ on both sides. So, what I do --- and this is what I mean by left cancellation --- is that there exists some $b \in R_2$ such that $b + f(0) = 0$ \inlinemetanote{writes \qt{$\exists b \in R_2$} and \qt{$b + f(0) = 0$}}. That's the group property on $R_2$.
 
@@ -638,14 +638,11 @@ Because $0_{R_1}$ is the additive identity of $R_1$, we have $0_{R_1} + 0_{R_1} 
 \begin{equation}\label{eq:fzero-double}
 f(0_{R_1}) = f(0_{R_1} + 0_{R_1}) = f(0_{R_1}) + f(0_{R_1}).
 \end{equation}
-Since $(R_2, +, 0_{R_2})$ is an abelian group, the element $f(0_{R_1}) \in R_2$ possesses an additive inverse $b \in R_2$ such that $b + f(0_{R_1}) = 0_{R_2}$. Adding $b$ to both sides of \eqref{eq:fzero-double}:
-\begin{align*}
-b + f(0_{R_1}) &= b + \bigl( f(0_{R_1}) + f(0_{R_1}) \bigr) \\
-0_{R_2} &= \bigl( b + f(0_{R_1}) \bigr) + f(0_{R_1}) && \text{(by associativity in $R_2$)} \\
-0_{R_2} &= 0_{R_2} + f(0_{R_1}) \\
-0_{R_2} &= f(0_{R_1}).
-\end{align*}
-Thus, $f(0_{R_1}) = 0_{R_2}$.
+Since $(R_2, +, 0_{R_2})$ is an abelian group, the element $f(0_{R_1}) \in R_2$ possesses an additive inverse $b \in R_2$ such that $b + f(0_{R_1}) = 0_{R_2}$. Adding $b$ to both sides of \eqref{eq:fzero-double} and regrouping the right-hand side by associativity in $R_2$, as on the board:
+\[
+\underbrace{b + f(0_{R_1})}_{=\,0_{R_2}} = \underbrace{b + f(0_{R_1})}_{=\,0_{R_2}} + f(0_{R_1}),
+\]
+that is, $0_{R_2} = 0_{R_2} + f(0_{R_1}) = f(0_{R_1})$. Thus, $f(0_{R_1}) = 0_{R_2}$.
 \end{proof}
 \end{content}
 
@@ -666,9 +663,9 @@ So, to fix that, we just say at the beginning: $f(1) = 1$. We don't leave it to 
 \end{speech}
 
 \begin{speech}[00:24:16 - 00:25:08]
-For example, I could take a bad example \inlinemetanote{writes: A bad example}: I could take $R$ and map it to... sorry, I could take $R_1 \to R_2$ \inlinemetanote{writes: $R_1 \to R_2$} and map it so everything goes to zero. Say they're both healthy rings --- in fact, they could both be $\mathbb{Z}$ \inlinemetanote{writes \qt{$\mathbb{Z}$} above $R_1$ and \qt{$\mathbb{Z}$} above $R_2$}. I could map every element to zero.
+For example, I could take a bad example \inlinemetanote{writes: A bad example}: I could take $R$ and map it to this extremely unpleasant zero set (i.e., the zero ring $\{0\}$)... I could map it so that everything goes to zero. So, here's $R_1$, $R_2$ \inlinemetanote{writes: $R_1 \to R_2$}. Say they're both healthy rings --- in fact, they could both be $\mathbb{Z}$ \inlinemetanote{writes \qt{$\mathbb{Z}$} above $R_1$ and \qt{$\mathbb{Z}$} above $R_2$}. I could map every element to zero.
 
-If you map every element to zero, you certainly are not mapping $1$ to $1$. But you won't get a contradiction with every element being zero; all the other properties will be satisfied.
+If you map every element to zero, you certainly are not mapping $1$ to $1$. Just map every element to zero. But you won't get a contradiction with every element being zero; all the other properties will be satisfied.
 
 So, it's not a good idea to think about this, but the fact of the matter is: we need to just assume it. \inlinemetanote{crosses out the bad example} Okay.
 \end{speech}
@@ -701,6 +698,9 @@ This map satisfies conditions \textbf{(i)} and \textbf{(ii)}:
     \item \textbf{Multiplication:} $f(a \cdot b) = 0 = 0 \cdot 0 = f(a) \cdot f(b)$.
 \end{itemize}
 However, $f(1_{R_1}) = 0 \neq 1_{R_2}$. Without demanding condition \textbf{(iii)} ($f(1) = 1$), the zero map would be considered a ring homomorphism between non-zero rings.
+
+\par\vspace{1ex}\noindent
+The target has to be a non-zero ring. The lecturer's first idea, to map $R$ to the zero ring $\{0\}$ (\cref{prop:zero-ring}), gives no counterexample: there $1 = 0$, so the map $R \to \{0\}$ does send $1$ to $1$ and is a ring homomorphism. This is why he switches to two \qt{healthy} rings.
 \end{example}
 \end{content}
 
@@ -942,11 +942,11 @@ We verify each property directly using the axioms of a ring homomorphism:
     \item \textbf{Property (1):} By \cref{prop:homomorphism-preserves-zero}, $f(0_{R_1}) = 0_{R_2}$, so $0_{R_1} \in \ker(f)$.
     \item \textbf{Property (2):} If $a, b \in \ker(f)$, then $f(a) = 0$ and $f(b) = 0$. By additivity:
     \[
-    f(a + b) = f(a) + f(b) = 0 + 0 = 0 \implies a + b \in \ker(f).
+    f(a + b) = \underbrace{f(a)}_{=\,0} + \underbrace{f(b)}_{=\,0} = 0 \implies a + b \in \ker(f).
     \]
     \item \textbf{Property (4):} If $a \in \ker(f)$ and $r \in R_1$, then $f(a) = 0_{R_2}$. By multiplicativity and \cref{prop:mult-by-zero}:
     \[
-    f(r \cdot a) = f(r) \cdot f(a) = f(r) \cdot 0_{R_2} = 0_{R_2} \implies r \cdot a \in \ker(f).
+    f(r \cdot a) = f(r) \cdot \underbrace{f(a)}_{=\,0_{R_2}} = 0_{R_2} \implies r \cdot a \in \ker(f).
     \]
     \item \textbf{Property (3):} Setting $r = -1_{R_1}$ in Property (4) and using \cref{lem:additive-inverse-product}:
     \[
@@ -1086,7 +1086,7 @@ Hence, $\ker(f)$ satisfies all axioms of an ideal.
 \begin{speech}[00:39:13 - 00:40:05]
 What are its ideals? What are the ideals of a field? Because a field is a ring, so it has the notion of ideals. Every abstract concept of a ring, we can apply to a field, because a field is a particular type of ring: it's a ring where we have multiplicative inverses for non-zero elements. So, what could be an ideal here? What are the ideals?
 
-I'll start with one simple thing: if I just take $I = \{0\}$ \inlinemetanote{writes: $I = \{0\}$}. Then zero is in $I$. It is an abelian subgroup just by itself, because $0 + 0 = 0$, and everything... you know, zero is sufficient unto itself \inlinemetanote{laughter}, one might say. And it has this multiplicative property, because if I multiply by anybody, it stays zero. So, zero is always an ideal.
+I'll start with one simple thing: if I just take $I = \{0\}$ \inlinemetanote{writes: $I = \{0\}$}. Then zero is in $I$. It is an abelian subgroup just by itself, because $0 + 0 = 0$, and everything... you know, zero is sufficient unto itself \inlinemetanote{laughter}, let us say. And it has this multiplicative property, because if I multiply by anybody, it stays zero. So, zero is always an ideal.
 
 So, what else? Yeah? \inlinemetanote{points at student}
 \end{speech}
@@ -1102,7 +1102,7 @@ Can there be any more? Why not?
 \end{speech}
 
 \begin{student}[Student Answer]
-Because as soon as you have another element, then you have the inverse...
+Because as soon as you have another element, then you have the additive inverse...
 \end{student}
 
 \begin{speech}[00:40:26 - 00:40:28]
@@ -1110,12 +1110,10 @@ Multiplicative inverse.
 \end{speech}
 
 \begin{student}[Student Answer, continued]
-...multiplicative inverse, so you have one...
+...multiplicative inverse, so you have $1$, and with $1$ you can...
 \end{student}
 
 \begin{speech}[00:40:30 - 00:40:37]
-One, and then you have everything.
-
 Okay, so, this argument is correct. So, the claim is: for a field, these are the only ideals \inlinemetanote{writes \qt{only ideals!} next to $I = \{0\}$ and $I = F$}.
 \end{speech}
 
@@ -1212,10 +1210,11 @@ Zorn's lemma says: if $P$ is a non-empty partially ordered set (\cref{def:pre-pa
 Week~5 states Zorn's lemma formally (\cref{lem:zorns-lemma}) and uses the same union-of-a-chain argument (\cref{lem:chains-ideals-bounded}) to prove that every non-zero ring has a maximal ideal (Krull's theorem, \cref{thm:krulls-theorem-maximal-ideals}).
 \end{aiNote}
 
+% [WORD-CHECKED: three hearings of the audio (the Hydrogen rerun, and clips heard by Gemini Hydrogen and by Gemini Flash, 2026-11-15) give \qt{implication} of Zorn's lemma, where an application must be meant, so the text keeps the spoken word and adds (application?).]
 \begin{speech}[00:43:29 - 00:44:01]
 Did you consider this question in your first year?
 
-Of course, if it's finite-dimensional, of course it has a basis. And this issue is about whether, if you have some massively infinite-dimensional field (i.e., vector space)... has a basis. And the traditional way to do this is an application of Zorn's lemma, which is related to the axiom of choice in logic --- not my favorite direction to think about, but we will say a little bit about it. But...
+Of course, if it's finite-dimensional, of course it has a basis. And this issue is about whether, if you have some massively infinite-dimensional field (i.e., vector space)... has a basis. And the traditional way to do this is an implication (application?) of Zorn's lemma, which is related to the axiom of choice in logic --- not my favorite direction to think about, but we will say a little bit about it. But...
 
 Okay, and I think that's it. All right, so... \inlinemetanote{puts down the chalk, unclips the microphone, students applaud, and the lecture concludes}
 \end{speech}
