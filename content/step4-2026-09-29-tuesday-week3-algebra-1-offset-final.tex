@@ -5,6 +5,10 @@
 % (commits e58d893, 21a0c92, e2c35c5, f8e1024), checked against frames of the
 % 2026-09-29 board. The 2026-10-10 transcription dropped the passage at
 % 00:28:48 - 00:30:05 and three student answers; those come from the 2026-10-04 run.
+% Checked 2026-11-15 against the Hydrogen XHIGH rerun, a hearing of the whole audio and frames:
+% the speech-block times between 00:28:48 and 00:32:03 were 9 to 25 s early, those between
+% 00:39:19 and 00:45:05 and between 00:51:50 and 01:12:32 were up to 72 s late; they are
+% re-timed (rerun block edges where they coincide, else the audio).
 % ==========================================
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
@@ -617,7 +621,7 @@ We could rearrange...
 \end{student}
 
 % [TIMESTAMP-ESTIMATED: block split for the student answer, whose words come from the 2026-10-04 run]
-\begin{speech}[00:27:52 - 00:28:48]
+\begin{speech}[00:27:52 - 00:28:57]
 Well, you have to say what this means. What does this mean? This goes to the heart of the issue about whether you learned the rational numbers correctly, and the answer is: this means \inlinemetanote{points to $\frac{x_1}{y_1} = \frac{x_2}{y_2}$ and writes below: $x_1 y_2 = x_2 y_1$} that $x_1 y_2 = x_2 y_1$. It means nothing more or less than that; it just actually means that.
 
 So, if we start with this, we have this equation: \inlinemetanote{writes: $x_1 y_2 - x_2 y_1 = 0$ in the integers} $x_1 y_2 - x_2 y_1 = 0$ in the integers. That's what this means.
@@ -667,9 +671,9 @@ A rational number has infinitely many equivalent names (e.g., $\frac{1}{2} = \fr
 \end{steps}
 \end{content}
 
-% [TIMESTAMP-ESTIMATED: missing from the 2026-10-10 transcription; text from the 2026-10-04 run
-% (there 00:29:02 - 00:30:32), placed in the gap; frames show the lecturer talking at 00:29:35]
-\begin{speech}[00:28:48 - 00:30:05]
+% [TIMESTAMP-CHECKED: missing from the 2026-10-10 transcription; text from the 2026-10-04 run
+% (there 00:29:02 - 00:30:32). The Hydrogen rerun (00:29:03) and the audio agree with those times]
+\begin{speech}[00:29:02 - 00:30:30]
 I have now defined the map $g$, finally. Then you have to check that this map $g$ is actually... I mean, all of the properties of $g$, that it's a homomorphism of fields. You have to check that it respects addition, and you have to check that it respects multiplication.
 
 All of it is slightly painful, because at first blush it's obvious: you just pick representatives for $\mathbb{Q}$ as $x_1/y_1$, and then you just check it. But then you have to check that all of that stuff respects the different choices, the different names of elements of $\mathbb{Q}$, just like we did here.
@@ -677,7 +681,7 @@ All of it is slightly painful, because at first blush it's obvious: you just pic
 And the checks are all the same, so you can do it yourself. That's the end of what I'm going to give as the proof of this; you can check the rest. We're going to have to do many more things like this, so...
 \end{speech}
 
-\begin{speech}[00:30:05 - 00:31:50]
+\begin{speech}[00:30:30 - 00:32:03]
 We have now, successfully, defined $g$. Then we need to check that $g$ is indeed a homomorphism of fields. \inlinemetanote{writes \qt{We have defined $g$. We need to check that $g$ is indeed a hom. of fields.}} I leave this to you. We're going to have to do things like this anyway, and it's all just unraveling the definitions.
 
 Meaning you have to check... \inlinemetanote{writes \qt{You have to check}} You check something like: \inlinemetanote{writes: $g\left(\frac{x_1}{y_1}\right) + g\left(\frac{x_2}{y_2}\right) = g\left(\frac{x_1}{y_1} + \frac{x_2}{y_2}\right)$} $g(x_1/y_1) + g(x_2/y_2) = g(x_1/y_1 + x_2/y_2)$. You have to go check that; that's what you have to check.
@@ -687,7 +691,7 @@ And you can see when you write this, this side... Okay, I'm going to do part of 
 First of all, how do we do it? We first have to add this fraction, right? Because our definition only applies to names of rational numbers, and this is the sum. So, we first have to do this, but you know how to add fractions: this is equal to \inlinemetanote{writes: $= g\left(\frac{x_1 y_2 + x_2 y_1}{y_1 y_2}\right)$} $g$ of $(x_1 y_2 + x_2 y_1)/(y_1 y_2)$. At least I hope you know how to add fractions --- at least I hope I know how to add fractions, right? Okay, so, that's the addition of the fraction.
 \end{speech}
 
-\begin{speech}[00:31:50 - 00:32:50]
+\begin{speech}[00:32:03 - 00:32:50]
 And then this, by definition --- use the definition --- is $f(x_1 y_2 + x_2 y_1)/f(y_1 y_2)$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \frac{f(x_1 y_2 + x_2 y_1)}{f(y_1 y_2)}$} Okay?
 
 So, that's the one side to check, and that's supposed to equal this side, all right? And how are you going to check this? Well, you use the homomorphism property, you move everything upstairs, and then finally you're going to use the thing I erased --- this, okay?
@@ -813,7 +817,7 @@ So, here: $y \neq 0$, and $x, y \in R$. Okay, that's the set of pairs. For the i
 
 \subsection{Digression: Equivalence Relations and Partitions}
 
-\begin{speech}[00:38:05 - 00:40:21]
+\begin{speech}[00:38:05 - 00:39:19]
 All right, and now the thing that will come is that there is an equivalence relation. \inlinemetanote{writes \qt{There is an equivalence relation on $S$}} There is an equivalence relation on $S$, so maybe we call this equivalence relation... \inlinemetanote{writes \qt{$\sim$}, then changes to \qt{$\equiv$}} You can use various symbols for equivalence, that's kind of standard. How about three lines?
 
 Do you know what an equivalence relation is? This was in your Foundations class. An equivalence relation on a set --- maybe a little aside \inlinemetanote{writes \qt{Aside on $T$}} --- an equivalence relation on a set $T$ tells you when two elements are related, and the rules for the equivalence relation are:
@@ -829,7 +833,7 @@ and if you know the definition, what's the third one? Yeah?
 Transitivity.
 \end{student}
 
-\begin{speech}[00:40:21 - 00:41:00]
+\begin{speech}[00:39:20 - 00:40:21]
 The transitive property. It says that if we have $x$ related to $y$ and $y$ related to $z$, then $x$ is related to $z$. \inlinemetanote{writes: $x \equiv y \land y \equiv z \implies x \equiv z$, transitive} That's the whole thing of equivalence relations. It comes up many times in mathematics, and it will come up again in this course, so, if you have not seen it, think about it.
 
 And the main thing we use about this equivalence relation is that if I have $T$ with this equivalence relation, then I have another set --- sometimes it's called this --- which is the set of equivalence classes. \inlinemetanote{writes: $T_{\equiv} = \{$set of equiv.\ classes$\}$} That's going to be very important for us.
@@ -852,7 +856,7 @@ An \newterm{equivalence relation} $\equiv$ on a set $T$ is a binary relation sat
     \item \textbf{Symmetry:} $\forall x, y \in T \colon x \equiv y \implies y \equiv x$.
     \item \textbf{Transitivity:} $\forall x, y, z \in T \colon (x \equiv y \land y \equiv z) \implies x \equiv z$.
 \end{enumerate}
-The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes} (\cref{def:pre-quotient-set}), which partitions $T$ into mutually disjoint subsets.
+The set of \newterm{equivalence classes} is written $T_{\equiv}$ on the board (textbooks write $\faktor{T}{{\equiv}}$ and call it the quotient set, \cref{def:pre-quotient-set}). The classes partition $T$ into mutually disjoint subsets.
 \end{remark}
 
 \begin{center}
@@ -889,14 +893,14 @@ The quotient set $T/\!\equiv$ denotes the set of \newterm{equivalence classes} (
     \fill (4.5, 0.6) circle (1.5pt) node[right] {\footnotesize $f$};
     \draw[<->, shorten <=2pt, shorten >=2pt, thick, ForestGreen] (3.8, 1.1) -- (4.5, 0.6);
 
-    \node[below, font=\small] at (2.5, -0.2) {Partition of $T$ into disjoint equivalence classes $T/\!\equiv$};
+    \node[below, font=\small] at (2.5, -0.2) {Partition of $T$ into disjoint equivalence classes $T_{\equiv}$};
 \end{tikzpicture}
 \end{center}
 \end{content}
 
 \subsection{The Equivalence Relation on Formal Fractions}
 
-\begin{speech}[00:41:00 - 00:42:06]
+\begin{speech}[00:40:22 - 00:41:01]
 We have to define the equivalence relation. We now define an equivalence relation on our set $S$, which is the set of pairs \inlinemetanote{writes \qt{We now define $\equiv$ on $S$}} --- and you should think about these pairs as numerator and denominator, but those are just words here.
 
 We need to define when $(x_1, y_1)$ is equivalent to $(x_2, y_2)$. \inlinemetanote{writes: $(x_1, y_1) \equiv (x_2, y_2)$} We need a definition for this. What's the answer going to be? Yeah?
@@ -906,7 +910,7 @@ We need to define when $(x_1, y_1)$ is equivalent to $(x_2, y_2)$. \inlinemetano
 $x_1 y_2 = x_2 y_1$.
 \end{student}
 
-\begin{speech}[00:42:06 - 00:44:08]
+\begin{speech}[00:41:05 - 00:43:24]
 Okay, very good. This is the definition: \inlinemetanote{writes: $\stackrel{\text{def}}{\iff} x_1 y_2 = x_2 y_1$} it's just exactly what you do with integer arithmetic. If you have a fraction, you say they're equal if $x_1 y_2 = x_2 y_1$, okay? That's the definition. There's nothing more or less than that --- that's the whole definition.
 
 And it's motivated by the integers. It's very important for this definition that this is only about $R$. \inlinemetanote{writes \qt{only about $R$}} This whole discussion starts with $R$, so, we can only say things that are about $R$.
@@ -936,7 +940,7 @@ Crucially, formula \eqref{eq:equiv-relation-formula} involves only multiplicatio
 \end{steps}
 \end{content}
 
-\begin{speech}[00:44:08 - 00:45:05]
+\begin{speech}[00:43:24 - 00:45:05]
 The first is: if I take $(x_1, y_1)$, this is equivalent to $(x_1, y_1)$. \inlinemetanote{writes: $(x_1, y_1) \equiv (x_1, y_1)$} And why is this? Because by definition this is equal to $x_1 y_1 = x_1 y_1$, \inlinemetanote{writes: $\iff x_1 y_1 = x_1 y_1$ \checkmark} so, we're very happy about that. There was nothing to do here.
 
 You also have to check the symmetric property: that if we have $(x_1, y_1) \equiv (x_2, y_2)$, then the other way around is fine, and it'll just be the same equation. There's nothing to check about that.
@@ -1081,7 +1085,7 @@ This was almost like the first piece of algebra in this class, I think. I don't 
 
 \subsection{Construction of the Field of Fractions}
 
-\begin{speech}[00:51:06 - 00:52:35]
+\begin{speech}[00:51:06 - 00:51:50]
 Where are we? We started with $R$ as an integral domain. \inlinemetanote{writes: $R$ int. domain} We constructed $S$ with an equivalence relation, \inlinemetanote{writes: $S = \dots$ with $\equiv$} and from this we define $F$. The name of this is the field of fractions of $R$. \inlinemetanote{writes \qt{$\implies F = S_{\equiv}$} and \qt{Field of Fractions of $R$}} Field of fractions of $R$ --- that's the name of this object: $F$ is equal to the set of equivalence classes of $S$. \inlinemetanote{writes: $F = S_{\equiv}$}
 
 Is it completely clear what this thing is? We defined $S$, we defined an equivalence relation, and we took great pains to check all of its properties, so, we get the set of equivalence classes and that is $F$.
@@ -1089,24 +1093,25 @@ Is it completely clear what this thing is? We defined $S$, we defined an equival
 
 \subsection{The Canonical Embedding of \texorpdfstring{$R$}{R} into \texorpdfstring{$F$}{F}}
 
-\begin{speech}[00:52:35 - 00:53:14]
+\begin{speech}[00:51:50 - 00:52:36]
 Then we need to do a lot of things. But let's start by defining the map which is the inclusion from $R$ to $F$, \inlinemetanote{writes: $R \to F$} because we said this $F$ should be a field that contains $R$. That means we have to have some way of getting points from $R$ to $F$. And what's that way going to be?
 
-This $\iota$, the inclusion: we have to put $R$ in $F$. \inlinemetanote{writes \qt{We have to put $R \stackrel{i}{\to} F$}} This is by $\iota$. Normally people don't even write it, but if I have an element of $R$, we have to put it into $F$. That means we have to assign it an equivalence class in this set. What are we going to do? Yeah?
+This $i$, the inclusion: we have to put $R$ in $F$. \inlinemetanote{writes \qt{We have to put $R \stackrel{i}{\to} F$}} This is by $i$. In other words, if I have some $r$ --- normally people don't even write it --- if I have an element of $R$, we have to put it into $F$. \inlinemetanote{writes \qt{$i(r) =$} and below it \qt{$r \in R$}} That means we have to assign it an equivalence class in this set. What are we going to do? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
 The equivalence class of $(r, 1)$.
 \end{student}
 
-\begin{speech}[00:53:15 - 00:54:22]
-Yeah, that's a good idea: $(r, 1)$. \inlinemetanote{writes: $i(r) = (r, 1) \in S_{\equiv}$} It has some advantages: $1 \neq 0$, and an integral domain is never the zero ring (Recall: \cref{def:integral-domain}). So, this is legal: this is an element of $S$, and then we can take its equivalence class.
+% [BOARD-CHECKED: frames 00:52:50, 00:53:08, 00:53:24, 00:53:34 and 00:53:40 (2026-11-15)]
+\begin{speech}[00:52:38 - 00:53:15]
+Yeah, that's a good idea: $(r, 1)$. \inlinemetanote{writes: $(r, 1)$} It has some advantages: $1 \neq 0$, and an integral domain is never the zero ring (Recall: \cref{def:integral-domain}). So, this is legal: this is an element of $S$, \inlinemetanote{writes: $\in S$} and then we can take its equivalence class.
 
-I'm not going to write equivalence classes because it becomes too complicated, but you could formally take its equivalence class like this. If you start doing this, you commit to writing things like $[(3, 4)]$ for rational numbers, and no one ever does that. We don't want to do it, but this would be kind of more logically correct.
+I'm not going to write equivalence classes because it becomes too complicated, but you could formally take its equivalence class like this. If you start doing this, you commit to writing things like, you know, $\overline{\frac{3}{4}}$ \inlinemetanote{writes: $\overline{\frac{3}{4}}$} for rational numbers, and no one ever does that. We don't want to do it, but this would be kind of more logically correct.
 \end{speech}
 
-\begin{speech}[00:54:22 - 00:54:54]
-When I write this, it's just an equivalence class. I looked at what the book does, and the book says that this is an element of $S$ and that is its equivalence class. That's a very clever solution; I wouldn't say it's totally standard, but anyway. Standard is just to ignore the issue. So, this is the equivalence class here.
+\begin{speech}[00:53:15 - 00:53:42]
+When I write this, it's just an equivalence class. I looked at what the book does, and the book says that this is an element of $S$ and that is its equivalence class. \inlinemetanote{erases $\overline{\frac{3}{4}}$ and writes \qt{$[r, 1]$} below $(r, 1)$} That's a very clever solution; I wouldn't say it's totally standard, but anyway. Standard is just to ignore the issue. \inlinemetanote{erases $[r, 1]$} So, this is the equivalence class here. \inlinemetanote{changes \qt{$\in S$} to \qt{$\in S_{\equiv}$}, so that the line reads $i(r) = (r, 1) \in S_{\equiv}$}
 
 Is this reasonable? It better at least be... yeah.
 \end{speech}
@@ -1115,14 +1120,14 @@ Is this reasonable? It better at least be... yeah.
 The set $S$, is this all of $R \times R$ or is it just any subset of $R \times R$?
 \end{student}
 
-\begin{speech}[00:55:00 - 00:55:28]
+\begin{speech}[00:53:50 - 00:54:22]
 No, the set $S$ was very precisely defined on a previous board: $S$ is equal to those elements in $R \times R$ where $y \neq 0$. \inlinemetanote{writes: $S = \{ (x, y) \mid x, y \in R, \ y \neq 0 \}$} That's $S$.
 
 And this is an element of $S$ because $1 \neq 0$; and $1 \neq 0$ because $R$ is an integral domain, and an integral domain is by definition not the zero ring. That's the full logic --- that's the full logical certificate if you want it.
 \end{speech}
 
-\begin{speech}[00:55:28 - 00:57:05]
-Still, we'd like more: we'd like this to be an injection. Is $\iota$ injective? \inlinemetanote{writes \qt{Is $i$ injective?}}
+\begin{speech}[00:54:22 - 00:56:32]
+Still, we'd like more: we'd like this to be an injection. Is $i$ injective? \inlinemetanote{writes \qt{Is $i$ injective?}}
 
 This means: when are $(r, 1)$ and $(\hat{r}, 1)$ in the same equivalence class of $S$? \inlinemetanote{writes \qt{When are $(r, 1)$ and $(\hat{r}, 1)$ in the same equiv. class of $S$?}} That's what injectivity is about, right?
 
@@ -1130,7 +1135,7 @@ How do we check this? The answer is that these are in the same equivalence class
 
 It's if and only if $r \cdot 1 = \hat{r} \cdot 1$, \inlinemetanote{writes: $\iff r \cdot 1 = \hat{r} \cdot 1$} which is if and only if $r = \hat{r}$, \inlinemetanote{writes: $\iff r = \hat{r}$} which is great for us because it shows that this is an injection. \inlinemetanote{places a checkmark}
 
-There's a lot of things to do in this construction --- it's like a big house: you have to build all the pieces of it. So, now we not only have defined $F$, we've defined $\iota$, and we've put $R$ inside $F$, and this placement is injective. Okay?
+There's a lot of things to do in this construction --- it's like a big house: you have to build all the pieces of it. So, now we not only have defined $F$, we've defined $i$, and we've put $R$ inside $F$, and this placement is injective. Okay?
 \end{speech}
 
 \begin{content}[Definition of the Field of Fractions and Canonical Embedding]
@@ -1173,7 +1178,7 @@ For the pair $(r, 1)$ to belong to $S$, the denominator must satisfy $1 \ne 0$. 
 
 \subsection{Definition of Zero, One, and Addition on \texorpdfstring{$F$}{F}}
 
-\begin{speech}[00:57:05 - 00:58:38]
+\begin{speech}[00:56:33 - 00:58:40]
 This is just the beginning of the story. $R$ already is born with all of the data: $R$, $+$, multiplication, $0, 1$. \inlinemetanote{writes: $R, +, \cdot, 0, 1$} We need to define all the structures on $F$ and show this is a homomorphism also. \inlinemetanote{draws arrow to $F$, gestures, and pushes the upper chalkboard up to reveal the lower board}
 We have to start talking about all the structures for $F$ as a field. And for many of them we don't have any choice: the zero in $F$ has to correspond to the zero in $R$ for it to be a homomorphism. So, the zero in $F$ has to be $(0, 1)$, \inlinemetanote{writes \qt{Zero in $F$ has to be $(0, 1)$}} okay? Also, the unit in $F$ has to be $(1, 1)$, \inlinemetanote{writes \qt{unit in $F$ has to be $(1, 1)$}} because it has to correspond to the unit in $R$ by the rule of getting $R$ to $F$. We don't really have any choice in this matter.
 
@@ -1188,7 +1193,9 @@ That's the problem. How are we going to define this? What do you think? Tell me.
 $x_1 y_2 + x_2 y_1$ over $y_1 y_2$.
 \end{student}
 
-\begin{speech}[00:58:39 - 01:00:40]
+% [WORD-CHECKED: he says "how you multiply fractions", a slip while defining addition; "add" is kept
+% (Hydrogen rerun and a Flash hearing agree on the spoken word, 2026-11-15)]
+\begin{speech}[00:58:43 - 01:00:01]
 Yeah, so, we just use the standard definition for how you add fractions: this one times that one plus this one times that one over $y_1 y_2$, okay? \inlinemetanote{writes: $= (x_1 y_2 + x_2 y_1, y_1 y_2)$}
 
 Meaning you pretend that it's this problem, which it kind of is: \inlinemetanote{writes: $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$} $\frac{x_1}{y_1} + \frac{x_2}{y_2} = \frac{x_1 y_2 + x_2 y_1}{y_1 y_2}$. You know how to do this. I hope I got the subscripts right; you should tell me if I get the subscripts wrong.
@@ -1202,7 +1209,7 @@ We have here: this guy is non-zero, that guy is non-zero, and that implies the p
 
 \subsection{Well-Definedness of Addition}
 
-\begin{speech}[01:00:40 - 01:02:25]
+\begin{speech}[01:00:01 - 01:02:20]
 That's the easy part. The hard part is: you have to check that while this is a definition on $S$, it's well-defined on equivalence classes.
 
 That means if I trade this person for another one in the same equivalence class, and I trade this for another person in the same equivalence class, the result has to be in the same equivalence class. Is that clear? That's the check of rational arithmetic --- the check that I claim you should have done in school to understand the rational numbers.
@@ -1213,7 +1220,7 @@ And we've already done this kind of thing twice already in the lecture. If you j
 
 In various books they do it; mostly it's left as an exercise. It's really important, so, you should do it. If I do it, it's just a bunch of indices --- it doesn't really help, and you have to go through it yourself.
 
-Is it clear what the problem is? I recommend trying this yourself, and if you get stuck, look at the book --- the book does it. It'll give you a line of things, and you can imagine it's probably true.
+Is it clear what the problem is? I recommend trying this yourself, and if you get stuck, look at the book --- the book does it. It'll give you a line of things, and you can imagine it's probably true. If you have the correct point of view, it's fun.
 \end{speech}
 
 \begin{content}[Neutral Elements and Addition on the Field of Fractions]
@@ -1266,7 +1273,7 @@ The lecture checks the denominator and leaves the independence of the representa
 
 \subsection{Definition and Well-Definedness of Multiplication on \texorpdfstring{$F$}{F}}
 
-\begin{speech}[01:02:25 - 01:03:40]
+\begin{speech}[01:02:20 - 01:03:18]
 Also you have to do it with multiplication. \inlinemetanote{washes the chalkboard to the left} Multiplication is a bit easier --- that was the most painful one.
 
 Also define multiplication, \inlinemetanote{writes \qt{Also define $\cdot$}} which is $(x_1, y_1) \cdot (x_2, y_2)$ \inlinemetanote{writes: $(x_1, y_1) \cdot (x_2, y_2) \stackrel{\text{def}}{=}$} --- it will surprise no one that this is $(x_1 x_2, y_1 y_2)$, okay? \inlinemetanote{writes: $(x_1 x_2, y_1 y_2)$} That's the definition.
@@ -1274,7 +1281,7 @@ Also define multiplication, \inlinemetanote{writes \qt{Also define $\cdot$}} whi
 And again, next is plus check \inlinemetanote{writes \qt{+ check}} of compatibility with the equivalence classes. \inlinemetanote{writes \qt{compatibility with $\equiv$}} And this check is easy, so, I'll do it since it's easy.
 \end{speech}
 
-\begin{speech}[01:03:40 - 01:05:45]
+\begin{speech}[01:03:19 - 01:05:38]
 Suppose we have here $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$ \inlinemetanote{writes: $(x_1, y_1) \equiv (\hat{x}_1, \hat{y}_1)$} and $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$. \inlinemetanote{writes: $(x_2, y_2) \equiv (\hat{x}_2, \hat{y}_2)$} That's the input, right?
 
 Then we must show \inlinemetanote{writes \qt{We must show}} that $(x_1 x_2, y_1 y_2)$ is in the same equivalence class as if we chose the other representatives: $(\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$, \inlinemetanote{writes: $(x_1 x_2, y_1 y_2) \equiv (\hat{x}_1 \hat{x}_2, \hat{y}_1 \hat{y}_2)$} okay? That's what we have to do.
@@ -1290,10 +1297,10 @@ So, this shows that if I pick different equivalence classes here, the result doe
 
 \subsection{Compatibility of the Operations with the Canonical Embedding}
 
-\begin{speech}[01:05:45 - 01:07:25]
-Then you have to check that these definitions are compatible with $R$. They're just all defined that way, meaning we have to check \inlinemetanote{writes \qt{Check $i \colon R \to F$ is a hom of rings}} that this $\iota \colon R \to F$ is a homomorphism of rings.
+\begin{speech}[01:05:39 - 01:06:43]
+Then you have to check that these definitions are compatible with $R$. They're just all defined that way, meaning we have to check \inlinemetanote{writes \qt{Check $i \colon R \to F$ is a hom of rings}} that this $i \colon R \to F$ is a homomorphism of rings.
 
-Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes: $r + \hat{r} \stackrel{i}{\longrightarrow} (r + \hat{r}, 1)$} and you go by $\iota$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes: $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
+Again, there's really nothing to this: it means that if you take $r + \hat{r}$ \inlinemetanote{writes: $r + \hat{r} \stackrel{i}{\longrightarrow} (r + \hat{r}, 1)$} and you go by $i$, you get $(r + \hat{r}, 1)$. Then you have to check that this thing is equal to $(r, 1) + (\hat{r}, 1)$, \inlinemetanote{writes: $= (r, 1) + (\hat{r}, 1)$} and that's the same by the definition that we used there. But you have to check it.
 
 You also have to check it for multiplication. So, it's just a bunch of checking. By here, all the cards are played, and you just have to check everything.
 \end{speech}
@@ -1389,7 +1396,7 @@ The lecture leaves these checks to the students as well; they reduce to computat
 
 \subsection{Summary of the Field of Fractions Construction}
 
-\begin{speech}[01:07:25 - 01:08:00]
+\begin{speech}[01:06:49 - 01:08:00]
 That is the construction. When you understand it, you'll realize that actually you knew the whole thing anyway in your understanding of the rational numbers: you were subconsciously doing all of this. Not explicitly, but somehow underneath the surface, you were assuming all of these properties were true --- it made the rational number arithmetic work.
 
 There's different ways to try to learn this material, but the way that's foundational is you actually go yourself and check all the things that you're supposed to check. That takes a little bit of time and it's somewhat painful, but you only have to do it once in your life.
@@ -1455,7 +1462,7 @@ If I take $\mathbb{Z}$, \inlinemetanote{writes: $\mathbb{Z} \to$ What is field o
 
 The answer is going to be $\mathbb{Q}$, \inlinemetanote{writes: $\mathbb{Q}$} which means that if you start with $\mathbb{Z}$ and you do this crazy construction, you get the rational numbers. I hope that's clear by now. All right?
 
-What happens if I start with the ring of Gaussian integers? What is the field of fractions? \inlinemetanote{writes: $\mathbb{Z}[i] \to$ What is the field of fractions?}
+But what happens if I do something else? What happens if I start with the ring of Gaussian integers? What is the field of fractions? \inlinemetanote{writes: $\mathbb{Z}[i] \to$ What is the field of fractions?}
 
 That's a strange question, because I've just explained what the field of fractions is: you take the Gaussian integers, you do this construction, that's the field of fractions. When I say \qt{what is the field of fractions?}, what the question is actually asking is: what's another way of thinking about the answer?
 
@@ -1466,7 +1473,7 @@ Do you have a proposal for what that is? Yeah?
 $\mathbb{Q}$ adjoined $i$.
 \end{student}
 
-\begin{speech}[01:10:46 - 01:11:48]
+\begin{speech}[01:10:46 - 01:11:22]
 Yeah, so, the answer is $\mathbb{Q}[i]$, \inlinemetanote{writes: $\mathbb{Z}[i] \subset \mathbb{Q}[i] \rightsquigarrow \{a + bi \mid a, b \in \mathbb{Q}\}$} which is equal to the set $a + bi$ where $a$ and $b$ are in $\mathbb{Q}$.
 
 It's correct, but to check this is correct, you have to do a bunch of things: one is you have to show this is a field --- you can invert --- and then you have to show that this sits inside, and everything here is a ratio of that. It's all true. But that's the answer here, and requires some checking.
@@ -1476,7 +1483,7 @@ All right, this is correct.
 
 \subsection{Fields of Fractions of Intermediate Rings and Fields}
 
-\begin{speech}[01:11:48 - 01:12:32]
+\begin{speech}[01:11:22 - 01:12:32]
 What about this? We saw last week that there are some funny rings that sit inside $\mathbb{Z}$ and $\mathbb{Q}$. \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Z}_{1/3} \subset \mathbb{Q}$}
 
 This ring is the set $a / 3^b$, where $a \in \mathbb{Z}$ and $b \ge 0$, right? \inlinemetanote{writes: $\{a / 3^b \mid a \in \mathbb{Z}, b \ge 0\}$}
@@ -1855,10 +1862,14 @@ Yeah, because it's just the constant... The secret, the way to do this is you wr
 What is this term? Well, it's going to be $a_1 b_0 + a_0 b_1$. \inlinemetanote{writes: $a_1 b_0 + a_0 b_1$} The second term is going to be $a_2 b_0 + a_1 b_1 + a_0 b_2$. \inlinemetanote{writes: $+ a_2 b_0 + a_1 b_1 + a_0 b_2, \dots$}
 
 Formally, this is the definition of polynomial multiplication. Is that clear?
+
+So, if you want to be on the formal side, polynomials are these lists of coefficients that eventually become all zero. They contain the zero and the one, by the element here and all those zeros. You can add them by componentwise addition, and the interesting thing is multiplying them, and you use this rule. Yeah?
 \end{speech}
 
+% [WORD-CHECKED: the student says "Cantor diagonalization" and speaks of diagonals, not "Cauchy product"
+% (Hydrogen rerun and a Flash hearing, 2026-11-15); the end of the question is hard to hear]
 \begin{student}[Student Question]
-This is essentially like doing the Cauchy product?
+So, is this essentially like... how should I call it... like with the Cantor diagonalization, where you go along a diagonal? \inlinemetanote{the end of the question is hard to hear}
 \end{student}
 
 \begin{speech}[01:29:05 - 01:29:40]
@@ -1937,6 +1948,7 @@ The formula $c_k = \sum_{i=0}^k a_i b_{k-i}$ exactly mirrors:
     \]
     The powers of the indeterminate $x$ naturally collect all terms where the sum of indices equals $k$.
     \item \textbf{Cauchy Product of Power Series:} In analysis, the product of two absolutely convergent power series $\sum a_n x^n$ and $\sum b_n x^n$ is given by the exact same formula (\cref{fact:pre-series}).
+    \item \textbf{The Student's Diagonals:} When the products $a_i b_j$ are arranged in a grid as in the figure above, the terms of $c_k$ are exactly those on the diagonal $i + j = k$. Cantor's counting of all pairs $(i, j)$ of natural numbers runs along these same diagonals; this is the picture the student has in mind. It is not Cantor's diagonal argument for uncountability, which the word \qt{diagonalization} usually means.
 \end{enumerate}
 \end{steps}
 \end{content}
