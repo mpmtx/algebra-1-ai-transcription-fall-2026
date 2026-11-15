@@ -78,10 +78,10 @@
 \begin{overview}[Context and Overview]
 This lecture continues the study of groups with a focus on finite and non-Abelian groups, moving from element orders to Lagrange's theorem and concrete geometric examples of finite symmetry groups:
 \begin{itemize}
-    \item \textbf{Review of Groups and Cyclic Subgroups:} Contrasting symmetric groups $S_n$ and cyclic Abelian groups $\faktor{\mathbb{Z}}{n\mathbb{Z}}$; reviewing element order $\operatorname{ord}(x)$ and proving that $\langle x \rangle \subset G$ is a subgroup isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}}, +, 0)$.
+    \item \textbf{Review of Groups and Cyclic Subgroups:} Contrasting symmetric groups $S_n$ and cyclic Abelian groups $\faktor{\mathbb{Z}}{n\mathbb{Z}}$; reviewing element order $\operatorname{Ord}(x)$ and proving that $\langle x \rangle \subset G$ is a subgroup isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}}, +, 0)$.
     \item \textbf{Lagrange's Theorem:} Motivating divisibility of $|G|$ via element orders in $S_3$, stating Lagrange's theorem ($|H| \mid |G|$ for any subgroup $H \subset G$ of a finite group $G$), and proving it using an equivalence relation on $G$ and a bijection $\phi \colon H \to E$ onto each equivalence class.
     \item \textbf{Cycle Decomposition in $S_n$:} Visualizing permutations $\sigma \in S_7$ dynamically on $[7]$ to obtain disjoint cycle decompositions and integer partitions.
-    \item \textbf{Symmetries of the Platonic Solids:} Counting rotational symmetries of the cube ($24$), tetrahedron ($12$), and octahedron ($24$), formulating the geometric isomorphism $\operatorname{Rot}(\text{cube}) \cong S_4$ via the four long diagonals, and identifying $\operatorname{Rot}(\text{tetrahedron}) \cong A_4$ inside $S_4$.
+    \item \textbf{Symmetries of the Platonic Solids:} Counting rotational symmetries of the cube ($24$), tetrahedron ($12$), and octahedron ($24$), formulating the geometric isomorphism $\operatorname{Rot}(\text{Cube}) \cong S_4$ via the four long diagonals, and identifying $\operatorname{Rot}(\text{Tetrahedron}) \cong A_4$ inside $S_4$.
 \end{itemize}
 \end{overview}
 
@@ -148,28 +148,28 @@ And I'll just remind you what the order is: this order of $x$ is the minimal $m$
 Let $G$ be a finite group and let $x \in G$.
 
 \begin{definition}[Order of an Element]\label[definition]{def:order-of-element}
-\textbf{(1)} As established previously, the \newterm{order} of $x$, denoted $\operatorname{ord}(x)$, is well-defined and given by the minimal positive integer $m > 0$ such that $x^m = e \in G$:
+\textbf{(1)} As established previously, the \newterm{order} of $x$, denoted $\operatorname{Ord}(x)$, is well-defined and given by the minimal positive integer $m > 0$ such that $x^m = e \in G$:
 \[
-\operatorname{ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
+\operatorname{Ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}.
 \]
 \end{definition}
 
 \begin{steps}[Why Well-Definedness Requires Proof]
-To establish that $\operatorname{ord}(x)$ is well-defined for a finite group $G$, one first shows (by the pigeonhole principle applied to the powers $e, x, x^2, \dots$ together with group cancellation, \cref{prop:cancellation-laws}) that the set $\{ m > 0 \mid x^m = e \}$ is non-empty (\cref{prop:finite-group-identity-power}). The Well-Ordering Principle on $\mathbb{Z}_{>0}$ (\cref{fact:pre-well-ordering}) then guarantees the existence of a unique minimal element.
+To establish that $\operatorname{Ord}(x)$ is well-defined for a finite group $G$, one first shows (by the pigeonhole principle applied to the powers $e, x, x^2, \dots$ together with group cancellation, \cref{prop:cancellation-laws}) that the set $\{ m > 0 \mid x^m = e \}$ is non-empty (\cref{prop:finite-group-identity-power}). The Well-Ordering Principle on $\mathbb{Z}_{>0}$ (\cref{fact:pre-well-ordering}) then guarantees the existence of a unique minimal element.
 \end{steps}
 \end{content}
 
 \begin{speech}[00:03:18 - 00:04:05]
-And I think that the point where I stopped was this discussion: so, another definition is I use these triangular parentheses, the triangle brackets \inlinemetanote{writes: \textbf{(2)} $\langle x \rangle$}. This is by definition the set of elements that includes the neutral element, $x$, $x^2$, all the way to $x$ to the order of $x$ minus $1$ \inlinemetanote{writes \qt{$\stackrel{\text{def}}{=} \langle e, x, x^2, \dots, x^{\operatorname{ord}(x)-1} \rangle \subset G$}, using angle brackets on the right as a slip for set braces}. Okay, this is a subset of $G$. That's a definition; sometimes in words this is the... well, let me say the words later. So, that's where we were last time. Are there questions about this? That's in my memory where we were last time.
+And I think that the point where I stopped was this discussion: so, another definition is I use these triangular parentheses, the triangle brackets \inlinemetanote{writes: (ii) $\langle x \rangle$}. This is by definition the set of elements that includes the neutral element, $x$, $x^2$, all the way to $x$ to the order of $x$ minus $1$ \inlinemetanote{writes \qt{$\stackrel{\text{def}}{=} \langle e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1} \rangle \subset G$}, using angle brackets on the right as a slip for set braces}. Okay, this is a subset of $G$. That's a definition; sometimes in words this is the... well, let me say the words later. So, that's where we were last time. Are there questions about this? That's in my memory where we were last time.
 \end{speech}
 
 \begin{content}
-\recap{This is \cref{def:cyclic-subgroup} of the previous lecture, where \cref{lem:cyclic-subgroup-order} showed that the listed powers are distinct. That $\langle x \rangle$ is a subgroup isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}}, +, 0)$ was stated there (\cref{prop:cyclic-isomorphism}) and is proved next.}
+\recap{This is \cref{def:cyclic-subgroup} of the previous lecture, where \cref{lem:cyclic-subgroup-order} showed that the listed powers are distinct. That $\langle x \rangle$ is a subgroup isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}}, +, 0)$ was stated there (\cref{prop:cyclic-isomorphism}) and is proved next.}
 
 \begin{definition}[Powers Generated by \texorpdfstring{$x$}{x}]\label[definition]{def:powers-subset}
 \textbf{(2)} For an element $x \in G$ of a finite group $G$, we define the subset $\langle x \rangle \subset G$ by:
 \[
-\langle x \rangle \stackrel{\text{def}}{=} \{ e, x, x^2, \dots, x^{\operatorname{ord}(x)-1} \} \subset G.
+\langle x \rangle \stackrel{\text{def}}{=} \{ e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1} \} \subset G.
 \]
 \end{definition}
 \end{content}
@@ -179,7 +179,7 @@ And I think that the point where I stopped was this discussion: so, another defi
 Two conventions from the blackboard are noted here:
 \begin{itemize}
     \item Throughout this lecture, the lecturer uses $\subset$ for any subset or subgroup (not necessarily proper), whereas many textbooks write $\subseteq$ or $\le$. We retain $\subset$ everywhere to stay faithful to the board.
-    \item In defining $\langle x \rangle$ on the board, the lecturer wrote $\langle x \rangle \stackrel{\text{def}}{=} \langle e, x, x^2, \dots, x^{\operatorname{ord}(x)-1} \rangle \subset G$, repeating the angle brackets $\langle \dots \rangle$ on the right-hand side as a slip for set braces $\{ \dots \}$. In the formal definition above, standard set braces are used.
+    \item In defining $\langle x \rangle$ on the board, the lecturer wrote $\langle x \rangle \stackrel{\text{def}}{=} \langle e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1} \rangle \subset G$, repeating the angle brackets $\langle \dots \rangle$ on the right-hand side as a slip for set braces $\{ \dots \}$. In the formal definition above, standard set braces are used.
 \end{itemize}
 \end{aiNote}
 
@@ -199,22 +199,22 @@ All right, and what's the proof \inlinemetanote{writes: Proof:}? Well, to check 
 
 So, is this true? That means I take some person here, $x^k$, and take another one, $x^\ell$, and I apply the group product; this is $x$ $k$ times, this is $x$ $\ell$ times, so when I put them together, I get $x$ $k+\ell$ times \inlinemetanote{writes \qt{$x^k \cdot x^\ell$} and \qt{$= x^{k+\ell}$}, and indicates $k$ and $\ell$ factors of $x$ underneath}.
 
-And then I get slightly worried because $k + \ell$ might be bigger than this \inlinemetanote{points at $\operatorname{ord}(x)-1$}, but of course, we know that $x$ to the $\operatorname{ord}$ is $e$, is the neutral element, so I can keep removing this; so, all that matters is that it's the residue modulo this number \inlinemetanote{writes \qt{$x^{\operatorname{ord}(x)} = e$} and writes \qt{$\bmod \operatorname{ord}$} above $k + \ell$}. Is that clear? So, I hope that's clear: it's closed under product, because if I come up over here, I can always take out the $\operatorname{ord}(x)$ part, because it's just the neutral element.
+And then I get slightly worried because $k + \ell$ might be bigger than this \inlinemetanote{points at $\operatorname{Ord}(x)-1$}, but of course, we know that $x$ to the $\operatorname{Ord}$ is $e$, is the neutral element, so I can keep removing this; so, all that matters is that it's the residue modulo this number \inlinemetanote{writes \qt{$x^{\operatorname{Ord}(x)} = e$} and writes \qt{$\bmod \operatorname{Ord}$} above $k + \ell$}. Is that clear? So, I hope that's clear: it's closed under product, because if I come up over here, I can always take out the $\operatorname{Ord}(x)$ part, because it's just the neutral element.
 \end{speech}
 
 \begin{content}[Closure Under the Group Product]
 We verify the three subgroup criteria for $\langle x \rangle \subset G$.
 
-\textbf{Closure under $\cdot$:} Let $x^k, x^\ell \in \langle x \rangle$, where $0 \le k, \ell \le \operatorname{ord}(x) - 1$. Multiplying them gives:
+\textbf{Closure under $\cdot$:} Let $x^k, x^\ell \in \langle x \rangle$, where $0 \le k, \ell \le \operatorname{Ord}(x) - 1$. Multiplying them gives:
 \[
 x^k \cdot x^\ell = \underbrace{(x \cdots x)}_{k \text{ times}} \cdot \underbrace{(x \cdots x)}_{\ell \text{ times}} = x^{k+\ell}.
 \]
-Even if $k + \ell \ge \operatorname{ord}(x)$, we know that $x^{\operatorname{ord}(x)} = e$, so factors of $x^{\operatorname{ord}(x)}$ can be repeatedly removed without changing the element. Only the remainder of $k + \ell$ modulo $\operatorname{ord}(x)$ matters.
+Even if $k + \ell \ge \operatorname{Ord}(x)$, we know that $x^{\operatorname{Ord}(x)} = e$, so factors of $x^{\operatorname{Ord}(x)}$ can be repeatedly removed without changing the element. Only the remainder of $k + \ell$ modulo $\operatorname{Ord}(x)$ matters.
 
 \begin{steps}[Formalizing the Reduction via Division with Remainder]
-By Euclidean division, write $k + \ell = q \cdot \operatorname{ord}(x) + r$ for some integer $q \ge 0$ and remainder $0 \le r \le \operatorname{ord}(x) - 1$. Then:
+By Euclidean division, write $k + \ell = q \cdot \operatorname{Ord}(x) + r$ for some integer $q \ge 0$ and remainder $0 \le r \le \operatorname{Ord}(x) - 1$. Then:
 \[
-x^{k+\ell} = x^{q \cdot \operatorname{ord}(x) + r} = \left(x^{\operatorname{ord}(x)}\right)^q \cdot x^r = e^q \cdot x^r = x^r \in \langle x \rangle.
+x^{k+\ell} = x^{q \cdot \operatorname{Ord}(x) + r} = \left(x^{\operatorname{Ord}(x)}\right)^q \cdot x^r = e^q \cdot x^r = x^r \in \langle x \rangle.
 \]
 Hence, $\langle x \rangle$ is closed under the group product.
 \end{steps}
@@ -223,46 +223,46 @@ Hence, $\langle x \rangle$ is closed under the group product.
 \begin{speech}[00:05:34 - 00:06:34]
 Okay, so then we have to show that... well, I should have said this first: $e$ is in here, but that was just in the list \inlinemetanote{writes: $e \in \langle x \rangle \ \checkmark$}.
 
-And the last one we have to show is that if someone is here, then the inverse is also here \inlinemetanote{writes: if $y \in \langle x \rangle$, then $y^{-1} \in \langle x \rangle$}. So, this should also be clear: if I pick one of these elements $x^k$, where $k$ is in this list, I can always multiply it by $x$ to the $\operatorname{ord}(x) - k$, and it will also be in this list, unless $k$ is $0$ \inlinemetanote{writes: $x^{\operatorname{ord}(x)-k}$} --- there's a boundary case you can check, but it's fine also.
+And the last one we have to show is that if someone is here, then the inverse is also here \inlinemetanote{writes: if $y \in \langle x \rangle$, then $y^{-1} \in \langle x \rangle$}. So, this should also be clear: if I pick one of these elements $x^k$, where $k$ is in this list, I can always multiply it by $x$ to the $\operatorname{Ord}(x) - k$, and it will also be in this list, unless $k$ is $0$ \inlinemetanote{writes: $x^{\operatorname{Ord}(x)-k}$} --- there's a boundary case you can check, but it's fine also.
 
-But this times this is equal to $x$ $\operatorname{ord}(x)$, which is $e$ \inlinemetanote{writes: $x^k \cdot x^{\operatorname{ord}(x)-k} = x^{\operatorname{ord}(x)} = e$}. So, that means the inverse is also in this list. Okay? So, all these three things are satisfied, and it is a fact that this construction --- if I take $x$ and I take the neutral element and I go all the way up to the order minus $1$ --- is a nice subset and it is a subgroup.
+But this times this is equal to $x$ $\operatorname{Ord}(x)$, which is $e$ \inlinemetanote{writes: $x^k \cdot x^{\operatorname{Ord}(x)-k} = x^{\operatorname{Ord}(x)} = e$}. So, that means the inverse is also in this list. Okay? So, all these three things are satisfied, and it is a fact that this construction --- if I take $x$ and I take the neutral element and I go all the way up to the order minus $1$ --- is a nice subset and it is a subgroup.
 \end{speech}
 
 \begin{content}[Neutral Element and Closure Under Inverses]
 \textbf{Neutral element:} Directly from the definition of $\langle x \rangle$, we have $e \in \langle x \rangle$.
 
-\textbf{Closure under inverses:} Let $y \in \langle x \rangle$, so $y = x^k$ for some $0 \le k \le \operatorname{ord}(x) - 1$.
+\textbf{Closure under inverses:} Let $y \in \langle x \rangle$, so $y = x^k$ for some $0 \le k \le \operatorname{Ord}(x) - 1$.
 \begin{itemize}
     \item If $k = 0$, then $y = x^0 = e$, whose inverse is $e^{-1} = e \in \langle x \rangle$.
-    \item If $1 \le k \le \operatorname{ord}(x) - 1$, then $1 \le \operatorname{ord}(x) - k \le \operatorname{ord}(x) - 1$, so $x^{\operatorname{ord}(x)-k} \in \langle x \rangle$. Multiplying gives:
+    \item If $1 \le k \le \operatorname{Ord}(x) - 1$, then $1 \le \operatorname{Ord}(x) - k \le \operatorname{Ord}(x) - 1$, so $x^{\operatorname{Ord}(x)-k} \in \langle x \rangle$. Multiplying gives:
     \[
-    x^k \cdot x^{\operatorname{ord}(x)-k} = x^{\operatorname{ord}(x)} = e,
+    x^k \cdot x^{\operatorname{Ord}(x)-k} = x^{\operatorname{Ord}(x)} = e,
     \]
-    and symmetrically $x^{\operatorname{ord}(x)-k} \cdot x^k = x^{\operatorname{ord}(x)} = e$. Thus, $y^{-1} = x^{\operatorname{ord}(x)-k} \in \langle x \rangle$.
+    and symmetrically $x^{\operatorname{Ord}(x)-k} \cdot x^k = x^{\operatorname{Ord}(x)} = e$. Thus, $y^{-1} = x^{\operatorname{Ord}(x)-k} \in \langle x \rangle$.
 \end{itemize}
 All three subgroup conditions hold, so $\langle x \rangle \subset G$ is a subgroup.
 \end{content}
 \end{proofWrapper}
 
 \begin{speech}[00:06:34 - 00:07:24]
-And moreover, if you understood what this product rule is, where you take this and this --- and maybe I'll just write it is equal to $r$, where $r$ is $k + \ell \bmod$ the order \inlinemetanote{writes \qt{$= x^r$} and \qt{$r = k+\ell \bmod \operatorname{ord}$}} ---, if you understand this product rule, I write it as a corollary, maybe it's a corollary of the proof: actually, this group is isomorphic to $\mathbb{Z} \bmod \operatorname{ord}(x)\mathbb{Z}$ with addition and $0$ \inlinemetanote{writes: Cor: $\langle x \rangle \cong (\faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}}, +, 0)$}. Okay?
+And moreover, if you understood what this product rule is, where you take this and this --- and maybe I'll just write it is equal to $r$, where $r$ is $k + \ell \bmod$ the order \inlinemetanote{writes \qt{$= x^r$} and \qt{$r = k+\ell \bmod \operatorname{Ord}$}} ---, if you understand this product rule, I write it as a corollary, maybe it's a corollary of the proof: actually, this group is isomorphic to $\mathbb{Z} \bmod \operatorname{Ord}(x)\mathbb{Z}$ with addition and $0$ \inlinemetanote{writes: Cor: $\langle x \rangle \cong (\faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}}, +, 0)$}. Okay?
 \end{speech}
 
 \begin{content}[Structure of \texorpdfstring{$\langle x \rangle$}{<x>}]
-From the proof above, for any integers $k, \ell \ge 0$ (in particular, $0 \le k, \ell < \operatorname{ord}(x)$), the product of powers satisfies:
+From the proof above, for any integers $k, \ell \ge 0$ (in particular, $0 \le k, \ell < \operatorname{Ord}(x)$), the product of powers satisfies:
 \[
-x^k \cdot x^\ell = x^{k+\ell} = x^r, \qquad \text{where } r = (k + \ell) \bmod \operatorname{ord}(x).
+x^k \cdot x^\ell = x^{k+\ell} = x^r, \qquad \text{where } r = (k + \ell) \bmod \operatorname{Ord}(x).
 \]
 
 \begin{corollary}\label[corollary]{cor:cyclic-subgroup-isomorphism}
 For any element $x$ of a finite group $G$, there is a group isomorphism:
 \[
-\langle x \rangle \cong \left(\faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}}, +, 0\right).
+\langle x \rangle \cong \left(\faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}}, +, 0\right).
 \]
 \end{corollary}
 
 \begin{steps}[Explicit Isomorphism and Distinctness of Powers]
-The map $\psi \colon \faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}} \to \langle x \rangle$ sending $[k] \mapsto x^{k \bmod \operatorname{ord}(x)}$ (or simply $[k] \mapsto x^k$ for $0 \le k < \operatorname{ord}(x)$) is well-defined and a homomorphism precisely because $x^k \cdot x^\ell = x^r$ with $r = (k+\ell) \bmod \operatorname{ord}(x)$. Moreover, the elements $e, x, x^2, \dots, x^{\operatorname{ord}(x)-1}$ are pairwise distinct (\cref{lem:cyclic-subgroup-order}): if $x^i = x^j$ for $0 \le i < j < \operatorname{ord}(x)$, then $x^{j-i} = e$ with $0 < j - i < \operatorname{ord}(x)$, contradicting the minimality of $\operatorname{ord}(x)$. Hence, $|\langle x \rangle| = \operatorname{ord}(x)$ and $\psi$ is a bijection.
+The map $\psi \colon \faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}} \to \langle x \rangle$ sending $[k] \mapsto x^{k \bmod \operatorname{Ord}(x)}$ (or simply $[k] \mapsto x^k$ for $0 \le k < \operatorname{Ord}(x)$) is well-defined and a homomorphism precisely because $x^k \cdot x^\ell = x^r$ with $r = (k+\ell) \bmod \operatorname{Ord}(x)$. Moreover, the elements $e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1}$ are pairwise distinct (\cref{lem:cyclic-subgroup-order}): if $x^i = x^j$ for $0 \le i < j < \operatorname{Ord}(x)$, then $x^{j-i} = e$ with $0 < j - i < \operatorname{Ord}(x)$, contradicting the minimality of $\operatorname{Ord}(x)$. Hence, $|\langle x \rangle| = \operatorname{Ord}(x)$ and $\psi$ is a bijection.
 \end{steps}
 \end{content}
 
@@ -289,9 +289,9 @@ Given a finite group $G$ and $x \in G$, the subgroup $\langle x \rangle \subset 
 \subsection{Motivation: Element Orders in \texorpdfstring{$S_3$}{S3} and Statement of Lagrange's Theorem}
 
 \begin{speech}[00:07:55 - 00:08:57]
-All right, so, like in our example for $S_3$, we had some elements like these $2$-cycles, this element --- and I said sometimes I write this, sometimes I don't; it's just, you know, however I feel ---, but often people don't write the singletons \inlinemetanote{writes \qt{$S_3$} and \qt{$(1\,2)(3)$}}.
+All right, so, like in our example for $S_3$, we had some elements like these $2$-cycles, this element --- and I said sometimes I write this, sometimes I don't; it's just, you know, however I feel ---, but often people don't write the singletons \inlinemetanote{writes: $S_3$, $(1\,2)(3)$}.
 
-If I take this element, we saw it has order $2$, so this has order $2$, and this has order $3$ \inlinemetanote{writes \qt{$\to \operatorname{ord} = 2$} and \qt{$(1\,2\,3) \to \operatorname{ord} = 3$}}.
+If I take this element, we saw it has order $2$, so this has order $2$, and this has order $3$ \inlinemetanote{writes \qt{$\rightsquigarrow \operatorname{Ord} = 2$} and \qt{$(1\,2\,3) \rightsquigarrow \operatorname{Ord} = 3$}}.
 
 And one of the things you notice here is: what is the order of this group? It's $3$ factorial, which is $6$ \inlinemetanote{writes: $|S_3| = 3! = 6$}. So, we find here the orders of the elements --- at least in this example ---, orders of elements seem to divide the order of the group, at least in this case \inlinemetanote{writes: $\operatorname{Ord}\text{s of elmts.} \mid |S_3|$}. So, you can wonder whether this is always the case. So, this is a kind of interesting question.
 \end{speech}
@@ -301,8 +301,8 @@ And one of the things you notice here is: what is the order of this group? It's 
 \label[example]{ex:s3-element-orders}
 Consider the symmetric group $S_3$ (\cref{ex:orders-s3}), which has order $|S_3| = 3! = 6$. Examining the orders of its elements (noting that $1$-cycles such as $(3)$ are often omitted in cycle notation, \cref{def:cycle}):
 \begin{align*}
-(1\,2)(3) &\implies \operatorname{ord} = 2, \\
-(1\,2\,3) &\implies \operatorname{ord} = 3.
+(1\,2)(3) &\rightsquigarrow \operatorname{Ord} = 2, \\
+(1\,2\,3) &\rightsquigarrow \operatorname{Ord} = 3.
 \end{align*}
 In this group, both $2$ and $3$ divide $6$:
 \[
@@ -321,7 +321,7 @@ So, anyway, in this case we find that the order of the elements divides the orde
 For an infinite group, elements need not have finite order, and divisibility of $|G|$ is not defined; thus, the divisibility question is specific to finite groups.
 
 \begin{question}\label[question]{q:ord-divides-group}
-If $G$ is a finite group and $x \in G$, does $\operatorname{ord}(x) \mid |G|$ always hold?
+If $G$ is a finite group and $x \in G$, does $\operatorname{Ord}(x) \mid |G|$ always hold?
 \end{question}
 
 \begin{answer}[to \cref{q:ord-divides-group}]\label[answer]{ans:ord-divides-group}
@@ -361,11 +361,11 @@ Okay, so we're going to prove this \inlinemetanote{writes: Proof:}. So, is there
 
 \begin{content}[Consequence for Element Orders]
 \begin{corollary}[Element Order Divides Group Order]\label[corollary]{cor:ord-divides-group}
-Let $G$ be a finite group and $x \in G$. Then $\operatorname{ord}(x) \mid |G|$.
+Let $G$ be a finite group and $x \in G$. Then $\operatorname{Ord}(x) \mid |G|$.
 \end{corollary}
 
 \begin{proof}
-By \cref{prop:cyclic-subgroup}, $\langle x \rangle \subset G$ is a subgroup of $G$, and by \cref{cor:cyclic-subgroup-isomorphism} its order is $|\langle x \rangle| = \operatorname{ord}(x)$. Applying Lagrange's theorem (\cref{thm:lagrange}) to $H = \langle x \rangle$ yields $\operatorname{ord}(x) \mid |G|$.
+By \cref{prop:cyclic-subgroup}, $\langle x \rangle \subset G$ is a subgroup of $G$, and by \cref{cor:cyclic-subgroup-isomorphism} its order is $|\langle x \rangle| = \operatorname{Ord}(x)$. Applying Lagrange's theorem (\cref{thm:lagrange}) to $H = \langle x \rangle$ yields $\operatorname{Ord}(x) \mid |G|$.
 \end{proof}
 \end{content}
 
@@ -429,7 +429,7 @@ Neutral element.
 \begin{speech}[00:16:17 - 00:17:27]
 Neutral element. It's because $e$ has to be here because it's a subgroup, and then of course I have this equation, so that's fine \inlinemetanote{writes: $\iff e \in H, \ xe = x\;\checkmark$}.
 
-Now, that's the reflexive--- no, yeah, that's the reflexive property; then the symmetric property is: if $x$ is related to $y$, then $y$ is related to $x$ \inlinemetanote{writes: $\bullet\ x \sim y \implies y \sim x$}. So, we have to prove this: $x$ is related to $y$ means that there exists an $h$ such that $xh = y$ \inlinemetanote{writes: $x \sim y \implies xh = y$}. And then what do I write on the \qt{then} side \inlinemetanote{writes: then}?
+Now, that's the reflexive--- no, yeah, that's the reflexive property; then the symmetric property is: if $x$ is related to $y$, then $y$ is related to $x$ \inlinemetanote{writes: $\bullet\ x \sim y$ then $y \sim x$}. So, we have to prove this: $x$ is related to $y$ means that there exists an $h$ such that $xh = y$ \inlinemetanote{writes: $\iff xh = y$}. And then what do I write on the \qt{then} side \inlinemetanote{writes: then}?
 
 If I have this, I can just multiply by $h^{-1}$, right? So, then I get... sorry... \inlinemetanote{wipes an aborted start and writes: $x = y h^{-1}$} so I can multiply by $h^{-1}$, which will make this $h$ go away and put an $h^{-1}$ there. And then this means that $y$ is related to $x$ --- I can write this again, if you really want to fit the definition \inlinemetanote{writes: $y h^{-1} = x$}. This says that $y$ is related to $x$, because if you have an element of $H$, the inverse is also in $H$. That's a property of being a subgroup. All right?
 \end{speech}
@@ -450,7 +450,7 @@ Since $H$ is a subgroup and $h \in H$, we have $h^{-1} \in H$. Therefore, $y \si
 \end{content}
 
 \begin{speech}[00:17:27 - 00:18:54]
-And the third one then is transitivity, which says that if I have $x$ related to $y$ and $y$ related to $z$, then I have to show that $x$ is related to $z$ \inlinemetanote{writes \qt{$\bullet\ \text{If } x \sim y \implies y \sim z \implies x \sim z$}, using $\implies$ between the two hypotheses as a slip for \qt{and}}. And if I do this using the definition, this means that there exists some $h_1$ that satisfies this equation, and this one means there's some $h_2$ that satisfies this equation \inlinemetanote{writes \qt{$x h_1 = y$} and \qt{$y h_2 = z$}}. And then I have to find this relation equation \inlinemetanote{points at $x \sim z$}, and you can imagine what I do: I just take here $x h_1 h_2 = z$ \inlinemetanote{writes: $x h_1 h_2 = z$}. All right? And why does this work? It's because it's a subgroup, so $H$ is closed under product \inlinemetanote{writes: $H$ closed under $\cdot$}.
+And the third one then is transitivity, which says that if I have $x$ related to $y$ and $y$ related to $z$, then I have to show that $x$ is related to $z$ \inlinemetanote{writes: $\bullet$ If $x \sim y$ and $y \sim z \implies x \sim z$}. And if I do this using the definition, this means that there exists some $h_1$ that satisfies this equation, and this one means there's some $h_2$ that satisfies this equation \inlinemetanote{writes \qt{$x h_1 = y$} and \qt{$y h_2 = z$}}. And then I have to find this relation equation \inlinemetanote{points at $x \sim z$}, and you can imagine what I do: I just take here $x h_1 h_2 = z$ \inlinemetanote{writes: $x h_1 h_2 = z$}. All right? And why does this work? It's because it's a subgroup, so $H$ is closed under product \inlinemetanote{writes: $H$ closed under $\cdot$}.
 
 So, that's the proof that it's an equivalence relation, and you see the proof is perfect in a way that I need to check three properties to be an equivalence relation, and those are exactly the same three properties that $H$ is a subgroup. I've used everything exactly: the neutral element's there, it's closed under inverse, it's closed under product. So, in some sense, this statement that this definition is... on one hand, on this side it's an equivalence relation, and that side $H$ is a subgroup, they just perfectly align.
 \end{speech}
@@ -674,7 +674,7 @@ All right, so for this, to start, we need to prove that $\phi$ is surjective \in
 
 Okay, then we have to prove $\phi$ is injective, and then we will be done \inlinemetanote{writes: $\bullet\ \phi$ is injective.}. Okay, so we have to prove this. Why? Why would this be true? So, injectivity means we have to study the equation $\phi(h_1) = \phi(h_2)$ \inlinemetanote{writes: $\phi(h_1) = \phi(h_2), \ h_1, h_2 \in H$}. We have to study that equation, right?
 
-So, let's see: suppose $\phi(h_1) = \phi(h_2)$ where $h_1$ and $h_2$ are in $H$. So, we suppose this is true. Well, what do we do next? We write down the definitions: this thing is $x h_1$, and that should equal $x h_2$ \inlinemetanote{writes: $x h_1 = x h_2$}. All right. But this is an equation that holds in the group. So, well, now we use the cancellation property, so by the cancellation property, we can get rid of this \inlinemetanote{cancels $x$ on both sides}. So, this implies $h_1 = h_2$, and that's injectivity \inlinemetanote{writes: $\implies h_1 = h_2\;\square$}. So, we finished the proof.
+So, let's see: suppose $\phi(h_1) = \phi(h_2)$ where $h_1$ and $h_2$ are in $H$. So, we suppose this is true. Well, what do we do next? We write down the definitions: this thing is $x h_1$, and that should equal $x h_2$ \inlinemetanote{writes: $G \ni x h_1 = x h_2$}. All right. But this is an equation that holds in the group. So, well, now we use the cancellation property, so by the cancellation property, we can get rid of this \inlinemetanote{cancels $x$ on both sides}. So, this implies $h_1 = h_2$, and that's injectivity \inlinemetanote{writes: $\implies h_1 = h_2\;\square$}. So, we finished the proof.
 \end{speech}
 
 \begin{content}[Proof of Bijectivity and Unified Proof of Lagrange's Theorem]
@@ -716,7 +716,7 @@ So, when you first see this, it's a very strange property that if you have these
 
 \begin{content}
 \begin{remark}[Subgroups of Groups of Prime Order]\label[remark]{rem:prime-order-groups}
-By Lagrange's theorem (\cref{thm:lagrange}), if a finite group $G$ has prime order $|G| = p$, the only possible orders for a subgroup $H \subset G$ are $1$ and $p$. Consequently, any group of prime order has no proper non-trivial subgroups (only $\{e\}$ and $G$ itself). In particular, choosing any $x \in G \setminus \{e\}$ yields a subgroup $\langle x \rangle \subset G$ with $1 < |\langle x \rangle|$ and $|\langle x \rangle| \mid p$, forcing $|\langle x \rangle| = p = |G|$, so $\langle x \rangle = G$ and $\operatorname{ord}(x) = p$; by \cref{cor:cyclic-subgroup-isomorphism}, every group of prime order $p$ is cyclic ($G \cong \bigl(\faktor{\mathbb{Z}}{p\mathbb{Z}}, +, 0\bigr)$; revisited in Week~9, \cref{clm:prime-order-cyclic}).
+By Lagrange's theorem (\cref{thm:lagrange}), if a finite group $G$ has prime order $|G| = p$, the only possible orders for a subgroup $H \subset G$ are $1$ and $p$. Consequently, any group of prime order has no proper non-trivial subgroups (only $\{e\}$ and $G$ itself). In particular, choosing any $x \in G \setminus \{e\}$ yields a subgroup $\langle x \rangle \subset G$ with $1 < |\langle x \rangle|$ and $|\langle x \rangle| \mid p$, forcing $|\langle x \rangle| = p = |G|$, so $\langle x \rangle = G$ and $\operatorname{Ord}(x) = p$; by \cref{cor:cyclic-subgroup-isomorphism}, every group of prime order $p$ is cyclic ($G \cong \bigl(\faktor{\mathbb{Z}}{p\mathbb{Z}}, +, 0\bigr)$; revisited in Week~9, \cref{clm:prime-order-cyclic}).
 \end{remark}
 \end{content}
 
@@ -817,7 +817,7 @@ Initial incomplete board expression (element $5$ momentarily omitted):
 \begin{speech}[00:31:21 - 00:32:34]
 You notice: out of this cycle decomposition --- and this would be for $\sigma$ \inlinemetanote{writes \qt{$\sigma =$} to the left of $(1\,4\,6)(2\,3)(7)$} ---, you get a certain set of numbers: the lengths of the cycles. And you get $7$ equals... \inlinemetanote{writes: $7 =$} I don't know, it's not working. We missed one! $5$, sorry \inlinemetanote{draws arrows between $5$ and $7$ and changes $(7)$ to $(5\,7)$}. There. You get $7$ is equal to $3 + 2 + 2$ \inlinemetanote{writes: $3 + 2 + 2$}.
 
-So, whenever you have... because at the end you have to account for all the points --- every point has to be in one of the cycles ---, so you get all the points and that's the lengths of the cycles. So, this gives you a connection to partitions, and that's an extremely deep connection. So, this is a partition, do you know that? That's like an object, how to take a number and break it up into other numbers. So, there's a very deep connection between the symmetric group and the study of partitions \inlinemetanote{writes: $S_n \longleftrightarrow \text{Partitions}$}.
+So, whenever you have... because at the end you have to account for all the points --- every point has to be in one of the cycles ---, so you get all the points and that's the lengths of the cycles. So, this gives you a connection to partitions, and that's an extremely deep connection. So, this is a partition, do you know that? That's like an object, how to take a number and break it up into other numbers. So, there's a very deep connection between the symmetric group and the study of partitions \inlinemetanote{writes: $S_n \longleftrightarrow \operatorname{Part}(n)$}.
 
 Maybe I'll say a little bit about this later, but have you ever thought about this, the study of partitions? Maybe I'll say a little bit about it. But not today. That's a great subject --- okay, but not today.
 \end{speech}
@@ -872,7 +872,7 @@ Because every element of $[7]$ belongs to a unique cycle in the disjoint cycle d
 \]
 This decomposition yields an integer \newterm{partition} of $n$, establishing a deep connection (explored in Week~8, \cref{thm:sn-conjugacy-classes-partitions}, \cref{def:partition-function}, \cref{thm:euler-partition-product}, \cref{cor:conjugacy-classes-partitions}):
 \[
-S_n \longleftrightarrow \text{Partitions}.
+\text{conjugacy classes of } S_n \longleftrightarrow \text{partitions of } n.
 \]
 \end{content}
 
@@ -1053,7 +1053,7 @@ Fixing one triangular face, there are $3$ rotational symmetries that preserve th
 \begin{steps}[Why the Face-Counting Rule Applies to Platonic Solids]
 Unlike an arbitrary polyhedron, a Platonic solid has congruent regular polygonal faces on which its rotational symmetry group $\operatorname{Rot}(P)$ acts transitively: any chosen face can be rotated onto any other face, and the rotations keeping a face in place are the in-plane rotations of that regular polygon. Thus, for all five Platonic solids,
 \[
-|\operatorname{Rot}(P)| = (\text{in-plane symmetries of one face}) \times (\text{number of faces}),
+|\operatorname{Rot}(P)| = (\text{rotations keeping one face in place}) \times (\text{number of faces}),
 \]
 which likewise gives $5 \cdot 12 = 60$ for the dodecahedron and $3 \cdot 20 = 60$ for the icosahedron (deferred to Week~9, \cref{thm:platonic-solids-symmetries}; this face-counting paradigm is formalized via the Orbit--Stabilizer Theorem, \cref{thm:orbit-stabilizer}).
 \end{steps}
@@ -1070,9 +1070,9 @@ which likewise gives $5 \cdot 12 = 60$ for the dodecahedron and $3 \cdot 20 = 60
 \subsection{Isomorphism Between the Rotation Group of the Cube and \texorpdfstring{$S_4$}{S4}}
 
 \begin{speech}[00:36:39 - 00:38:42]
-This one \inlinemetanote{points at the cube} is a super fun thing to think about. So, that's a group of order $24$. So, the rotations of this cube is a group of order $24$ \inlinemetanote{writes \qt{$\operatorname{Rot}(\text{cube})$ is grp. of order $24$}, drawing a small cube inside the parentheses}. What group is it? Do you know any groups of order $24$?
+This one \inlinemetanote{points at the cube} is a super fun thing to think about. So, that's a group of order $24$. So, the rotations of this cube is a group of order $24$ \inlinemetanote{writes \qt{$\operatorname{Rot}(\square)$ is grp. of order $24$}, a small cube drawn inside the parentheses}. What group is it? Do you know any groups of order $24$?
 
-Well, $24$ happens to be a factorial. $24$ happens to be $4$ factorial. That's a group of order $24$ factorial (i.e., $24$). But we know another group of order $24$: $S_4$ is also a group of order $24$ \inlinemetanote{writes: $S_4$}. So, this is now a beautiful geometric question: is this rotational group, this rotations here --- I guess this cube, this is bad terminology, but anyway, it's not great notation, but it's very convincing if I do it ---, is it isomorphic to $S_4$ \inlinemetanote{writes \qt{Is $\operatorname{Rot}(\text{cube})$} and \qt{$\cong S_4$?}}? That's a beautiful question, and I don't know whether I should solve it for you or not... Like, maybe I solve it for you --- I do this one for you.
+Well, $24$ happens to be a factorial. $24$ happens to be $4$ factorial. That's a group of order $24$ factorial (i.e., $24$). But we know another group of order $24$: $S_4$ is also a group of order $24$ \inlinemetanote{writes: $S_4$}. So, this is now a beautiful geometric question: is this rotational group, this rotations here --- I guess this cube, this is bad terminology, but anyway, it's not great notation, but it's very convincing if I do it ---, is it isomorphic to $S_4$ \inlinemetanote{writes \qt{Is $\operatorname{Rot}(\square)$} and \qt{$\cong S_4$?}}? That's a beautiful question, and I don't know whether I should solve it for you or not... Like, maybe I solve it for you --- I do this one for you.
 
 There's, again, many ways you can do this. One way to do it is you write down the multiplication table for this rotation group: you name all $24$ elements --- you have to make up your own names, now you can be like Fred, Bob, Jane, you can just name whatever you want ---, you name $24$ elements here, you name the $24$ elements for the $S_4$ --- and those are already named by the cycle decompositions ---, and then you find some bijection that respects the product. That is a hard way to do it, but you could do it that way. It's a hard way to do it because you have two sets of $24$ elements and very few of them are the correct bijection. So, that's not a great way of doing it.
 
@@ -1080,19 +1080,19 @@ There is a beautiful way of doing it which I will show you in a moment, and it's
 \end{speech}
 
 \begin{content}[Identifying the Rotation Group of the Cube]
-The group of rotational symmetries $\operatorname{Rot}(\text{cube})$ is a finite group of order $24 = 4!$, matching the order $|S_4| = 4! = 24$ of the symmetric group $S_4$.
+The group of rotational symmetries $\operatorname{Rot}(\text{Cube})$ is a finite group of order $24 = 4!$, matching the order $|S_4| = 4! = 24$ of the symmetric group $S_4$.
 
 \begin{question}\label[question]{q:rot-cube-s4}
 Is the rotation group of the cube isomorphic to $S_4$, i.e.,
 \[
-\operatorname{Rot}(\text{cube}) \cong S_4?
+\operatorname{Rot}(\text{Cube}) \cong S_4?
 \]
 \end{question}
 \end{content}
 
 \begin{aiNote}[Pictogram Notation and Spoken Slip (\texorpdfstring{$24!$ vs.\ $24$}{24! vs. 24})]
 % [PERSISTENT]
-On the blackboard, the lecturer draws a small wireframe cube inside $\operatorname{Rot}(\dots)$ instead of writing the word \qt{cube}; we denote this $\operatorname{Rot}(\text{cube})$. In the audio, the lecturer also briefly misspeaks \qt{$24$ factorial} when referring to the order $24 = 4!$ of $\operatorname{Rot}(\text{cube})$ and $S_4$.
+On the blackboard, the lecturer draws a small wireframe cube inside $\operatorname{Rot}(\dots)$ instead of writing the word \qt{cube}; we denote this $\operatorname{Rot}(\text{Cube})$. In the audio, the lecturer also briefly misspeaks \qt{$24$ factorial} when referring to the order $24 = 4!$ of $\operatorname{Rot}(\text{Cube})$ and $S_4$.
 \end{aiNote}
 
 \begin{speech}[00:38:42 - 00:40:54]
@@ -1104,7 +1104,7 @@ So, I'll try to draw them; I don't know if it's so helpful... \inlinemetanote{dr
 
 But still, I said, it's much better to have the camera in your head: there's the box, and there's four long diagonals; they all go through the middle, this origin. Is that clear?
 
-And now, they shouldn't all be... you label these, let's say $A, B, C, D$ --- which is, where is $D$? $D$ \inlinemetanote{labels the four long diagonals $A$, $B$, $C$, $D$}. So, there's four of them; you give them different names. And you can see now when you rotate this cube, you permute these four long diagonals. That's just a fact; I mean, you move them, the long diagonals go to other long diagonals. So, that's kind of an amazing thing; that shows that there is a way to get... a rotation of the cube gives you a permutation of the long diagonals.
+And now, they shouldn't all be... you label these, let's say $a, b, c, d$ --- which is, where is $d$? $d$ \inlinemetanote{labels the four long diagonals $a$, $b$, $c$, $d$}. So, there's four of them; you give them different names. And you can see now when you rotate this cube, you permute these four long diagonals. That's just a fact; I mean, you move them, the long diagonals go to other long diagonals. So, that's kind of an amazing thing; that shows that there is a way to get... a rotation of the cube gives you a permutation of the long diagonals.
 \end{speech}
 
 \begin{content}[The Four Long Diagonals of the Cube]
@@ -1126,17 +1126,17 @@ A cube $[-1, 1]^3$ of side length $2$ centered at the origin has $8$ vertices $(
   Vppm = ( 1.8,  1.8, -1.8) = ( 3.1, -1.2)   Vpmm = ( 1.8, -1.8, -1.8) = ( 0.5, -2.4)
   Vmpm = (-1.8,  1.8, -1.8) = (-0.5, -1.2)   Vmmm = (-1.8, -1.8, -1.8) = (-3.1, -2.4)
 - Order: (1) hidden cube edges meeting at Vmpm (-0.5, -1.2), dashed figLightGray; (2) visible cube edges, figGray;
-  (3) four long diagonals through (0, 0): A (Vmmp--Vppm, figBlue), B (Vmpp--Vpmm, figGreen), C (Vppp--Vmmm, figOrange),
-  D (Vpmp--Vmpm, figRed); (4) centre origin dot in figRed; (5) labels A, B, C, D last
+  (3) four long diagonals through (0, 0): a (Vmmp--Vppm, figBlue), b (Vmpp--Vpmm, figGreen), c (Vppp--Vmmm, figOrange),
+  d (Vpmp--Vmpm, figRed); (4) centre origin dot in figRed; (5) labels a, b, c, d last
 - Labels (normal size, 0.20 per character, height 0.45, inner sep 0.15cm):
-  "A" anchor east at Vmmp = (-3.1, 1.2): x in [-3.45, -3.25], y in [0.98, 1.42]; nothing left of -3.1.
-  "B" anchor south at Vmpp = (-0.5, 2.4): x in [-0.60, -0.40], y in [2.55, 3.00]; nothing above 2.4.
-  "C" anchor south west at Vppp = (3.1, 2.4): x in [3.25, 3.45], y in [2.55, 3.00]; nothing right/above (3.1, 2.4).
-  "D" anchor south east at Vpmp = (0.5, 1.2): x in [0.15, 0.35], y in [1.35, 1.80].
-- Collisions check for "D":
+  "a" anchor east at Vmmp = (-3.1, 1.2): x in [-3.45, -3.25], y in [0.98, 1.42]; nothing left of -3.1.
+  "b" anchor south at Vmpp = (-0.5, 2.4): x in [-0.60, -0.40], y in [2.55, 3.00]; nothing above 2.4.
+  "c" anchor south west at Vppp = (3.1, 2.4): x in [3.25, 3.45], y in [2.55, 3.00]; nothing right/above (3.1, 2.4).
+  "d" anchor south east at Vpmp = (0.5, 1.2): x in [0.15, 0.35], y in [1.35, 1.80].
+- Collisions check for "d":
   front-top edge (y = 1.2) is 0.15 below; top-right depth edge starts at (0.5, 1.2), 0.21 from (0.35, 1.35);
-  back-top edge (y = 2.4) is 0.60 above; diagonal B passes y = 1.35 at x = -0.28, 0.43 to the left;
-  diagonal D ends at (0.5, 1.2), 0.21 away. All four labels are >= 0.15cm clear of every edge and diagonal.
+  back-top edge (y = 2.4) is 0.60 above; diagonal b passes y = 1.35 at x = -0.28, 0.43 to the left;
+  diagonal d ends at (0.5, 1.2), 0.21 away. All four labels are >= 0.15cm clear of every edge and diagonal.
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}
@@ -1168,54 +1168,54 @@ A cube $[-1, 1]^3$ of side length $2$ centered at the origin has $8$ vertices $(
     \fill[figRed] (0, 0) circle (2pt);
 
     % (5) Text last
-    \node[anchor=east, inner sep=0.15cm, figBlue] at (Vmmp) {$A$};
-    \node[anchor=south, inner sep=0.15cm, figGreen] at (Vmpp) {$B$};
-    \node[anchor=south west, inner sep=0.15cm, figOrange] at (Vppp) {$C$};
-    \node[anchor=south east, inner sep=0.15cm, figRed] at (Vpmp) {$D$};
+    \node[anchor=east, inner sep=0.15cm, figBlue] at (Vmmp) {$a$};
+    \node[anchor=south, inner sep=0.15cm, figGreen] at (Vmpp) {$b$};
+    \node[anchor=south west, inner sep=0.15cm, figOrange] at (Vppp) {$c$};
+    \node[anchor=south east, inner sep=0.15cm, figRed] at (Vpmp) {$d$};
 \end{tikzpicture}
 \end{center}
 
-Any rotation of the cube must carry opposite vertices to opposite vertices, and therefore permutes the four long diagonals $\{A, B, C, D\}$.
+Any rotation of the cube must carry opposite vertices to opposite vertices, and therefore permutes the four long diagonals $\{a, b, c, d\}$.
 \end{content}
 
 \begin{speech}[00:40:54 - 00:42:34]
-And the proof is just that: the proof is that this rotation of this cube --- this is a group ---, and there's a homomorphism to the permutation group of the long diagonals, which is $S_4$ \inlinemetanote{writes: $\operatorname{Rot}(\text{cube}) \xrightarrow{\phi} S_4$}. And the claim is this: rotations go to permutations of the long diagonals \inlinemetanote{writes: $\text{Rotation} \mapsto \text{permutation of the diagonals}$}. I say long diagonals all the time here, but I mean, you know, if you pick two points on the same face, then there's kind of a short diagonal that's on the side, but there's four... so every time you rotate, you permute the long diagonals. And the claim is this is an isomorphism \inlinemetanote{writes: This is an iso.}.
+And the proof is just that: the proof is that this rotation of this cube --- this is a group ---, and there's a homomorphism to the permutation group of the long diagonals, which is $S_4$ \inlinemetanote{writes: $\operatorname{Rot}(\square) \xrightarrow{\phi} S_4$}. And the claim is this: rotations go to permutations of the long diagonals \inlinemetanote{writes: $\phi \colon$ rotations $\to$ permutations of the long diagonals}. I say long diagonals all the time here, but I mean, you know, if you pick two points on the same face, then there's kind of a short diagonal that's on the side, but there's four... so every time you rotate, you permute the long diagonals. And the claim is this is an isomorphism \inlinemetanote{writes: This is an iso.}.
 
 So, how are you going to prove this is an isomorphism? It's not going to be too hard: you just have to check every time you rotate, you do move some long diagonal --- it's not trivial. Because the groups already have order $24$, so if it's injective, then it has to be surjective. Or you could also prove it's injective and surjective. But you have to think about how, when you move this cube, it cannot be the case that if you do a non-trivial rotation, all the long diagonals stay fixed.
 
 So, I leave that to you to think about. But that's a totally geometric proof, a beautiful geometric proof, which is way better than trying to write down this table, which, you know, probably you will not succeed in doing.
 \end{speech}
 
-\begin{content}[Isomorphism \texorpdfstring{$\operatorname{Rot}(\text{cube}) \cong S_4$}{Rot(cube) isomorphic to S4}]
+\begin{content}[Isomorphism \texorpdfstring{$\operatorname{Rot}(\text{Cube}) \cong S_4$}{Rot(Cube) isomorphic to S4}]
 \begin{answer}[to \cref{q:rot-cube-s4}]\label[answer]{ans:rot-cube-s4}
-\textcolor{ForestGreen}{\textbf{Yes}}, $\operatorname{Rot}(\text{cube}) \cong S_4$.
+\textcolor{ForestGreen}{\textbf{Yes}}, $\operatorname{Rot}(\text{Cube}) \cong S_4$.
 \end{answer}
 
 \begin{theorem}[Rotational Symmetry Group of the Cube]\label[theorem]{thm:cube-rotations-isomorphism}
 The group of rotational symmetries of a cube is isomorphic to the symmetric group on four letters:
 \[
-\operatorname{Rot}(\text{cube}) \cong S_4.
+\operatorname{Rot}(\text{Cube}) \cong S_4.
 \]
 \end{theorem}
 
 Consider the group homomorphism
 \[
-\phi \colon \operatorname{Rot}(\text{cube}) \to S_4, \qquad \text{Rotation} \mapsto \text{permutation of the long diagonals } \{A, B, C, D\}.
+\phi \colon \operatorname{Rot}(\text{Cube}) \to S_4, \qquad \text{Rotation} \mapsto \text{permutation of the long diagonals } \{a, b, c, d\}.
 \]
-Since $|\operatorname{Rot}(\text{cube})| = 24 = |S_4|$, proving that $\phi$ is injective automatically implies that $\phi$ is bijective, and hence an isomorphism (this is left to the reader).
+Since $|\operatorname{Rot}(\text{Cube})| = 24 = |S_4|$, proving that $\phi$ is injective automatically implies that $\phi$ is bijective, and hence an isomorphism (this is left to the reader).
 
 \begin{proof}[Proof of Injectivity (beyond the lecture)]
 The lecture leaves injectivity to the students (\qt{I leave that to you to think about}). Let the four long diagonals of $[-1, 1]^3$ be spanned by the vectors
 \[
 v_1 = (1, 1, 1), \quad v_2 = (-1, 1, 1), \quad v_3 = (1, -1, 1), \quad v_4 = (1, 1, -1).
 \]
-Suppose a rotation $R \in \operatorname{Rot}(\text{cube})$ lies in $\ker(\phi)$, meaning $R$ maps each long diagonal line $\mathbb{R}v_i$ onto itself. Since $R$ preserves lengths and sends vertices to vertices, we must have $R v_i = \lambda_i v_i$ with $\lambda_i \in \{+1, -1\}$ for each $i \in \{1, 2, 3, 4\}$.
+Suppose a rotation $R \in \operatorname{Rot}(\text{Cube})$ lies in $\ker(\phi)$, meaning $R$ maps each long diagonal line $\mathbb{R}v_i$ onto itself. Since $R$ preserves lengths and sends vertices to vertices, we must have $R v_i = \lambda_i v_i$ with $\lambda_i \in \{+1, -1\}$ for each $i \in \{1, 2, 3, 4\}$.
 
 Observe that $v_1 = v_2 + v_3 + v_4$, and that $\{v_2, v_3, v_4\}$ is linearly independent in $\mathbb{R}^3$ (its determinant is $4 \neq 0$). By linearity of $R$:
 \[
 \lambda_1 (v_2 + v_3 + v_4) = \lambda_1 v_1 = R(v_1) = R(v_2) + R(v_3) + R(v_4) = \lambda_2 v_2 + \lambda_3 v_3 + \lambda_4 v_4.
 \]
-Comparing coefficients in the basis $\{v_2, v_3, v_4\}$ forces $\lambda_1 = \lambda_2 = \lambda_3 = \lambda_4$. If all four were $-1$, then $R = -I$, which has determinant $\det(-I) = (-1)^3 = -1$, contradicting the fact that every rotation has $\det(R) = +1$. Thus, $\lambda_1 = \lambda_2 = \lambda_3 = \lambda_4 = +1$, so $R$ fixes a basis of $\mathbb{R}^3$ and hence, $R = I$. Therefore, $\ker(\phi)$ is trivial, $\phi$ is injective, and by equal finite cardinalities $|\operatorname{Rot}(\text{cube})| = |S_4| = 24$, $\phi$ is an isomorphism.
+Comparing coefficients in the basis $\{v_2, v_3, v_4\}$ forces $\lambda_1 = \lambda_2 = \lambda_3 = \lambda_4$. If all four were $-1$, then $R = -I$, which has determinant $\det(-I) = (-1)^3 = -1$, contradicting the fact that every rotation has $\det(R) = +1$. Thus, $\lambda_1 = \lambda_2 = \lambda_3 = \lambda_4 = +1$, so $R$ fixes a basis of $\mathbb{R}^3$ and hence, $R = I$. Therefore, $\ker(\phi)$ is trivial, $\phi$ is injective, and by equal finite cardinalities $|\operatorname{Rot}(\text{Cube})| = |S_4| = 24$, $\phi$ is an isomorphism.
 \end{proof}
 \end{content}
 
@@ -1230,12 +1230,12 @@ Comparing coefficients in the basis $\{v_2, v_3, v_4\}$ forces $\lambda_1 = \lam
 \subsection{Rotational Symmetries of the Tetrahedron and the Cube's Vertices}
 
 \begin{speech}[00:42:34 - 00:43:31]
-Okay, so we have one more moment here. So, what about this one \inlinemetanote{draws a tetrahedron on the lower-left board}? This is order $12$, right? We said that the rotations of this has order $12$ \inlinemetanote{writes: $\operatorname{Rot}(\text{tetrahedron})$ and \qt{$\text{ord} = 12$} beneath it}. This sits inside... there's a homomorphism here to $S_4$ again, because any rotation permutes the four vertices \inlinemetanote{writes \qt{$\xrightarrow{\phi} S_4$} and \qt{$24$} beneath $S_4$}.
+Okay, so we have one more moment here. So, what about this one \inlinemetanote{draws a tetrahedron on the lower-left board}? This is order $12$, right? We said that the rotations of this has order $12$ \inlinemetanote{writes: $\operatorname{Rot}(\triangle)$ and \qt{$\text{ord} = 12$} beneath it}. This sits inside... there's a homomorphism here to $S_4$ again, because any rotation permutes the four vertices \inlinemetanote{writes \qt{$\xrightarrow{\tilde{\phi}} S_4$} and \qt{$24$} beneath $S_4$}.
 
-It's a different geometric object: here \inlinemetanote{points at the cube}, this is a much more sophisticated thing, the long diagonals; this one's kind of obvious: every time I rotate, I permute the four vertices. And this is also injective. But this is not an isomorphism: this is $24$, this is order $12$; it goes to a subgroup, and that subgroup's a very well-known, important subgroup --- it's called $A_4$. So, the answer... I'm not defining this now, but this is just the name: this thing here is actually isomorphic to what's called $A_4$; we'll talk about it more \inlinemetanote{writes: $A_4 \cong \operatorname{Rot}(\text{tetrahedron})$}. So, it's not the whole thing.
+It's a different geometric object: here \inlinemetanote{points at the cube}, this is a much more sophisticated thing, the long diagonals; this one's kind of obvious: every time I rotate, I permute the four vertices. And this is also injective. But this is not an isomorphism: this is $24$, this is order $12$; it goes to a subgroup, and that subgroup's a very well-known, important subgroup --- it's called $A_4$. So, the answer... I'm not defining this now, but this is just the name: this thing here is actually isomorphic to what's called $A_4$; we'll talk about it more \inlinemetanote{writes: $A_4 \cong \operatorname{Rot}(\triangle)$}. So, it's not the whole thing.
 \end{speech}
 
-\begin{content}[Homomorphism from \texorpdfstring{$\operatorname{Rot}(\text{tetrahedron})$}{Rot(tetrahedron)} to \texorpdfstring{$S_4$}{S4}]
+\begin{content}[Homomorphism from \texorpdfstring{$\operatorname{Rot}(\text{Tetrahedron})$}{Rot(Tetrahedron)} to \texorpdfstring{$S_4$}{S4}]
 \definecolor{figBlue}{HTML}{076090} % RGB (7, 96, 144): petrol blue (MidnightBlue)
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
 \begin{hidden}
@@ -1275,23 +1275,23 @@ It's a different geometric object: here \inlinemetanote{points at the cube}, thi
 \begin{theorem}[Rotational Symmetry Group of the Tetrahedron]\label[theorem]{thm:tetrahedron-isomorphism}
 The group of rotational symmetries of a regular tetrahedron is isomorphic to a subgroup $A_4$ of $S_4$:
 \[
-\operatorname{Rot}(\text{tetrahedron}) \cong A_4.
+\operatorname{Rot}(\text{Tetrahedron}) \cong A_4.
 \]
 \end{theorem}
 
 For the tetrahedron, there is an analogous group homomorphism induced by permuting the $4$ vertices:
 \[
-\operatorname{Rot}(\text{tetrahedron}) \xrightarrow{\phi} S_4,
+\operatorname{Rot}(\text{Tetrahedron}) \xrightarrow{\tilde{\phi}} S_4,
 \]
-where $|\operatorname{Rot}(\text{tetrahedron})| = 12$ and $|S_4| = 24$. While $\phi$ is injective, it cannot be surjective (and hence is not an isomorphism) because $12 < 24$. Instead, its image is a subgroup of order $12$ inside $S_4$ called $A_4$ (to be defined in the next week, \cref{def:alternating-group}, \cref{thm:rot-tetrahedron-a4}):
+where $|\operatorname{Rot}(\text{Tetrahedron})| = 12$ and $|S_4| = 24$. While $\tilde{\phi}$ is injective, it cannot be surjective (and hence is not an isomorphism) because $12 < 24$. Instead, its image is a subgroup of order $12$ inside $S_4$ called $A_4$ (to be defined in the next week, \cref{def:alternating-group}, \cref{thm:rot-tetrahedron-a4}):
 \[
-A_4 \cong \operatorname{Rot}(\text{tetrahedron}).
+A_4 \cong \operatorname{Rot}(\text{Tetrahedron}).
 \]
 \end{content}
 
 \begin{aiNote}[Beyond the Lecture: The Alternating Group \texorpdfstring{$A_4$}{A4}]
 % [PERSISTENT, ADDITION]
-The subgroup $A_4 \subset S_4$ is the \newterm{alternating group} of degree $4$, consisting of all even permutations of four elements (of order $4! / 2 = 12$; see \cref{def:alternating-group} and \cref{thm:rot-tetrahedron-a4}). Injectivity of $\phi \colon \operatorname{Rot}(\text{tetrahedron}) \to S_4$ holds because any rotation fixing all $4$ vertices of the regular tetrahedron fixes three linearly independent vectors in $\mathbb{R}^3$ (e.g., from the centroid to three vertices) and hence must be the identity. Geometrically, the $12$ rotations of the regular tetrahedron correspond to the identity, eight $3$-cycles ($\pm 120^\circ$ rotations around a vertex and the center of the opposite face), and three products of two disjoint $2$-cycles such as $(1\,2)(3\,4)$ ($180^\circ$ rotations around midpoints of opposite edges): $1 + 8 + 3 = 12$.
+The subgroup $A_4 \subset S_4$ is the \newterm{alternating group} of degree $4$, consisting of all even permutations of four elements (of order $4! / 2 = 12$; see \cref{def:alternating-group} and \cref{thm:rot-tetrahedron-a4}). Injectivity of $\tilde{\phi} \colon \operatorname{Rot}(\text{Tetrahedron}) \to S_4$ holds because any rotation fixing all $4$ vertices of the regular tetrahedron fixes three linearly independent vectors in $\mathbb{R}^3$ (e.g., from the centroid to three vertices) and hence must be the identity. Geometrically, the $12$ rotations of the regular tetrahedron correspond to the identity, eight $3$-cycles ($\pm 120^\circ$ rotations around a vertex and the center of the opposite face), and three products of two disjoint $2$-cycles such as $(1\,2)(3\,4)$ ($180^\circ$ rotations around midpoints of opposite edges): $1 + 8 + 3 = 12$.
 \end{aiNote}
 
 \begin{speech}[00:43:31 - 00:43:54]
@@ -1300,20 +1300,20 @@ You could say: why didn't we do that here \inlinemetanote{points at the cube}? T
 
 \begin{aiNote}[Spoken Slip and Vertex Action on the Cube]
 % [PERSISTENT]
-At the end of the lecture, the lecturer again says \qt{$24$ factorial} when referring to the order $24$ of $\operatorname{Rot}(\text{cube})$, contrasting it with $|S_8| = 8!$, the size of the permutation group of the $8$ vertices of the cube. Because $|S_8| = 8! > 24$, the homomorphism $\operatorname{Rot}(\text{cube}) \to S_8$ cannot be an isomorphism onto $S_8$.
+At the end of the lecture, the lecturer again says \qt{$24$ factorial} when referring to the order $24$ of $\operatorname{Rot}(\text{Cube})$, contrasting it with $|S_8| = 8!$, the size of the permutation group of the $8$ vertices of the cube. Because $|S_8| = 8! > 24$, the homomorphism $\operatorname{Rot}(\text{Cube}) \to S_8$ cannot be an isomorphism onto $S_8$.
 \end{aiNote}
 
 \begin{aiNote}[Beyond the Lecture: Injectivity of the Vertex Action on the Cube]
 % [PERSISTENT, ADDITION]
-Because $|S_8| = 8! = 40320$, the homomorphism $\operatorname{Rot}(\text{cube}) \to S_8$ induced by permuting the $8$ vertices is injective (any rotation fixing all $8$ vertices fixes $\mathbb{R}^3$ and is the identity), embedding $\operatorname{Rot}(\text{cube})$ onto a subgroup of order $24$ inside $S_8$.
+Permuting the $8$ vertices gives a homomorphism $\operatorname{Rot}(\text{Cube}) \to S_8$. It is injective because a rotation fixing all $8$ vertices fixes $\mathbb{R}^3$ and is the identity. Its image is a subgroup of order $24$, tiny inside $S_8$, since $|S_8| = 8! = 40\,320 \gg 24$.
 \end{aiNote}
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Finite and Non-Abelian Perspective:} Group theory here focuses primarily on finite and not necessarily Abelian groups, bracketed by the rich family of symmetric groups $S_n$ ($|S_n| = n!$) and the cyclic Abelian groups $(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, 0)$.
-    \item \textbf{Element Order and Generated Subgroup:} For $x \in G$ in a finite group $G$, $\operatorname{ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}$ is well-defined, and the set $\langle x \rangle := \{e, x, x^2, \dots, x^{\operatorname{ord}(x)-1}\} \subset G$ is a subgroup (the subgroup generated by $x$) isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{ord}(x)\mathbb{Z}}, +, 0)$.
-    \item \textbf{Lagrange's Theorem:} For every finite group $G$ and subgroup $H \subset G$, $|H| \mid |G|$. The proof defines the equivalence relation $x \sim y \stackrel{\text{def}}{\iff} \exists h \in H \text{ such that } xh = y$ on $G$, partitions $G$ into equivalence classes $E_1, \dots, E_k$, and shows via $\phi \colon H \to E_i$, $\phi(h) = xh$, that $|E_i| = |H|$ for all $i$. As consequences, $\operatorname{ord}(x) \mid |G|$ for every $x \in G$, and groups of prime order have no proper non-trivial subgroups.
+    \item \textbf{Element Order and Generated Subgroup:} For $x \in G$ in a finite group $G$, $\operatorname{Ord}(x) := \min \{ m \in \mathbb{Z}_{>0} \mid x^m = e \}$ is well-defined, and the set $\langle x \rangle := \{e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1}\} \subset G$ is a subgroup (the subgroup generated by $x$) isomorphic to $(\faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}}, +, 0)$.
+    \item \textbf{Lagrange's Theorem:} For every finite group $G$ and subgroup $H \subset G$, $|H| \mid |G|$. The proof defines the equivalence relation $x \sim y \stackrel{\text{def}}{\iff} \exists h \in H \text{ such that } xh = y$ on $G$, partitions $G$ into equivalence classes $E_1, \dots, E_k$, and shows via $\phi \colon H \to E_i$, $\phi(h) = xh$, that $|E_i| = |H|$ for all $i$. As consequences, $\operatorname{Ord}(x) \mid |G|$ for every $x \in G$, and groups of prime order have no proper non-trivial subgroups.
     \item \textbf{Cycle Decomposition and Partitions:} Viewing a permutation $\sigma \in S_n$ as a bijection $[n] \to [n]$ decomposes $[n]$ into disjoint cycles whose lengths sum to $n$ (for instance, $\sigma = (1\,4\,6)(2\,3)(5\,7) \in S_7$ gives $7 = 3 + 2 + 2$), connecting $S_n$ to integer partitions.
-    \item \textbf{Rotational Symmetries of Platonic Solids:} Under composition of rotations, $|\operatorname{Rot}(\text{cube})| = 4 \cdot 6 = 24$, $|\operatorname{Rot}(\text{tetrahedron})| = 3 \cdot 4 = 12$, and $|\operatorname{Rot}(\text{octahedron})| = 3 \cdot 8 = 24$. Permuting the $4$ long diagonals of the cube defines a homomorphism $\operatorname{Rot}(\text{cube}) \to S_4$ that is an isomorphism $\operatorname{Rot}(\text{cube}) \cong S_4$ (with injectivity left to the reader), whereas permuting the $4$ vertices of the tetrahedron defines an injective homomorphism $\operatorname{Rot}(\text{tetrahedron}) \to S_4$ with image $A_4 \cong \operatorname{Rot}(\text{tetrahedron})$ of order $12$.
+    \item \textbf{Rotational Symmetries of Platonic Solids:} Under composition of rotations, $|\operatorname{Rot}(\text{Cube})| = 4 \cdot 6 = 24$, $|\operatorname{Rot}(\text{Tetrahedron})| = 3 \cdot 4 = 12$, and $|\operatorname{Rot}(\text{Octahedron})| = 3 \cdot 8 = 24$. Permuting the $4$ long diagonals of the cube defines a homomorphism $\operatorname{Rot}(\text{Cube}) \to S_4$ that is an isomorphism $\operatorname{Rot}(\text{Cube}) \cong S_4$ (with injectivity left to the reader), whereas permuting the $4$ vertices of the tetrahedron defines an injective homomorphism $\operatorname{Rot}(\text{Tetrahedron}) \to S_4$ with image $A_4 \cong \operatorname{Rot}(\text{Tetrahedron})$ of order $12$.
 \end{itemize}
 \end{overview}

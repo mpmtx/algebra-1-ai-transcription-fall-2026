@@ -314,11 +314,11 @@ Although Lagrange's theorem can be proved identically using either left cosets $
 \subsection{Subgroup Notation Conventions}
 
 \begin{speech}[00:08:45 - 00:09:50]
-\inlinemetanote{draws a vertical dividing line on the lower board} And I would say that some other things about language are that if someone writes $H$ is a subgroup of $G$, then you have to decide whether this person means a normal subgroup or any subgroup, and it's a very different way of thinking about groups \inlinemetanote{writes: $H < G$ subgp}.
+\inlinemetanote{draws a vertical dividing line on the lower board} And I would say that some other things about language are that if someone writes $H$ is a subgroup of $G$, then you have to decide whether this person means a normal subgroup or any subgroup, and it's a very different way of thinking about groups \inlinemetanote{writes: $H \subset G$ subgroup}.
 
 I mean, the subgroup --- whether it's normal or not --- is extremely important. So, when you meet a subgroup, you should decide whether it's normal, or maybe it's a hard question, not the answer, but you should at least consider it, because it changes the way you think about it.
 
-If someone writes $N$ is a subgroup of $G$, this is a strong indication that that person means it's normal, but it doesn't always \inlinemetanote{writes: $N < G$}. So, I'd say that's kind of a convention. And then there's other... So, this usually means normal, but you should ask \inlinemetanote{writes \qt{--- usually means normal}}.
+If someone writes $N$ is a subgroup of $G$, this is a strong indication that that person means it's normal, but it doesn't always \inlinemetanote{writes: $N \subset G$}. So, I'd say that's kind of a convention. And then there's other... So, this usually means normal, but you should ask \inlinemetanote{writes: $\longleftarrow \text{usually means normal}$}.
 
 And then, often there's some notation with triangles and everything, but, you know, the best is when you meet a subgroup, then you should investigate yourself whether the person means it's normal or not \inlinemetanote{draws a vertical dividing line to the right}.
 \end{speech}
@@ -328,15 +328,15 @@ And then, often there's some notation with triangles and everything, but, you kn
 \label[notation]{not:subgroup-conventions}
 In group theory literature, notation and naming conventions carry informal hints about normality, though they must always be verified from context:
 \begin{itemize}
-    \item \textbf{General subgroup ($H < G$):} Writing $H < G$ (or $H \subset G$) denotes that $H$ is a subgroup of $G$; one must still check whether $H$ is normal or arbitrary.
-    \item \textbf{Suggested normality ($N < G$):} Naming a subgroup $N$ (as in $N < G$) usually indicates that $N$ is assumed to be normal, though this is only an informal convention and not guaranteed.
+    \item \textbf{General subgroup:} Writing $H \subset G$ and calling $H$ a subgroup says that $H$ is a subgroup of $G$; one must still check whether $H$ is normal or arbitrary.
+    \item \textbf{Suggested normality:} Naming a subgroup $N$ (as in $N \subset G$) usually indicates that $N$ is assumed to be normal, though this is only an informal convention and not guaranteed.
 \end{itemize}
 \end{notation}
 \end{content}
 
 \begin{aiNote}[Notation: Subgroup Symbols on the Board]
 % [PERSISTENT]
-On this panel of the board, the lecturer writes the sharp angle symbol $H < G$ and $N < G$ for subgroups, whereas elsewhere in the lecture he writes $H \subset G$ and $N \subset G$. Many textbooks also write $H \le G$ for subgroups and $N \trianglelefteq G$ or $N \triangleleft G$ (the \qt{notation with triangles} mentioned in speech) specifically for normal subgroups.
+On the board, the lecturer writes $H \subset G$ for a subgroup and $N \subset G$ for a subgroup that is meant to be normal, and says which one he means in words; these notes follow him. Many textbooks write $H \le G$ for subgroups and $N \trianglelefteq G$ or $N \triangleleft G$ (the \qt{notation with triangles} mentioned in speech) specifically for normal subgroups.
 \end{aiNote}
 
 \section{Subgroups of Index \texorpdfstring{$2$}{2}}
@@ -763,7 +763,7 @@ These things are also dual. That's kind of fun to think about, all right? I reco
 
 And what is the rotational group? Well, it was an exercise, or maybe it was on the quiz, that this rotational group has order $60$ \inlinemetanote{writes: Rot.\ grp.\ has order $60$}. And the only interesting group you know of order $60$ is the alternating group inside $S_5$, because this has order $120$ and that's exactly half, so it's $60$ \inlinemetanote{writes \qt{$A_5 \subset S_5$}, \qt{$60$} below $A_5$, and \qt{$120$} below $S_5$}.
 
-And it's a very nice geometric fact that this is $A_5$ \inlinemetanote{writes: $= A_5$}.
+And it's a very nice geometric fact that this is $A_5$ \inlinemetanote{writes: $\cong A_5$}.
 \end{speech}
 
 \begin{content}[Dodecahedron, Icosahedron, and Rotation Group \texorpdfstring{$A_5$}{A\_5}]
@@ -804,7 +804,7 @@ The remaining two Platonic solids are the $12$-sided \newterm{dodecahedron} (pen
 
 Their common rotation group has order $60$, and is in fact isomorphic to the alternating group $A_5$:
 \begin{align*}
-\text{Rotation group has order } 60 &= A_5, \\
+|\text{rotation group}| &= 60, \qquad \text{rotation group} \cong A_5, \\
 \underbrace{A_5}_{60} &\subset \underbrace{S_5}_{120}.
 \end{align*}
 
@@ -2295,7 +2295,7 @@ where $\sigma(g) = \sigma_g \colon G \to G$ is left multiplication by $g$, i.e.,
 \begin{speech}[01:13:43 - 01:14:36]
 So, I get --- it seems like almost from nowhere --- I have a homomorphism $\sigma$ from $G$ to $S_n$ \inlinemetanote{writes \qt{I have a} and \qt{$\sigma \colon G \to S_n.$}}. Like, where did that come from? But I have it. The data of the group knows some homomorphism from $G$ to $S_n$, okay? And as I said, it's just thinking about the data in a different way. Actually, you can look: I haven't really done anything, it's just about viewing the data.
 
-Now, the thing that's kind of amazing is that this is an injection \inlinemetanote{writes: This is an \underline{injection}.}. So, that's a claim \inlinemetanote{writes \qt{\underline{Claim:}} before \qt{This is an injection.}}. Which is to say, the kernel of this is just the neutral element \inlinemetanote{draws a downward arrow $\Downarrow$ and writes: $\operatorname{Ker}(\sigma) = e$}. Nobody is going to the kernel here.
+Now, the thing that's kind of amazing is that this is an injection \inlinemetanote{writes: This is an \underline{injection}.}. So, that's a claim \inlinemetanote{writes \qt{\underline{Claim:}} before \qt{This is an injection.}}. Which is to say, the kernel of this is just the neutral element \inlinemetanote{draws a vertical double arrow $\Updownarrow$ and writes: $\operatorname{Ker}(\sigma) = e$}. Nobody is going to the kernel here.
 \end{speech}
 
 \begin{content}

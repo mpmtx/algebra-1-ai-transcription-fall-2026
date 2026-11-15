@@ -2,7 +2,7 @@
 % Integrated into the book on 2026-11-14: took the 2026-11-14 gemini-4-hydrogen (XHIGH, 300k Long Decode, 1-part)
 % Step 4 output as the base and merged all verified improvements from the 2026-11-07 book version
 % (cross-chapter \recap boxes and forward/backward \cref anchors for Week 4, Week 7, and Tuesday Week 8;
-% frame-verified board conventions: \operatorname{Sign}, \subset, \faktor, C_z vs lowercase z in S_n;
+% frame-verified board conventions: \operatorname{Sign}, \subset, \faktor, lowercase c_z for conjugation;
 % head TA name Lycka Drakengren; added insight, steps, proposition, beyond-the-lecture proof/aiNote boxes;
 % and fixed duplicate label def:alternating-group -> def:alternating-group-w8wed while preserving
 % inbound targets thm:first-isomorphism-theorem, def:center-of-group, and thm:conjugation-sn-formula).
@@ -84,7 +84,7 @@ Building on the previous lecture's introduction of group homomorphisms, kernels,
 \begin{itemize}
     \item \textbf{Review of Kernels and Quotients:} Properties of $\ker(f)$ as a normal subgroup, the quotient group $\bigl(\faktor{G_1}{\ker(f)}, \cdot, \bar{e}_1\bigr)$, the quotient map $q \colon G_1 \to \faktor{G_1}{\ker(f)}$, and how subgroup equivalence relations differ between Lagrange's Theorem and quotient groups.
     \item \textbf{The First Isomorphism Theorem:} Statement via the commutative triangle diagram, full four-question proof of the isomorphism $g \colon \faktor{G_1}{\ker(f)} \cong \operatorname{Im}(f)$, and application computing $|A_n| = \frac{n!}{2}$ (for $n \ge 2$).
-    \item \textbf{Conjugation and Automorphisms:} The conjugation map $C_z(x) = z x z^{-1}$, its triviality for abelian groups (implying all subgroups of an abelian group are normal), proof that $C_z \in \operatorname{Aut}(G)$, the homomorphism $\operatorname{Conj} \colon G \to \operatorname{Aut}(G)$ with kernel $Z(G)$ (the center) and image the inner automorphisms, outer automorphisms (illustrated by $x \mapsto -x$ on $\faktor{\mathbb{Z}}{n\mathbb{Z}}$), normality of inner automorphisms in $\operatorname{Aut}(G)$, and the exceptional case $S_6$.
+    \item \textbf{Conjugation and Automorphisms:} The conjugation map $c_z(x) = z x z^{-1}$, its triviality for abelian groups (implying all subgroups of an abelian group are normal), proof that $c_z \in \operatorname{Aut}(G)$, the homomorphism $\operatorname{Conj} \colon G \to \operatorname{Aut}(G)$ with kernel $Z(G)$ (the center) and image the inner automorphisms, outer automorphisms (illustrated by $x \mapsto -x$ on $\faktor{\mathbb{Z}}{n\mathbb{Z}}$), normality of inner automorphisms in $\operatorname{Aut}(G)$, and the exceptional case $S_6$.
     \item \textbf{Conjugation in $S_n$:} Disjoint cycle decomposition including $1$-cycles ($\sum_{i=1}^r k_i = n$), the explicit relabeling formula for $z \sigma z^{-1}$, the bijection between conjugacy classes of $S_n$ and partitions of $n$, and the cycle-length sign formula $\operatorname{Sign}(\sigma) = (-1)^{n-r}$.
 \end{itemize}
 \end{overview}
@@ -126,7 +126,7 @@ so $x n x^{-1} \in \ker(f)$.
 \begin{speech}[00:01:18 - 00:02:39]
 So, that was the beginning, and then one of the main parts from last time was that whenever we have a normal subgroup, in particular the kernel, we constructed a quotient group. We constructed this quotient group with its multiplication and its neutral element \inlinemetanote{draws a vertical divider and writes: $(\faktor{G_1}{\ker(f)}, \cdot, \bar{e}_1)$}.
 
-And moreover, there is a quotient map that takes the group $G_1$ to this quotient group, and this quotient map takes $x$ to the equivalence class of $x$, that is to say, $q(x)$ is equal to the equivalence class of $x$ \inlinemetanote{writes \qt{$q \colon G_1 \longrightarrow \faktor{G_1}{\ker(f)}$}, \qt{$q \colon x \longmapsto \bar{x}$}, and \qt{$q(x) = \bar{x}$}}.
+And moreover, there is a quotient map that takes the group $G_1$ to this quotient group, and this quotient map takes $x$ to the equivalence class of $x$, that is to say, $q(x)$ is equal to the equivalence class of $x$ \inlinemetanote{writes \qt{$q \colon G_1 \longrightarrow \faktor{G_1}{\ker(f)}$}, \qt{$q \colon x \longrightarrow \bar{x}$}, and \qt{$q(x) = \bar{x}$}}.
 
 And just to remember the terminology from last time: as a set, $G_1$ mod $\ker(f)$, this is equal to the set of equivalence classes under this equivalence relation that's related to this subgroup --- that is defined by the subgroup \inlinemetanote{writes \qt{as a set}, \qt{$\faktor{G_1}{\ker(f)} =$ set equiv.\ classes}, and \qt{$\sim_{\ker(f)}$}}.
 
@@ -157,7 +157,7 @@ x &\longmapsto \bar{x}, \qquad \text{so that } q(x) = \bar{x}. \nonumber
 
 \begin{aiNote}[Notation Conventions in the Lecture]
 % [PERSISTENT]
-Many algebra textbooks write $G_1 / \ker(f)$ inline for quotients, $\trianglelefteq$ (or $\triangleleft$) for normal subgroups, $\pi$ for the canonical quotient map, and $c_z$ for conjugation by $z$. Throughout this lecture, the lecturer writes quotients as slanted fractions $\faktor{G_1}{\ker(f)}$, subgroups and normal subgroups with $\subset$ accompanied by text, the quotient map as $q$, the sign map as $\operatorname{Sign}$, the identity map as $\operatorname{Id}$, and conjugation by $z$ on a general group as $C_z$ (while writing $z \in S_n$ for a conjugating permutation in $S_n$); we preserve the lecture's exact board notation.
+Many algebra textbooks write $G_1 / \ker(f)$ inline for quotients, $\le$ for subgroups, $\trianglelefteq$ (or $\triangleleft$) for normal subgroups, and $\pi$ for the canonical quotient map. Throughout this lecture, the lecturer writes quotients as slanted fractions $\faktor{G_1}{\ker(f)}$, subgroups and normal subgroups with $\subset$ accompanied by text, the quotient map as $q$, the sign map as $\operatorname{Sign}$, the identity map as $\operatorname{Id}$, and conjugation by $z$ as $c_z$; we preserve the lecture's board notation.
 \end{aiNote}
 
 \begin{speech}[00:02:40 - 00:03:49]
@@ -353,7 +353,7 @@ So, you have to go through these steps somehow carefully in your head to believe
 \begin{equation}\label{eq:injectivity-kernel-step}
 g(\bar{x}) = e_2 \implies f(x) = e_2 \implies x \in \ker(f).
 \end{equation}
-In the quotient group $\faktor{G_1}{\ker(f)}$, the neutral element is the coset of the identity, $\bar{e}_1 = \ker(f)$. Since $x \in \ker(f)$, its equivalence class satisfies
+In the quotient group $\faktor{G_1}{\ker(f)}$, the neutral element is the class of the identity, $\bar{e}_1 = \ker(f)$. Since $x \in \ker(f)$, its equivalence class satisfies
 \begin{equation}\label{eq:first-isom-inj}
 \bar{x} = x \ker(f) = \ker(f) = \bar{e}_1.
 \end{equation}
@@ -485,7 +485,7 @@ Okay, so, one of the ideas from yesterday was this idea of a normal subgroup, th
 
 So, this came up in the definition of a normal subgroup: a normal subgroup is a subgroup such that all the conjugates of its elements lie in the subgroup. But the notion of conjugation is deeper, and I'll try to say a few words about this.
 
-Suppose $z$ is in the group --- suppose here $G$ is a group, and suppose I pick an element in $z$ (i.e., $G$) \inlinemetanote{writes \qt{$(G, \cdot, e)$ group} and \qt{$z \in G$}}. Then I can conjugate everybody by $z$. So, that gives me a map $C_z$ --- the name for this is conjugation by $z$ \inlinemetanote{writes \qt{$C_z \colon G \to G$} and \qt{conj.\ by $z$}}. And it's a map that takes a group element and gives you back an element of the group. And the definition is: $C_z$ of any element $x$ is equal to $z x z^{-1}$, okay \inlinemetanote{writes: Def $C_z(x) = z x z^{-1}$, $x \in G$}? If you fix your $z$, you can just conjugate everybody.
+Suppose $z$ is in the group --- suppose here $G$ is a group, and suppose I pick an element in $z$ (i.e., $G$) \inlinemetanote{writes \qt{$(G, \cdot, e)$ group} and \qt{$z \in G$}}. Then I can conjugate everybody by $z$. So, that gives me a map $c_z$ --- the name for this is conjugation by $z$ \inlinemetanote{writes \qt{$c_z \colon G \to G$} and \qt{conj.\ by $z$}}. And it's a map that takes a group element and gives you back an element of the group. And the definition is: $c_z$ of any element $x$ is equal to $z x z^{-1}$, okay \inlinemetanote{writes: Def $c_z(x) = z x z^{-1}$, $x \in G$}? If you fix your $z$, you can just conjugate everybody.
 
 It's not a useful --- let me say this: it's pointless to think about this conjugation if the group is abelian.
 \end{speech}
@@ -494,23 +494,23 @@ It's not a useful --- let me say this: it's pointless to think about this conjug
 \begin{definition}[Conjugation by a Group Element]\label[definition]{def:conjugation-cz}
 Let $(G, \cdot, e)$ be a group and let $z \in G$ be a fixed element. The map \newterm{conjugation by $z$} is defined as
 \begin{align}
-C_z \colon G &\to G \nonumber \\
-x &\mapsto C_z(x) := z x z^{-1} \qquad (x \in G). \label{eq:def-cz}
+c_z \colon G &\to G \nonumber \\
+x &\mapsto c_z(x) := z x z^{-1} \qquad (x \in G). \label{eq:def-cz}
 \end{align}
 \end{definition}
 
 \begin{steps}[Connection to Normal Subgroups]
-In terms of the maps $C_z$, a subgroup $N \subset G$ is normal (\cref{def:normal-subgroup}) precisely when it is invariant under conjugation by every element of $G$:
+In terms of the maps $c_z$, a subgroup $N \subset G$ is normal (\cref{def:normal-subgroup}) precisely when it is invariant under conjugation by every element of $G$:
 \[
-C_z(N) \subset N \quad \text{for all } z \in G.
+c_z(N) \subset N \quad \text{for all } z \in G.
 \]
 \end{steps}
 \end{content}
 
 \begin{speech}[00:17:18 - 00:19:03]
-So, the first observation is: if $G$ is abelian, $C_z$ is the identity map from $G$ to $G$ \inlinemetanote{writes: If $G$ is abelian, $C_z = \operatorname{Id} \colon G \to G$}. Because if it's abelian, then I can commute this $z^{-1}$ by $z$ \inlinemetanote{points at $z x z^{-1}$}, and then it meets its inverse and it goes away, so it's just the identity map. Is that clear? So, it is pointless to talk about this conjugation in the case of abelian groups --- pointless may not be the right word, but you're not going to profit from it. It's just always trivial.
+So, the first observation is: if $G$ is abelian, $c_z$ is the identity map from $G$ to $G$ \inlinemetanote{writes: If $G$ is abelian, $c_z = \operatorname{Id} \colon G \to G$}. Because if it's abelian, then I can commute this $z^{-1}$ by $z$ \inlinemetanote{points at $z x z^{-1}$}, and then it meets its inverse and it goes away, so it's just the identity map. Is that clear? So, it is pointless to talk about this conjugation in the case of abelian groups --- pointless may not be the right word, but you're not going to profit from it. It's just always trivial.
 
-And in particular, this shows, as a consequence of this line of thought, every subgroup of an abelian group is normal \inlinemetanote{writes and frames: Any subgroup of abelian group is normal}. That's a consequence of this fact that conjugation never does anything for abelian groups; so, in particular, the only conjugates of any element are itself: there's no other elements that are conjugate to it.
+And in particular, this shows, as a consequence of this line of thought, every subgroup of an abelian group is normal \inlinemetanote{writes and frames: \qt{(Every subgroup of abelian group is Normal)}}. That's a consequence of this fact that conjugation never does anything for abelian groups; so, in particular, the only conjugates of any element are itself: there's no other elements that are conjugate to it.
 
 So, every subgroup of an abelian group is normal, which is, in a way, not bad news: it means if you have an abelian group, it's easy to find groups where there's quotients, because you can take any subgroup, you can make a quotient. If you have a non-abelian group, you're only allowed to use this quotient construction for subgroups that are normal, so it's a higher bar, but if you have an abelian group, you can just quotient by any subgroup. That's the good side of it. The bad side of it is this interesting idea of conjugation doesn't really tell you anything in the abelian case.
 
@@ -521,11 +521,11 @@ Okay, but this is just to warn you that when we talk about these ideas, they're 
 \begin{observation}[Triviality of Conjugation in Abelian Groups]\label[observation]{obs:conjugation-abelian}
 If $G$ is abelian, then for every $z \in G$ and every $x \in G$,
 \begin{equation}\label{eq:abelian-conjugation-identity}
-C_z(x) = z x z^{-1} = x z z^{-1} = x e = x,
+c_z(x) = z x z^{-1} = x z z^{-1} = x e = x,
 \end{equation}
 so
 \begin{equation}\label{eq:cz-identity}
-C_z = \operatorname{Id} \colon G \to G.
+c_z = \operatorname{Id} \colon G \to G.
 \end{equation}
 \end{observation}
 
@@ -536,7 +536,7 @@ Every subgroup $H$ of an abelian group $G$ is a normal subgroup (\cref{def:norma
 \end{highlight}
 
 \begin{steps}[Why Normality Holds Automatically]
-For any subgroup $H \subset G$ of an abelian group $G$, any $h \in H$, and any $z \in G$, we have $z h z^{-1} = C_z(h) = h \in H$, so the only conjugate of $h$ is $h$ itself and $H$ is automatically closed under conjugation.
+For any subgroup $H \subset G$ of an abelian group $G$, any $h \in H$, and any $z \in G$, we have $z h z^{-1} = c_z(h) = h \in H$, so the only conjugate of $h$ is $h$ itself and $H$ is automatically closed under conjugation.
 \end{steps}
 \end{content}
 
@@ -546,34 +546,34 @@ As the lecturer points out, abelian and non-abelian groups exhibit opposite conv
 
 \begin{hidden}
 % timestamp: 00:19:03
-% topic: Conjugation C_z and triviality for abelian groups
+% topic: Conjugation c_z and triviality for abelian groups
 % board_state: def:conjugation-cz, obs:conjugation-abelian, cor:abelian-subgroups-normal
-% next_goal: State and prove that C_z is a group isomorphism (automorphism)
+% next_goal: State and prove that c_z is a group isomorphism (automorphism)
 % open_loops: none
 \end{hidden}
 
 \subsection{Conjugation as a Group Isomorphism}
 
 \begin{speech}[00:19:03 - 00:19:43]
-All right, so, the next lemma for conjugation, which is an interesting one --- and I don't know if it's completely obvious to you right here: does anyone know what I'm going to write here \inlinemetanote{writes: Lemma:}? \inlinemetanote{pauses briefly; no student answers} Well, we have a map from a group to a group \inlinemetanote{points at $C_z \colon G \to G$}, and if you have such a map, you might think whether it's a homomorphism. So, not only is this a homomorphism, it's an isomorphism. It's a group isomorphism \inlinemetanote{writes: $C_z$ is group isom.}.
+All right, so, the next lemma for conjugation, which is an interesting one --- and I don't know if it's completely obvious to you right here: does anyone know what I'm going to write here \inlinemetanote{writes: Lemma:}? \inlinemetanote{pauses briefly; no student answers} Well, we have a map from a group to a group \inlinemetanote{points at $c_z \colon G \to G$}, and if you have such a map, you might think whether it's a homomorphism. So, not only is this a homomorphism, it's an isomorphism. It's a group isomorphism \inlinemetanote{writes: $c_z$ is group isom.}.
 
 So, that's kind of interesting, that you can write down --- if you have a group, you can conjugate by anybody and get some group isomorphism.
 \end{speech}
 
 \begin{content}
 \begin{lemma}[Conjugation as a Group Isomorphism]\label[lemma]{lem:cz-group-isomorphism}
-For any group $(G, \cdot, e)$ and any element $z \in G$, the conjugation map $C_z \colon G \to G$ is a group isomorphism (an \newterm{automorphism} of $G$).
+For any group $(G, \cdot, e)$ and any element $z \in G$, the conjugation map $c_z \colon G \to G$ is a group isomorphism (an \newterm{automorphism} of $G$).
 \end{lemma}
 \end{content}
 
 \begin{proofWrapper}[Proof of \cref{lem:cz-group-isomorphism}]
 
 \begin{speech}[00:19:43 - 00:21:29]
-So, the proof of this --- there is nothing to the proof of this. You just have to think, was this an isomorphism or not. So, how do we want to prove? Well, you have to prove like $C_z(xy)$ is equal to $C_z(x)$ times $C_z(y)$ \inlinemetanote{writes: $C_z(xy) \stackrel{?}{=} C_z(x) \cdot C_z(y)$}. That would be the homomorphism property. So, this is: is it a homomorphism \inlinemetanote{writes: is it hom?}? This is like the Socratic method of proofs: you ask questions. Is it a homomorphism? So, you have to check this, right?
+So, the proof of this --- there is nothing to the proof of this. You just have to think, was this an isomorphism or not. So, how do we want to prove? Well, you have to prove like $c_z(xy)$ is equal to $c_z(x)$ times $c_z(y)$ \inlinemetanote{writes: $c_z(xy) = c_z(x) c_z(y)$}. That would be the homomorphism property. So, this is: is it a homomorphism \inlinemetanote{writes: is it hom?}? This is like the Socratic method of proofs: you ask questions. Is it a homomorphism? So, you have to check this, right?
 
-We just expand the definition: the definition of this is $z x y z^{-1}$, and the definition of this side is $z x z^{-1}$ and this one is $z y z^{-1}$ \inlinemetanote{writes \qt{$z x y z^{-1}$} below $C_z(xy)$ and \qt{$z x \cancel{z^{-1}} \cdot \cancel{z} y z^{-1}$} below $C_z(x) \cdot C_z(y)$}. And you see that these nicely cancel, and you get the fact that it is a homomorphism \inlinemetanote{writes: Yes}. Okay? You must have done this in your life before, but maybe you didn't realize you were doing this calculation.
+We just expand the definition: the definition of this is $z x y z^{-1}$, and the definition of this side is $z x z^{-1}$ and this one is $z y z^{-1}$ \inlinemetanote{writes \qt{$z x y z^{-1}$} below $c_z(xy)$ and \qt{$z x z^{-1} z y z^{-1}$} below $c_z(x) c_z(y)$, and circles $z^{-1} z$}. And you see that these nicely cancel, and you get the fact that it is a homomorphism \inlinemetanote{writes: Yes}. Okay? You must have done this in your life before, but maybe you didn't realize you were doing this calculation.
 
-It is a homomorphism. Then you have to find out whether it's an isomorphism. So, is it surjective \inlinemetanote{writes: is it surj.?}? That means that we start --- I can raise the board \inlinemetanote{raises the lower board} --- we start: suppose we have $y$ in $G$; can we find some $\hat{y}$ such that $C_z(\hat{y})$ is equal to $y$ \inlinemetanote{writes \qt{Supp.\ $y \in G$}, \qt{can we find $\hat{y}$}, and \qt{$C_z(\hat{y}) = y$}}? That's the assertion of surjectivity. And the answer is yes, and what am I going to write for $\hat{y}$? And the answer is yes \inlinemetanote{writes: YES}, and you got $\hat{y}$ equals what? Yeah.
+It is a homomorphism. Then you have to find out whether it's an isomorphism. So, is it surjective \inlinemetanote{writes: is it surj.?}? That means that we start --- I can raise the board \inlinemetanote{raises the lower board} --- we start: suppose we have $y$ in $G$; can we find some $\hat{y}$ such that $c_z(\hat{y})$ is equal to $y$ \inlinemetanote{writes \qt{Supp.\ $y \in G$}, \qt{can we find $\hat{y}$}, and \qt{$c_z(\hat{y}) = y$}}? That's the assertion of surjectivity. And the answer is yes, and what am I going to write for $\hat{y}$? And the answer is yes \inlinemetanote{writes: YES}, and you got $\hat{y}$ equals what? Yeah.
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -581,45 +581,45 @@ $z^{-1} y z$.
 \end{student}
 
 \begin{speech}[00:21:30 - 00:23:12]
-Yeah, you flip them around: $z^{-1} y z$ \inlinemetanote{writes: $\hat{y} = z^{-1} y z$}, and then when you stick it into $C$ (i.e., $C_z$), the $z$'s will arrange so that they will disappear on both sides.
+Yeah, you flip them around: $z^{-1} y z$ \inlinemetanote{writes: $\hat{y} = z^{-1} y z$}, and then when you stick it into $c$ (i.e., $c_z$), the $z$'s will arrange so that they will disappear on both sides.
 
-Finally, you have to check whether it's injective, and for that, you have to see --- okay, let's use here \inlinemetanote{draws a box and writes: is $C_z$ injective?}. I don't propose you really follow this method of writing a proof, but it's the way I think about it. I am proving it, but you know. Is it injective? Now you ask this question.
+Finally, you have to check whether it's injective, and for that, you have to see --- okay, let's use here \inlinemetanote{draws a box and writes: is $c_z$ injective?}. I don't propose you really follow this method of writing a proof, but it's the way I think about it. I am proving it, but you know. Is it injective? Now you ask this question.
 
-So, then you have to check, well, what happens --- so it's injective, we have to check who's in the kernel. We have to check what happens if I have $C_x$ (i.e., $C_z(x)$) equals $e$, right \inlinemetanote{writes: $C_z(x) = e$}? Then this implies $z x z^{-1}$ equals $e$ \inlinemetanote{writes: $z x z^{-1} = e$}, and now I bring all the $z$'s to the other side, where they go away. Is that clear? So, this implies $x$ equals $e$ \inlinemetanote{writes: $\implies x = e$}, so the answer is yes --- actually, answers to all the questions are yes \inlinemetanote{writes \qt{Yes} next to \qt{is it surj.?}}. So, it's a group isomorphism.
+So, then you have to check, well, what happens --- so it's injective, we have to check who's in the kernel. We have to check what happens if I have $c_x$ (i.e., $c_z(x)$) equals $e$, right \inlinemetanote{writes: $c_z(x) = e$}? Then this implies $z x z^{-1}$ equals $e$ \inlinemetanote{writes: $\implies z x z^{-1} = e$}, and now I bring all the $z$'s to the other side, where they go away. Is that clear? So, this implies $x$ equals $e$ \inlinemetanote{writes $x = e$ below it, with a check mark}, so the answer is yes --- actually, answers to all the questions are yes \inlinemetanote{writes \qt{Yes} next to \qt{is it surj.?}}. So, it's a group isomorphism.
 
 That's a kind of interesting thing: the group --- as I said, one of the origins of groups is symmetries of other objects, but you can also do this kind of introspective thing where if you have a group, you think about its own symmetries --- symmetries as a group. And if the group is an interesting group, like, for example, if it's an abelian group, this whole line of thought is totally pointless, because, you know, it's true this is a group isomorphism, but it's the identity isomorphism, so it's not that interesting. But if you have an interesting group, it will give you interesting isomorphisms.
 \end{speech}
 
 \begin{content}[Verification of the Isomorphism Properties]
-We check the three conditions required for $C_z \colon G \to G$ to be a group isomorphism:
+We check the three conditions required for $c_z \colon G \to G$ to be a group isomorphism:
 
-\textbf{1. Homomorphism property (is it hom?):} We test whether $C_z(xy) \stackrel{?}{=} C_z(x) \cdot C_z(y)$ for arbitrary $x, y \in G$:
+\textbf{1. Homomorphism property (is it hom?):} We test whether $c_z(xy) \stackrel{?}{=} c_z(x) \cdot c_z(y)$ for arbitrary $x, y \in G$:
 \begin{align}
-C_z(x) \cdot C_z(y) &= z x \cancel{z^{-1}} \cdot \cancel{z} y z^{-1} \nonumber \\
-&= z x e y z^{-1} = z x y z^{-1} = C_z(xy). \label{eq:cz-hom}
+c_z(x) \cdot c_z(y) &= z x \cancel{z^{-1}} \cdot \cancel{z} y z^{-1} \nonumber \\
+&= z x e y z^{-1} = z x y z^{-1} = c_z(xy). \label{eq:cz-hom}
 \end{align}
-Thus, \emph{Yes}, $C_z$ is a homomorphism.
+Thus, \emph{Yes}, $c_z$ is a homomorphism.
 
-\textbf{2. Surjectivity (is it surj.?):} Suppose $y \in G$. Can we find $\hat{y} \in G$ such that $C_z(\hat{y}) = y$? \emph{Yes}: choose $\hat{y} := z^{-1} y z \in G$. Then
+\textbf{2. Surjectivity (is it surj.?):} Suppose $y \in G$. Can we find $\hat{y} \in G$ such that $c_z(\hat{y}) = y$? \emph{Yes}: choose $\hat{y} := z^{-1} y z \in G$. Then
 \begin{equation}\label{eq:cz-surj}
-C_z(\hat{y}) = z (z^{-1} y z) z^{-1} = (z z^{-1}) y (z z^{-1}) = e y e = y.
+c_z(\hat{y}) = z (z^{-1} y z) z^{-1} = (z z^{-1}) y (z z^{-1}) = e y e = y.
 \end{equation}
-Thus, \emph{Yes}, $C_z$ is surjective.
+Thus, \emph{Yes}, $c_z$ is surjective.
 
-\textbf{3. Injectivity (is $C_z$ injective?):} Checking the kernel $\ker(C_z)$ (\cref{lem:inj-surj-criteria}), suppose $x \in G$ satisfies $C_z(x) = e$. Then:
+\textbf{3. Injectivity (is $c_z$ injective?):} Checking the kernel $\ker(c_z)$ (\cref{lem:inj-surj-criteria}), suppose $x \in G$ satisfies $c_z(x) = e$. Then:
 \begin{align}
-C_z(x) = e &\implies z x z^{-1} = e \nonumber \\
+c_z(x) = e &\implies z x z^{-1} = e \nonumber \\
 &\implies z x = z \nonumber \\
-&\implies x = z^{-1} e z = e. \label{eq:cz-inj}
+&\implies x = z^{-1} z = e. \label{eq:cz-inj}
 \end{align}
-Hence, $\ker(C_z) = \{e\}$ is trivial, so $C_z$ is injective.
+Hence, $\ker(c_z) = \{e\}$ is trivial, so $c_z$ is injective.
 
-By \eqref{eq:cz-hom}, \eqref{eq:cz-surj}, and \eqref{eq:cz-inj}, $C_z$ is a bijective group homomorphism from $G$ to itself, i.e., a group isomorphism.
+By \eqref{eq:cz-hom}, \eqref{eq:cz-surj}, and \eqref{eq:cz-inj}, $c_z$ is a bijective group homomorphism from $G$ to itself, i.e., a group isomorphism.
 \end{content}
 
-\begin{aiNote}[Beyond the Lecture: The Inverse of \texorpdfstring{$C_z$}{C\_z}]
+\begin{aiNote}[Beyond the Lecture: The Inverse of \texorpdfstring{$c_z$}{c\_z}]
 % [PERSISTENT, ADDITION]
-Bijectivity of $C_z$ also follows in one step: conjugation by $z^{-1}$, namely $C_{z^{-1}}$, is an explicit two-sided inverse of $C_z$, since $(C_z \circ C_{z^{-1}})(x) = z (z^{-1} x z) z^{-1} = x$ and likewise $(C_{z^{-1}} \circ C_z)(x) = x$ for all $x \in G$. The lecture's $\hat{y} = z^{-1} y z$ is precisely $C_{z^{-1}}(y)$.
+Bijectivity of $c_z$ also follows in one step: conjugation by $z^{-1}$, namely $c_{z^{-1}}$, is an explicit two-sided inverse of $c_z$, since $(c_z \circ c_{z^{-1}})(x) = z (z^{-1} x z) z^{-1} = x$ and likewise $(c_{z^{-1}} \circ c_z)(x) = x$ for all $x \in G$. The lecture's $\hat{y} = z^{-1} y z$ is precisely $c_{z^{-1}}(y)$.
 \end{aiNote}
 
 \end{proofWrapper}
@@ -635,7 +635,7 @@ Okay, let's do some fun stuff before we do the example. If you have a group --- 
 
 And now you will see --- and this always happens with automorphisms and symmetries, so it should not be a surprise to you --- $\operatorname{Aut}(G)$ is a group \inlinemetanote{writes: $\operatorname{Aut}(G)$ is group}. So, do you believe that? It's just because there's the identity here, you can compose them, there's inverses. So, the set of group isomorphisms of a group is itself a group. So, it's a group.
 
-And conjugation gives a map from $G$ to $\operatorname{Aut}(G)$, where an element here goes to $C_z$ \inlinemetanote{writes \qt{$\operatorname{Conj} \colon G \longrightarrow \operatorname{Aut}(G)$} and \qt{$z \longmapsto C_z$}}. All right? Does that make sense that we said that? And the claim is this is a group homomorphism. So, I leave that for you to check \inlinemetanote{writes \qt{group hom} and \qt{(you can check)}}. There is nothing to this check; you just have to write it.
+And conjugation gives a map from $G$ to $\operatorname{Aut}(G)$, where an element here goes to $c_z$ \inlinemetanote{writes \qt{$\operatorname{Conj} \colon G \longrightarrow \operatorname{Aut}(G)$} and \qt{$z \longrightarrow c_z$}}. All right? Does that make sense that we said that? And the claim is this is a group homomorphism. So, I leave that for you to check \inlinemetanote{writes \qt{group hom} and \qt{(you can check)}}. There is nothing to this check; you just have to write it.
 \end{speech}
 
 \begin{content}[The Automorphism Group and the Conjugation Homomorphism]
@@ -657,20 +657,20 @@ Under composition of maps (with neutral element $\operatorname{Id}_G$ and invers
 \end{steps}
 
 \begin{claim}[Conjugation Gives a Homomorphism into \texorpdfstring{$\operatorname{Aut}(G)$}{Aut(G)}]\label[claim]{clm:conj-hom}
-By \cref{lem:cz-group-isomorphism}, every conjugation map $C_z$ belongs to $\operatorname{Aut}(G)$. Thus, conjugation defines a map
+By \cref{lem:cz-group-isomorphism}, every conjugation map $c_z$ belongs to $\operatorname{Aut}(G)$. Thus, conjugation defines a map
 \begin{align}
 \operatorname{Conj} \colon G &\longrightarrow \operatorname{Aut}(G) \label{eq:conj-map-definition} \\
-z &\longmapsto C_z, \nonumber
+z &\longmapsto c_z, \nonumber
 \end{align}
-which is a group homomorphism, i.e., $C_{z w} = C_z \circ C_w$ for all $z, w \in G$.
+which is a group homomorphism, i.e., $c_{z w} = c_z \circ c_w$ for all $z, w \in G$.
 \end{claim}
 
 \begin{proof}[Proof of \cref{clm:conj-hom} (beyond the lecture)]
 The lecture leaves this verification to the students (\qt{you can check}). Let $z, w \in G$. For every $x \in G$, we compute
 \begin{align}
-(\operatorname{Conj}(zw))(x) &= C_{zw}(x) = (zw) x (zw)^{-1} \nonumber \\
+(\operatorname{Conj}(zw))(x) &= c_{zw}(x) = (zw) x (zw)^{-1} \nonumber \\
 &= z w x w^{-1} z^{-1} \nonumber \\
-&= z (w x w^{-1}) z^{-1} = C_z(C_w(x)) = (C_z \circ C_w)(x). \label{eq:conj-hom-check}
+&= z (w x w^{-1}) z^{-1} = c_z(c_w(x)) = (c_z \circ c_w)(x). \label{eq:conj-hom-check}
 \end{align}
 Hence, $\operatorname{Conj}(zw) = \operatorname{Conj}(z) \circ \operatorname{Conj}(w)$, proving that $\operatorname{Conj}$ is a group homomorphism.
 \end{proof}
@@ -685,7 +685,7 @@ Hence, $\operatorname{Conj}(zw) = \operatorname{Conj}(z) \circ \operatorname{Con
 \end{hidden}
 
 \begin{speech}[00:25:15 - 00:26:10]
-So, given any group, there's a natural map to its automorphisms by conjugation. That's like, again, even further understanding of conjugation --- it's a deep idea, conjugation --- and it makes this a homomorphism. And if you have a homomorphism, you should immediately think about who's in the kernel and who's not --- yeah, think about the first isomorphism theorem. So, the next step in this line is: well, what is the kernel of this map \inlinemetanote{writes \qt{Next step} and \qt{$\ker(\operatorname{Conj}) =$}}? It's some normal subgroup of $G$. So, how can you be in the kernel? The kernel consists of some elements $z$ such that $C_z$ is $\operatorname{Id}$ \inlinemetanote{writes \qt{$\{ z \mid C_z = \operatorname{Id} \}$} and waits briefly for a response}. Right? Yeah.
+So, given any group, there's a natural map to its automorphisms by conjugation. That's like, again, even further understanding of conjugation --- it's a deep idea, conjugation --- and it makes this a homomorphism. And if you have a homomorphism, you should immediately think about who's in the kernel and who's not --- yeah, think about the first isomorphism theorem. So, the next step in this line is: well, what is the kernel of this map \inlinemetanote{writes \qt{Next step} and \qt{$\ker(\operatorname{Conj}) =$}}? It's some normal subgroup of $G$. So, how can you be in the kernel? The kernel consists of some elements $z$ such that $c_z$ is $\operatorname{Id}$ \inlinemetanote{writes \qt{$\{ z \mid c_z = \operatorname{Id} \}$} and waits briefly for a response}. Right? Yeah.
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -693,9 +693,9 @@ This happens if $z$ commutes with everything.
 \end{student}
 
 \begin{speech}[00:26:12 - 00:26:54]
-Exactly. And so, if $C_z$ is $\operatorname{Id}$, this means $z x z^{-1}$ is equal to $x$ for all $x$ \inlinemetanote{writes: $z x z^{-1} = x \ \forall x$}. And that means that $z x = x z$ \inlinemetanote{writes: $z x = x z$}. It's perfect!
+Exactly. And so, if $c_z$ is $\operatorname{Id}$, this means $z x z^{-1}$ is equal to $x$ for all $x$ \inlinemetanote{writes: $z x z^{-1} = x \ \forall x$}. And that means that $z x = x z$ \inlinemetanote{writes: $z x = x z$}. It's perfect!
 
-So, you're in the kernel if and only if $z$ commutes with everybody. And the kernel, in general, is the set of elements of $G$ that commute with every other person, and that has a name. So, that's just the definition of the kernel, and the name is: this is called the center of $G$. Usually it's called $Z(G)$, the center \inlinemetanote{writes and circles \qt{Center($G$)}, then writes \qt{$Z(G)$} below it}. That's the name of this thing. So, it's the elements that commute with everybody.
+So, you're in the kernel if and only if $z$ commutes with everybody. And the kernel, in general, is the set of elements of $G$ that commute with every other person, and that has a name. So, that's just the definition of the kernel, and the name is: this is called the center of $G$. Usually it's called $Z(G)$, the center \inlinemetanote{writes below $\ker(\operatorname{Conj})$, joined by a vertical $=$: \qt{Center($G$)}, circled, and $Z(G)$ under it}. That's the name of this thing. So, it's the elements that commute with everybody.
 \end{speech}
 
 \begin{content}[The Kernel of Conjugation: The Center of a Group]
@@ -718,8 +718,8 @@ Consequently, because kernels are always normal subgroups (\cref{prop:kernel-nor
 For any element $z \in G$, membership in $\ker(\operatorname{Conj})$ is characterized by:
 \begin{align*}
 z \in \ker(\operatorname{Conj}) &\iff \operatorname{Conj}(z) = \operatorname{Id}_G \\
-&\iff C_z = \operatorname{Id}_G \\
-&\iff \forall x \in G \colon C_z(x) = x \\
+&\iff c_z = \operatorname{Id}_G \\
+&\iff \forall x \in G \colon c_z(x) = x \\
 &\iff \forall x \in G \colon z x z^{-1} = x \\
 &\iff \forall x \in G \colon z x = x z \\
 &\iff z \in Z(G).
@@ -742,7 +742,7 @@ You can ask about this subgroup --- you can always ask of a subgroup: is this a 
 \begin{definition}[Inner and Outer Automorphisms]\label[definition]{def:inner-automorphisms}
 The image $\operatorname{Im}(\operatorname{Conj}) \subset \operatorname{Aut}(G)$ is a subgroup of $\operatorname{Aut}(G)$ (\cref{prop:image-subgroup}), called the subgroup of \newterm{inner automorphisms}:
 \begin{equation}\label{eq:inner-automorphism-group-def}
-\operatorname{Im}(\operatorname{Conj}) = \{ C_z \mid z \in G \} \subset \operatorname{Aut}(G).
+\operatorname{Im}(\operatorname{Conj}) = \{ c_z \mid z \in G \} \subset \operatorname{Aut}(G).
 \end{equation}
 Automorphisms $\varphi \in \operatorname{Aut}(G) \setminus \operatorname{Im}(\operatorname{Conj})$ that do not lie in $\operatorname{Im}(\operatorname{Conj})$ (i.e., do not come from conjugation by an element of $G$) are called \newterm{outer automorphisms}.
 \end{definition}
@@ -768,15 +768,15 @@ Is $\operatorname{Im}(\operatorname{Conj}) \subset \operatorname{Aut}(G)$ a norm
 \end{answer}
 
 \begin{proof}[Proof of \cref{ans:inn-normal} (beyond the lecture)]
-The lecture leaves this proof to the students (\qt{I leave this to you to prove}). Let $\varphi \in \operatorname{Aut}(G)$ be any automorphism and let $C_z \in \operatorname{Im}(\operatorname{Conj})$ (with $z \in G$). For every $x \in G$, we compute
+The lecture leaves this proof to the students (\qt{I leave this to you to prove}). Let $\varphi \in \operatorname{Aut}(G)$ be any automorphism and let $c_z \in \operatorname{Im}(\operatorname{Conj})$ (with $z \in G$). For every $x \in G$, we compute
 \begin{align*}
-(\varphi \circ C_z \circ \varphi^{-1})(x) &= \varphi\bigl(C_z(\varphi^{-1}(x))\bigr) \\
+(\varphi \circ c_z \circ \varphi^{-1})(x) &= \varphi\bigl(c_z(\varphi^{-1}(x))\bigr) \\
 &= \varphi\bigl(z \, \varphi^{-1}(x) \, z^{-1}\bigr) \\
 &= \varphi(z) \, \varphi\bigl(\varphi^{-1}(x)\bigr) \, \varphi(z^{-1}) && \text{(since $\varphi$ is a homomorphism)} \\
 &= \varphi(z) \, x \, \varphi(z)^{-1} \\
-&= C_{\varphi(z)}(x).
+&= c_{\varphi(z)}(x).
 \end{align*}
-Hence, $\varphi \circ C_z \circ \varphi^{-1} = C_{\varphi(z)} \in \operatorname{Im}(\operatorname{Conj})$, showing that $\operatorname{Im}(\operatorname{Conj})$ is closed under conjugation in $\operatorname{Aut}(G)$ and is therefore a normal subgroup of $\operatorname{Aut}(G)$.
+Hence, $\varphi \circ c_z \circ \varphi^{-1} = c_{\varphi(z)} \in \operatorname{Im}(\operatorname{Conj})$, showing that $\operatorname{Im}(\operatorname{Conj})$ is closed under conjugation in $\operatorname{Aut}(G)$ and is therefore a normal subgroup of $\operatorname{Aut}(G)$.
 \end{proof}
 \end{content}
 
@@ -822,7 +822,7 @@ But so, let's look at conjugation again, now more carefully for the symmetric gr
 
 Okay, so, let's talk about conjugation again, and now more carefully than last time. So, I am in $S_n$ and I pick an element in $S_n$ \inlinemetanote{writes: $\sigma \in S_n$}, and I've said many times: to this element I can associate a cycle decomposition.
 
-This cycle decomposition has a certain number of cycles: the first one --- I didn't want to put the notation last time, but $a_{11}, a_{12}, \dots, a_{1 k_1}$ \inlinemetanote{writes: $\sigma \longmapsto (a_{11}, a_{12} \dots a_{1 k_1})$}. That's the first cycle. I can't tell you what the elements are because I don't know what the thing is, but if I take a particular element of $S_n$, I can write it in the cycle decomposition, and this will be the first cycle, then there'll be the next cycle \inlinemetanote{writes: $(a_{21}, a_{22} \dots a_{2 k_2})$}. And then there'll be some more cycles, and then there'll be the last cycle: $a_{r1}$ to $a_{r k_r}$ \inlinemetanote{writes: $\cdots (a_{r1} \dots a_{r k_r})$}.
+This cycle decomposition has a certain number of cycles: the first one --- I didn't want to put the notation last time, but $a_{11}, a_{12}, \dots, a_{1 k_1}$ \inlinemetanote{writes: $\sigma \mapsto (a_{11} a_{12} \dots a_{1 k_1})$}. That's the first cycle. I can't tell you what the elements are because I don't know what the thing is, but if I take a particular element of $S_n$, I can write it in the cycle decomposition, and this will be the first cycle, then there'll be the next cycle \inlinemetanote{writes: $(a_{21} a_{22} \dots a_{2 k_2})$}. And then there'll be some more cycles, and then there'll be the last cycle: $a_{r1}$ to $a_{r k_r}$ \inlinemetanote{writes: $\cdots (a_{r1} \dots a_{r k_r})$}.
 \end{speech}
 
 \begin{content}[Cycle Decomposition of \texorpdfstring{$\sigma \in S_n$}{sigma in S\_n}]
@@ -849,7 +849,7 @@ $n$, because this is saying that every element appears somewhere in one of the c
 \begin{content}[Cycle Lengths and Partition of Elements]
 In the full disjoint cycle decomposition
 \begin{equation}\label{eq:full-cycle-decomp}
-\sigma \longmapsto (a_{11}, a_{12} \dots a_{1 k_1}) (a_{21}, a_{22} \dots a_{2 k_2}) \cdots (a_{r1} \dots a_{r k_r}),
+\sigma = (a_{11}\, a_{12} \dots a_{1 k_1})(a_{21}\, a_{22} \dots a_{2 k_2}) \cdots (a_{r1} \dots a_{r k_r}),
 \end{equation}
 there are $r \ge 1$ disjoint cycles (written \qt{$r$-cycles} on the board) with lengths $k_1, k_2, \dots, k_r \ge 1$, where we explicitly \emph{include all $1$-cycles} (fixed points), so the entries form a disjoint partition
 \begin{equation}\label{eq:disjoint-union-elements}
@@ -984,7 +984,7 @@ A lot of times in mathematics, the goal is just to not stay confused for a few m
 \subsection{Conjugacy Classes and Partitions of \texorpdfstring{$n$}{n}}
 
 \begin{speech}[00:38:57 - 00:40:06]
-Okay, so, this calculation shows several things. If you understand it correctly, it shows the set of equivalence classes under conjugation of $S_n$ --- that's the set of equivalence classes --- is in bijective correspondence to the partitions of $n$ \inlinemetanote{writes: $\left\{\text{Set of equiv.\ classes under conj.\ of } S_n\right\} \longleftrightarrow \{\text{Partit.\ of } n\}$}.
+Okay, so, this calculation shows several things. If you understand it correctly, it shows the set of equivalence classes under conjugation of $S_n$ --- that's the set of equivalence classes --- is in bijective correspondence to the partitions of $n$ \inlinemetanote{writes: \qt{Set of equiv.\ classes under Conjugation of $S_n \longleftrightarrow \{\text{Partitions } n\}$}}.
 
 Because all that matters here is what the cycle lengths are. This says that if I take any $\sigma$ here and I conjugate it, I get somebody with the same cycle lengths. Conversely, if I have two people with the same cycle lengths, I can find a $z$. So, it exactly shows that the conjugacy classes of $S_n$ are the partitions. All right? And so, that's another step, but this one calculation shows that.
 \end{speech}
@@ -995,7 +995,7 @@ Because all that matters here is what the cycle lengths are. This says that if I
 \begin{corollary}[Conjugacy Classes of \texorpdfstring{$S_n$}{S\_n} and Partitions of \texorpdfstring{$n$}{n}]\label[corollary]{cor:conjugacy-classes-partitions}
 There is a bijective correspondence
 \begin{equation}\label{eq:conjugacy-classes-partitions-bijection}
-\left\{ \text{Set of equiv.\ classes under conj.\ of } S_n \right\} \longleftrightarrow \{ \text{Partitions of } n \}.
+\bigl\{ \text{equivalence classes of } S_n \text{ under conjugation} \bigr\} \longleftrightarrow \bigl\{ \text{partitions of } n \bigr\}.
 \end{equation}
 In words, two permutations in $S_n$ are conjugate if and only if their full cycle decompositions (with all $1$-cycles included) have the same cycle lengths $k_1, \dots, k_r$ up to order.
 \end{corollary}
@@ -1027,16 +1027,9 @@ $n$ minus $r$.
 $n$ minus $r$, very good! $\operatorname{Sign}$ equals $n$ minus $r$ (i.e., $(-1)^{n-r}$) \inlinemetanote{writes \qt{$\operatorname{Sign}(\sigma) = n - r$}, a slip for $(-1)^{n-r}$}. And why do you say that with such confidence? Yeah. \inlinemetanote{student begins to answer inaudibly; video cut}
 \end{speech}
 
-\begin{content}[Board Prompt on the Sign of \texorpdfstring{$\sigma$}{sigma}]
-For $\sigma \in S_n$: What is sign of $\sigma$?
-\[
-\operatorname{Sign}(\sigma) = n - r \quad \textcolor{red}{\text{(Incorrect --- exponent written without base $(-1)$)}}
-\]
-\end{content}
-
 \begin{aiNote}[Board Correction: Missing Base \texorpdfstring{$(-1)$}{(-1)} in \texorpdfstring{$\operatorname{Sign}(\sigma)$}{Sign(sigma)}]
 % [PERSISTENT]
-Here both the student and the lecturer state $n - r$ (the exponent) rather than $(-1)^{n-r}$, and the lecturer writes $\operatorname{Sign}(\sigma) = n - r$ on the upper board; the chime rings at the end of the derivation before he revisits that line. On the lower board immediately below, he explicitly writes the base $(-1)^{k_i - 1}$ above each cycle and multiplies the signs together, showing that the true formula is $\operatorname{Sign}(\sigma) = (-1)^{n-r}$.
+Here both the student and the lecturer state $n - r$ (the exponent) rather than $(-1)^{n-r}$, and the lecturer writes $\operatorname{Sign}(\sigma) = n - r$ on the upper board; the chime rings at the end of the derivation before he revisits that line. On the lower board immediately below, he writes the sign of each cycle above it ($-1^{(k_1 - 1)}$, $-1^{(k_2 - 1)}$, \dots, $(-1)^{k_r - 1}$, the first two without brackets around the $-1$) and multiplies them, which gives the true formula $\operatorname{Sign}(\sigma) = (-1)^{n-r}$.
 \end{aiNote}
 
 \begin{content}
@@ -1051,9 +1044,9 @@ Let $\sigma \in S_n$ have full cycle decomposition \eqref{eq:full-cycle-decomp} 
 \begin{proofWrapper}[Proof of \cref{prop:sign-from-cycles}]
 
 \begin{speech}[00:41:00 - 00:42:08]
-So, the proof of this is: $\operatorname{Sign}$ is multiplicative, so I only need to know the sign --- I only need to calculate the sign for each cycle. The sign for each cycle is this --- the cycle has length $k_1$, so its sign, we said before, is $k_1$ minus $1$, the sign of this \inlinemetanote{writes \qt{$k_1 - 1$} above the first cycle}. Do you remember that? The sign of a cycle of length $k$ minus $1$ --- a cycle of length $k_1$ --- is $k_1$ minus $1$. Okay?
+So, the proof of this is: $\operatorname{Sign}$ is multiplicative, so I only need to know the sign --- I only need to calculate the sign for each cycle. The sign for each cycle is this --- the cycle has length $k_1$, so its sign, we said before, is $k_1$ minus $1$, the sign of this \inlinemetanote{writes above the first cycle: $-1^{(k_1 - 1)}$}. Do you remember that? The sign of a cycle of length $k$ minus $1$ --- a cycle of length $k_1$ --- is $k_1$ minus $1$. Okay?
 
-And then it's multiplicative, so I just have to take $k_1 - 1$, $k_2 - 1$... This is the exponent: the sign is $(-1)^{k_1 - 1}$, and this sign is $(-1)^{k_2 - 1}$, and this is $(-1)^{k_r - 1}$ \inlinemetanote{writes $(-1)^{k_1-1}$, $(-1)^{k_2-1}$, and $(-1)^{k_r-1}$ above the corresponding cycles}.
+And then it's multiplicative, so I just have to take $k_1 - 1$, $k_2 - 1$... This is the exponent: the sign is $(-1)^{k_1 - 1}$, and this sign is $(-1)^{k_2 - 1}$, and this is $(-1)^{k_r - 1}$ \inlinemetanote{writes above the second and the last cycle: $-1^{(k_2 - 1)}$ and $(-1)^{k_r - 1}$}.
 
 So, that's the sign of each one of these, and then to get the sign of the whole thing, I multiply these all together, and the $k$ part, they add up to $n$... Well, that's too bad. Minus $1$ --- they all add up to minus $r$.
 \end{speech}
@@ -1094,11 +1087,11 @@ Let's see who that is.
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Kernels, Normal Subgroups, and Quotient Groups:} For any group homomorphism $f \colon G_1 \to G_2$, $\ker(f) = \{x \in G_1 \mid f(x) = e_2\}$ is a normal subgroup of $G_1$ (\cref{prop:kernel-normal-w8wed}), making the product on $\bigl(\faktor{G_1}{\ker(f)}, \cdot, \bar{e}_1\bigr)$ well-defined with quotient map $q \colon G_1 \to \faktor{G_1}{\ker(f)}$, $x \mapsto \bar{x}$. Unlike Lagrange's Theorem (which counts cosets in finite groups without needing normality), quotient groups require normality rather than finiteness.
+    \item \textbf{Kernels, Normal Subgroups, and Quotient Groups:} For any group homomorphism $f \colon G_1 \to G_2$, $\ker(f) = \{x \in G_1 \mid f(x) = e_2\}$ is a normal subgroup of $G_1$ (\cref{prop:kernel-normal-w8wed}), making the product on $\bigl(\faktor{G_1}{\ker(f)}, \cdot, \bar{e}_1\bigr)$ well-defined with quotient map $q \colon G_1 \to \faktor{G_1}{\ker(f)}$, $x \mapsto \bar{x}$. Unlike Lagrange's Theorem (which counts equivalence classes in finite groups without needing normality), quotient groups require normality rather than finiteness.
     \item \textbf{The First Isomorphism Theorem (\cref{thm:first-isomorphism-theorem}):} For any group homomorphism $f \colon G_1 \to G_2$, the rule $g(\bar{x}) := f(x)$ defines a group isomorphism $g \colon \faktor{G_1}{\ker(f)} \cong \operatorname{Im}(f)$ satisfying $g \circ q = f$.
     \item \textbf{Order of the Alternating Group (\cref{def:alternating-group-w8wed,prop:order-alternating-group}):} The alternating group $A_n := \ker(\operatorname{Sign})$ is normal in $S_n$. For $n \ge 2$, $\operatorname{Sign} \colon S_n \to \{\pm 1\}$ is surjective, so $\faktor{S_n}{A_n} \cong \{\pm 1\}$ by the First Isomorphism Theorem, and Lagrange's Theorem yields $|A_n| = \frac{|S_n|}{2} = \frac{n!}{2}$.
-    \item \textbf{Conjugation and Automorphisms (\cref{def:conjugation-cz,obs:conjugation-abelian,cor:abelian-subgroups-normal,lem:cz-group-isomorphism,def:aut-group}):} For fixed $z \in G$, conjugation $C_z(x) := z x z^{-1}$ is a group isomorphism $G \to G$, hence an element of $\operatorname{Aut}(G)$. When $G$ is abelian, $C_z = \operatorname{Id}$ for every $z \in G$, so conjugation is trivial and every subgroup of an abelian group is normal.
-    \item \textbf{The Conjugation Homomorphism, Center, and Inner Automorphisms (\cref{clm:conj-hom,def:center-of-group,prop:center-as-kernel,def:inner-automorphisms,ans:inn-normal}):} The map $\operatorname{Conj} \colon G \to \operatorname{Aut}(G)$, $z \mapsto C_z$, is a group homomorphism with kernel the center $Z(G) = \{z \in G \mid zx = xz \ \forall x \in G\}$ and image $\operatorname{Inn}(G) = \operatorname{Im}(\operatorname{Conj}) \cong \faktor{G}{Z(G)}$, which is a normal subgroup of $\operatorname{Aut}(G)$. Outer automorphisms exist in general (e.g., $x \mapsto -x$ on $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ for $n \ge 3$); for symmetric groups, all automorphisms are inner except for $S_6$ ($\operatorname{Out}(S_6) \cong \faktor{\mathbb{Z}}{2\mathbb{Z}}$).
+    \item \textbf{Conjugation and Automorphisms (\cref{def:conjugation-cz,obs:conjugation-abelian,cor:abelian-subgroups-normal,lem:cz-group-isomorphism,def:aut-group}):} For fixed $z \in G$, conjugation $c_z(x) := z x z^{-1}$ is a group isomorphism $G \to G$, hence an element of $\operatorname{Aut}(G)$. When $G$ is abelian, $c_z = \operatorname{Id}$ for every $z \in G$, so conjugation is trivial and every subgroup of an abelian group is normal.
+    \item \textbf{The Conjugation Homomorphism, Center, and Inner Automorphisms (\cref{clm:conj-hom,def:center-of-group,prop:center-as-kernel,def:inner-automorphisms,ans:inn-normal}):} The map $\operatorname{Conj} \colon G \to \operatorname{Aut}(G)$, $z \mapsto c_z$, is a group homomorphism with kernel the center $Z(G) = \{z \in G \mid zx = xz \ \forall x \in G\}$ and image $\operatorname{Inn}(G) = \operatorname{Im}(\operatorname{Conj}) \cong \faktor{G}{Z(G)}$, which is a normal subgroup of $\operatorname{Aut}(G)$. Outer automorphisms exist in general (e.g., $x \mapsto -x$ on $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ for $n \ge 3$); for symmetric groups, all automorphisms are inner except for $S_6$ ($\operatorname{Out}(S_6) \cong \faktor{\mathbb{Z}}{2\mathbb{Z}}$).
     \item \textbf{Conjugation and Sign in $S_n$ (\cref{prop:sum-cycle-lengths,thm:conjugation-sn-formula,cor:conjugacy-classes-partitions,prop:sign-from-cycles}):} Writing $\sigma \in S_n$ as a product of $r$ disjoint cycles of lengths $k_1, \dots, k_r$ (including all $1$-cycles, with $\sum_{i=1}^r k_i = n$), conjugating by $z \in S_n$ replaces every entry $a_{ij}$ with $z(a_{ij})$. Thus, conjugacy classes of $S_n$ correspond bijectively to partitions of $n$, and $\operatorname{Sign}(\sigma) = \prod_{i=1}^r (-1)^{k_i - 1} = (-1)^{n - r}$.
 \end{itemize}
 \end{overview}
