@@ -314,9 +314,9 @@ Okay, so, that's the definition of a group homomorphism. It respects the structu
 
 Then you could say: What about the neutral element? Why am I not saying anything about the neutral element? I could. I could add that $f(e)$ is equal to $e$ \inlinemetanote{writes: $f(e) = \hat{e}$} --- or if I want to be clear, $\hat{e}$, the $e$ on that side. I could add that, but I don't have to. Because if I put $e$ here, if I just use this property, I put $f(e \cdot e)$... \inlinemetanote{writes: $f(e \cdot e) = f(e) \cdot f(e)$} There's only one thing you can do always.
 
-So, I just stick $e$ in here. Do you agree? And then I use the neutral property on this side to get $f(e) = f(e) \cdot f(e)$. \inlinemetanote{writes: $f(e) = f(e) \cdot f(e)$} And then I can use the cancellation property of the group: $f(e)$ has some inverse. There exists some $y \in \hat{G}$ such that $y \cdot f(e) = \hat{e}$, \inlinemetanote{writes: $y \in \hat{G} \colon y f(e) = \hat{e}$} right? This is the cancellation property. We've used it many times, and at some point I will stop explaining it, but anyway, here... We multiply by $y$ on both sides, and we get $y \cdot f(e)\dots$ \inlinemetanote{writes: $y f(e) = y (f(e) f(e))$}
+So, I just stick $e$ in here. Do you agree? And then I use the neutral property on this side to get $f(e) = f(e) \cdot f(e)$. \inlinemetanote{writes: $f(e) = f(e) \cdot f(e)$} And then I can use the cancellation property of the group: $f(e)$ has some inverse. There exists some $y \in \hat{G}$ such that $y \cdot f(e) = \hat{e}$, \inlinemetanote{writes: $y \in \hat{G} \colon y f(e) = \hat{e}$} right? This is the cancellation property. We've used it many times, and at some point I will stop explaining it, but anyway, here... We multiply by $y$ on both sides, and we get $y \cdot f(e)\dots$ \inlinemetanote{writes \qt{$y f(e) = y f(e) e$}, a slip for $y f(e) = y f(e) f(e)$}
 
-So, then this is $\hat{e} \dots$ Then we use the... Sorry, what are we doing here? $\hat{e} \cdot f(e)$, \inlinemetanote{writes: $\hat{e} = \hat{e} f(e)$} and this is $f(e)$. \inlinemetanote{writes: $\hat{e} = f(e)$} So, $f(e) = \hat{e}$, okay? So, I don't have to, but you could put it in there.
+So, then this is $\hat{e} \dots$ \inlinemetanote{writes \qt{$\hat{e} = \hat{e} e$}, carrying the slip along} Then we use the... Sorry, what are we doing here? \inlinemetanote{wipes out the $e$ at the end of both lines and writes $f(e)$ in its place, giving $y f(e) = y f(e) f(e)$ and $\hat{e} = \hat{e} f(e)$} $\hat{e} \cdot f(e)$, and this is $f(e)$. \inlinemetanote{writes: $\hat{e} = f(e)$} So, $f(e) = \hat{e}$, okay? So, I don't have to, but you could put it in there.
 \end{speech}
 
 \begin{content}[Automatic Preservation of Identity]
@@ -568,7 +568,7 @@ I think it could. We can take, like, $f$ from the first one, from $\mathbb{R}, +
 \begin{speech}[00:18:32 - 00:19:27]
 Yeah, yeah. This is like the most famous function in mathematics, and this is its purpose, actually. This is by $\exp$: \inlinemetanote{writes \qt{$\exp$} and draws an arrow} $\exp(x)$. So, $f(x) = \exp(x)$. \inlinemetanote{writes: $f(x) = \exp(x)$} You take a number, and you get a positive number. If you take $0$, you get $1$.
 
-And the main property of $\exp$ is that it intertwines the addition here with the multiplication there. So, it's actually the most famous function in mathematics, basically. And this is its role: it gives you an isomorphism --- a group isomorphism between the additive structure and the multiplicative structure.
+And the main property of $\exp$ is that it intertwines the addition here with the multiplication there. So, it's actually the most famous function in mathematics, basically. And this is its role: it gives you an isomorphism. I mean, $\exp$ is developed more and more depending on where you study mathematics, but the basic role is that it gives an isomorphism --- a group isomorphism between the additive structure and the multiplicative structure.
 
 So, that's a kind of weird thing. It's saying that, from the point of view of the group, the group doesn't see the difference between the additive structure and the multiplicative structure of the reals.
 \end{speech}
@@ -630,7 +630,7 @@ There's a notion of a subgroup. We did this for the ring (Recall: \cref{def:kern
 
 If $f$ is a group homomorphism, then in the spirit of linear algebra --- which is the algebra you're supposed to be most familiar with --- if you have a linear transformation between two vector spaces, the thing you immediately study is the kernel and the image of that linear transformation. We can do that also with groups: we can consider the kernel and the image. \inlinemetanote{writes \qt{Then we can consider $\operatorname{ker}$, $\operatorname{Im}$}} Let's start with the kernel. What properties does this kernel enjoy?
 
-The kernel of a group homomorphism is defined to be those elements in $G$ such that when I apply $f$, I get the neutral element on the second side: \inlinemetanote{writes: $\operatorname{ker}(f) = \{ x \in G \mid f(x) = \hat{e} \}$}. In the linear algebra language, that's things that went to zero. Now it's the elements that go to the neutral element. Is that clear?
+The kernel of a group homomorphism is defined to be those people in $G$ such that when I apply $f$, I get the neutral element on the second side: \inlinemetanote{writes: $\operatorname{ker}(f) = \{ x \in G \mid f(x) = \hat{e} \}$}. In the linear algebra language, that's things that went to zero. Now it's the elements that go to the neutral element. Is that clear?
 \end{speech}
 
 \begin{content}[Definition of the Kernel]
@@ -1714,7 +1714,7 @@ You can ask other questions in analysis about this. I'm not going to talk about 
 
 Maybe I'll ask you a question: Is there some ideal $J$ that's bigger? \inlinemetanote{writes: $I \subsetneq J \neq C^\infty(\mathbb{R})$} Can you find an ideal that's bigger than this, and not the whole ring, of course? Because that's always an ideal that's bigger.
 
-One of the strange things about the way math is taught is that we take all these subjects and divide them. The traditional vision of classical education in mathematics is that there's an algebra direction, an analysis direction, and a geometry direction. But actually, it doesn't really make sense to separate them all: it's all just one way of looking at numbers. I don't know why I said that, but can you think of a way to make this ideal bigger?
+One of the strange things about the way math is taught is that we take all these subjects and divide them. The traditional vision of classical education in mathematics --- which has changed over the years --- is that there's an algebra direction, an analysis direction, and a geometry direction. But actually, it doesn't really make sense to separate them all: it's all just one way of looking at numbers. I don't know why I said that, but can you think of a way to make this ideal bigger?
 
 We used the fact that it's zero on both sides here, but that's not necessary, right? Can't we just say: functions that eventually go to zero on the right? Those are more, and it satisfies the same thing. So, here you can say $J$ --- I'll write it colloquially: functions that become zero for all sufficiently large $x$: \inlinemetanote{writes: $J = \{ f \text{ that become } 0 \text{ for all suff.\ large } x \}$}.
 
@@ -2042,7 +2042,7 @@ Composition means that if I have three objects, $A$, $B$, and $C$, \inlinemetano
 
 That is part of the data of the category. If I'm telling you a category, it's up to me to tell you how to compose homs. And in all examples, you just compose them, okay?
 
-So, what's the content? For groups, of course, if I have a hom from $G$ to $\hat{G}$ and another one from $\hat{G}$ to $G''$, you can compose them as functions --- you can always compose functions --- but then you have to show that the composition is a group hom, all right? Which I leave to you to check.
+So, what's the content? For groups, of course, if I have a hom from $G$ to $\hat{G}$ and another one from $\hat{G}$ to $\hat{\hat{G}}$, you can compose them as functions --- you can always compose functions --- but then you have to show that the composition is a group hom, all right? Which I leave to you to check.
 
 That's the content of this: to say that this category of groups is a category, there are groups, there are homs, and there's a natural composition of homs; and it's very important that when I have a group hom here and a group hom here, when I compose them, I get a group hom. Okay?
 \end{speech}
@@ -2399,9 +2399,9 @@ This functor takes $V$: \inlinemetanote{writes: $V$}. What can you do with $V$? 
 
 That's a really beautiful thing you can do: take a vector space to its double dual. To every vector space, you can associate its double dual. And the claim is that this is a functor: \inlinemetanote{writes \qt{is a functor}}.
 
-It takes an object here and canonically associates an object here, and also the maps. In linear algebra, if you have a map between vector spaces, $T \colon V \to W$, \inlinemetanote{writes: $V \xrightarrow{f} W$} that gives you a map the other way: $T^* \colon W^* \to V^*$: \inlinemetanote{writes: $W^* \xrightarrow{f^*} V^*$}. You get a map this way --- the dual --- and then if you do it again, you get a map in the correct direction: $(V^*)^* \xrightarrow{(T^*)^*} (W^*)^*$: \inlinemetanote{writes: $(V^*)^* \xrightarrow{f^{**}} (W^*)^*$} $V$ double dual to $W$ double dual.
+It takes an object here and canonically associates an object here, and also the maps. In linear algebra, if you have a map between vector spaces \inlinemetanote{writes: $V \xrightarrow{f} W$}, that gives you a map the other way \inlinemetanote{writes: $W^* \xrightarrow{f^*} V^*$}. You get a map this way --- the dual --- and then if you do it again, you get a map in the correct direction \inlinemetanote{writes: $(V^*)^* \xrightarrow{f^{**}} (W^*)^*$}.
 
-This is to say that this functor takes arrows to the $T$ double dual arrow: \inlinemetanote{writes: $F(f) = f^{**}$}. You can think about it.
+This is to say that this functor takes arrows to the, you know, $f$ double dual arrow: \inlinemetanote{writes: $F(f) = f^{**}$}. You can think about it.
 \end{speech}
 
 \begin{student}[Student Question]
