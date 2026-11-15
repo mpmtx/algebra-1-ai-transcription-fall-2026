@@ -5,6 +5,8 @@
 % (commits 6b5331c, 5fd6ddf), checked against frames of the 2026-09-30 board.
 % The 2026-10-10 run had the student exchange at 00:18 - 00:21 out of order and
 % missed one student question; times and question come from the 2026-10-04 run.
+% Checked 2026-11-15 against the Hydrogen XHIGH rerun and a hearing of the whole audio:
+% block times agree within 20 s; three spoken words and one student line corrected.
 % ==========================================
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
@@ -310,10 +312,11 @@ So, how am I going to define this?
 Evaluate the coefficients, and then replace each $x$ with $y$.
 \end{student}
 
+% [WORD-CHECKED: he says "I know one element of x, that's y", a slip for S (Hydrogen and Flash hearings, 2026-11-15)]
 \begin{speech}[00:09:53 - 00:10:45]
 Yeah. So, this is the definition: I have to somehow take this data and get to $S$. Any element here --- so these $a_i$'s, that's part of the definition of polynomial, they're in $R$ \inlinemetanote{writes: $a_i \in R$}. And I only have on the board one way to ship elements from $R$ to $S$: it's here. So, I can't make up another one, that's, you know.
 
-So, all these coefficients I just move by the only way I know how to get to $S$. So, that's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $S$, that's $y$. And then I do this: $\phi(a_2) y^2$ and so on, to $y^n$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \phi(a_0) + \phi(a_1) \cdot y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n$}
+So, all these coefficients I just move by the only way I know how to get to $S$. So, that's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $x$ (i.e., of $S$), that's $y$. And then I do this: $\phi(a_2) y^2$ and so on, to $y^n$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \phi(a_0) + \phi(a_1) \cdot y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n$}
 \end{speech}
 
 \begin{speech}[00:10:45 - 00:12:20]
@@ -466,14 +469,16 @@ Well, this $x$ stays. You can't replace $x$. We're talking about this polynomial
 These are the units...
 \end{student}
 
+% [WORD-CHECKED: he says "multiply this R with g", a slip for f (Hydrogen and Flash hearings, 2026-11-15)]
 \begin{speech}[00:18:33 - 00:18:56]
-Yeah, these are... I mean, but actually the discussion is kind of more simple. Just if I multiply this $f$ with $g$, I get another polynomial. And for it to be $1$, all of its higher terms have to somehow cancel, right? So, the question is: can you arrange it so all the higher terms cancel? That's the real question.
+Yeah, these are... I mean, but actually the discussion is kind of more simple. Just if I multiply this $R$ (i.e., $f$) with $g$, I get another polynomial. And for it to be $1$, all of its higher terms have to somehow cancel, right? So, the question is: can you arrange it so all the higher terms cancel? That's the real question.
 
 Yeah?
 \end{speech}
 
+% [WORD-CHECKED: the student says "if there's a constant term", without naming f (Hydrogen and Flash hearings, 2026-11-15)]
 \begin{student}[Student Answer]
-I suppose if $f$ is a constant term?
+I suppose if there's a constant term?
 \end{student}
 
 \begin{speech}[00:18:59 - 00:20:09]
@@ -614,7 +619,7 @@ which holds for all non-zero polynomials $f, g \in R[x]$ if and only if $R$ has 
 \end{content}
 
 \begin{speech}[00:23:22 - 00:25:19]
-This means that if you ever take a polynomial which has a positive-degree part --- meaning it's not the constant polynomial, meaning one of these coefficients with $x$'s is not zero ---, you will never be able to find an inverse, because when you multiply it by somebody else, you'll always have a term in $n+m$; and if one of them is $\ge 1$ (i.e., $n \ge 1$), this will never be a constant term.
+This means that if you ever take a polynomial which has a positive-degree part --- meaning it's not the constant polynomial, meaning one of these coefficients with $x$'s is not zero ---, you will never be able to find an inverse, because when you multiply it by somebody else, you'll always have a term in $n+m$; and if one of them is $1$ (i.e., if $n \ge 1$ or $m \ge 1$), this will never be a constant term.
 
 Does that make sense? In other words, if your ring is an integral domain, when you multiply two polynomials with $x$'s, the $x$'s will never go away, because you can always look at the highest one, and they will persist.
 
