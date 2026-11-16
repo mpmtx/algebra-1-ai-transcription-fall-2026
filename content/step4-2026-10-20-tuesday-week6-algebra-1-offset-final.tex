@@ -3,6 +3,12 @@
 % output below: week-tagged labels and \recap lines for what earlier weeks already stated,
 % recall anchors and cross-references, and the math fixes found in a review of the lecture.
 % ==========================================
+% Checked 2026-11-16 against the Hydrogen XHIGH rerun (2026-11-15) and clips heard by Gemini Flash:
+% the speech-block edges between 00:05:18 and 00:15:52 were 28 to 120 s late, those at 00:21:02,
+% 01:15:35, 01:21:45, 01:23:55 and 01:26:29 were 41 to 55 s early; all re-timed where the rerun and
+% the hearing agree. About 80 s of speech before "Minimum." (01:23-01:24), which the book had lost,
+% restored from the rerun and confirmed by the hearing; one spoken slip (PID for UFD) restored.
+% ==========================================
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-10-20-2026-tuesday-week6-Algebra_I-offset-final.tex
@@ -241,7 +247,7 @@ The lecturer gives a standard slogan: \qt{every great theorem becomes a definiti
 
 \section{Unique Factorization Domains}
 
-\begin{speech}[00:04:50 - 00:06:05]
+\begin{speech}[00:04:50 - 00:05:18]
 Okay, so, what is the topic of this week? The topic of this week are unique factorization domains. \inlinemetanote{writes: Unique Factorization Domains}
 
 Also, you don't have to wait to next year to take this course, you can just read about it also.
@@ -261,7 +267,10 @@ First, though, it's going to take a little bit of time to define, so, you have t
 
 \subsection{Integral Domains, Units, and Irreducible Elements}
 
-\begin{speech}[00:06:05 - 00:07:00]
+% [TIMESTAMP-CORRECTED (2026-11-16): the block edges from here to 00:15:52 were 28 to 120 s late (they were 00:06:05,
+% 00:07:00, 00:08:45, 00:09:50, 00:11:05, 00:12:10, 00:13:40, 00:15:05, 00:16:20). New edges where the Hydrogen XHIGH
+% rerun and a Gemini Flash hearing of clips from 00:04:30 agree within about 10 s on each block's first words.]
+\begin{speech}[00:05:18 - 00:06:03]
 So, first of all, we are going to consider domains. \inlinemetanote{writes: $R$ is a domain} $R$ is a domain.
 
 The whole week is about domains. I will try to say it every time, but of course if I say unique factorization domain, principal ideal domain, there's the domain in the name, and it means that the ring is a domain.
@@ -279,7 +288,7 @@ The integers $\mathbb{Z}$ serve as the primary archetype and motivation for fact
 \end{remark}
 \end{content}
 
-\begin{speech}[00:07:00 - 00:08:45]
+\begin{speech}[00:06:03 - 00:06:58]
 About the domain, there's some special elements: zero, \inlinemetanote{writes: $0 \in R$ zero} and then there's the set of units. \inlinemetanote{writes: Units $\in R$}
 
 So, these two classes of elements, the zeros and units, play a special role. Like in the integers, when you talk about factorization, you're not talking about zero. Zero is not in the picture.
@@ -312,7 +321,7 @@ Any rigorous definition of unique factorization must allow for ambiguities arisi
 \end{example}
 \end{content}
 
-\begin{speech}[00:08:45 - 00:09:50]
+\begin{speech}[00:06:58 - 00:07:50]
 All right. So, the first definition --- so, I have not defined UFD, I will eventually define it. The first definition here \inlinemetanote{writes: Def:} is: let $x$ \inlinemetanote{writes: let $x \in R$, $x \neq 0$, $x$ not unit} be an element of $R$ where $x$ is not zero and not a unit. So, it's going to be one of the elements we will consider factorization. We don't consider factorization of zero or the units.
 
 Then the definition: $x$ is irreducible \inlinemetanote{writes: $x$ is irreducible} --- so, this is the term that's being defined --- if and only if, \inlinemetanote{writes: $\iff$} whenever \inlinemetanote{writes: whenever} we have a factorization $x = y z$, \inlinemetanote{writes: $x = y z$} then \inlinemetanote{writes: then} --- whenever $x = y z$, then --- either $y$ \inlinemetanote{writes: either $y$ is a unit} is a unit or $z$ \inlinemetanote{writes: or $z$ is a unit.} is a unit.
@@ -334,7 +343,7 @@ An element is irreducible if it cannot be decomposed into a product of two \qt{s
 \end{steps}
 \end{content}
 
-\begin{speech}[00:09:50 - 00:11:05]
+\begin{speech}[00:07:50 - 00:09:28]
 So, if I have a ring, which I said for this week is always a domain, if I have a domain, I can take an element of it --- and as I said, we don't talk about zero or the units --- I take this element, it can be either irreducible or reducible. Reducible is not irreducible.
 
 So, irreducible has this property that every time I try to factor it, I don't really make much progress, because I can always factor it where one element is a unit, right? So, it kind of says that I can't reduce it at all, that's why it's called irreducible.
@@ -372,7 +381,7 @@ In Week~1, the elements of $\mathbb{Z}[i]$ whose only divisors are units and ass
 
 \subsection{Definition of a Unique Factorization Domain}
 
-\begin{speech}[00:11:05 - 00:12:10]
+\begin{speech}[00:09:28 - 00:11:04]
 So, the question you should be asking from a terminological point of view is: why don't I call this prime? And that's the kind of confusion that we're going to address. And the reason is that there's already a notion of prime: prime ideals (Recall: \cref{def:prime-ideal}).
 
 All right. So, is there a question about this definition? It's kind of the crucial definition for this week, so, you should ask.
@@ -392,7 +401,7 @@ So, $R$ is a UFD \inlinemetanote{writes: $R$ is a UFD} if --- and I don't repeat
 % open_loops: none
 \end{hidden}
 
-\begin{speech}[00:12:10 - 00:13:40]
+\begin{speech}[00:11:04 - 00:11:55]
 So, I'll number them, but I need the other board. \inlinemetanote{pushes the middle blackboard up and pulls down the second board} Hold on.
 \inlinemetanote{begins wiping the lower right blackboard with a wet sponge} There's a great picture of Emmy Noether on a boat in Zurich that I found when I taught the Commutative Algebra class. She was here in the '30s for the ICM (i.e., the International Congress of Mathematicians, Zurich 1932), and she gave a lecture in this building.
 
@@ -408,10 +417,12 @@ The lecturer mentions a great picture of Emmy Noether on a boat in Zurich: she w
 At the ICM in Zurich in September 1932, Noether gave a plenary address, \qt{Hyperkomplexe Systeme in ihren Beziehungen zur kommutativen Algebra und zur Zahlentheorie}.
 \end{aiNote}
 
-\begin{speech}[00:13:40 - 00:15:05]
+\begin{speech}[00:11:55 - 00:14:32]
 Okay, so, the two properties of factorization. So, we're in the middle of the definition of a UFD, I'm still in the middle of it, so, I have to give you the two properties of the factorization.
 
 The first is existence. \inlinemetanote{writes: $(\exists)$} The existence property says that $x$ \inlinemetanote{writes: $x = p_1 p_2 \cdots p_n$} is equal to $p_1 p_2 \cdots p_n$, where \inlinemetanote{writes: where the $p_i$ are irreducibles} the $p_i$ are irreducibles.
+
+Okay, so, this says that if I have a... I'm still in the middle of the definition of unique factor--- so, actually, I'm kind of toward the end now, but nevertheless.
 
 So, it's a UFD if for every element that's not zero or a unit, then the first is the existence, that I can factor that person into irreducibles, okay? That's existence.
 
@@ -456,7 +467,7 @@ In words: two factorizations of an element into irreducibles can differ only by:
 \end{steps}
 \end{content}
 
-\begin{speech}[00:15:05 - 00:16:20]
+\begin{speech}[00:14:32 - 00:15:52]
 Okay. So, colloquially, we'd say that the uniqueness says that if I have two different factorizations of some number into irreducibles, these two factorizations are unique, meaning that I can reorder these and then I can correct by units and then they're equal.
 
 All right? So, this is supposed to explain, as I said: if I take $15$ in the integers, \inlinemetanote{writes: $15 = 3 \cdot 5$} it's $3 \times 5$, and it's also minus five \inlinemetanote{writes: $= (-5) \cdot (-3)$} times minus three. These are two different factorizations --- so, I could write $3 \times 5$ \inlinemetanote{writes: $3 \cdot 5 = (-5) \cdot (-3)$} is equal to minus... this looks almost silly to do it, but anyway. And I want a uniqueness statement.
@@ -493,14 +504,16 @@ Thus, the factorizations are identical up to reordering and unit associates.
 
 \subsection{Main Theorems on Unique Factorization Domains}
 
-\begin{speech}[00:16:20 - 00:17:25]
+\begin{speech}[00:15:52 - 00:17:25]
 Okay, so, that's what a UFD is. It has this property that if you take any element that's not zero or a unit, I can find a factorization into irreducibles, and any two factorizations into irreducibles are the same up to these two moves: you might have to spin around one side, and then you might have to correct by units.
 
 All right? So, that's the definition.
 
+% [WORD-CHECKED: he says "if R is a PID" and writes PID, then "Sorry, screwed up" and corrects it to UFD (Hydrogen
+% rerun and a Gemini Flash hearing, 2026-11-16; the board note already had the erased PID).]
 All right, so, the theorems this week are the two main theorems. Today, Theorem A, \inlinemetanote{writes: Thm A:} and that's going to be: if $R$ is a PID, \inlinemetanote{writes: If $R$ is a PID} then $R$ is a UFD. \inlinemetanote{writes: then $R$ is a UFD.} Or colloquially you could just say that \inlinemetanote{writes: (PID $\implies$ UFD)} PID implies UFD. Okay, that's going to be the theorem today, hopefully.
 
-Theorem B, for tomorrow, \inlinemetanote{writes: Thm B:} is that if $R$ is a UFD... \inlinemetanote{erases \qt{PID} and writes: UFD} Sorry. Excuse me. Is a UFD, then the polynomial ring is a UFD. \inlinemetanote{writes: then the $R[x]$ is a UFD.} Then the polynomial ring is a UFD.
+Theorem B, for tomorrow, \inlinemetanote{writes: Thm B:} is that if $R$ is a PID (i.e., a UFD), then the polynomial ring is a U... Sorry, screwed up. \inlinemetanote{erases \qt{PID} and writes: UFD} Is a UFD, then the polynomial ring is a UFD. \inlinemetanote{writes: then the $R[x]$ is a UFD.} Then the polynomial ring is a UFD.
 
 So, this says that PID gives us a UFD automatically, and if you have a UFD, you can always add variables to it. Okay?
 \end{speech}
@@ -561,7 +574,7 @@ The ring of integers $\mathbb{Z}$ is a unique factorization domain: this is the 
 This statement is also called the Fundamental Theorem of Arithmetic. It also follows from the theory of this week: every ideal of $\mathbb{Z}$ is principal (\cref{thm:ideals-of-z-are-principal}), so $\mathbb{Z}$ is a PID, and therefore a UFD by Theorem A (\cref{thm:pid-implies-ufd}).
 \end{aiNote}
 
-\begin{speech}[00:18:35 - 00:20:20]
+\begin{speech}[00:18:35 - 00:21:02]
 I mean, usually when you learn this in school, no one cares about the signs, because you only talk about positive numbers, and you factor into positive primes, so, the business about the units doesn't play a role. And the second thing is that, of course, there's this reordering, but, you know, you can always with numbers just write them in the increasing order, so, you don't have to worry about that either. So, generally speaking, these matters are silenced in the school treatment.
 
 Anyway, this is formally a UFD.
@@ -590,7 +603,8 @@ Consequently, every non-constant polynomial in $k[x]$ factors uniquely into a pr
 \end{example}
 \end{content}
 
-\begin{speech}[00:20:20 - 00:22:15]
+% [TIMESTAMP-CORRECTED (2026-11-16): was 00:20:20; the Hydrogen XHIGH rerun and a Gemini Flash hearing put "But if I start using B" at about 00:21:01-02.]
+\begin{speech}[00:21:02 - 00:22:15]
 Okay, but if I start using B, I can get many more. So, for example, \inlinemetanote{writes: for example $B \implies$} Theorem B also implies that $k[x_1, \dots, x_n]$ \inlinemetanote{writes: $k[x_1, \dots, x_n]$ is a UFD} is a UFD, because I just keep using B one time after the other. Why is this? I take $k$, that's a UFD; that implies the first one, and that's still a UFD, so, then that gives me the next one, \inlinemetanote{writes: $k \implies k[x] \implies k[x, y] \dots$} and so on. So, I just keep applying B.
 
 And so, that's kind of fancier, probably you haven't thought about this too much, but if I take a polynomial ring in several variables, it is a UFD, which means your intuition about factorization to a certain extent is correct there --- depends of course what you put in that intuition ---, but a lot of that intuition about unique factorization, if it just uses these axioms, is correct. I mean, if I have a polynomial in many variables, I can factor it into these irreducibles, there's a unique way of doing it, and it's a very useful way of thinking about these polynomials.
@@ -1772,7 +1786,7 @@ Thus, $J$ is an ideal of $R$.
 % open_loops: none
 \end{hidden}
 
-\begin{speech}[01:12:09 - 01:14:44]
+\begin{speech}[01:12:09 - 01:15:35]
 Okay, so, what do we know about ideals? They're principal. That's what we assume, right?
 
 For Step 3, we assume $R$ is a principal ideal domain, and we want to show that it has this existence property.
@@ -1848,7 +1862,8 @@ This completes Step 3 and establishes \cref{lem:part3-step3-existence}.
 \end{steps}
 \end{content}
 
-\begin{speech}[01:14:44 - 01:15:54]
+% [TIMESTAMP-CORRECTED (2026-11-16): was 01:14:44; the Hydrogen XHIGH rerun and a Gemini Flash hearing put "All right, so that finishes the proof of Theorem A" at 01:15:31-39.]
+\begin{speech}[01:15:35 - 01:15:54]
 \inlinemetanote{wipes the blackboards with a wet sponge}
 
 All right, so, that finishes the proof of Theorem A, and as I said, the logic there is slightly intricate, maybe more intricate than the results we've proven so far in this class.
@@ -1900,7 +1915,7 @@ Let $R$ be a unique factorization domain (UFD), and let $x, y \in R \setminus \{
 \end{definition}
 \end{content}
 
-\begin{speech}[01:18:14 - 01:21:04]
+\begin{speech}[01:18:14 - 01:21:45]
 We say $z$ equals the GCD of $x$ and $y$ if $z$ divides $x$ --- and when I write this, $z$ divides $x$, all I mean is that $x$ equals something times $z$, \inlinemetanote{writes: $(x = q z)$} I don't know, $q$, that's what this symbol means.
 
 So, the GCD: $z$ divides $x$, $z$ divides $y$, \inlinemetanote{writes: $z \mid y$} and if $w$ divides $x$ and $w$ divides $y$, then $w$ divides $z$. \inlinemetanote{writes: and if $w \mid x$ and $w \mid y \implies w \mid z$}
@@ -1994,7 +2009,8 @@ In an integral domain, $p \sim \hat{p} \iff (p) = (\hat{p})$.
 
 \subsection{Formulas for GCD and LCM in Terms of Factorizations}
 
-\begin{speech}[01:21:04 - 01:23:12]
+% [TIMESTAMP-CORRECTED (2026-11-16): was 01:21:04; the Hydrogen XHIGH rerun and a Gemini Flash hearing put "When we write this unique factorization" at 01:21:43-48.]
+\begin{speech}[01:21:45 - 01:23:55]
 \inlinemetanote{writes: $p \sim \hat{p}$ are associates if $p = \text{unit} \times \hat{p}$}
 
 When we write this unique factorization, the typical way to do it is we, ahead of time, pick one irreducible element for every class of associates, so, we don't confuse ourselves.
@@ -2013,14 +2029,20 @@ Somehow I feel like this wasn't as clear as it could be. It's the same issue abo
 
 And the reason --- the punchline, of course --- the reason why you want to do that is then you can write down the formulas for the GCD and the LCM, right?
 
-So, here's the... \inlinemetanote{wipes part of the board with a wet cloth}
+So, here's the... I mean, this stuff has all to do with the fact that the irreducibles, if you multiply them by a unit, you get another irreducible, and it just leads to confusion. And the confusion for the integers is minor, because that's just the sign, but for a ring with a lot of units, it can be genuinely confusing. And it's better not to think about it, actually.
+
+Okay, so, modulo this discussion about picking an irreducible for every class of associates --- which I've implemented there, and as I said, if you open up a book, people will just always write that without any words at all, just assume you're going to do that... \inlinemetanote{wipes part of the board with a wet cloth}
 \end{speech}
 
 % [TIMESTAMP-CORRECTED: original 01:23:12 - 01:25:34, split around "Minimum." at an estimated 01:24:47/48. Measured from the recording's audio level and frames, words not heard: the lecturer's voice stops at 01:24:45.6 and resumes at 01:24:46.5; he faces the class at 01:24:44-46 and starts writing "min" at 01:24:48.]
-\begin{speech}[01:23:12 - 01:24:46]
-\inlinemetanote{writes: $\operatorname{GCD} = p_1^{\min(n_1, m_1)} \dots p_k^{\min(n_k, m_k)}$}
+% [TIMESTAMP-CORRECTED (2026-11-16): the book had lost about 80 s of speech here, from "I mean, this stuff" to
+% "the standard formula from school"; restored from the Hydrogen XHIGH rerun, which a Gemini Flash hearing of the
+% clips from 01:21:00 and 01:22:54 confirms sentence by sentence. "So, given that" falls at about 01:23:55,
+% after a pause from 01:23:40 to 01:23:49 while he wipes the board, so this block now starts there.]
+\begin{speech}[01:23:55 - 01:24:46]
+So, given that, what is the formula for the greatest common divisor? What should it be here? \inlinemetanote{writes: $\operatorname{GCD} =$} Well, it should be a product of the same irreducibles that occur in both. I should say --- you could have said: why do the same ones occur in both? Well, one of the $m$'s could be $0$ and the other one not $0$, so I'm not assuming that they both occur. Is that okay? These primes are the ones that occur --- sorry, the irreducibles are the ones that occur in both $x$ and $y$.
 
-What should I put here? What's the exponent? Yeah?
+Anyway, the standard formula from school for this is this: \inlinemetanote{writes: $p_1$} What should I put here? What's the exponent? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -2028,7 +2050,7 @@ Minimum.
 \end{student}
 
 % [TIMESTAMP-CORRECTED: start moved from the estimated 01:24:48 to 01:24:47; see the comment on the block before the student's answer.]
-\begin{speech}[01:24:47 - 01:25:34]
+\begin{speech}[01:24:47 - 01:26:29]
 The minimum, yeah. This is why we like to write it like this: minimum of --- what did I call them? --- $n_1$ and $m_1$ \inlinemetanote{writes \qt{$\min(n_1, m_1)$} and \qt{$\dots p_k^{\min(n_k, m_k)}$}}.
 
 Okay. And then, so, that's the GCD, and then you can see that there's also this confusion that I could have put any unit here also: \inlinemetanote{writes: any unit $\times$} any unit. And it'll still satisfy that property.
@@ -2076,7 +2098,8 @@ Because $\operatorname{Units}(\mathbb{Z}) = \{1, -1\}$, both $2$ and $-2$ are gr
 
 \subsection{Least Common Multiples and the Product Formula}
 
-\begin{speech}[01:25:34 - 01:27:19]
+% [TIMESTAMP-CORRECTED (2026-11-16): was 01:25:34; the Hydrogen XHIGH rerun and a Gemini Flash hearing put "So that's how the GCD works for any UFD" at 01:26:28-30.]
+\begin{speech}[01:26:29 - 01:27:19]
 So, that's how the GCD works for any UFD.
 
 And when I said this confusion, it's always this confusion about everybody has a lot of names, and that always causes confusion in mathematics.
