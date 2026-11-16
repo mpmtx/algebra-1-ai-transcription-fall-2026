@@ -1,9 +1,9 @@
 % Checked 2026-11-16 against the Hydrogen XHIGH rerun (finished 2026-11-16) and video frames, without new
 % audio hearings (Gemini quota): speech 95.6% word-identical; one block edge re-timed (00:11:51, was 54 s
 % late); the remaining differences are wording variants or need the audio, so the text stays.
-% Open: the board's symbol for the set of ideals (frame 00:18:30) is a curl plus a tall loop, read so far as
-% "cl"; the rerun hears him say "I" (I_K of R), so it may be a script I. Not changed: it is notation in
-% Weeks 4-5 and the Week 9 recaps.
+% The board's symbol for the set of ideals (frame 00:18:30: a curl plus a tall loop) was read as "cl" until
+% 2026-11-16; he says "I of this ring", "I K of R" (Hydrogen rerun and a Flash hearing of 00:17:00-00:19:35),
+% so it is a script I: \mathscr{I}(R/K), \mathscr{I}_K(R), here and in Week 5 (125 places, one convention).
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-2026-10-07-wednesday-week3-algebra-1-offset-final.tex
@@ -382,13 +382,13 @@ Since we have $I$'s in there, let's just --- to avoid the notation --- call this
 
 So, we have an ideal $K$ inside $R$, and I consider this quotient map. And I want to understand here --- and this part of the quotient map is crucial to understand ---: I want to understand \inlinemetanote{writes: I want to understand the pullback of ideals here} what this pullback of ideals looks like here in this situation.
 
-For that, I need some definitions. \textbf{Definition 1} \inlinemetanote{writes: Definition I}: let's look at ideals here. So, let $\operatorname{cl}$ of this ring \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K})$} be the set of ideals. So, this equals the set of ideals of this ring \inlinemetanote{writes: $=$ Set of ideals of $\faktor{R}{K}$}. This is a ring, it has some set of ideals; just let this be the set of ideals of that ring. It could be infinite, could be small, but anyway, it's a set of ideals.
+For that, I need some definitions. \textbf{Definition 1} \inlinemetanote{writes: Definition I}: let's look at ideals here. So, let $\mathscr{I}$ of this ring \inlinemetanote{writes: $\mathscr{I}(\faktor{R}{K})$} be the set of ideals. So, this equals the set of ideals of this ring \inlinemetanote{writes: $=$ Set of ideals of $\faktor{R}{K}$}. This is a ring, it has some set of ideals; just let this be the set of ideals of that ring. It could be infinite, could be small, but anyway, it's a set of ideals.
 
-And \textbf{Definition 2} \inlinemetanote{writes: Definition II} is: let $\operatorname{cl}_K(R)$ \inlinemetanote{writes: $\operatorname{cl}_K(R)$} be the set of ideals of $R$ which contain $K$ \inlinemetanote{writes: $=$ Set of ideals of $R$ which contain $K$}.
+And \textbf{Definition 2} \inlinemetanote{writes: Definition II} is: let $\mathscr{I}_K(R)$ \inlinemetanote{writes: $\mathscr{I}_K(R)$} be the set of ideals of $R$ which contain $K$ \inlinemetanote{writes: $=$ Set of ideals of $R$ which contain $K$}.
 
-So, these definitions are kind of important. Let me just say it, and I'll write them again in case you don't: $\operatorname{cl}(\faktor{R}{K})$ equals all $J$ in $\faktor{R}{K}$ where $J$ is an ideal \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K}) = \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal} \}$}. This is just writing slightly more mathematically what I said there.
+So, these definitions are kind of important. Let me just say it, and I'll write them again in case you don't: $\mathscr{I}(\faktor{R}{K})$ equals all $J$ in $\faktor{R}{K}$ where $J$ is an ideal \inlinemetanote{writes: $\mathscr{I}(\faktor{R}{K}) = \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal} \}$}. This is just writing slightly more mathematically what I said there.
 
-And this $\operatorname{cl}_K(R)$ is equal to the set of $I$, ideals in $R$, such that $K$ is inside $I$ and $I$ is an ideal \inlinemetanote{writes: $\operatorname{cl}_K(R) = \{ I \subset R \mid K \subset I, I \text{ ideal} \}$}. Okay? So, I just said it again, but the definitions are crucial.
+And this $\mathscr{I}_K(R)$ is equal to the set of $I$, ideals in $R$, such that $K$ is inside $I$ and $I$ is an ideal \inlinemetanote{writes: $\mathscr{I}_K(R) = \{ I \subset R \mid K \subset I, I \text{ ideal} \}$}. Okay? So, I just said it again, but the definitions are crucial.
 \end{speech}
 
 \begin{content}
@@ -401,11 +401,11 @@ We define two collections of ideals:
 \begin{enumerate}[label=\textbf{(\Roman*)}]
     \item \textbf{Ideals of the Quotient Ring:}
     \begin{align}
-    \operatorname{cl}(\faktor{R}{K}) &:= \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal of } \faktor{R}{K} \}. \label{eq:def-id-quotient}
+    \mathscr{I}(\faktor{R}{K}) &:= \{ J \subset \faktor{R}{K} \mid J \text{ is an ideal of } \faktor{R}{K} \}. \label{eq:def-id-quotient}
     \end{align}
     \item \textbf{Ideals Containing the Kernel:}
     \begin{align}
-    \operatorname{cl}_K(R) &:= \{ I \subset R \mid K \subset I \text{ and } I \text{ is an ideal of } R \}. \label{eq:def-id-k}
+    \mathscr{I}_K(R) &:= \{ I \subset R \mid K \subset I \text{ and } I \text{ is an ideal of } R \}. \label{eq:def-id-k}
     \end{align}
 \end{enumerate}
 \end{notation}
@@ -416,7 +416,7 @@ We define two collections of ideals:
 \begin{speech}[00:18:40 - 00:20:07]
 So, is there any confusion about these definitions? I'm going to consider any ideal here, that's that set; and I consider here not any ideal, just ideals that contain the original $K$. Is that okay?
 
-So, the proposition, which is kind of fundamental here, is the relationship. And the proposition is that there is a bijection \inlinemetanote{writes: There is a bijection}, and this bijection is between, on the left side, $\operatorname{cl}_K(R)$ \inlinemetanote{writes: $\operatorname{cl}_K(R)$} --- so those are ideals in $R$ which contain $K$ ---; they're in bijective correspondence --- this is the bijection \inlinemetanote{draws double arrow $\longleftrightarrow$ with label \qt{bijection}} --- with this $\operatorname{cl}(\faktor{R}{K})$ \inlinemetanote{writes: $\operatorname{cl}(\faktor{R}{K})$}. That's what we're going to prove.
+So, the proposition, which is kind of fundamental here, is the relationship. And the proposition is that there is a bijection \inlinemetanote{writes: There is a bijection}, and this bijection is between, on the left side, $\mathscr{I}_K(R)$ \inlinemetanote{writes: $\mathscr{I}_K(R)$} --- so those are ideals in $R$ which contain $K$ ---; they're in bijective correspondence --- this is the bijection \inlinemetanote{draws double arrow $\longleftrightarrow$ with label \qt{bijection}} --- with this $\mathscr{I}(\faktor{R}{K})$ \inlinemetanote{writes: $\mathscr{I}(\faktor{R}{K})$}. That's what we're going to prove.
 
 So, we're going to prove this statement.
 
@@ -427,7 +427,7 @@ This is some kind of very nice way of thinking about ideals. We start with $R$ -
 \begin{proposition}[Correspondence of Ideals (in textbooks: Correspondence Theorem)]\label[proposition]{prop:correspondence-theorem-ideals}
 Let $R$ be a ring and $K \subset R$ an ideal. There is a canonical bijection:
 \begin{equation}\label{eq:correspondence-bijection}
-\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right).
+\mathscr{I}_K(R) \longleftrightarrow \mathscr{I}\left(\faktor{R}{K}\right).
 \end{equation}
 That is, the ideals of the quotient ring $\faktor{R}{K}$ are in exact one-to-one correspondence with the ideals of $R$ that contain $K$.
 \end{proposition}
@@ -443,12 +443,12 @@ That is, the ideals of the quotient ring $\faktor{R}{K}$ are in exact one-to-one
 % - Collisions: the arrows are 0.9 apart; each label sits on the outer side of its arrow
 % \end{hidden}
     \node[draw, thick, rounded corners, fill=MidnightBlue!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (-2.9, 0) {
-        $\operatorname{cl}_K(R)$\\[4pt]
+        $\mathscr{I}_K(R)$\\[4pt]
         \footnotesize ideals $I \subset R$\\
         \footnotesize with $K \subset I$
     };
     \node[draw, thick, rounded corners, fill=ForestGreen!10, minimum width=3.2cm, minimum height=2.2cm, align=center] at (2.9, 0) {
-        $\operatorname{cl}(\faktor{R}{K})$\\[4pt]
+        $\mathscr{I}(\faktor{R}{K})$\\[4pt]
         \footnotesize ideals $J \subset \faktor{R}{K}$
     };
     \draw[->, thick, BrickRed] (1.25, 0.45) -- node[above, font=\small] {$q^{-1}(J) \leftarrow J$} (-1.25, 0.45);
@@ -477,7 +477,7 @@ This theorem reveals the internal structure of quotient rings:
 % Old section name: \subsection{Construction and Well-Definedness of the Correspondence Maps}
 
 \begin{speech}[00:20:07 - 00:22:05]
-All right, so on this bijection, to prove it, I have to give you maps. If I have $J$ here \inlinemetanote{writes: $J \in \operatorname{cl}(\faktor{R}{K})$}, in $\faktor{R}{K}$, I have to take it to get an ideal here, right? \inlinemetanote{writes: $J \mapsto \dots$} And the map this way is going to be $f^{-1}(J)$ --- this is an ideal here \inlinemetanote{writes: $q^{-1}(J) \in \operatorname{cl}_K(R)$} ---, okay?
+All right, so on this bijection, to prove it, I have to give you maps. If I have $J$ here \inlinemetanote{writes: $J \in \mathscr{I}(\faktor{R}{K})$}, in $\faktor{R}{K}$, I have to take it to get an ideal here, right? \inlinemetanote{writes: $J \mapsto \dots$} And the map this way is going to be $f^{-1}(J)$ --- this is an ideal here \inlinemetanote{writes: $q^{-1}(J) \in \mathscr{I}_K(R)$} ---, okay?
 
 Let's first understand it. First, we said that if you take any ideal here, when you take $f^{-1}$, it is an ideal (Recall: \cref{prop:preimage-of-ideal}). I'm saying more now: not only is it an ideal, but it also contains $K$. And why does it contain $K$? Because if I take zero here, the inverse image of zero is all of $K$.
 
@@ -490,11 +490,11 @@ Are you happy with this statement? It's kind of important, because, you know, it
 
 \begin{content}[The Leftward Map: Pullback under the Quotient Map]
 \begin{claim}[Well-Definedness of the Pullback Map]\label[claim]{clm:pullback-well-defined}
-For any ideal $J \in \operatorname{cl}(\faktor{R}{K})$, its preimage under $q$:
+For any ideal $J \in \mathscr{I}(\faktor{R}{K})$, its preimage under $q$:
 \begin{equation}\label{eq:pullback-ideal-map}
 q^{-1}(J) = \{ x \in R \mid q(x) \in J \}
 \end{equation}
-is an ideal of $R$ that contains $K$, i.e., $q^{-1}(J) \in \operatorname{cl}_K(R)$.
+is an ideal of $R$ that contains $K$, i.e., $q^{-1}(J) \in \mathscr{I}_K(R)$.
 \end{claim}
 
 \begin{proof}
@@ -504,12 +504,12 @@ Since $J$ is an ideal in $\faktor{R}{K}$, it contains the additive identity $\ba
 \[
 K = \ker(q) = q^{-1}(\bar{0}) \subset q^{-1}(J).
 \]
-Hence, $K \subset q^{-1}(J)$, which proves that $q^{-1}(J) \in \operatorname{cl}_K(R)$.
+Hence, $K \subset q^{-1}(J)$, which proves that $q^{-1}(J) \in \mathscr{I}_K(R)$.
 \end{proof}
 \end{content}
 
 \begin{speech}[00:22:05 - 00:23:35]
-That's one direction. Now we have to do the other direction. If I have an ideal $I$ here \inlinemetanote{writes: $I \in \operatorname{cl}_K(R)$} --- I have an ideal here, $I$ ---, I have to be able to go this way and get an ideal of $\faktor{R}{K}$ \inlinemetanote{writes: $I \mapsto \dots$}.
+That's one direction. Now we have to do the other direction. If I have an ideal $I$ here \inlinemetanote{writes: $I \in \mathscr{I}_K(R)$} --- I have an ideal here, $I$ ---, I have to be able to go this way and get an ideal of $\faktor{R}{K}$ \inlinemetanote{writes: $I \mapsto \dots$}.
 
 And the natural thing to do is just to take $q$ of this \inlinemetanote{writes: $q(I)$}.
 
@@ -523,10 +523,10 @@ Anyway, that's the task at hand.
 \end{speech}
 
 \begin{content}[The Explicit Bijection Maps]
-To establish the correspondence $\operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right)$, we define two mutually inverse maps:
+To establish the correspondence $\mathscr{I}_K(R) \longleftrightarrow \mathscr{I}\left(\faktor{R}{K}\right)$, we define two mutually inverse maps:
 \begin{align}
-\Phi &\colon \operatorname{cl}\left(\faktor{R}{K}\right) \to \operatorname{cl}_K(R), \quad J \mapsto q^{-1}(J), \label{eq:map-phi} \\
-\Psi &\colon \operatorname{cl}_K(R) \to \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I) = \{ \bar{x} \in \faktor{R}{K} \mid x \in I \}. \label{eq:map-psi}
+\Phi &\colon \mathscr{I}\left(\faktor{R}{K}\right) \to \mathscr{I}_K(R), \quad J \mapsto q^{-1}(J), \label{eq:map-phi} \\
+\Psi &\colon \mathscr{I}_K(R) \to \mathscr{I}\left(\faktor{R}{K}\right), \quad I \mapsto q(I) = \{ \bar{x} \in \faktor{R}{K} \mid x \in I \}. \label{eq:map-psi}
 \end{align}
 
 \begin{steps}[Why the Forward Image $q(I)$ is an Ideal for the Quotient Map]
@@ -552,14 +552,14 @@ All right, so how are we going to prove it's an ideal? You know, we have to chec
 
 \begin{content}[Verification: Well-Definedness of Both Directions]
 \textbf{1. Left Arrow ($\longleftarrow$ is Well-Defined):}
-To show $\Phi(J) = q^{-1}(J) \in \operatorname{cl}_K(R)$, we must show that $K \subset q^{-1}(J)$:
+To show $\Phi(J) = q^{-1}(J) \in \mathscr{I}_K(R)$, we must show that $K \subset q^{-1}(J)$:
 \[
 \bar{0} \in J \implies q^{-1}(\bar{0}) \subset q^{-1}(J).
 \]
 Since $q^{-1}(\bar{0}) = \ker(q) = K$ (\cref{prop:properties-of-q}), we obtain $K \subset q^{-1}(J)$.
 
 \textbf{2. Right Arrow ($\longrightarrow$ is Well-Defined):}
-To show $\Psi(I) = q(I) \in \operatorname{cl}\left(\faktor{R}{K}\right)$, we must show that for any ideal $I \in \operatorname{cl}_K(R)$:
+To show $\Psi(I) = q(I) \in \mathscr{I}\left(\faktor{R}{K}\right)$, we must show that for any ideal $I \in \mathscr{I}_K(R)$:
 \[
 q(I) \subset \faktor{R}{K} \quad \text{is an ideal.}
 \]
@@ -668,7 +668,7 @@ So, we're happy about that. Okay, then we have one more thing to check.
 \end{speech}
 
 \begin{content}[Bijective Property Part (A): \texorpdfstring{$q(q^{-1}(J)) = J$}{q(q^{-1}(J)) = J}]
-Let $J \in \operatorname{cl}\left(\faktor{R}{K}\right)$ be an ideal of the quotient ring. We show:
+Let $J \in \mathscr{I}\left(\faktor{R}{K}\right)$ be an ideal of the quotient ring. We show:
 \begin{equation}\label{eq:composition-step-a}
 q(q^{-1}(J)) = J.
 \end{equation}
@@ -761,7 +761,7 @@ So, now I've proven that bijection. All right.
 \end{speech}
 
 \begin{content}[Bijective Property Part (B): \texorpdfstring{$q^{-1}(q(I)) = I$}{q^{-1}(q(I)) = I}]
-Let $I \in \operatorname{cl}_K(R)$ be an ideal containing $K$ (so $K \subset I \subset R$). We show:
+Let $I \in \mathscr{I}_K(R)$ be an ideal containing $K$ (so $K \subset I \subset R$). We show:
 \begin{equation}\label{eq:composition-step-b}
 q^{-1}(q(I)) = I.
 \end{equation}
@@ -863,7 +863,7 @@ Together, Steps (A) and (B) establish that $\Phi$ and $\Psi$ are mutually invers
 
 \begin{aiNote}[Beyond the Lecture: The Correspondence Preserves Inclusions]
 % [PERSISTENT, ADDITION]
-The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \operatorname{cl}_K(R)$, $I_1 \subseteq I_2$ clearly gives $q(I_1) \subseteq q(I_2)$; conversely, $q(I_1) \subseteq q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subseteq q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subseteq J_2$ holds in $\operatorname{cl}\left(\faktor{R}{K}\right)$ if and only if $q^{-1}(J_1) \subseteq q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
+The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \mathscr{I}_K(R)$, $I_1 \subseteq I_2$ clearly gives $q(I_1) \subseteq q(I_2)$; conversely, $q(I_1) \subseteq q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subseteq q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subseteq J_2$ holds in $\mathscr{I}\left(\faktor{R}{K}\right)$ if and only if $q^{-1}(J_1) \subseteq q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
 \end{aiNote}
 
 \begin{hidden}
@@ -1001,7 +1001,7 @@ Combining \cref{prop:field-zero-ideal-maximal} with the inclusion-preserving Cor
     \item \textbf{Pullbacks vs.\ Pushforwards of Ideals:} Under any ring homomorphism $f \colon R \to S$, the preimage $f^{-1}(J)$ of an ideal $J \subset S$ is always an ideal of $R$. Conversely, direct images $f(I)$ generally fail to be ideals (e.g., $2\mathbb{Z} \subset \mathbb{Z} \hookrightarrow \mathbb{Q}$).
     \item \textbf{The Correspondence Theorem for Ideals:} For an ideal $K \subset R$, the ideals of $\faktor{R}{K}$ are in canonical bijection with the ideals of $R$ containing $K$:
     \[
-    \operatorname{cl}_K(R) \longleftrightarrow \operatorname{cl}\left(\faktor{R}{K}\right), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
+    \mathscr{I}_K(R) \longleftrightarrow \mathscr{I}\left(\faktor{R}{K}\right), \quad I \mapsto q(I), \quad J \mapsto q^{-1}(J).
     \]
     Surjectivity of $q$ ensures $q(q^{-1}(J)) = J$, while the condition $K \subset I$ ensures $q^{-1}(q(I)) = I$.
     \item \textbf{Maximal Ideals and Fields:} An ideal $m \subsetneq R$ is maximal if no proper ideal strictly contains it. In $\mathbb{Z}$, the maximal ideals are precisely the ideals $p\mathbb{Z}$ for primes $p$. A commutative ring $R$ is a field if and only if the zero ideal $(0)$ is a maximal ideal.
