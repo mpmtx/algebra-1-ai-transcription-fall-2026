@@ -102,7 +102,7 @@
 In this lecture, we explore the structural theory of ideals in commutative rings and their corresponding quotient rings:
 \begin{itemize}
     \item \textbf{The Ideal Correspondence and Quotients of Quotients:} We review the bijection between ideals of $R$ containing $K$ and ideals of the quotient $\faktor{R}{K}$, and use it to describe a quotient of a quotient: $\faktor{\left(\faktor{R}{K}\right)}{J} \cong \faktor{R}{q^{-1}(J)}$.
-    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\mathscr{I}^*(R), \subseteq)$ and prove that $\faktor{R}{m}$ is a field if and only if $m$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
+    \item \textbf{Maximal Ideals and Fields:} We define maximal ideals within the poset of proper ideals $(\mathscr{I}^*(R), \subset)$ and prove that $\faktor{R}{m}$ is a field if and only if $m$ is maximal. Furthermore, we show via Zorn's Lemma that every non-zero commutative ring contains at least one maximal ideal, discussing its non-constructive foundational nature.
     \item \textbf{Prime Ideals and Integral Domains:} In parallel, we define prime ideals and establish that $\faktor{R}{P}$ is an integral domain if and only if $P$ is prime, deducing that every maximal ideal is prime. We examine a non-prime ideal: the smooth functions with compact support inside $C^\infty(\mathbb{R})$.
     \item \textbf{The Chinese Remainder Theorem for Rings:} We define ideal arithmetic (sums and products) and coprime ideals ($I + J = (1)$), formulating the general Chinese Remainder Theorem as a ring isomorphism $\phi \colon \faktor{R}{IJ} \xrightarrow{\sim} \faktor{R}{I} \times \faktor{R}{J}$ and completing the proof of injectivity.
 \end{itemize}
@@ -170,7 +170,7 @@ Under this bijection, the following structural properties hold for any $I \in \m
 \begin{itemize}
     \item \textbf{Pre-image of an Ideal:} For any ideal $J \subset \faktor{R}{K}$, the full pre-image $q^{-1}(J) = \{ x \in R \mid q(x) \in J \}$ is an ideal of $R$ that automatically contains $\ker(q) = K$.
     \item \textbf{Forward Image of an Ideal:} For any ideal $I \subset R$ containing $K$, the image $q(I) = \{ x + K \mid x \in I \}$ is an ideal of $\faktor{R}{K}$, commonly denoted as $\faktor{I}{K}$.
-    \item \textbf{Order Preservation:} For ideals $I_1, I_2 \in \mathscr{I}_K(R)$, one has $I_1 \subseteq I_2 \iff q(I_1) \subseteq q(I_2)$.
+    \item \textbf{Order Preservation:} For ideals $I_1, I_2 \in \mathscr{I}_K(R)$, one has $I_1 \subset I_2 \iff q(I_1) \subset q(I_2)$.
 \end{itemize}
 \end{steps}
 
@@ -382,15 +382,15 @@ Let $R$ be a ring and let $m \subset R$ be an ideal. Then $m$ is a \newterm{maxi
     \setcounter{enumi}{0} \item \textbf{Properness:} $m \in \mathscr{I}^*(R)$, i.e., $m \neq R$.
     \setcounter{enumi}{1} \item \textbf{Maximality:} For every proper ideal $\hat{m} \in \mathscr{I}^*(R)$,
     \[
-    \hat{m} \supseteq m \implies \hat{m} = m.
+    \hat{m} \supset m \implies \hat{m} = m.
     \]
 \end{enumerate}
-Equivalently, there are no ideals strictly between $m$ and $R$: if $I$ is an ideal of $R$ with $m \subseteq I \subseteq R$, then $I = m$ or $I = R$.
+Equivalently, there are no ideals strictly between $m$ and $R$: if $I$ is an ideal of $R$ with $m \subset I \subset R$, then $I = m$ or $I = R$.
 \end{definition}
 \end{content}
 
 \begin{insight}[The \qt{Tournament} Intuition for Maximal Ideals]
-The lecturer visualizes the partially ordered set of proper ideals $(\mathscr{I}^*(R), \subseteq)$ as a tournament: an ideal $\hat{m}$ \qt{beats} $m$ if $\hat{m} \supset m$. A maximal ideal is an undefeated player at the very top: no proper ideal strictly contains it. The entire ring $R$ is excluded from the competition by definition; otherwise, $R$ would trivialise the concept by containing every ideal.
+The lecturer visualizes the partially ordered set of proper ideals $(\mathscr{I}^*(R), \subset)$ as a tournament: an ideal $\hat{m}$ \qt{beats} $m$ if $\hat{m} \supset m$. A maximal ideal is an undefeated player at the very top: no proper ideal strictly contains it. The entire ring $R$ is excluded from the competition by definition; otherwise, $R$ would trivialise the concept by containing every ideal.
 \end{insight}
 
 \subsection{Fields and the Zero Ideal}
@@ -433,7 +433,7 @@ There's a small meeting of definitions here... I mean, you should think about th
 \begin{proof}[Proof of \cref{prop:field-zero-maximal} ($\implies$)]
 Assume $R$ is a field. By convention, a field is not the zero ring ($R \neq \{0\}$, so $1 \neq 0$).
 
-Since every non-zero element $x \in R \setminus \{0\}$ has a multiplicative inverse $x^{-1}$, any ideal $I \subseteq R$ containing a non-zero element $x$ also contains $1 = x^{-1} x$, which implies $I = R$. 
+Since every non-zero element $x \in R \setminus \{0\}$ has a multiplicative inverse $x^{-1}$, any ideal $I \subset R$ containing a non-zero element $x$ also contains $1 = x^{-1} x$, which implies $I = R$. 
 
 Hence, the only ideals of $R$ are the zero ideal and the whole ring:
 \begin{equation}\label{eq:field-ideals-w5}
@@ -710,15 +710,15 @@ S = \mathscr{I}^*(R) = \{ I \in \mathscr{I}(R) \mid I \neq R \},
 \end{equation}
 equipped with the partial order:
 \begin{equation}\label{eq:poset-inclusion-order}
-I \le J \stackrel{\text{def}}{\iff} I \subseteq J \quad (\text{written on the board as } I \subset J).
+I \le J \stackrel{\text{def}}{\iff} I \subset J.
 \end{equation}
-Two proper ideals $I, J \in \mathscr{I}^*(R)$ are incomparable if neither $I \subseteq J$ nor $J \subseteq I$ holds.
+Two proper ideals $I, J \in \mathscr{I}^*(R)$ are incomparable if neither $I \subset J$ nor $J \subset I$ holds.
 \end{example}
 \end{content}
 
-\begin{aiNote}[Notation: $\subset$ vs. $\subseteq$ for Set Inclusion]
+\begin{aiNote}[Notation: $\subset$ Allows Equality]
 % [PERSISTENT]
-The lecturer consistently writes $\subset$ on the blackboard for set inclusion, but explicitly clarifies verbally that this symbol allows for equality ($I \subseteq J$).
+As the lecturer explained in Week~4 (\cref{not:subset-board}) and says again just below, $I \subset J$ allows $I = J$, so $\subset$ is exactly the order $\le$ of this poset; a strict inclusion is $I \subsetneq J$. Many textbooks write $I \subseteq J$.
 \end{aiNote}
 
 \begin{speech}[00:29:58 - 00:31:18]
@@ -770,13 +770,13 @@ A binary relation $\le$ on a set $S$ is a \newterm{partial order} if it satisfie
 \end{definition}
 
 \begin{example}[Verification of Poset Axioms for Proper Ideals]\label[example]{ex:ideal-poset-verification}
-For the set $S = \mathscr{I}^*(R)$ equipped with the subset relation $\subseteq$:
+For the set $S = \mathscr{I}^*(R)$ equipped with the subset relation $\subset$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \setcounter{enumi}{0} \item \textbf{Reflexivity:} For any ideal $I \in \mathscr{I}^*(R)$, clearly $I \subseteq I$.
-    \setcounter{enumi}{1} \item \textbf{Antisymmetry:} For any $I, J \in \mathscr{I}^*(R)$, if $I \subseteq J$ and $J \subseteq I$, then $I = J$ by definition of set equality.
-    \setcounter{enumi}{2} \item \textbf{Transitivity:} For any $I, J, K \in \mathscr{I}^*(R)$, if $I \subseteq J$ and $J \subseteq K$, then $I \subseteq K$.
+    \setcounter{enumi}{0} \item \textbf{Reflexivity:} For any ideal $I \in \mathscr{I}^*(R)$, clearly $I \subset I$.
+    \setcounter{enumi}{1} \item \textbf{Antisymmetry:} For any $I, J \in \mathscr{I}^*(R)$, if $I \subset J$ and $J \subset I$, then $I = J$ by definition of set equality.
+    \setcounter{enumi}{2} \item \textbf{Transitivity:} For any $I, J, K \in \mathscr{I}^*(R)$, if $I \subset J$ and $J \subset K$, then $I \subset K$.
 \end{enumerate}
-Thus, $(\mathscr{I}^*(R), \subseteq)$ is a poset.
+Thus, $(\mathscr{I}^*(R), \subset)$ is a poset.
 \end{example}
 \end{content}
 
@@ -806,7 +806,7 @@ In words: no element in $S$ is strictly greater than $x$.
 \end{definition}
 
 \begin{proposition}[Equivalence with Maximal Ideals]\label[proposition]{prop:max-element-ideal-equiv}
-Let $R$ be a ring. An ideal $m \subset R$ is a maximal ideal of $R$ in the sense of \cref{def:maximal-ideal-w5} if and only if $m$ is a maximal element of the poset $(\mathscr{I}^*(R), \subseteq)$.
+Let $R$ be a ring. An ideal $m \subset R$ is a maximal ideal of $R$ in the sense of \cref{def:maximal-ideal-w5} if and only if $m$ is a maximal element of the poset $(\mathscr{I}^*(R), \subset)$.
 \end{proposition}
 
 \begin{steps}[Maximal Element vs. Maximum / Greatest Element]
@@ -815,7 +815,7 @@ Going beyond the lecture: it is crucial to distinguish between a \textbf{maximal
     \item \textbf{Greatest Element (Maximum):} An element $g \in S$ such that $y \le g$ for \emph{all} $y \in S$. A greatest element must be comparable to every element in the poset.
     \item \textbf{Maximal Element:} An element $x \in S$ such that \emph{no} element strictly exceeds it ($x \le y \implies x = y$). There can be multiple incomparable maximal elements in a poset!
 \end{itemize}
-In $(\mathscr{I}^*(R), \subseteq)$, there is generally no greatest element, but there can be many distinct maximal ideals (e.g., in $\mathbb{Z}$, the ideals $(2), (3), (5), \dots$ are all maximal elements of $\mathscr{I}^*(\mathbb{Z})$, and $(2)$ and $(3)$ are incomparable).
+In $(\mathscr{I}^*(R), \subset)$, there is generally no greatest element, but there can be many distinct maximal ideals (e.g., in $\mathbb{Z}$, the ideals $(2), (3), (5), \dots$ are all maximal elements of $\mathscr{I}^*(\mathbb{Z})$, and $(2)$ and $(3)$ are incomparable).
 \end{steps}
 
 \begin{center}
@@ -912,20 +912,20 @@ That's the definition of a chain. That's the abstract definition of a chain, and
 
 \begin{content}
 \begin{definition}[Chain]\label[definition]{def:chain-poset}
-Let $(S, \le)$ be a partially ordered set. A subset $T \subseteq S$ is called a \newterm{chain} if every two elements in $T$ are comparable:
+Let $(S, \le)$ be a partially ordered set. A subset $T \subset S$ is called a \newterm{chain} if every two elements in $T$ are comparable:
 \begin{equation}\label{eq:chain-condition}
 \forall x, y \in T \colon \quad x \le y \quad \lor \quad y \le x.
 \end{equation}
 \end{definition}
 
 \begin{example}[Chains of Proper Ideals]\label[example]{ex:chain-proper-ideals}
-In the poset of proper ideals $(\mathscr{I}^*(R), \subseteq)$, a chain is a collection of proper ideals $T \subseteq \mathscr{I}^*(R)$ such that for any $I, J \in T$:
+In the poset of proper ideals $(\mathscr{I}^*(R), \subset)$, a chain is a collection of proper ideals $T \subset \mathscr{I}^*(R)$ such that for any $I, J \in T$:
 \begin{equation}\label{eq:ideal-chain-condition}
-I \subseteq J \quad \lor \quad J \subseteq I.
+I \subset J \quad \lor \quad J \subset I.
 \end{equation}
 Heuristically, one often visualizes a chain as an ascending nested sequence of ideals:
 \[
-I_1 \subseteq I_2 \subseteq I_3 \subseteq \dots \subseteq I_n \subseteq \dots,
+I_1 \subset I_2 \subset I_3 \subset \dots \subset I_n \subset \dots,
 \]
 although a chain may be arbitrarily infinite and uncountably indexed.
 \end{example}
@@ -945,7 +945,7 @@ For an abstract poset, I have a notion of poset, I have a notion of chain --- ch
 
 \begin{content}
 \begin{definition}[Bounded Chain / Upper Bound]\label[definition]{def:bounded-chain}
-Let $(S, \le)$ be a poset and $T \subseteq S$ a chain. The chain $T$ is said to be \newterm{bounded} (above) in $S$ if there exists an element $z \in S$ such that:
+Let $(S, \le)$ be a poset and $T \subset S$ a chain. The chain $T$ is said to be \newterm{bounded} (above) in $S$ if there exists an element $z \in S$ such that:
 \begin{equation}\label{eq:upper-bound-def}
 \forall x \in T \colon \quad x \le z.
 \end{equation}
@@ -1000,7 +1000,7 @@ Okay, that's it.
 
 \begin{content}[Bounding Chains of Ideals and the Existence of Maximal Ideals]
 \begin{lemma}[Chains of Proper Ideals Are Bounded]\label[lemma]{lem:chains-ideals-bounded}
-Let $R$ be a non-zero ring and let $T \subseteq \mathscr{I}^*(R)$ be a non-empty chain of proper ideals. Then the union:
+Let $R$ be a non-zero ring and let $T \subset \mathscr{I}^*(R)$ be a non-empty chain of proper ideals. Then the union:
 \begin{equation}\label{eq:union-of-chain-ideals}
 K := \bigcup_{I \in T} I
 \end{equation}
@@ -1011,11 +1011,11 @@ is a proper ideal of $R$ ($K \in \mathscr{I}^*(R)$) and serves as an upper bound
 We verify that $K = \bigcup_{I \in T} I$ satisfies the required conditions:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{$K$ is non-empty:} Since $T$ is non-empty and every ideal $I \in T$ contains $0$, we have $0 \in K$.
-    \item \textbf{Additive Closure:} Let $a, b \in K$. By definition of the union, there exist ideals $I, I' \in T$ such that $a \in I$ and $b \in I'$. Since $T$ is a chain, either $I \subseteq I'$ or $I' \subseteq I$. Assume without loss of generality that $I \subseteq I'$. Then both $a, b \in I'$. Since $I'$ is an ideal, $a + b \in I' \subseteq K$.
-    \item \textbf{Absorption (Ideal Property):} Let $r \in R$ and $a \in K$. Then $a \in I$ for some $I \in T$. Since $I$ is an ideal, $ra \in I \subseteq K$.
+    \item \textbf{Additive Closure:} Let $a, b \in K$. By definition of the union, there exist ideals $I, I' \in T$ such that $a \in I$ and $b \in I'$. Since $T$ is a chain, either $I \subset I'$ or $I' \subset I$. Assume without loss of generality that $I \subset I'$. Then both $a, b \in I'$. Since $I'$ is an ideal, $a + b \in I' \subset K$.
+    \item \textbf{Absorption (Ideal Property):} Let $r \in R$ and $a \in K$. Then $a \in I$ for some $I \in T$. Since $I$ is an ideal, $ra \in I \subset K$.
     \item \textbf{Properness ($K \neq R$):} Since every ideal $I \in T$ is a proper ideal ($I \in \mathscr{I}^*(R)$), none of them contains the multiplicative identity $1$ (for if $1 \in I$, then $I = R$). Therefore, $1 \notin \bigcup_{I \in T} I = K$. Since $1 \notin K$, it follows that $K \neq R$, so $K \in \mathscr{I}^*(R)$.
 \end{enumerate}
-Finally, for every $I \in T$, clearly $I \subseteq K$. Hence, $K$ is an upper bound for $T$ in the poset $(\mathscr{I}^*(R), \subseteq)$.
+Finally, for every $I \in T$, clearly $I \subset K$. Hence, $K$ is an upper bound for $T$ in the poset $(\mathscr{I}^*(R), \subset)$.
 \end{proof}
 
 \begin{theorem}[Existence of Maximal Ideals (in textbooks: Krull's Theorem)]\label[theorem]{thm:krulls-theorem-maximal-ideals}
@@ -1026,7 +1026,7 @@ Every non-zero commutative ring $R \neq 0$ contains at least one maximal ideal.
 Let $R \neq 0$ be a non-zero ring. Consider the poset $S = \mathscr{I}^*(R)$ of proper ideals ordered by inclusion.
 \begin{itemize}
     \item Since $R \neq 0$, the zero ideal $(0)$ is a proper ideal ($(0) \neq R$), so $S = \mathscr{I}^*(R)$ is non-empty.
-    \item By \cref{lem:chains-ideals-bounded}, every non-empty chain $T \subseteq S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$; the empty chain is bounded by any element of $S$.
+    \item By \cref{lem:chains-ideals-bounded}, every non-empty chain $T \subset S$ has an upper bound in $S$, namely $K = \bigcup_{I \in T} I \in S$; the empty chain is bounded by any element of $S$.
 \end{itemize}
 By Zorn's Lemma (\cref{lem:zorns-lemma}), the poset $S$ contains at least one maximal element $m$. By \cref{prop:max-element-ideal-equiv}, $m$ is a maximal ideal of $R$.
 \end{proof}
@@ -1082,7 +1082,7 @@ Actually, I don't like the idea that the work in math I do is dependent on these
     
     % two lines: on one line the label was wider than the gap and ran into both boxes
     \draw[<->, ultra thick, MidnightBlue] (ac) -- node[above, font=\footnotesize, align=center] {$\text{ZF}$-\\equivalent} (zorn);
-    \draw[->, ultra thick, ForestGreen] (zorn) -- node[right, font=\footnotesize] {applied to $(\mathscr{I}^*(R), \subseteq)$} (krull);
+    \draw[->, ultra thick, ForestGreen] (zorn) -- node[right, font=\footnotesize] {applied to $(\mathscr{I}^*(R), \subset)$} (krull);
 \end{tikzpicture}
 \end{center}
 \end{content}
@@ -1528,7 +1528,7 @@ Then:
 \begin{itemize}
     \item $\operatorname{supp}(a) = (-\infty, 1]$ is unbounded, so $a \notin I$.
     \item $\operatorname{supp}(b) = [0, \infty)$ is unbounded, so $b \notin I$.
-    \item However, their pointwise product satisfies $(a \cdot b)(x) = 0$ for all $x \notin [0, 1]$. Thus, $\operatorname{supp}(a \cdot b) \subseteq [0, 1]$ is compact, which means:
+    \item However, their pointwise product satisfies $(a \cdot b)(x) = 0$ for all $x \notin [0, 1]$. Thus, $\operatorname{supp}(a \cdot b) \subset [0, 1]$ is compact, which means:
     \[
     a \cdot b \in I.
     \]
@@ -1893,7 +1893,7 @@ To show that $\phi(z' + IJ) = \phi(z + IJ)$, we must verify:
 (z + \gamma + I, \ z + \gamma + J) = (z + I, \ z + J).
 \]
 This holds if and only if $\gamma \in I$ and $\gamma \in J$.
-Since $IJ \subseteq I$ and $IJ \subseteq J$ (as established in \cref{lem:product-subset-intersection}), we have $\gamma \in I$ and $\gamma \in J$.
+Since $IJ \subset I$ and $IJ \subset J$ (as established in \cref{lem:product-subset-intersection}), we have $\gamma \in I$ and $\gamma \in J$.
 Consequently:
 \[
 z + \gamma + I = z + I \quad \text{and} \quad z + \gamma + J = z + J.
@@ -1930,7 +1930,7 @@ Once you're on top of this naming ambiguity, you see that this map makes sense: 
 \begin{lemma}[Inclusion in Component Ideals]\label[lemma]{lem:product-subset-intersection}
 For any two ideals $I, J$ in a commutative ring $R$:
 \begin{equation}\label{eq:product-subset-both}
-IJ \subseteq I \quad \text{and} \quad IJ \subseteq J \qquad (\text{hence } IJ \subseteq I \cap J).
+IJ \subset I \quad \text{and} \quad IJ \subset J \qquad (\text{hence } IJ \subset I \cap J).
 \end{equation}
 \end{lemma}
 
@@ -1940,7 +1940,7 @@ Let $\gamma \in IJ$. By \cref{def:product-of-ideals}, $\gamma = \sum_{r=1}^k i_r
     \item Since $I$ is an ideal, each term $i_r j_r \in I$ by ideal absorption. Because $I$ is closed under finite sums, $\gamma \in I$.
     \item Since $J$ is an ideal and $R$ is commutative, $i_r j_r = j_r i_r \in J$ by ideal absorption. Since $J$ is closed under finite sums, $\gamma \in J$.
 \end{itemize}
-Therefore, $IJ \subseteq I$ and $IJ \subseteq J$, which implies $IJ \subseteq I \cap J$.
+Therefore, $IJ \subset I$ and $IJ \subset J$, which implies $IJ \subset I \cap J$.
 \end{proof}
 \end{content}
 
@@ -2068,7 +2068,7 @@ Going beyond the lecture: the proof shows that for any two coprime ideals $I$ an
 \[
 I \cap J = I J.
 \]
-While the inclusion $I J \subseteq I \cap J$ holds unconditionally (\cref{lem:product-subset-intersection}), the reverse inclusion $I \cap J \subseteq I J$ relies crucially on coprimality:
+While the inclusion $I J \subset I \cap J$ holds unconditionally (\cref{lem:product-subset-intersection}), the reverse inclusion $I \cap J \subset I J$ relies crucially on coprimality:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Coprimality Decomposition:} $1 = i + j$ with $i \in I, j \in J$.
     \setcounter{enumi}{1} \item \textbf{Splitting Any Common Element:} Any $z \in I \cap J$ splits as $z = i z + j z$.
@@ -2083,7 +2083,7 @@ This identity $I \cap J = I J$ ensures that $\ker(\phi) = \faktor{(I \cap J)}{IJ
     \item \textbf{Ideal Correspondence Theorem:} For an ideal $K \subset R$, the projection $q \colon R \to \faktor{R}{K}$ induces an inclusion-preserving bijection between ideals of $R$ containing $K$ and all ideals of the quotient $\faktor{R}{K}$.
     \item \textbf{Quotients of Quotients:} For an ideal $K \subset R$ and an ideal $J \subset \faktor{R}{K}$, there is a canonical ring isomorphism $\faktor{R}{q^{-1}(J)} \cong \faktor{\left(\faktor{R}{K}\right)}{J}$.
     \item \textbf{Maximal Ideals and Fields:} An ideal $m \subset R$ is maximal if and only if $\faktor{R}{m}$ is a field. In particular, a commutative ring $R$ is a field if and only if $(0) \subset R$ is a maximal ideal.
-    \item \textbf{Maximal Ideals via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\mathscr{I}^*(R), \subseteq)$, where every chain is bounded above by the union of its members.
+    \item \textbf{Maximal Ideals via Zorn's Lemma:} Every non-zero commutative ring contains at least one maximal ideal. The proof uses Zorn's Lemma on the poset of proper ideals $(\mathscr{I}^*(R), \subset)$, where every chain is bounded above by the union of its members.
     \item \textbf{Prime Ideals and Integral Domains:} An ideal $P \subset R$ is prime if and only if $\faktor{R}{P}$ is an integral domain. Consequently, every maximal ideal is prime, and every non-zero commutative ring possesses at least one prime ideal.
     \item \textbf{Chinese Remainder Theorem:} For coprime ideals $I + J = (1)$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined by $z + IJ \mapsto (z + I, z + J)$ is an isomorphism. Injectivity follows from the decomposition $1 = i + j$, multiplied by $z$.
 \end{itemize}

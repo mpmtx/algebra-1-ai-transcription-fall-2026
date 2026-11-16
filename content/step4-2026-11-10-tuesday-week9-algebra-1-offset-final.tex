@@ -269,7 +269,7 @@ Okay? And then you can do it the other way around too, the symmetry.
 \begin{proof}[Proof of \cref{prop:normal-left-right-cosets}]
 Assume $H \subset G$ is normal, and let $x \in G$ be arbitrary. Consider the left coset $xH$.
 
-\textbf{Inclusion $xH \subseteq Hx$:} Take any element $xh \in xH$ (with $h \in H$), i.e., $xH \ni xh$. Since $H$ is normal in $G$, conjugation preserves $H$:
+\textbf{Inclusion $xH \subset Hx$:} Take any element $xh \in xH$ (with $h \in H$), i.e., $xH \ni xh$. Since $H$ is normal in $G$, conjugation preserves $H$:
 \[
 x h x^{-1} \in H.
 \]
@@ -281,9 +281,9 @@ Multiplying both sides on the right by $x$ yields
 \[
 xh = \hat{h}x.
 \]
-Since $\hat{h} \in H$, the right-hand side belongs to $Hx$, so $xh \in Hx$. As $xh \in xH$ was arbitrary, we have $xH \subseteq Hx$.
+Since $\hat{h} \in H$, the right-hand side belongs to $Hx$, so $xh \in Hx$. As $xh \in xH$ was arbitrary, we have $xH \subset Hx$.
 
-\textbf{Reverse inclusion $Hx \subseteq xH$:} By symmetry, starting with any $hx \in Hx$ and applying normality with $x^{-1}$ (i.e., $x^{-1} h x = \tilde{h} \in H$, so $hx = x \tilde{h} \in xH$) yields $Hx \subseteq xH$.
+\textbf{Reverse inclusion $Hx \subset xH$:} By symmetry, starting with any $hx \in Hx$ and applying normality with $x^{-1}$ (i.e., $x^{-1} h x = \tilde{h} \in H$, so $hx = x \tilde{h} \in xH$) yields $Hx \subset xH$.
 
 Combining both inclusions gives $xH = Hx$ for every $x \in G$, so the left cosets coincide with the right cosets.
 \end{proof}

@@ -696,7 +696,7 @@ So, the kernel enjoys these three properties: it contains the neutral element of
 
 \begin{content}[Consolidated Properties of the Kernel]
 \begin{proposition}[Properties of the Kernel]\label[proposition]{prop:kernel-properties}
-Let $f \colon G \to \hat{G}$ be a group homomorphism. The kernel $\operatorname{ker}(f) \subseteq G$ satisfies the following three fundamental structural properties:
+Let $f \colon G \to \hat{G}$ be a group homomorphism. The kernel $\operatorname{ker}(f) \subset G$ satisfies the following three fundamental structural properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Contains the Identity:} $e \in \operatorname{ker}(f)$.
     \item \textbf{Closure under Products:} $\forall a, b \in \operatorname{ker}(f) \colon ab \in \operatorname{ker}(f)$.
@@ -753,7 +753,7 @@ Associativity holds automatically for elements in $H$ because it holds for all e
 
 \begin{aiNote}[Notation: Subgroups]
 % [PERSISTENT]
-The lecturer writes $H \subset G$ and says in words that $H$ is a subgroup; these notes follow the board, in the boxes too. Many textbooks write $H \le G$ for subgroups. His $\subset$ allows equality, like $\subseteq$ (the same convention as for ideals in Week~1). Subgroups return in Week~7 with the same notation (\cref{def:subgroup-w7tue}), where they lead to Lagrange's Theorem: the order of a subgroup of a finite group divides the order of the group (\cref{thm:lagrange}).
+The lecturer writes $H \subset G$ and says in words that $H$ is a subgroup; these notes follow the board, in the boxes too. Many textbooks write $H \le G$ for subgroups. His $\subset$ allows equality, like $\subseteq$ (the same convention as for ideals in Week~1; he explains it in Week~4, \cref{not:subset-board}). Subgroups return in Week~7 with the same notation (\cref{def:subgroup-w7tue}), where they lead to Lagrange's Theorem: the order of a subgroup of a finite group divides the order of the group (\cref{thm:lagrange}).
 \end{aiNote}
 
 \subsection{Kernel and Image as Subgroups}
@@ -780,7 +780,7 @@ is a subgroup of the codomain $\hat{G}$.
 \end{proposition}
 
 \begin{proof}[Why the Image Is a Subgroup (beyond the lecture)]
-This lecture leaves this to the students; the lecturer proves it in Week~8 (\cref{prop:image-subgroup}). We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
+This lecture leaves this to the students; the lecturer proves it in Week~8 (\cref{prop:image-subgroup}). We verify the three subgroup axioms for $\operatorname{Im}(f) \subset \hat{G}$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} By \cref{prop:hom-preserves-identity}, $f(e) = \hat{e}$. Since $e \in G$, $\hat{e} \in \operatorname{Im}(f)$.
     \item \textbf{Closure under Multiplication:} Let $\hat{a}, \hat{b} \in \operatorname{Im}(f)$. Then there exist $a, b \in G$ such that $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $G$ is a group, $ab \in G$, and by the homomorphism property:
@@ -898,7 +898,7 @@ These are the two conditions that define an ideal. And the proposition last week
 \recap{Ideals were defined in Week~1 (\cref{def:ideal}), and the kernel of a ring homomorphism was shown to be one (\cref{prop:kernel-is-ideal}). The lecturer restates both; with the group notions of this lecture, the additive half of the proof becomes a one-liner.}
 
 \begin{definition}[Ideal of a Ring]\label[definition]{def:ideal-w2}
-Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} if it satisfies:
+Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subset R$ is called an \newterm{ideal} if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0) \subset (R, +, 0)$ is a subgroup, meaning:
     \[
@@ -1107,7 +1107,7 @@ S := \left\{ \frac{a}{2^n} \;\middle|\; a \in \mathbb{Z}, \ n \in \mathbb{Z}_{\g
 \begin{itemize}
     \item \textbf{Proper Inclusions:}
     \begin{itemize}
-        \item For $n = 0$, $\frac{a}{2^0} = a \in S$, so $\mathbb{Z} \subseteq S$. Moreover, $\frac{1}{2} = \frac{1}{2^1} \in S \setminus \mathbb{Z}$, so $\mathbb{Z} \subsetneq S$.
+        \item For $n = 0$, $\frac{a}{2^0} = a \in S$, so $\mathbb{Z} \subset S$. Moreover, $\frac{1}{2} = \frac{1}{2^1} \in S \setminus \mathbb{Z}$, so $\mathbb{Z} \subsetneq S$.
         \item Clearly $S \subset \mathbb{Q}$. Moreover, $\frac{1}{3} \in \mathbb{Q} \setminus S$ (since $3 \nmid 2^n$ for any $n \ge 0$), so $S \subsetneq \mathbb{Q}$.
     \end{itemize}
     \item \textbf{Subring Axioms:}
@@ -1243,7 +1243,7 @@ The only subring of $(\mathbb{Z}, +, \cdot, 0, 1)$ is $\mathbb{Z}$ itself.
 \end{proposition}
 
 \begin{proof}
-Let $S \subseteq \mathbb{Z}$ be a subring.
+Let $S \subset \mathbb{Z}$ be a subring.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item By condition (i) of \cref{def:subring}, $1 \in S$.
     \item Since $S$ is closed under addition, by induction $n = \underbrace{1 + 1 + \dots + 1}_{n \text{ times}} \in S$ for all positive integers $n \in \mathbb{N}_{>0}$.
@@ -1464,8 +1464,8 @@ And the important part of this remainder term is that $0 \le r < n$: \inlinemeta
 \begin{content}[Division Algorithm Setup]
 We show $I = n\mathbb{Z}$:
 \begin{itemize}
-    \item \textbf{Inclusion $n\mathbb{Z} \subseteq I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \colon kn \in I$, so $n\mathbb{Z} \subseteq I$.
-    \item \textbf{Inclusion $I \subseteq n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{division algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
+    \item \textbf{Inclusion $n\mathbb{Z} \subset I$:} Since $n \in I$ and $I$ is an ideal, by multiplicative absorption $\forall k \in \mathbb{Z} \colon kn \in I$, so $n\mathbb{Z} \subset I$.
+    \item \textbf{Inclusion $I \subset n\mathbb{Z}$:} Let $y \in I$ be arbitrary. By the \newterm{division algorithm} (\cref{fact:pre-division}), there exist unique quotient and remainder integers $q, r \in \mathbb{Z}$ such that:
     \begin{equation}\label{eq:division-remainder}
     y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.
     \end{equation}
@@ -1499,7 +1499,7 @@ Let $I \subset \mathbb{Z}$ be an ideal.
     \]
     We show that $I = n\mathbb{Z}$:
     \begin{itemize}
-        \item Since $n \in I$ and $I$ is an ideal, $k \cdot n \in I$ for all $k \in \mathbb{Z}$, whence $n\mathbb{Z} \subseteq I$.
+        \item Since $n \in I$ and $I$ is an ideal, $k \cdot n \in I$ for all $k \in \mathbb{Z}$, whence $n\mathbb{Z} \subset I$.
         \item Conversely, let $y \in I$ be arbitrary. Applying the division algorithm to divide $y$ by $n$:
         \[
         y = q \cdot n + r \quad \text{with} \quad 0 \le r < n.
@@ -1661,7 +1661,7 @@ By Heine--Borel, $\operatorname{supp}(f)$ is compact if and only if it is bounde
     \draw[thick, gray] (1.5, 0.08) -- (1.5, -0.08);
 
     % Compact support bracket indicator; a and b sit beside its end bars (below the ticks, the bars crossed them)
-    \draw[thick, ForestGreen, |-|] (-1.5, -0.35) -- (1.5, -0.35) node[midway, below, font=\footnotesize] {$\operatorname{supp}(f) \subseteq [a, b]$};
+    \draw[thick, ForestGreen, |-|] (-1.5, -0.35) -- (1.5, -0.35) node[midway, below, font=\footnotesize] {$\operatorname{supp}(f) \subset [a, b]$};
     \node[anchor=east, font=\footnotesize] at (-1.56, -0.35) {$a$};
     \node[anchor=west, font=\footnotesize] at (1.56, -0.35) {$b$};
 
@@ -1686,10 +1686,10 @@ The set $I \subset C^\infty(\mathbb{R})$ of compactly supported smooth functions
 \begin{proof}
 We check the ideal properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Additive Subgroup:} The zero function has $\operatorname{supp}(0) = \emptyset$, which is compact, so $0 \in I$. For $f, g \in I$, $\operatorname{supp}(f + g) \subseteq \operatorname{supp}(f) \cup \operatorname{supp}(g)$. The union of two compact sets is compact, so $f + g \in I$ and $-f \in I$.
+    \item \textbf{Additive Subgroup:} The zero function has $\operatorname{supp}(0) = \emptyset$, which is compact, so $0 \in I$. For $f, g \in I$, $\operatorname{supp}(f + g) \subset \operatorname{supp}(f) \cup \operatorname{supp}(g)$. The union of two compact sets is compact, so $f + g \in I$ and $-f \in I$.
     \item \textbf{Multiplicative Absorption:} Let $g \in C^\infty(\mathbb{R})$ be an \emph{arbitrary} smooth function, and let $f \in I$. Since $(g \cdot f)(x) = 0$ whenever $f(x) = 0$, we have:
     \[
-    \operatorname{supp}(g \cdot f) \subseteq \operatorname{supp}(f).
+    \operatorname{supp}(g \cdot f) \subset \operatorname{supp}(f).
     \]
     As a closed subset of the compact set $\operatorname{supp}(f)$, $\operatorname{supp}(g \cdot f)$ is compact. Thus, $g \cdot f \in I$.
 \end{enumerate}
@@ -1764,7 +1764,7 @@ I \subsetneq J \neq C^\infty(\mathbb{R}).
 \begin{proof}
 \begin{itemize}
     \item \textbf{$J$ is an ideal:} If $f(x) = 0$ for $x \ge M_1$ and $g(x) = 0$ for $x \ge M_2$, then $(f+g)(x) = 0$ for $x \ge \max(M_1, M_2)$; also $0 \in J$ and $-f = (-1) \cdot f \in J$. Furthermore, for any $h \in C^\infty(\mathbb{R})$, $(h \cdot f)(x) = h(x) \cdot 0 = 0$ for all $x \ge M_1$.
-    \item \textbf{Proper inclusions:} If $f \in I$, its support is bounded, so it vanishes for large positive $x$, whence $I \subseteq J$. A smooth function that is zero for $x \ge 0$ but non-zero on all of $(-\infty, 0)$, such as $x \mapsto e^{1/x}$ for $x < 0$ and $0$ for $x \ge 0$ (\cref{fact:pre-flat-function}), belongs to $J$ but not to $I$, so $I \subsetneq J$. Finally, the constant function $1 \notin J$, so $J \subsetneq C^\infty(\mathbb{R})$.
+    \item \textbf{Proper inclusions:} If $f \in I$, its support is bounded, so it vanishes for large positive $x$, whence $I \subset J$. A smooth function that is zero for $x \ge 0$ but non-zero on all of $(-\infty, 0)$, such as $x \mapsto e^{1/x}$ for $x < 0$ and $0$ for $x \ge 0$ (\cref{fact:pre-flat-function}), belongs to $J$ but not to $I$, so $I \subsetneq J$. Finally, the constant function $1 \notin J$, so $J \subsetneq C^\infty(\mathbb{R})$.
 \end{itemize}
 \end{proof}
 \end{content}

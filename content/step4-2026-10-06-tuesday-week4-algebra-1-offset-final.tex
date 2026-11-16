@@ -149,7 +149,7 @@ So, it's another way. And of course, if you have two different paths, then you h
 \begin{content}[Polynomial Rings in One and Several Variables]
 Let $R$ be a commutative ring with identity. Recall the construction of the \newterm{polynomial ring} $R[x]$ (\cref{def:poly-ring-informal}) and the \newterm{formal power series ring} $R[[x]]$ (\cref{def:power-series-ring-formal}). Every polynomial can be naturally identified with a formal power series having only finitely many non-zero coefficients, yielding the subring inclusion:
 \[
-R[x] \subseteq R[[x]].
+R[x] \subset R[[x]].
 \]
 
 \begin{definition}[Polynomial Ring in Two Variables]\label[definition]{def:two-variable-polynomial-ring}
@@ -487,7 +487,7 @@ And we discussed this also before: then the kernel of $f$, which is defined to b
 Let $R$ be a commutative ring with identity.
 
 \begin{definition}[Ideal]\label[definition]{def:ideal-w4}
-A subset $I \subseteq R$ is called an \newterm{ideal} of $R$ if it satisfies the following two conditions:
+A subset $I \subset R$ is called an \newterm{ideal} of $R$ if it satisfies the following two conditions:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup Condition:}
     $(I, +, 0)$ is a subgroup of the additive group $(R, +, 0)$. That is, $0 \in I$, and for all $x, y \in I$, $x - y \in I$.
@@ -808,7 +808,7 @@ We verify the three defining axioms:
 \end{proof}
 
 \begin{steps}[Subgroup Property Sufficiency]
-Notice that verifying that $\equiv_I$ is an equivalence relation relies \textbf{exclusively} on the fact that $(I, +, 0)$ is an additive subgroup of $(R, +, 0)$. The multiplicative absorption condition $R \cdot I \subseteq I$ has not yet been utilized!
+Notice that verifying that $\equiv_I$ is an equivalence relation relies \textbf{exclusively} on the fact that $(I, +, 0)$ is an additive subgroup of $(R, +, 0)$. The multiplicative absorption condition $R \cdot I \subset I$ has not yet been utilized!
 \end{steps}
 \end{content}
 
@@ -866,9 +866,9 @@ An element of $\faktor{R}{I}$ is an equivalence class containing elements of $R$
 
 \begin{description}
     \item[1. Overline Notation:] \textbf{$\bar{x} \in \faktor{R}{I}$:} Denoted $\bar{x} \in \faktor{R}{I}$. This is compact and mirrors the notation used for residue classes $\faktor{\mathbb{Z}}{n\mathbb{Z}}$ (\cref{def:residue-class-ring}).
-    \item[2. Shift Notation:] \textbf{$x + I \subseteq R$:} Explicitly writing the equivalence class as an affine shift of the ideal:
+    \item[2. Shift Notation:] \textbf{$x + I \subset R$:} Explicitly writing the equivalence class as an affine shift of the ideal:
     \begin{equation}\label{eq:coset-explicit-def}
-    \bar{x} = x + I := \{ x + i \mid i \in I \} \subseteq R.
+    \bar{x} = x + I := \{ x + i \mid i \in I \} \subset R.
     \end{equation}
     Since $y \equiv x \iff y - x = i \in I \iff y = x + i$, the equivalence class of $x$ is literally the subset $x + I$.
     \item[3. Bare Representative:] \textbf{$x \in \faktor{R}{I}$:} Writing simply $x \in \faktor{R}{I}$, by abuse of notation. While by far the most common, this requires carefully tracking whether $x$ represents an individual ring element in $R$ or an entire equivalence class in $\faktor{R}{I}$ (the \qt{data type} in one's head).
@@ -1007,9 +1007,9 @@ To establish that $\overline{(x + i)(y + j)} = \overline{x y}$, we must verify t
 \]
 We examine each of the three cross-terms:
 \begin{itemize}
-    \item $i \in I$ and $y \in R \implies i \cdot y \in I$ by the \textbf{multiplicative absorption property} of ideals ($I \cdot R \subseteq I$).
-    \item $j \in I$ and $x \in R \implies j \cdot x \in I$ by the \textbf{multiplicative absorption property} ($R \cdot I \subseteq I$).
-    \item $i, j \in I \implies i \cdot j \in I$ (in fact, $I \cdot I \subseteq I$).
+    \item $i \in I$ and $y \in R \implies i \cdot y \in I$ by the \textbf{multiplicative absorption property} of ideals ($I \cdot R \subset I$).
+    \item $j \in I$ and $x \in R \implies j \cdot x \in I$ by the \textbf{multiplicative absorption property} ($R \cdot I \subset I$).
+    \item $i, j \in I \implies i \cdot j \in I$ (in fact, $I \cdot I \subset I$).
 \end{itemize}
 Since $(I, +, 0)$ is closed under addition:
 \[
@@ -1053,7 +1053,7 @@ And to show this is well-defined, which I did here quickly at the end with diffe
 \recap{This is the definition from the start of this lecture (\cref{def:ideal-w4}), which the lecturer writes on the board again.}
 
 \begin{definition}[Ideal Axioms Reviewed]\label[definition]{def:ideal-axioms-reviewed}
-A subset $I \subseteq R$ is an ideal if and only if:
+A subset $I \subset R$ is an ideal if and only if:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup Axiom:}
     \[
@@ -1358,7 +1358,7 @@ That's Step 2, and this is a surjection. So, I call $\bar{f}$ the same thing, so
 
 \begin{content}[Surjectivity of the Induced Homomorphism onto the Image]
 \begin{claim}[Surjectivity of $\bar{f}$ onto $\operatorname{Im}(f)$]\label[claim]{clm:fbar-surjective}
-The image of $\bar{f}$ is precisely the subring $\operatorname{Im}(f) \subseteq S$. Consequently, the restricted codomain map:
+The image of $\bar{f}$ is precisely the subring $\operatorname{Im}(f) \subset S$. Consequently, the restricted codomain map:
 \begin{equation}\label{eq:fbar-surjective-map}
 \bar{f} \colon \faktor{R}{\ker(f)} \twoheadrightarrow \operatorname{Im}(f)
 \end{equation}
@@ -1368,8 +1368,8 @@ is a surjective ring homomorphism.
 \begin{proof}
 We verify mutual inclusion of sets:
 \begin{itemize}
-    \item \textbf{$\operatorname{Im}(\bar{f}) \subseteq \operatorname{Im}(f)$:} For any class $\bar{x} \in \faktor{R}{\ker(f)}$, $\bar{f}(\bar{x}) = f(x) \in \operatorname{Im}(f)$ by definition of the image of $f$.
-    \item \textbf{$\operatorname{Im}(f) \subseteq \operatorname{Im}(\bar{f})$:} Let $y \in \operatorname{Im}(f)$. By definition of the image, there exists an element $x \in R$ such that $f(x) = y$. Considering the class $\bar{x} \in \faktor{R}{\ker(f)}$, we have:
+    \item \textbf{$\operatorname{Im}(\bar{f}) \subset \operatorname{Im}(f)$:} For any class $\bar{x} \in \faktor{R}{\ker(f)}$, $\bar{f}(\bar{x}) = f(x) \in \operatorname{Im}(f)$ by definition of the image of $f$.
+    \item \textbf{$\operatorname{Im}(f) \subset \operatorname{Im}(\bar{f})$:} Let $y \in \operatorname{Im}(f)$. By definition of the image, there exists an element $x \in R$ such that $f(x) = y$. Considering the class $\bar{x} \in \faktor{R}{\ker(f)}$, we have:
     \[
     \bar{f}(\bar{x}) = f(x) = y.
     \]
@@ -1407,7 +1407,7 @@ Consequently, $\bar{f}$ is injective.
 \end{claim}
 
 \begin{proof}
-Let $\bar{x} \in \ker(\bar{f}) \subseteq \faktor{R}{\ker(f)}$. By definition of the kernel:
+Let $\bar{x} \in \ker(\bar{f}) \subset \faktor{R}{\ker(f)}$. By definition of the kernel:
 \[
 \bar{f}(\bar{x}) = 0_S.
 \]
@@ -1555,7 +1555,7 @@ We check the two defining conditions of an ideal:
 
 \begin{aiNote}[Beyond the Lecture: The Smallest Ideal Containing the $x_i$]
 % [PERSISTENT, ADDITION]
-The name \qt{ideal generated by the $x_i$} reflects a minimality property: $(x_1, \dots, x_n)$ is the smallest ideal of $R$ containing $x_1, \dots, x_n$. It contains each $x_i = 1 \cdot x_i$. Conversely, an ideal $J$ containing $x_1, \dots, x_n$ contains every $a_i x_i$ by absorption, hence every sum $\sum_{i=1}^n a_i x_i$ by additive closure, so $(x_1, \dots, x_n) \subseteq J$.
+The name \qt{ideal generated by the $x_i$} reflects a minimality property: $(x_1, \dots, x_n)$ is the smallest ideal of $R$ containing $x_1, \dots, x_n$. It contains each $x_i = 1 \cdot x_i$. Conversely, an ideal $J$ containing $x_1, \dots, x_n$ contains every $a_i x_i$ by absorption, hence every sum $\sum_{i=1}^n a_i x_i$ by additive closure, so $(x_1, \dots, x_n) \subset J$.
 \end{aiNote}
 
 \subsection{Quotients of Univariate Polynomial Rings}
@@ -1808,7 +1808,7 @@ Since $\mathbb{Q}[i]$ is a subfield of $\mathbb{C}$ (\cref{def:pre-field}), the 
 
 \begin{aiNote}[Terminology Note: Gaussian Rationals vs.\ Gaussian Integers]
 % [PERSISTENT]
-In the lecture audio, the professor refers to $\mathbb{Q}[i] = \{ a + b i \mid a, b \in \mathbb{Q} \}$ as the \qt{Gaussian integers}. In standard algebraic terminology, the Gaussian integers are $\mathbb{Z}[i] = \{ a + b i \mid a, b \in \mathbb{Z} \}$ (\cref{def:gaussian-integers}), while $\mathbb{Q}[i] = \operatorname{Frac}(\mathbb{Z}[i])$ is the field of \newterm{Gaussian rationals} (\cref{ex:frac-gaussian-integers}), often written $\mathbb{Q}(i)$. The blackboard notation $\mathbb{Q}[i]$ is preserved verbatim.
+Here the lecturer calls $\mathbb{Q}[i] = \{ a + b i \mid a, b \in \mathbb{Q} \}$ the \qt{Gaussian integers}. The Gaussian integers are $\mathbb{Z}[i] = \{ a + b i \mid a, b \in \mathbb{Z} \}$ (\cref{def:gaussian-integers}), while $\mathbb{Q}[i] = \operatorname{Frac}(\mathbb{Z}[i])$ is the field of \newterm{Gaussian rationals} (\cref{ex:frac-gaussian-integers}), often written $\mathbb{Q}(i)$ in textbooks. These notes keep the board's $\mathbb{Q}[i]$.
 \end{aiNote}
 
 \subsection{Computing the Kernel via Polynomial Long Division}
@@ -1831,7 +1831,7 @@ Actually, that is a way of writing the ring of Gaussian integers (i.e., Gaussian
 \begin{lemma}[Ideal Containment in the Kernel]\label[lemma]{lem:ideal-contained-in-kernel}
 The principal ideal $(x^2 + 1)$ is contained in $\ker(f)$:
 \begin{equation}\label{eq:ideal-contained-ker}
-(x^2 + 1) \subseteq \ker(f).
+(x^2 + 1) \subset \ker(f).
 \end{equation}
 \end{lemma}
 
@@ -1844,7 +1844,7 @@ Since $\ker(f)$ is an ideal of $\mathbb{Q}[x]$ (\cref{prop:kernel-is-ideal-w4}),
 \[
 \forall q(x) \in \mathbb{Q}[x] \colon q(x)(x^2 + 1) \in \ker(f).
 \]
-Hence, $(x^2 + 1) \subseteq \ker(f)$.
+Hence, $(x^2 + 1) \subset \ker(f)$.
 \end{proof}
 \end{content}
 
@@ -1921,7 +1921,7 @@ The kernel of the homomorphism $f \colon \mathbb{Q}[x] \to \mathbb{C}$ is precis
 \end{theorem}
 
 \begin{proof}
-We established in \cref{lem:ideal-contained-in-kernel} that $(x^2 + 1) \subseteq \ker(f)$. We now prove the reverse inclusion $\ker(f) \subseteq (x^2 + 1)$.
+We established in \cref{lem:ideal-contained-in-kernel} that $(x^2 + 1) \subset \ker(f)$. We now prove the reverse inclusion $\ker(f) \subset (x^2 + 1)$.
 
 Let $p(x) \in \ker(f)$. By definition, $p(i) = 0$. By \cref{lem:poly-division-algorithm}, divide $p(x)$ by $x^2 + 1$:
 \[
@@ -1947,7 +1947,7 @@ Therefore, the remainder vanishes identically, and:
 \[
 p(x) = q(x)(x^2 + 1) \in (x^2 + 1).
 \]
-Thus, $\ker(f) \subseteq (x^2 + 1)$, which completes the proof that $\ker(f) = (x^2 + 1)$.
+Thus, $\ker(f) \subset (x^2 + 1)$, which completes the proof that $\ker(f) = (x^2 + 1)$.
 \end{proof}
 
 \begin{corollary}[Realization of the Gaussian Rationals as a Quotient Ring]\label[corollary]{cor:gaussian-rationals-quotient}
@@ -1964,7 +1964,7 @@ In particular, $\faktor{\mathbb{Q}[x]}{(x^2 + 1)}$ is an integral domain and a f
     \item \textbf{Several Variables and the Binomial Formula:} $R[x, y]$ consists of the finite sums $\sum a_{i,j} x^i y^j$, or equivalently $R[x, y] = (R[x])[y]$. The binomial formula $(x + y)^n = \sum_{a=0}^n x^{n-a} y^a \binom{n}{a}$ holds in every commutative ring; since $p \mid \binom{p}{a}$ for $0 < a < p$, it becomes $(x + y)^p = x^p + y^p$ over $\faktor{\mathbb{Z}}{p\mathbb{Z}}$.
     \item \textbf{Polynomial and Power Series Rings:} The rings $R[x]$ and $R[[x]]$ preserve the integral domain property of $R$, relying on the highest term and the lowest term, respectively.
     \item \textbf{Laurent Series and Rational Functions:} The field of rational functions $R(x)$ is $\operatorname{Frac}(R[x])$, while over a field $K$ the field of formal Laurent series $K((x))$ (finitely many negative powers) is naturally isomorphic to $\operatorname{Frac}(K[[x]])$.
-    \item \textbf{Ideals and Well-Defined Quotients:} An ideal $I \subset R$ requires additive closure and multiplicative absorption ($R \cdot I \subseteq I$). In constructing the quotient ring $\faktor{R}{I}$, the additive subgroup condition guarantees well-defined addition, while the absorption property is strictly required to ensure well-defined multiplication of classes.
+    \item \textbf{Ideals and Well-Defined Quotients:} An ideal $I \subset R$ requires additive closure and multiplicative absorption ($R \cdot I \subset I$). In constructing the quotient ring $\faktor{R}{I}$, the additive subgroup condition guarantees well-defined addition, while the absorption property is strictly required to ensure well-defined multiplication of classes.
     \item \textbf{The First Isomorphism Theorem for Rings:} Every ring homomorphism $f \colon R \to S$ induces a canonical ring isomorphism $\bar{f} \colon \faktor{R}{\ker(f)} \overset{\cong}{\to} \operatorname{Im}(f)$ via $\bar{x} \mapsto f(x)$.
     \item \textbf{Generated Ideals and Polynomial Quotients:} Elements $x_1, \dots, x_n$ generate the ideal $(x_1, \dots, x_n)$ of their $R$-linear combinations. Modding out by $x^2+1$ over $\mathbb{C}$ produces zero divisors via $(x+i)(x-i) \equiv 0$, whereas over $\mathbb{Q}$, evaluation at $i$, the First Isomorphism Theorem and division with remainder by $x^2 + 1$ give $\faktor{\mathbb{Q}[x]}{(x^2+1)} \cong \mathbb{Q}[i]$, the field of Gaussian rationals.
 \end{itemize}

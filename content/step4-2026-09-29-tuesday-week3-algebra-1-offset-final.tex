@@ -1440,7 +1440,7 @@ such that:
 \end{content}
 
 \begin{content}[Algebraic View: Working with Fractions]
-In mathematical practice, once the formal construction of $F = S_{\equiv}$ is established, we identify $R$ with its image $i(R) \subseteq F$ and adopt standard fraction notation:
+In mathematical practice, once the formal construction of $F = S_{\equiv}$ is established, we identify $R$ with its image $i(R) \subset F$ and adopt standard fraction notation:
 \begin{equation}\label{eq:fraction-notation-standard}
 \frac{r}{s} := [(r, s)] \in \operatorname{Frac}(R) \quad (r, s \in R, \ s \ne 0).
 \end{equation}
@@ -1539,7 +1539,7 @@ Since $\mathbb{Z} \subset \mathbb{Z}_{1/3} \subset \mathbb{Q}$, any fraction of 
 \end{example}
 
 \begin{proposition}[Intermediate Subrings of $\mathbb{Q}$]\label[proposition]{prop:subrings-q-frac}
-Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \mathbb{Q}$. Then:
+Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subset R \subset \mathbb{Q}$. Then:
 \begin{equation}\label{eq:intermediate-frac-q}
 \operatorname{Frac}(R) = \mathbb{Q}.
 \end{equation}
@@ -1570,11 +1570,11 @@ Let $R$ be any subring of $\mathbb{Q}$ with $\mathbb{Z} \subseteq R \subseteq \m
 \end{center}
 
 \begin{steps}[Why All Intermediate Subrings Yield $\mathbb{Q}$]
-Going beyond the lecture: the universal property was only proved for $\mathbb{Z}$ (\cref{thm:universal-property-q}), so here is a direct argument. Since $R \subseteq \mathbb{Q}$, a formal fraction $\frac{r}{s} \in \operatorname{Frac}(R)$ can be read as an actual rational number, which gives a map
+Going beyond the lecture: the universal property was only proved for $\mathbb{Z}$ (\cref{thm:universal-property-q}), so here is a direct argument. Since $R \subset \mathbb{Q}$, a formal fraction $\frac{r}{s} \in \operatorname{Frac}(R)$ can be read as an actual rational number, which gives a map
 \[
 \Phi \colon \operatorname{Frac}(R) \to \mathbb{Q}, \qquad [(r, s)] \mapsto r s^{-1}.
 \]
-It is well-defined: $(r, s) \equiv (r', s')$ means $r s' = r' s$, hence $r s^{-1} = r' s'^{-1}$ in $\mathbb{Q}$. It is a ring homomorphism, because the operations of $\operatorname{Frac}(R)$ (\cref{def:addition-F}, \cref{def:multiplication-F}) are the usual fraction rules of $\mathbb{Q}$. As a homomorphism out of a field into a non-zero ring it is injective (\cref{thm:ideals-in-a-field} and the steps after it). It is surjective, since every rational number is $\frac{p}{q}$ with $p, q \in \mathbb{Z} \subseteq R$, $q \neq 0$. Hence $\Phi$ is an isomorphism, $\operatorname{Frac}(R) \cong \mathbb{Q}$.
+It is well-defined: $(r, s) \equiv (r', s')$ means $r s' = r' s$, hence $r s^{-1} = r' s'^{-1}$ in $\mathbb{Q}$. It is a ring homomorphism, because the operations of $\operatorname{Frac}(R)$ (\cref{def:addition-F}, \cref{def:multiplication-F}) are the usual fraction rules of $\mathbb{Q}$. As a homomorphism out of a field into a non-zero ring it is injective (\cref{thm:ideals-in-a-field} and the steps after it). It is surjective, since every rational number is $\frac{p}{q}$ with $p, q \in \mathbb{Z} \subset R$, $q \neq 0$. Hence $\Phi$ is an isomorphism, $\operatorname{Frac}(R) \cong \mathbb{Q}$.
 \end{steps}
 \end{content}
 
@@ -1675,7 +1675,7 @@ In this ring there are also the constant polynomials --- the ones with no $x$.
 \end{speech}
 
 \begin{content}[{The Polynomial Ring \texorpdfstring{$R[x]$}{R[x]}: Informal Formulation}]
-\recap{Polynomial rings were already used informally: $\mathbb{Z}[x] \subseteq \mathbb{Q}[x] \subseteq \mathbb{R}[x] \subseteq \mathbb{C}[x]$ in Week~1 (\cref{ex:inclusions-standard-rings}) and $\mathbb{Z}[x^2] \subset \mathbb{Z}[x]$ in Week~2 (\cref{ex:even-polynomials-subring}). Here they are defined formally.}
+\recap{Polynomial rings were already used informally: $\mathbb{Z}[x] \subset \mathbb{Q}[x] \subset \mathbb{R}[x] \subset \mathbb{C}[x]$ in Week~1 (\cref{ex:inclusions-standard-rings}) and $\mathbb{Z}[x^2] \subset \mathbb{Z}[x]$ in Week~2 (\cref{ex:even-polynomials-subring}). Here they are defined formally.}
 
 \begin{definition}[Polynomial Ring over a Commutative Ring]\label[definition]{def:poly-ring-informal}
 Let $R$ be a commutative ring with unit $1_R$. The \newterm{polynomial ring in one variable} (or indeterminate) $x$ with coefficients in $R$, denoted $R[x]$, is defined as the set of formal expressions:

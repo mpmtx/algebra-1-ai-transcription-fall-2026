@@ -95,7 +95,7 @@
 \begin{overview}[Course Content Overview]
 In this lecture, we complete the general ideal-theoretic formulation of the Chinese Remainder Theorem for commutative rings and begin the theory of polynomial rings over fields:
 \begin{itemize}
-    \item \textbf{The Canonical Product Homomorphism:} Definition of the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ and verification of well-definedness via the ideal inclusions $IJ \subseteq I, J$.
+    \item \textbf{The Canonical Product Homomorphism:} Definition of the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ and verification of well-definedness via the ideal inclusions $IJ \subset I, J$.
     \item \textbf{Failure of Isomorphism for Non-Coprime Ideals:} A concrete counterexample in $\mathbb{Z}$ with $I = (4)$ and $J = (6)$, illustrating that $\phi$ fails to be either injective or surjective when ideals are not coprime.
     \item \textbf{The Chinese Remainder Theorem:} Proof that coprimality ($I + J = (1)$) implies that $\phi$ is an isomorphism, using the identity $i + j = 1$.
     \item \textbf{Applications to $\mathbb{Z}$ and Euler's Totient Function:} Iterated factorization into prime powers, the multiplicative structure of unit groups, and the derivation of Euler's product formula for $\phi^{\text{tot}}(n)$ alongside the prime $691$ and the Bernoulli number $B_{12}$.
@@ -129,10 +129,10 @@ And this is always a homomorphism: $\phi$ is a homomorphism in general \inlineme
 \end{content}
 
 \begin{content}[The Canonical Product Homomorphism]
-Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals.
+Let $R$ be a commutative ring with identity, and let $I, J \subset R$ be ideals.
 \begin{itemize}
     \item \textbf{Sum of Ideals:} $I + J \stackrel{\text{def}}{=} \{ i + j \mid i \in I, \, j \in J \}$ is an ideal of $R$.
-    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \, i_r \in I, \, j_r \in J \right\}$ is an ideal of $R$ with $IJ \subseteq I$ and $IJ \subseteq J$, so $IJ \subseteq I \cap J$.
+    \item \textbf{Product of Ideals:} $IJ \stackrel{\text{def}}{=} \left\{ \sum_{r=1}^k i_r j_r \;\middle|\; k \in \mathbb{N}, \, i_r \in I, \, j_r \in J \right\}$ is an ideal of $R$ with $IJ \subset I$ and $IJ \subset J$, so $IJ \subset I \cap J$.
 \end{itemize}
 
 \begin{definition}[Canonical Product Homomorphism]\label[definition]{def:canonical-crt-map}
@@ -154,7 +154,7 @@ The mapping $\phi$ is a well-defined homomorphism of rings with identity.
 \end{proposition}
 
 \begin{proof}
-Let $z, z' \in R$ with $\bar{z} = \bar{z}'$ in $\faktor{R}{IJ}$, meaning $z - z' \in IJ$. Since $IJ \subseteq I$ and $IJ \subseteq J$, we immediately have:
+Let $z, z' \in R$ with $\bar{z} = \bar{z}'$ in $\faktor{R}{IJ}$, meaning $z - z' \in IJ$. Since $IJ \subset I$ and $IJ \subset J$, we immediately have:
 \[
 z - z' \in I \implies z + I = z' + I \quad \text{and} \quad z - z' \in J \implies z + J = z' + J.
 \]
@@ -250,7 +250,7 @@ Let us start with $\phi$ is injective \inlinemetanote{writes: $\phi$ is injectiv
 
 \begin{content}
 \begin{theorem}[Chinese Remainder Theorem for Two Ideals]\label[theorem]{thm:crt-two-ideals}
-Let $R$ be a commutative ring with identity, and let $I, J \subseteq R$ be ideals such that they are coprime, meaning:
+Let $R$ be a commutative ring with identity, and let $I, J \subset R$ be ideals such that they are coprime, meaning:
 \begin{equation}\label{eq:crt-comaximal-hypothesis}
 I + J = (1) = R.
 \end{equation}
@@ -800,7 +800,7 @@ So, this is called a principal ideal \inlinemetanote{writes: Principal ideal}. A
 
 \begin{content}
 \begin{proposition}[{Principal Ideals in $k[x]$}]\label[proposition]{prop:kx-ideals-principal}
-Let $k$ be a field, and let $I \subseteq k[x]$ be an ideal. Then there exists a polynomial $f \in I$ such that:
+Let $k$ be a field, and let $I \subset k[x]$ be an ideal. Then there exists a polynomial $f \in I$ such that:
 \begin{equation}\label{eq:ideal-generated-single}
 I = (f) = f \cdot k[x] = \{ q(x) f(x) \mid q(x) \in k[x] \}.
 \end{equation}
@@ -873,12 +873,12 @@ So, this thing can't happen. We can cross it out with purple \inlinemetanote{cro
 
 \begin{content}[Full Restatement: Proof that Every Ideal in $k[x]$ is Principal]
 \begin{proof}[Complete Proof of \cref{prop:kx-ideals-principal}]
-Let $I \subseteq k[x]$ be an ideal.
+Let $I \subset k[x]$ be an ideal.
 \begin{description}
     \item[Step 1:] \textbf{Zero Ideal:} If $I = \{0\}$, then $I = (0)$ is principal.
     \item[Step 2:] \textbf{Minimal Degree Choice:} If $I \neq \{0\}$, choose $f \in I \setminus \{0\}$ of minimal degree among all non-zero polynomials in $I$.
-    \item[Step 3:] \textbf{First Inclusion ($(f) \subseteq I$):} Clearly, the principal ideal $(f) = f \cdot k[x] \subseteq I$, because $f \in I$ and $I$ is an ideal.
-    \item[Step 4:] \textbf{Reverse Inclusion ($I \subseteq (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in k[x]$ such that:
+    \item[Step 3:] \textbf{First Inclusion ($(f) \subset I$):} Clearly, the principal ideal $(f) = f \cdot k[x] \subset I$, because $f \in I$ and $I$ is an ideal.
+    \item[Step 4:] \textbf{Reverse Inclusion ($I \subset (f)$):} Conversely, take any $g \in I$. By \cref{thm:poly-long-division}, there exist $q(x), r(x) \in k[x]$ such that:
     \[
     g = q f + r, \quad \text{with } r = 0 \text{ or } \deg(r) < \deg(f).
     \]
@@ -887,7 +887,7 @@ Let $I \subseteq k[x]$ be an ideal.
     \[
     g = q f \in (f).
     \]
-    Since $g \in I$ was arbitrary, $I \subseteq (f)$.
+    Since $g \in I$ was arbitrary, $I \subset (f)$.
 \end{description}
 Combining inclusions gives $I = (f)$, proving that $I$ is principal.
 \end{proof}
@@ -957,9 +957,9 @@ A field is a principal ideal domain. It's kind of a dumb principal ideal domain,
 
 \begin{content}
 \begin{definition}[Principal Ideal Domain (PID)]\label[definition]{def:pid}
-An integral domain $R$ is called a \newterm{principal ideal domain} (abbreviated \newterm{PID}) if every ideal $I \subseteq R$ is principal, meaning:
+An integral domain $R$ is called a \newterm{principal ideal domain} (abbreviated \newterm{PID}) if every ideal $I \subset R$ is principal, meaning:
 \begin{equation}\label{eq:pid-condition}
-\forall \text{ ideal } I \subseteq R, \ \exists f \in I \quad \text{such that} \quad I = (f).
+\forall \text{ ideal } I \subset R, \ \exists f \in I \quad \text{such that} \quad I = (f).
 \end{equation}
 \end{definition}
 
@@ -1034,10 +1034,10 @@ The lecture leaves this as an exercise. Suppose $(2, x) = (f(x))$ for some $f(x)
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subseteq R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without coprimality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
+    \item \textbf{Canonical Product Homomorphism:} For any ideals $I, J \subset R$, the natural map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ given by $\bar{z} \mapsto (\bar{z}, \bar{z})$ is a well-defined ring homomorphism. Without coprimality, $\phi$ generally fails to be injective or surjective (e.g., $I = (4)$ and $J = (6)$ in $\mathbb{Z}$).
     \item \textbf{Chinese Remainder Theorem:} When $I + J = (1) = R$, there exist $i \in I$ and $j \in J$ such that $i + j = 1$. This equation ensures that $\phi$ is an isomorphism, yielding explicit solutions $z = jx + iy$ to simultaneous systems of congruences.
     \item \textbf{Arithmetic in $\mathbb{Z}$ and Euler's Totient Function:} Iterated application yields $\faktor{\mathbb{Z}}{n\mathbb{Z}} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{p_i^{k_i}\mathbb{Z}}$. Taking unit groups gives $\phi^{\text{tot}}(n) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$. The terms $p_i - 1$ mix the primes, so $n$ cannot be recovered from this value (for example $\phi^{\text{tot}}(691) = 690$).
     \item \textbf{Polynomial Rings $k[x]$ over Fields:} For a field $k$, polynomials have long division with unique quotient and remainder ($r = 0$ or $\deg(r) < \deg(g)$). The degree of the zero polynomial $\deg(0)$ is left strictly undefined.
-    \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subseteq k[x]$ is generated by any non-zero element of minimal degree, proving that $k[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
+    \item \textbf{Principal Ideal Domains (PIDs):} Using the well-ordering of degrees, every ideal $I \subset k[x]$ is generated by any non-zero element of minimal degree, proving that $k[x]$ is a PID. Multi-variable polynomial rings like $\mathbb{C}[x, y]$ and polynomial rings over non-fields like $\mathbb{Z}[x]$ fail to be PIDs due to non-principal ideals such as $(x, y)$ and $(2, x)$.
 \end{itemize}
 \end{overview}

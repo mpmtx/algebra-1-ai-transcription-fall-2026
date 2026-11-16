@@ -884,7 +884,7 @@ Yeah. The kernel here is exactly all multiples of $n$, and this is often denoted
 \begin{definition}[Kernel of a Ring Homomorphism]\label[definition]{def:kernel-ring-hom}
 Let $R_1, R_2$ be rings and let $f \colon R_1 \to R_2$ be a ring homomorphism. The \newterm{kernel} of $f$, denoted by $\ker(f)$, is the pre-image of the zero element $0_{R_2}$:
 \begin{equation}\label{eq:kernel-def}
-\ker(f) := \{ a \in R_1 \mid f(a) = 0_{R_2} \} \subseteq R_1.
+\ker(f) := \{ a \in R_1 \mid f(a) = 0_{R_2} \} \subset R_1.
 \end{equation}
 \end{definition}
 
@@ -901,12 +901,12 @@ Going beyond the lecture: since $f$ respects addition and $f(0_{R_1}) = 0_{R_2}$
 \end{content}
 
 \begin{insight}[Kernels versus Images in Ring Theory]
-In linear algebra, the kernel and image of a linear map $T \colon V \to W$ are on similar footing: both are vector subspaces. In ring theory, the kernel turns out to be much more important than the image: $\ker(f) \subseteq R_1$ is an \textbf{ideal} of the domain, closed under addition and absorbing multiplication from the entire ring ($r \cdot a \in \ker(f)$ for all $r \in R_1$ and $a \in \ker(f)$).
+In linear algebra, the kernel and image of a linear map $T \colon V \to W$ are on similar footing: both are vector subspaces. In ring theory, the kernel turns out to be much more important than the image: $\ker(f) \subset R_1$ is an \textbf{ideal} of the domain, closed under addition and absorbing multiplication from the entire ring ($r \cdot a \in \ker(f)$ for all $r \in R_1$ and $a \in \ker(f)$).
 \end{insight}
 
 \begin{aiNote}[Beyond the Lecture: Image and Quotient]
 % [PERSISTENT, ADDITION]
-In linear algebra, the two are connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{Im}(T)$ (\cref{fact:pre-rank-nullity}). In ring theory, the image $\operatorname{Im}(f) \subseteq R_2$ is only a subring of the codomain, while the absorption property of the kernel is what the quotient ring $\faktor{R_1}{\ker(f)}$ and the First Isomorphism Theorem ($\faktor{R_1}{\ker(f)} \cong \operatorname{Im}(f)$, Week~4, \cref{thm:first-isomorphism-theorem-statement}) need.
+In linear algebra, the two are connected by the rank-nullity theorem $\dim V = \dim \ker(T) + \dim \operatorname{Im}(T)$ (\cref{fact:pre-rank-nullity}). In ring theory, the image $\operatorname{Im}(f) \subset R_2$ is only a subring of the codomain, while the absorption property of the kernel is what the quotient ring $\faktor{R_1}{\ker(f)}$ and the First Isomorphism Theorem ($\faktor{R_1}{\ker(f)} \cong \operatorname{Im}(f)$, Week~4, \cref{thm:first-isomorphism-theorem-statement}) need.
 \end{aiNote}
 
 \subsection{Properties of the Kernel}
@@ -927,7 +927,7 @@ And so, in particular, if $a$ is in the kernel, $-a$ is in the kernel \inlinemet
 
 \begin{content}[Algebraic Properties of the Kernel]
 \begin{proposition}[Axiomatic Properties of the Kernel]\label[proposition]{prop:properties-of-kernel}
-Let $f \colon R_1 \to R_2$ be a ring homomorphism. The kernel $\ker(f) \subseteq R_1$ satisfies the following properties:
+Let $f \colon R_1 \to R_2$ be a ring homomorphism. The kernel $\ker(f) \subset R_1$ satisfies the following properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Containment of Zero:} $0_{R_1} \in \ker(f)$.
     \item \textbf{Closure under Addition:} $\forall a, b \in \ker(f) \colon a + b \in \ker(f)$.
@@ -974,7 +974,7 @@ This is an extremely important definition for the class. It tells you various su
 
 \begin{content}[Definition of an Ideal]
 \begin{definition}[Ideal]\label[definition]{def:ideal}
-Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subseteq R$ is called an \newterm{ideal} of $R$ if it satisfies:
+Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subset R$ is called an \newterm{ideal} of $R$ if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Additive Subgroup:} $(I, +, 0)$ is an abelian subgroup (\cref{def:pre-group}) of $(R, +, 0)$:
     \begin{itemize}
@@ -1033,9 +1033,9 @@ Let $R = (R, +, \cdot, 0, 1)$ be a commutative ring with unit. A subset $I \subs
 \end{center}
 
 \begin{steps}[Ideals as the Ring-Theoretic Analogue of Normal Subgroups and Subspaces]
-Going beyond the lecture: in linear algebra, kernels of linear maps are vector subspaces ($T(u + v) = T(u) + T(v)$ and $T(c v) = c T(v)$). A vector subspace $W \subseteq V$ is closed under vector addition ($w_1 + w_2 \in W$) and scalar multiplication by field scalars ($\lambda \cdot w \in W$ for $\lambda \in k$).
+Going beyond the lecture: in linear algebra, kernels of linear maps are vector subspaces ($T(u + v) = T(u) + T(v)$ and $T(c v) = c T(v)$). A vector subspace $W \subset V$ is closed under vector addition ($w_1 + w_2 \in W$) and scalar multiplication by field scalars ($\lambda \cdot w \in W$ for $\lambda \in k$).
 
-In group theory, kernels of group homomorphisms are normal subgroups ($g N g^{-1} \subseteq N$).
+In group theory, kernels of group homomorphisms are normal subgroups ($g N g^{-1} \subset N$).
 
 In ring theory, kernels of ring homomorphisms are \newterm{ideals}: they are closed under addition ($a + b \in I$) and absorb multiplication by \emph{any} element from the entire ambient ring $R$ ($r \cdot a \in I$ for all $r \in R$).
 \end{steps}
@@ -1043,7 +1043,7 @@ In ring theory, kernels of ring homomorphisms are \newterm{ideals}: they are clo
 
 \begin{aiNote}[Notation: Ideals in the Lecture and in Textbooks]
 % [PERSISTENT]
-Many textbooks write $I \trianglelefteq R$ (or $I \lhd R$) for \qt{$I$ is an ideal of $R$}. The lecture does not use this symbol: on the board, the lecturer writes $I \subset R$ and says in words that $I$ is an ideal (\qt{Def: Ideal $I \subset R$}). These notes follow the board. His $\subset$ allows equality, like $\subseteq$; he explains this convention when he defines maximal ideals (\cref{def:maximal-ideal}, Week~4). Textbooks use the same triangle for normal subgroups, the group counterpart of ideals (Week~8, \cref{def:normal-subgroup}).
+Many textbooks write $I \trianglelefteq R$ (or $I \lhd R$) for \qt{$I$ is an ideal of $R$}. The lecture does not use this symbol: on the board, the lecturer writes $I \subset R$ and says in words that $I$ is an ideal (\qt{Def: Ideal $I \subset R$}). These notes follow the board. His $\subset$ allows equality, like $\subseteq$; he explains this convention when he defines maximal ideals (Week~4, \cref{def:maximal-ideal,not:subset-board}). Textbooks use the same triangle for normal subgroups, the group counterpart of ideals (Week~8, \cref{def:normal-subgroup}).
 \end{aiNote}
 
 \subsection{The Kernel as an Ideal}
@@ -1136,7 +1136,7 @@ I \subset F \text{ an ideal} \implies I = \{0\} \quad \text{or} \quad I = F.
 \end{theorem}
 
 \begin{proof}
-Let $I \subseteq F$ be an ideal of $F$. Clearly, $I = \{0\}$ and $I = F$ are ideals.
+Let $I \subset F$ be an ideal of $F$. Clearly, $I = \{0\}$ and $I = F$ are ideals.
 
 Now, suppose $I \neq \{0\}$. Then there exists a non-zero element:
 \[
@@ -1150,7 +1150,7 @@ Once the unit $1_F$ lies in $I$, applying absorption once more with any arbitrar
 \[
 r = r \cdot 1_F \in I \quad \forall r \in F.
 \]
-Therefore, $F \subseteq I$, which forces $I = F$.
+Therefore, $F \subset I$, which forces $I = F$.
 \end{proof}
 
 \begin{steps}[Implications for Field Homomorphisms]

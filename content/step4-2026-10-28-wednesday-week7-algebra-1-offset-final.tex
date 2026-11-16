@@ -127,7 +127,7 @@ We contrast two fundamental families at opposite extremes of complexity:
     \[
     \left(\faktor{\mathbb{Z}}{n\mathbb{Z}}, +, 0\right),
     \]
-    is the simplest family of finite groups. Such a group is called \newterm{cyclic} (and Abelian) because a single element (such as the residue class $[1]_n$, \cref{def:residue-class-ring}) generates the entire group in one cycle.
+    is the simplest family of finite groups. Such a group is called \newterm{cyclic} (and Abelian) because a single element (such as the residue class $\bar{1}$, \cref{def:residue-class-ring}) generates the entire group in one cycle.
 \end{enumerate}
 \end{examples}
 \end{content}
@@ -178,7 +178,7 @@ And I think that the point where I stopped was this discussion: so, another defi
 % [PERSISTENT]
 Two conventions from the blackboard are noted here:
 \begin{itemize}
-    \item Throughout this lecture, the lecturer uses $\subset$ for any subset or subgroup (not necessarily proper), whereas many textbooks write $\subseteq$ or $\le$. We retain $\subset$ everywhere to stay faithful to the board.
+    \item As everywhere in these notes (\cref{not:subset-board}), $\subset$ stands for any subset or subgroup, proper or not; many textbooks write $\subseteq$ or $\le$.
     \item In defining $\langle x \rangle$ on the board, the lecturer wrote $\langle x \rangle \stackrel{\text{def}}{=} \langle e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1} \rangle \subset G$, repeating the angle brackets $\langle \dots \rangle$ on the right-hand side as a slip for set braces $\{ \dots \}$. In the formal definition above, standard set braces are used.
 \end{itemize}
 \end{aiNote}
@@ -262,7 +262,7 @@ For any element $x$ of a finite group $G$, there is a group isomorphism:
 \end{corollary}
 
 \begin{steps}[Explicit Isomorphism and Distinctness of Powers]
-The map $\psi \colon \faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}} \to \langle x \rangle$ sending $[k] \mapsto x^{k \bmod \operatorname{Ord}(x)}$ (or simply $[k] \mapsto x^k$ for $0 \le k < \operatorname{Ord}(x)$) is well-defined and a homomorphism precisely because $x^k \cdot x^\ell = x^r$ with $r = (k+\ell) \bmod \operatorname{Ord}(x)$. Moreover, the elements $e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1}$ are pairwise distinct (\cref{lem:cyclic-subgroup-order}): if $x^i = x^j$ for $0 \le i < j < \operatorname{Ord}(x)$, then $x^{j-i} = e$ with $0 < j - i < \operatorname{Ord}(x)$, contradicting the minimality of $\operatorname{Ord}(x)$. Hence, $|\langle x \rangle| = \operatorname{Ord}(x)$ and $\psi$ is a bijection.
+The map $\psi \colon \faktor{\mathbb{Z}}{\operatorname{Ord}(x)\mathbb{Z}} \to \langle x \rangle$ sending $\bar{k} \mapsto x^{k \bmod \operatorname{Ord}(x)}$ (or simply $\bar{k} \mapsto x^k$ for $0 \le k < \operatorname{Ord}(x)$) is well-defined and a homomorphism precisely because $x^k \cdot x^\ell = x^r$ with $r = (k+\ell) \bmod \operatorname{Ord}(x)$. Moreover, the elements $e, x, x^2, \dots, x^{\operatorname{Ord}(x)-1}$ are pairwise distinct (\cref{lem:cyclic-subgroup-order}): if $x^i = x^j$ for $0 \le i < j < \operatorname{Ord}(x)$, then $x^{j-i} = e$ with $0 < j - i < \operatorname{Ord}(x)$, contradicting the minimality of $\operatorname{Ord}(x)$. Hence, $|\langle x \rangle| = \operatorname{Ord}(x)$ and $\psi$ is a bijection.
 \end{steps}
 \end{content}
 

@@ -279,7 +279,7 @@ I = (x^m).
 \end{exercise}
 
 \begin{proof}[Proof of \cref{exer:ideals-power-series} (beyond the lecture)]
-The lecture leaves the proof that $I = (x^m)$ as an exercise. Let $m$ be the minimal lowest degree among non-zero elements of $I$, and write $f = x^m \sum_{j=0}^\infty a_{m+j} x^j = x^m u$ with $a_{m+j} \in k$ and $a_m \in k \setminus \{0\}$. Since $k$ is a field and the constant term $a_m$ of $u$ is non-zero, $u$ is a unit in $k[[x]]$ (\cref{thm:units-power-series-ring}). Therefore, $x^m = u^{-1} f \in I$, which gives $(x^m) \subseteq I$.
+The lecture leaves the proof that $I = (x^m)$ as an exercise. Let $m$ be the minimal lowest degree among non-zero elements of $I$, and write $f = x^m \sum_{j=0}^\infty a_{m+j} x^j = x^m u$ with $a_{m+j} \in k$ and $a_m \in k \setminus \{0\}$. Since $k$ is a field and the constant term $a_m$ of $u$ is non-zero, $u$ is a unit in $k[[x]]$ (\cref{thm:units-power-series-ring}). Therefore, $x^m = u^{-1} f \in I$, which gives $(x^m) \subset I$.
 
 Conversely, let $h = \sum_{j=0}^\infty c_j x^j \in I$ be any element. If $h = 0$, then $h \in (x^m)$ trivially. If $h \neq 0$, its lowest degree $n$ satisfies $n \ge m$ by the minimality of $m$. Factoring out $x^m$ yields $h = x^m \sum_{j=n}^\infty c_j x^{j-m} \in (x^m)$. Thus, $I = (x^m)$.
 \end{proof}
@@ -1191,7 +1191,7 @@ Because inverses in a group $G$ are unique (\cref{prop:group-inverse-unique}), i
 \end{remark}
 
 \begin{definition}[Subgroup]\label[definition]{def:subgroup-w7tue}
-A subset $S \subset G$ (throughout this course, $\subset$ allows equality, i.e., $\subseteq$) of a group $(G, \cdot, e)$ is a \newterm{subgroup} (so $(S, \cdot, e)$ is a group under the restricted operation) if:
+A subset $S \subset G$ (throughout this course, $\subset$ allows equality, i.e., $\subset$) of a group $(G, \cdot, e)$ is a \newterm{subgroup} (so $(S, \cdot, e)$ is a group under the restricted operation) if:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item $S$ is closed under multiplication: $\cdot \colon S \times S \to S$,
     \item $S$ contains the neutral element: $e \in S$,

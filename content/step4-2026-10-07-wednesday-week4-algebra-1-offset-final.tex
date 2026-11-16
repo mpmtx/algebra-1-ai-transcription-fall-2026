@@ -674,8 +674,8 @@ q(q^{-1}(J)) = J.
 \end{equation}
 This equality holds purely set-theoretically because the quotient map $q \colon R \to \faktor{R}{K}$ is \textbf{surjective}:
 \begin{itemize}
-    \item \textbf{Inclusion $(\subseteq)$:} The relation $q(q^{-1}(J)) \subseteq J$ always holds by the general definition of the preimage (\cref{fact:pre-image-preimage}).
-    \item \textbf{Inclusion $(\supseteq)$:} Conversely, let $\bar{y} \in J$. By surjectivity of $q$, there exists $x \in R$ such that $q(x) = \bar{y}$. Thus $x \in q^{-1}(J)$, which implies $\bar{y} = q(x) \in q(q^{-1}(J))$.
+    \item \textbf{Inclusion $(\subset)$:} The relation $q(q^{-1}(J)) \subset J$ always holds by the general definition of the preimage (\cref{fact:pre-image-preimage}).
+    \item \textbf{Inclusion $(\supset)$:} Conversely, let $\bar{y} \in J$. By surjectivity of $q$, there exists $x \in R$ such that $q(x) = \bar{y}$. Thus $x \in q^{-1}(J)$, which implies $\bar{y} = q(x) \in q(q^{-1}(J))$.
 \end{itemize}
 
 \begin{center}
@@ -765,7 +765,7 @@ Let $I \in \mathscr{I}_K(R)$ be an ideal containing $K$ (so $K \subset I \subset
 \begin{equation}\label{eq:composition-step-b}
 q^{-1}(q(I)) = I.
 \end{equation}
-The inclusion $I \subseteq q^{-1}(q(I))$ always holds set-theoretically (\cref{fact:pre-image-preimage}).
+The inclusion $I \subset q^{-1}(q(I))$ always holds set-theoretically (\cref{fact:pre-image-preimage}).
 For the reverse inclusion, let $y \in q^{-1}(q(I))$.
 By definition of the preimage:
 \[
@@ -787,7 +787,7 @@ Since $x \in I$ and $z \in K$, and by hypothesis $K \subset I$, we have $z \in I
 \[
 x \in I \quad \text{and} \quad z \in I \implies y = x + z \in I.
 \]
-Therefore, $q^{-1}(q(I)) \subseteq I$, which proves $q^{-1}(q(I)) = I$.
+Therefore, $q^{-1}(q(I)) \subset I$, which proves $q^{-1}(q(I)) = I$.
 
 \begin{center}
 % \begin{hidden}
@@ -863,7 +863,7 @@ Together, Steps (A) and (B) establish that $\Phi$ and $\Psi$ are mutually invers
 
 \begin{aiNote}[Beyond the Lecture: The Correspondence Preserves Inclusions]
 % [PERSISTENT, ADDITION]
-The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \mathscr{I}_K(R)$, $I_1 \subseteq I_2$ clearly gives $q(I_1) \subseteq q(I_2)$; conversely, $q(I_1) \subseteq q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subseteq q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subseteq J_2$ holds in $\mathscr{I}\left(\faktor{R}{K}\right)$ if and only if $q^{-1}(J_1) \subseteq q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
+The bijection of \cref{prop:correspondence-theorem-ideals} respects inclusions in both directions, which is why it is also called the lattice theorem. For ideals $I_1, I_2 \in \mathscr{I}_K(R)$, $I_1 \subset I_2$ clearly gives $q(I_1) \subset q(I_2)$; conversely, $q(I_1) \subset q(I_2)$ gives $I_1 = q^{-1}(q(I_1)) \subset q^{-1}(q(I_2)) = I_2$ by Step (B) (\cref{eq:composition-step-b}). In the same way, $J_1 \subset J_2$ holds in $\mathscr{I}\left(\faktor{R}{K}\right)$ if and only if $q^{-1}(J_1) \subset q^{-1}(J_2)$, using Step (A) (\cref{eq:composition-step-a}).
 \end{aiNote}
 
 \begin{hidden}
@@ -950,8 +950,8 @@ Let $R$ be a ring. A subset $m \subset R$ is called a \newterm{maximal ideal} if
 \end{enumerate}
 \end{definition}
 
-\begin{notation}[$\subset$ on the Board]
-As the lecturer explains here, $A \subset B$ on the board says only that $A$ is a subset of $B$ and allows $A = B$, like $A \subseteq B$. For a strict inclusion, he writes $A \subsetneq B$.
+\begin{notation}[$\subset$ on the Board]\label[notation]{not:subset-board}
+As the lecturer explains here, $A \subset B$ on the board says only that $A$ is a subset of $B$ and allows $A = B$, like $A \subseteq B$. For a strict inclusion, he writes $A \subsetneq B$. These notes follow him throughout, in the boxes too.
 \end{notation}
 
 \begin{examples}[Maximal Ideals in $\mathbb{Z}$]\label[examples]{ex:maximal-ideals-integers}
@@ -967,7 +967,7 @@ Consider the ring of integers $\mathbb{Z}$:
 \end{examples}
 
 \begin{proof}[Proof that the maximal ideals of $\mathbb{Z}$ are the $p\mathbb{Z}$ (beyond the lecture)]
-The lecture states this without proof. Every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subseteq n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$. The remaining ideals are not maximal: $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $n = ab$ with $1 < a < n$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
+The lecture states this without proof. Every ideal of $\mathbb{Z}$ is $I = n\mathbb{Z}$ with $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}), and $p\mathbb{Z} \subset n\mathbb{Z}$ means $n \mid p$, so $n = 1$ (then $I = \mathbb{Z}$ is not proper) or $n = p$. The remaining ideals are not maximal: $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$ for $n = ab$ with $1 < a < n$, and $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, while $1\mathbb{Z} = \mathbb{Z}$ is not proper.
 \end{proof}
 
 \begin{proposition}[Characterization of Fields via the Zero Ideal]\label[proposition]{prop:field-zero-ideal-maximal}
