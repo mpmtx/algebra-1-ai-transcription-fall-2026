@@ -103,7 +103,7 @@ This lecture explores the foundational algebraic structures of modern mathematic
 \begin{itemize}
     \item \textbf{Groups, Rings, and Fields:} Review of the defining axioms; intrinsic uniqueness of group identities and inverses; the axiomatic hierarchy connecting rings and fields to additive abelian groups.
     \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms and isomorphisms; characterization via two-sided inverse homomorphisms; comparison of the additive and multiplicative groups of real numbers via the exponential map.
-    \item \textbf{Kernels, Images, and Substructures:} Structural properties of kernels and images; formal definition of subgroups ($H \le G$); ring homomorphisms and subrings ($S \subseteq R$).
+    \item \textbf{Kernels, Images, and Substructures:} Structural properties of kernels and images; formal definition of subgroups ($H \subset G$); ring homomorphisms and subrings ($S \subset R$).
     \item \textbf{Ideals and Symmetry Breaking:} The breakdown of structural symmetry in rings, where kernels are ideals ($I \subset R$) and images are subrings; classification of ideals in $\mathbb{Z}$ ($I = n\mathbb{Z}$) via the division algorithm; ideals in rings of smooth functions $C^\infty(\mathbb{R})$.
     \item \textbf{Foundations of Category Theory:} Formal definition of categories (objects, morphisms, composition, unit laws); standard categories ($\mathbf{Grp}$, $\mathbf{Ring}$, $\mathbf{Vect}_{\mathbb{C}}$); categorical formulation of isomorphisms; covariant functors, including the functor from rings to groups and the double dual functor on vector spaces.
 \end{itemize}
@@ -173,6 +173,8 @@ Equating both expressions yields:
 Hence, the neutral element in any group is strictly unique.
 \end{proof}
 \end{answer}
+
+Groups become the main subject of the course in Week~7, where the lecturer restates these axioms (\cref{def:group-w7tue}) and proves the uniqueness of the neutral element again (\cref{prop:group-unit-unique}).
 \end{content}
 
 \begin{speech}[00:03:20 - 00:05:05]
@@ -735,7 +737,7 @@ That's the definition of a subgroup.
 
 \begin{content}[Definition of a Subgroup]
 \begin{definition}[Subgroup]\label[definition]{def:subgroup}
-Let $(G, \cdot, e)$ be a group. A subset $H \subseteq G$ is called a \newterm{subgroup} of $G$ (denoted $H \le G$) if it satisfies the following three conditions:
+Let $(G, \cdot, e)$ be a group. A subset $H \subset G$ is called a \newterm{subgroup} of $G$ if it satisfies the following three conditions:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Contains the Identity:} $e \in H$ (often denoted $0 \in H$ in additive notation).
     \item \textbf{Closure under Multiplication:} $\forall a, b \in H \colon a \cdot b \in H$.
@@ -751,7 +753,7 @@ Associativity holds automatically for elements in $H$ because it holds for all e
 
 \begin{aiNote}[Notation: Subgroups]
 % [PERSISTENT]
-The lecturer writes $H \subset G$ and says that $H$ is a subgroup. The sign $H \le G$ in the boxes of these notes is the textbook one.
+The lecturer writes $H \subset G$ and says in words that $H$ is a subgroup; these notes follow the board, in the boxes too. Many textbooks write $H \le G$ for subgroups. His $\subset$ allows equality, like $\subseteq$ (the same convention as for ideals in Week~1). Subgroups return in Week~7 with the same notation (\cref{def:subgroup-w7tue}), where they lead to Lagrange's Theorem: the order of a subgroup of a finite group divides the order of the group (\cref{thm:lagrange}).
 \end{aiNote}
 
 \subsection{Kernel and Image as Subgroups}
@@ -766,10 +768,7 @@ How do you prove this? You just check that the image contains the neutral elemen
 
 \begin{content}[The Kernel and Image are Subgroups]
 \begin{proposition}[Kernel as a Subgroup]\label[proposition]{prop:kernel-is-subgroup}
-Let $f \colon G \to \hat{G}$ be a group homomorphism. Then the kernel of $f$ is a subgroup of the domain:
-\[
-\operatorname{ker}(f) \le G.
-\]
+Let $f \colon G \to \hat{G}$ be a group homomorphism. Then the kernel $\operatorname{ker}(f) \subset G$ is a subgroup of the domain $G$.
 \end{proposition}
 
 \begin{proposition}[Image as a Subgroup]\label[proposition]{prop:image-is-subgroup}
@@ -777,14 +776,11 @@ Let $f \colon G \to \hat{G}$ be a group homomorphism. Then the image of $f$, def
 \[
 \operatorname{Im}(f) := f(G) = \{ f(x) \in \hat{G} \mid x \in G \},
 \]
-is a subgroup of the codomain:
-\[
-\operatorname{Im}(f) \le \hat{G}.
-\]
+is a subgroup of the codomain $\hat{G}$.
 \end{proposition}
 
 \begin{proof}[Why the Image Is a Subgroup (beyond the lecture)]
-The lecture leaves this to the students. We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
+This lecture leaves this to the students; the lecturer proves it in Week~8 (\cref{prop:image-subgroup}). We verify the three subgroup axioms for $\operatorname{Im}(f) \subseteq \hat{G}$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item \textbf{Identity:} By \cref{prop:hom-preserves-identity}, $f(e) = \hat{e}$. Since $e \in G$, $\hat{e} \in \operatorname{Im}(f)$.
     \item \textbf{Closure under Multiplication:} Let $\hat{a}, \hat{b} \in \operatorname{Im}(f)$. Then there exist $a, b \in G$ such that $f(a) = \hat{a}$ and $f(b) = \hat{b}$. Since $G$ is a group, $ab \in G$, and by the homomorphism property:
@@ -797,7 +793,7 @@ The lecture leaves this to the students. We verify the three subgroup axioms for
     \]
     By uniqueness of inverses in $\hat{G}$, $(\hat{x})^{-1} = f(x^{-1}) \in \operatorname{Im}(f)$.
 \end{enumerate}
-Thus, $\operatorname{Im}(f) \le \hat{G}$.
+Thus, $\operatorname{Im}(f)$ is a subgroup of $\hat{G}$.
 \end{proof}
 \end{content}
 
@@ -876,10 +872,11 @@ A ring homomorphism $f \colon R \to \hat{R}$ is called a \newterm{ring isomorphi
 \begin{steps}[Symmetry Breaking: Groups and Vector Spaces vs. Rings]
 In groups and vector spaces, kernel and image share the exact same algebraic classification:
 \begin{itemize}
-    \item \textbf{Groups:} $\operatorname{ker}(f) \le G$ (subgroup) and $\operatorname{Im}(f) \le \hat{G}$ (subgroup).
-    \item \textbf{Vector Spaces:} $\ker(T) \le V$ (subspace) and $\operatorname{Im}(T) \le W$ (subspace).
+    \item \textbf{Groups:} $\operatorname{ker}(f) \subset G$ and $\operatorname{Im}(f) \subset \hat{G}$ are subgroups.
+    \item \textbf{Vector Spaces:} $\ker(T) \subset V$ and $\operatorname{Im}(T) \subset W$ are subspaces.
     \item \textbf{Rings (Symmetry Broken!):} The image $\operatorname{Im}(f)$ is a \textbf{subring} of $\hat{R}$, but the kernel $\operatorname{ker}(f)$ is \textbf{not} a subring (unless $\hat{R} = \{0\}$, since $1 \notin \operatorname{ker}(f)$ because $f(1) = \hat{1} \neq \hat{0}$). Instead, the kernel is an \textbf{ideal}!
 \end{itemize}
+Week~8 returns to the group side: the kernel of a group homomorphism is even a \emph{normal} subgroup (\cref{def:normal-subgroup,prop:kernel-normal}), and conversely every normal subgroup is the kernel of a homomorphism, the quotient map onto the quotient group (\cref{thm:quotient-group}). So normal subgroups play for groups the role that ideals play for rings.
 \end{steps}
 \end{content}
 
@@ -903,7 +900,7 @@ These are the two conditions that define an ideal. And the proposition last week
 \begin{definition}[Ideal of a Ring]\label[definition]{def:ideal-w2}
 Let $(R, +, \cdot, 0, 1)$ be a commutative ring. A subset $I \subseteq R$ is called an \newterm{ideal} if it satisfies:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item \textbf{Additive Subgroup:} $(I, +, 0) \le (R, +, 0)$, meaning:
+    \item \textbf{Additive Subgroup:} $(I, +, 0) \subset (R, +, 0)$ is a subgroup, meaning:
     \[
     0 \in I, \quad \forall x, y \in I \colon x + y \in I, \quad \text{and} \quad \forall x \in I \colon -x \in I.
     \]
@@ -1064,7 +1061,7 @@ Consider the set of even integers $2\mathbb{Z} := \{ 2k \mid k \in \mathbb{Z} \}
 \begin{itemize}
     \item \textbf{$2\mathbb{Z}$ is an ideal of $\mathbb{Z}$ (\textcolor{ForestGreen}{YES}):}
     \begin{enumerate}[label=\textbf{(\alph*)}]
-        \item Additively, $2\mathbb{Z} \le \mathbb{Z}$ since $0 \in 2\mathbb{Z}$, the sum of two evens is even ($2k + 2\ell = 2(k+\ell)$), and the negative of an even is even ($-(2k) = 2(-k)$).
+        \item Additively, $2\mathbb{Z} \subset \mathbb{Z}$ is a subgroup, since $0 \in 2\mathbb{Z}$, the sum of two evens is even ($2k + 2\ell = 2(k+\ell)$), and the negative of an even is even ($-(2k) = 2(-k)$).
         \item Multiplicatively, $2\mathbb{Z}$ absorbs products from all of $\mathbb{Z}$: for any $r \in \mathbb{Z}$ and $2k \in 2\mathbb{Z}$, we have $r \cdot (2k) = 2(rk) \in 2\mathbb{Z}$.
     \end{enumerate}
     \item \textbf{$2\mathbb{Z}$ is not a subring of $\mathbb{Z}$ (\textcolor{BrickRed}{NO}):}
@@ -2491,7 +2488,7 @@ This lecture established the following central algebraic and categorical foundat
 \begin{itemize}
     \item \textbf{Uniqueness of Identity and Inverses:} In any group $(G, \cdot, e)$, associativity inherently guarantees that both the identity element and inverse elements are strictly unique.
     \item \textbf{Homomorphisms and Isomorphisms:} Group homomorphisms preserve products and automatically map identities to identities ($f(e) = \hat{e}$). Two groups are isomorphic if and only if there exists a two-sided inverse homomorphism. Notably, the exponential function establishes an isomorphism between the additive reals $(\mathbb{R}, +, 0)$ and the strictly positive multiplicative reals $(\mathbb{R}^*_{>0}, \cdot, 1)$.
-    \item \textbf{Subgroups and Symmetry Breaking in Rings:} For group homomorphisms, both the kernel $\operatorname{ker}(f) \le G$ and image $\operatorname{Im}(f) \le \hat{G}$ are subgroups. In ring theory, this symmetry breaks: the image $\operatorname{Im}(f) \subset \hat{R}$ is a subring, whereas the kernel $\operatorname{ker}(f) \subset R$ is an ideal absorbing ring multiplication.
+    \item \textbf{Subgroups and Symmetry Breaking in Rings:} For group homomorphisms, both the kernel $\operatorname{ker}(f) \subset G$ and image $\operatorname{Im}(f) \subset \hat{G}$ are subgroups. In ring theory, this symmetry breaks: the image $\operatorname{Im}(f) \subset \hat{R}$ is a subring, whereas the kernel $\operatorname{ker}(f) \subset R$ is an ideal absorbing ring multiplication.
     \item \textbf{Ideals of $\mathbb{Z}$ and $C^\infty(\mathbb{R})$:} Every ideal of $\mathbb{Z}$ is principal ($I = n\mathbb{Z}$ with $n \ge 0$), proven via the least positive element of an ideal and the division algorithm. In the ring of smooth functions $C^\infty(\mathbb{R})$, the compactly supported functions form an ideal $I$ that is strictly contained within larger proper ideals, such as functions vanishing on a right half-line $[M, \infty)$.
     \item \textbf{Categories and Functors:} A category $\operatorname{Cat}$ formalizes collections of objects and morphism sets with composition, identity morphisms and unit laws. Isomorphisms are characterized purely arrow-theoretically by two-sided inverses. Functors formalize structure-preserving maps between categories, exemplified by the functor $\mathbf{Ring} \to \mathbf{Grp}$ and the covariant double dual functor $(-)^{**} \colon \mathbf{Vect}_{\mathbb{C}} \to \mathbf{Vect}_{\mathbb{C}}$.
 \end{itemize}

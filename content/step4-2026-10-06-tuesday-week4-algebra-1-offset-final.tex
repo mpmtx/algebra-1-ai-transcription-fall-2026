@@ -529,8 +529,8 @@ All right, so, this is kind of a model. It's some aspect of your... Did you lear
 \begin{overview}[Linear Algebra Analogy: The First Isomorphism Theorem]
 For a linear transformation $\phi \colon V \to W$ between vector spaces over a field $\mathbb{F}$:
 \begin{itemize}
-    \item \textbf{Kernel:} $\ker(\phi) = \{ v \in V \mid \phi(v) = 0 \} \le V$ is a vector subspace of $V$.
-    \item \textbf{Image:} $\operatorname{Im}(\phi) = \{ \phi(v) \mid v \in V \} \le W$ is a vector subspace of $W$.
+    \item \textbf{Kernel:} $\ker(\phi) = \{ v \in V \mid \phi(v) = 0 \} \subset V$ is a vector subspace of $V$.
+    \item \textbf{Image:} $\operatorname{Im}(\phi) = \{ \phi(v) \mid v \in V \} \subset W$ is a vector subspace of $W$.
     \item \textbf{First Isomorphism Theorem for Vector Spaces:}
     \[
     \faktor{V}{\ker(\phi)} \cong \operatorname{Im}(\phi).
@@ -571,8 +571,8 @@ When comparing linear transformations $\phi \colon V \to W$ and ring homomorphis
     \toprule
     \textbf{Structure} & \textbf{Linear Algebra ($\phi \colon V \to W$)} & \textbf{Ring Theory ($f \colon R \to S$)} \\
     \midrule
-    \textbf{Domain Sub-object} & $\ker(\phi) \le V$ (Vector Subspace) & $\ker(f) \subset R$ (\textbf{Ideal}, not a subring with $1_R$) \\
-    \textbf{Codomain Sub-object} & $\operatorname{Im}(\phi) \le W$ (Vector Subspace) & $\operatorname{Im}(f) \le S$ (\textbf{Subring}, contains $1_S = f(1_R)$) \\
+    \textbf{Domain Sub-object} & $\ker(\phi) \subset V$ (Vector Subspace) & $\ker(f) \subset R$ (\textbf{Ideal}, not a subring with $1_R$) \\
+    \textbf{Codomain Sub-object} & $\operatorname{Im}(\phi) \subset W$ (Vector Subspace) & $\operatorname{Im}(f) \subset S$ (\textbf{Subring}, contains $1_S = f(1_R)$) \\
     \bottomrule
 \end{tabular}
 \end{center}
@@ -1172,6 +1172,8 @@ In particular, if $f$ is surjective, then $\faktor{R}{\ker(f)} \cong S$ (\cref{p
     \draw[right hook->, thick] (Im) -- node[right] {$\iota$} (S);
 \end{tikzpicture}
 \end{center}
+
+The same theorem holds for groups, with a normal subgroup in the role of the ideal: $\faktor{G_1}{\ker(f)} \cong \operatorname{Im}(f)$ for every group homomorphism $f \colon G_1 \to G_2$ (Week~8, \cref{thm:first-isomorphism-theorem-groups}).
 \end{content}
 
 \begin{proofWrapper}[Proof of the First Isomorphism Theorem]
