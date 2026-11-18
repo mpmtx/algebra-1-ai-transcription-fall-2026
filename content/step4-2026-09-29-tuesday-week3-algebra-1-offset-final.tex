@@ -760,6 +760,14 @@ g(1_\mathbb{Q}) = \frac{1_F}{1_F} = 1_F,
 \]
 establishing \eqref{eq:g-unit}. Thus $g$ is a field homomorphism.
 \end{proof}
+
+\begin{proof}[Extension and Uniqueness (beyond the lecture)]
+The lecture proves existence only (\qt{the whole claim is existence}). The map $g$ extends $f$: for $x \in \mathbb{Z}$, $g(\frac{x}{1}) = f(x) f(1)^{-1} = f(x)$, since $f(1) = 1_F$. For uniqueness, let $\psi \colon \mathbb{Q} \to F$ be any field homomorphism with $\psi(x) = f(x)$ for all $x \in \mathbb{Z}$. For $y \neq 0$, $\psi(y) \, \psi(\frac{1}{y}) = \psi(1) = 1_F$, so $\psi(\frac{1}{y}) = f(y)^{-1}$, and therefore
+\[
+\psi\left(\frac{x}{y}\right) = \psi(x) \, \psi\left(\frac{1}{y}\right) = f(x) f(y)^{-1} = g\left(\frac{x}{y}\right).
+\]
+Hence $\psi = g$.
+\end{proof}
 \end{content}
 
 \section{Formal Fractions over an Integral Domain}

@@ -1540,7 +1540,7 @@ The first condition is that $\phi$ of the neutral element times any element $t$ 
 And the second one is this associativity property. For the second one, it's better to write --- we usually --- this is now some notation: we write $\phi(g, t)$ as just $g \cdot t$ \inlinemetanote{writes \qt{$\mathbf{(ii)}$ We write $\phi(g, t) = g \cdot t$} with \qt{$G$} underneath $g$ and \qt{$T$} underneath $t$}. In algebra, typically every operation is just labeled by dot. So, you have to concentrate when you see like $g \cdot t$: this means $t$ is an element of $T$ and $g$ is an element of $G$, and the dot is that, okay?
 \end{speech}
 
-\begin{content}[Group Action Map and Axiom \textbf{(i)}]
+\begin{content}[Group Action Map and Axiom (i)]
 A \emph{group action} of $G$ on $T$ is a map
 \[
 \phi \colon G \times T \longrightarrow T
@@ -1559,17 +1559,17 @@ where the element on the left of the dot belongs to $G$ and the element on the r
 \begin{speech}[00:46:41 - 00:47:23]
 So, to write the second one --- this was just an aside --- to write the second property, it's the associativity property \inlinemetanote{moves to the rightmost panel and writes: $\mathbf{(ii)}$ Associativity}. And it's much easier to write in this notation: that if I take $g_1 \cdot t$ and I have $g_2$, this is equal to $(g_2 g_1) \cdot t$ \inlinemetanote{writes: $g_2 \cdot (g_1 \cdot t) = (g_2 \cdot g_1) \cdot t$}.
 
-And to read this, we can put everything explicit. So, this is the action, this is group multiplication \inlinemetanote{draws arrows downward from \qt{Grp.} to the dot in $g_2 \cdot g_1$ and from \qt{$\phi$} to the outer dot before $t$}. Here, this is the action and this is group multiplication \inlinemetanote{draws a downward arrow from \qt{$\phi$} to the inner dot of $g_1 \cdot t$, and an upward arrow from \qt{group} below to the outer dot after $g_2$}. Okay? So, does that make sense?
+And to read this, we can put everything explicit. So, this is the action, this is group multiplication \inlinemetanote{draws arrows downward from \qt{Grp.} to the dot in $g_2 \cdot g_1$ and from \qt{$\phi$} to the outer dot before $t$}. Here, this is the action and this is group multiplication \inlinemetanote{draws a downward arrow from \qt{$\phi$} to the inner dot of $g_1 \cdot t$, and an upward arrow from \qt{group} below to the outer dot after $g_2$, a slip for $\phi$ that he corrects after the student's question below}. Okay? So, does that make sense?
 \end{speech}
 
-\begin{content}[Axiom \textbf{(ii)}: Associativity (Initial Board State)]
-On the rightmost panel, the lecturer writes the associativity condition and initially labels the four dots as follows:
+\begin{content}[Axiom (ii): Associativity]
+On the rightmost panel, the lecturer writes the associativity condition and labels each dot with the operation it stands for:
 \[
-g_2 \underset{\substack{\uparrow\\\text{group}}}{\cdot} \bigl(g_1 \overset{\substack{\phi\\\downarrow}}{\cdot} t\bigr)
+g_2 \overset{\substack{\phi\\\downarrow}}{\cdot} \bigl(g_1 \overset{\substack{\phi\\\downarrow}}{\cdot} t\bigr)
 =
-\bigl(g_2 \; \overset{\substack{\text{Grp.}\\\downarrow}}{\cdot} \; g_1\bigr) \overset{\substack{\phi\\\downarrow}}{\cdot} t \qquad \textcolor{red}{\text{(Incorrect)}}
+\bigl(g_2 \; \overset{\substack{\text{Grp.}\\\downarrow}}{\cdot} \; g_1\bigr) \overset{\substack{\phi\\\downarrow}}{\cdot} t.
 \]
-(Note: The outer dot between $g_2 \in G$ and $g_1 \cdot t \in T$ is an action $\phi$, not group multiplication, which is corrected immediately below after an audience question.)
+Both dots on the left are the action $\phi$, since each joins an element of $G$ to an element of $T$; only the dot between $g_2$ and $g_1$ is group multiplication.
 \end{content}
 
 % Exchange 00:47:24--00:48:58 verified against the 00:47:22 board frame.
@@ -1872,8 +1872,9 @@ The exact same rotation group $G = \operatorname{Rot}(\text{tetrahedron})$ also 
 \begin{itemize}
     \item \textbf{Action on edges:} Letting $\hat{T} = \{ \text{set of edges} \}$ (with $|\hat{T}| = 6$), we obtain an action
     \[
-    G \times \hat{T} \longrightarrow \hat{T}, \qquad (r, e) \longmapsto r(e).
+    G \times \hat{T} \longrightarrow \hat{T}, \qquad (r, e) \longmapsto r(e),
     \]
+    where $e \in \hat{T}$ denotes an edge (the letter on the board), not the neutral element of $G$.
     \item \textbf{Action on faces:} Letting $\hat{\hat{T}} = \text{set of faces}$ (with $|\hat{\hat{T}}| = 4$), we obtain a third action
     \[
     G \times \hat{\hat{T}} \longrightarrow \hat{\hat{T}}, \qquad (r, f) \longmapsto r(f).

@@ -812,6 +812,12 @@ The lecture leaves this to the students.
     \sum_{i+j+l=n} a_i b_j d_l,
     \]
     which establishes $((f \cdot g) \cdot h)_n = (f \cdot (g \cdot h))_n$ for all $n \in \mathbb{N}$.
+    \item \textbf{Multiplicative Identity:} The unit is the series $1 = 1 + 0x + 0x^2 + \cdots$, with coefficients $e_0 = 1$ and $e_i = 0$ for $i \ge 1$. For $f = \sum a_i x^i$, the $k$-th coefficient of $f \cdot 1$ is $\sum_{i=0}^k a_{k-i} e_i = a_k$, so $f \cdot 1 = f$, and $1 \cdot f = f$ by commutativity.
+    \item \textbf{Distributivity:} With $f$, $g$, $h$ as above, the $k$-th coefficient of $f \cdot (g + h)$ is
+    \[
+    \sum_{i=0}^k a_{k-i} (b_i + d_i) = \sum_{i=0}^k a_{k-i} b_i + \sum_{i=0}^k a_{k-i} d_i,
+    \]
+    the $k$-th coefficient of $f \cdot g + f \cdot h$; the other distributive law follows by commutativity.
 \end{itemize}
 \end{proof}
 \end{content}

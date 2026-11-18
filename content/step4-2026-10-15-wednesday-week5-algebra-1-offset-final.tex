@@ -1028,7 +1028,7 @@ Prove that the ideal $(2, x) \subset \mathbb{Z}[x]$ is not principal.
 \end{exercise}
 
 \begin{proof}[Proof Hint for \cref{exer:prove-2-x-not-principal} (beyond the lecture)]
-The lecture leaves this as an exercise. Suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but every element $2 p(x) + x q(x)$ of $(2, x)$ has an even constant term, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
+The lecture leaves this as an exercise. Suppose $(2, x) = (f(x))$ for some $f(x) \in \mathbb{Z}[x]$. Since $2 \in (f(x))$, $f(x)$ must divide $2$ in $\mathbb{Z}[x]$, say $2 = f(x) h(x)$. Since $\mathbb{Z}$ is an integral domain, degrees add (Week~3): $0 = \deg(2) = \deg(f) + \deg(h)$, so $f(x)$ is a constant integer dividing $2$, which forces $f(x) = \pm 1$ or $f(x) = \pm 2$. If $f(x) = \pm 1$, then $(f(x)) = \mathbb{Z}[x]$, but every element $2 p(x) + x q(x)$ of $(2, x)$ has an even constant term, so $1 \notin (2, x)$. If $f(x) = \pm 2$, then $x \in (2)$, which would mean $x = 2 q(x)$ for some $q(x) \in \mathbb{Z}[x]$, which is impossible since the leading coefficient of $x$ is $1$, not divisible by $2$. Thus, no single generator exists.
 \end{proof}
 \end{content}
 

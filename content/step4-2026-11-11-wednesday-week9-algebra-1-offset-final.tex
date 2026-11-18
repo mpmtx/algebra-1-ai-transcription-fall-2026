@@ -1121,7 +1121,7 @@ satisfying the following three properties:
 \end{content}
 
 \begin{insight}[Comparison with the First Isomorphism Theorem]
-The commutative triangle $G \xrightarrow{B} \faktor{G}{\operatorname{Stab}(x)} \xrightarrow[\sim]{C} \operatorname{Orb}(x)$ directly parallels the First Isomorphism Theorem diagram $G_1 \xrightarrow{q} \faktor{G_1}{\ker(f)} \xrightarrow[\sim]{\bar{f}} \operatorname{Im}(f)$ (\cref{thm:first-isomorphism-theorem-groups,thm:first-iso-groups}). In both settings, a canonical projection identifies elements yielding the same image ($g \cdot x = \hat{g} \cdot x \iff g^{-1}\hat{g} \in \operatorname{Stab}(x)$ versus $f(x) = f(y) \iff x^{-1}y \in \ker(f)$); the crucial difference is that $\ker(f)$ is automatically normal, making $\bar{f}$ a group isomorphism, whereas $\operatorname{Stab}(x)$ need not be normal and $\operatorname{Orb}(x) \subset T$ is generally only a set, making $C$ a bijection of sets (indeed, of $G$-sets).
+The commutative triangle $G \xrightarrow{B} \faktor{G}{\operatorname{Stab}(x)} \xrightarrow[\sim]{C} \operatorname{Orb}(x)$ directly parallels the First Isomorphism Theorem diagram $G_1 \xrightarrow{q} \faktor{G_1}{\ker(f)} \xrightarrow[\sim]{\bar{f}} \operatorname{Im}(f)$ (\cref{thm:first-isomorphism-theorem-groups,thm:first-iso-groups}). In both settings, a canonical projection identifies elements yielding the same image ($g \cdot x = \hat{g} \cdot x \iff g^{-1}\hat{g} \in \operatorname{Stab}(x)$ versus $f(x) = f(y) \iff x^{-1}y \in \ker(f)$); the crucial difference is that $\ker(f)$ is automatically normal, making $\bar{f}$ a group isomorphism, whereas $\operatorname{Stab}(x)$ need not be normal and $\operatorname{Orb}(x) \subset T$ is generally only a set, making $C$ a bijection of sets. The lecturer announces \qt{one more refinement} of the theorem for the next lecture.
 \end{insight}
 
 \subsection{Consequences for Finite Groups and Finite Sets}
@@ -1227,11 +1227,11 @@ And then we just put here the orbit \inlinemetanote{writes: $|\operatorname{Orb}
 
 \begin{content}[Orbit-Counting Decomposition for Finite \texorpdfstring{$G$ and $T$}{G and T}]
 \begin{proposition}[Orbit-Counting Decomposition]\label[proposition]{prop:orbit-decomposition}
-Suppose that both $G$ is finite and $T$ is finite, with $G \curvearrowright T$. Partitioning $T$ into its equivalence classes (orbits) and choosing one representative $x \in E$ from each equivalence class $E$ gives:
+Suppose that both $G$ is finite and $T$ is finite, with $G \curvearrowright T$. Partitioning $T$ into its equivalence classes (orbits) and choosing one representative $x_i$ in each equivalence class gives:
 \[
 |T| = \sum_{E \in \text{Equiv. classes of } \sim} |E|
-    = \sum_{\substack{\text{choice of one } x \in E \\ \text{per equiv. class}}} |\operatorname{Orb}(x)|
-    = \sum_{\substack{\text{choice of one } x \in E \\ \text{per equiv. class}}} \left| \faktor{G}{\operatorname{Stab}(x)} \right|,
+    = \sum_{\substack{\text{choice of one } x_i \\ \text{per equiv. class}}} |\operatorname{Orb}(x_i)|
+    = \sum_{\substack{\text{choice of one } x_i \\ \text{per equiv. class}}} \left| \faktor{G}{\operatorname{Stab}(x_i)} \right|,
 \]
 where the final equality holds by the Orbit--Stabilizer Theorem (\cref{thm:orbit-stabilizer}).
 \end{proposition}
@@ -1300,6 +1300,6 @@ We find this $T$ (i.e., $|T|$) is a sum of things that divide $G$ (i.e., $|G|$).
     \item \textbf{Orbits (\cref{def:orbit-equiv-rel,not:orbit,def:orbit-formula}):} The relation $x \sim y \iff \exists\, g \in G \text{ s.t.\ } g \cdot x = y$ is an equivalence relation (\cref{prop:sim-is-equiv-rel}) partitioning $T$ into disjoint orbits $\operatorname{Orb}(x) = \{ g \cdot x \mid g \in G \}$. Each orbit is a $G$-invariant subset (\cref{clm:orbit-g-invariant}) with a canonical surjection $A \colon G \to \operatorname{Orb}(x)$, $g \mapsto g \cdot x$ (\cref{prop:orbit-map-surjective}).
     \item \textbf{Stabilizers (\cref{def:stabilizer}):} For $x \in T$, $\operatorname{Stab}(x) := \{ g \in G \mid g \cdot x = x \}$ is a subgroup of $G$ (\cref{lem:stab-subgroup}), and $\faktor{G}{\operatorname{Stab}(x)}$ is the set of its left cosets (not necessarily a group).
     \item \textbf{Orbit--Stabilizer Theorem (\cref{thm:orbit-stabilizer}):} For any group action $G \curvearrowright T$ and $x \in T$, the map $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ given by $C\bigl(g \cdot \operatorname{Stab}(x)\bigr) = g \cdot x$ is well-defined (\cref{q:c-well-defined,ans:c-well-defined}), surjective (\cref{ans:c-surjective}), and injective (\cref{ans:c-injective}), and satisfies $C \circ B = A$ where $B(g) = g \cdot \operatorname{Stab}(x)$.
-    \item \textbf{Finite Counting Consequences (\cref{cor:orbit-divides-order,prop:orbit-decomposition}):} When $G$ is finite, $|\operatorname{Orb}(x)| = \left| \faktor{G}{\operatorname{Stab}(x)} \right|$ is finite and divides $|G|$ by Lagrange's Theorem (\cref{thm:lagrange}). When both $G$ and $T$ are finite, picking one representative $x$ per equivalence class gives $|T| = \sum |\operatorname{Orb}(x)| = \sum \left| \faktor{G}{\operatorname{Stab}(x)} \right|$, expressing $|T|$ as a sum of divisors of $|G|$.
+    \item \textbf{Finite Counting Consequences (\cref{cor:orbit-divides-order,prop:orbit-decomposition}):} When $G$ is finite, $|\operatorname{Orb}(x)| = \left| \faktor{G}{\operatorname{Stab}(x)} \right|$ is finite and divides $|G|$ by Lagrange's Theorem (\cref{thm:lagrange}). When both $G$ and $T$ are finite, picking one representative $x_i$ per equivalence class gives $|T| = \sum |\operatorname{Orb}(x_i)| = \sum \left| \faktor{G}{\operatorname{Stab}(x_i)} \right|$, expressing $|T|$ as a sum of divisors of $|G|$.
 \end{itemize}
 \end{overview}

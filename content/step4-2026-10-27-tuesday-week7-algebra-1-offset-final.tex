@@ -157,7 +157,7 @@ Applying \cref{thm:ufd-polynomial-ring-w7tue} iteratively to standard UFDs yield
     \mathbb{F}_p = \faktor{\mathbb{Z}}{p\mathbb{Z}} \implies \faktor{\mathbb{Z}}{p\mathbb{Z}}[x, y, z, \dots]
     \]
     is a UFD in any finite number of variables.
-    \item \textbf{Polynomials over Standard Number Fields:} The fields $\mathbb{Q}, \mathbb{C}, \mathbb{R}$ are UFDs, so polynomial rings such as
+    \item \textbf{Polynomials over $\mathbb{Q}$, $\mathbb{C}$, $\mathbb{R}$:} The fields $\mathbb{Q}, \mathbb{C}, \mathbb{R}$ are UFDs, so polynomial rings such as
     \[
     \mathbb{Q}, \mathbb{C}, \mathbb{R} \implies \mathbb{Q}[x, y, z]
     \]
@@ -1191,7 +1191,7 @@ Because inverses in a group $G$ are unique (\cref{prop:group-inverse-unique}), i
 \end{remark}
 
 \begin{definition}[Subgroup]\label[definition]{def:subgroup-w7tue}
-A subset $S \subset G$ (throughout this course, $\subset$ allows equality, i.e., $\subset$) of a group $(G, \cdot, e)$ is a \newterm{subgroup} (so $(S, \cdot, e)$ is a group under the restricted operation) if:
+A subset $S \subset G$ (throughout this course, $\subset$ allows equality, see \cref{not:subset-board}; many textbooks write $\subseteq$) of a group $(G, \cdot, e)$ is a \newterm{subgroup} (so $(S, \cdot, e)$ is a group under the restricted operation) if:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item $S$ is closed under multiplication: $\cdot \colon S \times S \to S$,
     \item $S$ contains the neutral element: $e \in S$,
@@ -1315,9 +1315,9 @@ is the symmetric group on $n$ elements.
 \end{definition}
 
 \begin{remark}[The Right-to-Left Convention of Composition]\label[remark]{rem:composition-order}
-For functions $g \colon [n] \to [n]$ and $f \colon [n] \to [n]$, composition $f \circ g$ is evaluated right-to-left: first $g$, then $f$ (for example, on $1$, and in general $(f \circ g)(k) = f(g(k))$ for $k \in [n]$):
+For functions $g \colon [n] \to [n]$ and $f \colon [n] \to [n]$, composition $f \circ g$ is evaluated right-to-left: first $g$, then $f$:
 \[
-(f \circ g)(1) = f(g(1)).
+(f \circ g)(i) = f(g(i)) \qquad \text{for all } i \in [n].
 \]
 \end{remark}
 \end{content}
@@ -1483,7 +1483,7 @@ Another example: the one I had there, this one \inlinemetanote{draws the arrow d
 To name elements of $S_n$ compactly, we write each permutation in \newterm{cycle decomposition notation}. Starting from an element, we open a parenthesis, write each successive image beside its preimage, and close the parenthesis once the chain returns to the starting element; we then repeat from the smallest element not yet listed.
 
 \begin{definition}[Cycle]\label[definition]{def:cycle}
-A permutation $\sigma \in S_n$ is called a \newterm{$k$-cycle} (or cycle of length $k$), denoted $(i_1 \, i_2 \, \dots \, i_k)$, if
+A permutation $\sigma \in S_n$ is called a \newterm{$k$-cycle} (or cycle of length $k$), denoted $(i_1 \, i_2 \, \dots \, i_k)$ for distinct $i_1, \dots, i_k \in [n]$, if
 \[
 \sigma(i_1) = i_2, \quad \sigma(i_2) = i_3, \quad \dots, \quad \sigma(i_{k-1}) = i_k, \quad \sigma(i_k) = i_1,
 \]

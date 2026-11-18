@@ -870,10 +870,12 @@ Because every element of $[7]$ belongs to a unique cycle in the disjoint cycle d
 \[
 7 = 3 + 2 + 2.
 \]
-This decomposition yields an integer \newterm{partition} of $n$, establishing a deep connection (explored in Week~8, \cref{thm:sn-conjugacy-classes-partitions}, \cref{def:partition-function}, \cref{thm:euler-partition-product}, \cref{cor:conjugacy-classes-partitions}):
+% [BOARD-CHECKED: frame 00:32:30 (2026-11-18): the board has S_n <-> Part(n), with 7 = 3 + 2 + 2 below it]
+This decomposition yields an integer \newterm{partition} of $n$, a way to break $n$ up into a sum of positive integers, where the order of the summands does not matter. Writing $\operatorname{Part}(n)$ for the set of partitions of $n$, this gives a deep connection:
 \[
-\text{conjugacy classes of } S_n \longleftrightarrow \text{partitions of } n.
+S_n \longleftrightarrow \operatorname{Part}(n).
 \]
+Week~8 makes it exact: the conjugacy classes of $S_n$ correspond bijectively to the partitions of $n$ (\cref{thm:sn-conjugacy-classes-partitions}, \cref{cor:conjugacy-classes-partitions}), and their number is the partition function $p(n)$ (\cref{def:partition-function}, \cref{thm:euler-partition-product}).
 \end{content}
 
 \subsection{Rotational Symmetry Groups of the Platonic Solids}
@@ -1108,7 +1110,7 @@ And now, they shouldn't all be... you label these, let's say $a, b, c, d$ --- wh
 \end{speech}
 
 \begin{content}[The Four Long Diagonals of the Cube]
-A cube $[-1, 1]^3$ of side length $2$ centered at the origin has $8$ vertices $(\pm 1, \pm 1, \pm 1)$, arranged in $4$ pairs of opposite vertices $\pm v$. Connecting each opposite pair produces $4$ \newterm{long diagonals} $A, B, C, D$, all passing through the origin:
+A cube $[-1, 1]^3$ of side length $2$ centered at the origin has $8$ vertices $(\pm 1, \pm 1, \pm 1)$, arranged in $4$ pairs of opposite vertices $\pm v$. Connecting each opposite pair produces $4$ \newterm{long diagonals} $a, b, c, d$, all passing through the origin:
 
 \definecolor{figBlue}{HTML}{076090} % RGB (7, 96, 144): petrol blue (MidnightBlue)
 \definecolor{figGreen}{HTML}{3D8252} % RGB (61, 130, 82): dark green (ForestGreen!70!black)
