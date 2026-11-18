@@ -325,7 +325,10 @@ pdfauthor={Prof. Rahul Pandharipande}
   % tcolorbox moves the heading to the next page with it instead of leaving it orphaned
   % at the bottom ("Using nobreak failed").
   ignore nobreak=false,
-  % \textbf in a box title takes the title's color: blue bold on a red title bar is unreadable
+  % \textbf in a box title takes the title's color: blue bold on a red title bar is unreadable.
+  % It takes coltitle (white by default), so a box that colours its title with \textcolor
+  % also sets coltitle to that colour (speech, insight, content, note, student, pause);
+  % otherwise \textbf and \newterm in its title print white on white (2026-11-18).
   before title app={\colorlet{TextBoldColor}{.}},
   % No shadow at a page break: the parts of a broken box get their shadow along the cut edges
   % too, so white patches cover it there (underlays are drawn after the shadow).
@@ -792,6 +795,7 @@ arc=3mm,
 colback=EnvSpokenBg,
 dynamic shadow,
 code={
+  \ifinsideproof\tcbset{coltitle=EnvSpokenProof}\else\tcbset{coltitle=EnvSpoken}\fi % bold title text: see before title app
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
@@ -871,6 +875,7 @@ arc=3mm,
 colback=EnvTeacherBg,
 dynamic shadow,
 code={
+  \ifinsideproof\tcbset{coltitle=EnvTeacherProof}\else\tcbset{coltitle=EnvTeacherBorder}\fi % bold title text: see before title app
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
@@ -1037,6 +1042,7 @@ opacityback=0,
 breakable,
 before upper={\setlength{\parskip}{\customparskip}\setlength{\parindent}{0pt}},
 code={
+  \ifinsideproof\tcbset{coltitle=EnvSpokenProof}\else\tcbset{coltitle=EnvSpoken}\fi % bold title text: see before title app
   % 2026-10-25: Content vertical bar matched to speech width at 3pt (previously 2pt):
   \ifinsideproof
     \tcbset{borderline west={3pt}{0pt}{EnvMathProof}}
@@ -1058,6 +1064,7 @@ enhanced,
 frame hidden,
 colback=EnvMeta!3!white,
 code={
+  \ifinsideproof\tcbset{coltitle=EnvMetaProof}\else\tcbset{coltitle=EnvMeta}\fi % bold title text: see before title app
   % 2026-10-26: Dashed borderline thickness matched to aiNote at 1pt (previously 0.5pt):
   \ifinsideproof
     \tcbset{borderline={1pt}{0pt}{EnvMetaProof, dashed}}
@@ -1102,6 +1109,7 @@ arc=3mm,
 colback=EnvStudentBg,
 dynamic shadow,
 code={
+  \ifinsideproof\tcbset{coltitle=EnvStudentProof}\else\tcbset{coltitle=EnvStudent}\fi % bold title text: see before title app
   \ifinsideproof
     \tcbset{
       underlay unbroken and last={
@@ -1314,6 +1322,7 @@ frame hidden,
 colback=white,
 opacityback=0,
 code={
+  \ifinsideproof\tcbset{coltitle=EnvBreakProof}\else\tcbset{coltitle=EnvBreak}\fi % bold title text: see before title app
   \ifinsideproof
     \tcbset{borderline north={0.5pt}{0pt}{EnvBreakProof, dashed}, borderline south={0.5pt}{0pt}{EnvBreakProof, dashed}}
   \else
