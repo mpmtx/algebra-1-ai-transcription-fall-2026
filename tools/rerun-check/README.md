@@ -53,5 +53,7 @@ so keep regexes in files like these rather than inline.
    the intermediate states in copies of `git archive HEAD` with the lecture files
    overlaid.
 
-See `findings/hydrogen-rerun-check.md` for the group chapters (Weeks 7-9) and the
-commit messages of 2026-11-15/16 for what each lecture's check found.
+See `findings/hydrogen-rerun-check.md` for the group chapters (Weeks 7-9), removed
+from the tree on 2026-11-18 and kept in the history
+(`git show 4d2b858:findings/hydrogen-rerun-check.md`), and the commit messages of
+2026-11-15/16 for what each lecture's check found.
