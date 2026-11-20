@@ -354,6 +354,8 @@ explain little of what is in the book.
     Wed L588), where a comma would turn it into a claim.
   - Also checked in every block, with nothing to fix: question tags (`, right?`, `, all right?`), `if ..., then`
     (the ones without a comma close their condition with a dash), and repeated words.
+  - Gemini 4 Hydrogen XHIGH reviewed the whole comma commit (`65533fc`, all 155 hunks in 18 files, review only, last
+    hunk header quoted as proof) and found nothing wrong.
 - **Open:**
   - D9: Week 10 Tuesday's Stage 3 failed on the quota on 2026-11-20 and has to be rerun anyway; that rerun is the
     first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first.
