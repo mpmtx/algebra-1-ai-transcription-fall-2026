@@ -338,8 +338,23 @@ explain little of what is in the book.
     only, last hunk header quoted as proof). Its three findings held and were fixed: a comma after a closing
     parenthesis (Week 6 Tue L393), an `if` dropped with a restart (Week 8 Tue L176), and `we usually` dropped
     although it makes a point (Week 9 Tue L1540). It did not see those three fixes or this status block.
+- **D7 decided** (the user, 2026-11-20): the comma after an introductory `So` stays, wherever it is grammatical. The
+  prompts already ask for it in all three stages, so they are unchanged. The book was made consistent in every block
+  (speech, proofs, notes, prerequisites) in the commit that adds this line:
+  - 184 commas added, nothing else changed (script check: each changed line equals the old one once commas are
+    removed). Among them: sentence-initial `So` (22), `Okay, so` / `All right, so` / `Yeah, so` (74 and 1),
+    `And so` (19 and 3), `So that's`/`So that means` (16 in all), `so` opening an aside after a dash (10) or a
+    restart after `...` (8), and `Hence`/`Thus`/`Otherwise`/`Likewise`/`Finally`/`In particular`/`Of course` at
+    the start of a sentence (30).
+  - Clause-level `, and hence` / `, and therefore` got the comma the rule asks for (4); phrase-level ones (`and hence
+    an isomorphism`, `and therefore a UFD`) did not, since a comma there would be wrong. One `And,` lost its comma
+    (Week 8 Tue L1853).
+  - Left without a comma, as the grammar requires: `So far`, `And so on`, `so` as a conjunction inside a sentence
+    (`$x = 0$, so the map is injective`, also after a closing dash), and `what happens... so it's injective` (Week 8
+    Wed L588), where a comma would turn it into a claim.
+  - Also checked in every block, with nothing to fix: question tags (`, right?`, `, all right?`), `if ..., then`
+    (the ones without a comma close their condition with a dash), and repeated words.
 - **Open:**
-  - D7 (`So,`, a separate style decision).
   - D9: Week 10 Tuesday's Stage 3 failed on the quota on 2026-11-20 and has to be rerun anyway; that rerun is the
     first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first.
   - The app half of D10.

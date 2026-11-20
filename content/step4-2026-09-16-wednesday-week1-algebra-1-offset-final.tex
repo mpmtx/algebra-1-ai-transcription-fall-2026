@@ -21,7 +21,7 @@ In this lecture, we bridge arithmetic and abstract algebra by exploring the foll
 \subsection{Units and Primes in \texorpdfstring{$\mathbb{Z}$}{Z} and \texorpdfstring{$\mathbb{Z}[i]$}{Z[i]}}
 
 \begin{speech}[00:00:00 - 00:00:53]
-Okay, so we'll try to start. Maybe you could sit down.
+Okay, so, we'll try to start. Maybe you could sit down.
 
 On the practical aspects, there was some progress: the website is more or less correct now, I think, so you can look for the information on the website.
 
@@ -114,7 +114,7 @@ In general commutative algebra, a non-zero non-unit $q$ in an integral domain $R
 \begin{speech}[00:02:48 - 00:04:08]
 So, let's do something that's not nonsense. A math question you can ask, which is a very nice question, is: if I take a prime, an actual prime in the integers \inlinemetanote{writes: $p \in \mathbb{Z}$}, and I view that prime, that $p$, as an element of the Gaussian integers \inlinemetanote{writes: and view that $p$ as an element of $\mathbb{Z}[i]$}, which it is --- because remember, the Gaussian integers are the set of integers plus $i$ times an integer \inlinemetanote{writes: $\mathbb{Z}[i] = \{n + im \mid n, m \in \mathbb{Z}\}$}... So, the integers naturally sit inside the Gaussian integers \inlinemetanote{writes: $\mathbb{Z} \subset \mathbb{Z}[i]$} by just an integer going here. Is that clear?
 
-If I take a prime, an honest prime in the integers --- so this would be, you know, like $2, 3, 5, 7, 11, \dots$ \inlinemetanote{writes: $p = 2, 3, 5, 7, 11, \dots$} and so on --- take one of them, and I consider the Gaussian integers: does it stay prime? Or maybe say: When does $p$ stay prime? \inlinemetanote{writes: When does $p$ stay prime?}
+If I take a prime, an honest prime in the integers --- so, this would be, you know, like $2, 3, 5, 7, 11, \dots$ \inlinemetanote{writes: $p = 2, 3, 5, 7, 11, \dots$} and so on --- take one of them, and I consider the Gaussian integers: does it stay prime? Or maybe say: When does $p$ stay prime? \inlinemetanote{writes: When does $p$ stay prime?}
 
 Meaning: it's born prime in the integers; when does it stay prime when I consider it as a Gaussian integer? That's a real question. And we had an example in the class last time.
 \end{speech}
@@ -199,7 +199,7 @@ p = a^2 + b^2.
 \begin{steps}[Connection Between Gaussian Primes and Sums of Squares]
 \begin{itemize}
     \item If an integer prime $p$ factors non-trivially in $\mathbb{Z}[i]$, then $p$ must be a sum of two integer squares: $p = a^2 + b^2$.
-    \item By contrapositive, if $p$ cannot be expressed as the sum of two squares, it cannot factor non-trivially in $\mathbb{Z}[i]$, and hence $p$ must stay prime in $\mathbb{Z}[i]$.
+    \item By contrapositive, if $p$ cannot be expressed as the sum of two squares, it cannot factor non-trivially in $\mathbb{Z}[i]$, and hence, $p$ must stay prime in $\mathbb{Z}[i]$.
     \item Going beyond the lecture: conversely, $p = a^2 + b^2$ gives the factorization $p = (a + bi)(a - bi)$, and neither factor is a unit, since the units $\pm 1, \pm i$ have length $1$ while $|a \pm bi| = \sqrt{p} > 1$. Hence, $p$ stays prime in $\mathbb{Z}[i]$ \emph{if and only if} $p$ is not a sum of two squares.
 \end{itemize}
 \end{steps}
@@ -1204,8 +1204,8 @@ For finite-dimensional vector spaces, a basis comes from extracting a maximal li
 Zorn's lemma says: if $P$ is a non-empty partially ordered set (\cref{def:pre-partial-order}) in which every chain (totally ordered subset) has an upper bound in $P$, then $P$ has a maximal element. For a vector space $V$ over a field $k$:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \item Let $P$ be the set of linearly independent subsets of $V$, ordered by inclusion. It is non-empty, since $\emptyset \in P$.
-    \item The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So every chain has an upper bound in $P$.
-    \item Zorn's lemma gives a maximal element $B \in P$. If some $v \in V$ were not in the span of $B$, then $B \cup \{v\}$ would be linearly independent and strictly larger than $B$. Hence $B$ spans $V$, and $B$ is a basis.
+    \item The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So, every chain has an upper bound in $P$.
+    \item Zorn's lemma gives a maximal element $B \in P$. If some $v \in V$ were not in the span of $B$, then $B \cup \{v\}$ would be linearly independent and strictly larger than $B$. Hence, $B$ spans $V$, and $B$ is a basis.
 \end{enumerate}
 Week~5 states Zorn's lemma formally (\cref{lem:zorns-lemma}) and uses the same union-of-a-chain argument (\cref{lem:chains-ideals-bounded}) to prove that every non-zero ring has a maximal ideal (Krull's theorem, \cref{thm:krulls-theorem-maximal-ideals}).
 \end{aiNote}

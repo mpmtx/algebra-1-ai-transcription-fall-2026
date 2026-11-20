@@ -105,7 +105,7 @@ This lecture studies group homomorphisms, normal subgroups, quotient groups, and
 \section{Homomorphisms of Groups}
 
 \begin{speech}[00:00:00 - 00:01:15]
-Okay, so we start, and the topic this week is about the study of homomorphisms. Homs of groups \inlinemetanote{writes \qt{Homs of Groups} on the upper left board}.
+Okay, so, we start, and the topic this week is about the study of homomorphisms. Homs of groups \inlinemetanote{writes \qt{Homs of Groups} on the upper left board}.
 
 So, this means we think about the image, the kernel, the first isomorphism theorem, and in some sense this is the third time for you. You did the study for vector spaces last year, and then a few weeks ago we did the same study for the rings, ring homomorphisms, and you will see the pattern here is very, very similar, but there are little differences, so you should be sensitive to those differences. And of course also the examples are different, so...
 
@@ -129,7 +129,7 @@ Here, the product $xy$ on the left-hand side is taken in $G_1$, while the produc
 \subsection{Image of a Homomorphism}
 
 \begin{speech}[00:01:15 - 00:01:42]
-Okay, so the first proposition is not a surprise, and Proposition $1$ is that the \newterm{image} of $f$ --- this is a subset of $G_2$ --- is a subgroup \inlinemetanote{writes \qt{Prop 1: $\operatorname{Im}(f) \subset G_2$ is subgrp}}.
+Okay, so, the first proposition is not a surprise, and Proposition $1$ is that the \newterm{image} of $f$ --- this is a subset of $G_2$ --- is a subgroup \inlinemetanote{writes \qt{Prop 1: $\operatorname{Im}(f) \subset G_2$ is subgrp}}.
 
 So, I remind you, for a linear map, the image is a subvector space, and for a ring homomorphism, the image was a subring. So, this is exactly in that.
 \end{speech}
@@ -154,7 +154,7 @@ As everywhere in these notes (\cref{not:subset-board}), $\subset$ stands for any
 \begin{proofWrapper}[Proof of \cref{prop:image-subgroup}]
 
 \begin{speech}[00:01:42 - 00:02:19]
-And so the proof of this, well, what do we have to prove? Proof: we have to check the properties of a subgroup \inlinemetanote{writes \qt{Proof. Check properties of subgroup.}}.
+And so, the proof of this, well, what do we have to prove? Proof: we have to check the properties of a subgroup \inlinemetanote{writes \qt{Proof. Check properties of subgroup.}}.
 
 So, the first one is that $f(e_1)$ is equal to $e_2$ \inlinemetanote{writes: $f(e_1) = e_2$} --- that's something we'd already derived about homomorphisms --- so, this implies that $e_2$ is in the image of $f$ \inlinemetanote{writes: $\implies e_2 \in \operatorname{Im}(f)$}. That's one of the properties: in order for a subset to be a subgroup, the neutral element must be there, and the neutral element is the image of the neutral element.
 \end{speech}
@@ -175,7 +175,7 @@ By the homomorphism property and the neutrality of $e_1$ in $G_1$, we have $f(e_
 \begin{speech}[00:02:19 - 00:03:27]
 The second is that if, let's say, I take $a$ and $b$ in the image, we must check that $a$ times $b$ is in the image \inlinemetanote{writes \qt{$a, b \in \operatorname{Im}(f)$, we must check that $a \cdot b \in \operatorname{Im}(f)$}}. And the proof of this is that let $x$ and $y$ in $G_1$ be such that --- let's go over here \inlinemetanote{draws a vertical divider and moves to the third panel} --- $f(x) = a$ and $f(y) = b$ \inlinemetanote{writes \qt{Let $x, y \in G_1$ s.t.} and \qt{$f(x) = a$, $f(y) = b$}}. This is possible because we're saying $a$ and $b$ are in the image.
 
-Okay, then we'll just look at $f(xy)$: this is equal to $f(x)$ times $f(y)$ --- that's the homomorphism property --- and this is equal to $a$ times $b$, and so this says that $a$ times $b$ is in the image \inlinemetanote{writes: $f(x \cdot y) = f(x) \cdot f(y) = a \cdot b \implies a \cdot b \in \operatorname{Im}(f)$}. Okay, so that's that.
+Okay, then we'll just look at $f(xy)$: this is equal to $f(x)$ times $f(y)$ --- that's the homomorphism property --- and this is equal to $a$ times $b$, and so this says that $a$ times $b$ is in the image \inlinemetanote{writes: $f(x \cdot y) = f(x) \cdot f(y) = a \cdot b \implies a \cdot b \in \operatorname{Im}(f)$}. Okay, so, that's that.
 \end{speech}
 
 \begin{content}[Closure Under Multiplication]
@@ -196,7 +196,7 @@ Since $xy \in G_1$, it follows that $a \cdot b \in \operatorname{Im}(f)$.
 \begin{speech}[00:03:27 - 00:04:34]
 And the last one --- I won't do all these arguments so carefully. The third property for the subgroup we have to check is: suppose $a$ is in the image of $f$, we must check that $a$ inverse is in the image of $f$ \inlinemetanote{draws a vertical divider and writes \qt{Suppose $a \in \operatorname{Im}(f)$, we must check $a^{-1} \in \operatorname{Im}(f)$}}.
 
-And so how to do that? It's just like all of these other ones: we first choose some $x$ in $G_1$ such that $f(x) = a$ \inlinemetanote{writes \qt{Choose $x \in G_1$ s.t. $f(x) = a$}}. And then we have to find something in $G_1$ that goes to the inverse, and the natural guess is: consider $f(x^{-1})$ \inlinemetanote{writes \qt{consider $f(x^{-1})$}}. This is a very reasonable thing to consider for the guess.
+And so, how to do that? It's just like all of these other ones: we first choose some $x$ in $G_1$ such that $f(x) = a$ \inlinemetanote{writes \qt{Choose $x \in G_1$ s.t. $f(x) = a$}}. And then we have to find something in $G_1$ that goes to the inverse, and the natural guess is: consider $f(x^{-1})$ \inlinemetanote{writes \qt{consider $f(x^{-1})$}}. This is a very reasonable thing to consider for the guess.
 
 So, consider $f(x^{-1})$, and what equation do we have? The equation, the homomorphism property equation, is $f(x) \cdot f(x^{-1})$ (i.e., $f(x \cdot x^{-1})$) is equal to $f(x)$ times $f(x^{-1})$, that's the hom property \inlinemetanote{writes \qt{$f(x \cdot x^{-1}) = f(x) \cdot f(x^{-1})$ hom. prop.}}.
 \end{speech}
@@ -215,7 +215,7 @@ Okay, and then we just analyze this. So, as I said, in these equations you have 
 
 You know, as I said, formally one could make a different symbol for the product in $G_1$ and $G_2$, but nobody does that. It's just too much work and generally speaking, in all of these equations, if you just read them --- so to speak, whether the thing's happening before or after $f$ --- you can tell whether it's $G_1$ or $G_2$. Is that clear?
 
-Okay, so then this is happening before, and that's $x$ and $x$ inverse, that's $f(e_1)$, right? And this is $f(x)$ times $f(x^{-1})$ \inlinemetanote{writes: $f(e_1) = f(x) \cdot f(x^{-1})$}. And $f(e_1)$ is $e_2$ \inlinemetanote{writes \qt{$e_2 =$} before $f(e_1)$}. So, then we can conclude that $f(x^{-1})$ is equal to $(f(x))^{-1}$ \inlinemetanote{writes: $f(x^{-1}) = (f(x))^{-1}$}. And this is the inverse in $G_1$ \inlinemetanote{points at $x^{-1}$}, and that's the inverse in $G_2$ \inlinemetanote{points at $(f(x))^{-1}$}, because I have that times that is equal to $e_2$. So, that concludes the three properties.
+Okay, so, then this is happening before, and that's $x$ and $x$ inverse, that's $f(e_1)$, right? And this is $f(x)$ times $f(x^{-1})$ \inlinemetanote{writes: $f(e_1) = f(x) \cdot f(x^{-1})$}. And $f(e_1)$ is $e_2$ \inlinemetanote{writes \qt{$e_2 =$} before $f(e_1)$}. So, then we can conclude that $f(x^{-1})$ is equal to $(f(x))^{-1}$ \inlinemetanote{writes: $f(x^{-1}) = (f(x))^{-1}$}. And this is the inverse in $G_1$ \inlinemetanote{points at $x^{-1}$}, and that's the inverse in $G_2$ \inlinemetanote{points at $(f(x))^{-1}$}, because I have that times that is equal to $e_2$. So, that concludes the three properties.
 \end{speech}
 
 \begin{content}[Complete Proof of \cref{prop:image-subgroup}]
@@ -296,7 +296,7 @@ where:
 \end{content}
 
 \begin{speech}[00:08:02 - 00:09:57]
-Okay, let's not do words. In symbols! To write it down, this has a very simple formula, but you have to think about it. So, the first thing to write this down is I'm going to pick some basis vectors for this vector space. So, let $v_1$ be $(1, 0, \dots, 0)$, $v_2$ is equal to $(0, 1, 0, \dots)$ and so on --- so these are the standard basis vectors --- and $v_n$ is the last one, the coordinate basis vectors \inlinemetanote{writes $v_1 = (1, 0, \dots, 0)$, $v_2 = (0, 1, 0, \dots, 0)$, and $v_n = (0, \dots, 0, 1)$}. So, this is a basis of this vector space $\mathbb{Q}^n$, okay \inlinemetanote{writes \qt{basis $\mathbb{Q}^n$}}?
+Okay, let's not do words. In symbols! To write it down, this has a very simple formula, but you have to think about it. So, the first thing to write this down is I'm going to pick some basis vectors for this vector space. So, let $v_1$ be $(1, 0, \dots, 0)$, $v_2$ is equal to $(0, 1, 0, \dots)$ and so on --- so, these are the standard basis vectors --- and $v_n$ is the last one, the coordinate basis vectors \inlinemetanote{writes $v_1 = (1, 0, \dots, 0)$, $v_2 = (0, 1, 0, \dots, 0)$, and $v_n = (0, \dots, 0, 1)$}. So, this is a basis of this vector space $\mathbb{Q}^n$, okay \inlinemetanote{writes \qt{basis $\mathbb{Q}^n$}}?
 
 And in order to give you a matrix, I just have to tell you what it does on the basis vectors; that's linear algebra. So, what do I have to do? I have to define this object, this homomorphism. So, it eats an element --- this is an element of the symmetric group \inlinemetanote{writes $\Phi_{\text{mat}}(\sigma)$ with a downward arrow to $\sigma \in S_n$}. So, you give it this homomorphism, it eats that, and it gives you a matrix, okay? So, I have to explain what this matrix is.
 
@@ -347,7 +347,7 @@ where $\Phi_{\text{mat}}$ first evaluates on $\sigma \in S_n$ to produce an $n \
 \subsection{Verification of the Homomorphism Property}
 
 \begin{speech}[00:10:48 - 00:12:46]
-Okay, so this is just the definition, so we have to check that this map is a homomorphism \inlinemetanote{writes \qt{Check $\Phi_{\text{mat}}$ is hom.}}. So, we have to check that. What's the homomorphism property? On the one hand, I have to see what happens when I send the composition in $S_n$ --- so these are two elements of $S_n$, and I compose them in $S_n$ --- and then I send that to a vector \inlinemetanote{writes: $\Phi_{\text{mat}}(\hat{\sigma}\sigma)(v_i)$}. And the other thing I can do --- this is the homomorphism property I have to check --- is whether that's the same thing as this matrix, so this is a matrix, now this is matrix multiplication, and then at the end it can also eat $v_i$ \inlinemetanote{writes: $\stackrel{?}{=} \Phi_{\text{mat}}(\hat{\sigma}) \cdot \Phi_{\text{mat}}(\sigma)(v_i)$ with \qt{Mat} below the dot}. So, I have to check whether these two things are equal, all right?
+Okay, so, this is just the definition, so we have to check that this map is a homomorphism \inlinemetanote{writes \qt{Check $\Phi_{\text{mat}}$ is hom.}}. So, we have to check that. What's the homomorphism property? On the one hand, I have to see what happens when I send the composition in $S_n$ --- so, these are two elements of $S_n$, and I compose them in $S_n$ --- and then I send that to a vector \inlinemetanote{writes: $\Phi_{\text{mat}}(\hat{\sigma}\sigma)(v_i)$}. And the other thing I can do --- this is the homomorphism property I have to check --- is whether that's the same thing as this matrix, so this is a matrix, now this is matrix multiplication, and then at the end it can also eat $v_i$ \inlinemetanote{writes: $\stackrel{?}{=} \Phi_{\text{mat}}(\hat{\sigma}) \cdot \Phi_{\text{mat}}(\sigma)(v_i)$ with \qt{Mat} below the dot}. So, I have to check whether these two things are equal, all right?
 
 Well, what is this \inlinemetanote{points at $\Phi_{\text{mat}}(\hat{\sigma}\sigma)(v_i)$}? By definition, this is $v$, and then this composition is still an element of $S_n$, so this composition can eat an index \inlinemetanote{writes: $\stackrel{\text{def}}{=} v_{\hat{\sigma}\sigma(i)}$}.
 
@@ -420,7 +420,7 @@ So, let's do $S_3$. Let's try $S_3$. So, $S_3$ has these elements, like $(1\,2)$
 
 So, where does $e$ go \inlinemetanote{writes: $\Phi_{\text{mat}}(e) =$ }? Well, it better go to the identity matrix because it's a homomorphism, but you can also just see that $e$ is the $\sigma$ that takes every index to itself, so it just takes every vector to itself, so it's the identity matrix. Is this clear? So, this is this matrix \inlinemetanote{writes the $3 \times 3$ identity matrix}.
 
-All right, so what about this one \inlinemetanote{writes: $\Phi_{\text{mat}}(1\,2) =$ }? Okay, what do you think this is? Here, let's try the first column. What should the first column be? Yeah? Someone say it.
+All right, so, what about this one \inlinemetanote{writes: $\Phi_{\text{mat}}(1\,2) =$ }? Okay, what do you think this is? Here, let's try the first column. What should the first column be? Yeah? Someone say it.
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -465,7 +465,7 @@ Textbooks call $\Phi_{\mathrm{mat}}$ the \emph{permutation representation} of $S
 \subsection{Composing with the Determinant: \texorpdfstring{$\hat{\Phi}_{\text{mat}}$}{Phi-hat\_mat}}
 
 \begin{speech}[00:17:02 - 00:18:32]
-All right, so that's really a basic thing, but its interest increases when we do one more thing. There's another homomorphism, which you did learn also, maybe not in this language: the determinant \inlinemetanote{draws a vertical dividing line and writes \qt{$\det$}}.
+All right, so, that's really a basic thing, but its interest increases when we do one more thing. There's another homomorphism, which you did learn also, maybe not in this language: the determinant \inlinemetanote{draws a vertical dividing line and writes \qt{$\det$}}.
 
 If I take $\operatorname{GL}_n(\mathbb{Q})$ --- and we could have picked other fields, like $\mathbb{Q}$ wasn't so important here, we could have put $\mathbb{R}$ or $\mathbb{C}$, it doesn't matter, but we'll just do $\mathbb{Q}$ --- so, $\operatorname{GL}_n(\mathbb{Q})$: there's a determinant that goes to this group $(\mathbb{Q}^*, \cdot, 1)$ \inlinemetanote{writes: $\det \colon \operatorname{GL}_n(\mathbb{Q}) \to (\mathbb{Q}^*, \cdot, 1)$}.
 
@@ -565,7 +565,7 @@ So, I'm erasing it \inlinemetanote{erases the lower board}, but you see why this
 \subsection{The Sign Homomorphism and Parity of Permutations}
 
 \begin{speech}[00:20:47 - 00:21:33]
-Okay, so I have constructed this homomorphism from the group $S_n$ to $\mathbb{Q}^*$, and now I want to argue that the image is very simple. So, the image of this $\hat{\Phi}_{\text{mat}}$, it's a subgroup of $\mathbb{Q}^*$ --- subgroup, because we proved that images are always subgroups \inlinemetanote{writes: $\operatorname{Im}(\hat{\Phi}_{\text{mat}}) \subset \mathbb{Q}^*$ with \qt{subgroup} below an underbrace under $\operatorname{Im}(\hat{\Phi}_{\text{mat}})$}, all right?
+Okay, so, I have constructed this homomorphism from the group $S_n$ to $\mathbb{Q}^*$, and now I want to argue that the image is very simple. So, the image of this $\hat{\Phi}_{\text{mat}}$, it's a subgroup of $\mathbb{Q}^*$ --- subgroup, because we proved that images are always subgroups \inlinemetanote{writes: $\operatorname{Im}(\hat{\Phi}_{\text{mat}}) \subset \mathbb{Q}^*$ with \qt{subgroup} below an underbrace under $\operatorname{Im}(\hat{\Phi}_{\text{mat}})$}, all right?
 
 If it's a subgroup... and moreover, it's not only a subgroup, let me write it out: this is a subgroup, but it's not only a subgroup, it's a finite subgroup \inlinemetanote{writes \qt{finite} before \qt{subgroup} and underlines both}.
 
@@ -656,7 +656,7 @@ The board writes $\operatorname{Sign}$, for the map and for its values ($\operat
 \end{aiNote}
 
 \begin{speech}[00:23:44 - 00:25:00]
-And so that's kind of an interesting thing: for every permutation you get a sign. And the language is that permutations are \newterm{even} or \newterm{odd}. If you have $\sigma$ in $S_n$, then $\sigma$ is called even or odd, and it's even if and only if the sign is $+1$, and it's odd if and only if the sign is $-1$ \inlinemetanote{draws a branching diagram from $\sigma \in S_n$ to \qt{even $\iff \operatorname{Sign}(\sigma) = +1$} and \qt{odd $\iff \operatorname{Sign}(\sigma) = -1$}}.
+And so, that's kind of an interesting thing: for every permutation you get a sign. And the language is that permutations are \newterm{even} or \newterm{odd}. If you have $\sigma$ in $S_n$, then $\sigma$ is called even or odd, and it's even if and only if the sign is $+1$, and it's odd if and only if the sign is $-1$ \inlinemetanote{draws a branching diagram from $\sigma \in S_n$ to \qt{even $\iff \operatorname{Sign}(\sigma) = +1$} and \qt{odd $\iff \operatorname{Sign}(\sigma) = -1$}}.
 
 And what we've seen here is the $2$-cycle, where we just move two elements, that is always odd. And moreover, this is a homomorphism, so that means that if you take a product of permutations, the sign is multiplicative. So, we'll get back to that.
 
@@ -695,7 +695,7 @@ But that's the absolute standard mathematical notation: the sign of a permutatio
 \subsection{The Kernel of a Homomorphism and the Alternating Group}
 
 \begin{speech}[00:25:43 - 00:27:01]
-Okay, so this was the example, then we come back to the analysis of the homomorphism. So, we have here $f$ from $G_1$ to $G_2$, and the first proposition was that the image is a subgroup, and we checked this \inlinemetanote{writes \qt{Prop: $\operatorname{Im}(f) \subset G_2$ is a subgroup}}. That's already done, and I should have said that we never used anything about finite groups here, all right? That was not used.
+Okay, so, this was the example, then we come back to the analysis of the homomorphism. So, we have here $f$ from $G_1$ to $G_2$, and the first proposition was that the image is a subgroup, and we checked this \inlinemetanote{writes \qt{Prop: $\operatorname{Im}(f) \subset G_2$ is a subgroup}}. That's already done, and I should have said that we never used anything about finite groups here, all right? That was not used.
 
 So, the next proposition, you can guess, is that the \newterm{kernel} --- which I'll define in a moment --- is a subgroup \inlinemetanote{writes \qt{Prop: $\ker(f) \subset G_1$ is a subgroup}}. And here the definition --- we've defined it before: the kernel of $f$ is equal to all those people in $G_1$ such that when you apply $f$ to them, you get $e_2$ \inlinemetanote{writes \qt{Def: $\ker(f) = \{ x \in G_1 \mid f(x) = e_2 \}$}}, right?
 
@@ -739,7 +739,7 @@ Hence, $\ker(f) \subset G_1$ is a subgroup.
 \begin{speech}[00:27:01 - 00:29:18]
 Okay. So, if we go back to the example then, the sign from $S_n$ to this $\{\pm 1\}$ \inlinemetanote{writes: $\operatorname{Sign} \colon S_n \to \{\pm 1\}$} --- I write it as $\{\pm 1\}$ to indicate it's a group with multiplication --- this $\{\pm 1\}$, this group is isomorphic to $\mathbb{Z}$ mod $2\mathbb{Z}$, with addition and $0$, right, where $+1$ goes to $\bar{0}$ and $-1$ goes to $\bar{1}$ \inlinemetanote{writes: $\cong (\faktor{\mathbb{Z}}{2\mathbb{Z}}, +, \bar{0})$, $+1 \mapsto \bar{0}$, and $-1 \mapsto \bar{1}$}. So, it's another way to think about it. Is that clear? But it's more natural to write it as $\{\pm 1\}$ here because we call it the sign.
 
-Okay, so what is the kernel of the sign homomorphism \inlinemetanote{writes: What is the ker of Sign hom?}? Well, we don't know what it is, but we know at least it's a subgroup, all right? So, by that second proposition (\cref{prop:ker-subgroup}).
+Okay, so, what is the kernel of the sign homomorphism \inlinemetanote{writes: What is the ker of Sign hom?}? Well, we don't know what it is, but we know at least it's a subgroup, all right? So, by that second proposition (\cref{prop:ker-subgroup}).
 
 So, there's a definition --- and this is a very important group: $A_n$ \inlinemetanote{writes \qt{Def: $A_n \subset S_n$}}. You know, there's a little bit of some kind of botany in this group theory where all these groups have names; it's, you know, like collecting plants. And it goes a long way, but there's no way to get around it. There's the groups, there's some kind of collection of groups, and mathematicians have studied them for a long time and we've agreed upon names, and part of the subject, if you want to understand it, is you have to learn some names.
 
@@ -779,9 +779,9 @@ The multiplicative group $(\{\pm 1\}, \cdot, 1)$ is isomorphic to $(\faktor{\mat
 \subsection{The Alternating Group \texorpdfstring{$A_4$}{A\_4} and Rotational Symmetries of the Tetrahedron}
 
 \begin{speech}[00:29:38 - 00:31:56]
-Okay, so let's try to do an example, because it turns out in some nice cases these groups are ones you've seen before.
+Okay, so, let's try to do an example, because it turns out in some nice cases these groups are ones you've seen before.
 
-All right, so let's try for $S_4$. $S_4$ has $24$ elements \inlinemetanote{writes: $|S_4| = 4! = 24$}. All right, so let's try to write them. First of all, there's the neutral element \inlinemetanote{writes: $e$}. And then we write the sign of it: the sign of this is $+1$, because it does nothing and has determinant $1$ \inlinemetanote{writes: $+1$}, okay?
+All right, so, let's try for $S_4$. $S_4$ has $24$ elements \inlinemetanote{writes: $|S_4| = 4! = 24$}. All right, so, let's try to write them. First of all, there's the neutral element \inlinemetanote{writes: $e$}. And then we write the sign of it: the sign of this is $+1$, because it does nothing and has determinant $1$ \inlinemetanote{writes: $+1$}, okay?
 
 Then there are the $2$-cycles, so you can choose... there are $4$ of them, I mean, there are $6$ of them: $(1\,2)$, $(1\,3)$, $(1\,4)$, $(2\,3)$, $(2\,4)$, $(3\,4)$ \inlinemetanote{writes the six $2$-cycles in a column}. So, that's $\binom{4}{2}$, there's $6$ $2$-cycles. When I write this, I don't write the ones that don't do anything. I could write them, and maybe I will sometimes, but here I've chosen not to write them just to save chalk.
 
@@ -812,7 +812,7 @@ The symmetric group $S_4$ has $|S_4| = 4! = 24$ elements. Grouping the elements 
 \end{hidden}
 
 \begin{speech}[00:31:56 - 00:33:05]
-So, what other partitions of $4$ are there? Well, there's this partition $3$... let's do the $2+2$ partition \inlinemetanote{writes \qt{$2+2$} in red}. All right, so what are these? Well, then I have to pick a $2$-cycle, and then another one, and they're disjoint, right? And so how many ways can I do this, by the way? Do you know \inlinemetanote{writes: $(1\,2)(3\,4)$}?
+So, what other partitions of $4$ are there? Well, there's this partition $3$... let's do the $2+2$ partition \inlinemetanote{writes \qt{$2+2$} in red}. All right, so, what are these? Well, then I have to pick a $2$-cycle, and then another one, and they're disjoint, right? And so, how many ways can I do this, by the way? Do you know \inlinemetanote{writes: $(1\,2)(3\,4)$}?
 
 Well, you know, you have to pick any $2$-cycle here, so I could pick another one. So, what's another one? Well, they're here, like $(1\,3)$, but then this one determines the opposite one, $(2\,4)$ \inlinemetanote{writes: $(1\,3)(2\,4)$}. And there's one more: $(1\,4)$ and $(2\,3)$ \inlinemetanote{writes: $(1\,4)(2\,3)$}. And that's all I can do. This is some kind of partition combinatorics, because I've just figured out every way I can write the cycle decomposition in $2, 2$. I mean, if I put them in different order it doesn't matter, because those cycles commute. So, these are the only ones. Are you happy with that? And what's the sign of this? Yeah?
 \end{speech}
@@ -822,7 +822,7 @@ $+1$.
 \end{student}
 
 \begin{speech}[00:33:06 - 00:34:27]
-$+1$, because each one of these has sign $-1$, and sign is a homomorphism, so there's two of them, so it becomes $+1$, okay \inlinemetanote{writes \qt{$+1$} in red beside the $2+2$ column}? All right, so this is...
+$+1$, because each one of these has sign $-1$, and sign is a homomorphism, so there's two of them, so it becomes $+1$, okay \inlinemetanote{writes \qt{$+1$} in red beside the $2+2$ column}? All right, so, this is...
 
 What else can I do? $3+1$ \inlinemetanote{writes: $3+1$}. So, I could do something like: I keep $4$ fixed and I do $(1\,2\,3)$; I keep $4$ fixed, I do $(1\,3\,2)$ \inlinemetanote{writes \qt{$(4)(1\,2\,3)$} and \qt{$(4)(1\,3\,2)$}}. All right. And there's more of them. And yeah, so this is, you know... there's going to be, the total list here is $8$, because I get to decide which one to keep fixed, and once I decide that fixed-kept, there's the $3$-cycle and there's two of the $3$-cycles, so it's going to be $2 \times 4$, which is $8$. So, this would be $(3)(1\,2\,4)$, $(3)(1\,4\,2)$, $(2)(1\,3\,4)$, $(2)(1\,4\,3)$, and what am I missing? $(1)(2\,3\,4)$, $(1)(2\,4\,3)$ \inlinemetanote{writes the remaining six $3$-cycles with their fixed $1$-cycles}. Okay, that's $8$ of them. And what's their sign? This is a more complicated question and you have to think. \inlinemetanote{pauses for students to think} Okay, if you don't think, you can guess. All right. Yeah?
 \end{speech}
@@ -915,7 +915,7 @@ Four.
 \end{student}
 
 \begin{speech}[00:36:34 - 00:38:01]
-$4$ itself. It's the dumb partition. Let us erase this \inlinemetanote{erases the cycle-decomposition calculation}. This is all somehow stuff that you have to learn, you know, you have to make your own peace with; if you look at a book, maybe it has this formula and maybe not, but in order to learn the subject, you have to become comfortable with these things. It's just like learning addition and subtraction, except now it's multiplication of elements in the symmetric group, and it has these twists where it's not commutative, that's... All right, so we have to do $4$ \inlinemetanote{writes \qt{$4$} as the fourth column header}.
+$4$ itself. It's the dumb partition. Let us erase this \inlinemetanote{erases the cycle-decomposition calculation}. This is all somehow stuff that you have to learn, you know, you have to make your own peace with; if you look at a book, maybe it has this formula and maybe not, but in order to learn the subject, you have to become comfortable with these things. It's just like learning addition and subtraction, except now it's multiplication of elements in the symmetric group, and it has these twists where it's not commutative, that's... All right, so, we have to do $4$ \inlinemetanote{writes \qt{$4$} as the fourth column header}.
 
 And this is now more interesting. First of all, these are all the partitions. So, the numbers we have here, the numbers we have are $1$, and then there's $6$, and then there's $3$ here, right? $1, 2, 3$, and here is $8$, and then we have to find the last partitions there are --- I mean, that's the only possible cycle left --- and this equals $24$, so you can figure out how many things I have to write here, right \inlinemetanote{writes: $1 + 6 + 3 + 8 + \square = 24$}? And the answer is $6$. So, I have to write $6$, and of course one of them is $(1\,2\,3\,4)$ --- that's one of them \inlinemetanote{writes: $6 \ \{ \ (1\,2\,3\,4)$}.
 \end{speech}
@@ -942,7 +942,7 @@ Minus one.
 \end{student}
 
 \begin{speech}[00:39:34 - 00:40:28]
-Minus one, because we just said that this is a product of three $2$-cycles, so these signs are all $-1$ \inlinemetanote{writes \qt{$-1$} below $(1\,2\,3\,4)$}. All right, so now we're in a position to say what the subgroup, the alternating group here, is: it's the ones with $+1$, so it's this one --- in the alternating group, I circle in red \inlinemetanote{circles $e$, the three $2+2$ elements, and the eight $3+1$ elements in red chalk} --- so this is in the alternating group, this is in the alternating group, and these guys are in the alternating group. So, that's totally explicit.
+Minus one, because we just said that this is a product of three $2$-cycles, so these signs are all $-1$ \inlinemetanote{writes \qt{$-1$} below $(1\,2\,3\,4)$}. All right, so, now we're in a position to say what the subgroup, the alternating group here, is: it's the ones with $+1$, so it's this one --- in the alternating group, I circle in red \inlinemetanote{circles $e$, the three $2+2$ elements, and the eight $3+1$ elements in red chalk} --- so this is in the alternating group, this is in the alternating group, and these guys are in the alternating group. So, that's totally explicit.
 
 So, this $A_4$ inside $S_4$ has order $12$ \inlinemetanote{writes \qt{$A_4 \subset S_4$, order 12}}, right? Because that's $8 + 3 + 1$, which is $12$. And by the theorem we proved last week (Recall: the order of a subgroup divides the order of the group), whatever its order is, it has to divide the order of $S_4$, and the order of $S_4$ is $24$, so it's, you know, at least reasonable that $12$ does divide $24$.
 \end{speech}
@@ -1073,9 +1073,9 @@ The group $\operatorname{Rot}(\text{Tetrahedron})$ of rotational symmetries of t
 \begin{proofWrapper}[Proof that \texorpdfstring{$\operatorname{Rot}(\text{Tetrahedron}) = A_4$}{Rot(Tetrahedron) = A\_4}]
 
 \begin{speech}[00:41:16 - 00:43:02]
-But all you have to do to check it's this group (you don't have to do much actually, but let's say), to check this is our $A_4$, all you have to do is to show --- maybe \qt{see} is a better word: is to see every rotation gives an even permutation of the $4$ vertices \inlinemetanote{writes \qt{To check $\operatorname{Rot}(\triangle) = A_4$, all you have to do is see every rotation gives an even perm. of $4$ vertices.}}. And so let's just see that. Is that clear? Because then it sits inside it and it's order $12$, and it has to be just the same. So, this is one of the basic ways this $A_4$ shows up in nature: it's the actual rotational symmetries of that tetrahedron.
+But all you have to do to check it's this group (you don't have to do much actually, but let's say), to check this is our $A_4$, all you have to do is to show --- maybe \qt{see} is a better word: is to see every rotation gives an even permutation of the $4$ vertices \inlinemetanote{writes \qt{To check $\operatorname{Rot}(\triangle) = A_4$, all you have to do is see every rotation gives an even perm. of $4$ vertices.}}. And so, let's just see that. Is that clear? Because then it sits inside it and it's order $12$, and it has to be just the same. So, this is one of the basic ways this $A_4$ shows up in nature: it's the actual rotational symmetries of that tetrahedron.
 
-Why is it even? Well, there's kind of two types of symmetries \inlinemetanote{draws a tetrahedron with vertices labeled $A, B, C, D$}. If I hold the top of this tetrahedron fixed, then I can rotate it by $120$ degrees \inlinemetanote{draws a vertical rotation axis through $A$ with a curved rotation arrow}. And if you see, what is that? That's the $3$-cycle --- this is $A, B, C, D$ --- if I rotate this, that's the $B$ goes to $C$ goes to $D$ $3$-cycle, and $A$ is fixed \inlinemetanote{writes: $(B\,C\,D)$}. So, that's this type \inlinemetanote{points at the $3+1$ permutations in $A_4$}, and those are all $+1$, right? But that's only $8$. Of course there's the one when you do nothing --- that's the rotational symmetry where you were just about to start to rotate and you decided not to do nothing, that's a legitimate symmetry --- and it's this one \inlinemetanote{points at $e$}.
+Why is it even? Well, there's kind of two types of symmetries \inlinemetanote{draws a tetrahedron with vertices labeled $A, B, C, D$}. If I hold the top of this tetrahedron fixed, then I can rotate it by $120$ degrees \inlinemetanote{draws a vertical rotation axis through $A$ with a curved rotation arrow}. And if you see, what is that? That's the $3$-cycle --- this is $A, B, C, D$ --- if I rotate this, that's the $B$ goes to $C$ goes to $D$ $3$-cycle, and $A$ is fixed \inlinemetanote{writes: $(B\,C\,D)$}. So, that's this type \inlinemetanote{points at the $3+1$ permutations in $A_4$}, and those are all $+1$, right? But that's only $8$. Of course, there's the one when you do nothing --- that's the rotational symmetry where you were just about to start to rotate and you decided not to do nothing, that's a legitimate symmetry --- and it's this one \inlinemetanote{points at $e$}.
 \end{speech}
 
 \begin{content}[Goal, Identity, and Vertex-Face Rotations]
@@ -1087,7 +1087,7 @@ To prove $\operatorname{Rot}(\text{Tetrahedron}) = A_4$, since both $\operatorna
 \end{content}
 
 \begin{speech}[00:43:02 - 00:44:00]
-So, what is this \inlinemetanote{points at the $2+2$ elements in $A_4$}? That's the one where you take the midpoint here --- that's a cool one. You take the midpoint here, you take the midpoint here, and you draw a line through them, and you rotate it by $180$'s --- it's like a skewer, if you have like a tetrahedral kebab and you rotate it \inlinemetanote{marks midpoints of opposite edges $AB$ and $CD$ and draws the skewer axis through them}. Then these guys get flipped and those guys get flipped \inlinemetanote{points at the pairs of vertices}. Is that clear? Anyway, you should think about it. I said part of geometry is about a camera in your head. And so that rotation flips these two and those two simultaneously, so it's of this form \inlinemetanote{points at $(1\,2)(3\,4)$}, and you can get three of them because there's three different ways to do it.
+So, what is this \inlinemetanote{points at the $2+2$ elements in $A_4$}? That's the one where you take the midpoint here --- that's a cool one. You take the midpoint here, you take the midpoint here, and you draw a line through them, and you rotate it by $180$'s --- it's like a skewer, if you have like a tetrahedral kebab and you rotate it \inlinemetanote{marks midpoints of opposite edges $AB$ and $CD$ and draws the skewer axis through them}. Then these guys get flipped and those guys get flipped \inlinemetanote{points at the pairs of vertices}. Is that clear? Anyway, you should think about it. I said part of geometry is about a camera in your head. And so, that rotation flips these two and those two simultaneously, so it's of this form \inlinemetanote{points at $(1\,2)(3\,4)$}, and you can get three of them because there's three different ways to do it.
 
 So, from the point of view of mathematics I've given you a totally complete proof that the rotational symmetries is $A_4$, but there's a lot of little things you should check for yourself to make sure you believe every step of it.
 \end{speech}
@@ -1232,7 +1232,7 @@ The lecturer announces a short break. After the break, the video resumes in fron
 \subsection{Surjectivity and Injectivity Criteria}
 
 \begin{speech}[00:44:18 - 00:45:34]
-Okay, so we go back to the general situation where we have $G_1$ is a group, $G_2$ is a group, and we have $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$}. And in these general statements that I wrote, there was no condition that $G_1$ and $G_2$ are finite; they're just groups.
+Okay, so, we go back to the general situation where we have $G_1$ is a group, $G_2$ is a group, and we have $f$ from $G_1$ to $G_2$ \inlinemetanote{writes: $f \colon G_1 \to G_2$}. And in these general statements that I wrote, there was no condition that $G_1$ and $G_2$ are finite; they're just groups.
 
 So, the first statement was the image of $f$ in $G_2$ is a subgroup \inlinemetanote{writes: $\operatorname{Im}(f) \subset G_2$ is subgp}. The second one was the kernel of $f$ in $G_1$ is a subgroup \inlinemetanote{writes: $\ker(f) \subset G_1$ is subgp}. And I just remind you, the kernel is those elements that go to the neutral element here \inlinemetanote{points at $G_2$}, so there was a question about that.
 
@@ -1254,7 +1254,7 @@ Just the neutral element.
 \end{student}
 
 \begin{speech}[00:45:38 - 00:45:54]
-Yeah, it consists of just the neutral element \inlinemetanote{writes: $\ker(f) = \{e_1\}$}. Okay, so this one is, I mean, I think just by definition of surjective. This one uses a little argument which I leave to you. So, anyway, these are the most basic facts of the images and kernels, except for one.
+Yeah, it consists of just the neutral element \inlinemetanote{writes: $\ker(f) = \{e_1\}$}. Okay, so, this one is, I mean, I think just by definition of surjective. This one uses a little argument which I leave to you. So, anyway, these are the most basic facts of the images and kernels, except for one.
 \end{speech}
 
 \begin{content}[Image and Kernel Recap and Surjectivity/Injectivity Criteria]
@@ -1326,7 +1326,7 @@ The lecturer writes \qt{$N \subset G$ is a normal subgroup} in words, and these 
 
 \begin{aiNote}[Beyond the Lecture: Other Forms of Normality]
 % [PERSISTENT, ADDITION]
-Textbooks often state the condition for all of $N$ at once: $x N x^{-1} \subset N$ for every $x \in G$, where $x N x^{-1} = \{x n x^{-1} \mid n \in N\}$. Applied to $x^{-1}$ as well, this gives $x N x^{-1} = N$, which is equivalent to $x N = N x$. Thus a subgroup is normal precisely when every left coset $x N$ (\cref{def:coset-set}) equals the corresponding right coset $N x$ (verified in Week~9, \cref{prop:normal-left-right-cosets}). \Cref{lem:commutation-normality} uses this equality one element at a time: $n_1 y \in N y = y N$.
+Textbooks often state the condition for all of $N$ at once: $x N x^{-1} \subset N$ for every $x \in G$, where $x N x^{-1} = \{x n x^{-1} \mid n \in N\}$. Applied to $x^{-1}$ as well, this gives $x N x^{-1} = N$, which is equivalent to $x N = N x$. Thus, a subgroup is normal precisely when every left coset $x N$ (\cref{def:coset-set}) equals the corresponding right coset $N x$ (verified in Week~9, \cref{prop:normal-left-right-cosets}). \Cref{lem:commutation-normality} uses this equality one element at a time: $n_1 y \in N y = y N$.
 \end{aiNote}
 
 \subsection{Kernels Are Normal Subgroups}
@@ -1334,7 +1334,7 @@ Textbooks often state the condition for all of $N$ at once: $x N x^{-1} \subset 
 \begin{speech}[00:47:29 - 00:48:26]
 And the reason is... so, proposition: that the kernel of $f$ inside $G_1$ is a normal subgroup \inlinemetanote{draws a vertical divider and writes \qt{Prop: $\ker(f) \subset G_1$ is a normal subgrp}}.
 
-All right, so I will say a little bit about... You know that when we study these homomorphisms for vector spaces, then the kernel and image are both vector spaces, and there's nothing more than that. When we study this for rings, the kernel is not a ring, it's an ideal; there's already a twist there. And for groups, the kernel is a subgroup, but it's not any subgroup --- it actually has to be a normal subgroup. It's a very special kind of subgroup. So, that's one of the first things about homomorphisms of groups: the kernels are subgroups, but they're not any subgroups, they're these normal subgroups --- very special subgroups.
+All right, so, I will say a little bit about... You know that when we study these homomorphisms for vector spaces, then the kernel and image are both vector spaces, and there's nothing more than that. When we study this for rings, the kernel is not a ring, it's an ideal; there's already a twist there. And for groups, the kernel is a subgroup, but it's not any subgroup --- it actually has to be a normal subgroup. It's a very special kind of subgroup. So, that's one of the first things about homomorphisms of groups: the kernels are subgroups, but they're not any subgroups, they're these normal subgroups --- very special subgroups.
 \end{speech}
 
 \begin{content}
@@ -1357,7 +1357,7 @@ Comparing the three settings the course has studied reveals why normal subgroups
 \begin{speech}[00:48:26 - 00:48:59]
 So, what's the proof of it? There's nothing to this proof. Proof is: we have to check the kernel has this property. So, proof is let $x$ be in $G$ and let $n$ be in the kernel \inlinemetanote{writes \qt{Proof: Let $x \in G$} and \qt{and $n \in \ker(f)$}}.
 
-All right, so then we have to consider this conjugation \inlinemetanote{points at $x n x^{-1} \in N$}: consider $x n x$ inverse \inlinemetanote{writes \qt{Consider $x n x^{-1} \in G$}}. That's certainly in $G$, and we have to decide whether it's in the kernel. How do we test whether it's in the kernel?
+All right, so, then we have to consider this conjugation \inlinemetanote{points at $x n x^{-1} \in N$}: consider $x n x$ inverse \inlinemetanote{writes \qt{Consider $x n x^{-1} \in G$}}. That's certainly in $G$, and we have to decide whether it's in the kernel. How do we test whether it's in the kernel?
 
 How are we going to test whether it's in the kernel? We just apply $f$ to it and see where it goes, right?
 \end{speech}
@@ -1422,7 +1422,7 @@ In some sense it's a little bit... yeah, I don't want to say things that are dis
 \begin{speech}[00:51:01 - 00:52:43]
 Example \inlinemetanote{moves to the left of the lower chalkboard and writes \qt{Ex:}}: if I take $S_3$, and I take the subgroup which is the neutral element in $S_3$ and $(1\,2)$ \inlinemetanote{writes: $\{e, (1\,2)\} \subset S_3$}. This is a subgroup in $S_3$, because if I take the square of this \inlinemetanote{points at $(1\,2)$}, it's the neutral element. So, do you accept this is a subgroup of $S_3$?
 
-And so then the claim is this subgroup $S$ --- maybe I should call it $K$ \inlinemetanote{writes \qt{$K =$} before $\{e, (1\,2)\}$} --- $K$ is not normal \inlinemetanote{writes \qt{Claim: $K$ is not normal in $S_3$}}.
+And so, then the claim is this subgroup $S$ --- maybe I should call it $K$ \inlinemetanote{writes \qt{$K =$} before $\{e, (1\,2)\}$} --- $K$ is not normal \inlinemetanote{writes \qt{Claim: $K$ is not normal in $S_3$}}.
 
 And for that, to show it's not normal, I just have to take one element of it, $(1\,2)$ \inlinemetanote{writes: $(1\,2)$}, and take any element of $S_3$, and show the conjugation is not here. So, which element of $S_3$ should I take? \inlinemetanote{pauses briefly for student suggestions}
 
@@ -1478,7 +1478,7 @@ I mean, if you meet a subgroup of a group, roughly speaking, the very first ques
 \subsection{Constructing the Quotient Group \texorpdfstring{$\faktor{G}{N}$}{G/N}}
 
 \begin{speech}[00:53:13 - 00:55:02]
-Okay, so once one understands that the kernels are always normal, then one proceeds to prove this kind of first isomorphism theorem. So, we'll do this slowly.
+Okay, so, once one understands that the kernels are always normal, then one proceeds to prove this kind of first isomorphism theorem. So, we'll do this slowly.
 
 We start with an abstract statement: let $N$ in $G$ be a normal subgroup \inlinemetanote{draws a vertical divider and writes \qt{Let $N \subset G$ be a normal subgrp.}}. Then we will construct --- and this will be very similar to the way we construct quotient rings and the quotient map --- then we will construct a quotient group, which is called $G$ mod $N$, which has its own element (i.e., operation) and its own neutral element \inlinemetanote{writes \qt{Then we will construct} and \qt{$(\faktor{G}{N}, \cdot, \bar{e})$}}. We'll construct this as a group, and a quotient homomorphism with the property that the kernel of the quotient homomorphism is exactly the normal subgroup we started with \inlinemetanote{writes \qt{and quotient hom. $q \colon G \to \faktor{G}{N}$} and \qt{with the prop. that $\ker(q) = N$}}.
 
@@ -1505,7 +1505,7 @@ Combining \cref{prop:kernel-normal} and \cref{thm:quotient-group} gives an exact
 \subsubsection{Equivalence Relation and Underlying Set \texorpdfstring{$\faktor{G}{N}$}{G/N}}
 
 \begin{speech}[00:55:02 - 00:56:50]
-All right, so Step 1 is we have to construct this \inlinemetanote{draws a vertical divider and writes \qt{Step 1: Construct quotient group $(\faktor{G}{N}, \cdot, \bar{e})$}}. And we've done this actually already: construct the quotient group $(\faktor{G}{N}, \cdot, \bar{e})$.
+All right, so, Step 1 is we have to construct this \inlinemetanote{draws a vertical divider and writes \qt{Step 1: Construct quotient group $(\faktor{G}{N}, \cdot, \bar{e})$}}. And we've done this actually already: construct the quotient group $(\faktor{G}{N}, \cdot, \bar{e})$.
 
 And this is always done by an equivalence relation, and we've seen the equivalence relation before. So, remember from last week the equivalence relation with respect to a subgroup $N$. That says that $x$ is equivalent to $y$ if and only if $y$ equals $x n$ for some $n$ in $N$ \inlinemetanote{writes \qt{Remember the $\sim_N$, $x \sim_N y \iff y = x n \text{ some } n \in N$}}, okay? So, that was the equivalence relation from last week. Do you remember it?
 
@@ -1551,9 +1551,9 @@ Normality is not used until we define multiplication on $\faktor{G}{N}$.
 \subsubsection{Equivalence Classes and Well-Definedness of Multiplication}
 
 \begin{speech}[00:57:35 - 00:58:41]
-Okay, so there's the usual discussion of names: how to name things in the equivalence class. Here we have $G$ of $N$ (i.e., $\faktor{G}{N}$), and we name things by saying $\bar{x}$ here, where $x$ is in $G$ and $\bar{x}$ is the equivalence class of $x$ under the equivalence relation \inlinemetanote{writes \qt{$\bar{x} \in \faktor{G}{N}$, $x \in G$, $\bar{x}$ is equiv. class of $x$ under $\sim_N$}}. That's one convention. Another convention is you just write $x N$ is an element of $G$ mod $N$ \inlinemetanote{writes: $x N \in \faktor{G}{N}$}, because actually the equivalence class, as we said before, is just all the people who are $x$ times some element of $N$. So, it's just another way of writing it. I'll tend to use this notation ($\bar{x}$), because it's slightly more efficient, but if you look, sometimes people will write this ($x N$).
+Okay, so, there's the usual discussion of names: how to name things in the equivalence class. Here we have $G$ of $N$ (i.e., $\faktor{G}{N}$), and we name things by saying $\bar{x}$ here, where $x$ is in $G$ and $\bar{x}$ is the equivalence class of $x$ under the equivalence relation \inlinemetanote{writes \qt{$\bar{x} \in \faktor{G}{N}$, $x \in G$, $\bar{x}$ is equiv. class of $x$ under $\sim_N$}}. That's one convention. Another convention is you just write $x N$ is an element of $G$ mod $N$ \inlinemetanote{writes: $x N \in \faktor{G}{N}$}, because actually the equivalence class, as we said before, is just all the people who are $x$ times some element of $N$. So, it's just another way of writing it. I'll tend to use this notation ($\bar{x}$), because it's slightly more efficient, but if you look, sometimes people will write this ($x N$).
 
-Okay, so the main issue is to define the group product: we take some element here ($\bar{x}$), here ($\bar{y}$), so we want to define it \inlinemetanote{writes \qt{Main issue: $\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=}$}}. All right, so what do you think we're going to define this as? This is not a hard question. Yeah?
+Okay, so, the main issue is to define the group product: we take some element here ($\bar{x}$), here ($\bar{y}$), so we want to define it \inlinemetanote{writes \qt{Main issue: $\bar{x} \cdot \bar{y} \stackrel{\text{def}}{=}$}}. All right, so, what do you think we're going to define this as? This is not a hard question. Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -1561,7 +1561,7 @@ Okay, so the main issue is to define the group product: we take some element her
 \end{student}
 
 \begin{speech}[00:58:43 - 00:59:08]
-Yeah, what else could you do? Nothing else. You just have to write this \inlinemetanote{writes: $\overline{xy}$}. Okay, so that's how you define it, but the issue is whether this is well-defined. So, the heart of the matter is not this, but the heart of the matter is: is this rule well-defined \inlinemetanote{writes \qt{Is this rule well defined?}}?
+Yeah, what else could you do? Nothing else. You just have to write this \inlinemetanote{writes: $\overline{xy}$}. Okay, so, that's how you define it, but the issue is whether this is well-defined. So, the heart of the matter is not this, but the heart of the matter is: is this rule well-defined \inlinemetanote{writes \qt{Is this rule well defined?}}?
 \end{speech}
 
 \begin{content}[Equivalence Classes and Candidate Product on \texorpdfstring{$\faktor{G}{N}$}{G/N}]
@@ -1667,7 +1667,7 @@ And the standard thing with this kind of math is that this problem was anticipat
 \end{speech}
 
 \begin{speech}[01:04:30 - 01:06:27]
-Okay, so the last step here, which maybe is already implicit: we have to think about whether this equals $x n_1 y n_2$ bar \inlinemetanote{writes: $\overline{xy} \stackrel{?}{=} \overline{x n_1 y n_2}$}.
+Okay, so, the last step here, which maybe is already implicit: we have to think about whether this equals $x n_1 y n_2$ bar \inlinemetanote{writes: $\overline{xy} \stackrel{?}{=} \overline{x n_1 y n_2}$}.
 
 We write here: $x n_1 y n_2$ \inlinemetanote{writes: $x n_1 y n_2 =$}. This equals --- now using that rule, I'm allowed to switch this: $x y \hat{n}_1 n_2$ \inlinemetanote{writes: $x y \hat{n}_1 n_2$ with a checkmark}. So, that was using the normality, for some $\hat{n}_1$.
 
@@ -1717,7 +1717,7 @@ Hence, $(\faktor{G}{N}, \cdot, \bar{e})$ is a group.
 \subsubsection{The Quotient Homomorphism \texorpdfstring{$q$}{q} and Its Kernel}
 
 \begin{speech}[01:06:27 - 01:07:52]
-Okay, so we have this $G$ mod $N$, and then there's the map $G$ to $G$ mod $N$ \inlinemetanote{writes: $G \xrightarrow{q} \faktor{G}{N}$}, which takes... so, this is the definition of the quotient map, of the quotient: I have to define it, and it's $g(x)$ for $x$ in $G$... so $q$, sorry \inlinemetanote{writes \qt{def of $q$: $q(x) = \bar{x}$}}. Definition of $q$, the quotient map: I have to define it for every element of $G$, and how are you going to define this? It's again some kind of tautological definition, okay? That's the definition ($q(x) = \bar{x}$). It's actually exactly what we did for the rings and also what happened for vector spaces.
+Okay, so, we have this $G$ mod $N$, and then there's the map $G$ to $G$ mod $N$ \inlinemetanote{writes: $G \xrightarrow{q} \faktor{G}{N}$}, which takes... so, this is the definition of the quotient map, of the quotient: I have to define it, and it's $g(x)$ for $x$ in $G$... so $q$, sorry \inlinemetanote{writes \qt{def of $q$: $q(x) = \bar{x}$}}. Definition of $q$, the quotient map: I have to define it for every element of $G$, and how are you going to define this? It's again some kind of tautological definition, okay? That's the definition ($q(x) = \bar{x}$). It's actually exactly what we did for the rings and also what happened for vector spaces.
 
 And then there's the claim that $q$ is a group homomorphism, $q$ is surjective, and the kernel of $q$ is exactly $N$ \inlinemetanote{writes \qt{Claim: $q$ is a group hom, $q$ is surjective, $\ker(q) = N$}}. All right? So, those are three claims \inlinemetanote{slides the lower board up, revealing the older chalkboard at the bottom}.
 \end{speech}
@@ -1743,7 +1743,7 @@ The map $q \colon G \to \faktor{G}{N}$ satisfies:
 \begin{speech}[01:07:52 - 01:08:46]
 And they're proven just the same way we proved it for the rings and you proved it before for the vector spaces. So, again, maybe I leave it to you this time \inlinemetanote{erases the revealed lower chalkboard}.
 
-Okay, so that's the construction of the quotient. I skipped some steps, but I think I did the crucial steps, and so to understand it, you have to go through all the steps of the construction of the quotient. As I said, we already went through this once with the quotient ring; it's very, very similar. The main issue is this normality, and with groups you should always remember you can't switch things around without explaining.
+Okay, so, that's the construction of the quotient. I skipped some steps, but I think I did the crucial steps, and so to understand it, you have to go through all the steps of the construction of the quotient. As I said, we already went through this once with the quotient ring; it's very, very similar. The main issue is this normality, and with groups you should always remember you can't switch things around without explaining.
 \end{speech}
 
 \begin{content}[Verification of the Quotient Map Properties]
@@ -1778,11 +1778,11 @@ Since $N$ is a subgroup of $G$, $n \in N \iff n^{-1} \in N$. Hence, $x \in \ker(
 \section{The First Isomorphism Theorem}
 
 \begin{speech}[01:08:46 - 01:09:43]
-All right, so then we come to this First Isomorphism Theorem, which is exactly parallel \inlinemetanote{writes \qt{\underline{First Isom Thm for Groups}}}.
+All right, so, then we come to this First Isomorphism Theorem, which is exactly parallel \inlinemetanote{writes \qt{\underline{First Isom Thm for Groups}}}.
 
 It says that... let $f$ from $G_1$ to $G_2$ be a group homomorphism \inlinemetanote{writes \qt{Let $f \colon G_1 \to G_2$ be a group hom.}}. Then the First Isomorphism Theorem is that $G$ mod kernel of $f$ is isomorphic to the image of $f$ \inlinemetanote{writes \qt{then $\faktor{G}{\ker(f)} \cong \operatorname{Im}(f)$}, a slip for $\faktor{G_1}{\ker(f)}$}, okay?
 
-So, that was what we had for the rings and also for the vector spaces. In fact, the diagram here... and the proof is just the same in all of these things. But maybe I'll just review the diagram so you don't... so if you have here...
+So, that was what we had for the rings and also for the vector spaces. In fact, the diagram here... and the proof is just the same in all of these things. But maybe I'll just review the diagram so you don't... so, if you have here...
 \end{speech}
 
 \begin{content}[Statement of the First Isomorphism Theorem]
@@ -1850,7 +1850,7 @@ Let $f \colon V_1 \to V_2$ be a linear transformation of vector spaces over a fi
 \end{content}
 
 \begin{speech}[01:10:54 - 01:11:44]
-That's for linear algebra. For the ring theory, we had the same thing: we have here $R_1$ is a ring, there's a ring homomorphism, that's the image of $f$, that's in $R_2$ \inlinemetanote{writes: $\bullet\ R_1 \to \operatorname{Im}(f) \subset R_2$}, and inside there's the kernel --- the kernel's now an ideal \inlinemetanote{writes \qt{$\ker(f) \subset$} before $R_1$ and \qt{\underline{Ideal}} below $\ker(f)$}. And, since I don't want to... Then there's the quotient map from $R_1$ to the kernel of $f$ (i.e., $\faktor{R_1}{\ker(f)}$), and that's isomorphic to the image \inlinemetanote{draws arrows down-right to $\faktor{R_1}{\ker(f)}$ and up-right labeled $\cong$ to $\operatorname{Im}(f)$}. That was the First Isomorphism Theorem for rings.
+That's for linear algebra. For the ring theory, we had the same thing: we have here $R_1$ is a ring, there's a ring homomorphism, that's the image of $f$, that's in $R_2$ \inlinemetanote{writes: $\bullet\ R_1 \to \operatorname{Im}(f) \subset R_2$}, and inside there's the kernel --- the kernel's now an ideal \inlinemetanote{writes \qt{$\ker(f) \subset$} before $R_1$ and \qt{\underline{Ideal}} below $\ker(f)$}. And since I don't want to... Then there's the quotient map from $R_1$ to the kernel of $f$ (i.e., $\faktor{R_1}{\ker(f)}$), and that's isomorphic to the image \inlinemetanote{draws arrows down-right to $\faktor{R_1}{\ker(f)}$ and up-right labeled $\cong$ to $\operatorname{Im}(f)$}. That was the First Isomorphism Theorem for rings.
 \end{speech}
 
 \begin{content}[First Isomorphism Theorem for Rings]
@@ -1969,7 +1969,7 @@ Reading left-to-right shows $\bar{f}$ is well-defined; reading right-to-left sho
 \end{content}
 
 \begin{speech}[01:12:30 - 01:13:12]
-\inlinemetanote{slides the lower board up, revealing the older chalkboard at the bottom} Okay, so maybe I leave it at this. I have one more lecture on this topic tomorrow, so I will come back to say more about the proof here \inlinemetanote{points at the First Isomorphism Theorem}. The proof is all tautological. But I want to use the last few minutes to do some example stuff, so I'll come back to...
+\inlinemetanote{slides the lower board up, revealing the older chalkboard at the bottom} Okay, so, maybe I leave it at this. I have one more lecture on this topic tomorrow, so I will come back to say more about the proof here \inlinemetanote{points at the First Isomorphism Theorem}. The proof is all tautological. But I want to use the last few minutes to do some example stuff, so I'll come back to...
 
 And somehow, since we already went through this path once, it seems unnecessary to spend a lot of time going through the path again \inlinemetanote{starts erasing the revealed lower chalkboard}. But I will do a little bit tomorrow.
 \end{speech}
@@ -1979,7 +1979,7 @@ And somehow, since we already went through this path once, it seems unnecessary 
 \subsection{Conjugacy as an Equivalence Relation}
 
 \begin{speech}[01:13:37 - 01:15:12]
-Okay, so let's go back to $S_n$. And the notion here that comes up is \newterm{conjugation}. It already came up in the definition of a normal subgroup. So, if $x$ and $y$ in a group $G$ are \newterm{conjugate} \inlinemetanote{writes \qt{Def: $x$ and $y \in G$ are \underline{conjugate}}} --- so, this is the definition of this term \qt{conjugate} --- if and only if there exists some other element in the group such that $z$ conjugates $x$ to $y$ \inlinemetanote{writes: $\exists z \in G$, $z x z^{-1} = y$}, okay? So, that's not a surprising definition.
+Okay, so, let's go back to $S_n$. And the notion here that comes up is \newterm{conjugation}. It already came up in the definition of a normal subgroup. So, if $x$ and $y$ in a group $G$ are \newterm{conjugate} \inlinemetanote{writes \qt{Def: $x$ and $y \in G$ are \underline{conjugate}}} --- so, this is the definition of this term \qt{conjugate} --- if and only if there exists some other element in the group such that $z$ conjugates $x$ to $y$ \inlinemetanote{writes: $\exists z \in G$, $z x z^{-1} = y$}, okay? So, that's not a surprising definition.
 
 And one can say that a normal subgroup is a group that, if it contains an element, it contains all of that element's conjugates --- that's another way of just saying what a normal subgroup is. I can maybe say that in words: $N$ in $G$ is a normal subgroup if and only if --- well, of course, $N$ is a subgroup, and if $n$ is in $N$, then all the conjugates of $n$ are also in $N$ \inlinemetanote{draws a vertical divider and writes \qt{$N \subset G$ is a normal subgrp}, \qt{$N$ subgrp} and \qt{if $n \in N$, then all conjugates of $n$ are in $N$}}. That's just a restatement of the definition of normal subgroup.
 \end{speech}
@@ -2006,7 +2006,7 @@ A subset $N \subset G$ is a normal subgroup if and only if $N$ is a subgroup and
 \end{hidden}
 
 \begin{speech}[01:15:12 - 01:17:21]
-So, in every group there's a notion of \newterm{conjugacy}, and this is an equivalence relation: that $x$ --- so maybe conjugacy $y$ --- $x$ and $y$ are conjugate in $G$ \inlinemetanote{draws a vertical divider and writes: $x \sim_{\text{conj}} y \iff x \text{ and } y \text{ are conjugate in } G$}. So, conjugacy defines an equivalence relation on $G$ \inlinemetanote{writes \qt{Conjugacy defines an equiv. relation on $G$.}}.
+So, in every group there's a notion of \newterm{conjugacy}, and this is an equivalence relation: that $x$ --- so, maybe conjugacy $y$ --- $x$ and $y$ are conjugate in $G$ \inlinemetanote{draws a vertical divider and writes: $x \sim_{\text{conj}} y \iff x \text{ and } y \text{ are conjugate in } G$}. So, conjugacy defines an equivalence relation on $G$ \inlinemetanote{writes \qt{Conjugacy defines an equiv. relation on $G$.}}.
 
 This is a different kind of equivalence relation: we already said that if you have a subgroup, that defines an equivalence relation; if you have a normal subgroup, that defines an equivalence relation. But on the group $G$ there's just a notion of equivalence that has nothing to do with any choice of subgroups: it's just when two elements are conjugate.
 
@@ -2164,7 +2164,7 @@ Partitions.
 \end{student}
 
 \begin{speech}[01:20:28 - 01:21:37]
-Partitions! This is the correct answer. This is one of the reasons why partitions are so intimately related here. So, the answer to this is that the conjugacy classes of $S_n$ are in bijective correspondence to the partitions of $n$ \inlinemetanote{writes: $\text{Conjugacy classes of } S_n \longleftrightarrow \text{Partitions of } n$}. And this correspondence is by the cycle decomposition \inlinemetanote{writes \qt{by cycle dec.} below the arrow}. If you have an element, you get a cycle decomposition, which is a partition. And so you have to show that if you have an element with a cycle decomposition and you conjugate it, it stays the same cycle decomposition. That's what you have to show: that conjugacy does not change the cycle decomposition.
+Partitions! This is the correct answer. This is one of the reasons why partitions are so intimately related here. So, the answer to this is that the conjugacy classes of $S_n$ are in bijective correspondence to the partitions of $n$ \inlinemetanote{writes: $\text{Conjugacy classes of } S_n \longleftrightarrow \text{Partitions of } n$}. And this correspondence is by the cycle decomposition \inlinemetanote{writes \qt{by cycle dec.} below the arrow}. If you have an element, you get a cycle decomposition, which is a partition. And so, you have to show that if you have an element with a cycle decomposition and you conjugate it, it stays the same cycle decomposition. That's what you have to show: that conjugacy does not change the cycle decomposition.
 
 And in a sense, this is a confusing thing. Conjugacy, it turns out, is confusing. Humans aren't good at conjugacy, because it has to do with some aspect of, again, something non-commutative. But the fact that if you take a permutation and you conjugate it, the cycle decomposition stays the same --- there's almost nothing to this fact except keeping yourself not confused about what's being said.
 \end{speech}
@@ -2303,7 +2303,7 @@ But I promised to say a few words about partitions, and partitions are one of th
 
 $p(1)$ is $1$ \inlinemetanote{writes: $p(1) = 1$}; $p(2)$, there's two ways to partition $2$ \inlinemetanote{writes: $p(2) = 2$}, this is like $2$ and $1 + 1$ \inlinemetanote{writes: $2$, $1+1$}; partitions of $3$, there's three ways \inlinemetanote{writes: $p(3) = 3$}, you can think about it; partitions of $4$, well we saw on the board there's five ways of this \inlinemetanote{writes: $p(4) = 5$}; partitions of $5$, if you count there's seven \inlinemetanote{writes: $p(5) = 7$}; partitions of $6$, you will see there's eleven \inlinemetanote{writes: $p(6) = 11$}. I don't have them all memorized, but...
 
-And so you can ask: what are... these are very interesting numbers, I mean, even if you're interested in the group theory, they give you the number of conjugacy classes. And you could say: how do you calculate this partition number? There's been a lot of work on those things, but the most famous formula is due to none other than Euler, and that's a great formula, which I'll write down in a moment.
+And so, you can ask: what are... these are very interesting numbers, I mean, even if you're interested in the group theory, they give you the number of conjugacy classes. And you could say: how do you calculate this partition number? There's been a lot of work on those things, but the most famous formula is due to none other than Euler, and that's a great formula, which I'll write down in a moment.
 \end{speech}
 
 \begin{content}[The Partition Function \texorpdfstring{$p(n)$}{p(n)}]
@@ -2362,7 +2362,7 @@ But these partitions are really a basic mathematical structure; they're connecte
 \begin{speech}[01:25:55 - 01:27:25]
 ...so, there's the Euler product formula: Euler \inlinemetanote{writes \qt{Euler:}}. He says that you should consider the function --- so $1$ plus then the sum of all integers $n$ greater than or equal to $1$, then I put this number $p(n)$, that's the number of partitions, $q$ to the $n$ \inlinemetanote{writes: $1 + \sum_{n \ge 1} p(n) q^n$}. So, this is what's called a \newterm{generating series}: he's just writing down a series whose Taylor expansion gives the partitions.
 
-And his formula says that --- he gives a product --- this is a summation, he gives a product formula, and this is this Euler product formula: he says you now, instead of taking the sum... Because we don't know what this is, right? So, on the right-hand side, for equality, it's most useful when there's one side you don't know and the other side you know; that's like the bread and butter of mathematics. This side should be stuff we know. And he says that you should do this: $\frac{1}{1 - q^n}$ \inlinemetanote{writes: $= \prod_{n \ge 1} \frac{1}{1 - q^n}$}. So, it's an infinite product. He says this infinite sum equals that infinite product, and if you've never thought about it, you should play with this. It's a really cool formula. Have you seen this before? Yeah, so this is the standard product formula, and I just leave it to you to play.
+And his formula says that --- he gives a product --- this is a summation, he gives a product formula, and this is this Euler product formula: he says you now, instead of taking the sum... Because we don't know what this is, right? So, on the right-hand side, for equality, it's most useful when there's one side you don't know and the other side you know; that's like the bread and butter of mathematics. This side should be stuff we know. And he says that you should do this: $\frac{1}{1 - q^n}$ \inlinemetanote{writes: $= \prod_{n \ge 1} \frac{1}{1 - q^n}$}. So, it's an infinite product. He says this infinite sum equals that infinite product, and if you've never thought about it, you should play with this. It's a really cool formula. Have you seen this before? Yeah, so, this is the standard product formula, and I just leave it to you to play.
 
 You might think: how does this make sense, like you're doing an infinite product? And that can be a problem, but these coefficients of $q$ get higher and higher, so if you cut off this product at any finite power of $q$, then there's only finitely many terms. And then I leave it to you --- you can, you know, walk in Euler's footsteps and prove this thing. It's not hard.
 \end{speech}

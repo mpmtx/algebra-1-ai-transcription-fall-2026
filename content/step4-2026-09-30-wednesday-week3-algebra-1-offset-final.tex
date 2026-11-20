@@ -213,7 +213,7 @@ The book the lecturer refers to is Richard Dedekind's \emph{Stetigkeit und irrat
 \subsection{Definition and Structure of \texorpdfstring{$R[x]$}{R[x]}}
 
 \begin{speech}[00:04:45 - 00:06:30]
-Okay, so we go to polynomials.
+Okay, so, we go to polynomials.
 
 I explained yesterday (Recall: \cref{def:poly-ring-informal}) that the way to think about polynomials is just the way you always think about polynomials. Elements of this ring, I advise you to think about this way: \inlinemetanote{writes: $R[x] = \{ a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \mid a_i \in R \}$}
 
@@ -260,17 +260,17 @@ Unlike the construction of the field of fractions $\operatorname{Frac}(R)$, whic
 \subsection{The Universal Property of Polynomial Rings}
 
 \begin{speech}[00:06:30 - 00:09:00]
-Okay, so properties of this polynomial ring. The first is --- this is somehow the most basic property of polynomial rings:
+Okay, so, properties of this polynomial ring. The first is --- this is somehow the most basic property of polynomial rings:
 
 Suppose $R$ and $S$ are rings \inlinemetanote{writes: Suppose $R, S$ are rings} --- which I say commutative rings with unit, just for us --- and I have an element $y \in S$ \inlinemetanote{writes: $y \in S$}. Okay?
 
-Then, given any homomorphism \inlinemetanote{writes: Then given $\phi \colon R \to S$ homomorphism of rings} --- so you have some homomorphism from $R$ to $S$, a homomorphism of rings --- there exists a unique extension \inlinemetanote{writes: $\exists!$ extension}, I will say what this means in a moment, from the polynomial ring to $S$ \inlinemetanote{writes: $\hat{\phi} \colon R[x] \to S$} which satisfies these properties \inlinemetanote{writes: which satisfies 2 properties}, two properties:
+Then, given any homomorphism \inlinemetanote{writes: Then given $\phi \colon R \to S$ homomorphism of rings} --- so, you have some homomorphism from $R$ to $S$, a homomorphism of rings --- there exists a unique extension \inlinemetanote{writes: $\exists!$ extension}, I will say what this means in a moment, from the polynomial ring to $S$ \inlinemetanote{writes: $\hat{\phi} \colon R[x] \to S$} which satisfies these properties \inlinemetanote{writes: which satisfies 2 properties}, two properties:
 
 Property \textbf{(1)} is that if I take a constant polynomial \inlinemetanote{writes: $\bullet\ \hat{\phi}(r) = \phi(r)$ (const)}... So, this is just the constant polynomial, which is to say that $R$ sits inside $R[x]$ as the constants \inlinemetanote{writes: $R \subset R[x]$}, okay? If I take a constant polynomial, this should just be the value that I've already specified here, okay?
 
 And the second property is: I have to say what happens to $x$, because that's not specified here. And I just say $x$ goes to $y$ \inlinemetanote{writes: $\bullet\ \hat{\phi}(x) = y$}.
 
-Okay, so that's the claim. If I start with these two rings --- there's the ring where my maps are starting, and the ring where the target map, where my maps are ending, the homomorphisms are ending --- and I pick an element $y$, I can take any homomorphism from $R$ to $S$ and I can extend it to the polynomial ring by just setting $x$ to $y$.
+Okay, so, that's the claim. If I start with these two rings --- there's the ring where my maps are starting, and the ring where the target map, where my maps are ending, the homomorphisms are ending --- and I pick an element $y$, I can take any homomorphism from $R$ to $S$ and I can extend it to the polynomial ring by just setting $x$ to $y$.
 \end{speech}
 
 \begin{content}[The Universal Property of Polynomial Rings]
@@ -314,7 +314,7 @@ Evaluate the coefficients, and then replace each $x$ with $y$.
 
 % [WORD-CHECKED: he says "I know one element of x, that's y", a slip for S (Hydrogen and Flash hearings, 2026-11-15)]
 \begin{speech}[00:09:53 - 00:10:45]
-Yeah. So, this is the definition: I have to somehow take this data and get to $S$. Any element here... so these $a_i$'s, that's part of the definition of polynomial, they're in $R$ \inlinemetanote{writes: $a_i \in R$}. And I only have on the board one way to ship elements from $R$ to $S$: it's here. So, I can't make up another one, that's, you know.
+Yeah. So, this is the definition: I have to somehow take this data and get to $S$. Any element here... so, these $a_i$'s, that's part of the definition of polynomial, they're in $R$ \inlinemetanote{writes: $a_i \in R$}. And I only have on the board one way to ship elements from $R$ to $S$: it's here. So, I can't make up another one, that's, you know.
 
 So, all these coefficients I just move by the only way I know how to get to $S$. So, that's the constant coefficient, then I move this coefficient to $S$, because this result has to be in $S$. And then the question is: how do I move $x$ to $S$? Well, I know one element of $x$ (i.e., of $S$), that's $y$. And then I do this: $\phi(a_2) y^2$ and so on, to $y^n$. \inlinemetanote{writes: $\stackrel{\text{def}}{=} \phi(a_0) + \phi(a_1) \cdot y + \phi(a_2) y^2 + \dots + \phi(a_n) y^n$}
 \end{speech}
@@ -328,7 +328,7 @@ So, that's the definition. Okay. But is that the end? No, I have to check that i
 
 So, I have to check constants \inlinemetanote{writes \qt{$\bullet$ Check consts}}, and I have to check $x$ \inlinemetanote{writes \qt{$\bullet$ Check $x$}}. What is $\hat{\phi}(x)$ by this definition? Well, that would be just one $x$ here and everything else is zero or one. Formally, I'd have to put like $\phi(0)$ and $\phi(1)$. I mean, yeah, I'm not going to write that, but you could write that. But $\phi(0) = 0$ and $\phi(1) = 1$, so you don't have to write it. So, this is just $y$ \inlinemetanote{writes: $\hat{\phi}(x) = y$}.
 
-Okay, so I have now checked these things, but the one thing I haven't checked is that it's a homomorphism. Let's think about how you'd check that.
+Okay, so, I have now checked these things, but the one thing I haven't checked is that it's a homomorphism. Let's think about how you'd check that.
 \end{speech}
 
 \begin{content}[Definition of \texorpdfstring{$\hat{\phi}$}{phi-hat} and Verification of Conditions]
@@ -421,7 +421,7 @@ The lecture states uniqueness on the board without proving it. Any ring homomorp
 \[
 \psi\left( \sum_{i=0}^n a_i x^i \right) = \sum_{i=0}^n \psi(a_i) \psi(x)^i = \sum_{i=0}^n \phi(a_i) y^i = \hat{\phi}\left( \sum_{i=0}^n a_i x^i \right).
 \]
-Hence $\psi = \hat{\phi}$, proving uniqueness.
+Hence, $\psi = \hat{\phi}$, proving uniqueness.
 \end{proof}
 \end{content}
 
@@ -627,7 +627,7 @@ So, the answer is: if it's an integral domain, you'll have no more units.
 
 Of course, this begs the question: What happens when it's not? \inlinemetanote{writes \qt{What happen when $R$ is \underline{not} an int domain.}}
 
-Okay, so I leave this to you to think about. That's kind of a fun thing; maybe we'll discuss it later.
+Okay, so, I leave this to you to think about. That's kind of a fun thing; maybe we'll discuss it later.
 
 You should either prove that this argument somehow can be fixed, or you should find a ring that's not an integral domain where there are more units. Those are the two possible solutions.
 
@@ -650,7 +650,7 @@ For a concrete counterexample, consider the ring $R = \mathbb{Z}/4\mathbb{Z}$ (w
 \[
 (1 + 2x)^2 = 1 + 4x + 4x^2 \equiv 1 \pmod 4.
 \]
-Thus $f(x) = 1 + 2x$ is a unit of degree $1$ with $f(x)^{-1} = 1 + 2x$.
+Thus, $f(x) = 1 + 2x$ is a unit of degree $1$ with $f(x)^{-1} = 1 + 2x$.
 \end{aiNote}
 
 \begin{hidden}
@@ -668,7 +668,7 @@ Thus $f(x) = 1 + 2x$ is a unit of degree $1$ with $f(x)^{-1} = 1 + 2x$.
 \begin{speech}[00:25:19 - 00:27:02]
 \inlinemetanote{moves to the lower left chalkboard and writes: Power Series}
 
-Okay, so the next thing is power series. And this is maybe... You may have less experience manipulating power series, I don't know. But it's a beautiful thing.
+Okay, so, the next thing is power series. And this is maybe... You may have less experience manipulating power series, I don't know. But it's a beautiful thing.
 
 Here, I have to define for you the power series ring \inlinemetanote{writes: $R[[x]] \ni$}. And the reason there are two brackets here, somehow, is because there are a lot more $x$'s, you know? \inlinemetanote{laughter}
 
@@ -705,7 +705,7 @@ It's hard to go forever, so typically you would write the following thing: the e
 
 You can see this is exactly the same data as that. The $x$, as I said, is just the variable; it's not influencing the $a$'s. Like here, it just makes clear that $x$ is just a placeholder, right? And that's all it's doing here also.
 
-Okay, so that's power series. You must have had whole classes on power series --- which is good, because I'm not going to teach you about them this way.
+Okay, so, that's power series. You must have had whole classes on power series --- which is good, because I'm not going to teach you about them this way.
 
 So, do you know how to add power series, multiply power series?
 
@@ -717,7 +717,7 @@ Here's the rule, which will surprise no one: \inlinemetanote{writes: $\sum_{i=0}
 
 It's a lot of work to write all of these things, so it's... yeah.
 
-Okay, so that's the exciting rule: it's component-wise addition.
+Okay, so, that's the exciting rule: it's component-wise addition.
 \end{speech}
 
 \begin{content}[Representation as Formal Sums]
@@ -865,7 +865,7 @@ You can tell I've been spending too much time in Europe because I say \qt{nought
 
 Here, $a_2$... That was a complicated joke. \inlinemetanote{writes: $(a_2 b_0 + a_1 b_1 + a_0 b_2)x^2 + \dots$}
 
-Okay, so that's how the power series multiplication works, right? How is it possible that this could be $1$?
+Okay, so, that's how the power series multiplication works, right? How is it possible that this could be $1$?
 
 Well, could this be $1$? $1$, I remind you, is $1 + 0 \times x + 0 \times x^2$, and so on \inlinemetanote{writes \qt{$1$, $0 \cdot x$, $0 \cdot x^2$} under the terms of $fg$}. So, the only way it can be $1$ is that this is $1$ \inlinemetanote{points to $a_0 b_0$}. So, this would imply that $a_0 b_0 = 1$ \inlinemetanote{writes: $\implies a_0 b_0 = 1$}. This means that the constant term of $f$ is a unit \inlinemetanote{writes: $\implies \operatorname{Const}(f)$ is a unit}. Right?
 
@@ -953,7 +953,7 @@ The banknote is the 10-franc note of the sixth series of Swiss banknotes, in cir
 \begin{proofWrapper}[Proof of \cref{thm:units-power-series-ring}]
 
 \begin{speech}[00:37:45 - 00:39:07]
-Okay, so I'll try to prove this. I want to prove this statement at the end.
+Okay, so, I'll try to prove this. I want to prove this statement at the end.
 
 Suppose $f$ has the form $a_0 + a_1 x + a_2 x^2 + \dots$, where $a_0 \in R$ is a unit \inlinemetanote{writes: Suppose $f = a_0 + a_1 x + a_2 x^2 + \dots$, $a_0 \in R$ is a unit}. That means that there exists some $y \in R$ such that $a_0 y = 1$ in $R$ \inlinemetanote{writes: $\exists y \in R$, $a_0 y = 1$ in $R$}, right?
 
@@ -963,7 +963,7 @@ Is that clear? Whenever I think about this, $y$ is now the constant power series
 
 And who knows what I get here, but I know one thing: it starts with $1$, because when I multiply by a constant power series, it just multiplies all these by $y$, right? So, whatever it is, it starts with $1$, and then it's $(a_1 y) x$ \inlinemetanote{writes: $= 1 + (a_1 y) x + (a_2 y) x^2 + \dots$} --- $y$ is an element of the ring, it has nothing to do with $x$ --- $(a_2 y) x^2$, and so on.
 
-Okay, so the first step is: I use the fact it's a unit, I multiply by something in $R$ and make this $1$.
+Okay, so, the first step is: I use the fact it's a unit, I multiply by something in $R$ and make this $1$.
 \end{speech}
 
 \begin{content}[Step 1: Normalization to Constant Term 1]

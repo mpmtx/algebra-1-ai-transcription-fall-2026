@@ -226,7 +226,7 @@ So, proof \inlinemetanote{writes: Proof:}. I have to prove it's a PID, because w
 
 Then either $I$ could be $0$ \inlinemetanote{writes: $I = (0)$} --- that's one possibility --- or $I$ is not the zero ideal \inlinemetanote{writes: $I \neq (0)$}. Here, of course, there's nothing to prove if it's the zero ideal.
 
-So, if it's not the zero ideal, choose $f$ in here that has minimal lowest degree \inlinemetanote{writes \qt{$\implies$ choose $f \in k[[x]]$} and \qt{that has min lowest degree} below, later adding \qt{$\in I$} under $k[[x]]$}. Power series don't have highest degrees; you don't think about... you think about lowest degree. So, it's the minimal lowest degree; that means $f$ starts somewhere, like $x^{17} + x^{18} + 3x^{19}$ \inlinemetanote{writes: $f = x^{17} + x^{18} + 3x^{19} + \dots$}. So, $f$ starts somewhere. And so here, or it could be, you know, there's some element in the field; anyway, something non-zero in the field \inlinemetanote{inserts \qt{$2$} before $x^{17}$}. It starts somewhere, and you find the element here in $I$, so $f$ is in $I$ of lowest degree.
+So, if it's not the zero ideal, choose $f$ in here that has minimal lowest degree \inlinemetanote{writes \qt{$\implies$ choose $f \in k[[x]]$} and \qt{that has min lowest degree} below, later adding \qt{$\in I$} under $k[[x]]$}. Power series don't have highest degrees; you don't think about... you think about lowest degree. So, it's the minimal lowest degree; that means $f$ starts somewhere, like $x^{17} + x^{18} + 3x^{19}$ \inlinemetanote{writes: $f = x^{17} + x^{18} + 3x^{19} + \dots$}. So, $f$ starts somewhere. And so, here, or it could be, you know, there's some element in the field; anyway, something non-zero in the field \inlinemetanote{inserts \qt{$2$} before $x^{17}$}. It starts somewhere, and you find the element here in $I$, so $f$ is in $I$ of lowest degree.
 
 Okay? So, do you accept you can do that? Once it's non-zero, it has some elements, and then you can find the one of lowest degree. All right.
 \end{speech}
@@ -384,7 +384,7 @@ Let $R$ be a UFD, $g, f \in R[x]$, and $b \in R$ with $b \neq 0$. If $g$ is prim
 
 \begin{aiNote}[Beyond the Lecture: A Second Proof of the Primitive Divisor Lemma]
 % [PERSISTENT, ADDITION]
-With \cref{prop:gauss-lemma-product}, \cref{prop:primitive-divisibility} also follows directly: we may assume $f \neq 0$, and write $b f = g h$ for some $h \in R[x]$. Taking contents gives $b \, C(f) \stackrel{u}{=} C(b f) = C(g h) \stackrel{u}{=} C(h)$ because $g$ is primitive (\cref{prop:gauss-lemma-product}, applied to $g$ and $h^*$). Hence $b \mid C(h)$ in $R$, so $h = b h'$ with $h' \in R[x]$, and cancelling $b \neq 0$ in the domain $R[x]$ yields $f = g h'$.
+With \cref{prop:gauss-lemma-product}, \cref{prop:primitive-divisibility} also follows directly: we may assume $f \neq 0$, and write $b f = g h$ for some $h \in R[x]$. Taking contents gives $b \, C(f) \stackrel{u}{=} C(b f) = C(g h) \stackrel{u}{=} C(h)$ because $g$ is primitive (\cref{prop:gauss-lemma-product}, applied to $g$ and $h^*$). Hence, $b \mid C(h)$ in $R$, so $h = b h'$ with $h' \in R[x]$, and cancelling $b \neq 0$ in the domain $R[x]$ yields $f = g h'$.
 \end{aiNote}
 
 \section{Structure of the Proof of Gauss's Theorem}
@@ -456,7 +456,7 @@ This divides into two cases according to the degree of $p$:
 
 \begin{aiNote}[Beyond the Lecture: Quotient Polynomial Ring Proof of Case (i)]
 % [PERSISTENT, ADDITION]
-Reduction of coefficients modulo $(p)$ defines a surjective ring homomorphism $\pi \colon R[x] \to \bigl(\faktor{R}{(p)}\bigr)[x]$ with $\ker(\pi) = (p) \subset R[x]$, so $\faktor{R[x]}{(p)} \cong \bigl(\faktor{R}{(p)}\bigr)[x]$ by the First Isomorphism Theorem (\cref{thm:first-isomorphism-theorem-statement}). Since $p$ is prime in $R$, the quotient $\faktor{R}{(p)}$ is an integral domain (\cref{prop:quotient-integral-domain-prime}), hence $\bigl(\faktor{R}{(p)}\bigr)[x]$ is also an integral domain (\cref{thm:domain-poly-power-series}), and therefore $(p) \subset R[x]$ is a prime ideal.
+Reduction of coefficients modulo $(p)$ defines a surjective ring homomorphism $\pi \colon R[x] \to \bigl(\faktor{R}{(p)}\bigr)[x]$ with $\ker(\pi) = (p) \subset R[x]$, so $\faktor{R[x]}{(p)} \cong \bigl(\faktor{R}{(p)}\bigr)[x]$ by the First Isomorphism Theorem (\cref{thm:first-isomorphism-theorem-statement}). Since $p$ is prime in $R$, the quotient $\faktor{R}{(p)}$ is an integral domain (\cref{prop:quotient-integral-domain-prime}), hence $\bigl(\faktor{R}{(p)}\bigr)[x]$ is also an integral domain (\cref{thm:domain-poly-power-series}), and therefore, $(p) \subset R[x]$ is a prime ideal.
 \end{aiNote}
 
 \section{Proof of Case (ii): Positive-Degree Irreducible Polynomials}
@@ -470,7 +470,7 @@ Okay, so, what do we have to do? Let's write the assumptions \inlinemetanote{wri
 
 We want to prove that the ideal is prime, so then we can assume $fg$ is in the ideal, and we assume $f$ is not in the ideal \inlinemetanote{writes \qt{$\bullet \; fg \in (p)$} and \qt{$\bullet \; f \notin (p)$}}. All right? And we need to show --- this is our goal \inlinemetanote{draws an implication arrow labeled \qt{Goal} to the right} --- is to show that then $g$ is in the ideal \inlinemetanote{writes: $g \in (p)$}.
 
-All right, so if we can do this, it says: these are our assumptions, and this last part is it being prime: take any two where the first one's not, then the second one has to be. So, that's what we have to do. Okay. That's the logical thing we have to do. Is that clear?
+All right, so, if we can do this, it says: these are our assumptions, and this last part is it being prime: take any two where the first one's not, then the second one has to be. So, that's what we have to do. Okay. That's the logical thing we have to do. Is that clear?
 \end{speech}
 
 \begin{content}[Assumptions and Goal]
@@ -484,9 +484,9 @@ To prove that $(p) \subset R[x]$ is a prime ideal when $\deg(p) > 0$, we start f
 \end{content}
 
 \begin{speech}[00:16:43 - 00:18:50]
-All right, so the proof of this is: the first idea is we construct this ideal generated by $f$ and $p$, and it's an ideal in this polynomial ring \inlinemetanote{writes \qt{Proof:} and \qt{$I := (f, p) \subset R[x]$}}. So, just to be clear here: everything here --- $p, f, g$ --- are polynomials \inlinemetanote{writes inside a box below the assumptions: $p, f, g \in R[x]$}. All right.
+All right, so, the proof of this is: the first idea is we construct this ideal generated by $f$ and $p$, and it's an ideal in this polynomial ring \inlinemetanote{writes \qt{Proof:} and \qt{$I := (f, p) \subset R[x]$}}. So, just to be clear here: everything here --- $p, f, g$ --- are polynomials \inlinemetanote{writes inside a box below the assumptions: $p, f, g \in R[x]$}. All right.
 
-And so I can take the ideal here. Now I select this element --- and this is an idea that we've used many times: if I have this ideal in a ring, like in this polynomial ring, it's a very good idea often to select the element of lowest degree. So, now we're here \inlinemetanote{writes: Select $m \in I$ so that $m \neq 0$ is of lowest degree among all non-zero elements of $I$}.
+And so, I can take the ideal here. Now I select this element --- and this is an idea that we've used many times: if I have this ideal in a ring, like in this polynomial ring, it's a very good idea often to select the element of lowest degree. So, now we're here \inlinemetanote{writes: Select $m \in I$ so that $m \neq 0$ is of lowest degree among all non-zero elements of $I$}.
 
 Okay? Again, you know, this ideal has some people in it. In particular, $p$ is irreducible, so it's not zero, so this ideal is not zero. So, it has some non-zero elements; we choose one of lowest degree, which we're allowed to. It's not unique, but we're allowed to choose an element of lowest degree. Are you happy with that?
 
@@ -666,7 +666,7 @@ with $0 \neq b'' \in R$, $q'', r'' \in R[x]$, and $r'' = 0$ or $\deg(r'') < \deg
 \end{hidden}
 
 \begin{speech}[00:30:33 - 00:31:57]
-But then again, the next step was we notice that $m$ is in $I$ and $p$ is in $I$ \inlinemetanote{writes: $m \in I, \; p \in I$}, because $p$ is also born inside $I$ --- remind you, $I$ is $(f, p)$ \inlinemetanote{writes inside a box above: $I = (f, p)$}. And so the same conclusion holds, that $r''$ is in $I$, and as a consequence, $r''$ must be zero by the same logic \inlinemetanote{writes \qt{$\implies r'' \in I$} and \qt{$\implies r'' = 0$}}.
+But then again, the next step was we notice that $m$ is in $I$ and $p$ is in $I$ \inlinemetanote{writes: $m \in I, \; p \in I$}, because $p$ is also born inside $I$ --- remind you, $I$ is $(f, p)$ \inlinemetanote{writes inside a box above: $I = (f, p)$}. And so, the same conclusion holds, that $r''$ is in $I$, and as a consequence, $r''$ must be zero by the same logic \inlinemetanote{writes \qt{$\implies r'' \in I$} and \qt{$\implies r'' = 0$}}.
 
 So, we get the equation --- conclude \inlinemetanote{writes: Conclude}, just as above; in fact, this whole board is just writing that whole argument again --- that $b'' p$ is equal to $q'' m$ \inlinemetanote{writes: $b'' p = q'' m$}. Okay?
 
@@ -1180,7 +1180,7 @@ So, the number of ways you can do $3$ things is $2$, and the number of ways you 
 \begin{speech}[00:56:29 - 00:57:52]
 Okay, so, then there's other things that also follow from what I already explained. If I have a group \inlinemetanote{writes: $G$}... another way to think about the operations: there's this binary operation \inlinemetanote{writes: $\bullet \text{ binary}$}, and we have the neutral element \inlinemetanote{writes: $e \in G$}, and it's nice to think also about inverse being a map: inverse from the group to the group \inlinemetanote{writes: $\operatorname{Inv}\colon G \to G$}. Meaning if I have $x$, I have a unique inverse $x^{-1}$ \inlinemetanote{writes: $x \mapsto x^{-1}$}. So, it's a function from the group to the group; it takes an element to its inverse.
 
-All right. And so there's a notion of a \newterm{subgroup} \inlinemetanote{writes and underlines \qt{Subgroup}, then writes: $S \subset G$}. So, it's a subset, and it should be closed under the operation, meaning if I take two elements of the subset and I use the group operation I stay in it; it should contain the neutral element; and one more thing is $S$ should have inverses, the inverse maps $S$ to $S$ \inlinemetanote{writes and circles \qt{$(S, \cdot, e)$}, and writes \qt{$\cdot \colon S \times S \to S$}, \qt{$e \in S$}, and \qt{$\operatorname{Inv} \colon S \to S$}}. So, every element in $S$ has its inverse in $S$. That's what a subgroup is. Okay?
+All right. And so, there's a notion of a \newterm{subgroup} \inlinemetanote{writes and underlines \qt{Subgroup}, then writes: $S \subset G$}. So, it's a subset, and it should be closed under the operation, meaning if I take two elements of the subset and I use the group operation I stay in it; it should contain the neutral element; and one more thing is $S$ should have inverses, the inverse maps $S$ to $S$ \inlinemetanote{writes and circles \qt{$(S, \cdot, e)$}, and writes \qt{$\cdot \colon S \times S \to S$}, \qt{$e \in S$}, and \qt{$\operatorname{Inv} \colon S \to S$}}. So, every element in $S$ has its inverse in $S$. That's what a subgroup is. Okay?
 \end{speech}
 
 \begin{content}
@@ -1594,7 +1594,7 @@ For example, $(1\,2\,3)^{-1} = (3\,2\,1) = (1\,3\,2)$.
 \begin{speech}[01:10:55 - 01:12:53]
 So, that works of course for any $n$, and the rule is: if you have this kind of function, it tells you the cycle decomposition; if you have the cycle decomposition, it tells you the function. But it's much more efficient.
 
-And so let us try to... in this notation, what is the inverse map \inlinemetanote{writes and underlines \qt{Inv}, with an arrow from \qt{Standard} to \qt{Inv}}?
+And so, let us try to... in this notation, what is the inverse map \inlinemetanote{writes and underlines \qt{Inv}, with an arrow from \qt{Standard} to \qt{Inv}}?
 
 Of course, the inverse of $e$ is, of course, $e$, right \inlinemetanote{draws an arrow from $e$ to $e$}? Neutral element. What's the inverse of this element \inlinemetanote{points at $(1\,2)$}? \inlinemetanote{inaudible answer from a student} Yeah. Itself \inlinemetanote{draws an arrow from $(1\,2)$ to $(1\,2)$}.
 
@@ -1678,9 +1678,9 @@ Computing the product $(1\,3)(2\,3)$ directly from right to left yields:
 \begin{speech}[01:14:45 - 01:15:45]
 Oh, I should do one more example while I'm there, by the way. Let's do one more. What if I do it in the different way: $(2\,3)(1\,3)$ \inlinemetanote{writes: $(2\,3)(1\,3) =$}?
 
-Then... so now you tell me: $1$, where does $1$ go? Someone should say $2$. Yeah, $1$ goes to $2$, because you go: $1$ goes to $3$ (in $(1\,3)$), then $3$ gets bumped to $2$ (in $(2\,3)$) \inlinemetanote{writes: $(1\,2$}.
+Then... so, now you tell me: $1$, where does $1$ go? Someone should say $2$. Yeah, $1$ goes to $2$, because you go: $1$ goes to $3$ (in $(1\,3)$), then $3$ gets bumped to $2$ (in $(2\,3)$) \inlinemetanote{writes: $(1\,2$}.
 
-And where does $2$ go? Well, $2$ doesn't see anything here (in $(1\,3)$), but then gets bumped to $3$ (in $(2\,3)$), and then $3$ gets bumped to $1$ here (in $(1\,3)$)... so that's it \inlinemetanote{writes \qt{$3$} and closes the parenthesis, giving \qt{$(1\,2\,3)$}}. So, actually, this is already showing that it's not commutative, because you got the two different elements when you do them in different order \inlinemetanote{points at $(1\,3)(2\,3) = (1\,3\,2)$ and $(2\,3)(1\,3) = (1\,2\,3)$}.
+And where does $2$ go? Well, $2$ doesn't see anything here (in $(1\,3)$), but then gets bumped to $3$ (in $(2\,3)$), and then $3$ gets bumped to $1$ here (in $(1\,3)$)... so, that's it \inlinemetanote{writes \qt{$3$} and closes the parenthesis, giving \qt{$(1\,2\,3)$}}. So, actually, this is already showing that it's not commutative, because you got the two different elements when you do them in different order \inlinemetanote{points at $(1\,3)(2\,3) = (1\,3\,2)$ and $(2\,3)(1\,3) = (1\,2\,3)$}.
 
 So, what I advocate --- what I was trying to say --- is I advocate, if you are learning this cycle notation, to go home and write the multiplication table of $S_3$.
 \end{speech}
@@ -1784,7 +1784,7 @@ x \cdot y = y \cdot x \qquad \forall x, y \in G.
 \begin{speech}[01:18:13 - 01:20:22]
 So, we take $G$ is a finite group, and let $x$ be an element of $G$ \inlinemetanote{writes: $\text{Let } x \in G$}.
 
-All right, so the first thing I can do is consider this: $x^1$ --- $x$ to the power $1$, which is just $x$ --- $x^2, x^3$, so on \inlinemetanote{writes: (i) $x, x^2, x^3, \dots$}. And what I mean by this, which is what everybody means: $x^2$ is just $x \cdot x$, and $x^3$ is $x \cdot x \cdot x$, so on \inlinemetanote{writes \qt{$x^2 = x \cdot x$} and \qt{$x^3 = x \cdot x \cdot x$}}, okay? That's what this notation means: just apply the group operation to itself.
+All right, so, the first thing I can do is consider this: $x^1$ --- $x$ to the power $1$, which is just $x$ --- $x^2, x^3$, so on \inlinemetanote{writes: (i) $x, x^2, x^3, \dots$}. And what I mean by this, which is what everybody means: $x^2$ is just $x \cdot x$, and $x^3$ is $x \cdot x \cdot x$, so on \inlinemetanote{writes \qt{$x^2 = x \cdot x$} and \qt{$x^3 = x \cdot x \cdot x$}}, okay? That's what this notation means: just apply the group operation to itself.
 
 All right, and I just consider all of these: $x^4, x^5$, and eventually there'll be some $x^{17}$, and eventually $x^{691}$, and so on \inlinemetanote{writes: $x^4, x^5, \dots, x^{17}, \dots, x^{691}, \dots$}. And you'll see that there are infinitely many elements in this list, but $G$ is a finite group. So, two of them have to be... there must be that some of these are coincident; these cannot all be distinct \inlinemetanote{writes \qt{Can not all be distinct} with a brief note underneath regarding $G$}. They can't all be distinct, because $G$ is finite and this list is infinite. I hope you view that as a solid argument. Sometimes this is called something like the pigeonhole principle, or something like that; that seems like a fancy word for it.
 
@@ -1839,9 +1839,9 @@ As derived above, the infinite sequence $x, x^2, x^3, \dots$ in the finite group
 \begin{speech}[01:21:56 - 01:23:02]
 All right, so, we've proven this. That's an extremely basic property of groups, and it's a very important one: if I have a group, a finite group, and I have an element, that element --- if I apply powers of that element --- eventually gets back to the unit, the neutral element.
 
-And so we come to a definition \inlinemetanote{writes: $\text{Def:}$}: let $x$ be an element of $G$, $G$ finite, then the \newterm{order} of $x$ \inlinemetanote{writes \qt{$\text{Let } x \in G, \; G \text{ finite}$}, writes \qt{$\text{then } \operatorname{Ord}(x) \text{ is the}$}, and underlines \qt{$\operatorname{Ord}(x)$}} --- that's a definition --- is the minimal $m$, minimal positive $m$ such that $x^m$ is the neutral element \inlinemetanote{writes: $\min m > 0 \text{ such that } x^m = e.$}. All right?
+And so, we come to a definition \inlinemetanote{writes: $\text{Def:}$}: let $x$ be an element of $G$, $G$ finite, then the \newterm{order} of $x$ \inlinemetanote{writes \qt{$\text{Let } x \in G, \; G \text{ finite}$}, writes \qt{$\text{then } \operatorname{Ord}(x) \text{ is the}$}, and underlines \qt{$\operatorname{Ord}(x)$}} --- that's a definition --- is the minimal $m$, minimal positive $m$ such that $x^m$ is the neutral element \inlinemetanote{writes: $\min m > 0 \text{ such that } x^m = e.$}. All right?
 
-So, yeah, once we have \emph{some}, we can always take the minimal. And so that's a canonical number associated: anytime you have a group that's finite and you have an element, that element has a number, which is its order, and it's an extremely important aspect of that element. That's how many times you have to apply the group operation to itself to get back the neutral element.
+So, yeah, once we have \emph{some}, we can always take the minimal. And so, that's a canonical number associated: anytime you have a group that's finite and you have an element, that element has a number, which is its order, and it's an extremely important aspect of that element. That's how many times you have to apply the group operation to itself to get back the neutral element.
 \end{speech}
 
 \begin{content}

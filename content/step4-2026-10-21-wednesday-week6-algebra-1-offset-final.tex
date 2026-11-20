@@ -214,7 +214,7 @@ Let $R$ be a UFD. Every non-zero coefficient $a_j \neq 0$ admits a unique prime 
 a_j = u_j \prod_{i=1}^m p_i^{k_{ij}},
 \]
 where $u_j \in \mathcal{U}_R$ is a unit, $p_1, \dots, p_m$ are pairwise non-associate irreducible (prime) elements, and $k_{ij} \ge 0$.
-The greatest common divisor of several elements is defined as for two (\cref{def:gcd-ufd}: a common divisor that every common divisor divides), and the argument of \cref{thm:gcd-formula-ufd} gives it by minimal exponents. So the greatest common divisor of the non-zero coefficients is:
+The greatest common divisor of several elements is defined as for two (\cref{def:gcd-ufd}: a common divisor that every common divisor divides), and the argument of \cref{thm:gcd-formula-ufd} gives it by minimal exponents. So, the greatest common divisor of the non-zero coefficients is:
 \begin{equation}\label{eq:gcd-prime-powers}
 \operatorname{GCD}(a_0, a_1, \dots, a_n) = \prod_{i=1}^m p_i^{\min \{ k_{ij} \mid a_j \neq 0 \}}.
 \end{equation}
@@ -254,7 +254,7 @@ Let $f(x) = \sum_{j=0}^n a_j x^j$ with $C(f) = d \in R$. By definition of the gr
 \[
 f^*(x) := \sum_{j=0}^n a_j^* x^j \in R[x].
 \]
-If an irreducible element $p \in R$ divided every non-zero coefficient $a_j^*$ of $f^*$, then $p \cdot d$ would be a common divisor of all $a_j = d \cdot a_j^*$ in $R$, hence would divide $d$: $d = p d r$, and cancelling $d \neq 0$ gives $1 = p r$, so $p$ would be a unit, which an irreducible is not. Thus no irreducible divides all $a_j^*$; since every non-unit has an irreducible factor, $\operatorname{GCD}(a_0^*, \dots, a_n^*) \sim 1$.
+If an irreducible element $p \in R$ divided every non-zero coefficient $a_j^*$ of $f^*$, then $p \cdot d$ would be a common divisor of all $a_j = d \cdot a_j^*$ in $R$, hence would divide $d$: $d = p d r$, and cancelling $d \neq 0$ gives $1 = p r$, so $p$ would be a unit, which an irreducible is not. Thus, no irreducible divides all $a_j^*$; since every non-unit has an irreducible factor, $\operatorname{GCD}(a_0^*, \dots, a_n^*) \sim 1$.
 \end{steps}
 \end{content}
 
@@ -1037,7 +1037,7 @@ The bell ended the lecture a few minutes before the end of the proof (\qt{I'll d
 
 At the end of the lecture, $m^* \mid f$ and $m^* \mid p$ in $R[x]$, where $m^*$ is the primitive part of the element $m \in I = (p, f)$ of minimal degree.
 \begin{description}
-    \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence $m^*$ is a unit of $R[x]$, so $m^* \in \mathcal{U}_R$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
+    \item[Step 1:] \textbf{$m^*$ is a Unit:} Write $p = m^* t$ with $t \in R[x]$. Since $p$ is irreducible, $m^*$ or $t$ is a unit. If $t$ were a unit, then $p = m^* t$ would divide $f$ (as $m^* \mid f$), that is, $f \in (p)$, contradicting the hypothesis $f \notin (p)$. Hence, $m^*$ is a unit of $R[x]$, so $m^* \in \mathcal{U}_R$ has degree $0$ (\cref{thm:units-polynomial-ring-integral-domain}).
     \item[Step 2:] \textbf{$m$ is a Non-Zero Constant:} Since $m = C(m) \cdot m^*$ with both factors in $R$, $m =: c \in R \setminus \{0\}$; this is the claim $\deg(m) = 0$ written on the board.
     \item[Step 3:] \textbf{$p$ is Primitive:} $p = C(p) \cdot p^*$ with $\deg(p^*) = \deg(p) > 0$, so $p^*$ is not a unit, and the irreducibility of $p$ forces $C(p)$ to be a unit.
     \item[Step 4:] \textbf{Deducing $g \in (p)$:} Because $c = m \in I = (p, f)$, there exist polynomials $A, B \in R[x]$ such that:

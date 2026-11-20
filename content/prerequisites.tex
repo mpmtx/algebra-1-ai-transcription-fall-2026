@@ -44,7 +44,7 @@ This chapter is not part of the lectures. It collects what the lectures take for
     \item $A \subset B$ means that every element of $A$ lies in $B$; equality is allowed, as in the lecturer's usage. A proper inclusion is written $A \subsetneq B$.
     \item $|X|$ (or $\# X$) is the number of elements of a finite set $X$; for a finite group it is called the \newterm{order}.
     \item $X \times Y := \{ (x, y) \mid x \in X, \ y \in Y \}$ is the \newterm{Cartesian product}. A binary operation on $X$ is a map $X \times X \to X$; the set of pairs used for the field of fractions (\cref{def:set-of-pairs-s}) is a subset of $R \times R$.
-    \item $Y^X$ is the set of all maps $X \to Y$. In particular $R^{\mathbb{N}_0}$ is the set of all sequences $(a_0, a_1, a_2, \dots)$ with entries in $R$; polynomials and power series are defined as such sequences (\cref{def:poly-rigorous-sequences}, \cref{def:power-series-ring-formal}).
+    \item $Y^X$ is the set of all maps $X \to Y$. In particular, $R^{\mathbb{N}_0}$ is the set of all sequences $(a_0, a_1, a_2, \dots)$ with entries in $R$; polynomials and power series are defined as such sequences (\cref{def:poly-rigorous-sequences}, \cref{def:power-series-ring-formal}).
 \end{itemize}
 \end{notation}
 
@@ -142,7 +142,7 @@ In particular, $a$ and $b$ are coprime if and only if $a x + b y = 1$ for some $
 \end{fact}
 
 \begin{steps}[Why It Holds]
-The set $I := \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence $d = \operatorname{GCD}(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
+The set $I := \{ a x + b y \mid x, y \in \mathbb{Z} \}$ is an ideal of $\mathbb{Z}$ (\cref{def:ideal}), so $I = d\mathbb{Z}$ with $d > 0$ by \cref{thm:ideals-of-z-are-principal} (Week~2). Since $a, b \in I$, $d$ divides $a$ and $b$; and every common divisor of $a$ and $b$ divides every element of $I$, in particular $d$. Hence, $d = \operatorname{GCD}(a, b)$. Conversely, if $a x + b y = 1$, every common divisor of $a$ and $b$ divides $1$.
 \end{steps}
 
 \begin{fact}[Euclid's Lemma]\label[fact]{fact:pre-euclid}
@@ -203,7 +203,7 @@ Let $G$ be a group with neutral element $e$ and $a \in G$. The \newterm{order} o
 \end{definition}
 
 \begin{definition}[Field]\label[definition]{def:pre-field}
-A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). A \newterm{subfield} of a field is a subring (Week~2, \cref{def:subring}) that is itself a field, such as $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ or the Gaussian rationals $\mathbb{Q}[i] \subset \mathbb{C}$ (Week~3, \cref{ex:frac-gaussian-integers}). The lecturer restates fields in Week~2 (\cref{def:field}).
+A \newterm{field} $(K, +, \cdot, 0, 1)$ is a set with two operations such that $(K, +, 0)$ is an abelian group, $(K \setminus \{0\}, \cdot, 1)$ is an abelian group, and $a (b + c) = a b + a c$ for all $a, b, c$. In particular, $0 \neq 1$. Examples are $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ for a prime $p$ (in the lectures: \cref{prop:z-mod-m-domain} and \cref{thm:units-z-mod-m}). A \newterm{subfield} of a field is a subring (Week~2, \cref{def:subring}) that is itself a field, such as $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$ or the Gaussian rationals $\mathbb{Q}[i] \subset \mathbb{C}$ (Week~3, \cref{ex:frac-gaussian-integers}). The lecturer restates fields in Week~2 (\cref{def:field}).
 \end{definition}
 
 \begin{fact}[Complex Conjugation and Modulus]\label[fact]{fact:pre-complex}
@@ -211,7 +211,7 @@ For $z = a + b i \in \mathbb{C}$ ($a, b \in \mathbb{R}$, $i^2 = -1$), the \newte
 \[
 \overline{z + w} = \bar{z} + \bar{w}, \qquad \overline{z w} = \bar{z} \, \bar{w}, \qquad z \bar{z} = |z|^2, \qquad |z w| = |z| \, |w|,
 \]
-and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So conjugation respects sums and products, and under multiplication the lengths of complex numbers multiply (and their angles add).
+and $\bar{z} = z$ exactly when $z \in \mathbb{R}$. So, conjugation respects sums and products, and under multiplication the lengths of complex numbers multiply (and their angles add).
 \end{fact}
 
 \section{Linear Algebra}
@@ -286,7 +286,7 @@ A subset of $\mathbb{R}$ is \newterm{compact} if and only if it is closed and bo
 \end{fact}
 
 \begin{fact}[Limits and Continuity]\label[fact]{fact:pre-continuity}
-A function $f \colon U \to \mathbb{R}$ on an open set $U \subset \mathbb{R}$ is \newterm{continuous} at $a \in U$ if $\lim_{x \to a} f(x) = f(a)$, and continuous if this holds at every point of $U$. Sums, products and compositions of continuous functions are continuous, and every differentiable function is continuous, so the functions in $C^\infty(\mathbb{R})$ are continuous. If $g \colon \mathbb{R} \to \mathbb{R}$ is continuous, the one-sided limit $\lim_{x \to 0^+} g(x)$ exists and equals $g(0)$. So a function on $\mathbb{R}_{>0}$ with no limit at $0^+$, such as $x \mapsto \sin(1/x)$, is not the restriction of a continuous function on $\mathbb{R}$ (Week~2, \cref{prop:res-not-surjective}).
+A function $f \colon U \to \mathbb{R}$ on an open set $U \subset \mathbb{R}$ is \newterm{continuous} at $a \in U$ if $\lim_{x \to a} f(x) = f(a)$, and continuous if this holds at every point of $U$. Sums, products and compositions of continuous functions are continuous, and every differentiable function is continuous, so the functions in $C^\infty(\mathbb{R})$ are continuous. If $g \colon \mathbb{R} \to \mathbb{R}$ is continuous, the one-sided limit $\lim_{x \to 0^+} g(x)$ exists and equals $g(0)$. So, a function on $\mathbb{R}_{>0}$ with no limit at $0^+$, such as $x \mapsto \sin(1/x)$, is not the restriction of a continuous function on $\mathbb{R}$ (Week~2, \cref{prop:res-not-surjective}).
 \end{fact}
 
 \begin{fact}[Smooth Functions Vanishing on a Half-Line]\label[fact]{fact:pre-flat-function}
@@ -294,7 +294,7 @@ The function
 \[
 h(x) := \begin{cases} e^{-1/x} & x > 0, \\ 0 & x \le 0 \end{cases}
 \]
-lies in $C^\infty(\mathbb{R})$: all its derivatives tend to $0$ as $x \to 0^+$, because $e^{-1/x}$ goes to $0$ faster than any power of $x$. So $h$ vanishes exactly on $(-\infty, 0]$; the function $x \mapsto h(-x)$ vanishes exactly on $[0, \infty)$, and $h(x - a) \, h(b - x)$ is a smooth function that is non-zero exactly on $(a, b)$ (a \newterm{bump function}). Such functions show that the ideals of $C^\infty(\mathbb{R})$ in Week~2 are not zero and differ from each other (\cref{prop:compact-support-ideal}, \cref{prop:larger-ideal-smooth}).
+lies in $C^\infty(\mathbb{R})$: all its derivatives tend to $0$ as $x \to 0^+$, because $e^{-1/x}$ goes to $0$ faster than any power of $x$. So, $h$ vanishes exactly on $(-\infty, 0]$; the function $x \mapsto h(-x)$ vanishes exactly on $[0, \infty)$, and $h(x - a) \, h(b - x)$ is a smooth function that is non-zero exactly on $(a, b)$ (a \newterm{bump function}). Such functions show that the ideals of $C^\infty(\mathbb{R})$ in Week~2 are not zero and differ from each other (\cref{prop:compact-support-ideal}, \cref{prop:larger-ideal-smooth}).
 \end{fact}
 
 \begin{fact}[Geometric Series and Cauchy Product]\label[fact]{fact:pre-series}
