@@ -135,11 +135,11 @@ R[x_1, \dots, x_n] \cong (R[x_1, \dots, x_{n-1}])[x_n].
 \subsection{Standard Examples of Unique Factorization Domains}
 
 \begin{speech}[00:00:47 - 00:02:16]
-So, the first thing to note, which is not about the proof, it's just about examples \inlinemetanote{writes: Examples} --- that if you know this result, then you can take any UFD you want, like $\mathbb{Z}$ is a UFD, so this result implies if I take the polynomial ring in one variable, or two variables, or any number of variables \inlinemetanote{writes \qt{$\mathbb{Z}$} and \qt{$\implies \mathbb{Z}[x], \mathbb{Z}[x, y], \dots$}} --- you can just keep applying this one after the other \inlinemetanote{points at \cref{thm:ufd-polynomial-ring-w7tue} on the board} --- that these are all UFDs.
+So, the first thing to note, which is not about the proof, it's just about examples \inlinemetanote{writes: Examples}: that if you know this result, then you can take any UFD you want, like $\mathbb{Z}$ is a UFD, so this result implies if I take the polynomial ring in one variable, or two variables, or any number of variables \inlinemetanote{writes \qt{$\mathbb{Z}$} and \qt{$\implies \mathbb{Z}[x], \mathbb{Z}[x, y], \dots$}} --- you can just keep applying this one after the other \inlinemetanote{points at \cref{thm:ufd-polynomial-ring-w7tue} on the board} --- that these are all UFDs.
 
-And also --- these are kind of the standard classical examples --- if I take the finite field $\mathbb{Z} \bmod p\mathbb{Z}$: every field is a UFD, so that means I take polynomials in finite fields, these, however many variables you want, as long as it's finitely many \inlinemetanote{writes \qt{$\mathbb{F}_p = \faktor{\mathbb{Z}}{p\mathbb{Z}}$} and \qt{$\implies \faktor{\mathbb{Z}}{p\mathbb{Z}}[x, y, z, \dots]$}}. These obey all the factorization rules that you are familiar with for the integers. The idea of: you have a polynomial, there's unique factorization into prime polynomials, and just whatever you remember about the integers --- not every single statement, but the parts about unique factorization, they apply here.
+And also --- these are kind of the standard classical examples --- if I take the finite field $\mathbb{Z} \bmod p\mathbb{Z}$: every field is a UFD, so that means I take polynomials in finite fields, these, however many variables you want, as long as it's finitely many \inlinemetanote{writes \qt{$\mathbb{F}_p = \faktor{\mathbb{Z}}{p\mathbb{Z}}$} and \qt{$\implies \faktor{\mathbb{Z}}{p\mathbb{Z}}[x, y, z, \dots]$}}. These obey all the factorization rules that you are familiar with for the integers. The idea of: you have a polynomial, there's unique factorization into prime polynomials, and just whatever you remember about the integers --- not every single statement, but the parts about unique factorization --- they apply here.
 
-And the other classical examples: you take the fields $\mathbb{Q}, \mathbb{C}, \mathbb{R}$, these are like the classical examples \inlinemetanote{writes \qt{$\mathbb{Q}, \mathbb{C}, \mathbb{R}$} and \qt{$\implies \mathbb{Q}[x, y, z]$}}. And one of the aspects of this course is that, if you see these rings --- there's a huge study of these rings, and this course is only the very beginning of this study ---, but at least you'll know that you can factor things, and the rules of factorization work like in integers.
+And the other classical examples: you take the fields $\mathbb{Q}, \mathbb{C}, \mathbb{R}$, these are like the classical examples \inlinemetanote{writes \qt{$\mathbb{Q}, \mathbb{C}, \mathbb{R}$} and \qt{$\implies \mathbb{Q}[x, y, z]$}}. And one of the aspects of this course is that, if you see these rings --- there's a huge study of these rings, and this course is only the very beginning of this study --- but at least you'll know that you can factor things, and the rules of factorization work like in integers.
 \end{speech}
 
 \begin{content}
@@ -178,7 +178,7 @@ While the polynomial ring $k[x]$ in one variable over a field $k$ is a principal
 \subsection{The Gaussian Integers \texorpdfstring{$\mathbb{Z}[i]$}{Z[i]}}
 
 \begin{speech}[00:02:16 - 00:03:11]
-Okay, so, you could ask, say: what about other rings? So, it was kind of an example in this class, this ring of Gaussian integers (Recall: \cref{def:gaussian-integers}) \inlinemetanote{writes: $\mathbb{Z}[i]$}. What about this ring? That's not exactly in this context, and it's not... So, it turns out this --- Gaussian integers --- is a PID \inlinemetanote{writes: $\text{is PID}$}. We haven't proven it. You can go look in the book. It was not in the topics in the course, but this is a PID, so it implies that this ring, the Gaussian integers, is also a UFD \inlinemetanote{writes: $\implies \mathbb{Z}[i] \text{ is UFD}$}.
+Okay, so, you could ask, say: what about other rings? So, it was kind of an example in this class, this ring of Gaussian integers (Recall: \cref{def:gaussian-integers}) \inlinemetanote{writes: $\mathbb{Z}[i]$}. What about this ring? That's not exactly in this context, and it's not... So, it turns out this, Gaussian integers, is a PID \inlinemetanote{writes: $\text{is PID}$}. We haven't proven it. You can go look in the book. It was not in the topics in the course, but this is a PID, so it implies that this ring, the Gaussian integers, is also a UFD \inlinemetanote{writes: $\implies \mathbb{Z}[i] \text{ is UFD}$}.
 
 So, the argument it's a PID is not hard; it's just a page in the book. There's a notion of Euclidean domains, and well, you need to know --- so, you have to look in the book for it --- there's a notion of a division algorithm here \inlinemetanote{writes \qt{division alg} below \qt{is PID}}. Then that shows it's a PID, and so, if you're interested, you can read it, you can find it; it's a page in the book basically. But that's also a UFD.
 \end{speech}
@@ -222,11 +222,11 @@ k[[x]] \text{ is a PID} \implies k[[x]] \text{ is a UFD}.
 \begin{proofWrapper}[{Proof of \cref{ex:power-series-pid-ufd}}]
 
 \begin{speech}[00:03:56 - 00:05:31]
-So, proof \inlinemetanote{writes: Proof:}. Let $I$ --- I have to prove it's a PID, because we proved earlier that PIDs are UFDs (Recall: \cref{thm:pid-implies-ufd}). So, let $I$ be any ideal \inlinemetanote{writes: Let $I \subset k[[x]]$ ideal}.
+So, proof \inlinemetanote{writes: Proof:}. I have to prove it's a PID, because we proved earlier that PIDs are UFDs (Recall: \cref{thm:pid-implies-ufd}). So, let $I$ be any ideal \inlinemetanote{writes: Let $I \subset k[[x]]$ ideal}.
 
 Then either $I$ could be $0$ \inlinemetanote{writes: $I = (0)$} --- that's one possibility --- or $I$ is not the zero ideal \inlinemetanote{writes: $I \neq (0)$}. Here, of course, there's nothing to prove if it's the zero ideal.
 
-So, if it's not the zero ideal, choose a power series in here --- choose $f$ in here that has minimal lowest degree \inlinemetanote{writes \qt{$\implies$ choose $f \in k[[x]]$} and \qt{that has min lowest degree} below, later adding \qt{$\in I$} under $k[[x]]$}. Power series don't have highest degrees; you don't think about... you think about lowest degree. So, it's the minimal lowest degree; that means $f$ starts somewhere, like $x^{17} + x^{18} + 3x^{19}$ \inlinemetanote{writes: $f = x^{17} + x^{18} + 3x^{19} + \dots$} --- so, $f$ starts somewhere. And so here, or it could be, you know, there's some element in the field; anyway, something non-zero in the field \inlinemetanote{inserts \qt{$2$} before $x^{17}$}. It starts somewhere, and you find the element here in $I$, so $f$ is in $I$ of lowest degree.
+So, if it's not the zero ideal, choose $f$ in here that has minimal lowest degree \inlinemetanote{writes \qt{$\implies$ choose $f \in k[[x]]$} and \qt{that has min lowest degree} below, later adding \qt{$\in I$} under $k[[x]]$}. Power series don't have highest degrees; you don't think about... you think about lowest degree. So, it's the minimal lowest degree; that means $f$ starts somewhere, like $x^{17} + x^{18} + 3x^{19}$ \inlinemetanote{writes: $f = x^{17} + x^{18} + 3x^{19} + \dots$}. So, $f$ starts somewhere. And so here, or it could be, you know, there's some element in the field; anyway, something non-zero in the field \inlinemetanote{inserts \qt{$2$} before $x^{17}$}. It starts somewhere, and you find the element here in $I$, so $f$ is in $I$ of lowest degree.
 
 Okay? So, do you accept you can do that? Once it's non-zero, it has some elements, and then you can find the one of lowest degree. All right.
 \end{speech}
@@ -248,7 +248,7 @@ On the board, the lecturer initially wrote \qt{$\implies$ choose $f \in k[[x]]$}
 \end{aiNote}
 
 \begin{speech}[00:05:31 - 00:05:44]
-Then this is --- now, this is the part for you, exercise \inlinemetanote{writes: Ex: prove $I =$}. I did most of it. Prove $I$ --- what am I going to write here? Yeah?
+Now, this is the part for you, exercise \inlinemetanote{writes: Ex: prove $I =$}. I did most of it. Prove $I$... what am I going to write here? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -258,11 +258,11 @@ It's generated by $f$.
 \begin{speech}[00:05:46 - 00:06:56]
 Yeah, you could say that, but there's a more elegant way to say it. I went to all this trouble writing the minimal degree here. It's generated by the lowest term, in this case $x^{17}$ \inlinemetanote{writes: $(x^{17})$}. It's generated by the lowest term.
 
-So, in general, if you have $f$ is in $I$ of minimal degree, then this is generated by the monomial $x$ to the minimal \inlinemetanote{writes: $f \in I$ min.\ degree $\implies I = (x^m)$} --- that's the one, the monomial where the first one comes, okay? And the reason is that --- well, I mean, we discussed these things, I'll leave that as an exercise for you to think.
+So, in general, if you have $f$ is in $I$ of minimal degree, then this is generated by the monomial $x$ to the minimal \inlinemetanote{writes: $f \in I$ min.\ degree $\implies I = (x^m)$} --- that's the one, the monomial where the first one comes, okay? And the reason is that... well, I mean, we discussed these things, I'll leave that as an exercise for you to think.
 
-This shows that not only is this power series ring a principal ideal domain, because every ideal is generated by one element --- in this case $17$ or some other power ---, but actually I just told you all the ideals in the ring: all the ideals are of the form $x$ to the some number; that's it, those are the only ideals. So, there are very few --- I mean, there's infinitely many, but in some conceptual sense very few ideals.
+This shows that not only is this power series ring a principal ideal domain, because every ideal is generated by one element --- in this case $17$ or some other power --- but actually I just told you all the ideals in the ring: all the ideals are of the form $x$ to the some number; that's it, those are the only ideals. So, there are very few --- I mean, there's infinitely many, but in some conceptual sense very few ideals.
 
-Okay, those are all PIDs. Sorry --- these rings are all PIDs, so they're all UFDs. Okay, now let's go back to the proof \inlinemetanote{erases the middle and right boards, leaving Theorem B on the upper left}.
+Okay, those are all PIDs. Sorry, these rings are all PIDs, so they're all UFDs. Okay, now let's go back to the proof \inlinemetanote{erases the middle and right boards, leaving Theorem B on the upper left}.
 \end{speech}
 
 \begin{content}
@@ -302,9 +302,9 @@ As the lecturer emphasizes, this argument does more than show $k[[x]]$ is a PID:
 \section{Preliminaries: Content, Primitive Polynomials, and Gauss's Lemma}
 
 \begin{speech}[00:06:56 - 00:08:38]
-So, the ideas of this proof --- there were several new ideas, which I just comment on, so we're going to use them. If I have $f$ as a polynomial and $f$ is not zero \inlinemetanote{writes: $f \in R[x], \; f \neq 0$} --- we don't like factoring zeros ---, if $f$'s not zero, then we define the content \inlinemetanote{writes \qt{$C(f)$} and \qt{Content of $f$} (in quotes) below}. This is the content of $f$; that's the words for it, and it equals the $\operatorname{GCD}$ of the non-zero coefficients of $f$ \inlinemetanote{writes: $= \operatorname{GCD}(\text{nonzero coeffs of } f)$}. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero. And that's a $\operatorname{GCD}$, and it's only defined up to a unit \inlinemetanote{adds \qt{$u$} above the equals sign}.
+So, the ideas of this proof... there were several new ideas, which I just comment on, so we're going to use them. If I have $f$ as a polynomial and $f$ is not zero \inlinemetanote{writes: $f \in R[x], \; f \neq 0$} --- we don't like factoring zeros --- if $f$'s not zero, then we define the content \inlinemetanote{writes \qt{$C(f)$} and \qt{Content of $f$} (in quotes) below}. This is the content of $f$; that's the words for it, and it equals the $\operatorname{GCD}$ of the non-zero coefficients of $f$ \inlinemetanote{writes: $= \operatorname{GCD}(\text{nonzero coeffs of } f)$}. Okay? Since $f$ is not zero, it has at least one coefficient that's non-zero. And that's a $\operatorname{GCD}$, and it's only defined up to a unit \inlinemetanote{adds \qt{$u$} above the equals sign}.
 
-And the ways we think about this is: given any $f$ --- always, you know, non-zero \inlinemetanote{writes: $f \in R[x], \; f \neq 0$} ---, $f$ non-zero, then we can write $f$ is equal to the content --- where we just pull out the $\operatorname{GCD}$ \inlinemetanote{writes: $\implies f = C(f)$} --- and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes \qt{$\cdot f^*$} and draws an arrow from $f^*$ up to \qt{primitive}}. And the definition of the term primitive was: the content is equal to $1$ up to a unit \inlinemetanote{draws an arrow from $f^*$ down to \qt{$C(f^*) \stackrel{u}{=} 1$}}.
+And the ways we think about this is: given any $f$ --- always, you know, non-zero \inlinemetanote{writes: $f \in R[x], \; f \neq 0$} --- $f$ non-zero, then we can write $f$ is equal to the content, where we just pull out the $\operatorname{GCD}$ \inlinemetanote{writes: $\implies f = C(f)$}, and then we multiply by what's left, and this is what's called primitive \inlinemetanote{writes \qt{$\cdot f^*$} and draws an arrow from $f^*$ up to \qt{primitive}}. And the definition of the term primitive was: the content is equal to $1$ up to a unit \inlinemetanote{draws an arrow from $f^*$ down to \qt{$C(f^*) \stackrel{u}{=} 1$}}.
 
 Okay? So, this is review from last time (Recall: \cref{def:content-poly}, \cref{def:primitive-poly}). And the two properties that we use about this, which are really important: the first one is another theorem by Carl Friedrich, that says that if $f$ and $g$ are primitive, then their product is primitive \inlinemetanote{writes \qt{$\bullet \; \text{CFG:}$}, \qt{$\text{if } f, g \text{ are primitive}$}, and \qt{$\implies fg \text{ primitive}$}}. Okay? So, we proved that (Recall: \cref{lem:gauss-lemma}).
 \end{speech}
@@ -341,13 +341,13 @@ f, g \text{ are primitive} \implies fg \text{ is primitive}.
 \begin{speech}[00:08:38 - 00:10:17]
 And that was a very nice proof actually; it used the fact about polynomial rings over integral domains being integral domains (Recall: \cref{thm:domain-poly-power-series}). And what the content of this is, is if you take something like --- let's take the integers --- $(2x$, I don't know, plus something, $5)$ times $(3x + 17)$ \inlinemetanote{writes: $(2x + 5)(3x + 17)$}.
 
-So, like these two things, these two polynomials --- this is $f$ and this is $g$ \inlinemetanote{labels $2x + 5$ as $f$ and $3x + 17$ as $g$ below} ---, this one's primitive, because $2$ and $5$ don't have any common factors; this one's also primitive, because $3$ and $17$ don't have any common factors. And what our friend Carl Friedrich is asserting here is if I multiply these, it'll also have that property.
+So, like these two things, these two polynomials --- this is $f$ and this is $g$ \inlinemetanote{labels $2x + 5$ as $f$ and $3x + 17$ as $g$ below} --- this one's primitive, because $2$ and $5$ don't have any common factors; this one's also primitive, because $3$ and $17$ don't have any common factors. And what our friend Carl Friedrich is asserting here is if I multiply these, it'll also have that property.
 
 So, then to check it, we can multiply. So, we have to do some multiplication here: $6x^2$ plus something, plus $17$ times $5$, $85$, and this is the one where you have to add: I think it's $49$ \inlinemetanote{writes: $= 6x^2 + 49x + 85$}. Is that right? Anyway, you can do some multiplication. It's important to get this right. Looks reasonable.
 
 Okay, so, then if you factor this, you get $2 \times 3$, $7^2$, and this is $5 \times 17$, and you see they have no common factors \inlinemetanote{writes $2 \cdot 3$, $7^2$, and $5 \cdot 17$ beneath $6$, $49$, and $85$}. And that's the assertion he's saying: every single time you do this, that happens. You can't...
 
-And the thing that's tricky --- I mean, we proved it, so I'm not repeating the proof ---, but the thing that's tricky here is that although these things are relatively prime, when you multiply, there's all sorts of addition that happens, and he's saying that doesn't stop his claim from being true. Okay, that's one principle.
+And the thing that's tricky --- I mean, we proved it, so I'm not repeating the proof --- but the thing that's tricky here is that although these things are relatively prime, when you multiply, there's all sorts of addition that happens, and he's saying that doesn't stop his claim from being true. Okay, that's one principle.
 \end{speech}
 
 \begin{content}
@@ -366,7 +366,7 @@ Both $f$ and $g$ are primitive because $\operatorname{GCD}(2, 5) = 1$ and $\oper
 \end{content}
 
 \begin{speech}[00:10:17 - 00:11:19]
-The second one was that if I take... \inlinemetanote{starts writing \qt{$a\,b$}, then erases it} If $g$ divides $b$ times $f$, and the assumptions are: $g$ is primitive --- so that means, you know, $g$ is some polynomial, primitive polynomial ---, $b$ is a scalar not equal to $0$, and $f$ is some polynomial \inlinemetanote{writes \qt{$\bullet \; g \mid bf$}, with \qt{primitive} and \qt{$g \in R[x]$} below $g$, \qt{scalar}, \qt{$\in R$}, and \qt{$b \neq 0$} below $b$, and \qt{$f \in R[x]$} below $f$} --- the fact that $g$ is primitive implies $g$ actually divides $f$ \inlinemetanote{writes: $\implies g \mid f$}.
+The second one was that if I take... \inlinemetanote{starts writing \qt{$a\,b$}, then erases it} If $g$ divides $b$ times $f$, and the assumptions are: $g$ is primitive (so that means, you know, $g$ is some polynomial, primitive polynomial), $b$ is a scalar not equal to $0$, and $f$ is some polynomial \inlinemetanote{writes \qt{$\bullet \; g \mid bf$}, with \qt{primitive} and \qt{$g \in R[x]$} below $g$, \qt{scalar}, \qt{$\in R$}, and \qt{$b \neq 0$} below $b$, and \qt{$f \in R[x]$} below $f$} --- the fact that $g$ is primitive implies $g$ actually divides $f$ \inlinemetanote{writes: $\implies g \mid f$}.
 
 So, those are the two things that we're going to use. I'm not going to prove them again; I proved them last time (Recall: \cref{lem:gauss-lemma}, \cref{clm:primitive-divisibility}). But if you've never seen the content, it's worth playing with; it's kind of useful --- a useful idea. Ah, here it is.
 \end{speech}
@@ -392,7 +392,7 @@ With \cref{prop:gauss-lemma-product}, \cref{prop:primitive-divisibility} also fo
 \begin{speech}[00:11:19 - 00:12:13]
 Okay, so, now we come to the structure of the proof. So, it's intricate, and there are many steps we've already done, which I don't repeat, but I'll just show you the structure. So, we want to prove this: $R$ UFD implies $R[x]$ UFD \inlinemetanote{writes: $R \text{ UFD} \implies R[x] \text{ UFD}$}.
 
-For $R[x]$, we have to prove the existence \inlinemetanote{writes: For $R[x]$, we have to prove} --- that's the existence for factorization into irreducibles \inlinemetanote{writes: $\exists \text{ --- Factorization } \to \text{ irr. \checkmark}$} ---, that's the existence part, and I did that all last time. That was some induction on degree.
+For $R[x]$, we have to prove the existence \inlinemetanote{writes: For $R[x]$, we have to prove} --- that's the existence for factorization into irreducibles \inlinemetanote{writes: $\exists \text{ --- Factorization } \to \text{ irr. \checkmark}$} --- that's the existence part, and I did that all last time. That was some induction on degree.
 
 Then we also have to prove uniqueness; so, that's the uniqueness statement \inlinemetanote{writes: $! \text{ --- Uniqueness}$}.
 \end{speech}
@@ -406,7 +406,7 @@ To prove \cref{thm:ufd-polynomial-ring-w7tue} ($R \text{ UFD} \implies R[x] \tex
 \end{content}
 
 \begin{speech}[00:12:13 - 00:13:52]
-And for uniqueness, we use this principle that we proved last time, and this principle is that, if we have $p$ in $R[x]$ is irreducible \inlinemetanote{opens a large square bracket and writes: $p \in R[x] \text{ irr.}$}: if this implies the ideal in $R[x]$ is prime \inlinemetanote{writes: $\implies (p) \subset R[x] \text{ prime}$} --- so, if I can prove this statement \inlinemetanote{closes the square bracket}, then that implies the uniqueness of factorization into irreducibles \inlinemetanote{draws $\Downarrow$ and writes: $! \text{ --- Factorization into irreducibles}$}.
+And for uniqueness, we use this principle that we proved last time, and this principle is that, if we have $p$ in $R[x]$ is irreducible \inlinemetanote{opens a large square bracket and writes: $p \in R[x] \text{ irr.}$}: if this implies the ideal in $R[x]$ is prime \inlinemetanote{writes: $\implies (p) \subset R[x] \text{ prime}$}. So, if I can prove this statement \inlinemetanote{closes the square bracket}, then that implies the uniqueness of factorization into irreducibles \inlinemetanote{draws $\Downarrow$ and writes: $! \text{ --- Factorization into irreducibles}$}.
 
 This is a principle we proved last Tuesday (Recall: \cref{clm:step1-uniqueness}), that if I have a ring such that the irreducibles are prime, then there the uniqueness statement holds, if you remember that. So, we're going to use it now. We need to prove this.
 
@@ -520,7 +520,7 @@ Now, what we normally do in the case when we have a field is we use the division
 
 But we can't, because this is not a field. So, the solution here --- and this is, as I said, one of the ideas in the proof --- is that... So, the problem is that $R$ need not be a field \inlinemetanote{writes: But the problem is that $R$ need not be a field}. And for the division algorithm you need a field because you're dividing.
 
-So, the idea here --- and this idea is to use the field of fractions \inlinemetanote{writes: Idea:}. And as I said, it's kind of why we introduced it. So, let $Q(R)$ be the field of fractions (Recall: \cref{def:field-of-fractions}) \inlinemetanote{writes: Let $Q(R)$ be the field of fractions of $R$}. So, remember, $R$ sits inside --- I'm just going to call it $Q$ --- sits inside $Q$ \inlinemetanote{writes: $R \subset Q$}, and this is the field of fractions. Every element of $Q$ --- an element of $Q$ is some kind of $r$ over $b$ where $b$ is not zero \inlinemetanote{writes: $\ni \frac{r}{b}, \; b \neq 0$}.
+So, the idea here... and this idea is to use the field of fractions \inlinemetanote{writes: Idea:}. And as I said, it's kind of why we introduced it. So, let $Q(R)$ be the field of fractions (Recall: \cref{def:field-of-fractions}) \inlinemetanote{writes: Let $Q(R)$ be the field of fractions of $R$}. So, remember, $R$ sits inside --- I'm just going to call it $Q$ --- sits inside $Q$ \inlinemetanote{writes: $R \subset Q$}, and this is the field of fractions. An element of $Q$ is some kind of $r$ over $b$ where $b$ is not zero \inlinemetanote{writes: $\ni \frac{r}{b}, \; b \neq 0$}.
 
 All right? So, all of these things we can consider --- we can view, maybe is a better word \inlinemetanote{writes: We can view} --- all of these people, $p, f, g$, to be inside this polynomial ring over this field \inlinemetanote{writes: $p, f, g \in Q[x]$}, because they live inside $R$, so we just view them inside the field. Okay? And the advantage for this is we can run the division algorithm in the field. That's the whole purpose of this idea. \inlinemetanote{video cuts as the filled board is pushed up to expose a clean lower board}
 \end{speech}
@@ -538,7 +538,7 @@ So, what does it mean we can run the division algorithm? This means that we can 
 
 We want to apply the division algorithm. We have $f$: I want to divide --- division algorithm in here, for division by $m$ \inlinemetanote{writes: $f \longrightarrow \text{division alg in } Q[x] \text{, div by } m$}. Okay? So, the consequence of that is I can write $f$ is equal to the quotient times $m$ plus some remainder \inlinemetanote{writes: $f = \hat{q} \cdot m + \hat{r}$}. And these hats signify that these elements may be in this ring \inlinemetanote{writes: $\hat{q}, \hat{r} \in Q[x]$}. Right? Because $f$ and $m$ are also in $Q[x]$, but these things we know are actually in the smaller place --- that they're here \inlinemetanote{marks $f$ and $m$ as belonging to $R[x]$}.
 
-Okay, but we can't apply the division algorithm in this $R$ --- polynomials in $R$ ---, but we can with polynomials with coefficients in $Q$. So, we apply the division algorithm and we get this quotient and remainder, but they live here \inlinemetanote{points at $\hat{q}, \hat{r} \in Q[x]$}. Is that clear?
+Okay, but we can't apply the division algorithm in this $R$, polynomials in $R$, but we can with polynomials with coefficients in $Q$. So, we apply the division algorithm and we get this quotient and remainder, but they live here \inlinemetanote{points at $\hat{q}, \hat{r} \in Q[x]$}. Is that clear?
 
 And the condition that comes out of the division algorithm is that either $\hat{r}$ is zero or the degree of $\hat{r}$ is strictly less than the degree of $m$ \inlinemetanote{writes: $\text{either } \hat{r} = 0 \text{ or } \deg(\hat{r}) < \deg(m)$}, okay? Are you happy with that?
 \end{speech}
@@ -553,11 +553,11 @@ f = \hat{q} \cdot m + \hat{r}, \qquad \text{with either } \hat{r} = 0 \text{ or 
 \begin{speech}[00:23:05 - 00:25:01]
 And now comes the next step: this step which is called \qt{clear the denominators} \inlinemetanote{writes: Clear the denoms}. Which is: we don't want to work in polynomials with coefficients in this field. Somehow the theorem is about polynomials with coefficients in $R$, so we'd like to get back to polynomials with coefficients in $R$.
 
-And the only problem here --- so, this is a polynomial with coefficients in $Q[x]$ (i.e., $Q$) ---, so this has some, you know, some $c_6 x^6 + c_5 x^5 + \dots + c_0$ \inlinemetanote{writes: $\hat{q} = c_6 x^6 + c_5 x^5 + \dots + c_0$}. Now, all of these coefficients are in the field of fractions of $R$ \inlinemetanote{writes: $c_i \in Q(R)$}. So, I can write them instead as elements in $R$: $\frac{a_6}{b_6}$, $\frac{a_5}{b_5}$ --- this is kind of explicit --- $\frac{a_0}{b_0}$, where all of these $a_i, b_i$ are in $R$ and moreover the denominators are not zero \inlinemetanote{writes \qt{$\frac{a_6}{b_6}, \frac{a_5}{b_5}, \dots, \frac{a_0}{b_0}$} above $c_6, c_5, \dots, c_0$ and writes \qt{$a_i, b_i \in R, \; b_i \neq 0$}}, right? So, I can just write it like this.
+And the only problem here --- so, this is a polynomial with coefficients in $Q[x]$ (i.e., $Q$) --- so this has some, you know, some $c_6 x^6 + c_5 x^5 + \dots + c_0$ \inlinemetanote{writes: $\hat{q} = c_6 x^6 + c_5 x^5 + \dots + c_0$}. Now, all of these coefficients are in the field of fractions of $R$ \inlinemetanote{writes: $c_i \in Q(R)$}. So, I can write them instead as elements in $R$: $\frac{a_6}{b_6}$, $\frac{a_5}{b_5}$ --- this is kind of explicit --- $\frac{a_0}{b_0}$, where all of these $a_i, b_i$ are in $R$ and moreover the denominators are not zero \inlinemetanote{writes \qt{$\frac{a_6}{b_6}, \frac{a_5}{b_5}, \dots, \frac{a_0}{b_0}$} above $c_6, c_5, \dots, c_0$ and writes \qt{$a_i, b_i \in R, \; b_i \neq 0$}}, right? So, I can just write it like this.
 
-So, that means that if I multiply by all these denominators, I can have $b$ times $\hat{q}$ is equal to $a_6' x^6 + a_5' x^5 + \dots + a_0'$, where this $b$ is the product of the $b_i$ \inlinemetanote{writes \qt{$b \hat{q} = a_6' x^6 + a_5' x^5 + \dots + a_0'$} and \qt{$b = \prod b_i$}} --- that's clearing the denominators ---, and then these are all in the ring also \inlinemetanote{writes: $a_i' \in R$}.
+So, that means that if I multiply by all these denominators, I can have $b$ times $\hat{q}$ is equal to $a_6' x^6 + a_5' x^5 + \dots + a_0'$, where this $b$ is the product of the $b_i$ \inlinemetanote{writes \qt{$b \hat{q} = a_6' x^6 + a_5' x^5 + \dots + a_0'$} and \qt{$b = \prod b_i$}} --- that's clearing the denominators --- and then these are all in the ring also \inlinemetanote{writes: $a_i' \in R$}.
 
-Okay? That's clearing the denominators. I did this really explicitly, but you know how to clear denominators; we just clear the denominators. And the price of clearing the denominators --- what's good about clearing the denominators is you land in this ring; the price is you have to multiply by $b$.
+Okay? That's clearing the denominators. I did this really explicitly, but you know how to clear denominators; we just clear the denominators. And the price of clearing the denominators... what's good about clearing the denominators is you land in this ring; the price is you have to multiply by $b$.
 \end{speech}
 
 \begin{content}[{Clearing Denominators for Polynomials in $Q[x]$}]
@@ -584,7 +584,7 @@ So, I can just do that here. Take here: I have $f = \hat{q} m + \hat{r}$ \inline
 
 I'm saying it very explicitly, but all I do is I take this, there might be some denominators, I clear them --- which, you know, you've been clearing denominators for a long time by now, I assume. Okay. So, are you happy with this?
 
-And now I look at this $r'$. So, $r'$ --- when I clear denominators, I don't change the degree. So, we have the same thing: $r'$ is equal to $0$ --- because when you clear the denominators, if it were $0$, clearing the denominators will keep it $0$ ---, or, so either $r'$ is $0$ or the degree of $r'$ is less than the degree of $m$, because multiplication by a scalar does not change the degree \inlinemetanote{writes \qt{$r' = 0$} and \qt{or $\deg(r') < \deg(m)$} below $r'$}. We took $\hat{r}$ and we cleared the denominators; it does not change the degree.
+And now I look at this $r'$. So, $r'$... when I clear denominators, I don't change the degree. So, we have the same thing: $r'$ is equal to $0$ --- because when you clear the denominators, if it were $0$, clearing the denominators will keep it $0$ --- or, so either $r'$ is $0$ or the degree of $r'$ is less than the degree of $m$, because multiplication by a scalar does not change the degree \inlinemetanote{writes \qt{$r' = 0$} and \qt{or $\deg(r') < \deg(m)$} below $r'$}. We took $\hat{r}$ and we cleared the denominators; it does not change the degree.
 \end{speech}
 
 \begin{content}[{Clearing Denominators in $f = \hat{q} m + \hat{r}$}]
@@ -638,9 +638,9 @@ You can also just watch the video at half the speed, I guess --- or twice the sp
 \begin{speech}[00:29:05 - 00:30:33]
 All right, so, we did this whole board with the division algorithm; we divided $f$ by $m$, so do the whole board again: repeat for $p$ divided by $m$ \inlinemetanote{writes: Repeat for $p$ divided by $m$:}. So, what happened there?
 
-We take now $p$ here, and now we have some different quotients --- they're double hats because I already used one hat \inlinemetanote{writes: $p = \hat{\hat{q}}\, m + \hat{\hat{r}}$} ---, and again, these two are in the polynomial ring with coefficients in the field \inlinemetanote{writes: $\hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$}, just as they were there \inlinemetanote{points at the upper board}. We just do the same division algorithm.
+We take now $p$ here, and now we have some different quotients --- they're double hats because I already used one hat \inlinemetanote{writes: $p = \hat{\hat{q}}\, m + \hat{\hat{r}}$} --- and again, these two are in the polynomial ring with coefficients in the field \inlinemetanote{writes: $\hat{\hat{q}}, \hat{\hat{r}} \in Q[x]$}, just as they were there \inlinemetanote{points at the upper board}. We just do the same division algorithm.
 
-And now we clear, just as before --- clear denominators \inlinemetanote{writes: Clear denoms} ---, and the conclusion is we get $b$ double hat --- double prime $p$ is equal to $q'' m + r''$, where now all the same conclusions: $0$ is not equal to $b''$ in $R$, and $q'', r''$ are here \inlinemetanote{writes \qt{$b'' p = q'' m + r''$} and \qt{$0 \neq b'' \in R, \; q'', r'' \in R[x]$}}, okay?
+And now we clear, just as before, clear denominators \inlinemetanote{writes: Clear denoms}, and the conclusion is we get $b$ double prime $p$ is equal to $q'' m + r''$, where now all the same conclusions: $0$ is not equal to $b''$ in $R$, and $q'', r''$ are here \inlinemetanote{writes \qt{$b'' p = q'' m + r''$} and \qt{$0 \neq b'' \in R, \; q'', r'' \in R[x]$}}, okay?
 
 So, here I just do the same thing I did upstairs; I just do it with $p$ instead of $f$, and I reach the same conclusion, of course with different possible coefficients.
 \end{speech}
@@ -687,7 +687,7 @@ m^* \mid p \quad \text{in } R[x].
 \begin{speech}[00:31:57 - 00:33:18]
 All right, so, what does this mean? This means $p$ is equal to $m^*$ times something \inlinemetanote{writes: $p = m^* \cdot B$}. That's what \qt{$m^*$ divides $p$} is: it means $p$ is equal to $m^*$ times something.
 
-So, now we have to use the irreducibility, all right? Since $p$ is irreducible, this implies one of these: either $m^*$ is a unit or $B$ is a unit \inlinemetanote{writes \qt{$p \text{ irr.}$}, \qt{$\implies m^* \text{ unit} \in R[x]$}, and \qt{or $B \text{ unit} \in R[x]$}}. Since it's irreducible --- we have to use it's irreducible now ---, one of these is true.
+So, now we have to use the irreducibility, all right? Since $p$ is irreducible, this implies one of these: either $m^*$ is a unit or $B$ is a unit \inlinemetanote{writes \qt{$p \text{ irr.}$}, \qt{$\implies m^* \text{ unit} \in R[x]$}, and \qt{or $B \text{ unit} \in R[x]$}}. Since it's irreducible --- we have to use it's irreducible now --- one of these is true.
 
 And the claim is: $B$, this is impossible \inlinemetanote{crosses out \qt{$B$}}. Because if $B$ were a unit, then $p$ would be $m^*$ up to a unit. But $m^*$ divides $f$, so if this were true, then $p$ would divide $f$ \inlinemetanote{writes below: $\implies p \mid f$}. That would mean $f$ is in the ideal generated by $p$ \inlinemetanote{writes: $\implies f \in (p)$}. But our hypothesis is exactly: $f$ is not in the ideal generated by $p$. This contradicts that hypothesis \inlinemetanote{writes \qt{CONTRA} in red and crosses out that branch}. Okay?
 \end{speech}
@@ -710,9 +710,9 @@ We rule out the second case by contradiction:
 \end{content}
 
 \begin{speech}[00:33:18 - 00:34:35]
-So, here is where we're using irreducibility --- here we start using the hypotheses. Irreducible means we have this dichotomy, and then when we go on the second branch, $B$ is a unit, we get a contradiction: it contradicts that --- so, one of the hypotheses, if you remember, assumption on that board \inlinemetanote{points at the upper board} was that $f$ is not in $(p)$ \inlinemetanote{writes \qt{(Ass $f \notin (p)$)} in red}; that was one of our assumptions. But if you go on this branch, we get $f$ is in $(p)$.
+So, here is where we're using irreducibility --- here we start using the hypotheses. Irreducible means we have this dichotomy, and then when we go on the second branch, $B$ is a unit, we get a contradiction: it contradicts that... so, one of the hypotheses, if you remember, assumption on that board \inlinemetanote{points at the upper board} was that $f$ is not in $(p)$ \inlinemetanote{writes \qt{(Ass $f \notin (p)$)} in red}; that was one of our assumptions. But if you go on this branch, we get $f$ is in $(p)$.
 
-It has to be that $m^*$ is a unit \inlinemetanote{points at \qt{$m^* \text{ unit} \in R[x]$}}, okay? How can $m^*$ be a unit? $m^*$ is a polynomial. The only way it can be a unit is if it's a constant. So, this implies --- that's the conclusion we were seeking: conclusion, $m^*$ is in $R$ \inlinemetanote{writes: Conclude $m^* \in R$}. The only way you can be a unit in a polynomial ring over an integral domain is if you're a constant (Recall: \cref{thm:units-polynomial-ring-integral-domain}). Right?
+It has to be that $m^*$ is a unit \inlinemetanote{points at \qt{$m^* \text{ unit} \in R[x]$}}, okay? How can $m^*$ be a unit? $m^*$ is a polynomial. The only way it can be a unit is if it's a constant. So, this implies... that's the conclusion we were seeking: conclusion, $m^*$ is in $R$ \inlinemetanote{writes: Conclude $m^* \in R$}. The only way you can be a unit in a polynomial ring over an integral domain is if you're a constant (Recall: \cref{thm:units-polynomial-ring-integral-domain}). Right?
 
 And this implies that $m$ was actually in $R$ too, because they differ just by the content \inlinemetanote{writes: $\implies m \in R$}. And that's what I said the goal here is. So, after all this work, we selected this $m$ to be an element in the ideal of lowest degree, and we concluded that it has to be in $R$. So, we're almost done now.
 \end{speech}
@@ -821,19 +821,19 @@ Combining Case (i) ($\deg(p) = 0$) and Case (ii) ($\deg(p) > 0$) shows that ever
 \section{Reflections on Studying Rings and the Nature of Learning}
 
 \begin{speech}[00:39:17 - 00:40:59]
-So, that's the whole argument, and as I said, it has a certain intricacy; it uses most of the things we've discussed about rings. And that, unfortunately, is the last result about rings in this class. That's not really true --- there's a little bit at the end ---, but insofar as the development of the theory of rings, we are finished, so you can bid a tearful goodbye to rings now.
+So, that's the whole argument, and as I said, it has a certain intricacy; it uses most of the things we've discussed about rings. And that, unfortunately, is the last result about rings in this class. That's not really true --- there's a little bit at the end --- but insofar as the development of the theory of rings, we are finished, so you can bid a tearful goodbye to rings now.
 
 The next topic is groups, but I want to say a few things, because people asked me some questions, and they're good questions. Like, the first question is: how are you supposed to study this material? That's a really good question. \inlinemetanote{begins erasing the lower board}
 
-Another question is: how did I learn the material? That's not such a good question; it's not so relevant, but... Maybe a deeper question, which goes to the heart of the matter, is, you know: what are we doing here? That's a really good question. And if you're studying, you should take some time to think about these questions. There are different ways. So, maybe I try to answer these questions in different --- I have a few minutes, maybe it's worth giving a few.
+Another question is: how did I learn the material? That's not such a good question; it's not so relevant, but... Maybe a deeper question, which goes to the heart of the matter, is, you know: what are we doing here? That's a really good question. And if you're studying, you should take some time to think about these questions. There are different ways. So, maybe I try to answer these questions in different... I have a few minutes, maybe it's worth giving a few.
 
-So, the first question about how to study the material: you can say, what have I taught in this class about rings? And you can say there's kind of three things. One is definitions --- and as I said many, many times, those are incredibly important; it's what makes all these proofs work perfectly. And they're not tautological: at the end we prove some actual non-trivial results, but the definitions are --- there's a lot of mathematical insight and knowledge in the definitions \inlinemetanote{walks to the far left board}.
+So, the first question about how to study the material: you can say, what have I taught in this class about rings? And you can say there's kind of three things. One is definitions --- and as I said many, many times, those are incredibly important; it's what makes all these proofs work perfectly. And they're not tautological: at the end we prove some actual non-trivial results, but the definitions are... there's a lot of mathematical insight and knowledge in the definitions \inlinemetanote{walks to the far left board}.
 \end{speech}
 
 \begin{speech}[00:40:59 - 00:41:36]
 So, I would say study the definitions, then there's theorems, and then there's examples \inlinemetanote{writes \qt{Def}, \qt{Thms}, and \qt{Examples}}. These are like the three things you should really kind of try to understand \inlinemetanote{circles \qt{Def}, \qt{Examples}, and \qt{Thms} and connects them with lines into a triangle}. I don't know how to say more than that, but they are somehow equal weights in the class.
 
-If you understand the definitions, the theorems --- you know, these definitions and the objects are like chess pieces, and each of them has certain moves, and the theorems involve playing out those moves. So, if you understand this, you'll understand that also. That's like at the lowest level.
+If you understand the definitions, the theorems... you know, these definitions and the objects are like chess pieces, and each of them has certain moves, and the theorems involve playing out those moves. So, if you understand this, you'll understand that also. That's like at the lowest level.
 \end{speech}
 
 \begin{content}[The Three Pillars of Studying the Material]
@@ -878,9 +878,9 @@ But this question about what are we doing here --- that's an interesting questio
 
 One thing that I recommend my students read is an essay by Schopenhauer, which is called \qt{On Thinking for Yourself}, which I like a lot. He's a very dense, repetitive author, so you can read just half the essay; it's a short essay. The German is \qt{Selbstdenken}; it's a nice essay. Most of the students don't like it after they read it, but anyway, it's a really good essay. It's kind of about this topic.
 
-And, you know, all the greats have written about it. If you read the past --- I mean, there's a lot of things to say, I could give a whole lecture ---, but if you read Plato, his \qt{Republic}, he talks about what education is about; Socrates, he didn't write, but there's a lot of stuff there.
+And, you know, all the greats have written about it. If you read the past --- I mean, there's a lot of things to say, I could give a whole lecture --- but if you read Plato, his \qt{Republic}, he talks about what education is about; Socrates, he didn't write, but there's a lot of stuff there.
 
-The one sentence which I like the best is Confucius --- and you think, is he going to quote Confucius in this class? ---, but I will quote it: I think the statement that best captures what we do is Confucius wrote about teaching, he says --- roughly speaking --- \qt{the truth has $4$ corners; as a teacher I can show you $1$, the other $3$ are for the student to discover themselves.} That's what we're doing here. Okay, that's it. \inlinemetanote{video cuts slightly after a pause for student questions}
+The one sentence which I like the best is Confucius --- and you think, is he going to quote Confucius in this class? --- but I will quote it: I think the statement that best captures what we do is Confucius wrote about teaching, he says, roughly speaking, \qt{the truth has $4$ corners; as a teacher I can show you $1$, the other $3$ are for the student to discover themselves.} That's what we're doing here. Okay, that's it. \inlinemetanote{video cuts slightly after a pause for student questions}
 \end{speech}
 
 \begin{insight}[{Confucius on Teaching and Independent Discovery}]
@@ -900,7 +900,7 @@ To answer \qt{what are we doing here?}, the lecturer points students to Schopenh
 \begin{speech}[00:43:02 - 00:44:10]
 Okay, so, there were some questions about the proof. The question, roughly speaking, was: in that whole hour, I was assuming the degree of $p$ is positive \inlinemetanote{writes: $\deg(p) > 0$}: where do I use it?
 
-And it was just --- it's like a player who sits on the bench for the whole game, but at the end we use this: $p$ irreducible, degree of $p$ positive implies $p$ primitive \inlinemetanote{writes: $p \text{ irr., } \deg(p) > 0 \implies p \text{ is primitive}$}. That was what we needed at the last moment. So, this player just sits on the bench, at the last moment scores the winning goal. That's the only time it's used, at the end \inlinemetanote{circles the implication}. You can look at the argument, but it's the only time it's used.
+And it was just... it's like a player who sits on the bench for the whole game, but at the end we use this: $p$ irreducible, degree of $p$ positive implies $p$ primitive \inlinemetanote{writes: $p \text{ irr., } \deg(p) > 0 \implies p \text{ is primitive}$}. That was what we needed at the last moment. So, this player just sits on the bench, at the last moment scores the winning goal. That's the only time it's used, at the end \inlinemetanote{circles the implication}. You can look at the argument, but it's the only time it's used.
 
 Or... yeah, so if anyone reads Schopenhauer, you should tell me.
 
@@ -924,11 +924,11 @@ The lecturer compares the hypothesis $\deg(p) > 0$ to \qt{a player who sits on t
 \subsection{Group Axioms and Elementary Properties}
 
 \begin{speech}[00:44:10 - 00:45:56]
-Yeah, so, now we switch to groups \inlinemetanote{writes and underlines \qt{Groups}}. And we've already seen the definition, so I don't really say so much about it (Recall: \cref{def:group}). A group is... first: Groups --- that's the topic now \inlinemetanote{underlines \qt{Groups} again} ---, so $G$ with a binary operation and a neutral element is a group \inlinemetanote{writes: $(G, \cdot, e) \text{ is a group}$}.
+Yeah, so, now we switch to groups \inlinemetanote{writes and underlines \qt{Groups}}. And we've already seen the definition, so I don't really say so much about it (Recall: \cref{def:group}). A group is... first: Groups --- that's the topic now \inlinemetanote{underlines \qt{Groups} again} --- so $G$ with a binary operation and a neutral element is a group \inlinemetanote{writes: $(G, \cdot, e) \text{ is a group}$}.
 
 Here we have associativity, the unit property, and the existence of inverse \inlinemetanote{writes \qt{$\bullet \text{ Associativity}$}, \qt{$\bullet \text{ Unit property}$}, and \qt{$\bullet \text{ Existence of inv.}$}}. So, we've seen all of this; I'm not going to say so much about it except mostly about notation. Associativity --- they're all interesting and they're worth thinking about again now, because I defined all of this maybe at the beginning of the semester, and you've probably seen the definition of a group even before.
 
-So, associativity is something that says that if I do the binary operation in two different ways, it's the same \inlinemetanote{writes: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$}. We haven't said anything about associativity also for rings, so maybe I say a moment --- I'll say in a moment.
+So, associativity is something that says that if I do the binary operation in two different ways, it's the same \inlinemetanote{writes: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$}. We haven't said anything about associativity also for rings, so I'll say in a moment.
 
 The unit property says that there exists a unit such that $ex = xe = x$ for all $x$ in the group \inlinemetanote{writes: $\exists\, e \text{ s.t. } ex = xe = x \;\; \forall x \in G$}.
 
@@ -951,7 +951,7 @@ A tuple $(G, \cdot, e)$, consisting of a set $G$, a binary operation $\cdot$, an
 \begin{speech}[00:45:56 - 00:46:33]
 And there are many things to say, and I leave this to you --- you can say that, you know, the unit is unique \inlinemetanote{writes: $\leftarrow \text{Unit is unique}$}. I will say one thing here, because unit... \inlinemetanote{puts parentheses around \qt{Unit}, giving \qt{(Unit) is unique}}
 
-These proofs are all very simple. So, the idea is that if we have both --- these are both units \inlinemetanote{opens a parenthesis and writes: $e, \hat{e} \text{ units in } G$} ---, this is a simple proof, then I just take $e$ times $\hat{e}$ \inlinemetanote{writes: $e \hat{e}$}. Using the unit property of $e$, I get this is equal to $\hat{e}$, and using the unit property of $\hat{e}$, I get this is equal to $e$ \inlinemetanote{writes \qt{$= \hat{e}$}, writes a vertical equals sign below $e\hat{e}$ with $e$ beneath it, and then closes the parenthesis}. So, this shows the unit is unique.
+These proofs are all very simple. So, the idea is that if we have both --- these are both units \inlinemetanote{opens a parenthesis and writes: $e, \hat{e} \text{ units in } G$} --- this is a simple proof, then I just take $e$ times $\hat{e}$ \inlinemetanote{writes: $e \hat{e}$}. Using the unit property of $e$, I get this is equal to $\hat{e}$, and using the unit property of $\hat{e}$, I get this is equal to $e$ \inlinemetanote{writes \qt{$= \hat{e}$}, writes a vertical equals sign below $e\hat{e}$ with $e$ beneath it, and then closes the parenthesis}. So, this shows the unit is unique.
 \end{speech}
 
 \begin{content}
@@ -997,7 +997,7 @@ a &= b && \text{(by the unit property \textbf{(G2)}).}
 \begin{speech}[00:47:40 - 00:48:15]
 The final thing is --- I'll say it here, I've said all these things before, but maybe just some... the inverse is unique \inlinemetanote{draws a large opening parenthesis above the unit-uniqueness proof, writes and underlines: $\text{Inv of } x \text{ is unique}$}.
 
-That means if I have $xy$ is equal to $e$, and this also equals $x\hat{y}$ \inlinemetanote{writes: $xy = e = x\hat{y}$} --- so, that's like $y$ and $\hat{y}$ are now two putative inverses ---, then I get $xy$ is equal to $x\hat{y}$, and then I use the cancellation property (Recall: \cref{prop:cancellation-laws}) \inlinemetanote{writes \qt{$xy = x\hat{y}$} and \qt{$\implies y = \hat{y}$}, closes the parenthesis, and points at the cancellation rule}.
+That means if I have $xy$ is equal to $e$, and this also equals $x\hat{y}$ \inlinemetanote{writes: $xy = e = x\hat{y}$} --- so, that's like $y$ and $\hat{y}$ are now two putative inverses --- then I get $xy$ is equal to $x\hat{y}$, and then I use the cancellation property (Recall: \cref{prop:cancellation-laws}) \inlinemetanote{writes \qt{$xy = x\hat{y}$} and \qt{$\implies y = \hat{y}$}, closes the parenthesis, and points at the cancellation rule}.
 
 Okay, so, those are the really basic aspects of it.
 \end{speech}
@@ -1039,7 +1039,7 @@ And we will primarily be interested in groups that are not commutative \inlineme
 
 We have now for this period about groups to be extremely careful never to switch order. I was cavalier about that; I never cared about the order because our rings were commutative, but now when we apply the group operation, you have to be very careful about the order. You're not allowed to switch the order unless you have a special reason for it.
 
-Okay. And the examples, of course, the examples we've seen before: if you take $R$ is any ring --- that's a ring ---, then you can make a group \inlinemetanote{writes \qt{$(R, +, \cdot, 0, 1)$} and \qt{$\longrightarrow (R, +, 0) \text{ Grp}$}}. And that was our definition of a ring (Recall: \cref{def:ring}): the additive structure is always a group. These are abelian groups; they're commutative groups. They won't be primarily what we're interested in, but that's a solid example of a group.
+Okay. And the examples, of course, the examples we've seen before: if you take $R$ is any ring --- that's a ring --- then you can make a group \inlinemetanote{writes \qt{$(R, +, \cdot, 0, 1)$} and \qt{$\longrightarrow (R, +, 0) \text{ Grp}$}}. And that was our definition of a ring (Recall: \cref{def:ring}): the additive structure is always a group. These are abelian groups; they're commutative groups. They won't be primarily what we're interested in, but that's a solid example of a group.
 \end{speech}
 
 \begin{content}[Scope of Group Theory in the Course and Additive Ring Groups]
@@ -1060,7 +1060,7 @@ Every ring $(R, +, \cdot, 0, 1)$ (\cref{def:ring}) gives rise to an abelian (com
 \begin{speech}[00:50:18 - 00:51:50]
 And you see here the notation for the group; it's a good point here. I said $G$ and dot is the standard for the operation in the group, and $e$ is standard for the neutral element \inlinemetanote{writes: $(G, \cdot, e)$}. The neutral element is also sometimes denoted by $1$, because the dot kind of suggests multiplication, and $1$, psychologically, is helpful --- I don't know \inlinemetanote{draws a downward arrow from $e$ and writes \qt{$1$}}. Sometimes people will write $1_G$ \inlinemetanote{writes \qt{$1_G$} below $1$}. These are just accepted terms when you use dot.
 
-But you can name this anything you want; you could also name it plus. If you name it plus, usually the neutral element is called $0$ \inlinemetanote{writes: $(G, +, 0)$}. But this is just a question about names: you can name this binary operation anything you want and the neutral element anything you want. It's just, you know, if you do too crazy choices you'll confuse everybody. But these are kind of the standard --- so, that's why when I write plus, $0$ is the neutral element.
+But you can name this anything you want; you could also name it plus. If you name it plus, usually the neutral element is called $0$ \inlinemetanote{writes: $(G, +, 0)$}. But this is just a question about names: you can name this binary operation anything you want and the neutral element anything you want. It's just, you know, if you do too crazy choices you'll confuse everybody. But these are kind of the standard... so, that's why when I write plus, $0$ is the neutral element.
 
 So, there's lots of examples here. The example that's more relevant for the way we think about groups --- the interesting things we're going to prove about groups --- is the \newterm{symmetric group}, $S_n$; that's the permutation group \inlinemetanote{writes: $S_n = \text{permutation group on } n \text{ elements}$}. I'm going to review this. I think I mentioned this in passing. And in some sense this is like the most interesting finite group --- I will make that claim.
 
@@ -1085,7 +1085,7 @@ which will be defined and studied formally below (\cref{def:symmetric-group}).
 \subsection{Generalized Associativity and Catalan Numbers}
 
 \begin{speech}[00:51:50 - 00:53:41]
-And there's a lot of interesting things here which we don't think --- like I didn't talk at all about this associativity property. And in some sense in your education it's kind of late to talk about associativity, because you've been, you know, using operations which are associative since childhood, and not thinking about them.
+And there's a lot of interesting things here which we don't think... like I didn't talk at all about this associativity property. And in some sense in your education it's kind of late to talk about associativity, because you've been, you know, using operations which are associative since childhood, and not thinking about them.
 
 So, maybe take a moment for, like, mathematical culture: if I have this product of $4$ elements in the group \inlinemetanote{writes: $x_1 \cdot x_2 \cdot x_3 \cdot x_4$}, we just write it like this, like if you're multiplying numbers, etc. But what do you mean by this? Because you're only allowed to do $2$ elements at a time.
 
@@ -1095,7 +1095,7 @@ Or I could do these two, and then I could do that one, and then I could send it 
 
 And the associativity axiom says that these two are the same, which you prove by induction --- which probably you've never done, or I don't know whether you've done it. Unless you're really deeply paranoid, you probably have never done that. But it might be fun to do it.
 
-And if you do it, you discover some beautiful things. So --- this is now nothing to do with the class, but mathematical culture ---, you can ask: how many different ways can I put these brackets \inlinemetanote{writes: $\text{How many ways can}$ / $\text{put these brackets}$}? Meaning if I have $x_1 \cdots x_n$ \inlinemetanote{writes: $x_1 \cdots x_n$}, I can group them --- I can do this operation in many different ways. How many ways?
+And if you do it, you discover some beautiful things. So --- this is now nothing to do with the class, but mathematical culture --- you can ask: how many different ways can I put these brackets \inlinemetanote{writes: $\text{How many ways can}$ / $\text{put these brackets}$}? Meaning if I have $x_1 \cdots x_n$ \inlinemetanote{writes: $x_1 \cdots x_n$}, I can group them --- I can do this operation in many different ways. How many ways?
 \end{speech}
 
 \begin{content}[Parenthesizing Multi-Factor Products]
@@ -1178,7 +1178,7 @@ So, the number of ways you can do $3$ things is $2$, and the number of ways you 
 \subsection{Inverse Map, Subgroups, and Group Homomorphisms}
 
 \begin{speech}[00:56:29 - 00:57:52]
-Okay, so, then there's other things that also follow from what I already explained. If I have a group \inlinemetanote{writes: $G$} --- another way to think about the operations: there's this binary operation \inlinemetanote{writes: $\bullet \text{ binary}$}, and we have the neutral element \inlinemetanote{writes: $e \in G$}, and it's nice to think also about inverse being a map: inverse from the group to the group \inlinemetanote{writes: $\operatorname{Inv}\colon G \to G$}. Meaning if I have $x$, I have a unique inverse $x^{-1}$ \inlinemetanote{writes: $x \mapsto x^{-1}$}. So, it's a function from the group to the group; it takes an element to its inverse.
+Okay, so, then there's other things that also follow from what I already explained. If I have a group \inlinemetanote{writes: $G$}... another way to think about the operations: there's this binary operation \inlinemetanote{writes: $\bullet \text{ binary}$}, and we have the neutral element \inlinemetanote{writes: $e \in G$}, and it's nice to think also about inverse being a map: inverse from the group to the group \inlinemetanote{writes: $\operatorname{Inv}\colon G \to G$}. Meaning if I have $x$, I have a unique inverse $x^{-1}$ \inlinemetanote{writes: $x \mapsto x^{-1}$}. So, it's a function from the group to the group; it takes an element to its inverse.
 
 All right. And so there's a notion of a \newterm{subgroup} \inlinemetanote{writes and underlines \qt{Subgroup}, then writes: $S \subset G$}. So, it's a subset, and it should be closed under the operation, meaning if I take two elements of the subset and I use the group operation I stay in it; it should contain the neutral element; and one more thing is $S$ should have inverses, the inverse maps $S$ to $S$ \inlinemetanote{writes and circles \qt{$(S, \cdot, e)$}, and writes \qt{$\cdot \colon S \times S \to S$}, \qt{$e \in S$}, and \qt{$\operatorname{Inv} \colon S \to S$}}. So, every element in $S$ has its inverse in $S$. That's what a subgroup is. Okay?
 \end{speech}
@@ -1201,7 +1201,7 @@ A subset $S \subset G$ (throughout this course, $\subset$ allows equality, see \
 \end{content}
 
 \begin{speech}[00:57:52 - 00:58:47]
-And we have a notion of \newterm{group homomorphisms} \inlinemetanote{writes: $\text{Homs:}$}. If $G_1$ and $G_2$ --- well, let me write them out: $G_1$ with a neutral element and $G_2$ are groups \inlinemetanote{writes: $(G_1, \cdot, e_1), (G_2, \cdot, e_2)$ are groups}, then $f$ from $G_1$ to $G_2$ is --- this is a definition --- a group hom, group homomorphism \inlinemetanote{writes \qt{$f \colon G_1 \to G_2$}, writes \qt{is a group hom. if}, and underlines \qt{group hom.}}. When I underline things, I always mean definition. It is a group homomorphism if $f(xy)$ is equal to $f(x) f(y)$ \inlinemetanote{writes: $f(xy) = f(x) \cdot f(y)$}.
+And we have a notion of \newterm{group homomorphisms} \inlinemetanote{writes: $\text{Homs:}$}. If $G_1$ and $G_2$... well, let me write them out: $G_1$ with a neutral element and $G_2$ are groups \inlinemetanote{writes: $(G_1, \cdot, e_1), (G_2, \cdot, e_2)$ are groups}, then $f$ from $G_1$ to $G_2$ is --- this is a definition --- a group hom, group homomorphism \inlinemetanote{writes \qt{$f \colon G_1 \to G_2$}, writes \qt{is a group hom. if}, and underlines \qt{group hom.}}. When I underline things, I always mean definition. It is a group homomorphism if $f(xy)$ is equal to $f(x) f(y)$ \inlinemetanote{writes: $f(xy) = f(x) \cdot f(y)$}.
 
 So, here is where I use the group operation on $G_1$ \inlinemetanote{points at $xy$}, and here I use the group operation on $G_2$ \inlinemetanote{points at $f(x) \cdot f(y)$}. So, that's the whole definition --- just this condition.
 \end{speech}
@@ -1289,7 +1289,7 @@ And the symmetric group $S_n$ equals the set of functions $f$ from $[n]$ to $[n]
 
 I need to tell you the operation, and the operation is composition of functions, and I have to give you the neutral element: it's the identity \inlinemetanote{writes and circles $(S_n, \circ, \operatorname{Id})$, then adds a brace and \qt{$\text{def}$} beneath}. That's the identity. There's a unique identity, which takes $1$ to $1$, $2$ to $2$, so on. And that's the definition of the symmetric group. That's the full definition, and you have to think about it, make sure you understand.
 
-One of the important things to think about is what this composition means: if I take $f$ composed with $g$, where $g$ is from $[n]$ to $[n]$ and $f$ is from $[n]$ to $[n]$ \inlinemetanote{writes \qt{$f \circ g$}, with \qt{$g \colon [n] \to [n]$} and \qt{$f \colon [n] \to [n]$} below}. This means --- so, this acts on some number, and the answer is you do $g$ first, and then you do $f$ \inlinemetanote{writes \qt{$(i)$} after $f \circ g$ and writes \qt{$= f(g(i))$}}. That's the definition of composition, right?
+One of the important things to think about is what this composition means: if I take $f$ composed with $g$, where $g$ is from $[n]$ to $[n]$ and $f$ is from $[n]$ to $[n]$ \inlinemetanote{writes \qt{$f \circ g$}, with \qt{$g \colon [n] \to [n]$} and \qt{$f \colon [n] \to [n]$} below}. This means... so, this acts on some number, and the answer is you do $g$ first, and then you do $f$ \inlinemetanote{writes \qt{$(i)$} after $f \circ g$ and writes \qt{$= f(g(i))$}}. That's the definition of composition, right?
 
 Even though, you know, you can confuse yourself by this, because you see $f$ first, nevertheless, the mathematical convention for this symbol \inlinemetanote{points at $f \circ g$} is you do $g$ first, then you do $f$. Okay?
 \end{speech}
@@ -1403,7 +1403,7 @@ For small $n$, bijections on $[n]$ can be drawn explicitly as arrow diagrams:
 \end{content}
 
 \begin{speech}[01:04:54 - 01:05:56]
-But this is kind of unfortunate --- if we're going to have to draw a picture for every element, that's kind of unfortunate. Like $S_3$, you know, things get more complicated: you could have $1, 2, 3$ --- you could have $1$ goes to $2$, $2$ goes to $3$, $3$ goes to $1$; that's a nice element \inlinemetanote{writes \qt{$S_3:$} and draws the diagram mapping $1 \to 2$, $2 \to 3$, $3 \to 1$}. But you can imagine, this is not a very good way of naming the function, by just giving its full... somehow it takes too much chalk, let's say. So, that's one element.
+But this is kind of unfortunate --- if we're going to have to draw a picture for every element, that's kind of unfortunate. Like $S_3$, you know, things get more complicated: you could have $1$ goes to $2$, $2$ goes to $3$, $3$ goes to $1$; that's a nice element \inlinemetanote{writes \qt{$S_3:$} and draws the diagram mapping $1 \to 2$, $2 \to 3$, $3 \to 1$}. But you can imagine, this is not a very good way of naming the function, by just giving its full... somehow it takes too much chalk, let's say. So, that's one element.
 
 I should say that it should be clear that $S_n$ is a finite group, and its order --- I mean, the standard notation for order is putting these straight lines --- is $n$ factorial \inlinemetanote{writes \qt{$S_n \text{ is finite group}$} and \qt{$|S_n| = n!$}}. That's how many bijections there are, and that's a standard formula, because you can take the first one to any $n$, and then that position's occupied, the second one has to go to $n - 1$, and so on. That's kind of a proof.
 \end{speech}
@@ -1472,7 +1472,7 @@ But there is a standard way to do it, which is the cycle decomposition, and once
 
 And how this works: let me do an example. I'll do it in a couple examples, and then you should be able to see. So, if I take the $3$ case, let's do this one: $1$ goes to $2$, $2$ goes to $1$, $3$ goes to $3$ \inlinemetanote{draws the arrow diagram mapping $1 \to 2$, $2 \to 1$, $3 \to 3$}. So, this is one of the bijections: I flip $1$ and $2$, and $3$ stays the same. Okay?
 
-And the way to represent it in the cycle decomposition is I start by --- I open a parenthesis, and I put $1$ here \inlinemetanote{writes: $(1$}. And then next to $1$, I write where $1$ goes. So, where does $1$ go? It goes to $2$ \inlinemetanote{writes: $2$}. Okay? And then I look, and where does $2$ go? Well, $2$ goes back to $1$, so then that closes the cycle \inlinemetanote{closes the parenthesis, giving \qt{$(1\,2)$}}.
+And the way to represent it in the cycle decomposition is I start by... I open a parenthesis, and I put $1$ here \inlinemetanote{writes: $(1$}. And then next to $1$, I write where $1$ goes. So, where does $1$ go? It goes to $2$ \inlinemetanote{writes: $2$}. Okay? And then I look, and where does $2$ go? Well, $2$ goes back to $1$, so then that closes the cycle \inlinemetanote{closes the parenthesis, giving \qt{$(1\,2)$}}.
 
 And then I take the first thing that's not here, which is $3$, so I open a parenthesis and I see where $3$ goes, but $3$ goes back to itself \inlinemetanote{writes: $(3)$}. So, the cycle decomposition of this would be that \inlinemetanote{points at $(1\,2)(3)$}. All right?
 
@@ -1543,7 +1543,7 @@ and $\sigma(j) = j$ for all $j \in [n] \setminus \{i_1, \dots, i_k\}$.
 \begin{speech}[01:08:56 - 01:10:55]
 So, if I write down now what is $S_3$, I can write down all the cycle decompositions \inlinemetanote{writes: $S_3 =$}. The first one is the trivial one; that's where no one goes anywhere \inlinemetanote{writes: $(1)(2)(3)$}. Then there's these ones: $(1\,2)(3)$, $(1\,3)(2)$, $(1)(2\,3)$ \inlinemetanote{writes \qt{$(1\,2)(3)$}, \qt{$(1\,3)(2)$}, and \qt{$(1)(2\,3)$}}. And that's already $4$, I need $2$ more: there's $(1\,2\,3)$ and $(1\,3\,2)$ \inlinemetanote{writes \qt{$(1\,2\,3)$} and \qt{$(1\,3\,2)$} below}. So, here I've listed all $6$ elements.
 
-Do you understand this notation? Like, if I pick this \inlinemetanote{points at $(1\,2\,3)$} --- these cycles just tell you where everything goes. Like, if I take this one \inlinemetanote{points at $(1\,2\,3)$} and I want to know where $2$ goes, I find $2$, and then it goes to the next one ($3$). And $3$, if I want to know $3$ --- whenever the cycle ends, it means you go to the first one ($1$). And if you're by yourself \inlinemetanote{points at $(1)$ in $(1)(2)(3)$}, it means you don't go anywhere: you're a fixed point.
+Do you understand this notation? Like, if I pick this \inlinemetanote{points at $(1\,2\,3)$}... these cycles just tell you where everything goes. Like, if I take this one \inlinemetanote{points at $(1\,2\,3)$} and I want to know where $2$ goes, I find $2$, and then it goes to the next one ($3$). And $3$, if I want to know $3$... whenever the cycle ends, it means you go to the first one ($1$). And if you're by yourself \inlinemetanote{points at $(1)$ in $(1)(2)(3)$}, it means you don't go anywhere: you're a fixed point.
 
 So, are you satisfied with this? You have to play with it. But it's much more efficient, because I've already written for you the $6$ elements in $S_3$.
 
@@ -1598,13 +1598,13 @@ And so let us try to... in this notation, what is the inverse map \inlinemetanot
 
 Of course, the inverse of $e$ is, of course, $e$, right \inlinemetanote{draws an arrow from $e$ to $e$}? Neutral element. What's the inverse of this element \inlinemetanote{points at $(1\,2)$}? \inlinemetanote{inaudible answer from a student} Yeah. Itself \inlinemetanote{draws an arrow from $(1\,2)$ to $(1\,2)$}.
 
-If I apply it twice --- so, now I have to tell you how to multiply in the cycle notation. So, here I take $(1\,2)$, that's $1$ times --- I can just put the cycles together; that's it, I just put them together \inlinemetanote{writes: $(1\,2)(1\,2) =$}. And now I have to figure out what cycle to write here.
+If I apply it twice... so, now I have to tell you how to multiply in the cycle notation. So, here I take $(1\,2)$, that's $1$ times... I can just put the cycles together; that's it, I just put them together \inlinemetanote{writes: $(1\,2)(1\,2) =$}. And now I have to figure out what cycle to write here.
 
-So, then I have to find out where $1$ --- I open it up, I find out where $1$ goes \inlinemetanote{writes: $($}: $1$ goes to $2$, and then I go to the next one, now $2$ goes back to $1$, so $1$ stays by itself \inlinemetanote{writes: $1)($}. And I start here, $2$: $2$ goes to $1$, $1$ goes back to $2$, so $2$ goes to $2$ \inlinemetanote{writes: $2)$}. That's the identity. Also you can just see it in functions. But there's just rules.
+So, then I have to find out where $1$... I open it up, I find out where $1$ goes \inlinemetanote{writes: $($}: $1$ goes to $2$, and then I go to the next one, now $2$ goes back to $1$, so $1$ stays by itself \inlinemetanote{writes: $1)($}. And I start here, $2$: $2$ goes to $1$, $1$ goes back to $2$, so $2$ goes to $2$ \inlinemetanote{writes: $2)$}. That's the identity. Also you can just see it in functions. But there's just rules.
 
 Of course, these are all the same, so this is the inverse; that's the inverse \inlinemetanote{draws arrows from $(1\,3)$ to $(1\,3)$ and from $(2\,3)$ to $(2\,3)$}. What's the inverse of this person \inlinemetanote{points at $(1\,2\,3)$}? \inlinemetanote{inaudible answer from a student} Yeah, the other one. So, they flip around here: $(1\,3\,2)$ and $(1\,2\,3)$ \inlinemetanote{draws arrows $(1\,2\,3) \to (1\,3\,2)$ and $(1\,3\,2) \to (1\,2\,3)$}. So, that's the inverse map.
 
-These are more complicated: $(1\,2\,3)$, let us say, $(1\,3\,2)$ \inlinemetanote{writes: $(1\,2\,3)(1\,3\,2) =$}. So, let's do this one slowly, just for fun --- I don't know how fun it is, but anyway: $1$ --- so, to figure out where $1$ goes, you start with $1$ in the first cycle you see (on the right), where $1$ is, and this cycle tells you $1$ goes to $3$. And then you keep going left: ah, you still see a $3$, so $3$ is going somewhere; $3$ goes back to $1$ \inlinemetanote{writes \qt{$1 \to 3 \to 1$} below}. That's kind of nice. So, that's $(1)$, and you'll see $(2)$ and $(3)$ \inlinemetanote{writes \qt{$(1)$} and \qt{$(2)(3)$}}.
+These are more complicated: $(1\,2\,3)$, let us say, $(1\,3\,2)$ \inlinemetanote{writes: $(1\,2\,3)(1\,3\,2) =$}. So, let's do this one slowly, just for fun --- I don't know how fun it is, but anyway: $1$... so, to figure out where $1$ goes, you start with $1$ in the first cycle you see (on the right), where $1$ is, and this cycle tells you $1$ goes to $3$. And then you keep going left: ah, you still see a $3$, so $3$ is going somewhere; $3$ goes back to $1$ \inlinemetanote{writes \qt{$1 \to 3 \to 1$} below}. That's kind of nice. So, that's $(1)$, and you'll see $(2)$ and $(3)$ \inlinemetanote{writes \qt{$(1)$} and \qt{$(2)(3)$}}.
 \end{speech}
 
 \begin{content}[{Inverses in $S_3$ and Multiplying Cycles}]
@@ -1763,7 +1763,7 @@ As the lecturer remarks about the ubiquity of $S_n$, Cayley's Theorem (\cref{thm
 \begin{speech}[01:17:00 - 01:18:13]
 Okay, so: let $G$ be a finite group \inlinemetanote{writes: $\text{Let } G \text{ be a finite group}$}. So, this will be the assumption for many statements now for the next couple weeks.
 
-And always by this, I, you know, talk about this $(G, \cdot, e)$ \inlinemetanote{writes: $(G, \cdot, e)$}, and I do not assume it's commutative \inlinemetanote{writes \qt{I don't assume Commutative!} and underlines \qt{not}}. I never assume it. I mean, sorry --- I never silently assume it. Sometimes I'll say \qt{let $G$ be a commutative group}, but I will never silently assume it. If I just say a group, it means that I am considering in my head a group possibly non-commutative.
+And always by this, I, you know, talk about this $(G, \cdot, e)$ \inlinemetanote{writes: $(G, \cdot, e)$}, and I do not assume it's commutative \inlinemetanote{writes \qt{I don't assume Commutative!} and underlines \qt{not}}. I never assume it. I mean, sorry, I never silently assume it. Sometimes I'll say \qt{let $G$ be a commutative group}, but I will never silently assume it. If I just say a group, it means that I am considering in my head a group possibly non-commutative.
 
 I should say --- and I made this definition before --- that a commutative group: when $x \cdot y = y \cdot x$ for all $x, y$ \inlinemetanote{writes: $\text{When } x \cdot y = y \cdot x \;\; \forall x, y$}, then we say $G$ is \newterm{abelian} \inlinemetanote{writes \qt{then $G$ is Abelian} and underlines \qt{Abelian}}. That's the standard. A commutative group --- the definition, it's abelian, that's what.
 
@@ -1790,7 +1790,7 @@ All right, and I just consider all of these: $x^4, x^5$, and eventually there'll
 
 So, if they're not distinct, that means there exists some $k$ less than $\ell$ such that $x^k$ is equal to $x^\ell$ \inlinemetanote{writes: $\exists\, k < \ell \text{ such that } x^k = x^\ell$}. That's what it means that they're not all distinct: if they're not all distinct, there must be at least $2$ that are the same, and then I just name them $k$ and $\ell$ with $k$ less than $\ell$. Okay?
 
-And now, by cancellation, I can cancel all the powers of $k$ --- $k$ is less than $\ell$ ---, so by cancellation, this means the neutral element is equal to $x$ to the $\ell - k$ \inlinemetanote{writes: $\text{by cancellation} \implies e = x^{\ell - k}$}. I just keep canceling powers of $x$ until I have none here. Okay?
+And now, by cancellation, I can cancel all the powers of $k$ --- $k$ is less than $\ell$ --- so by cancellation, this means the neutral element is equal to $x$ to the $\ell - k$ \inlinemetanote{writes: $\text{by cancellation} \implies e = x^{\ell - k}$}. I just keep canceling powers of $x$ until I have none here. Okay?
 \end{speech}
 
 \begin{content}[Powers of an Element in a Finite Group]
@@ -1837,11 +1837,11 @@ As derived above, the infinite sequence $x, x^2, x^3, \dots$ in the finite group
 \end{content}
 
 \begin{speech}[01:21:56 - 01:23:02]
-All right, so, we've proven this --- that's an extremely basic property of groups, and it's a very important one: if I have a group, a finite group, and I have an element, that element --- if I apply powers of that element --- eventually gets back to the unit, the neutral element.
+All right, so, we've proven this. That's an extremely basic property of groups, and it's a very important one: if I have a group, a finite group, and I have an element, that element --- if I apply powers of that element --- eventually gets back to the unit, the neutral element.
 
 And so we come to a definition \inlinemetanote{writes: $\text{Def:}$}: let $x$ be an element of $G$, $G$ finite, then the \newterm{order} of $x$ \inlinemetanote{writes \qt{$\text{Let } x \in G, \; G \text{ finite}$}, writes \qt{$\text{then } \operatorname{Ord}(x) \text{ is the}$}, and underlines \qt{$\operatorname{Ord}(x)$}} --- that's a definition --- is the minimal $m$, minimal positive $m$ such that $x^m$ is the neutral element \inlinemetanote{writes: $\min m > 0 \text{ such that } x^m = e.$}. All right?
 
-So, once we have --- yeah, once we have \emph{some}, we can always take the minimal. And so that's a canonical number associated: anytime you have a group that's finite and you have an element, that element has a number, which is its order, and it's an extremely important aspect of that element. That's how many times you have to apply the group operation to itself to get back the neutral element.
+So, yeah, once we have \emph{some}, we can always take the minimal. And so that's a canonical number associated: anytime you have a group that's finite and you have an element, that element has a number, which is its order, and it's an extremely important aspect of that element. That's how many times you have to apply the group operation to itself to get back the neutral element.
 \end{speech}
 
 \begin{content}
@@ -1858,11 +1858,11 @@ By \cref{prop:finite-group-identity-power}, the set $\{ m \in \mathbb{N}_{>0} \m
 \end{content}
 
 \begin{speech}[01:23:02 - 01:24:34]
-So, let us try to think about $S_3$ \inlinemetanote{writes and underlines: $S_3$}: what is the order of $e$ \inlinemetanote{writes: $e \to$}? Well, this order of $e$ is $1$, because you don't have to --- you apply $e$ to the $1$ is $e$ (i.e., $e^1 = e$) \inlinemetanote{writes: $\operatorname{Ord}(e) = 1$}. It's kind of silly, all right, anyway.
+So, let us try to think about $S_3$ \inlinemetanote{writes and underlines: $S_3$}: what is the order of $e$ \inlinemetanote{writes: $e \to$}? Well, this order of $e$ is $1$, because you don't have to... you apply $e$ to the $1$ is $e$ (i.e., $e^1 = e$) \inlinemetanote{writes: $\operatorname{Ord}(e) = 1$}. It's kind of silly, all right, anyway.
 
-So, what's the order of this element: $(1\,2)$ \inlinemetanote{writes: $(1\,2) \to$}? \inlinemetanote{long pause while students think; a student answers inaudibly} Yeah. $2$, because if I take --- this one is not $e$, so the order is not $1$ \inlinemetanote{writes: $(1\,2) \neq e \quad \text{ord} \neq 1$}. If I apply it to itself, I have to figure out what the square is, and the square is that --- and we calculated it, that's $e$, so the order is $2$ \inlinemetanote{writes: $(1\,2)(1\,2) = e \quad \text{ord} : 2$}.
+So, what's the order of this element: $(1\,2)$ \inlinemetanote{writes: $(1\,2) \to$}? \inlinemetanote{long pause while students think; a student answers inaudibly} Yeah. $2$, because if I take... this one is not $e$, so the order is not $1$ \inlinemetanote{writes: $(1\,2) \neq e \quad \text{ord} \neq 1$}. If I apply it to itself, I have to figure out what the square is, and the square is that --- and we calculated it, that's $e$, so the order is $2$ \inlinemetanote{writes: $(1\,2)(1\,2) = e \quad \text{ord} : 2$}.
 
-And, of course, for all the $2$-cycles --- this thing is called a \newterm{$2$-cycle} ---, so these are all order $2$ \inlinemetanote{writes \qt{$(1\,3) \to \text{ord} = 2$} with \qt{$(2\,3)$} below it}: these are all order $2$, for all of them.
+And, of course, for all the $2$-cycles --- this thing is called a \newterm{$2$-cycle} --- so these are all order $2$ \inlinemetanote{writes \qt{$(1\,3) \to \text{ord} = 2$} with \qt{$(2\,3)$} below it}: these are all order $2$, for all of them.
 
 And then the other one's this one: $(1\,2\,3)$ \inlinemetanote{writes: $(1\,2\,3) \to$}. What's the order of this? Well, again, you can imagine what it is. Well, what are you going to guess this thing is? \inlinemetanote{inaudible answer from a student} $3$, yeah, $3$. Good guess \inlinemetanote{writes: $\text{ord} = 3$}.
 
@@ -1913,7 +1913,7 @@ Because the order was defined as the minimal element... \inlinemetanote{trails o
 \begin{speech}[01:26:31 - 01:27:11]
 Yeah, so, look --- I mean, it could be like what happens: like this neutral element, it certainly can't be one of these \inlinemetanote{points at $x, \dots, x^{\operatorname{Ord}(x)-1}$}, because if it was like, you know, $3$ here, it can't be that, because then that would be lower than the order \inlinemetanote{writes \qt{$3$} under the dots between $x$ and $x^{\operatorname{Ord}(x)-1}$}. So, nothing here could be the neutral element.
 
-More interesting is why can none of these two be equal \inlinemetanote{points at two powers between $x$ and $x^{\operatorname{Ord}(x)-1}$}? And again for the same reason: if these two are equal, then I could use my cancellation argument (Recall: \cref{prop:cancellation-laws}), and I would get a power of $m$ --- $m$ lower --- that's the neutral. So, you should think about that; it's an elementary argument, but it's certainly crucial. So, these things are just totally crucial aspects about group theory; we'll discuss them.
+More interesting is why can none of these two be equal \inlinemetanote{points at two powers between $x$ and $x^{\operatorname{Ord}(x)-1}$}? And again for the same reason: if these two are equal, then I could use my cancellation argument (Recall: \cref{prop:cancellation-laws}), and I would get a power of $m$, $m$ lower, that's the neutral. So, you should think about that; it's an elementary argument, but it's certainly crucial. So, these things are just totally crucial aspects about group theory; we'll discuss them.
 \end{speech}
 
 \begin{content}[{The Set $\langle x \rangle$ and Its Cardinality}]

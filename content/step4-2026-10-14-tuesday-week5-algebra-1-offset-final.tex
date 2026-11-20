@@ -201,7 +201,7 @@ What is the structural meaning of the double quotient $\faktor{(\faktor{R}{K})}{
 \begin{speech}[00:03:48 - 00:05:06]
 That's realizing $R \bmod K$ as a quotient of $R$, and we can compose that with another quotient map to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $\xrightarrow{\hat{q}} \faktor{(\faktor{R}{K})}{J}$}. This is the quotient map: Since $J$ is an ideal of $R \bmod K$, I can consider that quotient map, and I can consider the composition.
 
-Let me consider this composition. For $f$, I do $q$ first and then I do $\hat{q}$ \inlinemetanote{writes: $f = \hat{q} \circ q$}. So, this is $f$ going from $R$ all the way to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $f \colon R \to \faktor{(\faktor{R}{K})}{J}$}. And since both of these are surjective --- $q$ was surjective, $\hat{q}$ is surjective ---, this $f$ is surjective. Is that clear? \inlinemetanote{writes: $f$ is surjective since both $q, \hat{q}$ are}
+Let me consider this composition. For $f$, I do $q$ first and then I do $\hat{q}$ \inlinemetanote{writes: $f = \hat{q} \circ q$}. So, this is $f$ going from $R$ all the way to $(R \bmod K) \bmod J$ \inlinemetanote{writes: $f \colon R \to \faktor{(\faktor{R}{K})}{J}$}. And since both of these are surjective --- $q$ was surjective, $\hat{q}$ is surjective --- this $f$ is surjective. Is that clear? \inlinemetanote{writes: $f$ is surjective since both $q, \hat{q}$ are}
 
 Okay. So...
 \end{speech}
@@ -348,7 +348,7 @@ All right, so, that's this correspondence. And as I said, this is really an extr
 \begin{speech}[00:10:11 - 00:11:04]
 Okay, so, the other topic that we started last week was that of maximal ideals. We will prove some theorems about this now.
 
-Let $R$ be a ring \inlinemetanote{writes: Let $R$ be a ring}. We have this notation now $\mathscr{I}(R)$ --- this is the set of all ideals ---, but I want this new set $\mathscr{I}^*(R)$ \inlinemetanote{writes: $\mathscr{I}^*(R)$}: This is the set of ideals $I$ in $R$ where $I$ is a proper ideal \inlinemetanote{writes: $\{ I \subset R \mid I \text{ is proper ideal} \}$}.
+Let $R$ be a ring \inlinemetanote{writes: Let $R$ be a ring}. We have this notation now $\mathscr{I}(R)$ --- this is the set of all ideals --- but I want this new set $\mathscr{I}^*(R)$ \inlinemetanote{writes: $\mathscr{I}^*(R)$}: This is the set of ideals $I$ in $R$ where $I$ is a proper ideal \inlinemetanote{writes: $\{ I \subset R \mid I \text{ is proper ideal} \}$}.
 
 Or equivalently, this just means that $I$ is an ideal not equal to the whole ring, okay? \inlinemetanote{writes: $I \neq R$} We had this definition last time. So, this is of course a subset of all ideals \inlinemetanote{writes: $\mathscr{I}^*(R) \subset \mathscr{I}(R)$}, and more or less, I throw out the ideal which is the whole ring. All right?
 \end{speech}
@@ -362,7 +362,7 @@ Clearly, $\mathscr{I}^*(R) \subset \mathscr{I}(R)$ is obtained by excluding the 
 \end{content}
 
 \begin{speech}[00:11:04 - 00:12:36]
-And then we say --- and this is a definition ---: $m$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $m \subset R$ is a maximal ideal $\stackrel{\text{def}}{\iff}$}. The first is that $m$ is in this $\mathscr{I}^*(R)$ \inlinemetanote{writes: 1. $m \in \mathscr{I}^*(R)$}. This is just a fancy way of saying that $m$ is not the full ring \inlinemetanote{writes: $(m \neq R)$}, okay?
+And then we say --- and this is a definition --- $m$ is a maximal ideal if it satisfies two properties \inlinemetanote{writes: $m \subset R$ is a maximal ideal $\stackrel{\text{def}}{\iff}$}. The first is that $m$ is in this $\mathscr{I}^*(R)$ \inlinemetanote{writes: 1. $m \in \mathscr{I}^*(R)$}. This is just a fancy way of saying that $m$ is not the full ring \inlinemetanote{writes: $(m \neq R)$}, okay?
 
 Maximal ideals are not allowed to be the full ring. This is a source of standard confusion, but it's really important in the definition. Maximal ideals are not the full ring --- that's cheating for a maximal ideal.
 
@@ -400,7 +400,7 @@ Okay, so, that's the definition of maximal ideal. We had some examples last time
 
 So, here we have a proposition: $R$ is a field if and only if $(0)$ in $R$ is a maximal ideal \inlinemetanote{writes: Prop. $R$ is a field $\iff (0) \subset R$ is a max ideal}.
 
-This is relating the idea of a field --- some rings are fields ---, so it's a field if and only if zero is a maximal ideal. Now there are some edge cases here which it's good to think about carefully.
+This is relating the idea of a field --- some rings are fields --- so it's a field if and only if zero is a maximal ideal. Now there are some edge cases here which it's good to think about carefully.
 
 Let's just do this.
 \end{speech}
@@ -463,7 +463,7 @@ I wanted to ask before, for the definition of a maximal ideal, does it always ex
 \end{student}
 
 \begin{speech}[00:16:30 - 00:16:51]
-Yeah. It's a good question; we're going to prove it. The question is --- maybe I say it ---: If $R$ is a ring, does there always exist a maximal ideal? Is that your question? That's a good question; we're going to prove it. The answer is going to be yes.
+Yeah. It's a good question; we're going to prove it. The question is --- maybe I say it --- if $R$ is a ring, does there always exist a maximal ideal? Is that your question? That's a good question; we're going to prove it. The answer is going to be yes.
 
 But you might be disappointed. You might nevertheless be disappointed, maybe I'll say.
 \end{speech}
@@ -940,7 +940,7 @@ This is saying that whenever I have this chain, I can find somebody that contain
 
 Are you happy with this?
 
-For an abstract poset, I have a notion of poset, I have a notion of chain --- chain is just a subset where everybody is ordered ---, and this chain is bounded if I can reach into $S$ somewhere, find somebody who's on top of everybody in that chain.
+For an abstract poset, I have a notion of poset, I have a notion of chain --- chain is just a subset where everybody is ordered --- and this chain is bounded if I can reach into $S$ somewhere, find somebody who's on top of everybody in that chain.
 \end{speech}
 
 \begin{content}
@@ -989,7 +989,7 @@ Does it contain $1$?
 \begin{speech}[00:44:26 - 00:45:20]
 Yeah, because none of these contain $1$, so this doesn't contain $1$. And if it were not a proper ideal, it would contain $1$, it would contain everything. So, it's also a proper ideal.
 
-So, there's a little lemma here which is fun to do. It says that this element $K$, the union --- that's the only part of this that isn't formal ---: If I take this poset of proper ideals, in that poset every chain is bounded, and it's by just this construction.
+So, there's a little lemma here which is fun to do. It says that this element $K$, the union --- that's the only part of this that isn't formal --- if I take this poset of proper ideals, in that poset every chain is bounded, and it's by just this construction.
 
 And so, then we can apply Zorn's lemma! In our poset, we satisfy all the conditions here: It's a poset in which every chain is bounded, then it must contain a maximal element, and that's a maximal ideal.
 
@@ -1377,7 +1377,7 @@ Prove the converse implication ($\impliedby$): Assume $\faktor{R}{P}$ is an inte
 \subsection{Corollaries: Maximal Ideals Are Prime}
 
 \begin{speech}[01:02:08 - 01:03:02]
-Some consequences of this --- and this is maybe related to the question before ---:
+Some consequences of this (and this is maybe related to the question before):
 
 From this, you can draw some conclusions.
 
@@ -1905,7 +1905,7 @@ Thus, the value of $\phi(z + IJ)$ is independent of the chosen representative $z
 \begin{speech}[01:24:09 - 01:24:55]
 Why is $IJ$ in $I$? Remember, $IJ$ is equal to sums of the form $i_1 j_1 + i_2 j_2 + \dots + i_k j_k$ \inlinemetanote{writes: $IJ = \{ \sum_{r=1}^k i_r j_r \mid i_r \in I, j_r \in J \}$}. Since this is in $I$ and that's something else, each one of these terms is both in $I$ and in $J$.
 
-A very important property of $IJ$ --- I just put it in a box here ---: This is always inside $I$ and it's always inside $J$ \inlinemetanote{draws box with $IJ \subset I$ and $IJ \subset J$}. Okay?
+A very important property of $IJ$ (I just put it in a box here): This is always inside $I$ and it's always inside $J$ \inlinemetanote{draws box with $IJ \subset I$ and $IJ \subset J$}. Okay?
 
 The ambiguity here is that I could change the name with a shift of somebody in $IJ$, and that would change this; but this shift is still in $I$, and this shift is still in $J$, so the answer is the same, yeah.
 \end{speech}

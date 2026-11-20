@@ -174,7 +174,7 @@ The second half is the generalization of Euclid's lemma (\cref{fact:pre-euclid})
 \subsection{The Content of a Polynomial}
 
 \begin{speech}[00:01:51 - 00:02:55]
-Okay, so, there's a new notion here which is content, which is an extremely useful notion. \inlinemetanote{writes: Content} And the idea here is if I have a polynomial here --- and for this discussion of content, I don't consider the zero polynomial \inlinemetanote{writes: $f \in R[x], f \neq 0$} ---, I write $f$ as $a_0$, a constant term, a linear term, and so on, and at some point it stops, because a polynomial always stops. \inlinemetanote{writes: $f = a_0 + a_1 x + \dots + a_n x^n$}
+Okay, so, there's a new notion here which is content, which is an extremely useful notion. \inlinemetanote{writes: Content} And the idea here is if I have a polynomial here --- and for this discussion of content, I don't consider the zero polynomial \inlinemetanote{writes: $f \in R[x], f \neq 0$} --- I write $f$ as $a_0$, a constant term, a linear term, and so on, and at some point it stops, because a polynomial always stops. \inlinemetanote{writes: $f = a_0 + a_1 x + \dots + a_n x^n$}
 
 Then, this is the definition: the content --- so, the word for that is the content --- is equal to the $\operatorname{GCD}$ of these elements here: $a_0, a_1, \dots, a_n$. \inlinemetanote{writes: $\operatorname{Def.} C(f) = \operatorname{GCD}(a_0, a_1, \dots, a_n)$} Okay?
 
@@ -197,11 +197,11 @@ C(f) := \operatorname{GCD}(a_0, a_1, \dots, a_n).
 \begin{speech}[00:02:55 - 00:04:53]
 And then, this is how it's typically written, and what do I mean by this? Well, we already discussed what $\operatorname{GCD}$ is. You're not allowed to have any zeros here. So, if any of these coefficients are zero, you just strike them out, because we don't do $\operatorname{GCD}$ of zero.
 
-So, this is how it's typically written, but what it means is you take $f$, you put here the non-zero coefficients \inlinemetanote{writes \qt{non-zero} under $a_0, a_1, \dots, a_n$} --- non-zero coefficients ---, and then take their $\operatorname{GCD}$s, as we discussed yesterday (Recall: \cref{def:gcd-ufd}, \cref{thm:gcd-formula-ufd}).
+So, this is how it's typically written, but what it means is you take $f$, you put here the non-zero coefficients \inlinemetanote{writes \qt{non-zero} under $a_0, a_1, \dots, a_n$}, non-zero coefficients, and then take their $\operatorname{GCD}$s, as we discussed yesterday (Recall: \cref{def:gcd-ufd}, \cref{thm:gcd-formula-ufd}).
 
 The way you take $\operatorname{GCD}$s is for every one of these, like this one, if it's non-zero... There has to be some of these that are non-zero because $f$ is not zero. So, there's at least one that's not zero. You put the list of all the ones that are non-zero, and for each one you take the prime factorization, which is, you know, some unit and then some product of $p_i$ to the $k_i$ --- let's say $k_{i0}$ for the zero one \inlinemetanote{writes: $a_0 = u_0 \prod p_i^{k_{i0}}$}, and then $a_1$ would be some unit one, $p_i$ to the $k_{i1}$ \inlinemetanote{writes: $a_1 = u_1 \prod p_i^{k_{i1}}$}.
 
-And then to get the $\operatorname{GCD}$ --- it's the greatest common divisor ---, you take the minimal power in each prime. We discussed it for two, but you can also discuss it for several. It's just like for the integers.
+And then to get the $\operatorname{GCD}$, it's the greatest common divisor, you take the minimal power in each prime. We discussed it for two, but you can also discuss it for several. It's just like for the integers.
 
 Okay? So, that's the definition of the content: you just take your polynomial, put the coefficients which are not zero, take the $\operatorname{GCD}$ of them, which is well-defined since it's a UFD.
 
@@ -232,7 +232,7 @@ Formally, $C(f)$ is well defined as an associate class (\cref{def:associate-elem
 \subsection{Canonical Decomposition of Polynomials}
 
 \begin{speech}[00:04:53 - 00:06:10]
-All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ ---, then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = C(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes \qt{$R[x]$} under $f$, \qt{$R$} under $C(f)$, and \qt{$R[x]$} under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
+All right, some properties of the content. If I take this $f$ --- and whenever I consider contents, I always have $f \neq 0$ --- then I can write $f$ as the content times $f^*$ \inlinemetanote{writes: $f \neq 0, f = C(f) \cdot f^*$}, because since it's a $\operatorname{GCD}$, I can divide all the coefficients by the content, and I can write this equation. So, $f$ is in polynomials in $R$, this content is a number, so it's in $R$, and this is also in polynomials in $R$ \inlinemetanote{writes \qt{$R[x]$} under $f$, \qt{$R$} under $C(f)$, and \qt{$R[x]$} under $f^*$}. Since the content is the $\operatorname{GCD}$, I can just divide it out of all of them, and I get a polynomial here. Okay?
 
 And if you think about this, what happens for this polynomial? What is the content of this polynomial? What do you think the answer to that is? It's just like I take the coefficients, they have a $\operatorname{GCD}$, I divide out the $\operatorname{GCD}$... yeah, one, yeah. \inlinemetanote{writes: What is $C(f^*) \overset{\text{unit}}{=} 1$} So, the answer is, this is one. And whenever I say something like this or whenever it's written, people will just write this, but what is meant is that this is up to multiplication by a unit, one, because that depends on how you did it. Because you've just taken out all of the common divisors, what's left is just units.
 \end{speech}
@@ -367,7 +367,7 @@ So, then there's two observations. The first observation is by Gauss, and this i
 
 Remember, primitive means that the coefficients of the polynomial have no non-trivial $\operatorname{GCD}$; the $\operatorname{GCD}$ is just a unit. And it says if I take two of those and I multiply them, it stays primitive.
 
-So, this is saying something extremely explicit. It's saying, for example, for integers, if you have a polynomial with integer coefficients --- two of them --- such that this one has no $\operatorname{GCD}$ --- well, the $\operatorname{GCD}$ of its coefficients is one --- and that one has a $\operatorname{GCD}$ of coefficients one, when you multiply them, the resulting polynomial has $\operatorname{GCD}$ of its coefficients one. That's something extremely explicit.
+So, this is saying something extremely explicit. It's saying, for example, for integers, if you have a polynomial with integer coefficients, two of them, such that this one has no $\operatorname{GCD}$ --- well, the $\operatorname{GCD}$ of its coefficients is one --- and that one has a $\operatorname{GCD}$ of coefficients one, when you multiply them, the resulting polynomial has $\operatorname{GCD}$ of its coefficients one. That's something extremely explicit.
 
 Okay, the proof of this by now for us is also very simple.
 \end{speech}
@@ -537,7 +537,7 @@ So, now we come to Theorem B, which is the second theorem for the week. And it a
 \section{Proof of Gauss's Theorem}
 
 \begin{speech}[00:20:34 - 00:21:44]
-Okay, so, we want to prove: $R$ is a UFD implies $R[x]$ is a UFD. \inlinemetanote{writes: Thm. $R$ UFD $\implies R[x]$ is a UFD} So, for $R[x]$, we must prove two things: we must prove the existence statement --- existence of factorization into irreducibles in $R[x]$ \inlinemetanote{writes: for $R[x]$, we must prove: $\exists$ factorization into irreducibles in $R[x]$} ---, and then we must prove the uniqueness statement: uniqueness \inlinemetanote{writes: $!$ uniqueness}.
+Okay, so, we want to prove: $R$ is a UFD implies $R[x]$ is a UFD. \inlinemetanote{writes: Thm. $R$ UFD $\implies R[x]$ is a UFD} So, for $R[x]$, we must prove two things: we must prove the existence statement --- existence of factorization into irreducibles in $R[x]$ \inlinemetanote{writes: for $R[x]$, we must prove: $\exists$ factorization into irreducibles in $R[x]$} --- and then we must prove the uniqueness statement: uniqueness \inlinemetanote{writes: $!$ uniqueness}.
 
 There's no shortcut to that: we have to prove existence and uniqueness to prove it's a UFD.
 
@@ -625,7 +625,7 @@ If $C(f) \in R$ is not a unit, the UFD property of $R$ guarantees that $C(f)$ fa
 \end{content}
 
 \begin{speech}[00:25:57 - 00:27:36]
-Well, one thing that could happen --- the first case --- is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x]$ is irred.} Okay?
+Well, one thing that could happen, the first case, is that $f^*$ in $R[x]$ is irreducible. \inlinemetanote{writes: \textbf{(i)} $f^* \in R[x]$ is irred.} Okay?
 
 If this happens, we're in really good shape. Because suppose this is irreducible, then we look at $f = C(f) \cdot f^*$. \inlinemetanote{writes: $f = C(f) \cdot f^*$} And in this branch, this is irreducible in $R[x]$. \inlinemetanote{writes \qt{irred. in $R[x]$} under $f^*$} Now, this is a scalar, so we can apply the UFD property of $R$ and factor that into irreducibles. \inlinemetanote{writes \qt{UFD of $R$} under $C(f)$} Okay?
 
@@ -754,7 +754,7 @@ So, I have to prove this now. That's the last thing I have to do.
 
 You should look at the lecture from yesterday: we must prove that if $p \in R[x]$ is irreducible, \inlinemetanote{writes: We must prove: $p \in R[x]$ irred} then it's prime. The way you do that is you have to say that we have the assumption: $p$ is irreducible, $fg \in (p)$, \inlinemetanote{writes: $fg \in (p)$} $f \notin (p)$, \inlinemetanote{writes: $f \notin (p)$} and we must prove under these hypotheses that $g \in (p)$. \inlinemetanote{writes: $\implies g \in (p)$} That's the last thing.
 
-If we prove this --- you assume it's irreducible, these things lie in $(p)$, $f$ is not in $(p)$, and then $g$ is in $(p)$ ---, then that finishes the proof of Gauss's theorem.
+If we prove this --- you assume it's irreducible, these things lie in $(p)$, $f$ is not in $(p)$, and then $g$ is in $(p)$ --- then that finishes the proof of Gauss's theorem.
 \end{speech}
 
 \begin{content}[{Strategy for Uniqueness: Irreducible Implies Prime in \texorpdfstring{$R[x]$}{R[x]}}]

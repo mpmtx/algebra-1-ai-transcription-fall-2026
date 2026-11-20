@@ -94,7 +94,7 @@ Building on the previous lecture's introduction of group homomorphisms, kernels,
 \begin{speech}[00:00:00 - 00:01:18]
 Okay, so, we return to the topic we started yesterday, where we have a homomorphism from two groups \inlinemetanote{writes: $f \colon G_1 \longrightarrow G_2$, hom}.
 
-And the kernel of $f$ is equal to those people in $G_1$ such that the image is the neutral element \inlinemetanote{writes: $\ker(f) = \{ x \in G_1 \mid f(x) = e_2 \}$}. And we had seen yesterday that --- there were lots of ideas actually in the lecture yesterday. So, the first was that this kernel is not only a subgroup --- it's a subgroup, but also a normal subgroup \inlinemetanote{writes $\ker(f) \subset G$ (a slip for $G_1$) with an upward arrow to $\subset$ labeled \qt{Subgroup, but \underline{Normal} Subgrp}}.
+And the kernel of $f$ is equal to those people in $G_1$ such that the image is the neutral element \inlinemetanote{writes: $\ker(f) = \{ x \in G_1 \mid f(x) = e_2 \}$}. And we had seen yesterday that... there were lots of ideas actually in the lecture yesterday. So, the first was that this kernel is not only a subgroup --- it's a subgroup, but also a normal subgroup \inlinemetanote{writes $\ker(f) \subset G$ (a slip for $G_1$) with an upward arrow to $\subset$ labeled \qt{Subgroup, but \underline{Normal} Subgrp}}.
 
 And I just remind you that normal means that for all elements $n$ in this group and for all $x$ in $G$, if we conjugate --- that was another idea, and we'll talk more about it --- the conjugate lives inside the kernel \inlinemetanote{writes: $\forall n \in \ker(f), \forall x \in G, \ x n x^{-1} \in \ker(f)$}.
 \end{speech}
@@ -128,7 +128,7 @@ So, that was the beginning, and then one of the main parts from last time was th
 
 And moreover, there is a quotient map that takes the group $G_1$ to this quotient group, and this quotient map takes $x$ to the equivalence class of $x$, that is to say, $q(x)$ is equal to the equivalence class of $x$ \inlinemetanote{writes \qt{$q \colon G_1 \longrightarrow \faktor{G_1}{\ker(f)}$}, \qt{$q \colon x \longrightarrow \bar{x}$}, and \qt{$q(x) = \bar{x}$}}.
 
-And just to remember the terminology from last time: as a set, $G_1$ mod $\ker(f)$, this is equal to the set of equivalence classes under this equivalence relation that's related to this subgroup --- that is defined by the subgroup \inlinemetanote{writes \qt{as a set}, \qt{$\faktor{G_1}{\ker(f)} =$ set equiv.\ classes}, and \qt{$\sim_{\ker(f)}$}}.
+And just to remember the terminology from last time: as a set, $G_1$ mod $\ker(f)$, this is equal to the set of equivalence classes under this equivalence relation that is defined by the subgroup \inlinemetanote{writes \qt{as a set}, \qt{$\faktor{G_1}{\ker(f)} =$ set equiv.\ classes}, and \qt{$\sim_{\ker(f)}$}}.
 
 This equivalence relation defined by a subgroup has come up twice: once in the proof of Lagrange's theorem, and in that case the subgroup was any subgroup --- we did not require it to be normal... yeah. \inlinemetanote{inaudible question from a student}
 \end{speech}
@@ -436,7 +436,7 @@ On the board, the lecturer states $|A_n| = \frac{|S_n|}{2} = \frac{n!}{2}$ witho
 \begin{proofWrapper}[Proof of \cref{prop:order-alternating-group}]
 
 \begin{speech}[00:13:09 - 00:14:25]
-And what is the proof of that? The proof is that --- and we saw from Lagrange's theorem that this order of $A_n$ has to divide the order of $S_n$, right \inlinemetanote{writes \qt{Proof}, \qt{Lagrange}, and \qt{$|A_n| \mid |S_n|$}}? And moreover, this division is equal to the number of equivalence classes of this tilde $A_n$ \inlinemetanote{writes: $\frac{|S_n|}{|A_n|} = \# \text{ equiv.\ classes of } \sim_{A_n}$}. That's from Lagrange --- that's exactly how we proved Lagrange's theorem: that if you have any subgroup of a group, there's a division, and moreover the quotient is the number of equivalence classes.
+And what is the proof of that? The proof is that... and we saw from Lagrange's theorem that this order of $A_n$ has to divide the order of $S_n$, right \inlinemetanote{writes \qt{Proof}, \qt{Lagrange}, and \qt{$|A_n| \mid |S_n|$}}? And moreover, this division is equal to the number of equivalence classes of this tilde $A_n$ \inlinemetanote{writes: $\frac{|S_n|}{|A_n|} = \# \text{ equiv.\ classes of } \sim_{A_n}$}. That's from Lagrange --- that's exactly how we proved Lagrange's theorem: that if you have any subgroup of a group, there's a division, and moreover the quotient is the number of equivalence classes.
 
 All we have to do is figure out the number of equivalence classes, but the number of equivalence classes here is this quotient, $S_n$ mod $A_n$, and by the first isomorphism theorem, that's isomorphic to plus minus $1$, so there's $2$ equivalence classes \inlinemetanote{writes \qt{$\faktor{S_n}{A_n} \cong \{\pm 1\}$} and circles \qt{$2$}}. Okay? So, that's the proof.
 \end{speech}
@@ -485,9 +485,9 @@ Okay, so, one of the ideas from yesterday was this idea of a normal subgroup, th
 
 So, this came up in the definition of a normal subgroup: a normal subgroup is a subgroup such that all the conjugates of its elements lie in the subgroup. But the notion of conjugation is deeper, and I'll try to say a few words about this.
 
-Suppose $z$ is in the group --- suppose here $G$ is a group, and suppose I pick an element in $z$ (i.e., $G$) \inlinemetanote{writes \qt{$(G, \cdot, e)$ group} and \qt{$z \in G$}}. Then I can conjugate everybody by $z$. So, that gives me a map $c_z$ --- the name for this is conjugation by $z$ \inlinemetanote{writes \qt{$c_z \colon G \to G$} and \qt{conj.\ by $z$}}. And it's a map that takes a group element and gives you back an element of the group. And the definition is: $c_z$ of any element $x$ is equal to $z x z^{-1}$, okay \inlinemetanote{writes: Def $c_z(x) = z x z^{-1}$, $x \in G$}? If you fix your $z$, you can just conjugate everybody.
+Suppose here $G$ is a group, and suppose I pick an element in $z$ (i.e., $G$) \inlinemetanote{writes \qt{$(G, \cdot, e)$ group} and \qt{$z \in G$}}. Then I can conjugate everybody by $z$. So, that gives me a map $c_z$ --- the name for this is conjugation by $z$ \inlinemetanote{writes \qt{$c_z \colon G \to G$} and \qt{conj.\ by $z$}}. And it's a map that takes a group element and gives you back an element of the group. And the definition is: $c_z$ of any element $x$ is equal to $z x z^{-1}$, okay \inlinemetanote{writes: Def $c_z(x) = z x z^{-1}$, $x \in G$}? If you fix your $z$, you can just conjugate everybody.
 
-It's not a useful --- let me say this: it's pointless to think about this conjugation if the group is abelian.
+It's not a useful... let me say this: it's pointless to think about this conjugation if the group is abelian.
 \end{speech}
 
 \begin{content}[Definition of Conjugation by an Element]
@@ -557,7 +557,7 @@ As the lecturer points out, abelian and non-abelian groups exhibit opposite conv
 \begin{speech}[00:19:03 - 00:19:43]
 All right, so, the next lemma for conjugation, which is an interesting one --- and I don't know if it's completely obvious to you right here: does anyone know what I'm going to write here \inlinemetanote{writes: Lemma:}? \inlinemetanote{pauses briefly; no student answers} Well, we have a map from a group to a group \inlinemetanote{points at $c_z \colon G \to G$}, and if you have such a map, you might think whether it's a homomorphism. So, not only is this a homomorphism, it's an isomorphism. It's a group isomorphism \inlinemetanote{writes: $c_z$ is group isom.}.
 
-So, that's kind of interesting, that you can write down --- if you have a group, you can conjugate by anybody and get some group isomorphism.
+So, that's kind of interesting, that you can write down... if you have a group, you can conjugate by anybody and get some group isomorphism.
 \end{speech}
 
 \begin{content}
@@ -583,11 +583,11 @@ $z^{-1} y z$.
 \begin{speech}[00:21:30 - 00:23:12]
 Yeah, you flip them around: $z^{-1} y z$ \inlinemetanote{writes: $\hat{y} = z^{-1} y z$}, and then when you stick it into $c$ (i.e., $c_z$), the $z$'s will arrange so that they will disappear on both sides.
 
-Finally, you have to check whether it's injective, and for that, you have to see --- okay, let's use here \inlinemetanote{draws a box and writes: is $c_z$ injective?}. I don't propose you really follow this method of writing a proof, but it's the way I think about it. I am proving it, but you know. Is it injective? Now you ask this question.
+Finally, you have to check whether it's injective, and for that, you have to see... okay, let's use here \inlinemetanote{draws a box and writes: is $c_z$ injective?}. I don't propose you really follow this method of writing a proof, but it's the way I think about it. I am proving it, but you know. Is it injective? Now you ask this question.
 
-So, then you have to check, well, what happens --- so it's injective, we have to check who's in the kernel. We have to check what happens if I have $c_x$ (i.e., $c_z(x)$) equals $e$, right \inlinemetanote{writes: $c_z(x) = e$}? Then this implies $z x z^{-1}$ equals $e$ \inlinemetanote{writes: $\implies z x z^{-1} = e$}, and now I bring all the $z$'s to the other side, where they go away. Is that clear? So, this implies $x$ equals $e$ \inlinemetanote{writes $x = e$ below it, with a check mark}, so the answer is yes --- actually, answers to all the questions are yes \inlinemetanote{writes \qt{Yes} next to \qt{is it surj.?}}. So, it's a group isomorphism.
+So, then you have to check, well, what happens... so it's injective, we have to check who's in the kernel. We have to check what happens if I have $c_x$ (i.e., $c_z(x)$) equals $e$, right \inlinemetanote{writes: $c_z(x) = e$}? Then this implies $z x z^{-1}$ equals $e$ \inlinemetanote{writes: $\implies z x z^{-1} = e$}, and now I bring all the $z$'s to the other side, where they go away. Is that clear? So, this implies $x$ equals $e$ \inlinemetanote{writes $x = e$ below it, with a check mark}, so the answer is yes --- actually, answers to all the questions are yes \inlinemetanote{writes \qt{Yes} next to \qt{is it surj.?}}. So, it's a group isomorphism.
 
-That's a kind of interesting thing: the group --- as I said, one of the origins of groups is symmetries of other objects, but you can also do this kind of introspective thing where if you have a group, you think about its own symmetries --- symmetries as a group. And if the group is an interesting group, like, for example, if it's an abelian group, this whole line of thought is totally pointless, because, you know, it's true this is a group isomorphism, but it's the identity isomorphism, so it's not that interesting. But if you have an interesting group, it will give you interesting isomorphisms.
+That's a kind of interesting thing: the group... as I said, one of the origins of groups is symmetries of other objects, but you can also do this kind of introspective thing where if you have a group, you think about its own symmetries --- symmetries as a group. And if the group is an interesting group, like, for example, if it's an abelian group, this whole line of thought is totally pointless, because, you know, it's true this is a group isomorphism, but it's the identity isomorphism, so it's not that interesting. But if you have an interesting group, it will give you interesting isomorphisms.
 \end{speech}
 
 \begin{content}[Verification of the Isomorphism Properties]
@@ -631,7 +631,7 @@ But before we do an example, maybe I state some things that are fun to think abo
 
 So, as I said, I don't view it as my purpose of this class to teach you how to write proofs, so you don't have to follow my example.
 
-Okay, let's do some fun stuff before we do the example. If you have a group --- as I said, you can think about the symmetries of that group \inlinemetanote{writes: $G$}. So, you can associate to this group the automorphisms --- this is $\operatorname{Aut}(G)$, and this is the set of $f$ from $G$ to $G$ where $f$ is a group isomorphism \inlinemetanote{writes: $G \rightsquigarrow \operatorname{Aut}(G) = \{ f \colon G \to G \mid f \text{ is group isom.} \}$}. So, that's the set of all group isomorphisms. Does that make sense? If you have a group, you can think about maps from $G$ to $G$, and they may or may not be isomorphisms, and we just consider the set of all isomorphisms. So, there's no difficulty.
+Okay, let's do some fun stuff before we do the example. If you have a group, as I said, you can think about the symmetries of that group \inlinemetanote{writes: $G$}. So, you can associate to this group the automorphisms --- this is $\operatorname{Aut}(G)$, and this is the set of $f$ from $G$ to $G$ where $f$ is a group isomorphism \inlinemetanote{writes: $G \rightsquigarrow \operatorname{Aut}(G) = \{ f \colon G \to G \mid f \text{ is group isom.} \}$}. So, that's the set of all group isomorphisms. Does that make sense? If you have a group, you can think about maps from $G$ to $G$, and they may or may not be isomorphisms, and we just consider the set of all isomorphisms. So, there's no difficulty.
 
 And now you will see --- and this always happens with automorphisms and symmetries, so it should not be a surprise to you --- $\operatorname{Aut}(G)$ is a group \inlinemetanote{writes: $\operatorname{Aut}(G)$ is group}. So, do you believe that? It's just because there's the identity here, you can compose them, there's inverses. So, the set of group isomorphisms of a group is itself a group. So, it's a group.
 
@@ -735,7 +735,7 @@ So, the answer is: of course it can't be surjective, because you could take an a
 
 And okay, I'll just say some things now, you can check them if you want --- they're not, I think, really part of this class, but they're fun to know. So, this is not always surjective. The automorphisms here that are not inner automorphisms, you can imagine they're called outer automorphisms. So, there's the outer automorphisms.
 
-You can ask about this subgroup --- you can always ask of a subgroup: is this a normal subgroup or not? That's a reasonable question. And the answer is that --- so, question: is the image of conjugation inside all automorphisms a normal subgroup \inlinemetanote{writes \qt{Question:} and \qt{Is $\operatorname{Im}(\operatorname{Conj}) \subset \operatorname{Aut}(G)$ a normal subgrp?}}? That's a good question, and the answer is yes \inlinemetanote{writes and circles: YES}. And this is a kind of fun thing to prove. It requires a little idea. I leave this to you to prove.
+You can ask about this subgroup --- you can always ask of a subgroup: is this a normal subgroup or not? That's a reasonable question. And the answer is that... so, question: is the image of conjugation inside all automorphisms a normal subgroup \inlinemetanote{writes \qt{Question:} and \qt{Is $\operatorname{Im}(\operatorname{Conj}) \subset \operatorname{Aut}(G)$ a normal subgrp?}}? That's a good question, and the answer is yes \inlinemetanote{writes and circles: YES}. And this is a kind of fun thing to prove. It requires a little idea. I leave this to you to prove.
 \end{speech}
 
 \begin{content}[Inner Automorphisms and Normality]
@@ -871,7 +871,7 @@ Earlier, Week~7 allowed omitting $1$-cycles $(x)$ for fixed points $\sigma(x) = 
 \subsection{Explicit Formula for Conjugation of Cycles}
 
 \begin{speech}[00:33:35 - 00:35:00]
-All right, so, now let us take $z$ as a map from $[n]$ to $[n]$ \inlinemetanote{writes: $z \colon [n] \longrightarrow [n]$}, right? So, $z$ is some element of $S_n$ \inlinemetanote{writes: $z \in S_n$}. It's a map from $[n]$ to $[n]$, so we have $1, 2, 3, \dots, n$, and then here's $1, 2, 3, \dots, n$, and $z$ is this rule that takes --- a bijection from $[n]$ to $[n]$ \inlinemetanote{draws the two columns $1, 2, 3, \dots, n$ with an arrow labeled $z$ between them}.
+All right, so, now let us take $z$ as a map from $[n]$ to $[n]$ \inlinemetanote{writes: $z \colon [n] \longrightarrow [n]$}, right? So, $z$ is some element of $S_n$ \inlinemetanote{writes: $z \in S_n$}. It's a map from $[n]$ to $[n]$, so we have $1, 2, 3, \dots, n$, and then here's $1, 2, 3, \dots, n$, and $z$ is this rule that takes... a bijection from $[n]$ to $[n]$ \inlinemetanote{draws the two columns $1, 2, 3, \dots, n$ with an arrow labeled $z$ between them}.
 
 And the goal to study the conjugation is we want to understand the conjugate, and I will write it as $z \sigma z^{-1}$, right \inlinemetanote{writes \qt{We want to understand} and \qt{$z \sigma z^{-1}$}}? So, this is explicit: we have this explicit cycle, we have some explicit bijection, also an element of $S_n$, and I want to write this. And this is what I was hinting at last time, and I kind of said a little bit and waved my hands, but here I'm going to actually write the formula, in a moment of honesty.
 \end{speech}
@@ -918,13 +918,13 @@ explicitly in cycle notation.
 \begin{speech}[00:35:00 - 00:37:24]
 So, yeah, what am I going to write? All the data is there: $z$ is this data, how to move from this side to this side, and I have that cycle, so I hinted at it last time. Let us see why. Suppose I want to find out --- and this is already a hint --- what happens to $z(a_{11})$ \inlinemetanote{writes: $(z(a_{11})$}? So, I started my first cycle.
 
-These $a$'s are all elements --- these $a_{ij}$'s give me the set $1$ to $n$ \inlinemetanote{writes: $\{a_{ij}\} = \{1, \dots, n\}$}. So, $z$ eats them, yeah? So, $z$ of this. Where is this going to go? If I want to find out where this index goes, I first apply $z^{-1}$: it goes to $a_{11}$, right? Then I apply $\sigma$: $a_{11}$ goes to $a_{12}$. And then I apply $z$ again, so this goes to $z(a_{12})$ \inlinemetanote{writes: $z(a_{12})$}. Okay? Is that clear, when I start doing the cycle?
+These $a_{ij}$'s give me the set $1$ to $n$ \inlinemetanote{writes: $\{a_{ij}\} = \{1, \dots, n\}$}. So, $z$ eats them, yeah? So, $z$ of this. Where is this going to go? If I want to find out where this index goes, I first apply $z^{-1}$: it goes to $a_{11}$, right? Then I apply $\sigma$: $a_{11}$ goes to $a_{12}$. And then I apply $z$ again, so this goes to $z(a_{12})$ \inlinemetanote{writes: $z(a_{12})$}. Okay? Is that clear, when I start doing the cycle?
 
 I'm trying to find the cycle notation of this \inlinemetanote{points at $z \sigma z^{-1}$}, so my first idea is to see where this $z(a_{11})$ goes, and I go through this argument and it goes to $z(a_{12})$, which is kind of nice. And so, you think, where does $z(a_{12})$ go? And it's not going to be a surprise: it goes to $z(a_{13})$, and so on until you get to $z(a_{1 k_1})$, and the cycle closes \inlinemetanote{writes: $z(a_{13}) \dots z(a_{1 k_1}))$}. That's what happens if you just apply this to $z(a_{11})$: you get this cycle. All right?
 
 As I said, you pretty much have to do this yourself and convince yourself of it. That's the first cycle. What about the second cycle? Here I wrote them very nicely all in a row \inlinemetanote{points at the left board}; here I kind of ran out of room, so it's going to be in different lines, but you think about it as one element of the group. So, what's going to happen to the next one? Well, this is $z(a_{21})$, and it's just going to be $z$'s applied to everybody: $z(a_{2 k_2})$ \inlinemetanote{writes: $(z(a_{21}) \dots z(a_{2 k_2})) \cdots$}.
 
-That's the second cycle, and then so on, and then we get to the last cycle. I'll just talk a little bit about it, but this is $r1$, $z$ --- I have never in my whole mathematical life liked indices, so I mostly try to avoid writing formulas. It's hard to write them correctly \inlinemetanote{writes: $(z(a_{r1}) \dots z(a_{r k_r}))$}. So, you should look at it, see if you like it, see if you believe it's correct --- all the indices are correct.
+That's the second cycle, and then so on, and then we get to the last cycle. I'll just talk a little bit about it, but this is $r1$, $z$... I have never in my whole mathematical life liked indices, so I mostly try to avoid writing formulas. It's hard to write them correctly \inlinemetanote{writes: $(z(a_{r1}) \dots z(a_{r k_r}))$}. So, you should look at it, see if you like it, see if you believe it's correct --- all the indices are correct.
 \end{speech}
 
 \begin{content}
@@ -974,7 +974,7 @@ Hence conjugation by $z$ acts purely as a bijective relabeling of the symbols: e
 \begin{speech}[00:37:24 - 00:38:57]
 Okay. This is a better presentation than last time, where I just said you should do it yourself. Now I've mostly done it for you. But still, for you to really understand it, you have to understand what I'm doing. It says that if you take this explicit element in the cycle decomposition \inlinemetanote{points at the cycle decomposition of $\sigma$}, you write some bijection, and you calculate the conjugation, all you do is take this cycle and you apply $z$ to the elements there, and you get a new cycle decomposition. Okay?
 
-And there is actually nothing going on here except understanding the notation. Just some kind of --- you have to concentrate for some amount of time and keep all the definitions in your head, maybe a few minutes, but all it is is understanding the notation. But the conclusion is extremely nice: it says that $\sigma$ and the conjugate have the same cycle... yeah? \inlinemetanote{inaudible question from a student}
+And there is actually nothing going on here except understanding the notation. Just some kind of... you have to concentrate for some amount of time and keep all the definitions in your head, maybe a few minutes, but all it is is understanding the notation. But the conclusion is extremely nice: it says that $\sigma$ and the conjugate have the same cycle... yeah? \inlinemetanote{inaudible question from a student}
 
 We're not getting rid of it. We just have to figure out what happens to this element \inlinemetanote{points at $z(a_{11})$}. The first thing we do is apply $z^{-1}$: it gets rid of itself, yeah. It's a good question.
 
@@ -1044,7 +1044,7 @@ Let $\sigma \in S_n$ have full cycle decomposition \eqref{eq:full-cycle-decomp} 
 \begin{proofWrapper}[Proof of \cref{prop:sign-from-cycles}]
 
 \begin{speech}[00:41:00 - 00:42:08]
-So, the proof of this is: $\operatorname{Sign}$ is multiplicative, so I only need to know the sign --- I only need to calculate the sign for each cycle. The sign for each cycle is this --- the cycle has length $k_1$, so its sign, we said before, is $k_1$ minus $1$, the sign of this \inlinemetanote{writes above the first cycle: $-1^{(k_1 - 1)}$}. Do you remember that? The sign of a cycle of length $k$ minus $1$ --- a cycle of length $k_1$ --- is $k_1$ minus $1$. Okay?
+So, the proof of this is: $\operatorname{Sign}$ is multiplicative, so I only need to calculate the sign for each cycle. The sign for each cycle is this --- the cycle has length $k_1$, so its sign, we said before, is $k_1$ minus $1$, the sign of this \inlinemetanote{writes above the first cycle: $-1^{(k_1 - 1)}$}. Do you remember that? The sign of a cycle of length $k$ minus $1$ --- a cycle of length $k_1$ --- is $k_1$ minus $1$. Okay?
 
 And then it's multiplicative, so I just have to take $k_1 - 1$, $k_2 - 1$... This is the exponent: the sign is $(-1)^{k_1 - 1}$, and this sign is $(-1)^{k_2 - 1}$, and this is $(-1)^{k_r - 1}$ \inlinemetanote{writes above the second and the last cycle: $-1^{(k_2 - 1)}$ and $(-1)^{k_r - 1}$}.
 

@@ -318,12 +318,33 @@ explain little of what is in the book.
 - **Done** in `prompt-engineering` `179c9e2`: D1–D6, D8, and the lint half of D10. Stage 2's punctuation table was
   synced too. Stage 1 now restricts dashes to asides and deliberate reformulations, as D6 asked; repairs and
   restarts get `...`. The change was reviewed twice by Gemini 4 Hydrogen.
+- **Done** in the book, in the commit that adds this line: D11 and the book half of D10, in all 17 chapters.
+  - Every speech sentence with a dash was read and judged by the rules now in Stage 3 §5:
+    - a dash pair stays around a real aside;
+    - a restart that repeats its words, and a near-synonym repair, go with their dash (28 fragments, such as `Let
+      $I$ ---`, `we should check ---` and `select ---`);
+    - a broken-off sentence keeps its words and ends with `...`;
+    - short appositions and second pairs became commas or parentheses;
+    - `---,` lost its comma, and `---:` and `---;` were rewritten.
+  - Slips the lecturer marks himself ("sorry") stayed. No word was added, and every `\inlinemetanote`, `\cref`,
+    `(Recall: ...)` and `(i.e., ...)` is still there (script check against the previous commit).
+  - Speech dashes went 1,427 → 1,185, `---,`/`---:`/`---;` 116 → 0, unspaced 7 → 0, and sentences with 3+ dashes
+    30 → 0. Sentences with an odd count went 551 → 435 (the tool's own sentence split, hence 551 rather than T1's
+    549).
+  - Most of what remains odd is an aside or comment at the end of a sentence, which the rules allow. Week 3 Tuesday's
+    73 were nearly all of that kind and needed only 7 edits.
+  - Semicolons were not part of D11; three in Week 4 Tuesday became periods while splitting a four-dash sentence.
+  - Gemini 4 Hydrogen XHIGH reviewed the whole applied diff before the commit (212 hunks in all 17 chapters, review
+    only, last hunk header quoted as proof). Its three findings held and were fixed: a comma after a closing
+    parenthesis (Week 6 Tue L393), an `if` dropped with a restart (Week 8 Tue L176), and `we usually` dropped
+    although it makes a point (Week 9 Tue L1540). It did not see those three fixes or this status block.
 - **Open:**
   - D7 (`So,`, a separate style decision).
   - D9: Week 10 Tuesday's Stage 3 failed on the quota on 2026-11-20 and has to be rerun anyway; that rerun is the
-    first one with the new prompt.
-  - The mechanical half of D10, for the book and the app.
-  - D11, the book cleanup.
+    first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first.
+  - The app half of D10.
+  - Week 5 Tuesday's double opening (L458) has no dash, and a review had restored the clause, so it was left as it
+    is.
 
 Prompts (`prompt-engineering`), most leverage first:
 
