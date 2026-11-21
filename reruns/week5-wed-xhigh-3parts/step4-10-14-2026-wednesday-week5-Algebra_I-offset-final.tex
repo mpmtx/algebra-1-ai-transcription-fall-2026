@@ -1,0 +1,1178 @@
+% ==========================================
+% Step 4/4 - Final refinement (refinement step 3)
+% Output: step4-10-14-2026-wednesday-week5-Algebra_I-offset-final.tex
+% Input: step3-10-14-2026-wednesday-week5-Algebra_I-offset-speech_refined.tex
+% Model: gemini-4-hydrogen
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 300000
+% ThinkingBudget: 4096
+% ThinkingLevel: HIGH
+% Processed on: 2026-11-21 22:44:32
+% Thought summaries: step4-10-14-2026-wednesday-week5-Algebra_I-offset-final-thoughts.md
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 64'511 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 64'511 (neu verrechneter Input)
+%   - Output Tokens       : 29'515 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 22'273 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 3/4 - Speech refinement (refinement step 2)
+% Output: step3-10-14-2026-wednesday-week5-Algebra_I-offset-speech_refined.tex
+% Input: step2-10-14-2026-wednesday-week5-Algebra_I-offset-merged.tex
+% Model: gemini-4-hydrogen
+% Temperature: 0.35
+% TopP: 0.9
+% TopK: 10
+% MaxOutputTokens: 300000
+% ThinkingBudget: 4096
+% ThinkingLevel: HIGH
+% Processed on: 2026-11-21 22:34:40
+% Thought summaries: step3-10-14-2026-wednesday-week5-Algebra_I-offset-speech_refined-thoughts.md
+% Non-speech guard: all 42 segments outside speech match the input
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 173'526 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 173'526 (neu verrechneter Input)
+%   - Output Tokens       : 29'573 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 7'968 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 2/4 - Merge & timestamp alignment (refinement step 1)
+% Output: step2-10-14-2026-wednesday-week5-Algebra_I-offset-merged.tex
+% Input: step1-10-14-2026-wednesday-week5-Algebra_I-all-offset.tex
+% Model: gemini-4-hydrogen
+% Temperature: 0.4
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 300000
+% ThinkingBudget: 32765
+% ThinkingLevel: HIGH
+% Processed on: 2026-11-21 22:24:50
+% Thought summaries: step2-10-14-2026-wednesday-week5-Algebra_I-offset-merged-thoughts.md
+% ------------------------------------------
+% Token Usage (1 Request(s)):
+%   - Total Prompt Tokens : 139'216 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 139'216 (neu verrechneter Input)
+%   - Output Tokens       : 30'226 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 10'653 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+% ==========================================
+% Step 1/4 - Transcription, 3 part(s) combined
+% Output: step1-10-14-2026-wednesday-week5-Algebra_I-all-offset.tex
+% Source video: 10-14-2026-wednesday-week5-Algebra_I-speed-1-compressed.mp4
+% Model: gemini-4-hydrogen
+% Temperature: 0.36
+% TopP: 0.95
+% TopK: 40
+% MaxOutputTokens: 300000
+% ThinkingBudget: 32765
+% ThinkingLevel: XHIGH
+% Processed on: 2026-11-21 22:01:33
+% ------------------------------------------
+% Parts:
+%   - Part 1: 10-14-2026-wednesday-week5-Algebra_I-part1.mp4 | start 00:00:00 | model gemini-4-hydrogen | processed 2026-11-18 10:32:21 | prompt 961'619 | output 12'694 | thinking 58'045 | aus Cache
+%   - Part 2: 10-14-2026-wednesday-week5-Algebra_I-part2.mp4 | start 00:12:41 | model gemini-4-hydrogen | processed 2026-11-21 21:46:03 | prompt 988'997 | output 13'030 | thinking 54'534
+%   - Part 3: 10-14-2026-wednesday-week5-Algebra_I-part3.mp4 | start 00:25:22 | model gemini-4-hydrogen | processed 2026-11-21 22:01:33 | prompt 1'015'561 | output 12'687 | thinking 66'737
+% ------------------------------------------
+% Token Usage of this run (4 Request(s)):
+%   - Total Prompt Tokens : 2'004'558 (gesamter Prompt, inkl. Cache)
+%   - Cached Context      : 0 (aus Google Context-Cache, rabattiert)
+%   - Fresh Input Tokens  : 2'004'558 (neu verrechneter Input)
+%   - Output Tokens       : 25'717 (generiertes LaTeX, ohne Thinking)
+%   - Thinking Tokens     : 121'271 (Denk-Tokens, als Output verrechnet)
+% ==========================================
+
+% Primary Language: English
+% End of the video: 00:42:03
+
+\lecturechapter[5]{Wednesday}{14 Oct}{14 October 2026}{The Chinese Remainder Theorem, Polynomials, and Principal Ideal Domains}
+
+\begin{overview}[Course Content Overview]
+The lecture completes the discussion of the Chinese Remainder Theorem (CRT) and then turns to polynomial rings over a field and principal ideal domains:
+\begin{itemize}
+    \item \textbf{General CRT:} Construction of the canonical ring homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$, a non-coprime counterexample in $\mathbb{Z}$ with $(4)$ and $(6)$, and the proof of CRT under the coprimality hypothesis $I + J = (1)$.
+    \item \textbf{CRT in $\mathbb{Z}$ and Euler's Totient Function:} Iterative prime-power decomposition of $\faktor{\mathbb{Z}}{(n)}$, decomposition of its group of units, and the product formula for Euler's totient function $\phi^{\text{tot}}(n)$ (illustrated with the prime $691$).
+    \item \textbf{Polynomials over a Field and PIDs:} Definition of degree (including $\deg(0)$ undefined), polynomial long division in $K[x]$ and its uniqueness proof, the theorem that every ideal in $K[x]$ is principal, and the definition, examples, and non-examples ($\mathbb{Z}[x]$ and $\mathbb{C}[x, y]$) of principal ideal domains (PIDs).
+\end{itemize}
+\end{overview}
+
+\section{The Chinese Remainder Theorem}
+
+\subsection{General Setup and the Canonical Homomorphism}
+
+\begin{speech}[00:00:00 - 00:01:00]
+Okay, so we start, and yesterday I was in the middle of this discussion of the Chinese Remainder Theorem \inlinemetanote{writes \qt{Chinese RT:} on the upper left board}. And I will complete it now, but we start from a slightly different perspective.
+
+Let's just start with $I$ and $J$ \inlinemetanote{writes: $I, J$} --- isn't that loud? Doesn't it seem loud? No? I think that's somehow louder than usual.
+
+So, we start with $I$ and $J$ inside a ring $R$, so these are ideals \inlinemetanote{writes \qt{$\subset R$} and \qt{ideals} below}. And I had discussed... Ah, thanks. Thanks \inlinemetanote{turns briefly toward someone at the front left}.
+
+I had discussed last time that there's a notion of adding ideals and multiplying ideals, so these are both ideals of $R$ \inlinemetanote{writes \qt{$I + J$} and \qt{$IJ$}, bracketed as \qt{ideals $\subset R$}}.
+\end{speech}
+
+\begin{content}[Ideals Setup]
+Let $R$ be a ring, and let $I, J \subset R$ be ideals. As recalled from the previous lecture, both the sum ideal $I + J$ and the product ideal $IJ$ are ideals of $R$:
+\[
+I + J \subset R \quad \text{and} \quad IJ \subset R \text{ are ideals.}
+\]
+\end{content}
+
+\begin{speech}[00:01:01 - 00:02:29]
+And assuming just this thing --- we take $I$ and $J$ are ideals of $R$ --- we can construct this quotient $R \bmod IJ$, and we can construct $R \bmod I$ cross $R \bmod J$, and moreover we can construct this homomorphism $\phi$ \inlinemetanote{writes: $\phi \colon \faktor{R}{IJ} \longrightarrow \faktor{R}{I} \times \faktor{R}{J}$}. And the rule for $\phi$ is $\phi$ of $\bar{z}$ is equal to $\bar{z}$ comma $\bar{z}$ \inlinemetanote{writes: $\phi(\bar{z}) = (\bar{z}, \bar{z})$}.
+
+So, it's kind of an almost silly tautological formula, and the interesting thing is you have to remember that this $\bar{z}$ \inlinemetanote{points at $\bar{z}$ on the left} --- the bar here is $\bmod\ IJ$, and the bar here is $\bmod\ I$, and the bar here means $\bmod\ J$ \inlinemetanote{writes \qt{$\text{mod}\ IJ$}, \qt{$\text{mod}\ I$}, and \qt{$\text{mod}\ J$} with upward arrows under each $\bar{z}$}. So, the three bars have three different meanings, which you have to be able to read from the place they appear in this formula.
+
+And this is always a homomorphism: $\phi$ is a homomorphism in general \inlinemetanote{writes: $\phi$ is a hom.}. A ring homomorphism in general. So, this part of the theory just holds in arbitrary generality, just because the only thing we had to check here was that this definition works, and it works because --- this is well defined, I mentioned this, but I say it explicitly --- it is well defined because $IJ$ is inside $I$, and $IJ$ is inside $J$ \inlinemetanote{writes \qt{Well defined}, \qt{$IJ \subset I$}, and \qt{$IJ \subset J$}}. That makes this association well defined. All right?
+\end{speech}
+
+\begin{content}[The Canonical Ring Homomorphism \texorpdfstring{$\phi$}{phi}]
+For any two ideals $I, J \subset R$, we construct the map between quotient rings:
+\begin{equation}\label{eq:crt-canonical-map}
+\phi \colon \faktor{R}{IJ} \longrightarrow \faktor{R}{I} \times \faktor{R}{J}
+\end{equation}
+defined by the formula:
+\begin{equation}\label{eq:crt-phi-rule}
+\phi(\underbrace{\bar{z}}_{\text{mod}\; IJ}) = \bigl(\underbrace{\bar{z}}_{\text{mod}\; I},\; \underbrace{\bar{z}}_{\text{mod}\; J}\bigr),
+\end{equation}
+where each residue class bar denotes reduction modulo the respective ideal indicated beneath it: $z + IJ \in \faktor{R}{IJ}$ on the left, and $(z + I, z + J) \in \faktor{R}{I} \times \faktor{R}{J}$ on the right.
+
+In full generality (with no additional hypotheses on $I$ and $J$), $\phi$ is well defined and is a ring homomorphism, because:
+\[
+IJ \subset I \quad \text{and} \quad IJ \subset J.
+\]
+
+\begin{steps}[Verifying Well-Definedness and the Homomorphism Property]
+\textbf{Well-definedness:} Suppose $\bar{z} = \bar{z}'$ in $\faktor{R}{IJ}$ for representatives $z, z' \in R$. Then $z - z' \in IJ$. Since $IJ \subset I$ and $IJ \subset J$, we have both $z - z' \in I$ and $z - z' \in J$. Therefore, $z + I = z' + I$ in $\faktor{R}{I}$ and $z + J = z' + J$ in $\faktor{R}{J}$, so $(\bar{z}, \bar{z}) = (\bar{z}', \bar{z}')$ in $\faktor{R}{I} \times \faktor{R}{J}$.
+
+\textbf{Ring homomorphism:} By definition of the ring operations in quotient rings and direct products:
+\begin{align*}
+\phi(\bar{z}_1 + \bar{z}_2) &= \phi(\overline{z_1 + z_2}) = \bigl(\overline{z_1 + z_2},\; \overline{z_1 + z_2}\bigr) = (\bar{z}_1, \bar{z}_1) + (\bar{z}_2, \bar{z}_2) = \phi(\bar{z}_1) + \phi(\bar{z}_2), \\
+\phi(\bar{z}_1 \cdot \bar{z}_2) &= \phi(\overline{z_1 z_2}) = \bigl(\overline{z_1 z_2},\; \overline{z_1 z_2}\bigr) = (\bar{z}_1, \bar{z}_1) \cdot (\bar{z}_2, \bar{z}_2) = \phi(\bar{z}_1) \cdot \phi(\bar{z}_2), \\
+\phi(\bar{1}) &= (\bar{1}, \bar{1}).
+\end{align*}
+Thus, $\phi$ is always a ring homomorphism.
+\end{steps}
+\end{content}
+
+\begin{insight}[Three Meanings of \texorpdfstring{$\bar{z}$}{z-bar}]
+Although the formula $\phi(\bar{z}) = (\bar{z}, \bar{z})$ appears tautological at first glance, the three bars carry three distinct meanings determined solely by their position: the input $\bar{z}$ is the residue class $z + IJ$ in $\faktor{R}{IJ}$, whereas the two output components are the residue classes $z + I \in \faktor{R}{I}$ and $z + J \in \faktor{R}{J}$.
+\end{insight}
+
+\subsection{Counterexample Without Coprimality}
+
+\begin{speech}[00:02:30 - 00:03:41]
+And so, let's do an example before we go to the Chinese Remainder Theorem. Example is, let's say we have the ideal $(4)$, that's equal to $I$, and the ideal $(6)$, that's equal to $J$, and these are ideals inside, of course, our favorite ring, the integers \inlinemetanote{writes \qt{$(4) = I \subset \mathbb{Z}$} and \qt{$(6) = J$}}. Well, maybe it's your favorite ring, I don't know. It's not my favorite ring, but...
+
+Okay. So, then what we claim here is that we have $\mathbb{Z}$... and now this is the product ideal, and we discussed last time that the product ideal here is just $(24)$, it's the product. That's equal to the product ideal $4$ times $6$ \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{(24)}$} with \qt{$(4)(6)$} below $(24)$}. Okay? You agree?
+
+And this thing maps by that map on the board \inlinemetanote{points at \eqref{eq:crt-canonical-map}} to $\mathbb{Z} \bmod (4)$ and $\mathbb{Z} \bmod (6)$ \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{(24)} \longrightarrow \faktor{\mathbb{Z}}{(4)} \times \faktor{\mathbb{Z}}{(6)}$} labeled with $\phi$}. Sorry.
+
+Sometimes we write this $(4)$ as $4\mathbb{Z}$, it just means the same thing, it depends on your mood \inlinemetanote{writes: $(4) = 4\mathbb{Z}$}. Here I write it in this... there's different ways of writing an ideal, alright? Today we're writing it like that. Okay? So, this is the map.
+\end{speech}
+
+\begin{content}[Non-Coprime Ideals in \texorpdfstring{$\mathbb{Z}$}{Z}]
+\begin{example}[Ideals \texorpdfstring{$(4)$ and $(6)$}{(4) and (6)} in \texorpdfstring{$\mathbb{Z}$}{Z}]\label[example]{ex:z-4-6}
+Let $R = \mathbb{Z}$ and consider the ideals:
+\[
+(4) = I \subset \mathbb{Z} \quad \text{and} \quad (6) = J \subset \mathbb{Z}.
+\]
+Here the product ideal is $IJ = (4)(6) = (24)$. The canonical ring homomorphism \eqref{eq:crt-canonical-map} therefore takes the form:
+\begin{equation}\label{eq:phi-z24}
+\phi \colon \faktor{\mathbb{Z}}{(24)} \longrightarrow \faktor{\mathbb{Z}}{(4)} \times \faktor{\mathbb{Z}}{(6)}.
+\end{equation}
+\end{example}
+
+\begin{notation}[Principal Ideal Shorthand]\label[notation]{not:4z-ideal}
+The notation $(4)$ and $4\mathbb{Z}$ denote the exact same principal ideal in $\mathbb{Z}$, i.e., $(4) = 4\mathbb{Z}$.
+\end{notation}
+\end{content}
+
+\begin{speech}[00:03:41 - 00:04:33]
+So, first of all, is $\phi$ surjective \inlinemetanote{writes: Is $\phi$ surjective}? And I'm just going to answer this for you: the answer is going to be no \inlinemetanote{writes: NO}.
+
+And why? For example, I could consider the point here that's given... so, consider $(\bar{0}, \bar{1})$ \inlinemetanote{writes: Consider $(\bar{0}, \bar{1})$}. All right, that's the point $\bar{0}$ and $\bar{1}$. Could that come from anything? Well, it would have to come from something divisible by $4$, so it'd have to be even. But then it's $1 \bmod 6$, so it'd have to be odd. It's very hard for it to be both even and odd. It's not possible, in fact. So, this is not in the image \inlinemetanote{writes: $\notin \operatorname{Im}(\phi)$}.
+
+Are you happy with that argument? So, it's not surjective.
+\end{speech}
+
+\begin{content}[Failure of Surjectivity]
+In \cref{ex:z-4-6}, the map $\phi$ in \eqref{eq:phi-z24} is \emph{not} surjective. Indeed, consider the element:
+\[
+(\bar{0}, \bar{1}) \in \faktor{\mathbb{Z}}{(4)} \times \faktor{\mathbb{Z}}{(6)}.
+\]
+If there existed $z \in \mathbb{Z}$ with $\phi(\bar{z}) = (\bar{0}, \bar{1})$, then $z$ would have to satisfy simultaneously:
+\begin{align*}
+z &\equiv 0 \bmod 4 && \text{(so $4 \mid z$, hence $z$ is even),} \\
+z &\equiv 1 \bmod 6 && \text{(so $z = 6k + 1$ for some $k \in \mathbb{Z}$, hence $z$ is odd).}
+\end{align*}
+Since no integer can be both even and odd, no such $z$ exists, and therefore:
+\[
+(\bar{0}, \bar{1}) \notin \operatorname{Im}(\phi).
+\]
+\end{content}
+
+\begin{speech}[00:04:33 - 00:04:49]
+Is it injective \inlinemetanote{writes: Is $\phi$ inj?}? And the answer is going to be also no, but can you tell me an element here \inlinemetanote{points at $\faktor{\mathbb{Z}}{(24)}$} that goes to zero? An element that's not zero that goes to zero? Yeah.
+\end{speech}
+
+\begin{student}[Student Answer]
+$0$ and $12$.
+\end{student}
+
+\begin{speech}[00:04:51 - 00:05:20]
+What? Zero, zero... so, $12$ --- if you take here $\phi$ of $\overline{12}$, this is equal to $(\bar{0}, \bar{0})$ \inlinemetanote{writes: $\phi(\overline{12}) = (\bar{0}, \bar{0})$}.
+
+So, that shows that $\overline{12}$ goes to zero. And it's not zero, because $24$ \inlinemetanote{points at $\faktor{\mathbb{Z}}{(24)}$}. So, this is neither injective nor surjective. That's the typical thing: if you pick some ring with these ideals, you can construct this map --- it looks pretty good, it's a homomorphism --- but in general it's neither injective nor is it surjective.
+\end{speech}
+
+\begin{content}[Failure of Injectivity and Summary]
+The map $\phi$ in \eqref{eq:phi-z24} is also \emph{not} injective. Since both $4 \mid 12$ and $6 \mid 12$, the residue class $\overline{12} \in \faktor{\mathbb{Z}}{(24)}$ maps to zero:
+\[
+\phi(\overline{12}) = (\bar{0}, \bar{0}),
+\]
+even though $24 \nmid 12$, so $\overline{12} \neq \bar{0}$ in $\faktor{\mathbb{Z}}{(24)}$. Thus, $\ker(\phi) \neq \{\bar{0}\}$.
+
+In summary, without any additional assumption on the ideals $I$ and $J$, the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ is in general neither injective nor surjective.
+\end{content}
+
+\subsection{Statement of the Chinese Remainder Theorem}
+
+\begin{speech}[00:05:20 - 00:05:59]
+And so what the Chinese Remainder Theorem says... sorry \inlinemetanote{slides the upper and lower chalkboards to adjust a shadow}. Maybe I don't want that shadow here.
+
+Okay, the Chinese Remainder Theorem says: if we have the additional assumption that $I$ and $J$ are what we call \newterm{coprime}, that their sum is equal to the unit ideal \inlinemetanote{writes: CRT: If $I + J = (1)$,}. If that holds, then $\phi$ is an isomorphism \inlinemetanote{writes: then $\phi$ is an isom.}.
+
+So, in particular, it means it's both injective and surjective, and we have to prove both --- we get neither of them for free, because, you know, they failed here \inlinemetanote{points at the upper board}.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Chinese Remainder Theorem]\label[theorem]{thm:crt}
+Let $R$ be a ring and let $I, J \subset R$ be ideals. If $I$ and $J$ are \newterm{coprime}, meaning
+\begin{equation}\label{eq:crt-coprime}
+I + J = (1),
+\end{equation}
+then the canonical homomorphism $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$ defined in \eqref{eq:crt-phi-rule} is an isomorphism.
+\end{theorem}
+
+\begin{steps}[Meaning of the Coprimality Hypothesis]
+The condition $I + J = (1)$ means that the sum ideal $I + J = \{i + j \mid i \in I,\, j \in J\}$ equals the unit ideal $(1) = R$. Because $(4) + (6) = (2) \neq (1)$ in $\mathbb{Z}$, the ideals in \cref{ex:z-4-6} fail this hypothesis, explaining why $\phi$ failed to be both injective and surjective there. Consequently, the proof must establish both injectivity and surjectivity using \eqref{eq:crt-coprime}.
+\end{steps}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:05:59
+% topic: Statement of the Chinese Remainder Theorem
+% board_state: eq:crt-canonical-map, eq:crt-phi-rule, ex:z-4-6, thm:crt, eq:crt-coprime
+% next_goal: Prove that phi is injective and surjective under I + J = (1).
+% open_loops: none
+\end{hidden}
+
+\begin{proofWrapper}[Proof of \cref{thm:crt}]
+
+\subsubsection{Injectivity of \texorpdfstring{$\phi$}{phi}}
+
+\begin{speech}[00:05:59 - 00:07:08]
+The proof \inlinemetanote{writes: Proof}: let us start with $\phi$ is injective \inlinemetanote{writes: $\phi$ is injective}. So, we have to prove that. Suppose we have $\bar{z}$ in $R \bmod IJ$ \inlinemetanote{writes: Suppose $\bar{z} \in \faktor{R}{IJ}$}, right, such that $\phi$ of $\bar{z}, \bar{z}$ is $(\bar{0}, \bar{0})$ \inlinemetanote{writes \qt{such that $\phi(\bar{z}, \bar{z}) = (\bar{0}, \bar{0})$}, a slip for $\phi(\bar{z}) = (\bar{0}, \bar{0})$}. So, we just have to study the kernel for injectivity, okay?
+
+Then what do we know? That means that $\bar{z}$ is equal to $0 \bmod I$, and $z$ is equal to $0 \bmod J$ \inlinemetanote{writes \qt{Since $\bar{z} = 0 \bmod I$} and \qt{$z = 0 \bmod J$}}. That's what those two zeros mean, okay? You agree?
+
+And so this means that $z$ is in $I$, and $z$ is in $J$ \inlinemetanote{writes \qt{$z \in I$} and \qt{$z \in J$} inside a brace}. That's how you're zero mod $I$ and $J$.
+\end{speech}
+
+\begin{content}[Kernel Characterization]
+To show that $\phi$ is injective, we prove that $\ker(\phi) = \{\bar{0}\}$. Suppose $\bar{z} \in \faktor{R}{IJ}$ satisfies:
+\[
+\phi(\bar{z}) = (\bar{0}, \bar{0}) \in \faktor{R}{I} \times \faktor{R}{J}.
+\]
+By definition \eqref{eq:crt-phi-rule} of $\phi$, this means that the residue class of $z$ vanishes in both components:
+\[
+\bar{z} = 0 \bmod I \quad \text{and} \quad z = 0 \bmod J,
+\]
+which implies directly that the representative $z \in R$ lies in both ideals:
+\begin{equation}\label{eq:z-in-i-and-j}
+\begin{cases}
+z \in I, \\
+z \in J.
+\end{cases}
+\end{equation}
+\end{content}
+
+\begin{aiNote}[Board and Speech Slip: \texorpdfstring{$\phi(\bar{z}, \bar{z})$}{phi(z-bar, z-bar)}]
+% [PERSISTENT]
+On the blackboard and in speech, the lecturer briefly says and writes $\phi(\bar{z}, \bar{z}) = (\bar{0}, \bar{0})$ by a slip of the hand/tongue. Since the domain of $\phi$ is $\faktor{R}{IJ}$, the intended expression is the single-argument evaluation $\phi(\bar{z}) = (\bar{0}, \bar{0})$, which is used above. Likewise, the board notation $\bar{z} = 0 \bmod I$ and $z = 0 \bmod J$ denotes $z + I = \bar{0}$ in $\faktor{R}{I}$ and $z + J = \bar{0}$ in $\faktor{R}{J}$.
+\end{aiNote}
+
+\begin{speech}[00:07:08 - 00:09:16]
+Okay, but we need to show that $z$ is in $IJ$. We have to somehow use the fact that $z$ is in $I$ and $z$ is in $J$ to show it's in $IJ$, which is a hard thing to do, in general not true, but we have to use this equation \inlinemetanote{points at $I + J = (1)$}.
+
+But we know --- we haven't used it yet --- that there exists some $i$ in $I$, and there exists a $j$ in $J$, such that $i + j$ is equal to $1$ \inlinemetanote{writes \qt{But we know $\exists\, i \in I, \exists\, j \in J$} and \qt{$i + j = 1$}}. That's the kind of magic of this assumption. That's exactly what this assumption says: there's a little $i$ in $I$ and a $j$ in $J$ such that they sum to $1$.
+
+And the whole idea of this injectivity is just one idea. Up to here, there have been no ideas. You just multiply this by $z$. So, the idea is multiply this by $z$, and $iz + jz$ --- it's a very simple idea \inlinemetanote{writes: $iz + jz = z$}. There. So, that's undeniable: I multiply by $z$, I get this.
+
+And then I look at this equation. This is $z$ \inlinemetanote{points at $z$ on the right}. This $i$ is in $I$ \inlinemetanote{draws a branch from $i$ down to $I$}, but $z$, we know, is already in $J$ \inlinemetanote{draws a branch from $z$ down to $J$ and writes $[IJ]$ below}. This $j$ is in $J$, but $z$, we know, is in $I$ \inlinemetanote{draws branches from $j$ and $z$ down to $J$ and $I$}. So, both of these things on the right (i.e., on the left-hand side) are in $IJ$, in different ways. We use the fact that $z$ is both in $I$ and $J$ in this analysis.
+
+And if I look at it, that means this term is in $IJ$, that term is in $IJ$, and since $IJ$ is an ideal, the conclusion is $z$ is in $IJ$ \inlinemetanote{writes: $z \in IJ$!}. That's the conclusion, which is the one we wanted, because if $z$ is in $IJ$, then it was zero up here \inlinemetanote{points at $\bar{z} \in \faktor{R}{IJ}$}. And this implies $\bar{z}$ is equal to $0$ in $R \bmod IJ$ \inlinemetanote{writes: So $\bar{z} = 0$ in $\faktor{R}{IJ}$}. So, that shows it's injective.
+
+As I said, this whole proof only has one idea: here you're just following your nose, writing the data, and the only idea is you take this \inlinemetanote{points at $i + j = 1$}, multiply it by $z$, and that's it.
+\end{speech}
+
+\begin{content}[Showing \texorpdfstring{$z \in IJ$}{z in IJ}]
+From the coprimality hypothesis \eqref{eq:crt-coprime}, $I + J = (1)$, there exist elements $i \in I$ and $j \in J$ such that:
+\begin{equation}\label{eq:bezout-ij}
+i + j = 1.
+\end{equation}
+Multiplying \eqref{eq:bezout-ij} on the right by $z$ yields:
+\[
+iz + jz = z.
+\]
+Using \eqref{eq:z-in-i-and-j} in two different ways for the two terms on the left-hand side, we see that each term belongs to the product ideal $IJ$:
+\[
+\underbrace{\underbrace{i}_{\in I} \underbrace{z}_{\in J}}_{\in IJ} + \underbrace{\underbrace{j}_{\in J} \underbrace{z}_{\in I}}_{\in IJ} = z.
+\]
+Since $R$ is commutative ($jz = zj \in IJ$) and $IJ$ is an ideal, the sum $iz + jz$ lies in $IJ$, giving:
+\[
+z \in IJ.
+\]
+Consequently, $\bar{z} = 0$ in $\faktor{R}{IJ}$. Thus, $\ker(\phi) = \{\bar{0}\}$, proving that $\phi$ is injective.
+
+\begin{steps}[Why \texorpdfstring{$I \cap J = IJ$}{I intersect J = IJ} Under Coprimality]
+In general, for two ideals $I$ and $J$, one only has the inclusion $IJ \subset I \cap J$ (for example, $(4)(6) = (24) \subsetneq (12) = (4) \cap (6)$ in \cref{ex:z-4-6}). The argument above actually proves the reverse inclusion $I \cap J \subset IJ$ whenever $I + J = (1)$: taking $z \in I \cap J$ and multiplying $i + j = 1$ by $z$ writes $z = iz + jz \in IJ$.
+\end{steps}
+\end{content}
+
+\begin{aiNote}[Commutativity Assumption in \texorpdfstring{$jz \in IJ$}{jz in IJ}]
+% [PERSISTENT]
+In the step showing $j \in J$ and $z \in I$ implies $jz \in IJ$, the argument implicitly uses commutativity ($jz = zj \in IJ$, or $IJ = JI$). Throughout this lecture, rings are implicitly assumed to be commutative (with $1$).
+\end{aiNote}
+
+\subsubsection{Surjectivity of \texorpdfstring{$\phi$}{phi}}
+
+\begin{speech}[00:09:25 - 00:10:38]
+Okay, but as I said, we don't get anything for free: now we have to prove surjectivity, which looks a little more complicated \inlinemetanote{wipes the lower chalkboard clean}.
+
+So, now we have to prove that this map is surjective \inlinemetanote{writes: $\phi$ is surjective}. Surjective means we choose any $\bar{x}$ in $R \bmod I$ and $\bar{y}$ in $R \bmod J$ \inlinemetanote{writes: Choose any $\bar{x} \in \faktor{R}{I}$, $\bar{y} \in \faktor{R}{J}$}. Right? Then we have to construct a $\bar{z}$ in $R \bmod IJ$ \inlinemetanote{writes: We have to construct a $\bar{z} \in \faktor{R}{IJ}$} such that $z$ is congruent to $x \bmod I$, and $z$ is congruent to $y \bmod J$ \inlinemetanote{writes \qt{Such that $z \equiv x \bmod I$} and \qt{$z \equiv y \bmod J$}}.
+
+If I do that, that's surjectivity. That's the Chinese Remainder Problem that we started at the beginning. So, you pick where you want, and you have to find the $z$ that satisfies that.
+\end{speech}
+
+\begin{content}[Target and Congruence Conditions]
+To prove that $\phi$ is surjective, choose any target pair:
+\[
+\bar{x} \in \faktor{R}{I}, \qquad \bar{y} \in \faktor{R}{J},
+\]
+with representatives $x, y \in R$. We must construct an element $\bar{z} \in \faktor{R}{IJ}$ such that $\phi(\bar{z}) = (\bar{x}, \bar{y})$, which means finding $z \in R$ satisfying the simultaneous congruences:
+\begin{equation}\label{eq:crt-target-congruences}
+z \equiv x \bmod I \quad \text{and} \quad z \equiv y \bmod J.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:10:38 - 00:12:02]
+Okay, so how are we going to do that? Well, what I know is $i + j$ is equal to $1$ \inlinemetanote{writes: $i + j = 1$}. That's all I know. So, now I need to do something, and what do you suggest I do here?
+
+Well, before, the only thing we had was $z$. That was our putative element of the kernel. And we took this equation and we multiplied by $z$. Now what we have in our hands are $x$ and $y$. So, we have this equation, and it's more or less reasonable we multiply this by $x$ and $y$. What else could we do?
+
+Let's multiply it by $x$ \inlinemetanote{writes: $ix + jx = x$}. That's an interesting equation. If I look at this term here, $jx$ \inlinemetanote{points at $jx$}, this is congruent to $x \bmod I$ \inlinemetanote{writes: $jx \equiv x \bmod I$}. Because this equation says that if I look $\bmod\ I$, this is congruent to $x$, okay? So, just this equation shows that $jx$ is congruent to $x \bmod I$. Is that clear?
+
+And $jx$ is congruent to $0 \bmod J$ \inlinemetanote{writes: $jx \equiv 0 \bmod J$}, because it has a $j$ in it. It's in the ideal. All right, so that was some progress.
+\end{speech}
+
+\begin{content}[Constructing the \texorpdfstring{$x$}{x}-Term]
+Using the same relation $i + j = 1$ from \eqref{eq:bezout-ij} (with $i \in I$, $j \in J$), multiply both sides by $x$:
+\begin{equation}\label{eq:bezout-x}
+ix + jx = x.
+\end{equation}
+Reducing modulo $I$ and modulo $J$, the element $jx$ satisfies:
+\begin{align}
+jx &\equiv x \bmod I, \label{eq:jx-mod-i} \\
+jx &\equiv 0 \bmod J. \label{eq:jx-mod-j}
+\end{align}
+
+\begin{steps}[Why \texorpdfstring{$jx$}{jx} Satisfies Both Congruences]
+\begin{itemize}
+    \item \textbf{Modulo $I$:} Rearranging \eqref{eq:bezout-x} gives $x - jx = ix \in I$ (since $i \in I$ and $I$ is an ideal), so $jx \equiv x \bmod I$.
+    \item \textbf{Modulo $J$:} Since $j \in J$ and $J$ is an ideal, we have $jx \in J$, so $jx \equiv 0 \bmod J$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{speech}[00:12:02 - 00:12:49]
+You can imagine now we should multiply it by $y$ \inlinemetanote{writes \qt{$i + j = 1$} and \qt{$iy + jy = y$}}. And now we want to look at this one \inlinemetanote{points at $iy$}.
+
+$iy$ is congruent to $0 \bmod I$ \inlinemetanote{writes: $iy \equiv 0 \bmod I$}, because it has an $i$ in it. But $iy$ is congruent to $y \bmod J$ \inlinemetanote{writes: $iy \equiv y \bmod J$}, because of this equation \inlinemetanote{points at $iy + jy = y$}. If I look at this $\bmod\ J$, that \inlinemetanote{points at $jy$} goes away and $iy$ is congruent...
+
+So, that's perfect. There's only one trick in this whole thing: we used it once for injectivity and we're going to use it twice for surjectivity.
+\end{speech}
+
+\begin{content}[Constructing the \texorpdfstring{$y$}{y}-Term]
+Symmetrically, multiplying $i + j = 1$ by $y$ yields:
+\begin{equation}\label{eq:bezout-y}
+iy + jy = y.
+\end{equation}
+Reducing modulo $I$ and modulo $J$, the element $iy$ satisfies:
+\begin{align}
+iy &\equiv 0 \bmod I, \label{eq:iy-mod-i} \\
+iy &\equiv y \bmod J. \label{eq:iy-mod-j}
+\end{align}
+
+\begin{steps}[Why \texorpdfstring{$iy$}{iy} Satisfies Both Congruences]
+\begin{itemize}
+    \item \textbf{Modulo $I$:} Since $i \in I$ and $I$ is an ideal, $iy \in I$, so $iy \equiv 0 \bmod I$.
+    \item \textbf{Modulo $J$:} Rearranging \eqref{eq:bezout-y} gives $y - iy = jy \in J$ (since $j \in J$ and $J$ is an ideal), so $iy \equiv y \bmod J$.
+\end{itemize}
+\end{steps}
+\end{content}
+
+\begin{speech}[00:12:49 - 00:12:57]
+So, what should $z$ be here? Then I claim that we're now prepared to construct $z$. What should I write for $z$ here \inlinemetanote{writes: $z =$}? Yeah.
+\end{speech}
+
+\begin{student}[Student Answer]
+$jx + iy$?
+\end{student}
+
+\begin{speech}[00:12:57 - 00:13:25]
+Yeah, did you get it right? $jx + iy$, yes \inlinemetanote{writes: $jx + iy$}. Because this thing, you just add them up now: it's $x \bmod I$, and $y \bmod J$. So, that's it. That's the end of surjectivity.
+
+Here for this one, $\phi$ of $\hat{z}$ (i.e., $\bar{z}$) is exactly equal to $(\bar{x}, \bar{y})$ \inlinemetanote{writes: $\phi(\bar{z}) = (\bar{x}, \bar{y})$}. And that's the end of the proof of the Chinese Remainder Theorem.
+\end{speech}
+
+\begin{content}[Completing the Preimage \texorpdfstring{$\bar{z}$}{z-bar}]
+We define the preimage representative $z \in R$ by:
+\begin{equation}\label{eq:crt-z-formula}
+z := jx + iy.
+\end{equation}
+Adding the congruences \eqref{eq:jx-mod-i}--\eqref{eq:jx-mod-j} and \eqref{eq:iy-mod-i}--\eqref{eq:iy-mod-j} componentwise yields:
+\begin{align*}
+z &= jx + iy \equiv x + 0 = x \bmod I, \\
+z &= jx + iy \equiv 0 + y = y \bmod J.
+\end{align*}
+Thus, $z$ satisfies the target congruences \eqref{eq:crt-target-congruences}, so $\bar{z} \in \faktor{R}{IJ}$ satisfies:
+\[
+\phi(\bar{z}) = (\bar{x}, \bar{y}).
+\]
+Hence, $\phi$ is surjective. Combined with injectivity, $\phi$ is a bijective ring homomorphism, and therefore an isomorphism, completing the proof of \cref{thm:crt}.
+
+\begin{steps}[Summary of the Surjectivity Construction]
+From the single relation $i + j = 1$ ($i \in I$, $j \in J$), we build two orthogonal idempotent-like multipliers modulo $I$ and $J$:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \setcounter{enumi}{0} \item $j \equiv 1 \bmod I$ and $j \equiv 0 \bmod J$, so $jx$ picks up $x$ modulo $I$ and vanishes modulo $J$.
+    \setcounter{enumi}{1} \item $i \equiv 0 \bmod I$ and $i \equiv 1 \bmod J$, so $iy$ vanishes modulo $I$ and picks up $y$ modulo $J$.
+\end{enumerate}
+Taking the linear combination $z := jx + iy$ superimposes the two desired remainders simultaneously without interference.
+\end{steps}
+\end{content}
+
+\end{proofWrapper}
+
+\begin{hidden}
+% timestamp: 00:13:25
+% topic: Completed proof of the Chinese Remainder Theorem
+% board_state: thm:crt, eq:bezout-ij, eq:crt-z-formula
+% next_goal: Specialize CRT to the ring of integers Z and iterated factorizations.
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:13:25 - 00:13:59]
+And in the proof... so, it's not a proof with no ideas, in some sense it's one idea used three times. But if you understand this proof, you'll never forget it for the rest of your life, I think, somehow, maybe, I don't know.
+
+Yeah, this is how it works, the Chinese Remainder Theorem. You just take that $i + j = 1$ and use it \inlinemetanote{wipes the upper chalkboard}.
+\end{speech}
+
+\begin{insight}[One Idea Used Three Times]
+As the lecturer emphasizes, the entire proof of the Chinese Remainder Theorem reduces to a single idea --- the coprimality identity $i + j = 1$ ($i \in I$, $j \in J$) --- applied three times:
+\begin{itemize}
+    \item \textbf{Once for injectivity:} multiplying $i + j = 1$ by $z \in I \cap J$ gives $z = iz + jz \in IJ$.
+    \item \textbf{Twice for surjectivity:} multiplying $i + j = 1$ by $x$ and by $y$ isolates $jx$ and $iy$, whose sum $z = jx + iy$ solves both congruences simultaneously.
+\end{itemize}
+\end{insight}
+
+\subsection{Application to the Integers}
+
+\begin{speech}[00:13:59 - 00:15:00]
+Okay, so let's go back to the integers, because you can use this now many, many times and you get some fun results about integers, which, you know, are very closely related to topics in school, but maybe usually not made explicit there.
+
+So, this says that if I just write this theorem --- the Chinese Remainder Theorem for $R$ equals the integers \inlinemetanote{writes: CRT for $R = \mathbb{Z}$:} --- then it says that if $a$ and $b$ are relatively prime \inlinemetanote{writes: $(a, b) = 1$} --- in the language of the Chinese Remainder Theorem, this says that the ideal of $a$ plus the ideal of $b$ is equal to $1$ \inlinemetanote{writes: $\iff (a) + (b) = 1$} --- then $\mathbb{Z} \bmod ab$ is isomorphic to $\mathbb{Z} \bmod a$ cross $\mathbb{Z} \bmod b$ \inlinemetanote{writes: Then $\faktor{\mathbb{Z}}{(ab)} \cong \faktor{\mathbb{Z}}{(a)} \times \faktor{\mathbb{Z}}{(b)}$}. Okay?
+\end{speech}
+
+\begin{content}
+\begin{corollary}[Chinese Remainder Theorem for \texorpdfstring{$\mathbb{Z}$}{Z}]\label[corollary]{cor:crt-z}
+For $R = \mathbb{Z}$ and integers $a, b \in \mathbb{Z}$, the condition that $a$ and $b$ are relatively prime is equivalent to the coprimality of the principal ideals $(a)$ and $(b)$:
+\begin{equation}\label{eq:crt-z-coprime}
+(a, b) = 1 \iff (a) + (b) = 1.
+\end{equation}
+If this holds, then:
+\begin{equation}\label{eq:crt-z-isom}
+\faktor{\mathbb{Z}}{(ab)} \cong \faktor{\mathbb{Z}}{(a)} \times \faktor{\mathbb{Z}}{(b)}.
+\end{equation}
+\end{corollary}
+
+\begin{steps}[Notation and Equivalence in \texorpdfstring{$\mathbb{Z}$}{Z}]
+Here $(a, b) = 1$ denotes $\gcd(a, b) = 1$, and $(a) + (b) = 1$ is shorthand on the board for $(a) + (b) = (1) = \mathbb{Z}$. By B\'ezout's identity, $\gcd(a, b) = 1$ holds if and only if there exist $u, v \in \mathbb{Z}$ such that $ua + vb = 1$, which means precisely that $1 \in (a) + (b)$, so $(a) + (b) = (1)$. Applying \cref{thm:crt} with $I = (a)$ and $J = (b)$ (so $IJ = (ab)$) immediately yields \eqref{eq:crt-z-isom}.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:15:00 - 00:16:01]
+So, you think, okay, but this is only two: what if I factor in more? But you can do them one at a time. For example, if I take some number like $3$ times $5$ times $7$ \inlinemetanote{writes: $3 \cdot 5 \cdot 7$}, that has $105$ \inlinemetanote{writes: $= 105$}. It has three factors.
+
+Should I do with $a$, $b$, and $c$? Well, I can always group it as $a$ is equal to $3$, $b$ is equal to $35$ \inlinemetanote{writes \qt{$a = 3$} and \qt{$b = 35$}}. And then the first step is that $\mathbb{Z} \bmod 105$ is isomorphic to $\mathbb{Z} \bmod 3$ cross $\mathbb{Z} \bmod 35$ \inlinemetanote{writes: $\faktor{\mathbb{Z}}{(105)} \cong \faktor{\mathbb{Z}}{(3)} \times \faktor{\mathbb{Z}}{(35)}$}, right?
+
+And then I can again now do it to the $35$ and split it further. So, this is further isomorphic --- I just apply it now to the $35$. We could have stated this at the very beginning, but there's no reason to \inlinemetanote{writes: $\cong \faktor{\mathbb{Z}}{(3)} \times \faktor{\mathbb{Z}}{(5)} \times \faktor{\mathbb{Z}}{(7)}$}. So, it says I can just write them all out, as long as I'm, at every time, splitting coprime factors out. Is that clear?
+\end{speech}
+
+\begin{content}
+\begin{example}[Iterated Splitting for \texorpdfstring{$105 = 3 \cdot 5 \cdot 7$}{105 = 3 * 5 * 7}]\label[example]{ex:crt-105}
+Consider the composite number with three factors:
+\[
+3 \cdot 5 \cdot 7 = 105.
+\]
+To decompose $\faktor{\mathbb{Z}}{(105)}$ using the two-factor result (\cref{cor:crt-z}) iteratively, first group the factors as $a = 3$ and $b = 35$. Since $(3, 35) = 1$, applying \eqref{eq:crt-z-isom} gives:
+\[
+\faktor{\mathbb{Z}}{(105)} \cong \faktor{\mathbb{Z}}{(3)} \times \faktor{\mathbb{Z}}{(35)}.
+\]
+Next, since $35 = 5 \cdot 7$ with $(5, 7) = 1$, applying \eqref{eq:crt-z-isom} again to the factor $\faktor{\mathbb{Z}}{(35)}$ splits it further:
+\[
+\faktor{\mathbb{Z}}{(105)} \cong \faktor{\mathbb{Z}}{(3)} \times \faktor{\mathbb{Z}}{(35)} \cong \faktor{\mathbb{Z}}{(3)} \times \faktor{\mathbb{Z}}{(5)} \times \faktor{\mathbb{Z}}{(7)}.
+\]
+\end{example}
+
+\begin{steps}[Iterative Decomposition Principle]
+It is not necessary to prove a separate $k$-factor version of the Chinese Remainder Theorem from scratch: any product of pairwise coprime factors can be split off one coprime pair at a time by repeatedly applying \cref{cor:crt-z}.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:16:01 - 00:16:40]
+And so then the fanciest way to write it is: suppose I have $m$ \inlinemetanote{writes: $m$} --- that's an integer --- let's call it $n$ \inlinemetanote{erases $m$ and writes: $n =$}. There's a prime factorization: $p_1$ to the $k_1$ \inlinemetanote{writes: $p_1^{k_1}$} --- where these are the distinct primes that come here --- $p_2^{k_2}$, ..., $p_r$ to the $k_r$ \inlinemetanote{writes \qt{$p_2^{k_2} \ p_r^{k_r}$}, leaving a gap for the omitted primes}.
+
+So, this is the prime factorization of $n$: it has some distinct primes to various powers. There's a unique way to write that; that's the unique factorization of primes. And then if I just apply this, I'm not allowed to separate the prime factors because if I separate $p^2$ and $p$, they're not relatively prime. But I can separate different prime factors.
+\end{speech}
+
+\begin{speech}[00:16:40 - 00:17:15]
+So, what this shows --- this Chinese Remainder Theorem shows --- is that this \inlinemetanote{points at $n = p_1^{k_1} p_2^{k_2} \ p_r^{k_r}$} is isomorphic to the product \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{(n)} \cong \faktor{\mathbb{Z}}{(p_1^{k_1})} \times \faktor{\mathbb{Z}}{(p_2^{k_2})} \times \dots \times \faktor{\mathbb{Z}}{(p_r^{k_r})}$}, leaving a blank space between the last two $\times$ signs}. I just separate out the primes. The primes all come apart.
+
+Okay? So, I don't know whether this was... I mean, whatever happened in school is usually not in this language.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Chinese Remainder Decomposition via Prime Factorization]\label[theorem]{thm:crt-prime-power}
+Let $n \in \mathbb{Z}$ have the unique prime factorization into distinct primes $p_1, \dots, p_r$ with exponents $k_1, \dots, k_r \ge 1$:
+\begin{equation}\label{eq:n-prime-fact}
+n = p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}.
+\end{equation}
+Then repeated application of \cref{cor:crt-z} decomposes $\faktor{\mathbb{Z}}{(n)}$ into a direct product over the prime-power factors:
+\begin{equation}\label{eq:crt-prime-power}
+\faktor{\mathbb{Z}}{(n)} \cong \faktor{\mathbb{Z}}{(p_1^{k_1})} \times \faktor{\mathbb{Z}}{(p_2^{k_2})} \times \dots \times \faktor{\mathbb{Z}}{(p_r^{k_r})}.
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Separating Distinct Primes vs.\ Same-Prime Powers]
+Powers of the same prime are never coprime: for instance, $(p^2, p) = p \neq 1$, so $\faktor{\mathbb{Z}}{(p^3)}$ cannot be split into $\faktor{\mathbb{Z}}{(p^2)} \times \faktor{\mathbb{Z}}{(p)}$. By contrast, because $p_1, \dots, p_r$ are distinct primes, $(p_i^{k_i}, p_j^{k_j}) = 1$ for all $i \neq j$, and more generally $\bigl(p_1^{k_1}, p_2^{k_2} \cdots p_r^{k_r}\bigr) = 1$, allowing each prime-power factor to be split off inductively by \eqref{eq:crt-z-isom}.
+\end{steps}
+\end{content}
+
+\subsection{Units and Euler's Totient Function}
+
+\begin{speech}[00:17:15 - 00:18:35]
+But now we can consider the units. So, we have this idea of the units: we consider the units of this ring $\mathbb{Z}$... let me just write it, 'cause I don't want to confuse the notation: the units of this ring $\mathbb{Z} \bmod n\mathbb{Z}$, $\mathbb{Z} \bmod n$ \inlinemetanote{writes: $\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right)$}. The units.
+
+Those are the invertible elements here \inlinemetanote{points at $\faktor{\mathbb{Z}}{(n)}$}. But remember, $1$ here \inlinemetanote{points at the product \eqref{eq:crt-prime-power}} is just $1$ comma $1$, everybody is just $1$. The unit here is the unit everywhere. So, how can you be invertible on this side \inlinemetanote{points at the right-hand side of \eqref{eq:crt-prime-power}}? Well, you have to be invertible in every factor.
+
+So, this says the units here are also just the product here. It's the product of the units of $\mathbb{Z} \bmod p_1^{k_1}$, cross units of $\mathbb{Z} \bmod p_2^{k_2}$, cross, and the last one \inlinemetanote{writes \qt{$= \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_1^{k_1})}\right) \times \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_2^{k_2})}\right) \times \dots \times \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_r^{k_r})}\right)$}, squeezing the last factor onto the far right edge}. This was bad board management.
+
+Okay? So, if you're interested in the units of this ring, this is extremely useful, because it just tells you the units are just the product: you have to pick a unit here, a unit here, a unit here \inlinemetanote{points at each factor}, that's all it is.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Multiplicative Decomposition of the Group of Units]\label[proposition]{prop:crt-units}
+Passing to the invertible elements (units) in \eqref{eq:crt-prime-power} gives the decomposition:
+\begin{equation}\label{eq:crt-units-product}
+\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right) = \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_1^{k_1})}\right) \times \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_2^{k_2})}\right) \times \dots \times \operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_r^{k_r})}\right).
+\end{equation}
+\end{proposition}
+
+\begin{steps}[Why an Element of a Product Ring Is a Unit Componentwise]
+In a direct product of rings $R_1 \times \dots \times R_r$, multiplication and the multiplicative identity are defined componentwise:
+\[
+(a_1, \dots, a_r)(b_1, \dots, b_r) = (a_1 b_1, \dots, a_r b_r), \qquad 1_{R_1 \times \dots \times R_r} = (1, \dots, 1).
+\]
+Consequently, a tuple $(a_1, \dots, a_r)$ has a multiplicative inverse $(b_1, \dots, b_r)$ if and only if $a_i b_i = 1$ in $R_i$ for every $i \in \{1, \dots, r\}$, i.e., if and only if every component $a_i$ is a unit in $R_i$. Because a ring isomorphism carries units bijectively to units, $\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right)$ is isomorphic to the direct product of the unit groups on the right.
+\end{steps}
+\end{content}
+
+\begin{aiNote}[Equality vs.\ Isomorphism in \eqref{eq:crt-units-product}]
+% [PERSISTENT]
+On the board, the lecturer writes an equality sign ($=$) between $\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right)$ and the direct product of unit groups on the right (abbreviating \qt{$\operatorname{Units}$} to \qt{$\operatorname{Unit}$} on the right-hand factors due to limited space near the board edge). Strictly speaking, this is a group isomorphism ($\cong$) induced by the Chinese Remainder Theorem ring isomorphism \eqref{eq:crt-prime-power}.
+\end{aiNote}
+
+\begin{hidden}
+% timestamp: 00:05:54
+% topic: CRT for Z, prime-power decomposition, and decomposition of unit groups
+% board_state: cor:crt-z-p2, ex:crt-105-p2, thm:crt-prime-power, prop:crt-units
+% next_goal: Count the units via Euler's totient function on prime powers and in general.
+% open_loops: none
+\end{hidden}
+
+\subsubsection{Euler's Totient Function}
+
+\begin{speech}[00:18:35 - 00:19:58]
+And moreover, then it also tells you how many there are. Because I hinted at this whenever we discussed this a few weeks ago \inlinemetanote{slides the lower integer board up and the surjectivity board down}. But this is related to this Euler totient function \inlinemetanote{points at the upper right board}. The Euler totient function is the number of units.
+
+And this says if you want to know the number of units of $\mathbb{Z} \bmod n\mathbb{Z}$, it's just the product of the number of units of all of these prime power ones \inlinemetanote{points along the product of unit groups on the upper right}. But it's easy to calculate the number of units in the prime power, which I just remind you. I think maybe I left it as an exercise. If so, I'll leave it as an exercise again \inlinemetanote{picks up the cloth and wipes the lower board clean}.
+
+If I take $\phi$ of a power of a prime \inlinemetanote{writes: $\phi(p^k) =$} --- and let me just follow the notation here: $p$, any prime, no index with the $k$ --- what is this?
+
+Well, you take all the numbers in $\mathbb{Z} \bmod p^k\mathbb{Z}$ that are relatively prime to $p^k$ that are less than $p^k$. And how are you going to be a common factor? You have to have a $p$ in it. And so how many people have $p$'s in it? Well, exactly $1$ over $p$ of these have $p$ in it. So, the answer is $p$ to the $k$ minus $p$ to the $k - 1$ \inlinemetanote{writes: $p^k - p^{k-1}$}, or you can write this as $p$ to the $k - 1$ times $p - 1$ \inlinemetanote{writes: $= p^{k-1}(p - 1)$}. Okay?
+\end{speech}
+
+\begin{content}
+\begin{proposition}[Euler's Totient Function on a Prime Power]\label[proposition]{prop:totient-prime-power}
+For any prime $p$ and exponent $k \ge 1$, the number of units in $\faktor{\mathbb{Z}}{(p^k)}$, denoted by Euler's totient function $\phi(p^k)$, is:
+\begin{equation}\label{eq:totient-prime-power}
+\phi(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1).
+\end{equation}
+\end{proposition}
+
+\begin{steps}[Counting Non-Units Modulo \texorpdfstring{$p^k$}{p\textasciicircum k}]
+The ring $\faktor{\mathbb{Z}}{(p^k)}$ has $p^k$ elements, represented by $\{0, 1, \dots, p^k - 1\}$. An integer $a$ in this range is invertible modulo $p^k$ if and only if $\gcd(a, p^k) = 1$. Since $p$ is prime, $\gcd(a, p^k) > 1$ occurs if and only if $p \mid a$. Exactly $\frac{1}{p}$ of the $p^k$ residue classes --- namely the $p^{k-1}$ multiples $0, p, 2p, \dots, (p^{k-1} - 1)p$ --- are divisible by $p$, leaving $p^k - p^{k-1} = p^{k-1}(p - 1)$ units.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:19:58 - 00:21:04]
+So, that gives a solution --- kind of a formula --- to this Euler totient. It says that if I want to know what this totient function is \inlinemetanote{writes \qt{$\phi^{\text{tot}}(n)$} and adds the superscript \qt{$\text{tot}$} to $\phi(p^k)$ above} --- that's the order of the units --- this is equal to the product from $i$ goes from $1$ to $r$, in that language \inlinemetanote{points at \eqref{eq:n-prime-fact} on the upper board}, of $p_i$ to the $k_i - 1$ times $p_i - 1$ \inlinemetanote{writes: $= \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$}. That's a pretty good formula for it. That's probably the fastest way to calculate it.
+
+But it's a confusing formula, like you might think, okay, this is the part that I view as perhaps related to things that may have been in school \inlinemetanote{circles the formula $\phi^{\text{tot}}(n) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$ on the board}.
+
+It's a formula that almost looks like if you know what this totient thing is --- since all the primes are here \inlinemetanote{points at the product}, it seems like you could reconstruct the actual number, because its prime factorization is here. But it's not true, because these $p_i - 1$'s, they confuse the issue.
+\end{speech}
+
+\begin{content}[General Formula for Euler's Totient Function]
+To distinguish the totient function from the CRT map $\phi$, the lecturer updates the notation on the board to $\phi^{\text{tot}}$ (so $\phi^{\text{tot}}(p^k) = p^k - p^{k-1} = p^{k-1}(p - 1)$).
+
+\begin{theorem}[Euler's Totient Product Formula]\label[theorem]{thm:totient-formula}
+For $n = p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}$ as in \eqref{eq:n-prime-fact}, the order of the group of units $\phi^{\text{tot}}(n) := \bigl|\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right)\bigr|$ is given by:
+\begin{equation}\label{eq:totient-formula}
+\boxed{\phi^{\text{tot}}(n) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1).}
+\end{equation}
+\end{theorem}
+
+\begin{steps}[Combining CRT with Prime-Power Counting]
+Taking cardinalities on both sides of \eqref{eq:crt-units-product} turns the direct product of finite unit groups into a product of integers:
+\[
+\phi^{\text{tot}}(n) = \bigl|\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(n)}\right)\bigr| = \prod_{i=1}^r \bigl|\operatorname{Units}\!\left(\faktor{\mathbb{Z}}{(p_i^{k_i})}\right)\bigr| = \prod_{i=1}^r \phi^{\text{tot}}(p_i^{k_i}) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1).
+\]
+\end{steps}
+\end{content}
+
+\begin{speech}[00:21:04 - 00:22:25]
+Like if you take a prime number --- well, I can tell you a personal thing, my favorite prime number: if I take $691$, which I assume you know is a prime number \inlinemetanote{writes: $\phi(691)$}. This is an extremely famous prime number in mathematics \inlinemetanote{adds the superscript \qt{$\text{tot}$} to write $\phi^{\text{tot}}(691)$}. But this is a prime number, and if I take that, it's just the $p - 1$, so this is $690$ \inlinemetanote{writes: $= 690$}. And that has a lot of factors in it: it has, you know, some $3$ and $23$ and $5$ and $2$ \inlinemetanote{writes \qt{$3 \cdot 23 \cdot 5 \cdot 2$} below $690$}.
+
+So, somehow you lose --- if you start with some nice prime number and you factor, this totient function gives you lots of primes and they get mixed up here \inlinemetanote{points at \eqref{eq:totient-formula}}. So, even though it almost looks like it, you can't recover the $n$ from the totient value, because this $p - 1$ kind of factors everything up.
+
+Have you ever heard of this prime number? It's like one of the most famous prime numbers in mathematics. It comes from Bernoulli $12$, which is just a great Bernoulli number: it's minus $691$ over $2730$ \inlinemetanote{writes: $B_{12} = -\frac{691}{2730}$}. But have you learned about the Bernoulli numbers? They are also a local product, made in Basel. I guess the Bernoullis were in Basel, that's why \inlinemetanote{draws a double vertical line to close the CRT topic}.
+
+Okay, so I think that this is more or less what I wanted to say about the Chinese Remainder Theorem.
+\end{speech}
+
+\begin{content}[Non-Invertibility of \texorpdfstring{$\phi^{\text{tot}}$}{phi-tot} and the Prime \texorpdfstring{$691$}{691}]
+\begin{example}[Euler's Totient of 691]\label[example]{ex:totient-691}
+For the prime number $p = 691$, applying \eqref{eq:totient-formula} gives:
+\[
+\phi^{\text{tot}}(691) = 691 - 1 = 690 = 3 \cdot 23 \cdot 5 \cdot 2.
+\]
+Because each factor $p_i - 1$ introduces new prime factors (here $2, 3, 5, 23$), the prime factors of $\phi^{\text{tot}}(n)$ get mixed together, so one cannot immediately read off $n$ from the value of $\phi^{\text{tot}}(n)$ alone.
+\end{example}
+
+\begin{remark}[Bernoulli Number \texorpdfstring{$B_{12}$}{B\_12}]\label[remark]{rem:bernoulli-12}
+As an aside on why $691$ is famous in mathematics, it appears as the numerator of the $12$th Bernoulli number:
+\[
+B_{12} = -\frac{691}{2730}.
+\]
+\end{remark}
+\end{content}
+
+\begin{aiNote}[Beyond the Lecture: Why \texorpdfstring{$691$}{691} and \texorpdfstring{$B_{12}$}{B\_12} Are Famous]
+% [PERSISTENT, ADDITION]
+The prime $691$ is the smallest irregular prime whose irregularity is visible through the $12$th Bernoulli number $B_{12} = -\frac{691}{2730}$ (which satisfies $691 \mid \operatorname{num}(B_{12})$), and it also appears in the exact value of the Riemann zeta function $\zeta(12) = \frac{691 \pi^{12}}{638512875}$ as well as in Ramanujan's congruence $\tau(n) \equiv \sigma_{11}(n) \pmod{691}$.
+\end{aiNote}
+
+\section{Polynomials}
+
+\begin{speech}[00:22:26 - 00:23:20]
+And so, the last topic of the week, which is going to go on to next week, has to do with polynomials \inlinemetanote{writes \qt{Polynomials} underlined on the lower right board}. And we've talked about these things in various ways, but I'll try to say it now clearly from the beginning.
+
+So, we start with $K$ is a field \inlinemetanote{writes: $K$ is a field}. And we've discussed before there is a ring, which is polynomials in one variable \inlinemetanote{writes: $K[x]$ polys in a single variable}, with coefficients in $K$ \inlinemetanote{writes: with coeffs in $K$}. Okay?
+\end{speech}
+
+\begin{content}
+\begin{definition}[{Polynomial Ring \texorpdfstring{$K[x]$}{K[x]}}]\label[definition]{def:poly-ring-p2}
+Let $K$ be a field. The ring $K[x]$ is the \newterm{polynomial ring} in a single variable $x$ with coefficients in $K$:
+\[
+K[x] = \left\{ \sum_{i=0}^{d} c_i x^i \;\middle|\; d \ge 0,\; c_i \in K \right\}.
+\]
+\end{definition}
+\end{content}
+
+\subsection{Degree of a Polynomial}
+
+\begin{speech}[00:23:20 - 00:24:30]
+And now here is something that one has to just state a little bit carefully: it's the degree of a polynomial. We've said it kind of informally, but I'm going to say it now carefully, and there's only one point that's...
+
+All right, so we'd like to define the degree of a polynomial \inlinemetanote{writes: $\deg(f(x))$}. This seems kind of silly to even talk about, but we're going to say it. We have some element of this ring \inlinemetanote{writes: $f(x) \in K[x]$}, and we want to find the degree of the polynomial.
+
+And the degree of the polynomial is that you write the polynomial \inlinemetanote{writes \qt{$\deg(f(x)) = \dots\, c_d x^d$}, an informal board shorthand for expanding $f(x)$}, and you find the highest coefficient which is not zero \inlinemetanote{writes \qt{highest coeff. which is $\neq 0$} with an arrow pointing up to $c_d$}.
+
+That makes sense because a polynomial is some list of these coefficients: you find the highest one that's not zero, you look at the $d$ index, and that's the degree \inlinemetanote{circles the exponent $d$ in $c_d x^d$}. So, this is the degree of this polynomial. Another way to write it informally: the degree of $f$, yeah, is equal to this $d$ \inlinemetanote{writes: $\deg(f) = d$}, where $d$ is the coefficient on the highest non-zero... okay, is that clear?
+\end{speech}
+
+\begin{content}
+\begin{definition}[Degree of a Non-Zero Polynomial]\label[definition]{def:poly-degree}
+Let $f(x) \in K[x]$ be a non-zero polynomial, written as:
+\[
+f(x) = c_0 + c_1 x + \dots + c_d x^d \qquad \text{with } c_d \neq 0,
+\]
+so that $c_d$ is the highest coefficient which is $\neq 0$. Then the \newterm{degree} of $f(x)$ is defined to be that highest index $d$:
+\[
+\deg(f) = \deg(f(x)) := d.
+\]
+\end{definition}
+\end{content}
+
+\begin{hidden}
+% timestamp: 00:11:49
+% topic: Introduction to K[x] and definition of the degree of a non-zero polynomial
+% board_state: def:poly-ring-p2, def:poly-degree
+% next_goal: Address the degree of the zero polynomial, then state polynomial long division.
+% open_loops: none
+\end{hidden}
+
+\begin{speech}[00:24:30 - 00:26:17]
+And the only subtle point of this is what is the degree of the zero polynomial \inlinemetanote{writes: $\deg(0) =$}. That is a super unpleasant thing to think about, because it has no coefficient that's not zero.
+
+So, there are some kind of conventions about it, but the convention that's correct is that this is undefined \inlinemetanote{writes \qt{undefined} and underlines it}. You can make up your own conventions, but the convention that works the best is it's undefined. That was my whole point about the degree. All right?
+
+It's a kind of annoying thing, but you see that this recipe makes no sense, because you're supposed to write it out, find the highest coefficient which is not zero, and say that's the degree. But if it's zero, all the coefficients are zero, so you're kind of, you know...
+
+Anyway, it's an important thing, and it sounds silly --- and in a sense it's silly --- when you talk about degrees, you're not allowed to talk about the degree of the zero polynomial.
+
+The degree of a constant is okay. The degree of a constant, like the degree of the polynomial $7$, as long as that $7$ is not zero, that has degree zero. But the degree of zero you don't talk about.
+
+I hope that wasn't too polemic, but that's just the standard mathematical definition, and since I'm supposed to be teaching you mathematics, I tell you the definition \inlinemetanote{slides the lower board up and the CRT-for-Z board down, then wipes the lower board clean}.
+
+So, that should have been also, when you learned about polynomials in school, you should have asked your teacher: \qt{What is the degree of the zero polynomial?} You should have asked that question.
+
+I think that's the only thing I'm going to say about polynomials that most people don't learn in school. The rest I'm going to talk about today is stuff you learned in school, but this particular point is that...
+\end{speech}
+
+\begin{content}
+\begin{remark}[Degree of 0 vs.\ Non-Zero Constants]\label[remark]{rem:deg-zero-undefined}
+For the zero polynomial $0 \in K[x]$, every coefficient is $0$, so there is no highest non-zero coefficient. Therefore, in this course's convention:
+\[
+\deg(0) = \underline{\text{undefined}}.
+\]
+By contrast, every non-zero constant polynomial $c \in K \setminus \{0\}$ (for instance, the constant polynomial $7$, as long as $7 \neq 0$ in $K$) has $c_0 = c \neq 0$ as its highest non-zero coefficient, and hence has degree $0$:
+\[
+\deg(c) = 0 \quad \text{for all } c \in K \setminus \{0\}.
+\]
+\end{remark}
+
+\begin{steps}[Why \texorpdfstring{$7$}{7} Might Equal \texorpdfstring{$0$}{0}, and Alternative Conventions for \texorpdfstring{$\deg(0)$}{deg(0)}]
+Notice the lecturer's careful qualification \qt{as long as that $7$ is not zero}. Going beyond the lecture: in a field of characteristic $7$ (such as $\mathbb{F}_7$), the integer $7$ represents $0$, so it is the zero polynomial rather than a polynomial of degree $0$. Also going beyond the lecture: some texts set $\deg(0) := -\infty$ so that the identities $\deg(fg) = \deg(f) + \deg(g)$ and $\deg(f + g) \le \max\{\deg(f), \deg(g)\}$ continue to hold formally; leaving $\deg(0)$ undefined avoids introducing $-\infty$ and forces division statements to explicitly handle the $r(x) = 0$ case separately.
+\end{steps}
+\end{content}
+
+\subsection{Polynomial Long Division}
+
+\begin{speech}[00:26:17 - 00:28:16]
+Okay, so very important for us --- and I'm not going to review it because you definitely learned it in school, at least I think you did (I think I went to school, but it's been a long time since I remember) --- is polynomial long division \inlinemetanote{writes \qt{Poly. long div.} underlined on the lower left board}.
+
+It says the following. Suppose --- and the twist here is it's now for any field, but the fact of the matter is whatever you learned in school also applies here --- we have two polynomials, $f$ and $g$, in this polynomial ring \inlinemetanote{writes: Supp.\ $f(x), g(x) \in K[x]$}. So, coefficients in a field, that's important. And we're going to do division, so in division you always have to assume somebody's not zero: this one's not zero \inlinemetanote{writes \qt{$\neq 0$} with an upward arrow to $g(x)$}. You can't divide by zero.
+
+Then polynomial long division says that there exist unique polynomials $q(x)$ and $r(x)$ \inlinemetanote{writes: $\exists!\, q(x), r(x)$} that satisfy these two properties. The first property is that $f(x)$ --- $q$ is for quotient, it's like kind of the division --- times $g$, and $r$ is the remainder \inlinemetanote{writes: $f(x) = q(x) \cdot g(x) + r(x)$}.
+
+And then there's the constraint on $r$. The constraint is either $r$ is zero \inlinemetanote{writes: either $r(x) = 0$}. And it's the \qt{either} here because then I'm going to talk about the degree of $r$. I cannot talk about the degree of $r$ formally if it's zero. So, either $r$ is zero, or $r$ is not zero and the degree of $r$ is strictly less than the degree of $g$ \inlinemetanote{writes: or $r(x) \neq 0$ and $\deg(r) < \deg(g)$}. Okay? That's the one we're dividing by.
+
+And you see, I assumed $g$ is not zero so I am allowed to talk about the degree of $g$. So, that's polynomial long division, and as I said, you know this.
+\end{speech}
+
+\begin{content}
+\begin{theorem}[Polynomial Long Division]\label[theorem]{thm:poly-long-div}
+Let $K$ be a field and suppose $f(x), g(x) \in K[x]$ with $g(x) \neq 0$. Then there exist unique polynomials $q(x), r(x) \in K[x]$ (the \newterm{quotient} and \newterm{remainder}) such that:
+\begin{equation}\label{eq:poly-long-div-eq}
+f(x) = q(x) \cdot g(x) + r(x),
+\end{equation}
+and the remainder $r(x)$ satisfies one of the two mutually exclusive conditions:
+\begin{itemize}
+    \item either $r(x) = 0$,
+    \item or $r(x) \neq 0$ and $\deg(r) < \deg(g)$.
+\end{itemize}
+\end{theorem}
+
+\begin{steps}[Why the Split Condition on \texorpdfstring{$r(x)$}{r(x)} Is Needed]
+Because $\deg(0)$ is undefined (\cref{rem:deg-zero-undefined}), one cannot write $\deg(r) < \deg(g)$ unconditionally when $r(x)$ might be zero; hence the explicit split into $r(x) = 0$ versus $r(x) \neq 0$ with $\deg(r) < \deg(g)$. By contrast, $g(x) \neq 0$ is assumed from the start, so $\deg(g)$ is always well defined. Crucially, the coefficients lie in a field $K$, so every non-zero leading coefficient of $g(x)$ is invertible in $K$ --- allowing us to cancel leading terms step by step regardless of the field.
+\end{steps}
+\end{content}
+
+\begin{speech}[00:28:16 - 00:28:55]
+And I'm not going to talk about how to prove it, but maybe we talk about some things about the uniqueness. Polynomial long division is maybe you have something like $3x + 1$ --- that's your $g$ --- and this is... ah, I can't believe I'm writing this thing --- $x^4 \dots$ like this \inlinemetanote{writes: $3x + 1 \overline{) x^4 + \dots}$}, and then you divide it, okay?
+
+And when you divide it, you get somebody that's this \inlinemetanote{points above the division bar and makes a placeholder mark below}, and what's left over is that \inlinemetanote{points at the bottom of the division schematic}. And if you think about it, it'll satisfy these properties. That's as much as I can possibly say about this.
+
+Okay, did you write it like this? \inlinemetanote{points at the long-division bracket} Okay, good. As I said, I think I went to school, but it's been a long time.
+\end{speech}
+
+\begin{content}
+\begin{example}[Schematic Polynomial Long Division]\label[example]{ex:poly-long-div-bracket}
+In school notation, dividing a polynomial such as $f(x) = x^4 + \dots$ by $g(x) = 3x + 1$ is written using the long-division bracket:
+\[
+3x + 1 \;\overline{\big)\; x^4 + \dots}
+\]
+Performing the algorithm produces the quotient $q(x)$ above the bar and leaves a remainder $r(x)$ at the bottom satisfying the degree bound in \cref{thm:poly-long-div}.
+\end{example}
+\end{content}
+
+\begin{proofWrapper}[Proof of Uniqueness in \cref{thm:poly-long-div}]
+
+\begin{speech}[00:28:56 - 00:30:46]
+So, maybe something that you didn't emphasize in school is the uniqueness. Let me --- maybe we talk a little bit about that.
+
+This says that if I have \inlinemetanote{starts writing: $f(x) = q(x) g(x) +$}... I think if you remember every single thing you learned in school you could almost be a professor \inlinemetanote{writes: $r(x)$}.
+
+So, suppose I have two of these things here \inlinemetanote{writes below: $= \hat{q}(x) g(x) + \hat{r}(x)$}. If I have two ways to write it, I have to show that they're the same as long as they satisfy these conditions \inlinemetanote{points between the remainder conditions and the two representations}. So, of course what do I do? I subtract them, I get $0$ is equal to $q$ minus $\hat{q}$ --- I don't always write the $x$'s, that's just, you know, for emphasis it's a polynomial --- times $g$ plus $r$ minus $\hat{r}$ \inlinemetanote{writes: $0 = (q - \hat{q}) g + (r - \hat{r})$}.
+
+Okay, so now the cases are... $g$ is not zero, that was the very beginning. So, suppose this \inlinemetanote{points at $q - \hat{q}$} is not zero. If this is not zero, then this product \inlinemetanote{points at $(q - \hat{q}) g$} will have degree at least $g$ (i.e., $\deg(g)$). And this thing \inlinemetanote{points at $r - \hat{r}$} --- again, there are some cases about somebody being zero or not --- can never have degree $g$ (i.e., $\deg(g)$) or higher, because they're both either zero or born lower.
+
+So, that means that the first one has to be zero. The first part of this logic is that $q$ minus $\hat{q}$ has to be zero \inlinemetanote{writes: $q - \hat{q} = 0$}, which of course means $q = \hat{q}$. Now once this is zero \inlinemetanote{underlines $q - \hat{q}$ in $(q - \hat{q})g$}, then this part dies, then you have this equation \inlinemetanote{points at $r - \hat{r}$}, and then again there are some cases: if they're both not zero it means they're equal, and if one of them's zero the other one's zero, so that's the uniqueness, okay.
+\end{speech}
+
+\begin{content}
+\begin{proof}[Proof of Uniqueness in \cref{thm:poly-long-div}]
+Suppose there exist two representations of $f(x)$ satisfying the conditions of \cref{thm:poly-long-div}:
+\begin{align*}
+f(x) &= q(x) g(x) + r(x) \\
+     &= \hat{q}(x) g(x) + \hat{r}(x),
+\end{align*}
+where both $r$ and $\hat{r}$ are either $0$ or non-zero of degree strictly less than $\deg(g)$. Subtracting the two equations yields (omitting the argument $(x)$ for brevity):
+\begin{equation}\label{eq:poly-div-diff}
+0 = (q - \hat{q}) g + (r - \hat{r}), \qquad \text{i.e.,} \qquad (q - \hat{q}) g = \hat{r} - r.
+\end{equation}
+
+\textbf{Step 1 (Showing $q - \hat{q} = 0$):} Suppose for contradiction that $q - \hat{q} \neq 0$. Since $K$ is a field (hence an integral domain, with no zero divisors) and $g \neq 0$, the product $(q - \hat{q}) g$ is non-zero and its degree is the sum of the degrees:
+\[
+\deg\bigl((q - \hat{q}) g\bigr) = \deg(q - \hat{q}) + \deg(g) \ge \deg(g),
+\]
+because $\deg(q - \hat{q}) \ge 0$.
+
+Now consider the right-hand side $\hat{r} - r$ of \eqref{eq:poly-div-diff}. If $\hat{r} - r = 0$, this immediately contradicts $(q - \hat{q}) g \neq 0$. If instead $\hat{r} - r \neq 0$, we check the cases according to whether $r$ or $\hat{r}$ vanishes (remembering that $\deg(0)$ is undefined):
+if $r = 0$ and $\hat{r} \neq 0$, then $\deg(\hat{r} - r) = \deg(\hat{r}) < \deg(g)$; symmetrically, if $\hat{r} = 0$ and $r \neq 0$, then $\deg(\hat{r} - r) = \deg(-r) = \deg(r) < \deg(g)$; and if both $r \neq 0$ and $\hat{r} \neq 0$, then
+\[
+\deg(\hat{r} - r) \le \max\{\deg(\hat{r}), \deg(r)\} < \deg(g).
+\]
+In every case where $\hat{r} - r \neq 0$, we have $\deg(\hat{r} - r) < \deg(g) \le \deg\bigl((q - \hat{q}) g\bigr)$, contradicting $(q - \hat{q}) g = \hat{r} - r$. Therefore, the assumption $q - \hat{q} \neq 0$ is impossible, so:
+\[
+q - \hat{q} = 0, \qquad \text{whence } q = \hat{q}.
+\]
+
+\textbf{Step 2 (Showing $r = \hat{r}$):} Substituting $q - \hat{q} = 0$ back into \eqref{eq:poly-div-diff} eliminates the term $(q - \hat{q}) g$ and leaves $0 = r - \hat{r}$. Whether both remainders are zero or both are non-zero (note that if one of $r, \hat{r}$ is zero, $0 = r - \hat{r}$ forces the other to be zero as well), it follows immediately that $r = \hat{r}$.
+\end{proof}
+\end{content}
+
+\end{proofWrapper}
+
+\begin{speech}[00:30:46 - 00:31:17]
+All right \inlinemetanote{slides the lower board up and pulls the Euler totient board down}. But this is an extremely important way to think about these polynomials. I mean, the long division is just an important thing. It sounds silly, but it's important \inlinemetanote{wipes the lower board clean}.
+
+It seems like if you went to high school in Basel you should learn about the Bernoulli numbers then. If I were in charge of the curriculum... that would be...
+\end{speech}
+
+\begin{hidden}
+% timestamp: 00:05:55
+% topic: Polynomial Long Division and Uniqueness
+% board_state: thm:poly-long-div, eq:poly-long-div-eq, eq:poly-div-diff
+% next_goal: State and prove that every ideal in K[x] is principal.
+% open_loops: none
+\end{hidden}
+
+\subsection{Ideals in \texorpdfstring{$K[x]$}{K[x]} Are Principal}
+
+\begin{speech}[00:31:17 - 00:32:20]
+Okay, so let us say now some things maybe you haven't thought about. Let $I$ be an ideal \inlinemetanote{writes \qt{Let $I \subset K[x]$} and \qt{be an ideal.} on the lower left board}. Okay? Any ideal.
+
+Then I claim --- so the proposition, and this is totally fundamental about polynomial rings --- is that there exists a polynomial in $I$ such that the whole ideal is just generated by that single thing \inlinemetanote{writes \qt{Prop.\ $\exists\, f \in I$ such} and \qt{that $I = (f)$}}. It's just like the integers. The integers also have this property. If I take any ideal, it's always just the ideal generated by one person.
+
+So, this is called a \newterm{principal ideal} \inlinemetanote{writes \qt{(Principal ideal)} underlined beneath $I = (f)$}. A principal ideal is an ideal generated by one element, and this says that every ideal is principal, just like for the integers. There'll be a definition in a moment.
+\end{speech}
+
+\begin{content}
+\begin{proposition}[{Ideals in \texorpdfstring{$K[x]$}{K[x]} Are Principal}]\label[proposition]{prop:kx-ideals-principal}
+Let $K$ be a field and let $I \subset K[x]$ be an ideal. Then there exists a polynomial $f \in I$ such that:
+\[
+I = (f).
+\]
+\end{proposition}
+
+An ideal of the form $(f)$ generated by a single element is called a \newterm{principal ideal} (noted on the board as \qt{Principal ideal} beneath $I = (f)$, with the formal definition postponed until after the proof).
+\end{content}
+
+\begin{proofWrapper}[Proof of \cref{prop:kx-ideals-principal}]
+
+\begin{speech}[00:32:20 - 00:34:07]
+So, let's prove this \inlinemetanote{writes: Proof:}. Again, we take $I$ \inlinemetanote{writes: $I \subset K[x]$}. We know nothing about $I$ except that it's an ideal.
+
+The first case, which is annoying, is that $I$ could be the zero ideal \inlinemetanote{writes: $I = (0)$}. And then we're okay, we're happy, since $0$ is in $I$ \inlinemetanote{writes: $\implies$ happy, as $0 \in I.$}, because $I$ is... so this case is fine \inlinemetanote{draws a checkmark to the left of $I = (0)$}.
+
+The second case is there exist elements $g$ in $I$ such that $g$ is not zero \inlinemetanote{writes: $\exists\, g \in I,\; g \neq 0$}. So, either $I$ is just the zero ideal, or there exist some non-zero elements. And now for those non-zero elements we can take their degrees.
+
+Now here's the whole proof actually, in this line: pick $f$ in $I$, $f$ non-zero, such that the degree of $f$ is minimal \inlinemetanote{writes \qt{Pick $f \in I$, $f \neq 0$, such that $\deg(f)$ is minimal} and underlines \qt{minimal}}. Because the set of degrees is some set of integers --- as long as it's not empty, we can pick a minimum one, and that's what we do. Okay?
+
+That's actually the whole proof, this line. You look in $I$, you pick an element such that its degree is minimal, meaning it's minimal among all polynomials in $I$. Maybe I write that: minimal among all elements not zero of $I$ \inlinemetanote{writes \qt{(among all elts $\neq 0$ of $I$)} to the right}. All right? So, do you agree I can do that? That has to do with the fact that you can pick lowest integers in a set of non-negative integers. But that's the whole proof here.
+\end{speech}
+
+\begin{content}[Zero Ideal Case and Choice of a Minimal-Degree Element]
+Let $I \subset K[x]$ be an ideal. We distinguish two cases:
+
+\textbf{Case 1 (The zero ideal):} If $I = (0)$, then the claim holds immediately, as $0 \in I$ and taking $f := 0$ gives $I = (0)$.
+
+\textbf{Case 2 ($I \neq (0)$):} Suppose there exists a non-zero element $g \in I$ with $g \neq 0$. Consider the set of degrees of all non-zero polynomials in $I$:
+\[
+S := \{ \deg(h) \mid h \in I,\; h \neq 0 \} \subset \mathbb{Z}_{\ge 0}.
+\]
+Because $g \in I \setminus \{0\}$, the set $S$ is non-empty (and consists of non-negative integers). By the Well-Ordering Principle, $S$ has a least element. We therefore pick a polynomial $f \in I$ with $f \neq 0$ such that:
+\begin{equation}\label{eq:minimal-deg-f}
+\deg(f) \text{ is minimal} \quad \text{(among all elements } \neq 0 \text{ of } I\text{)}.
+\end{equation}
+\end{content}
+
+\begin{speech}[00:34:07 - 00:35:15]
+So, now we have to prove it: let $g$ in $I$ be any element \inlinemetanote{writes: Let $g \in I$ be any elmt.}.
+
+I'm going to use now polynomial long division, except I'm going to divide $g$ by $f$, so it's $q(x)$ times $f$ plus $r$ \inlinemetanote{writes: $g = q(x) \cdot f + r(x)$}. Which is the opposite of what I did there \inlinemetanote{points at the upper board}, but nevertheless, okay.
+
+So, I take this $g$ --- here's my $f$, that's the lowest, that's the minimal one --- I take any $g$ and I use this polynomial long division. All right?
+
+Now remember the cases are... the first thing I notice about this polynomial long division is that $f$ is in $I$ \inlinemetanote{writes \qt{$\in I$} under $f$}, so this whole product is in $I$ \inlinemetanote{draws an underbrace beneath $q(x) \cdot f$ and writes \qt{$\in I$} under it}. And $g$ is in $I$ \inlinemetanote{writes \qt{$\in I$} under $g$}. So, the conclusion is $r(x)$ is in $I$ \inlinemetanote{writes: $\implies r(x) \in I$}. Okay? For this polynomial long division, I spend my time, I eventually get this remainder, and the remainder is in $I$. It has to be.
+\end{speech}
+
+\begin{content}[Polynomial Long Division and \texorpdfstring{$r(x) \in I$}{r(x) in I}]
+Let $g \in I$ be any element. Since $f \neq 0$, we may apply Polynomial Long Division (\cref{thm:poly-long-div}) to divide $g$ by $f$, obtaining $q(x), r(x) \in K[x]$ such that:
+\begin{equation}\label{eq:kx-pid-div}
+\underbrace{g}_{\in I} = \underbrace{q(x) \cdot f}_{\in I} + r(x),
+\end{equation}
+where either $r(x) = 0$, or $r(x) \neq 0$ with $\deg(r) < \deg(f)$.
+
+Because $f \in I$ and $I$ is an ideal, the multiple $q(x) \cdot f$ also lies in $I$. Since $g \in I$ as well and an ideal is closed under subtraction, rearranging \eqref{eq:kx-pid-div} gives:
+\[
+r(x) = g - q(x) \cdot f \implies r(x) \in I.
+\]
+\end{content}
+
+\begin{speech}[00:35:16 - 00:36:27]
+Okay, so what are the possibilities for the remainder? The remainder could be zero \inlinemetanote{writes: $r(x) = 0$}. That's good for us, because then we're happy again, because if this is zero, that means $g$ is in the ideal generated by $f$ \inlinemetanote{writes: $\implies g \in (f)$}. Okay?
+
+What's the other possibility? This $r(x)$ is not zero, and the degree of $r$ is strictly less than the degree of $f$ \inlinemetanote{writes: $r(x) \neq 0$, $\deg(r) < \deg(f)$}.
+
+But that's not possible, because that $r$ would then be an element of $I$ with degree strictly less than $f$. Which doesn't exist, because $f$ is minimal with respect to degree. So, this is not possible, because of the choice of $f$ \inlinemetanote{writes \qt{Not possible} and \qt{because of choice of $f$} below}.
+
+This thing can't happen. I can cross it out with purple \inlinemetanote{picks up purple chalk and crosses out \qt{$r(x) \neq 0$, $\deg(r) < \deg(f)$} with a purple X}. So, it has to be this \inlinemetanote{points at $r(x) = 0 \implies g \in (f)$}, and that's the proof.
+\end{speech}
+
+\begin{content}[Analyzing the Remainder and Concluding \texorpdfstring{$I = (f)$}{I = (f)}]
+\definecolor{chalkPurple}{HTML}{7B3F8A}
+By Polynomial Long Division \eqref{eq:kx-pid-div}, the remainder $r(x) \in I$ falls into one of two cases:
+
+\textbf{Possibility 1 ($r(x) = 0$):} If $r(x) = 0$, then \eqref{eq:kx-pid-div} becomes $g = q(x) \cdot f$, which means:
+\[
+r(x) = 0 \implies g \in (f).
+\]
+
+\textbf{Possibility 2 ($r(x) \neq 0$ and $\deg(r) < \deg(f)$):} On the board, this possibility is crossed out in purple chalk as impossible:
+\[
+\textcolor{chalkPurple}{\xcancel{\textcolor{black}{r(x) \neq 0,\; \deg(r) < \deg(f)}}} \qquad \text{(Not possible because of choice of $f$).}
+\]
+Indeed, since $r(x) \in I$ and $r(x) \neq 0$, having $\deg(r) < \deg(f)$ directly contradicts the minimality of $\deg(f)$ in \eqref{eq:minimal-deg-f}.
+
+Therefore, only $r(x) = 0$ can occur, so $g \in (f)$ for every $g \in I$; that is, $I \subset (f)$. Conversely, since $f \in I$ and $I$ is an ideal, $(f) \subset I$. Hence, $I = (f)$, completing the proof of \cref{prop:kx-ideals-principal}.
+
+\begin{steps}[Summary of the Minimal-Degree Division Trick]
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \setcounter{enumi}{0} \item Handle $I = (0)$ separately by setting $f := 0$.
+    \setcounter{enumi}{1} \item Otherwise, choose $f \in I \setminus \{0\}$ of minimal possible degree (guaranteed by the Well-Ordering Principle on $\mathbb{Z}_{\ge 0}$).
+    \setcounter{enumi}{2} \item Divide any $g \in I$ by $f$ via \cref{thm:poly-long-div}: $g = q(x) \cdot f + r(x)$. Both $g$ and $q(x) \cdot f$ lie in $I$, forcing $r(x) \in I$.
+    \setcounter{enumi}{3} \item Minimality of $\deg(f)$ rules out $r(x) \neq 0$ with $\deg(r) < \deg(f)$, leaving $r(x) = 0$ and hence $g = q(x) \cdot f \in (f)$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\end{proofWrapper}
+
+\begin{speech}[00:36:27 - 00:36:58]
+So, the outcome of this is that one can think --- I mean, of course this breaks down at a certain point, but it's useful to think about these polynomial rings a little bit like the way you think about the integers.
+
+Integers have --- I mean this kind of polynomial: one variable with a field --- they have this property that all the ideals are just generated by one element, just like in the integers. And there's a name for such rings, and they'll play a role later in the class, but maybe I say it \inlinemetanote{slides the lower board up and brings a clean chalkboard into the lower position}.
+\end{speech}
+
+\begin{insight}[{Analogy Between \texorpdfstring{$K[x]$}{K[x]} and \texorpdfstring{$\mathbb{Z}$}{Z}}]
+The polynomial ring $K[x]$ in one variable over a field $K$ behaves in a fundamental way like the ring of integers $\mathbb{Z}$: both admit a division algorithm with remainder (measured by degree in $K[x]$ and by absolute value in $\mathbb{Z}$), and as a direct consequence, every ideal in both rings is generated by a single element.
+\end{insight}
+
+\begin{hidden}
+% timestamp: 00:11:36
+% topic: Proof that every ideal in K[x] is principal
+% board_state: prop:kx-ideals-principal, eq:minimal-deg-f, eq:kx-pid-div
+% next_goal: Define Principal Ideal Domain (PID) and give examples and non-examples.
+% open_loops: none
+\end{hidden}
+
+\subsection{Principal Ideal Domains (PIDs)}
+
+\begin{speech}[00:36:59 - 00:37:20]
+So, in words, the definition is: the ring $R$ is a \newterm{principal ideal domain}, which is called \newterm{PID} \inlinemetanote{writes \qt{$R$} and \qt{is a P.I.D.}}. But not \qt{pid}. Yeah.
+\end{speech}
+
+\begin{student}[Student Question]
+Why is $q$ in the ideal?
+\end{student}
+
+\begin{speech}[00:37:24 - 00:37:30]
+I never said $q$ is in the ideal. So, I can't answer that question.
+\end{speech}
+
+\begin{student}[Student Question, continued]
+Right, but there's an element inside...
+\end{student}
+
+\begin{speech}[00:37:34 - 00:37:39]
+$f$ is in the ideal \inlinemetanote{points at $f$ in $q(x) \cdot f$ on the upper board}, and this is for the product \inlinemetanote{points at the underbrace beneath $q(x) \cdot f$}.
+\end{speech}
+
+\begin{student}[Student Remark]
+Oh, okay. Thank you.
+\end{student}
+
+\begin{speech}[00:37:40 - 00:38:51]
+Okay, so $R$ is a principal ideal domain, in words, if every ideal $I \subset R$ is principal \inlinemetanote{writes: if every ideal $I \subset R$ is principal}. So, that's in words.
+
+It means, exactly, for every ideal in $R$ --- it's an ideal --- there exists some element of the ideal such that the ideal is generated by that element, okay \inlinemetanote{writes: $(\forall\, I \subset R\text{ ideal},\; \exists\, f \in I \text{ such that } I = (f))$ with \qt{ideal} placed beneath $I \subset R$}? This is just repeating it.
+
+So, that's a special kind of domain. I should say that when I say $R$ is a principal ideal domain, it should be a domain too. I didn't write it, I guess, because it's already there. $R$ is a principal ideal domain if every ideal of $R$ is principal, and $R$ is a domain \inlinemetanote{writes: and $R$ is a domain}. Okay? That's already in the... you know... So, to be a principal ideal domain, you have to be a domain, of course.
+\end{speech}
+
+\begin{content}
+\begin{definition}[Principal Ideal Domain (PID)]\label[definition]{def:pid}
+A ring $R$ is a \newterm{principal ideal domain} (\newterm{PID}) if every ideal $I \subset R$ is principal and $R$ is a domain. Symbolically, the principal-ideal condition reads:
+\[
+\bigl(\forall\, I \subset R \text{ ideal},\; \exists\, f \in I \text{ such that } I = (f)\bigr).
+\]
+\end{definition}
+
+\begin{steps}[Two Requirements in the Definition]
+Note that \qt{domain} is already built into the name \qt{principal ideal domain}, which is why the lecturer initially left it implicit and then explicitly added \qt{and $R$ is a domain} to the board:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \setcounter{enumi}{0} \item $R$ must be an integral domain (in particular, commutative with $1 \neq 0$ and no zero divisors).
+    \setcounter{enumi}{1} \item Every ideal $I \subset R$ must be generated by a single element: $I = (f)$ for some $f \in I$.
+\end{enumerate}
+\end{steps}
+\end{content}
+
+\subsection{Examples and Non-Examples of PIDs}
+
+\subsubsection{Examples of PIDs}
+
+\begin{speech}[00:38:52 - 00:40:13]
+So, what we've seen in the class so far is $\mathbb{Z}$ --- I mean, many of them, but let's say --- $\mathbb{Z}$ is a PID \inlinemetanote{draws a large curved separator parenthesis and writes: $\mathbb{Z} \leftarrow$ PID}.
+
+What about $\mathbb{Z} \bmod 6\mathbb{Z}$? Well, no, because it's not a domain \inlinemetanote{writes: $\faktor{\mathbb{Z}}{6\mathbb{Z}} \times$ no dom.}.
+
+A field is a principal ideal domain --- it's kind of a dumb principal ideal domain, because there are not many ideals, but it is. A field is a PID \inlinemetanote{writes: $F$ a field is a PID}, because there are only two ideals in the field: one ideal is this one, and one ideal is that one \inlinemetanote{writes \qt{$(0), (1)$} beneath \qt{is a PID}}, so it's also a principal ideal domain --- not, as I said, the most interesting way to look at a field.
+
+That's an interesting principal ideal domain \inlinemetanote{points at $\mathbb{Z}$}, and then today we see that if $K$ is a field, then this is a principal ideal domain \inlinemetanote{writes \qt{$K[x] \leftarrow$ PID} and \qt{$K$ field} below $K[x]$}.
+
+Something I should have said kind of clearly here is that that division algorithm they learn in school uses the fact that you have a field, because, you know, you might have to divide by the leading coefficients. So, that was used in the way that the division algorithm works.
+\end{speech}
+
+\begin{content}
+\begin{examples}[Principal Ideal Domains and a Non-Domain]\label[examples]{exm:pid-examples}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \setcounter{enumi}{0} \item $\mathbb{Z}$ is a PID ($\mathbb{Z} \leftarrow \text{PID}$).
+    \setcounter{enumi}{1} \item $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is \emph{not} a PID, because it is not a domain ($\faktor{\mathbb{Z}}{6\mathbb{Z}} \times \text{no dom.}$): for instance, $\bar{2} \cdot \bar{3} = \bar{0}$ with $\bar{2}, \bar{3} \neq \bar{0}$.
+    \setcounter{enumi}{2} \item Any field $F$ is a PID ($F$ a field is a PID), since its only ideals are $(0)$ and $(1)$ --- both principal --- though this is a trivial example of a PID.
+    \setcounter{enumi}{3} \item For any field $K$, the polynomial ring $K[x]$ is a PID ($K[x] \leftarrow \text{PID}$, $K$ field), as proved in \cref{prop:kx-ideals-principal}.
+\end{enumerate}
+\end{examples}
+
+\begin{steps}[Role of the Field Hypothesis in Division]
+In \cref{thm:poly-long-div} and \cref{prop:kx-ideals-principal}, assuming $K$ is a field was essential: at each step of polynomial long division $g = q(x) \cdot f + r(x)$, eliminating the leading term of the dividend requires dividing by the leading coefficient of $f$, which is guaranteed to be invertible because every non-zero element of a field $K$ is a unit.
+\end{steps}
+\end{content}
+
+\subsubsection{Rings That Are Not PIDs}
+
+\begin{speech}[00:40:13 - 00:42:03]
+So, rings that are not principal ideal domains \inlinemetanote{writes the heading \qt{Rings that are not PID} on the lower right board}. Well, one which is kind of close is that I take polynomials over $\mathbb{Z}$ in one variable \inlinemetanote{writes: $\mathbb{Z}[x]$}, because you can't use the division algorithm the same way because you can't divide. So, can you give me an ideal here that's probably not principal? I don't expect you to give me a proof of it, but what do you think would be probably not principal here? \inlinemetanote{quiet, mostly inaudible suggestion from a student}
+
+$x + 1$, $x^2 + 1$... yeah, I think that might be principal. But, you know, if you're just using the $x$ part with leading terms $1$... okay, you can think about that ideal, I think that one is principal.
+
+The standard example is you use something from $\mathbb{Z}$, like the $2$, and something from $x$, on this side \inlinemetanote{writes: $\supset (2, x)$}. This is like the canonical one. Okay, yours is principal, I say. I think.
+
+All right, so this is the standard one that's not principal. And the reason, as I said, you take something from the two --- the $\mathbb{Z}$ side --- and something from the $x$ (he says \qt{two}) side, and so this should be an exercise for you: prove it's not principal \inlinemetanote{writes \qt{Prove not princ.} after a small arrow to the right of $(2, x)$}.
+
+And another way you could do it if you have a field, with polynomials in two variables over a field (i.e., writing $\mathbb{C}[x, y]$ as an example) \inlinemetanote{writes: $\mathbb{C}[x, y]$}, then you can take the ideal $(x, y)$ \inlinemetanote{writes: $\supset (x, y)$}. And that's also clearly not going to be principal, because there's no way you can find one polynomial that generates both $x$ and $y$. Okay. That's it. \inlinemetanote{video cuts off}
+\end{speech}
+
+\begin{content}
+\begin{exercise}[{Non-Principal Ideal in \texorpdfstring{$\mathbb{Z}[x]$}{Z[x]}}]\label[exercise]{exer:2-x-not-principal}
+Consider the polynomial ring $\mathbb{Z}[x]$ (whose coefficients lie in $\mathbb{Z}$, which is not a field) and the ideal:
+\[
+\mathbb{Z}[x] \supset (2, x).
+\]
+Prove that $(2, x)$ is not a principal ideal in $\mathbb{Z}[x]$ (written on the board as \qt{Prove not princ.}).
+\end{exercise}
+
+\begin{proof}[Proof of \cref{exer:2-x-not-principal} (beyond the lecture)]
+Suppose for contradiction that $(2, x) = (f(x))$ for some polynomial $f(x) \in \mathbb{Z}[x]$.
+
+\textbf{Step 1 (Restricting $f(x)$ to a constant):} Since $2 \in (2, x) = (f(x))$, there exists $a(x) \in \mathbb{Z}[x]$ such that $2 = a(x) f(x)$. Because $\mathbb{Z}$ is an integral domain, degrees add under multiplication of non-zero polynomials:
+\[
+0 = \deg(2) = \deg(a) + \deg(f).
+\]
+Since $\deg(a) \ge 0$ and $\deg(f) \ge 0$, we must have $\deg(f) = 0$, so $f(x) = c \in \mathbb{Z} \setminus \{0\}$ is a constant integer dividing $2$ in $\mathbb{Z}$, i.e., $c \in \{\pm 1, \pm 2\}$.
+
+\textbf{Step 2 (Eliminating all candidates):} If $c = \pm 2$, then $x \in (c)$ would give $x = c b(x)$ for some $b(x) \in \mathbb{Z}[x]$, forcing the coefficient of $x$ on the right, $c b_1$, to be even, contradicting $1 = c b_1$. If instead $c = \pm 1$, then $1 \in (2, x)$, so there exist $u(x), v(x) \in \mathbb{Z}[x]$ such that $1 = 2 u(x) + x v(x)$. Setting $x = 0$ (comparing constant terms) gives $1 = 2 u(0)$, which is impossible since $u(0) \in \mathbb{Z}$ and $2 \nmid 1$ in $\mathbb{Z}$.
+
+Therefore, no such generator $f(x)$ exists, and $(2, x)$ is not principal.
+\end{proof}
+
+\begin{example}[{Non-Principal Ideal in \texorpdfstring{$\mathbb{C}[x, y]$}{C[x, y]}}]\label[example]{ex:cxy-not-principal}
+Consider the ring of polynomials in two variables over a field, written on the board as $\mathbb{C}[x, y]$, and the ideal:
+\[
+\mathbb{C}[x, y] \supset (x, y).
+\]
+This ideal is not principal, because there is no single polynomial in $\mathbb{C}[x, y]$ that generates both $x$ and $y$. Hence, $\mathbb{C}[x, y]$ (and more generally $K[x, y]$ for any field $K$) is not a PID.
+\end{example}
+
+\begin{steps}[Why No Single Polynomial Generates Both \texorpdfstring{$x$}{x} and \texorpdfstring{$y$}{y}]
+Going beyond the lecture: if $(x, y) = (f(x, y))$ for some $f \in \mathbb{C}[x, y]$, then $f$ would have to divide both $x$ and $y$. Dividing $x$ forces $f$ to have degree $0$ in $y$, and dividing $y$ forces $f$ to have degree $0$ in $x$, so $f = c \in \mathbb{C} \setminus \{0\}$ must be a non-zero constant, hence a unit in $\mathbb{C}[x, y]$. That would give $(x, y) = (1) = \mathbb{C}[x, y]$, which is false because every element $x \, u(x, y) + y \, v(x, y) \in (x, y)$ has constant term $0$, so $1 \notin (x, y)$.
+\end{steps}
+\end{content}
+
+\begin{aiNote}[{Mathematical Slip: \texorpdfstring{$(x + 1, x^2 + 1)$}{(x + 1, x\textasciicircum 2 + 1)} in \texorpdfstring{$\mathbb{Z}[x]$}{Z[x]}}]
+% [PERSISTENT]
+In response to a student's suggestion, the lecturer guesses off the cuff that the ideal $(x + 1, x^2 + 1) \subset \mathbb{Z}[x]$ might be principal. In fact, it is \emph{not} principal in $\mathbb{Z}[x]$: using polynomial division,
+\[
+x^2 + 1 = (x - 1)(x + 1) + 2,
+\]
+so $(x + 1, x^2 + 1) = (2, x + 1)$ in $\mathbb{Z}[x]$. Just as for $(2, x)$ in \cref{exer:2-x-not-principal}, any single generator would have to divide $2$ (hence be $\pm 1$ or $\pm 2$): $\pm 2$ does not divide $x + 1$ in $\mathbb{Z}[x]$, and $1 = 2 u(x) + (x + 1) v(x)$ evaluated at $x = -1$ gives $1 = 2 u(-1)$, impossible in $\mathbb{Z}$.
+\end{aiNote}
+
+\begin{overview}[Summary of Key Concepts]
+\begin{itemize}
+    \item \textbf{Chinese Remainder Theorem:} For any ideals $I, J \subset R$, the canonical map $\phi \colon \faktor{R}{IJ} \to \faktor{R}{I} \times \faktor{R}{J}$, $\bar{z} \mapsto (\bar{z}, \bar{z})$, is a well-defined ring homomorphism. When $I + J = (1)$ ($i + j = 1$ with $i \in I, j \in J$), $\phi$ is an isomorphism: multiplying $i + j = 1$ by $z \in I \cap J$ proves injectivity ($z \in IJ$), and setting $z = jx + iy$ proves surjectivity. Without coprimality, both properties can fail (e.g., $(4), (6) \subset \mathbb{Z}$).
+    \item \textbf{Prime-Power Decomposition and Euler's Totient Function:} For $n = p_1^{k_1} \cdots p_r^{k_r}$, repeated application of CRT gives $\faktor{\mathbb{Z}}{(n)} \cong \prod_{i=1}^r \faktor{\mathbb{Z}}{(p_i^{k_i})}$ and decomposes the group of units componentwise, yielding $\phi^{\text{tot}}(n) = \prod_{i=1}^r p_i^{k_i - 1}(p_i - 1)$.
+    \item \textbf{Polynomials and Long Division in $K[x]$:} Over a field $K$, the degree $\deg(f)$ of a non-zero polynomial is the highest index with a non-zero coefficient, while $\deg(0)$ is undefined. For $f(x), g(x) \in K[x]$ with $g(x) \neq 0$, there exist unique $q(x), r(x) \in K[x]$ with $f(x) = q(x) \cdot g(x) + r(x)$ and either $r(x) = 0$ or $\deg(r) < \deg(g)$.
+    \item \textbf{Principal Ideal Domains (PIDs):} Every ideal $I \subset K[x]$ is principal (generated by a non-zero polynomial in $I$ of minimal degree when $I \neq (0)$). An integral domain $R$ in which every ideal is principal is called a PID. Examples include $\mathbb{Z}$, any field $F$, and $K[x]$ ($K$ a field); non-examples include $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ (not a domain), $\mathbb{Z}[x]$ (with $(2, x)$ non-principal), and $\mathbb{C}[x, y]$ (with $(x, y)$ non-principal).
+\end{itemize}
+\end{overview}
