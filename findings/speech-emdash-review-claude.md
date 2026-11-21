@@ -1,7 +1,8 @@
 # Speech em-dashes: what holds in the audit and in Argon's reply, and what both missed
 
-Checked 2026-11-20 by Claude (Opus 5.5). Subject: [`speech-emdash-audit.md`](speech-emdash-audit.md) (the audit,
-2026-11-20, untracked) and Gemini Argon's reply to it (pasted in chat on 2026-11-20, not saved in the repo). Book at
+Checked 2026-11-20 by Claude (Opus 5.5). Subject: `speech-emdash-audit.md` (the audit, Gemini 4 Neon, 2026-11-20;
+removed on 2026-11-21 since this file restates it, read it with `git show 8474350:findings/speech-emdash-audit.md`)
+and Gemini Argon's reply to it (pasted in chat on 2026-11-20, not saved in the repo). Book at
 `HEAD` = `0db7ab4`, compared with `f68edb4`; pipeline outputs in `D:\lecture-videos\Algebra_I\extracted_output*`;
 prompts in `C:\Users\miche\latex\prompt-engineering` at `ca15f0e`, and their history. Line numbers refer to these
 versions.
@@ -358,7 +359,9 @@ explain little of what is in the book.
     hunk header quoted as proof) and found nothing wrong.
 - **Open:**
   - D9: Week 10 Tuesday's Stage 3 failed on the quota on 2026-11-20 and has to be rerun anyway; that rerun is the
-    first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first.
+    first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first. It finished at
+    22:59 (Stage 4 at 23:27, in `extracted_output_xhigh_longdecode_300k_5parts\11-18-2026-tuesday-week10`), but has
+    not yet been measured against T2.
   - The app half of D10.
   - Week 5 Tuesday's double opening (L458) has no dash, and a review had restored the clause, so it was left as it
     is.
