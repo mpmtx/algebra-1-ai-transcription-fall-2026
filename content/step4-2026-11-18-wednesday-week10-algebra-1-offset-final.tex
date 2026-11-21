@@ -91,13 +91,13 @@
 % Primary Language: English
 % End of the video: 00:42:30
 
-\lecturechapter[10]{Wednesday}{19 Nov}{19 November 2026}{Sylow's Theorems}
+\lecturechapter[10]{Wednesday}{18 Nov}{18 November 2026}{Sylow's Theorems}
 
 \begin{overview}[Course Content Overview]
 This lecture covers the four Sylow theorems for a finite group $G$ of order $n = p^k m$ with $p$ prime and $(m, p) = 1$:
 \begin{itemize}
     \item \textbf{Sylow I:} Existence of a $p$-Sylow subgroup $S \subset G$ of order $p^k$, proved via the left translation action of $G$ on the set $T$ of all $p^k$-element subsets of $G$ and the Orbit--Stabilizer Theorem.
-    \item \textbf{Sylow II:} Every subgroup $H \subset G$ of order $p^\ell$ is contained in a $p$-Sylow subgroup $S \subset G$, proved by restricting the left coset action to $H \curvearrowright \frac{G}{P}$ to obtain an $H$-fixed coset $x P$ and taking the conjugate $x P x^{-1}$.
+    \item \textbf{Sylow II:} Every subgroup $H \subset G$ of order $p^\ell$ is contained in a $p$-Sylow subgroup $S \subset G$, proved by restricting the left coset action to $H \curvearrowright \faktor{G}{P}$ to obtain an $H$-fixed coset $x P$ and taking the conjugate $x P x^{-1}$.
     \item \textbf{Sylow III:} All $p$-Sylow subgroups of $G$ are conjugate, deduced directly from the Sylow II argument.
     \item \textbf{Sylow IV:} The number of $p$-Sylow subgroups of $G$ is congruent to $1 \pmod p$, stated with a conjugation-action hint as an exercise.
 \end{itemize}
@@ -114,16 +114,16 @@ And we do as we did last time, so we can take the $p$-part out of $n$. This is a
 \end{speech}
 
 \begin{content}[Setup and Factorization of the Group Order]
-Let $G$ be a finite group of order $|G| = n$, and let $p$ be any prime number. Factoring out the highest power of $p$ dividing $n$, we write:
+Let $G$ be a finite group of order $|G| = n$, and let $p$ be any prime number. Factoring out the highest power of $p$ dividing $n$, as in the previous lecture \eqref{eq:n-pk-m-decomp}, we write:
 \begin{equation}\label{eq:sylow-order-factorization}
 n = p^k m \qquad \text{with } (m, p) = 1,
 \end{equation}
-where $(m, p) = 1$ (i.e., $\gcd(m, p) = 1$, so $m$ is $p$-free) and $k \in \mathbb{N}_0$.
+where $(m, p) = 1$ (i.e., $\operatorname{GCD}(m, p) = 1$, so $m$ is $p$-free) and $k \in \mathbb{N}_0$.
 \end{content}
 
-\begin{aiNote}[Notation: \texorpdfstring{$(m, p) = 1$ and $\subset$ for Subgroups}{(m, p) = 1 and subset for Subgroups}]
+\begin{aiNote}[Board Notation Conventions]
 % [PERSISTENT]
-In this lecture, the greatest common divisor $\gcd(m, p) = 1$ is written $(m, p) = 1$, and subsets/subgroups are written with $\subset$ rather than $\le$ or $\subseteq$.
+The lecturer writes $(m, p) = 1$ for $\operatorname{GCD}(m, p) = 1$, and $\subset$ for subset and subgroup inclusions (e.g., $S \subset G$, $\operatorname{Stab}(X) \subset G$), where many textbooks write $\subseteq$ or $\le$ (Week 4, \cref{not:subset-board}).
 \end{aiNote}
 
 \begin{speech}[00:00:53 - 00:01:22]
@@ -149,7 +149,7 @@ So, a full converse to Lagrange would say that if you take any divisor, you can 
 
 \begin{content}[Relationship to Lagrange's Theorem]
 \begin{remark}[Partial Converse to Lagrange's Theorem]\label[remark]{rem:partial-converse-lagrange}
-Lagrange's Theorem states that the order of any subgroup $H \subset G$ divides $|G|$. A \emph{full} converse would assert that for every divisor $d \mid |G|$, there exists a subgroup of order $d$, which is false in general. Sylow's First Theorem (\cref{thm:sylow-1}) provides a \emph{partial} converse: for the largest power $p^k$ of any prime $p$ dividing $|G|$, a subgroup of order $p^k$ is guaranteed to exist.
+Lagrange's Theorem (Week 7, \cref{thm:lagrange}) states that the order of any subgroup $H \subset G$ divides $|G|$. A \emph{full} converse would assert that for every divisor $d \mid |G|$, there exists a subgroup of order $d$, which is false in general. Sylow's First Theorem (\cref{thm:sylow-1}) provides a \emph{partial} converse: for the largest power $p^k$ of any prime $p$ dividing $|G|$, a subgroup of order $p^k$ is guaranteed to exist.
 \end{remark}
 
 \begin{exercise}[Failure of the Full Converse in \texorpdfstring{$A_4$}{A4}]\label[exercise]{exer:a4-no-order-6}
@@ -172,9 +172,9 @@ So, the full converse to Lagrange is impossible because of this example. Sylow g
 \begin{speech}[00:03:00 - 00:04:17]
 Proof \inlinemetanote{writes: Proof.}. And for this proof, it's very important that you understand the constructions from yesterday, as you'll see. That's why I did them so slowly and repeatedly.
 
-So, we start with $G$ \inlinemetanote{writes: $G$}. And $G$ acts on $G$ via the left action \inlinemetanote{writes: $G$ acts on $G$ via left action}. So, you have here $G$ cross $G$ goes to $G$, by the usual left action, $g, h$ goes to $g h$ \inlinemetanote{writes \qt{$G \times G \to G$} and \qt{$g, h \mapsto g h$}}.
+So, we start with $G$ \inlinemetanote{writes: $G$}. And $G$ acts on $G$ via the left action \inlinemetanote{writes: $G$ acts on $G$ via left action}. So, you have here $G$ cross $G$ goes to $G$, by the usual left action, $g, h$ goes to $g h$ \inlinemetanote{writes \qt{$G \times G \to G$} and \qt{$g \;\; h \to g h$}}.
 
-All right, but $G$ is order $n$ \inlinemetanote{writes: $|G| = n$ above $G$}. And we're looking for a subgroup of order $p$ to the $k$, and now, as I said, the idea in this proof is about setting up the group actions. It's not at all clear, but maybe from yesterday you can imagine, we consider a set $T$, and this set $T$ will be the set of all subsets of $G$ of order $p$ to the $k$ \inlinemetanote{writes: $T = \text{set of all subsets of } G \text{ of order } p^k$}. So, it's precisely the kind of construction we had yesterday.
+All right, but $G$ is order $n$ \inlinemetanote{writes: $|G| = n$ above $G$}. And we're looking for a subgroup of order $p$ to the $k$, and now, as I said, the idea in this proof is about setting up the group actions. It's not at all clear, but maybe from yesterday you can imagine, we consider a set $T$, and this set $T$ will be the set of all subsets of $G$ of order $p$ to the $k$ \inlinemetanote{writes: $T = \{\text{set of all subset of } G \text{ of order } p^k\}$}. So, it's precisely the kind of construction we had yesterday.
 \end{speech}
 
 \begin{content}[Left Action and the Set \texorpdfstring{$T$}{T}]
@@ -182,7 +182,7 @@ We begin with the group $G$ of order $|G| = n$, acting on itself via the standar
 \[
 G \times G \to G, \qquad (g, h) \mapsto g h.
 \]
-We now define the set $T$ to be the collection of all subsets of $G$ of cardinality $p^k$:
+We now define the set $T$ to be the collection of all subsets of $G$ of cardinality $p^k$, the construction of the previous lecture (there with $\widehat{T}$ in place of $G$):
 \begin{equation}\label{eq:def-set-T}
 T := \bigl\{ X \subset G \;\big|\; |X| = p^k \bigr\}.
 \end{equation}
@@ -193,13 +193,13 @@ And I tried to draw the picture yesterday. So, here's $G$, and $G$ has some elem
 
 And this $T$ is the set of subsets, so an element of $T$ is some subset. That's not red enough, right? This is redder \inlinemetanote{switches chalk to a brighter red}. So, an element of $T$ is a subset. That's why I draw it in red, it's a subset, so it grabs some elements of $G$, and precisely $p$ to the $k$ elements \inlinemetanote{draws a red loop around $a, b, c$ inside $G$}.
 
-So, then there's this set $T$, and it has elements too, and I draw them in red to remind you that they are subsets here. I still have to name them, so maybe I try to name them with letters at the end of the alphabet, okay? So, this $X$ here corresponds to that subset \inlinemetanote{draws a contour labeled $T$ containing a red dot $X$ linked to the red subset in $G$}.
+So, then there's this set $T$, and it has elements too, and I draw them in red to remind you that they are subsets here. I still have to name them, so maybe I try to name them with letters at the end of the alphabet, okay? So, this $X$ here corresponds to that subset \inlinemetanote{draws a contour labeled $T$ containing a red dot $X$}.
 
 And as we saw yesterday, $G$ acts on $T$, because if I have a subset I can just move it by the element of $G$. That's what we saw yesterday. So, we're going to study this $G$-action, which is very close to what was happening yesterday \inlinemetanote{writes \qt{$G \curvearrowright T$} and pushes the middle-right board up}.
 \end{speech}
 
 \begin{content}[Visualizing the Induced Action \texorpdfstring{$G \curvearrowright T$}{G acts on T}]
-Since $G$ acts on itself by left multiplication, this induces a natural group action $G \curvearrowright T$ given by left translation of subsets: for $g \in G$ and $X \in T$,
+Since $G$ acts on itself by left multiplication, this induces a natural group action $G \curvearrowright T$ given by left translation of subsets, as in the previous lecture \eqref{eq:induced-action-on-t}: for $g \in G$ and $X \in T$,
 \[
 g \cdot X := \{ g x \mid x \in X \} \in T,
 \]
@@ -277,11 +277,11 @@ Okay, so we're going to study this $G$-action on this set $T$ \inlinemetanote{wr
 \end{speech}
 
 \begin{content}[Cardinality of \texorpdfstring{$T$}{T}]
-Since $T$ consists of all $p^k$-element subsets of the $n$-element set $G$, its cardinality is:
+Since $T$ consists of all $p^k$-element subsets of the $n$-element set $G$, its cardinality is, as in the previous lecture \eqref{eq:card-t}:
 \begin{equation}\label{eq:cardinality-T}
 |T| = \binom{n}{p^k}.
 \end{equation}
-From the previous lecture, we recall the key divisibility property for $n = p^k m$ with $(m, p) = 1$:
+From the previous lecture (\cref{clm:binomial-nondivisibility}), we recall the key divisibility property for $n = p^k m$ with $(m, p) = 1$:
 \begin{equation}\label{eq:p-not-div-binom}
 \boxed{p \nmid \binom{n}{p^k}}.
 \end{equation}
@@ -451,7 +451,7 @@ $T$ is finite: the $G$-action divides $T$ into finitely many orbits, and each or
 \end{speech}
 
 \begin{content}[Partitioning \texorpdfstring{$T$}{T} into \texorpdfstring{$G$}{G}-Orbits]
-Since $T$ is finite, the action $G \curvearrowright T$ partitions $T$ into finitely many disjoint orbits. Choosing a representative $X_i \in T$ from each orbit, we obtain the orbit decomposition formula:
+Since $T$ is finite, the action $G \curvearrowright T$ partitions $T$ into finitely many disjoint orbits. Choosing a representative $X_i \in T$ from each orbit, we obtain the orbit decomposition formula (Week 9, \cref{prop:orbit-decomposition}):
 \begin{equation}\label{eq:orbit-decomp-T}
 |T| = \sum_{X_i} |\operatorname{Orb}(X_i)|.
 \end{equation}
@@ -530,7 +530,7 @@ p \nmid |\operatorname{Orb}(X_j)|.
 \begin{speech}[00:14:00 - 00:15:50]
 All right, so now we use the Orbit--Stabilizer Theorem for that orbit \inlinemetanote{wipes a spot on the lower-right board and writes: Use Orb-Stab Thm}. So, use this Orbit--Stabilizer Theorem, and what does it say? It says the size of $G$ divided by the size of the stabilizer of that $X_j$ equals the size of this orbit \inlinemetanote{writes: $\frac{|G|}{|\operatorname{Stab}(X_j)|} = |\operatorname{Orb}(X_j)|$}. That's the Orbit--Stabilizer Theorem.
 
-Okay, and what do we know? That this thing here --- the size of $G$ --- is $n$, and $n$ is equal to $p$ to the $k$ times $m$, okay \inlinemetanote{writes $p^k m$ with an arrow to $|G|$}? That's what the top is here, right?
+Okay, and what do we know? That this thing here --- the size of $G$ --- is $n$, and $n$ is equal to $p$ to the $k$ times $m$, okay \inlinemetanote{writes \qt{$n = p^k m =$} in front of $|G|$}? That's what the top is here, right?
 
 And this thing has no $p$'s, because $p$ does not divide this, okay \inlinemetanote{writes \qt{has no $p$'s} with an arrow to $|\operatorname{Orb}(X_j)|$}? So, where could all the $p$'s go? How can you have this? We've got a lot of $p$'s here, no $p$'s here. How could this happen?
 
@@ -540,20 +540,20 @@ Okay, is that clear? We got a big number of $p$'s here, $p$ to the $k$, and ther
 \end{speech}
 
 \begin{content}[Applying the Orbit--Stabilizer Theorem]
-Applying the Orbit--Stabilizer Theorem to the distinguished element $X_j \in T$ gives:
+Applying the Orbit--Stabilizer Theorem (Week 9, \cref{thm:orbit-stabilizer}) to the distinguished element $X_j \in T$ gives:
 \[
 \frac{\overbrace{|G|}^{p^k m}}{|\operatorname{Stab}(X_j)|} = \underbrace{|\operatorname{Orb}(X_j)|}_{\text{has no } p\text{'s}}.
 \]
-Cross-multiplying, we have $p^k m = |\operatorname{Stab}(X_j)| \cdot |\operatorname{Orb}(X_j)|$. Since $p$ is prime and $p \nmid |\operatorname{Orb}(X_j)|$ by \eqref{eq:orbit-xj-coprime}, Euclid's lemma (unique prime factorization) forces all $k$ factors of $p$ in $p^k m$ to divide $|\operatorname{Stab}(X_j)|$:
+Cross-multiplying, we have $p^k m = |\operatorname{Stab}(X_j)| \cdot |\operatorname{Orb}(X_j)|$. Since $p$ is prime and $p \nmid |\operatorname{Orb}(X_j)|$ by \eqref{eq:orbit-xj-coprime}, none of the $k$ factors of $p$ in $p^k m$ can go into $|\operatorname{Orb}(X_j)|$, so all of them divide $|\operatorname{Stab}(X_j)|$ (the lecture's \qt{conservation of $p$'s}; formally, unique prime factorization in $\mathbb{Z}$):
 \begin{equation}\label{eq:pk-divides-stab}
 p^k \mid |\operatorname{Stab}(X_j)|.
 \end{equation}
 \end{content}
 
 \begin{speech}[00:15:50 - 00:16:33]
-And so this proves, for this special one --- for this very special $X_j$ \inlinemetanote{writes: for $X_j$} --- the order of the stabilizer is... I'm never going to do this again \inlinemetanote{discards a chalk stick}. It is at least $p$ to the $k$, otherwise how could it divide it \inlinemetanote{writes: $|\operatorname{Stab}(X_j)| \ge p^k$}? It's not zero.
+And so, this proves, for this very special $X_j$ \inlinemetanote{writes: for $X_j$}, the order of the stabilizer is... I'm never going to do this again \inlinemetanote{discards a chalk stick}. It is at least $p$ to the $k$, otherwise how could it divide it \inlinemetanote{writes: $|\operatorname{Stab}(X_j)| \ge p^k$}? It's not zero.
 
-Okay, and that's it. That's like an amazingly gorgeous proof. So, we found the group now: it's the stabilizer of this particular one. It has size less than $p$ to the $k$ and greater than $p$ to the $k$, so it has size $p$ to the $k$ and we're done \inlinemetanote{writes boxed $|\operatorname{Stab}(X_j)| = p^k$ and draws a QED square}. So, that is an amazing proof. \inlinemetanote{pushes the bottom board up}
+Okay, and that's it. That's like an amazingly gorgeous proof. So, we found the group now: it's the stabilizer of this particular one. It has size less than $p$ to the $k$ and greater than $p$ to the $k$, so it has size $p$ to the $k$ and we're done \inlinemetanote{draws a QED square below $|\operatorname{Stab}(X_j)| \ge p^k$}. So, that is an amazing proof. \inlinemetanote{pushes the bottom board up}
 \end{speech}
 
 \begin{content}[Conclusion of the Proof]
@@ -563,7 +563,7 @@ For $X_j \in T$, since $|\operatorname{Stab}(X_j)|$ is a positive integer divisi
 \]
 Combining this lower bound with \cref{lem:stab-upper-bound} ($|\operatorname{Stab}(X_j)| \le p^k$) yields:
 \[
-\boxed{|\operatorname{Stab}(X_j)| = p^k.}
+|\operatorname{Stab}(X_j)| = p^k.
 \]
 Thus, $S := \operatorname{Stab}(X_j) \subset G$ is the desired subgroup of order $p^k$, completing the proof of \cref{thm:sylow-1}.
 
@@ -586,9 +586,9 @@ Okay, that's Sylow $1$, that we have one of the subgroups now. \inlinemetanote{p
 \end{speech}
 
 \begin{hidden}
-% timestamp: 00:04:13
+% timestamp: 00:17:03
 % topic: Proof of Sylow I completed; transitioning to Sylow's Second Theorem
-% board_state: thm:sylow-1, lem:stab-upper-bound, eq:p2-pk-divides-stab
+% board_state: thm:sylow-1, lem:stab-upper-bound, eq:pk-divides-stab
 % next_goal: State Sylow II, define p-Sylow subgroup, and begin proof of Sylow II
 % open_loops: none
 \end{hidden}
@@ -596,24 +596,24 @@ Okay, that's Sylow $1$, that we have one of the subgroups now. \inlinemetanote{p
 \section{Sylow's Second Theorem}
 
 \begin{speech}[00:17:03 - 00:18:39]
-Okay, so Sylow $2$ says something else. So, we're going to state Sylow $2$ \inlinemetanote{writes: Sylow II}. It's the same hypotheses. I don't write them again: we have $G$ is a group of order $n$, and we have $p$ to the $k$ is the biggest power of $p$ that divides $n$. Maybe I write it anyway, so we don't get confused \inlinemetanote{writes \qt{Let $H \subset G$} and \qt{$|G| = n = m \cdot p^k$, $(p, m) = 1$}}.
+Okay, so Sylow $2$ says something else. So, we're going to state Sylow $2$ \inlinemetanote{writes: Sylow II}. It's the same hypotheses. I don't write them again: we have $G$ is a group of order $n$, and we have $p$ to the $k$ is the biggest power of $p$ that divides $n$. Maybe I write it anyway, so we don't get confused \inlinemetanote{writes \qt{Let $H \subset G$} and \qt{$|G| = n = p^k m$, $(p, m) = 1$}}.
 
 So, let $H$ be any subgroup of order $p$ to the $\ell$, okay \inlinemetanote{writes \qt{be any subgroup} and \qt{of order $p^\ell$}}? So, we just take any subgroup of order $p$ to the $\ell$. Of course, in this case, $\ell$ has to be less than or equal to $k$ by Lagrange \inlinemetanote{writes: ($\ell \le k$ by Lagrange)}. Because a subgroup has to have an order which divides. So, we take any one.
 
-Then Sylow $2$ says that $H$ lies in a subgroup $S$... Let me write it as \qt{there exists}: there exists $S$ in $G$ such that $H$ is in $S$ and the order of $S$ is $p$ to the $k$ \inlinemetanote{writes boxed \qt{$\exists \, S \subset G$ such that $H \subset S$, $|S| = p^k$}}. So, this says that if you take any subgroup of order $p$ to the $\ell$, actually it sits inside one of our subgroups of order $p$ to the $k$.
+Then Sylow $2$ says that $H$ lies in a subgroup $S$... Let me write it as \qt{there exists}: there exists $S$ in $G$ such that $H$ is in $S$ and the order of $S$ is $p$ to the $k$ \inlinemetanote{writes, after a large brace, \qt{$\exists \, S \subset G$ such that $H \subset S$, $|S| = p^k$}}. So, this says that if you take any subgroup of order $p$ to the $\ell$, actually it sits inside one of our subgroups of order $p$ to the $k$.
 \end{speech}
 
 \begin{content}
 \begin{theorem}[Sylow II]\label[theorem]{thm:sylow-2}
-Let $G$ be a finite group with $|G| = n = m \cdot p^k$, where $p$ is prime and $(p, m) = 1$. Let $H \subset G$ be any subgroup of order $p^\ell$ (note that $\ell \le k$ by Lagrange's Theorem, since $|H| \mid |G|$ and $(p, m) = 1$). Then:
+Let $G$ be a finite group with $|G| = n = p^k m$, where $p$ is prime and $(p, m) = 1$. Let $H \subset G$ be any subgroup of order $p^\ell$ (note that $\ell \le k$ by Lagrange's Theorem, since $|H| \mid |G|$ and $(p, m) = 1$). Then:
 \[
-\boxed{\exists \, S \subset G \quad \text{such that} \quad H \subset S, \; |S| = p^k.}
+\exists \, S \subset G \quad \text{such that} \quad H \subset S, \; |S| = p^k.
 \]
 \end{theorem}
 \end{content}
 
 \begin{speech}[00:18:39 - 00:19:58]
-So, the terminology for this, by the way, is that for $G$, if $S$ is a subgroup of $G$ where $S$ is of order $p$ to the $k$, then this is the definition: $S$ is called a \newterm{$p$-Sylow subgroup} \inlinemetanote{writes \qt{For $S \subset G$, $|S| = p^k$} and boxed \qt{$S$ is called a $p$-Sylow subgroup}}.
+So, the terminology for this, by the way, is that for $G$, if $S$ is a subgroup of $G$ where $S$ is of order $p$ to the $k$, then this is the definition: $S$ is called a \newterm{$p$-Sylow subgroup} \inlinemetanote{writes \qt{If $S \subset G$, $|S| = p^k$} and boxed \qt{$S$ is called a $p$-Sylow subgroup}}.
 
 If you have a finite group, and you take this maximal power of $p$, if you ever find a subgroup of that order, it's called a $p$-Sylow subgroup. Sylow $1$ says there exist $p$-Sylow subgroups. Sylow $2$ says that if I take any subgroup of order $p$ to the $\ell$, it actually sits inside a $p$-Sylow subgroup, okay?
 
@@ -622,7 +622,7 @@ So, maybe I write that in words: Sylow $2$ says that every subgroup $H$ in $G$, 
 
 \begin{content}[Terminology and Reformulation of Sylow II]
 \begin{definition}[$p$-Sylow Subgroup]\label[definition]{def:p-sylow-subgroup}
-Let $G$ be a finite group of order $|G| = n = m \cdot p^k$ with $(p, m) = 1$. A subgroup $S \subset G$ with $|S| = p^k$ (the highest power of $p$ dividing $|G|$) is called a \newterm{$p$-Sylow subgroup} of $G$.
+Let $G$ be a finite group of order $|G| = n = p^k m$ with $(p, m) = 1$. A subgroup $S \subset G$ with $|S| = p^k$ (the highest power of $p$ dividing $|G|$) is called a \newterm{$p$-Sylow subgroup} of $G$.
 \end{definition}
 
 \begin{remark}[Reformulation of Sylow I and Sylow II]\label[remark]{rem:sylow-1-2-terminology}
@@ -651,7 +651,7 @@ We are given a subgroup $H \subset G$ of order $|H| = p^\ell$. We may assume $\e
 \end{content}
 
 \begin{hidden}
-% timestamp: 00:08:20
+% timestamp: 00:21:10
 % topic: Proof of Sylow II -- setup of P and H, reduction to l > 0
 % board_state: thm:sylow-2, def:p-sylow-subgroup, rem:sylow-1-2-terminology
 % next_goal: Define restricted left coset action H \curvearrowright G/P and find an H-fixed point
@@ -663,66 +663,66 @@ We are given a subgroup $H \subset G$ of order $|H| = p^\ell$. We may assume $\e
 \begin{speech}[00:21:10 - 00:22:43]
 So, the question is: which group action do we use for this \inlinemetanote{erases the lower-left board}?
 
-We have $G$ and our $p$-Sylow subgroup $P$ \inlinemetanote{writes: $P \subset G$}, so we can consider this coset space: this is the set of left cosets \inlinemetanote{writes: $\frac{G}{P}$ set of left cosets}. And we have seen that $G$ acts on this \inlinemetanote{writes: $G \curvearrowright \frac{G}{P}$}. That's the standard action on left cosets \inlinemetanote{writes \qt{standard action on left cosets} with an arrow to $\curvearrowright$}. We discussed this yesterday.
+We have $G$ and our $p$-Sylow subgroup $P$ \inlinemetanote{writes: $P \subset G$}, so we can consider this coset space: this is the set of left cosets \inlinemetanote{writes: $\faktor{G}{P}$ set of left cosets}. And we have seen that $G$ acts on this \inlinemetanote{writes: $G \times \faktor{G}{P} \to \faktor{G}{P}$}. That's the standard action on left cosets \inlinemetanote{writes \qt{Standard action on left cosets} beside it}. We discussed this yesterday.
 
-Okay, but that's not $H$, there's no $H$ there. But we can always act by a subgroup here. So, this is the standard action, and we can just restrict this to inside $H$, so we get $H$ cross $G$ mod $P$ to $G$ mod $P$, okay \inlinemetanote{writes \qt{$G \times \frac{G}{P} \to \frac{G}{P}$}, $\cup$ below $G$, and \qt{$H \times \frac{G}{P} \to \frac{G}{P}$}}?
+Okay, but that's not $H$, there's no $H$ there. But we can always act by a subgroup here. So, this is the standard action, and we can just restrict this to inside $H$, so we get $H$ cross $G$ mod $P$ to $G$ mod $P$, okay \inlinemetanote{writes \qt{$G \times \faktor{G}{P} \to \faktor{G}{P}$}, $\cup$ below $G$, and \qt{$H \times \faktor{G}{P} \to \faktor{G}{P}$}}?
 
-So, this is the action we're going to take. Is this restriction clear? We already know how $G$ acts on left cosets. $H$ is a subgroup, so it just acts as if it were an element of $G$. Okay, so this is the action we'll consider: we consider this action in the proof \inlinemetanote{writes \qt{We consider this action} with an arrow to $H \times \frac{G}{P} \to \frac{G}{P}$}.
+So, this is the action we're going to take. Is this restriction clear? We already know how $G$ acts on left cosets. $H$ is a subgroup, so it just acts as if it were an element of $G$. Okay, so this is the action we'll consider: we consider this action in the proof \inlinemetanote{writes \qt{We consider this action} with an arrow to $H \times \faktor{G}{P} \to \faktor{G}{P}$}.
 \end{speech}
 
-\begin{content}[The Restricted Action \texorpdfstring{$H \curvearrowright \frac{G}{P}$}{H acts on G/P}]
-Given $P \subset G$, let $\frac{G}{P} := \{ g P \mid g \in G \}$ be the set of left cosets of $P$ in $G$. Recall the standard left-multiplication action of $G$ on $\frac{G}{P}$:
+\begin{content}[The Restricted Action \texorpdfstring{$H \curvearrowright \faktor{G}{P}$}{H acts on G/P}]
+Given $P \subset G$, let $\faktor{G}{P} := \{ g P \mid g \in G \}$ be the set of left cosets of $P$ in $G$. Recall the standard left-multiplication action of $G$ on $\faktor{G}{P}$ from the previous lecture (\cref{def:coset-left-action,prop:left-action-cosets}):
 \[
-G \curvearrowright \frac{G}{P}, \qquad g \cdot (x P) := (g x) P.
+G \curvearrowright \faktor{G}{P}, \qquad g \cdot (x P) := (g x) P.
 \]
 Since $H \subset G$ is a subgroup, we restrict this standard action from $G$ to $H$:
 \[
 \begin{array}{c@{}c@{}c@{}l}
-G & \times & \dfrac{G}{P} & \longrightarrow \dfrac{G}{P} \\[6pt]
+G & \times & \faktor{G}{P} & \longrightarrow \faktor{G}{P} \\[6pt]
 \cup & & & \\[4pt]
-H & \times & \dfrac{G}{P} & \longrightarrow \dfrac{G}{P}
+H & \times & \faktor{G}{P} & \longrightarrow \faktor{G}{P}
 \end{array}
 \]
-given by $h \cdot (x P) := (h x) P$ for $h \in H$ and $x P \in \frac{G}{P}$. We analyze this restricted action $H \curvearrowright \frac{G}{P}$ in the remainder of the proof.
+given by $h \cdot (x P) := (h x) P$ for $h \in H$ and $x P \in \faktor{G}{P}$. We analyze this restricted action $H \curvearrowright \faktor{G}{P}$ in the remainder of the proof.
 \end{content}
 
-\begin{aiNote}[Notation: \texorpdfstring{$\frac{G}{P}$}{G/P} for the Set of Left Cosets]
+\begin{aiNote}[Notation: \texorpdfstring{$\faktor{G}{P}$}{G/P} for the Set of Left Cosets]
 % [PERSISTENT]
-On the board, the lecturer writes the set of left cosets of $P$ in $G$ vertically with a horizontal bar as $\frac{G}{P}$ (pronouncing it \qt{$G$ mod $P$}) rather than inline $G/P$, because $P$ is not assumed normal and the cardinality $|\frac{G}{P}|$ equals $\frac{|G|}{|P|}$. We preserve $\frac{G}{P}$ throughout.
+On the board, the set of left cosets is written with the same slanted bar as a quotient group, $\faktor{G}{P}$ (pronounced \qt{$G$ mod $P$}). Here it is only a set: $P$ need not be normal, so $\faktor{G}{P}$ carries no group structure in general, only the $G$-action by left multiplication.
 \end{aiNote}
 
 \begin{speech}[00:22:43 - 00:23:47]
-Okay, so what are we going to do with this action? I'll try to make big $P$'s here so you don't get confused. What are we going to do with this action? Well, we'd like to know what is the size of this set \inlinemetanote{writes: $\left|\frac{G}{P}\right|$}. And the answer is that we know this is $n$, and this is $p$ to the $k$, and so this is $m$ \inlinemetanote{writes: $= \frac{n}{p^k} = m$}. Because Lagrange says that the size of this is equal to the size of $G$, size of $P$ \inlinemetanote{writes $\frac{|G|}{|P|}$ below $\left|\frac{G}{P}\right|$}, okay?
+Okay, so what are we going to do with this action? I'll try to make big $P$'s here so you don't get confused. What are we going to do with this action? Well, we'd like to know what is the size of this set \inlinemetanote{writes: $\left|\faktor{G}{P}\right|$}. And the answer is that we know this is $n$, and this is $p$ to the $k$, and so this is $m$ \inlinemetanote{writes: $= \frac{n}{p^k} = m$}. Because Lagrange says that the size of this is equal to the size of $G$, size of $P$ \inlinemetanote{writes $\frac{|G|}{|P|}$ below $\left|\faktor{G}{P}\right|$}, okay?
 
 So, that's $m$. And we know one thing about $m$: $p$ does not divide $m$ \inlinemetanote{writes: $p \nmid m$}. All right?
 
-This means we have $H$ acting on this $G$ mod $P$, and the size of this set here is not divisible by $p$ \inlinemetanote{writes \qt{$H \curvearrowright \frac{G}{P}$} and \qt{$\left|\frac{G}{P}\right|$ is not div. by $p$}}.
+This means we have $H$ acting on this $G$ mod $P$, and the size of this set here is not divisible by $p$ \inlinemetanote{writes \qt{$H \curvearrowright \faktor{G}{P}$} and \qt{$\left|\faktor{G}{P}\right|$ is not div. by $p$}}.
 \end{speech}
 
-\begin{content}[Cardinality of \texorpdfstring{$\frac{G}{P}$}{G/P} and Non-Divisibility by \texorpdfstring{$p$}{p}]
-By Lagrange's Theorem, the number of left cosets of $P$ in $G$ is:
+\begin{content}[Cardinality of \texorpdfstring{$\faktor{G}{P}$}{G/P} and Non-Divisibility by \texorpdfstring{$p$}{p}]
+By Lagrange's Theorem (\cref{thm:lagrange}), the number of left cosets of $P$ in $G$ is:
 \[
-\left|\frac{G}{P}\right| = \frac{|G|}{|P|} = \frac{n}{p^k} = m.
+\left|\faktor{G}{P}\right| = \frac{|G|}{|P|} = \frac{n}{p^k} = m.
 \]
-Since $(p, m) = 1$, we have $p \nmid m$. Consequently, for the action $H \curvearrowright \frac{G}{P}$, the set $\frac{G}{P}$ has cardinality not divisible by $p$:
+Since $(p, m) = 1$, we have $p \nmid m$. Consequently, for the action $H \curvearrowright \faktor{G}{P}$, the set $\faktor{G}{P}$ has cardinality not divisible by $p$:
 \begin{equation}\label{eq:p2-gp-not-div-p}
-p \nmid \left|\frac{G}{P}\right|.
+p \nmid \left|\faktor{G}{P}\right|.
 \end{equation}
 \end{content}
 
-\subsection{Existence of an \texorpdfstring{$H$}{H}-Fixed Point in \texorpdfstring{$\frac{G}{P}$}{G/P}}
+\subsection{Existence of an \texorpdfstring{$H$}{H}-Fixed Point in \texorpdfstring{$\faktor{G}{P}$}{G/P}}
 
 \begin{speech}[00:23:47 - 00:25:07]
-All right. So, the conclusion --- and we've seen this kind of argument before --- the conclusion we will see is that there must be a fixed point, an $H$-fixed point in $G$ mod $P$, all right \inlinemetanote{writes: Conclusion is that there must be an $H$-fixed pt in $\frac{G}{P}$}?
+All right. So, the conclusion --- and we've seen this kind of argument before --- the conclusion we will see is that there must be a fixed point, an $H$-fixed point in $G$ mod $P$, all right \inlinemetanote{writes: Conclusion is that there must be an $H$-fixed pt in $\faktor{G}{P}$}?
 
-I'll give you an argument for this, but it should not be a surprise. Well, I'll say it in words and I'll write it down clear, because we can divide this \inlinemetanote{points at $\frac{G}{P}$} in terms of the orbits, right? And the orbits always have orders that are divisible by the order of $H$. That's by the Orbit--Stabilizer Theorem.
+I'll give you an argument for this, but it should not be a surprise. Well, I'll say it in words and I'll write it down clear, because we can divide this \inlinemetanote{points at $\faktor{G}{P}$} in terms of the orbits, right? And the orbits always have orders that are divisible by the order of $H$. That's by the Orbit--Stabilizer Theorem.
 
-This (i.e., $|H|$) is a power of $p$. So, the only possibility for the orbits are powers of $p$. If all the orbits took positive powers of $p$, then this (i.e., $\left|\frac{G}{P}\right|$) would be divisible by $p$. But it's not divisible by $p$. So, there must be one orbit that takes the only power of $p$ that's not divisible by $p$, which is $p$ to the zero, and that would be a fixed point. That's the argument in words, we can write it. But we've done this argument before. \inlinemetanote{pushes the lower-left board up}
+This (i.e., $|H|$) is a power of $p$. So, the only possibility for the orbits are powers of $p$. If all the orbits took positive powers of $p$, then this (i.e., $\left|\faktor{G}{P}\right|$) would be divisible by $p$. But it's not divisible by $p$. So, there must be one orbit that takes the only power of $p$ that's not divisible by $p$, which is $p$ to the zero, and that would be a fixed point. That's the argument in words, we can write it. But we've done this argument before. \inlinemetanote{pushes the lower-left board up}
 \end{speech}
 
 \begin{content}[Fixed-Point Claim]
-\begin{claim}[Existence of an $H$-Fixed Point in $\frac{G}{P}$]\label[claim]{clm:h-fixed-point-gp}
-Under the action $H \curvearrowright \frac{G}{P}$, there exists an $H$-fixed point in $\frac{G}{P}$ (i.e., an orbit of size $1 = p^0$).
+\begin{claim}[Existence of an $H$-Fixed Point in $\faktor{G}{P}$]\label[claim]{clm:h-fixed-point-gp}
+Under the action $H \curvearrowright \faktor{G}{P}$, there exists an $H$-fixed point in $\faktor{G}{P}$ (i.e., an orbit of size $1 = p^0$).
 \end{claim}
 \end{content}
 
@@ -734,20 +734,20 @@ In the preceding explanation, the lecturer says that the orbits \qt{have orders 
 \begin{speech}[00:25:14 - 00:27:23]
 What's important in this argument is the size of $H$ is a power of $p$, and the size of the set does not divide $p$... $p$ is not divisible by that, sorry. $p$ does not divide the size of the set \inlinemetanote{erases the lower-right board}.
 
-So, let's try to write it out somehow longhand. The picture that we've drawn many times now: here $H$ is acting on this set, this is cosets here \inlinemetanote{draws a closed contour labeled $\frac{G}{P}$ with $H \curvearrowright$}. So, this breaks up into the orbit spaces, okay \inlinemetanote{partitions $\frac{G}{P}$ into orbit regions}?
+So, let's try to write it out somehow longhand. The picture that we've drawn many times now: here $H$ is acting on this set, this is cosets here \inlinemetanote{draws a closed contour labeled $\faktor{G}{P}$ with $H \curvearrowright$}. So, this breaks up into the orbit spaces, okay \inlinemetanote{partitions $\faktor{G}{P}$ into orbit regions}?
 
-And the Orbit--Stabilizer Theorem says --- I mean, sorry, the size here, this is equal to $m$, is equal to the sum of all the orbits. It's the same thing we always write. So, maybe I put $z_i$ here \inlinemetanote{writes: $m = \left|\frac{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|$}. We have some $z_1$ here, and $z_2$ here, and so on, okay \inlinemetanote{marks points $z_1, z_2$ inside the orbit regions}? This is what we always write.
+And the Orbit--Stabilizer Theorem says... I mean, sorry, the size here, this is equal to $m$, is equal to the sum of all the orbits. It's the same thing we always write. So, maybe I put $z_i$ here \inlinemetanote{writes: $m = \left|\faktor{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|$}. We have some $z_1$ here, and $z_2$ here, and so on, okay \inlinemetanote{marks points $z_1, z_2$ inside the orbit regions}? This is what we always write.
 
 Now, the Orbit--Stabilizer Theorem says that the size of this orbit is equal to the size of $H$ divided by the size of the stabilizer, okay \inlinemetanote{writes: $|\operatorname{Orb}(z_i)| = \frac{|H|}{|\operatorname{Stab}(z_i)|}$}? This thing, $H$ upstairs, is a power of $p$ --- that's all it is, there's nothing else. The order of $H$ is a power of $p$, that was the assumption \inlinemetanote{writes $p^\ell$ above $|H|$}. So, the only possibilities for this orbit are powers of $p$. That's it.
 
 But it cannot be that every orbit is a positive power of $p$, because then this thing (i.e., $m$) would be divisible by $p$, and it's not divisible by $p$, because $m$ is not divisible by $p$. So, there must be one orbit whose size is not a positive power of $p$. It has to be a power of $p$, but not a positive power of $p$. So, the only possibility is $p$ to the zero, and that orbit is a fixed point.
 \end{speech}
 
-\begin{content}[Orbit Decomposition of \texorpdfstring{$\frac{G}{P}$}{G/P} and Orbit--Stabilizer Proof]
+\begin{content}[Orbit Decomposition of \texorpdfstring{$\faktor{G}{P}$}{G/P} and Orbit--Stabilizer Proof]
 \begin{proof}[Proof of \cref{clm:h-fixed-point-gp}]
-Decomposing $\frac{G}{P}$ into its disjoint $H$-orbits and choosing a representative $z_i \in \frac{G}{P}$ from each orbit, we obtain:
+The argument is the orbit counting of the previous lecture, \cref{clm:nontrivial-orbit-size} and \eqref{eq:fixed-pt-congruence}. Decomposing $\faktor{G}{P}$ into its disjoint $H$-orbits and choosing a representative $z_i \in \faktor{G}{P}$ from each orbit, we obtain:
 \begin{equation}\label{eq:p2-gp-orbit-sum}
-m = \left|\frac{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|.
+m = \left|\faktor{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|.
 \end{equation}
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
@@ -765,7 +765,7 @@ m = \left|\frac{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|.
   z_2 = (-1.25, 0.12) in the middle-left cell (between y = -0.35 and 0.62, and 1.05 left of curve 3).
 - Labels (attached with inner sep=0.15cm):
   "H \curvearrowright" anchor=south east at (-1.95, 1.40) (outside the upper-left outline at 135 deg, (-1.84, 1.34));
-  "\frac{G}{P}" anchor=south west at (1.99, 1.22) (outside the upper-right outline at 40 deg);
+  "\faktor{G}{P}" anchor=south west at (1.99, 1.22) (outside the upper-right outline at 40 deg);
   "z_1" anchor=west at (0.0, 1.25) (right of dot, inside top cell where ellipse reaches x = 1.96);
   "z_2" anchor=west at (-1.25, 0.12) (right of dot, clear of curve 3 at x ~ -0.15).
 - Collisions: both exterior labels sit outside the ellipse on opposite sides; z_1 and z_2 stay inside their own orbit cells
@@ -792,7 +792,7 @@ m = \left|\frac{G}{P}\right| = \sum_{z_i} |\operatorname{Orb}(z_i)|.
 
     % (5) Text last
     \node[anchor=south east, inner sep=0.15cm] at (-1.95, 1.40) {$H \curvearrowright$};
-    \node[anchor=south west, inner sep=0.15cm, figBlue] at (1.99, 1.22) {$\dfrac{G}{P}$};
+    \node[anchor=south west, inner sep=0.15cm, figBlue] at (1.99, 1.22) {$\faktor{G}{P}$};
     \node[anchor=west, inner sep=0.15cm, figRed] at (0.0, 1.25) {$z_1$};
     \node[anchor=west, inner sep=0.15cm, figRed] at (-1.25, 0.12) {$z_2$};
 \end{tikzpicture}
@@ -804,12 +804,12 @@ By the Orbit--Stabilizer Theorem applied to the action of $H$, the size of each 
 \]
 Because $|H| = p^\ell$ is a power of the prime $p$, every divisor of $|H|$ is also a power of $p$. Thus, $|\operatorname{Orb}(z_i)| = p^{r_i}$ for some integer $r_i$ with $0 \le r_i \le \ell$.
 
-If every orbit had size $p^{r_i}$ with $r_i \ge 1$ (a positive power of $p$), then $p$ would divide every term in \eqref{eq:p2-gp-orbit-sum}, implying $p \mid m = \left|\frac{G}{P}\right|$, which contradicts \eqref{eq:p2-gp-not-div-p}. Therefore, at least one orbit must have size not divisible by $p$, so $r_i = 0$ and $|\operatorname{Orb}(z_i)| = p^0 = 1$. That representative $z_i$ is an $H$-fixed point in $\frac{G}{P}$.
+If every orbit had size $p^{r_i}$ with $r_i \ge 1$ (a positive power of $p$), then $p$ would divide every term in \eqref{eq:p2-gp-orbit-sum}, implying $p \mid m = \left|\faktor{G}{P}\right|$, which contradicts \eqref{eq:p2-gp-not-div-p}. Therefore, at least one orbit must have size not divisible by $p$, so $r_i = 0$ and $|\operatorname{Orb}(z_i)| = p^0 = 1$. That representative $z_i$ is an $H$-fixed point in $\faktor{G}{P}$.
 \end{proof}
 \end{content}
 
 \begin{hidden}
-% timestamp: 00:14:33
+% timestamp: 00:27:23
 % topic: Proof of H-fixed point in G/P completed; expressing fixed point as coset xP
 % board_state: thm:sylow-2, clm:h-fixed-point-gp, eq:p2-gp-not-div-p, eq:p2-gp-orbit-sum
 % next_goal: Write the fixed point z_i as a left coset x P and derive h x P = x P for all h \in H
@@ -817,9 +817,9 @@ If every orbit had size $p^{r_i}$ with $r_i \ge 1$ (a positive power of $p$), th
 \end{hidden}
 
 \begin{speech}[00:27:23 - 00:29:23]
-So, there exists $z_i$ such that $\operatorname{Orb}(z_i)$ is equal to $p$ to the zero, and then $z_i$ is an $H$-fixed point \inlinemetanote{writes: $\exists \, z_i \text{ s.t. } |\operatorname{Orb}(z_i)| = p^0$, $\text{then } z_i \text{ is } H\text{-fixed pt.}$}, because it means that the stabilizer takes up all of $H$, and it's a fixed point.
+So, there exists $z_i$ such that $\operatorname{Orb}(z_i)$ is equal to $p$ to the zero, and then $z_i$ is an $H$-fixed point \inlinemetanote{writes \qt{$\exists \, z_i \implies |\operatorname{Orb}(z_i)| = p^0$}, the arrow standing for \qt{such that}, and \qt{then $z_i$ is $H$-fixed pt.}}, because it means that the stabilizer takes up all of $H$, and it's a fixed point.
 
-All right, so we found one $z_i$. This $z_i$, this one that's a fixed point, is an element of this \inlinemetanote{writes: $z_i \in \frac{G}{P}$}, right? So, it's a coset space, so we can write $z_i$ as some $x P$ \inlinemetanote{writes: $z_i = x P$}. That's the left coset of $x$, where $x$ is in $G$ \inlinemetanote{writes: $x \in G$}. So, this $z_i$ is an element of this coset space, and now I'm just writing it explicitly as a coset.
+All right, so we found one $z_i$. This $z_i$, this one that's a fixed point, is an element of this \inlinemetanote{writes \qt{$z_i \in \left|\faktor{G}{P}\right|$}, a slip for $z_i \in \faktor{G}{P}$}, right? So, it's a coset space, so we can write $z_i$ as some $x P$ \inlinemetanote{writes: $z_i = x P$}. That's the left coset of $x$, where $x$ is in $G$ \inlinemetanote{writes: $x \in G$}. So, this $z_i$ is an element of this coset space, and now I'm just writing it explicitly as a coset.
 
 And what we know about this is it's a fixed point. That means we know, since it's an $H$-fixed point... I don't have to say $H$-fixed, I could just say fixed for the action we're considering, but since there's $G$'s and $H$'s, I'm just being very specific and saying $H$-fixed point. It's an $H$-fixed point. We know that if I take any element in $H$, if I take $h x$, this coset, it has to be just this coset, okay \inlinemetanote{writes \qt{We know (H-fixed pt.)} and \qt{$\forall h$, $h x P = x P$}}? That's what it means, for any $h$.
 
@@ -827,11 +827,11 @@ All right, so we're going to look at this equation: what does it say \inlinemeta
 \end{speech}
 
 \begin{content}[The Fixed Coset and Its Invariance Equation]
-By \cref{clm:h-fixed-point-gp}, there exists $z_i \in \frac{G}{P}$ such that $|\operatorname{Orb}(z_i)| = p^0 = 1$, meaning $z_i$ is an $H$-fixed point. Writing $z_i$ explicitly as a left coset of $P$ in $G$, we have:
+By \cref{clm:h-fixed-point-gp}, there exists $z_i \in \faktor{G}{P}$ such that $|\operatorname{Orb}(z_i)| = p^0 = 1$, meaning $z_i$ is an $H$-fixed point. Writing $z_i$ explicitly as a left coset of $P$ in $G$, we have:
 \[
 z_i = x P \qquad \text{for some } x \in G.
 \]
-Since $z_i$ is an $H$-fixed point under the left-multiplication action of $H$ on $\frac{G}{P}$, every element $h \in H$ leaves $x P$ invariant:
+Since $z_i$ is an $H$-fixed point under the left-multiplication action of $H$ on $\faktor{G}{P}$, every element $h \in H$ leaves $x P$ invariant:
 \begin{equation}\label{eq:p2-fixed-coset}
 \forall h \in H, \qquad h x P = x P.
 \end{equation}
@@ -842,7 +842,7 @@ Since $z_i$ is an $H$-fixed point under the left-multiplication action of $H$ on
 \begin{speech}[00:29:24 - 00:30:35]
 So, let's try to think about this fixed-point equation. We remember here that $P$ inside $G$, to start, was a $p$-Sylow subgroup \inlinemetanote{writes: $P \subset G$ is $p$-Sylow subgp.}. So, in particular, the order of this is $p$ to the $k$ \inlinemetanote{writes: $|P| = p^k$}.
 
-And now we have the fixed-point equation \inlinemetanote{writes: Fixed point equation}. The fixed-point equation says --- I just repeat it --- for every $h$, if I take $h$ times this coset, I get back this coset \inlinemetanote{writes: $\forall h \in H$, $h x P = x P$}. All right, so I write here: $x P$ in $\frac{G}{P}$ is $H$-fixed \inlinemetanote{writes: $x P \in \frac{G}{P}$ is $H$-fixed}.
+And now we have the fixed-point equation \inlinemetanote{writes: Fixed point equation}. The fixed-point equation says --- I just repeat it --- for every $h$, if I take $h$ times this coset, I get back this coset \inlinemetanote{writes: $\forall h \in H$, $h x P = x P$}. All right, so I write here: $x P$ in $\faktor{G}{P}$ is $H$-fixed \inlinemetanote{writes: $x P \in \faktor{G}{P}$ is $H$-fixed}.
 
 So, this is the summary from the previous part. We start with this $p$-Sylow subgroup. It has the right order for the maximum power of $p$. There's the $H$-action. By our analysis of this Orbit--Stabilizer Theorem, there is some coset here which is $H$-fixed. This is the $H$-fixed equation, and that's for every $h$ --- oh, it's already written there \inlinemetanote{writes \qt{$\forall h$} at the bottom left and points at $\forall h \in H$ above}.
 \end{speech}
@@ -851,7 +851,7 @@ So, this is the summary from the previous part. We start with this $p$-Sylow sub
 Summarizing the ingredients obtained so far:
 \begin{itemize}
     \item $P \subset G$ is a $p$-Sylow subgroup, so $|P| = p^k$.
-    \item $x P \in \frac{G}{P}$ is an $H$-fixed point, satisfying the fixed-point equation:
+    \item $x P \in \faktor{G}{P}$ is an $H$-fixed point, satisfying the fixed-point equation:
     \[
     \forall h \in H, \qquad h x P = x P.
     \]
@@ -861,9 +861,9 @@ Summarizing the ingredients obtained so far:
 \begin{speech}[00:30:35 - 00:32:09]
 Okay, so we need to think a little bit about what this means. When I write this \inlinemetanote{writes: $h x P$}, I hope you understand what this coset is, you know: $x$ is an element of $G$, $h$ is an element of $H$ inside $G$, so when I multiply $h$ times $x$, that's inside $G$, and this is the coset \inlinemetanote{writes \qt{$x \in G$} and \qt{$h \in H \subset G$}}.
 
-All right? So, in particular, $h x$ is in this coset, because in this $P$ you could put $1$ there \inlinemetanote{writes \qt{$h x P \ni h x$} and \qt{$h x \in h x P$}}. But it better be also in this coset. So, that means $h x$ must also be here, in $x P$ \inlinemetanote{writes: $h x$ must also be in $x P$}.
+All right? So, in particular, $h x$ is in this coset, because in this $P$ you could put $1$ there \inlinemetanote{writes: $h x P \ni h x$}. But it better be also in this coset. So, that means $h x$ must also be here, in $x P$ \inlinemetanote{writes: $h x$ must also be $x P$}.
 
-What does that mean? That means that there must be some element $z$ in $P$ such that $h x$ equals $x z$, where this is an element of $P$, this is an element of $G$, this is an element of $G$ --- that's the fixed one \inlinemetanote{writes \qt{$\exists \, z \in P$ such that $h x = x z$} and \qt{$\in P$} below $z$}. We're not ever moving $x$, $x$ is already chosen here. So, these are some fixed... maybe I should erase it, because I don't have... $x$ is fixed. We start with $h$, $x$ is fixed, then we can always solve --- it's saying we can always solve this equation.
+What does that mean? That means that there must be some element $z$ in $P$ such that $h x$ equals $x z$, where this is an element of $P$, this is an element of $G$, this is an element of $G$ --- that's the fixed one \inlinemetanote{writes \qt{$\exists \, z \in P$ such that $h x = x z$} and \qt{$\in P$} below $z$}. We're not ever moving $x$, $x$ is already chosen here. So, these are some fixed... maybe I should erase it, because I don't have... $x$ is fixed. We start with $h$, $x$ is fixed: it's saying we can always solve this equation.
 
 I mean, we found our $x$, and it says that for every $h$, we can solve this equation: that $h x$ equals $x$ times something in $P$, we can always solve it. That's what it says.
 \end{speech}
@@ -880,9 +880,9 @@ h x = x z.
 \end{content}
 
 \begin{hidden}
-% timestamp: 00:06:29
+% timestamp: 00:32:09
 % topic: Proof of Sylow II -- rewriting h x P = x P as h x = x z with z in P
-% board_state: thm:sylow-2, eq:p3-fixed-coset, eq:p3-hx-xz
+% board_state: thm:sylow-2, eq:p2-fixed-coset, eq:p3-hx-xz
 % next_goal: Solve for h = x z x^{-1}, conclude H \subset x P x^{-1}, finish Sylow II, and state/prove Sylow III
 % open_loops: none
 \end{hidden}
@@ -902,7 +902,7 @@ h = x z x^{-1}.
 \]
 Since $z \in P$, this means $h \in x P x^{-1}$.
 
-Because conjugation by $x \in G$ (namely, the map $g \mapsto x g x^{-1}$) is a group automorphism of $G$, it maps the subgroup $P \subset G$ to a subgroup $x P x^{-1} \subset G$ of the exact same cardinality:
+Because conjugation by $x \in G$ (namely, the map $c_x \colon g \mapsto x g x^{-1}$, Week 8, \cref{def:conjugation-cz}) is a group automorphism of $G$, it maps the subgroup $P \subset G$ to a subgroup $x P x^{-1} \subset G$ of the exact same cardinality:
 \[
 |x P x^{-1}| = |P| = p^k.
 \]
@@ -913,7 +913,7 @@ H \subset x P x^{-1}.
 Thus, $H$ is contained in the $p$-Sylow subgroup $S = x P x^{-1}$, completing the proof of Sylow II (\cref{thm:sylow-2}).
 
 \begin{steps}[How Conjugation Produces the Containing \texorpdfstring{$p$}{p}-Sylow Subgroup]
-We began with an arbitrary $p$-Sylow subgroup $P \subset G$ and needed a $p$-Sylow subgroup containing $H$. Since $H$ may not lie inside $P$ itself, we shifted $P$ by conjugation to $x P x^{-1}$, where $x \in G$ came from an $H$-fixed coset $x P \in \frac{G}{P}$. The fixed-point condition $h x P = x P$ for all $h \in H$ translates directly into $x^{-1} h x \in P$, i.e., $H \subset x P x^{-1}$.
+We began with an arbitrary $p$-Sylow subgroup $P \subset G$ and needed a $p$-Sylow subgroup containing $H$. Since $H$ may not lie inside $P$ itself, we shifted $P$ by conjugation to $x P x^{-1}$, where $x \in G$ came from an $H$-fixed coset $x P \in \faktor{G}{P}$. The fixed-point condition $h x P = x P$ for all $h \in H$ translates directly into $x^{-1} h x \in P$, i.e., $H \subset x P x^{-1}$.
 \end{steps}
 \end{content}
 
@@ -929,7 +929,7 @@ These are really great arguments, and they're not obvious arguments at all. It's
 Both Sylow I and Sylow II rely on non-obvious group actions combined with modular-arithmetic counting via the Orbit--Stabilizer Theorem:
 \begin{itemize}
     \item \textbf{Sylow I ($G \curvearrowright T$):} Left multiplication on the set $T$ of $p^k$-element subsets of $G$ produces an orbit whose size is not divisible by $p$ (because $p \nmid \binom{n}{p^k}$), forcing the stabilizer of a representative $X_j$ to have order $p^k$.
-    \item \textbf{Sylow II ($H \curvearrowright \frac{G}{P}$):} Left multiplication by $H$ on the coset space $\frac{G}{P}$ (of size $m$ coprime to $p$) forces an $H$-fixed coset $x P$, and the element $x \in G$ provides the exact conjugation $x P x^{-1}$ containing $H$.
+    \item \textbf{Sylow II ($H \curvearrowright \faktor{G}{P}$):} Left multiplication by $H$ on the coset space $\faktor{G}{P}$ (of size $m$ coprime to $p$) forces an $H$-fixed coset $x P$, and the element $x \in G$ provides the exact conjugation $x P x^{-1}$ containing $H$.
 \end{itemize}
 \end{insight}
 
@@ -971,13 +971,13 @@ While conjugation always lets us move any single subgroup around within a non-ab
 \begin{speech}[00:37:26 - 00:39:23]
 Oh, what's the proof? We don't have to do anything to prove this. Proof \inlinemetanote{writes: Proof.}. We already proved this \inlinemetanote{writes: We already proved this.}.
 
-Why? Because you just take $H$ equals $P_1$ \inlinemetanote{writes: $H = P_1$}, right? Because the hypothesis for Sylow $2$ was $H$ has order $p$ to the $\ell$. So, this one has order $p$ to the $\ell$ --- it has order $p$ to the $k$ \inlinemetanote{writes \qt{order $p^k$} below $H = P_1$}. So, we could just run part $2$ with $P_1$.
+Why? Because you just take $H$ equals $P_1$ \inlinemetanote{writes: $H = P_1$}, right? Because the hypothesis for Sylow $2$ was $H$ has order $p$ to the $\ell$. So, this one has order $p$ to the $\ell$ --- it has order $p$ to the $k$ \inlinemetanote{writes \qt{Ord $p^\ell$} under $H$ and \qt{Ord $p^k$} under $P_1$}. So, we could just run part $2$ with $P_1$.
 
-And what was the conclusion of Sylow $2$? That if we just run that argument, Sylow $2$, we found --- so, we run it with $H$ equal to $P_1$ and $P$ equal to $P_2$, all right \inlinemetanote{draws a right-pointing arrow labeled \qt{Sylow II} and writes \qt{$P = P_2$}}? So, for this argument for Sylow $2$, we had a subgroup whose order was a power of $p$. We take that to be the first Sylow group, which has order $p$ to the $k$, and in that argument we had a Sylow subgroup we started with, and I just take that to be $P_2$. All right?
+And what was the conclusion of Sylow $2$? That if we just run that argument, Sylow $2$, we found... So, we run it with $H$ equal to $P_1$ and $P$ equal to $P_2$, all right \inlinemetanote{draws a right-pointing arrow labeled \qt{Sylow II} and writes \qt{$P = P_2$}}? So, for this argument for Sylow $2$, we had a subgroup whose order was a power of $p$. We take that to be the first Sylow group, which has order $p$ to the $k$, and in that argument we had a Sylow subgroup we started with, and I just take that to be $P_2$. All right?
 
-And what we proved was that there exists an $x$ --- it's still on the board --- where $H$, which is $P_1$, is inside the conjugation of $P_2$ \inlinemetanote{writes: $\exists \, x, \; P_1 \subset x P_2 x^{-1}$}. This was the conclusion of the argument, and it's still there \inlinemetanote{writes \qt{Concl. of Arg II} with an arrow pointing to $P_1 \subset x P_2 x^{-1}$}.
+And what we proved was that there exists an $x$ --- it's still on the board --- where $H$, which is $P_1$, is inside the conjugation of $P_2$ \inlinemetanote{writes: $\exists \, x, \; P_1 \subset x P_2 x^{-1}$}. This was the conclusion of the argument, and it's still there \inlinemetanote{writes \qt{Conclusion of Argument} with an arrow pointing up to the Sylow II board}.
 
-Okay? So, we have $P_1$ inside the conjugation, but this thing has order $p$ to the $k$, and this one also has order $p$ to the $k$ \inlinemetanote{writes \qt{order $p^k$} below $P_1$ and \qt{$p^k$} below $x P_2 x^{-1}$}. So, the only way they can sit inside each other is if that is actually equality. All right? So, this implies that $P_1$ equals $x P_2 x$ inverse, so that's done \inlinemetanote{writes \qt{$\implies P_1 = x P_2 x^{-1}$} and draws a QED square}. Actually, there's no new argument here, it's just understanding what we did before. Okay?
+Okay? So, we have $P_1$ inside the conjugation, but this thing has order $p$ to the $k$, and this one also has order $p$ to the $k$ \inlinemetanote{writes \qt{Ord $p^k$} under $P_1$ and under $x P_2 x^{-1}$}. So, the only way they can sit inside each other is if that is actually equality. All right? So, this implies that $P_1$ equals $x P_2 x$ inverse, so that's done \inlinemetanote{writes \qt{$\implies P_1 = x P_2 x^{-1}$} and draws a QED square}. Actually, there's no new argument here, it's just understanding what we did before. Okay?
 \end{speech}
 
 \begin{content}[Deduction from Sylow II]
@@ -1000,7 +1000,7 @@ P_1 = x P_2 x^{-1}.
 \end{proofWrapper}
 
 \begin{hidden}
-% timestamp: 00:13:43
+% timestamp: 00:39:23
 % topic: Proof of Sylow III completed via Sylow II; transitioning to Sylow IV
 % board_state: thm:sylow-2, thm:sylow-3
 % next_goal: State Sylow IV (number of p-Sylow subgroups is 1 mod p) and assign its proof as an exercise
@@ -1008,7 +1008,7 @@ P_1 = x P_2 x^{-1}.
 \end{hidden}
 
 \begin{speech}[00:39:23 - 00:40:20]
-So, that's three parts. This is the standard Sylow trilogy, but there is a fourth part. It's like an encore \inlinemetanote{pushes the lower board up and pulls the upper board down, then erases the lower-left board}, which is also cool. I looked at --- by the way, I said that I'm not a fan of the book, I probably shouldn't say more because the lectures are recorded --- but Emmanuel's notes are very nice actually. You know, I saw now that for this section there's some notes written by Emmanuel Kowalski. They're very nice. So, you can just read those.
+So, that's three parts. This is the standard Sylow trilogy, but there is a fourth part. It's like an encore \inlinemetanote{pushes the lower board up and pulls the upper board down, then erases the lower-left board}, which is also cool. By the way, I said that I'm not a fan of the book --- I probably shouldn't say more, because the lectures are recorded --- but Emmanuel's notes are very nice actually. You know, I saw now that for this section there's some notes written by Emmanuel Kowalski. They're very nice. So, you can just read those.
 
 I'm not sure he has the Sylow $4$ in it, but it doesn't matter because I'm not going to prove it here, it's going to be an exercise for you. So, maybe it does matter, I don't know.
 \end{speech}
@@ -1016,7 +1016,7 @@ I'm not sure he has the Sylow $4$ in it, but it doesn't matter because I'm not g
 \section{Sylow's Fourth Theorem}
 
 \begin{speech}[00:40:20 - 00:41:47]
-So, in this Sylow land --- this Sylow direction --- we know we have a group, it has these Sylow subgroups, they're the biggest groups of order prime power you can find, and part $3$ says that they're all conjugate. So, you might wonder how many of them there are. Sylow $4$ is about that.
+So, in this Sylow direction, we know we have a group, it has these Sylow subgroups, they're the biggest groups of order prime power you can find, and part $3$ says that they're all conjugate. So, you might wonder how many of them there are. Sylow $4$ is about that.
 
 Sylow $4$ answers the question: how many $p$-Sylow subgroups of $G$ are there \inlinemetanote{writes \qt{Sylow IV} and \qt{Question: How many $p$-Sylow subgroups of $G$ are there?}}? And Sylow $4$ answers that question \inlinemetanote{draws an arrow $\implies$}: Sylow $4$ says that the number of $p$-Sylow subgroups of $G$... well, it's not going to tell you the number, like, what do you expect? It depends on the group and $p$ and everything. So, it says it is $1 \bmod p$ \inlinemetanote{writes \qt{Number of $p$-Sylow subgps of $G$} and \qt{is $1 \bmod p$}}. That's what it tells you. It tells you a little bit about this number. All right?
 \end{speech}
@@ -1032,36 +1032,21 @@ Let $G$ be a finite group and $p$ a prime. Then the number of $p$-Sylow subgroup
 \end{content}
 
 \begin{speech}[00:41:47 - 00:42:30]
-So, proof: I'm not going to prove this for you, although I could, and you could understand the proof, it's just that we have one minute left --- but one minute's enough to convey how the proof goes --- we let here be the set... ah, maybe it's not \inlinemetanote{writes \qt{Proof.} and draws a closed contour labeled $S$}. All right. Well, you have to prove it yourself. We can discuss it next time. It's a really good exercise to think about how to prove this.
+So, proof: I'm not going to prove this for you, although I could, and you could understand the proof, it's just that we have one minute left --- but one minute's enough to convey how the proof goes --- we let here be the set... ah, maybe it's not \inlinemetanote{writes \qt{Proof:} and a letter $S$, then stops}. All right. Well, you have to prove it yourself. We can discuss it next time. It's a really good exercise to think about how to prove this.
 
 And you can imagine there's a set of $p$-Sylow subgroups, they're all conjugate, so the group acts on that by conjugation. So, you should study the conjugation action on that. We can discuss it next time if you have any questions, but... I recommend really trying to prove this.
 \end{speech}
 
 \begin{content}[Proof Idea and Exercise for Sylow IV]
-\textbf{Board Sketch:} On the board, the lecturer begins writing \qt{Proof.} and draws a set $S$ (the collection of all $p$-Sylow subgroups of $G$) before stopping due to lack of time.
-
-\definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
-\begin{hidden}
-- Canvas: no scale, cm; ellipse S centred at (0, 0) with radii 1.8 and 1.2; picture spans x in [-2.0, 2.0], y in [-1.4, 1.4].
-- Order: (1) light fill and outline of S; (2) label "S" last.
-- Label: "S" centred at (0, 0) inside the contour (no other elements inside S).
-\end{hidden}
-\begin{center}
-\begin{tikzpicture}
-    % (1) Contour for the set S of p-Sylow subgroups
-    \fill[figBlue!6] (0, 0) ellipse (1.8 and 1.2);
-    \draw[thick, figBlue] (0, 0) ellipse (1.8 and 1.2);
-
-    % (2) Text last
-    \node[figBlue, font=\large] at (0, 0) {$S$};
-\end{tikzpicture}
-\end{center}
+On the board, the proof stops after \qt{Proof:} and a letter $S$, for lack of time. The spoken hint is to let $G$ act by conjugation on the set of all $p$-Sylow subgroups.
 
 \begin{exercise}[Proof of Sylow IV]\label[exercise]{exer:sylow-4-proof}
 Prove \cref{thm:sylow-4} by considering the set $S$ of all $p$-Sylow subgroups of $G$ and studying the conjugation action on $S$.
 \end{exercise}
 
 \begin{proof}[Proof of \cref{thm:sylow-4} (beyond the lecture)]
+The lecture leaves this to the students (\qt{I recommend really trying to prove this}). The following argument uses its hint, the conjugation action, restricted to one $p$-Sylow subgroup.
+
 Let $S$ be the set of all $p$-Sylow subgroups of $G$, and fix one $p$-Sylow subgroup $P \in S$ (which exists by \cref{thm:sylow-1}). We restrict the conjugation action $G \curvearrowright S$ (given by $g \cdot Q := g Q g^{-1}$) to the subgroup $P \subset G$, obtaining an action $P \curvearrowright S$.
 
 Decomposing $S$ into $P$-orbits with representatives $Q_i \in S$, we have:
@@ -1072,7 +1057,7 @@ By the Orbit--Stabilizer Theorem, each orbit size $|\operatorname{Orb}_P(Q_i)| =
 
 We determine which elements $Q \in S$ are $P$-fixed points (i.e., form orbits of size $1$). Clearly, $x P x^{-1} = P$ for all $x \in P$, so $P$ itself is a $P$-fixed point.
 
-Conversely, suppose $Q \in S$ is $P$-fixed, so $x Q x^{-1} = Q$ for all $x \in P$. This means $P \subset N_G(Q)$, where $N_G(Q) := \{ g \in G \mid g Q g^{-1} = Q \}$ is the normalizer of $Q$ in $G$. Note also that $Q \subset N_G(Q)$ (as $q Q q^{-1} = Q$ for all $q \in Q$). Because $|P| = |Q| = p^k$ is the highest power of $p$ dividing $|G|$ and $|N_G(Q)| \mid |G|$, $p^k$ is also the highest power of $p$ dividing $|N_G(Q)|$; hence, $P$ and $Q$ are both $p$-Sylow subgroups of $N_G(Q)$. Applying Sylow III (\cref{thm:sylow-3}) to the group $N_G(Q)$, there exists $g \in N_G(Q)$ such that $P = g Q g^{-1}$. Since $g \in N_G(Q)$, we have $g Q g^{-1} = Q$, and therefore $P = Q$.
+Conversely, suppose $Q \in S$ is $P$-fixed, so $x Q x^{-1} = Q$ for all $x \in P$. This means $P \subset N_G(Q)$, where $N_G(Q) := \{ g \in G \mid g Q g^{-1} = Q \}$ is a subgroup of $G$ (in textbooks: the normalizer of $Q$ in $G$, a name the lecture does not use). Note also that $Q \subset N_G(Q)$ (as $q Q q^{-1} = Q$ for all $q \in Q$). Because $|P| = |Q| = p^k$ is the highest power of $p$ dividing $|G|$ and $|N_G(Q)| \mid |G|$, $p^k$ is also the highest power of $p$ dividing $|N_G(Q)|$; hence, $P$ and $Q$ are both $p$-Sylow subgroups of $N_G(Q)$. Applying Sylow III (\cref{thm:sylow-3}) to the group $N_G(Q)$, there exists $g \in N_G(Q)$ such that $P = g Q g^{-1}$. Since $g \in N_G(Q)$, we have $g Q g^{-1} = Q$, and therefore $P = Q$.
 
 Thus, $\{P\}$ is the unique $P$-orbit of size $1$, while every other $P$-orbit in $S$ has size $p^{r_i}$ with $r_i \ge 1$ and is therefore divisible by $p$. Reducing the orbit sum modulo $p$ yields:
 \[
@@ -1085,7 +1070,7 @@ Thus, $\{P\}$ is the unique $P$-orbit of size $1$, while every other $P$-orbit i
 For a finite group $G$ of order $n = p^k m$ with $p$ prime and $(m, p) = 1$, a subgroup $S \subset G$ of order $|S| = p^k$ is called a \newterm{$p$-Sylow subgroup} of $G$. The lecture established the following results:
 \begin{itemize}
     \item \textbf{Sylow I (\cref{thm:sylow-1}):} $G$ contains at least one $p$-Sylow subgroup $S \subset G$ of order $p^k$. This acts as a partial converse to Lagrange's Theorem (whereas the full converse fails, e.g., $A_4$ has order $12$ but no subgroup of order $6$). The proof sets $T = \{ X \subset G \mid |X| = p^k \}$, uses $p \nmid \binom{n}{p^k}$ to find an orbit $\operatorname{Orb}(X_j)$ with $p \nmid |\operatorname{Orb}(X_j)|$, and combines $|\operatorname{Stab}(X_j)| \le p^k$ (via injection $g \mapsto g \cdot a_1$) with the Orbit--Stabilizer Theorem ($p^k \mid |\operatorname{Stab}(X_j)|$) to obtain $|\operatorname{Stab}(X_j)| = p^k$.
-    \item \textbf{Sylow II (\cref{thm:sylow-2}):} Every subgroup $H \subset G$ of order $p^\ell$ is contained in some $p$-Sylow subgroup of $G$. Fixing a $p$-Sylow subgroup $P \subset G$ and restricting the left coset action to $H \curvearrowright \frac{G}{P}$ (where $|\frac{G}{P}| = m$ is coprime to $p$) yields an $H$-fixed coset $x P$, giving $H \subset x P x^{-1}$.
+    \item \textbf{Sylow II (\cref{thm:sylow-2}):} Every subgroup $H \subset G$ of order $p^\ell$ is contained in some $p$-Sylow subgroup of $G$. Fixing a $p$-Sylow subgroup $P \subset G$ and restricting the left coset action to $H \curvearrowright \faktor{G}{P}$ (where $|\faktor{G}{P}| = m$ is coprime to $p$) yields an $H$-fixed coset $x P$, giving $H \subset x P x^{-1}$.
     \item \textbf{Sylow III (\cref{thm:sylow-3}):} All $p$-Sylow subgroups of $G$ are conjugate: for any two $p$-Sylow subgroups $P_1, P_2 \subset G$, there exists $x \in G$ with $P_1 = x P_2 x^{-1}$, deduced immediately from the Sylow II argument with $H = P_1$ and $P = P_2$.
     \item \textbf{Sylow IV (\cref{thm:sylow-4}):} The number of $p$-Sylow subgroups of $G$ is congruent to $1 \pmod p$, left as an exercise to prove via the conjugation action on the set $S$ of all $p$-Sylow subgroups.
 \end{itemize}
