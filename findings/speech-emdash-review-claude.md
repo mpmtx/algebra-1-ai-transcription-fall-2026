@@ -400,8 +400,10 @@ explain little of what is in the book.
     `---`. A like-for-like test would be the original D9: the new Stage 3 on Week 7 Tuesday's Hydrogen Stage 2 file
     (it costs requests).
 - **Open:**
-  - A like-for-like D9 run on Week 7 Tuesday, if wanted; and whether Stage 3's restart and `...` rules need another
-    change (D9 measured, above).
+  - The next lecture's Stage 3 run, measured the same way: the first with `prompt-engineering` `9b6915e`
+    (2026-11-21), which removed the prompt text and examples behind the D9 leftovers (a clause that stops unfinished
+    ends in `...`; a phrase said again after a dash is a restart; the self-check reads dashes, `...` and `;`).
+    Reviewed by Gemini 4 Hydrogen XHIGH. A like-for-like run on Week 7 Tuesday was not done, to spare requests.
   - The app half of D10.
   - Week 5 Tuesday's double opening (L458) has no dash, and a review had restored the clause, so it was left as it
     is.
