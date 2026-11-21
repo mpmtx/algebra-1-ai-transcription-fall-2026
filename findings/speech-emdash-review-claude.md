@@ -357,11 +357,51 @@ explain little of what is in the book.
     (the ones without a comma close their condition with a dash), and repeated words.
   - Gemini 4 Hydrogen XHIGH reviewed the whole comma commit (`65533fc`, all 155 hunks in 18 files, review only, last
     hunk header quoted as proof) and found nothing wrong.
+- **D9 measured** (2026-11-21) on the first run with the new Stage 3 prompt: Week 10 Tuesday, Stage 3 finished
+  2026-11-20 22:59 in `extracted_output_xhigh_longdecode_300k_5parts`. The same lecture's run of 2026-11-18 in
+  `..._300k_2parts` got the old prompt, so the two can be set side by side (last two rows of T2).
+  - **Prompt as sent:** the new run's Stage 3 prompt log holds all 50 lines that only `179c9e2`'s
+    `speech-refinement.md` has, and 1 of the 44 that only the old version has. The old run's log holds all 44 of
+    those and 1 of the 50. Stages 1 and 2 of the new run (2026-11-20 02:05 and 02:27) ran before `179c9e2` (03:17),
+    so they had the old prompts.
+  - **Not like for like:** the two runs had different Stage 1 runs (XHIGH against HIGH) and so different input:
+    184 dashes into the new Stage 3, 119 into the old. Both Stage 3 runs were Hydrogen HIGH. Compare what each Stage 3
+    did with its own input, not the totals.
+  - **Counts:** a fresh script following "How this was checked". It reproduces T2's Week 9 Tuesday row exactly and
+    its Week 7 Tuesday row to within one dash in kept/removed/added (188/72/29).
+    `prompt-engineering\tools\speech-density.py --punct` agrees on `odd` (28 and 27) and `---,` (0 and 31).
+  - **What the new prompt fixed:**
+    - `---,`, `---:` and `---;`: 0. The old run had 31, and the earlier Hydrogen runs 2–43.
+    - Stage 3 added 14 dashes, against 38 in the old run and 27–49 in T2. 7 stand where the input had a comma (old
+      run: 24; script count, which files a change with a comma under "comma").
+    - Semicolons went from 27 to 9. The old run raised them from 17 to 29.
+    - Sentences with 3+ dashes went from 7 to 2, and unspaced dashes from 1 to 0.
+  - **What it did not fix:**
+    - Stage 3 removed 38 of 184 dashes (21%), less than the old prompt's 28–30% in Weeks 6–8. That is partly the
+      input: Week 10's Stage 2 dashes are mostly pairs (36 odd / 67 even sentences; Week 7 Tuesday 132 / 56), and the
+      rule keeps a pair around a real aside.
+    - The output has 13.8 dashes per 1,000 words; the book after D11 has 8.5 (1,185 in 140,197 words).
+    - I read the 28 sentences in the new Stage 3 that have an unpaired dash (my judgement, no audio):
+      - About 15 end on an aside or comment, which the rules allow.
+      - About 5 are restarts that repeat their words, which §5 drops: "a prime --- prime number", "more points ---
+        more points", "addition is well-defined in that group --- the addition is in this group", "no matter what
+        group element --- whatever matrix", and "moves this element to there ... --- if I pick some $\alpha$ ...
+        moves this element there".
+      - About 4 are broken-off sentences that should end in `...`: "The proof here --- and if you do these
+        arguments", "I can draw it kind of like --- it's a product", "more than --- maybe I could put", "my set
+        $\widehat{T}$ --- and the hat means it's not...".
+    - Of the 14 added dashes, read one by one: 6 replaced a `...` restart mark (`...` stays at a broken-off
+      sentence), 5 a comma, 2 a period or semicolon, and 1 nothing.
+    - 8 of the 9 semicolons left link clauses ("in a moment; we have to first think", "finitely many orbits; for
+      each orbit I pick one element"), which §2 now turns into a period or a comma.
+    - Stage 4 left the dashes alone (160 → 160) and added no `so,` (11 → 11).
+  - **So:** the mechanical rules hold (`---,`, comma-to-dash, semicolons mostly). Restarts and broken-off sentences
+    still come through as dashes in about a third of the unpaired cases, and Stage 3 still turns some `...` into
+    `---`. A like-for-like test would be the original D9: the new Stage 3 on Week 7 Tuesday's Hydrogen Stage 2 file
+    (it costs requests).
 - **Open:**
-  - D9: Week 10 Tuesday's Stage 3 failed on the quota on 2026-11-20 and has to be rerun anyway; that rerun is the
-    first one with the new prompt. It was restarted at 12:37 and hit "high demand" errors at first. It finished at
-    22:59 (Stage 4 at 23:27, in `extracted_output_xhigh_longdecode_300k_5parts\11-18-2026-tuesday-week10`), but has
-    not yet been measured against T2.
+  - A like-for-like D9 run on Week 7 Tuesday, if wanted; and whether Stage 3's restart and `...` rules need another
+    change (D9 measured, above).
   - The app half of D10.
   - Week 5 Tuesday's double opening (L458) has no dash, and a review had restored the clause, so it was left as it
     is.
@@ -464,6 +504,8 @@ Book (the audit's plan, with corrected counts; Weeks 7–9 first):
 | W8 Tue, Hydrogen XHIGH | 206 → 198 → 170 → 170 | 143 / 55 / 27 | 9 | 41 → 38 | 166 → 26 | 9 → 9 |
 | W9 Tue, Flash 3.8 | 1 → 1 → 81 → 81 | 1 / 0 / 80 | 18 | 0 → 24 | 52 → 21 | 2 → 14 |
 | W9 Tue, Hydrogen XHIGH 200k | 312 → 297 → 112 → 112 | 69 / 228 / 43 | 2 | 14 → 17 | 28 → 18 | 11 → 25 |
+| W10 Tue, Hydrogen HIGH, old Stage 3 prompt (11-18) | 145 → 119 → 137 → 137 | 99 / 20 / 38 | 31 | 21 → 29 | 208 → 37 | 1 → 1 |
+| W10 Tue, Hydrogen XHIGH S1–S2, **new** Stage 3 prompt (HIGH, 11-20) | 211 → 184 → 160 → 160 | 146 / 38 / 14 | 0 | 34 → 9 | 270 → 40 | 11 → 11 |
 
 Added dashes in Flash's Stage 3 mostly took the place of a comma (19 of 20, 40 of 52, 48 of 80). Stage 1 alone,
 Hydrogen: Week 1 Wed 153, Week 3 Tue 320, Week 10 Tue (HIGH) 145. Had Week 1 Wednesday been rebased too, its
