@@ -1,0 +1,435 @@
+% =====================================================================
+% Chapter 6: Maximal and Prime Ideals
+% Written by Claude (claude-opus-5-5) on 2026-11-21 from the lecture notes, as the
+% pilot chapter of the book. Rules: book/README.md.
+%
+% Sources, read by tools/book/coverage.py (file | first line | end line, exclusive):
+% SOURCE: content/step4-2026-10-07-wednesday-week4-algebra-1-offset-final.tex | \section{Maximal Ideals} | \begin{overview}[Summary of Key Concepts]
+% SOURCE: content/step4-2026-10-14-tuesday-week5-algebra-1-offset-final.tex | \section{Maximal Ideals} | \section{The Chinese Remainder Theorem}
+% SOURCE: content/step4-2026-09-16-wednesday-week1-algebra-1-offset-final.tex | \section{Outlook: Zorn's Lemma and Vector Space Bases} | \begin{overview}[Summary of Key Concepts]
+%
+% Statements given twice in the lectures appear once and carry both labels:
+% def:maximal-ideal (W4 Wed) = def:maximal-ideal-w5 (W5 Tue), prop:field-zero-ideal-maximal
+% (W4 Wed, statement) = prop:field-zero-maximal (W5 Tue, proof). Pairs the lecture notes split
+% into two items are one item here: def:poset-axioms + rem:poset-informal,
+% ex:poset-proper-ideals + ex:ideal-poset-verification, rem:zorns-lemma-basis +
+% q:vector-space-basis. cor:maximal-ideal-quotient-char is a remark here (a restatement of
+% prop:quotient-field-maximal). not:subset-board is a book-wide convention and sits in Chapter 0.
+% Not taken over: the AI note that names Hilbert's Nullstellensatz (beyond the course), the
+% history of Zorn's lemma, the quiz and the lecturer's research, Nietzsche.
+% =====================================================================
+
+\chapter{Maximal and Prime Ideals}\label{ch:maximal-prime}
+
+Every ideal $I$ of a ring $R$ has a quotient ring $\faktor{R}{I}$ (\cref{thm:quotient-ring-structure}), and by the Correspondence Theorem (\cref{thm:ideal-correspondence}) the ideals of $\faktor{R}{I}$ are the ideals of $R$ that contain $I$. This chapter asks which ideals have especially good quotients. The answer comes in two parallel parts: the quotient $\faktor{R}{m}$ is a field exactly when $m$ is a maximal ideal (\cref{sec:maximal-ideals}), and the quotient $\faktor{R}{P}$ is an integral domain exactly when $P$ is a prime ideal (\cref{sec:prime-ideals}).
+
+In between, \cref{sec:zorn} asks whether maximal ideals exist at all. In every ring other than the zero ring they do. The proof, however, rests on Zorn's lemma, a principle from the foundations of mathematics, and it gives no way of finding a maximal ideal.
+
+% =====================================================================
+\section{Maximal Ideals}\label{sec:maximal-ideals}
+\source{W4 Wed 00:37:56--00:43:42; W5 Tue 00:10:11--00:26:03}
+
+\subsection{Proper Ideals and Maximal Ideals}
+
+An ideal is \emph{proper} if it is not the whole ring. Proper ideals play the leading role in this chapter, so their set gets a name of its own.
+
+\begin{definition}[Proper Ideals]\label[definition]{def:proper-ideals}
+Let $R$ be a ring. An ideal $I \subset R$ is a \newterm{proper ideal} if $I \neq R$. The set of proper ideals of $R$ is
+\[
+\mathscr{I}^*(R) := \{ I \subset R \mid I \text{ is a proper ideal} \} = \{ I \in \mathscr{I}(R) \mid I \neq R \}.
+\]
+\end{definition}
+
+So, $\mathscr{I}^*(R) \subset \mathscr{I}(R)$ arises from the set of all ideals (\cref{not:ideal-sets-k}) by removing the single ideal $R$. An ideal that contains $1$ contains every $r = r \cdot 1$, so an ideal $I$ is proper exactly when $1 \notin I$.
+
+\begin{definition}[Maximal Ideal]\label[definition]{def:maximal-ideal}\label[definition]{def:maximal-ideal-w5}
+Let $R$ be a ring and let $m \subset R$ be an ideal. Then $m$ is a \newterm{maximal ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Properness:} $m \in \mathscr{I}^*(R)$, that is, $m \neq R$.
+    \item \textbf{Maximality:} For every proper ideal $\hat{m} \in \mathscr{I}^*(R)$,
+    \[
+    \hat{m} \supset m \implies \hat{m} = m.
+    \]
+\end{enumerate}
+\end{definition}
+
+In words: a maximal ideal\footnote{Many textbooks write a maximal ideal as $\mathfrak{m}$; the lectures write a plain $m$.} is a proper ideal, and no other proper ideal lies above it. Equivalently, there is no ideal strictly between $m$ and $R$: if $I$ is an ideal with $m \subset I \subset R$, then $I = m$ or $I = R$.
+
+One may picture the proper ideals as the players of a tournament, in which $\hat{m}$ beats $m$ if $\hat{m} \supsetneq m$. A maximal ideal is a player whom nobody beats. The whole ring $R$ may not take part: it contains every ideal, so it would beat everybody, and $R$ would be the only maximal ideal. This is why condition~(1) excludes $R$. The condition is easily forgotten, and it matters exactly in the edge cases, such as the zero ring, which has no proper ideals at all.
+
+\begin{examples}[Maximal Ideals in $\mathbb{Z}$]\label[examples]{ex:maximal-ideals-integers}
+Consider the ring of integers $\mathbb{Z}$.
+\begin{itemize}
+    \item The ideal $4\mathbb{Z} = (4)$ is not maximal. It lies in the chain
+    \[
+    4\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z},
+    \]
+    so the proper ideal $2\mathbb{Z}$ strictly contains it.
+    \item The maximal ideals of $\mathbb{Z}$ are the principal ideals $p\mathbb{Z} = (p)$ for prime numbers $p$.
+\end{itemize}
+\end{examples}
+
+\begin{beyond}[The Maximal Ideals of $\mathbb{Z}$]
+The lectures state the second example without proof. Every ideal of $\mathbb{Z}$ is $n\mathbb{Z}$ for a unique $n \ge 0$ (\cref{thm:ideals-of-z-are-principal}). If $p$ is prime and $p\mathbb{Z} \subset n\mathbb{Z}$, then $n \mid p$, so $n = 1$, and then $n\mathbb{Z} = \mathbb{Z}$ is not proper, or $n = p$. Hence, $p\mathbb{Z}$ is maximal. No other ideal is maximal: $1\mathbb{Z} = \mathbb{Z}$ is not proper, $0\mathbb{Z} \subsetneq 2\mathbb{Z} \subsetneq \mathbb{Z}$, and if $n = ab$ with $1 < a < n$, then $n\mathbb{Z} \subsetneq a\mathbb{Z} \subsetneq \mathbb{Z}$.
+\end{beyond}
+
+\subsection{Fields and the Zero Ideal}
+
+In a field $F$, the maximal ideals are easy to find. A field has only two ideals, $(0)$ and $F$ (\cref{thm:ideals-in-a-field}), and they are different because $1 \neq 0$ in a field (\cref{def:field}). So, $(0)$ is the only proper ideal of $F$, and it is maximal. The converse holds as well.
+
+\begin{proposition}[Fields via the Zero Ideal]\label[proposition]{prop:field-zero-ideal-maximal}\label[proposition]{prop:field-zero-maximal}
+Let $R$ be a ring. Then $R$ is a field if and only if the zero ideal $(0) \subset R$ is a maximal ideal.
+\end{proposition}
+
+\begin{proof}
+Assume first that $R$ is a field. A field is not the zero ring, so $1 \neq 0$. Any ideal $I \subset R$ that contains a non-zero element $x$ also contains $1 = x^{-1} x$, and then $I = R$. Hence, the only ideals of $R$ are the zero ideal and the whole ring, and these are different:
+\[
+\mathscr{I}(R) = \{ (0), R \}, \qquad \mathscr{I}^*(R) = \{ (0) \}.
+\]
+Since $(0)$ is the only element of $\mathscr{I}^*(R)$, no proper ideal strictly contains it, and $(0)$ is a maximal ideal.
+
+Conversely, assume that $(0) \subset R$ is a maximal ideal. Then $(0)$ is proper, $(0) \neq R$, so $R$ is not the zero ring. To show that $R$ is a field, we must find a multiplicative inverse for every non-zero element. Let $x \in R$ with $x \neq 0$, and consider the principal ideal (\cref{def:ideal-generated-by-elements})
+\[
+(x) = \{ z x \mid z \in R \}.
+\]
+Since $x \in (x)$ and $x \neq 0$, we have $(0) \subsetneq (x)$. As $(0)$ is maximal, $(x)$ cannot be a proper ideal, so $(x) = R$. In particular, $1 \in (x)$: there is some $z \in R$ with $z x = 1$, and $z$ is the inverse of $x$.
+\end{proof}
+
+The edge cases match exactly. A field is not the zero ring by definition, a maximal ideal is proper by definition, and in the proof each of these two conventions yields the other. Beyond this bookkeeping the proof has a single step: in the converse, the maximality of $(0)$ forces every non-zero principal ideal to be all of $R$.
+
+\subsection{Quotients by Maximal Ideals}
+
+The next proposition extends \cref{prop:field-zero-maximal} from the zero ideal to an arbitrary ideal. It is one of the main reasons why maximal ideals matter.
+
+\begin{proposition}[Maximal Ideals via Field Quotients]\label[proposition]{prop:quotient-field-maximal}
+Let $R$ be a ring and $m \subset R$ an ideal. Then the quotient ring $\faktor{R}{m}$ is a field if and only if $m$ is a maximal ideal of $R$.
+\end{proposition}
+
+For $m = (0)$, the quotient $\faktor{R}{(0)}$ is $R$ itself, and the proposition becomes \cref{prop:field-zero-maximal}. The proof uses this special case for the ring $\faktor{R}{m}$, together with the Correspondence Theorem.
+
+\begin{proof}
+By \cref{prop:field-zero-maximal}, applied to the ring $\faktor{R}{m}$, and by the Correspondence Theorem (\cref{thm:ideal-correspondence}):
+\begin{align*}
+\faktor{R}{m} \text{ is a field} &\iff (0) \subset \faktor{R}{m} \text{ is a maximal ideal} \\
+&\iff m \subset R \text{ is a maximal ideal}.
+\end{align*}
+For the second equivalence, recall that an ideal is maximal exactly when it is proper and no ideal lies strictly between it and the whole ring. Let $q \colon R \to \faktor{R}{m}$ be the quotient map. The bijection
+\[
+\mathscr{I}_m(R) \longleftrightarrow \mathscr{I}\left(\faktor{R}{m}\right)
+\]
+of the Correspondence Theorem preserves inclusions in both directions, matches $m = q^{-1}\bigl((0)\bigr)$ with the zero ideal of $\faktor{R}{m}$, and matches $R$ with $\faktor{R}{m}$. Every ideal between $m$ and $R$ contains $m$, so it lies in $\mathscr{I}_m(R)$. Hence, $m \neq R$ exactly when $(0) \neq \faktor{R}{m}$, and an ideal lies strictly between $m$ and $R$ exactly when one lies strictly between $(0)$ and $\faktor{R}{m}$.
+\end{proof}
+
+\begin{remark}[Another Way to Say It]\label[remark]{cor:maximal-ideal-quotient-char}
+Among the proper ideals of $R$, the maximal ideals are exactly those whose quotient is a field:
+\[
+\{ m \subset R \mid m \text{ is a maximal ideal} \} = \left\{ m \in \mathscr{I}^*(R) \;\middle|\; \faktor{R}{m} \text{ is a field} \right\}.
+\]
+One could even take this as the definition of a maximal ideal.
+\end{remark}
+
+% =====================================================================
+\section{Zorn's Lemma and the Existence of Maximal Ideals}\label{sec:zorn}
+\source{W5 Tue 00:16:30--00:16:51 and 00:26:28--00:47:51; W1 Wed 00:42:20--00:44:01}
+
+Does every ring have a maximal ideal? The zero ring has none, since it has no proper ideals at all. For every other ring the answer is yes (\cref{thm:krulls-theorem-maximal-ideals}), but the answer may disappoint: the proof is an application of Zorn's lemma, and it does not show how to find a maximal ideal. This section first sets up the language of Zorn's lemma, which is about partially ordered sets.
+
+\subsection{Partially Ordered Sets}
+
+Partial orders are familiar from the first-year Foundations course (see also \cref{def:pre-partial-order}). The standard name in mathematical English is \emph{poset}, short for partially ordered set.
+
+\begin{definition}[Partially Ordered Set]\label[definition]{def:poset-axioms}\label[definition]{rem:poset-informal}
+A binary relation $\le$ on a set $S$ is a \newterm{partial order} if it satisfies the following three axioms for all $x, y, z \in S$:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Reflexivity:} $x \le x$.
+    \item \textbf{Antisymmetry:} If $x \le y$ and $y \le x$, then $x = y$.
+    \item \textbf{Transitivity:} If $x \le y$ and $y \le z$, then $x \le z$.
+\end{enumerate}
+A \newterm{partially ordered set}, or \newterm{poset}, is a pair $(S, \le)$ of a set $S$ and a partial order $\le$ on $S$.
+\end{definition}
+
+The word \emph{partial} refers to the fact that two elements need not be comparable: for $x, y \in S$ we may have $x \le y$, or $y \le x$, or neither, in which case $x$ and $y$ are \newterm{incomparable}. The poset that matters in this chapter is the following one.
+
+\begin{example}[The Poset of Proper Ideals]\label[example]{ex:poset-proper-ideals}\label[example]{ex:ideal-poset-verification}
+Let $R$ be a ring. The set $S = \mathscr{I}^*(R)$ of proper ideals is a poset under inclusion:
+\[
+I \le J \stackrel{\text{def}}{\iff} I \subset J.
+\]
+Indeed, $I \subset I$; if $I \subset J$ and $J \subset I$, then $I = J$; and if $I \subset J$ and $J \subset K$, then $I \subset K$. Two proper ideals are incomparable if neither contains the other.
+\end{example}
+
+Here it matters that $\subset$ allows equality (\cref{not:subset-board}): it is exactly the order $\le$ of this poset.
+
+\subsection{Maximal Elements}
+
+\begin{definition}[Maximal Element of a Poset]\label[definition]{def:maximal-element-poset}
+Let $(S, \le)$ be a partially ordered set. An element $x \in S$ is a \newterm{maximal element} of $S$ $\stackrel{\text{def}}{\iff}$
+\[
+\forall y \in S \colon \quad x \le y \implies x = y.
+\]
+\end{definition}
+
+So, nothing in $S$ lies strictly above a maximal element. For the poset of proper ideals, this is the definition of a maximal ideal, word for word.
+
+\begin{proposition}[Maximal Ideals Are Maximal Elements]\label[proposition]{prop:max-element-ideal-equiv}
+Let $R$ be a ring. An ideal $m \subset R$ is a maximal ideal of $R$ if and only if $m$ is a maximal element of the poset $(\mathscr{I}^*(R), \subset)$.
+\end{proposition}
+
+\begin{proof}
+Both conditions say that $m$ is a proper ideal and that every proper ideal $\hat{m}$ with $m \subset \hat{m}$ equals $m$ (\cref{def:maximal-ideal}).
+\end{proof}
+
+So, whether $R$ has a maximal ideal is a question about maximal elements of a poset. Not every poset has a maximal element; Zorn's lemma gives a condition under which one exists.
+
+\begin{beyond}[Maximal and Greatest Elements]
+A maximal element must not be confused with a \emph{greatest element} (or maximum): an element $g \in S$ with $y \le g$ for \emph{all} $y \in S$. A greatest element is comparable with every element, and there is at most one. A maximal element need not be comparable with the others, and there can be several, as in the poset drawn below. In $\mathscr{I}^*(\mathbb{Z})$, each ideal $(p)$ with $p$ prime is a maximal element (\cref{ex:maximal-ideals-integers}); two of them, such as $(2)$ and $(3)$, are incomparable, and there is no greatest element.
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+    \node[circle, draw, fill=gray!20, inner sep=1.5pt, label=below:{\footnotesize bottom}] (bot) at (2, 0) {$\bot$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (a) at (0.75, 1.3) {$a$};
+    \node[circle, draw=NavyBlue, fill=NavyBlue!10, inner sep=1.5pt] (b) at (3.0, 1.3) {$b$};
+    % maximal elements 1.5 apart, so their "maximal" labels do not run together
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m1) at (0.0, 2.7) {$m_1$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m2) at (1.5, 2.7) {$m_2$};
+    \node[circle, draw=BrickRed, fill=BrickRed!20, inner sep=2pt, label=above:{\textcolor{BrickRed}{\textbf{maximal}}}] (m3) at (3.0, 2.7) {$m_3$};
+    \draw[thick] (bot) -- (a);
+    \draw[thick] (bot) -- (b);
+    \draw[thick, NavyBlue] (a) -- (m1);
+    \draw[thick, NavyBlue] (a) -- (m2);
+    \draw[thick, NavyBlue] (b) -- (m3);
+\end{tikzpicture}
+\end{center}
+\end{beyond}
+
+\subsection{Chains and Zorn's Lemma}
+
+\begin{definition}[Chain]\label[definition]{def:chain-poset}
+Let $(S, \le)$ be a partially ordered set. A subset $T \subset S$ is called a \newterm{chain} if every two elements in $T$ are comparable:
+\[
+\forall x, y \in T \colon \quad x \le y \quad \lor \quad y \le x.
+\]
+\end{definition}
+
+The elements of a chain can be sorted into a line, which explains the name. As always in mathematics, \qt{or} is inclusive here: both $x \le y$ and $y \le x$ may hold, and then $x = y$.
+
+\begin{example}[Chains of Proper Ideals]\label[example]{ex:chain-proper-ideals}
+In the poset $(\mathscr{I}^*(R), \subset)$, a chain is a set $T$ of proper ideals such that $I \subset J$ or $J \subset I$ for any $I, J \in T$. One may picture a chain as an increasing sequence
+\[
+I_1 \subset I_2 \subset I_3 \subset \cdots,
+\]
+but this picture is too narrow: a chain may be uncountable and need not be indexed by $\mathbb{N}$ at all.
+\end{example}
+
+\begin{definition}[Bounded Chain, Upper Bound]\label[definition]{def:bounded-chain}
+Let $(S, \le)$ be a poset and $T \subset S$ a chain. The chain $T$ is \newterm{bounded} in $S$ if there exists an element $z \in S$ such that
+\[
+\forall x \in T \colon \quad x \le z.
+\]
+Such an element $z$ is called an \newterm{upper bound} for $T$. It must lie in $S$, but it need not lie in the chain $T$.
+\end{definition}
+
+\begin{lemma}[Zorn's Lemma]\label[lemma]{lem:zorns-lemma}
+Let $(S, \le)$ be a non-empty partially ordered set. If every chain in $S$ is bounded, then $S$ contains at least one maximal element.
+\end{lemma}
+
+Zorn's lemma is not proved here. It belongs to the foundations of mathematics: it is a form of the Axiom of Choice, and under the right hypotheses the two are equivalent. The lemma is named after Max Zorn, a fitting first name for a statement about maximal elements.
+
+A classical application of Zorn's lemma answers a question from linear algebra.
+
+\begin{remark}[Bases of Vector Spaces]\label[remark]{rem:zorns-lemma-basis}\label[remark]{q:vector-space-basis}
+Let $V$ be a vector space over a field $k$. Does $V$ always have a basis? A finite-dimensional vector space has one. For an infinite-dimensional vector space, the traditional way to obtain a basis is an application of Zorn's lemma.
+\end{remark}
+
+\begin{beyond}[How Zorn's Lemma Gives a Basis]
+Let $P$ be the set of linearly independent subsets of $V$, ordered by inclusion; it is non-empty, since $\emptyset \in P$. The union of a chain in $P$ is again linearly independent: a linear relation involves only finitely many vectors, and these all lie in one member of the chain. So, every chain in $P$ is bounded, and Zorn's lemma gives a maximal element $B \in P$. If some $v \in V$ were not in the span of $B$, then $B \cup \{v\}$ would be linearly independent and strictly larger than $B$. Hence, $B$ spans $V$, and $B$ is a basis. Over the Zermelo--Fraenkel axioms of set theory, the statement that every vector space has a basis is in fact equivalent to the Axiom of Choice. The existence of maximal ideals below uses the same union-of-a-chain argument (\cref{lem:chains-ideals-bounded}).
+\end{beyond}
+
+\subsection{The Existence of Maximal Ideals}
+
+So far, everything was a matter of definitions. The one real idea comes now: in the poset of proper ideals every chain is bounded, and an upper bound is simply the union of the chain.
+
+\begin{lemma}[Chains of Proper Ideals Are Bounded]\label[lemma]{lem:chains-ideals-bounded}
+Let $R$ be a non-zero ring and let $T \subset \mathscr{I}^*(R)$ be a non-empty chain of proper ideals. Then the union
+\[
+K := \bigcup_{I \in T} I
+\]
+is a proper ideal of $R$, $K \in \mathscr{I}^*(R)$, and it is an upper bound for $T$ under inclusion.
+\end{lemma}
+
+\begin{proof}
+Since $T$ is non-empty and every ideal contains $0$, we have $0 \in K$.
+
+\emph{$K$ is closed under addition.} Let $a, b \in K$. Then $a \in I$ and $b \in I'$ for some $I, I' \in T$. Since $T$ is a chain, $I \subset I'$ or $I' \subset I$; say $I \subset I'$. Then $a, b \in I'$, and since $I'$ is an ideal, $a + b \in I' \subset K$.
+
+\emph{$K$ absorbs products.} Let $r \in R$ and $a \in K$, say $a \in I$ with $I \in T$. Since $I$ is an ideal, $r a \in I \subset K$. With $r = -1$, this also gives $-a \in K$.
+
+\emph{$K$ is proper.} No $I \in T$ contains $1$, since every $I \in T$ is proper. Hence, $1 \notin K$, and $K \neq R$.
+
+Finally, $I \subset K$ for every $I \in T$, so $K$ is an upper bound for $T$ in $(\mathscr{I}^*(R), \subset)$.
+\end{proof}
+
+\begin{beyond}[Why the Union Needs a Chain]
+In general, the union of two ideals is not an ideal: in $\mathbb{Z}$, the union $(2) \cup (3)$ contains $2$ and $3$ but not $2 + 3 = 5$. For a chain, any two elements of the union lie in one common member of the chain, and this is what makes the union an ideal.
+\end{beyond}
+
+\begin{theorem}[Existence of Maximal Ideals]\label[theorem]{thm:krulls-theorem-maximal-ideals}
+Every non-zero commutative ring $R \neq 0$ contains at least one maximal ideal.\footnote{In textbooks, this is \emph{Krull's theorem}.}
+\end{theorem}
+
+\begin{proof}
+Let $R \neq 0$ and consider the poset $S = \mathscr{I}^*(R)$ of proper ideals, ordered by inclusion. Since $R \neq 0$, the zero ideal is proper, so $S$ is non-empty. By \cref{lem:chains-ideals-bounded}, every non-empty chain $T \subset S$ has the upper bound $K = \bigcup_{I \in T} I$ in $S$, and the empty chain is bounded by any element of $S$. By Zorn's lemma (\cref{lem:zorns-lemma}), $S$ has a maximal element $m$, and by \cref{prop:max-element-ideal-equiv}, $m$ is a maximal ideal of $R$.
+\end{proof}
+
+The hypothesis $R \neq 0$ cannot be dropped: for the zero ring, $\mathscr{I}^*(R)$ is empty, and Zorn's lemma does not apply. In one line, the logical structure of the argument is
+\[
+\text{Axiom of Choice} \ \leadsto\ \text{Zorn's lemma} \implies \text{every ring } R \neq 0 \text{ has a maximal ideal}.
+\]
+
+\begin{remark}[An Existence Proof Without a Construction]\label[remark]{rem:zorn-nonconstructive}
+The proof of \cref{thm:krulls-theorem-maximal-ideals} gives no hint of how to find a maximal ideal. It shows only that, under the usual foundations of mathematics, a maximal ideal exists. One may find this unsatisfying. A mathematician from another culture, a Martian say, could work with the same definition of a ring on different foundations and reject the theorem as unproved. For many special classes of rings the issue does not arise: there, maximal ideals can be constructed by other methods, without Zorn's lemma.
+\end{remark}
+
+% =====================================================================
+\section{Prime Ideals}\label{sec:prime-ideals}
+\source{W5 Tue 00:47:51--01:07:17}
+
+Prime ideals are to integral domains what maximal ideals are to fields, and their theory runs in parallel.
+
+\subsection{Definition and Examples}
+
+\begin{definition}[Prime Ideal]\label[definition]{def:prime-ideal}
+Let $R$ be a commutative ring and let $P \subset R$ be an ideal. Then $P$ is a \newterm{prime ideal} $\stackrel{\text{def}}{\iff}$ the following two conditions hold:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item \textbf{Properness:} $P \in \mathscr{I}^*(R)$, that is, $P \neq R$ (equivalently, $1 \notin P$).
+    \item \textbf{Prime condition:} For all elements $a, b \in R$,
+    \[
+    a \notin P \text{ and } b \notin P \implies a b \notin P.
+    \]
+\end{enumerate}
+\end{definition}
+
+Like a maximal ideal, a prime ideal is never the whole ring. The second condition is the one with teeth: if two elements lie outside $P$, then so does their product. Its contrapositive reads
+\[
+a b \in P \implies a \in P \text{ or } b \in P,
+\]
+which is the familiar property of a prime number $p$: if $p$ divides a product $a b$, then $p$ divides $a$ or $b$.
+
+The name comes from the integers, where the prime ideals are given by the prime numbers.
+
+\begin{claim}[Prime Ideals in $\mathbb{Z}$]\label[claim]{clm:prime-ideals-in-z}
+Let $n \in \mathbb{Z}_{\ge 2}$. The principal ideal $(n) = n\mathbb{Z} \subset \mathbb{Z}$ is a prime ideal if and only if $n$ is a prime number.
+\end{claim}
+
+\begin{example}[Why $(6) \subset \mathbb{Z}$ is Not Prime]\label[example]{ex:ideal-6-not-prime}
+Take $a = 2$ and $b = 3$. Then
+\[
+2 \notin (6) \quad \text{and} \quad 3 \notin (6), \qquad \text{but} \qquad 2 \cdot 3 = 6 \in (6).
+\]
+Two elements outside the ideal have their product inside it, so $(6)$ is not a prime ideal.
+\end{example}
+
+The two principal ideals not covered by the claim are boundary cases. The zero ideal $(0) \subset \mathbb{Z}$ is prime: it is not all of $\mathbb{Z}$, and since $\mathbb{Z}$ has no zero divisors, the product of two non-zero integers is non-zero. The unit ideal $(1) = \mathbb{Z}$ is not prime, since it is not proper.
+
+\begin{exercise}[Prime Ideals in $\mathbb{Z}$]\label[exercise]{exer:prime-ideals-in-z}
+Prove \cref{clm:prime-ideals-in-z}: show that for $n \in \mathbb{Z}_{\ge 2}$, the ideal $(n)$ is prime in $\mathbb{Z}$ if and only if $n$ is a prime number.
+\end{exercise}
+
+So, the prime ideals of $\mathbb{Z}$ are $(0)$ and the ideals $(p)$ for primes $p$. The name fits the old idea behind the word \emph{ideal}: an ideal is an idealized number, and a prime ideal is an idealized prime number.
+
+\subsection{Quotients by Prime Ideals}
+
+\begin{proposition}[Prime Ideals via Integral Domains]\label[proposition]{prop:quotient-integral-domain-prime}
+Let $R$ be a commutative ring and $P \subset R$ an ideal. Then the quotient ring $\faktor{R}{P}$ is an integral domain if and only if $P$ is a prime ideal of $R$.
+\end{proposition}
+
+\begin{proof}
+We prove that $\faktor{R}{P}$ is an integral domain when $P$ is prime; the converse is \cref{exer:quotient-prime-converse}. We write $\bar{x}$ for the class of $x \in R$ in $\faktor{R}{P}$.
+
+An integral domain is not the zero ring (\cref{def:integral-domain}), so we first check that $\faktor{R}{P}$ is not the zero ring. Since $P$ is prime, $P \neq R$, so $1 \notin P$, and $\bar{1} \neq \bar{0}$.
+
+Now let $\bar{x}, \bar{y} \in \faktor{R}{P}$ with $\bar{x} \neq \bar{0}$ and $\bar{y} \neq \bar{0}$. Being non-zero in the quotient means $x \notin P$ and $y \notin P$. Since $P$ is prime, $x y \notin P$, that is, $\bar{x} \bar{y} = \overline{x y} \neq \bar{0}$. Hence, $\faktor{R}{P}$ is an integral domain.
+\end{proof}
+
+As in the proof for fields, nothing happens here beyond unravelling the definitions: the definition of a prime ideal is made to match the definition of an integral domain. The converse is no different, which does not mean that it cannot be confusing.
+
+\begin{exercise}[The Converse of \cref{prop:quotient-integral-domain-prime}]\label[exercise]{exer:quotient-prime-converse}
+Assume that $\faktor{R}{P}$ is an integral domain, and prove that $P$ is a prime ideal:
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+    \item Since $\faktor{R}{P}$ is not the zero ring, deduce that $P \subsetneq R$, so $P \in \mathscr{I}^*(R)$.
+    \item Let $a, b \in R$ with $a b \in P$. Show that $\bar{a} \bar{b} = \bar{0}$ in $\faktor{R}{P}$, and use that $\faktor{R}{P}$ is an integral domain to conclude that $a \in P$ or $b \in P$.
+\end{enumerate}
+\end{exercise}
+
+Together with \cref{prop:quotient-field-maximal}, the proposition gives the two parallel characterizations announced at the beginning of the chapter:
+\[
+\begin{aligned}
+\faktor{R}{m} \text{ is a field} &\iff m \subset R \text{ is a maximal ideal}, \\
+\faktor{R}{P} \text{ is an integral domain} &\iff P \subset R \text{ is a prime ideal}.
+\end{aligned}
+\]
+For example, a field $F$ has exactly one prime ideal, the zero ideal: a prime ideal is proper, $(0)$ is the only proper ideal of $F$ (\cref{thm:ideals-in-a-field}), and $(0)$ is prime because $\faktor{F}{(0)} = F$ is an integral domain.
+
+\subsection{Maximal Ideals Are Prime}
+
+\begin{corollary}[Maximal Ideals Are Prime]\label[corollary]{cor:maximal-is-prime}
+Let $R$ be a commutative ring and $m \subset R$ an ideal. If $m$ is a maximal ideal, then $m$ is a prime ideal.
+\end{corollary}
+
+\begin{proof}
+If $m$ is maximal, then $\faktor{R}{m}$ is a field by \cref{prop:quotient-field-maximal}. Every field is an integral domain, so $m$ is prime by \cref{prop:quotient-integral-domain-prime}.
+\end{proof}
+
+\begin{corollary}[Existence of Prime Ideals]\label[corollary]{cor:existence-of-prime-ideals}
+Every non-zero commutative ring $R \neq 0$ contains at least one prime ideal.
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:krulls-theorem-maximal-ideals}, $R$ has a maximal ideal $m$, and $m$ is prime by \cref{cor:maximal-is-prime}.
+\end{proof}
+
+Like the existence of maximal ideals, this existence statement rests on Zorn's lemma.
+
+\subsection{A Non-Prime Ideal of Smooth Functions}
+
+\begin{example}[Compactly Supported Functions Do Not Form a Prime Ideal]\label[example]{ex:compact-support-not-prime-p4}
+Let $R = C^\infty(\mathbb{R})$ be the ring of smooth functions with pointwise operations, and let
+\[
+I := \{ f \in C^\infty(\mathbb{R}) \mid \operatorname{supp}(f) \text{ is compact} \}
+\]
+be the ideal of functions with compact support (\cref{def:compact-support-ideal}, \cref{prop:compact-support-ideal}).\footnote{Many textbooks write $C_c^\infty(\mathbb{R})$ for this ideal.} Then $I$ is not a prime ideal.
+\end{example}
+
+\begin{proof}
+To show that an ideal is not prime, we need two elements outside it whose product lies inside it. Choose smooth functions $a, b \in C^\infty(\mathbb{R})$ with
+\[
+a(x) \begin{cases} > 0 & \text{for } x < 1, \\ = 0 & \text{for } x \ge 1, \end{cases}
+\qquad\qquad
+b(x) \begin{cases} = 0 & \text{for } x \le 0, \\ > 0 & \text{for } x > 0, \end{cases}
+\]
+as in the figure below. Then $\operatorname{supp}(a) = (-\infty, 1]$ and $\operatorname{supp}(b) = [0, \infty)$ are unbounded, so $a \notin I$ and $b \notin I$. The product $a \cdot b$ vanishes outside $[0, 1]$, so $\operatorname{supp}(a \cdot b) \subset [0, 1]$ is compact and $a \cdot b \in I$. Hence, $I$ is not a prime ideal.
+\end{proof}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+    \draw[->, thick, gray!70] (-3.2, 0) -- (4.2, 0) node[right, text=black] {$\mathbb{R}$};
+    \draw[thick] (1, 0.08) -- (1, -0.08) node[below, font=\small] {$0$};
+    \draw[thick] (2, 0.08) -- (2, -0.08) node[below, font=\small] {$1$};
+    % a(x)
+    \draw[ultra thick, BrickRed, domain=1:2, samples=40]
+        plot (\x, {0.5 * (1 + cos(deg(pi * (\x - 1))))});
+    \draw[ultra thick, BrickRed] (-3.0, 1.0) -- (1, 1.0);
+    \draw[ultra thick, BrickRed] (2, 0) -- (4.0, 0);
+    \node[BrickRed, font=\bfseries] at (-2.0, 1.3) {$a(x)$};
+    % b(x)
+    \draw[ultra thick, NavyBlue, domain=1:2, samples=40]
+        plot (\x, {0.5 * (1 - cos(deg(pi * (\x - 1))))});
+    \draw[ultra thick, NavyBlue] (-3.0, 0) -- (1, 0);
+    \draw[ultra thick, NavyBlue] (2, 1.0) -- (4.0, 1.0);
+    \node[NavyBlue, font=\bfseries] at (3.5, 1.3) {$b(x)$};
+    % (ab)(x), labelled beside the bump with a pointer
+    \draw[ultra thick, ForestGreen, domain=1:2, samples=50]
+        plot (\x, {1.8 * 0.25 * (1 + cos(deg(pi * (\x - 1)))) * (1 - cos(deg(pi * (\x - 1))))});
+    \node[ForestGreen, font=\bfseries, anchor=west] at (2.3, 0.5) {$(ab)(x)$};
+    \draw[->, thin, ForestGreen] (2.3, 0.5) -- (1.72, 0.42);
+\end{tikzpicture}
+\end{center}

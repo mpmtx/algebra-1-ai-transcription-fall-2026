@@ -1,0 +1,18 @@
+% PLACEHOLDER for Chapter 0 (pilot). The real chapter will be an adaptation of the
+% lecture notes' content/prerequisites.tex, whose references point to weeks and
+% lecture labels. Only what Chapter 6 cites is here, copied from that file.
+
+\setcounter{chapter}{-1}
+\chapter{Background from the First-Year Courses}\label{ch:background}
+
+\begin{stubnote}
+\textbf{Placeholder.} This chapter will be adapted from the prerequisites chapter of the lecture notes. Only the two items Chapter~6 refers to are copied here.
+\end{stubnote}
+
+\begin{notation}[$\subset$ Allows Equality]\label[notation]{not:subset-board}
+As in the lectures, $A \subset B$ says only that $A$ is a subset of $B$ and allows $A = B$. A strict inclusion is written $A \subsetneq B$.\footnote{Many textbooks write $A \subseteq B$ for the first and $A \subset B$ for the second.}
+\end{notation}
+
+\begin{definition}[Partial Orders and Maximal Elements]\label[definition]{def:pre-partial-order}
+A \newterm{partial order} on a set $P$ is a relation $\le$ that is reflexive, transitive and \newterm{antisymmetric} ($x \le y$ and $y \le x$ imply $x = y$). Two elements need not be comparable; the standard example is a set of subsets, ordered by inclusion. A \newterm{chain} is a subset in which any two elements are comparable (a totally ordered subset). An \newterm{upper bound} of $A \subset P$ is an element $b \in P$ with $a \le b$ for all $a \in A$. An element $m \in P$ is \newterm{maximal} if nothing in $P$ lies strictly above it: $m \le x$ implies $x = m$. A maximal element need not be a largest element, and there can be several. Chapter~6 uses these notions for Zorn's lemma (\cref{lem:zorns-lemma}) and for maximal ideals, which are the maximal elements of the set of proper ideals ordered by inclusion (\cref{prop:max-element-ideal-equiv}).
+\end{definition}

@@ -1,0 +1,82 @@
+% Title page, table of contents and "About This Book".
+
+% The title page and the first TOC page are both page 1; without this, hyperref
+% creates the anchor page.1 twice (as in algebra-1.tex).
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[ThemeSecondary!10, rounded corners=8pt] ($(current page.north east) + (-7.2cm,-2.2cm)$) rectangle ($(current page.north east) + (-1.2cm,-6.8cm)$);
+  \fill[ThemePrimary!12, rounded corners=8pt] ($(current page.north east) + (-5.2cm,-3.6cm)$) rectangle ($(current page.north east) + (-0.6cm,-8.2cm)$);
+  \fill[TextBoldColor!15, rounded corners=6pt] ($(current page.north east) + (-3.4cm,-5.0cm)$) rectangle ($(current page.north east) + (-0.6cm,-9.4cm)$);
+\end{tikzpicture}
+
+\vspace*{4.2cm}
+\noindent\begin{minipage}{\textwidth}
+    {\sffamily\fontsize{42pt}{50pt}\selectfont\bfseries\color{ThemePrimary!95!black} Algebra I \par}
+    \vspace{0.8cm}
+    {\noindent\textcolor{ThemePrimary}{\rule{\textwidth}{1.5pt}}\par}%
+    \vspace{1.8cm}
+    {\sffamily\fontsize{18pt}{24pt}\selectfont\bfseries\color{ThemeSecondary!90!black} A Book Based on the Lectures \par}
+    \vspace{0.8cm}
+    {\sffamily\fontsize{13pt}{22pt}\selectfont
+      \begin{tabular}{@{}ll@{}}
+        \textcolor{black!50}{Lectures:}    & \textbf{\textcolor{ThemeSecondary!90!black}{Prof.\ Rahul Pandharipande}} \\[0.5ex]
+        \textcolor{black!50}{Institution:} & \textcolor{black!75}{Department of Mathematics -- ETH Z{\"u}rich} \\[0.5ex]
+        \textcolor{black!50}{Semester:}    & \textcolor{ThemeWeekNumber}{\faGraduationCap\quad Fall Semester 2026} \\[0.5ex]
+        \textcolor{black!50}{Edition:}     & \textcolor{black!75}{Pilot: Chapter 6 only}
+      \end{tabular}\par}
+\end{minipage}
+\vfill
+\noindent\begin{minipage}{\textwidth}
+    \begin{tcolorbox}[
+        arc=6pt,
+        boxrule=0.8pt,
+        colback=MidnightBlue!2!white,
+        colframe=MidnightBlue!25!white,
+        left=12pt, right=12pt, top=10pt, bottom=10pt
+    ]
+    {\sffamily\bfseries\small\color{MidnightBlue!90!black}\faInfoCircle\quad Notice \par}
+    \vspace{0.25cm}
+    \sffamily\small\color{black!75}
+    \begin{itemize}[leftmargin=1.5em, itemsep=3pt, topsep=0pt, parsep=0pt]
+        \item[\textcolor{MidnightBlue!80!black}{\small\faRobot}] \textbf{Written with AI:} This book was written with AI systems from the lecture notes \emph{Algebra I -- Lecture Notes \& Transcription}, which were themselves transcribed by AI from the recordings and checked against them.
+        \item[\textcolor{MidnightBlue!80!black}{\small\faUserShield}] \textbf{Unofficial Document:} This is \emph{not} official course material of ETH Z{\"u}rich or of the lecturer, and it has \emph{not} been read or corrected by the course staff.
+        \item[\textcolor{MidnightBlue!80!black}{\small\faExclamationTriangle}] \textbf{Disclaimer:} AI can make errors (in notation, indices or logical steps). Use at your own risk, without warranty of any kind regarding accuracy, completeness, or relevance to exams.
+    \end{itemize}
+    \end{tcolorbox}
+\end{minipage}
+\vspace*{0.5cm}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+\hypersetup{linkcolor=LinkColor}
+\cleardoublepage
+
+\chapter*{About This Book}
+\addcontentsline{toc}{chapter}{About This Book}
+\markboth{About This Book}{}
+
+This book presents the course Algebra~I as Prof.\ Rahul Pandharipande taught it at ETH Z{\"u}rich in the fall semester of 2026, ordered by topic rather than by date. Its source is the lecture notes \emph{Algebra I -- Lecture Notes \& Transcription}, a record of every lecture with what was said and what was written on the board, checked against the recordings. Those notes stay the place to look up a lecture as it happened.
+
+The book keeps the mathematics of the lectures: the definitions, statements and proofs from the board, and the lecturer's notation. The spoken explanations were used as a source for the motivation and the pictures that come with the mathematics, but they are not reproduced. A topic that the lectures treated more than once, for example a definition restated at the start of the next lecture, appears once.
+
+Two kinds of additions are marked:
+\begin{itemize}
+    \item mathematics the lectures did not give, such as a proof stated as an exercise or a standard fact, stands in a box headed \emph{Beyond the Lecture};
+    \item names and notations that textbooks use but the lectures did not are given in footnotes.
+\end{itemize}
+
+\section*{The Pilot Edition}
+
+Only Chapter~6 is written so far. Chapters 0 to 5 are placeholders: each holds just the statements that Chapter~6 refers to, copied from the lecture notes, so that its cross-references point to the right place.
+
+\section*{Conventions}
+
+\begin{itemize}
+    \item \textbf{Rings} are commutative with a unit $1$, and the zero ring is allowed (\cref{rem:ring-convention}).
+    \item Definitions are written with $:=$ or with $\stackrel{\text{def}}{\iff}$, as on the board.
+    \item $A \subset B$ allows $A = B$; a strict inclusion is written $A \subsetneq B$ (\cref{not:subset-board}).
+    \item Ideals are written with plain letters: $I$, $J$, $K$, and $m$ for a maximal ideal. Sets of ideals are written with a script $\mathscr{I}$ (\cref{not:ideal-sets-k}, \cref{def:proper-ideals}).
+\end{itemize}

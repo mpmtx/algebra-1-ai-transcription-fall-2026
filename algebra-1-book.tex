@@ -1,0 +1,46 @@
+% =====================================================================
+%  Algebra I: the textbook, built from the lecture notes in algebra-1.tex.
+%
+%  The lecture notes stay the checked record (timestamps, frames, audio). This
+%  book is derived from them: topic order, written as a book, no speech, no
+%  timestamps. Rules, status and build: book/README.md.
+%
+%  PREAMBLE: the book uses the lecture notes' own preamble, everything in
+%  algebra-1.tex before \begin{document}, so the two cannot drift apart and
+%  there is no copy to keep in step. The lines below make the \begin{document}
+%  of algebra-1.tex end that file's input (\endinput), so its title page and
+%  lectures are never read. book/book-preamble.tex then adds what differs.
+%  Consequence: a change to the preamble in algebra-1.tex feeds into this book
+%  too, so rebuild algebra-1-book.pdf in the same commit.
+% =====================================================================
+\def\BookDocumentEnv{document}
+\let\BookRealBegin\begin
+\protected\def\begin#1{%
+  \def\BookEnvName{#1}%
+  \ifx\BookEnvName\BookDocumentEnv
+    \expandafter\BookStopLecturePreamble
+  \else
+    \expandafter\BookRealBegin
+  \fi{#1}}
+\def\BookStopLecturePreamble#1{\let\begin\BookRealBegin\endinput}
+\input{algebra-1.tex}
+
+\input{book/book-preamble.tex}
+
+% Draft mode prints each section's sources (lecture and timestamps) in grey:
+% \booksourcestrue
+
+\begin{document}
+
+\input{book/frontmatter.tex}
+
+% Chapters 0 to 5 are placeholders: only the statements Chapter 6 cites.
+\input{book/stub-ch00.tex}
+
+\part{Rings}\label{part:rings}
+
+\input{book/stubs-ch01-ch05.tex}
+
+\input{book/ch06-maximal-and-prime-ideals.tex}
+
+\end{document}

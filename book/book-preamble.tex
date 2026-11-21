@@ -1,0 +1,78 @@
+% =====================================================================
+%  What the textbook changes in the lecture notes' preamble (algebra-1.tex).
+%  Read after that preamble; see algebra-1-book.tex.
+% =====================================================================
+
+\hypersetup{
+  pdftitle={Algebra I -- A Book Based on the Lectures},
+  pdfauthor={Based on the lectures of Prof. Rahul Pandharipande, ETH Zurich, Fall 2026}
+}
+
+% --- Chapters, not weeks ---------------------------------------------
+\addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+\renewcommand{\tocchaptericon}{\faBookOpen}
+
+% Header: "Chapter n -- Title" (the lecture notes set it by hand in \lecturechapter).
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ \ ---\ \ #1}{}}
+
+% A larger chapter title: the lecture notes' titles are set inside \lecturechapter.
+\titleformat{\chapter}[display]
+{\normalfont\sffamily\LARGE\bfseries\boldmath\color{ChapTitleText}}
+{\raggedleft\large\color{ChapNumberText}\chapterlabel}
+{1ex}
+{\ChapRule\endgraf\nopagebreak\vspace{2ex}\raggedleft}
+[\endgraf\nopagebreak\vspace{1ex}\ChapRule]
+
+% Parts (Rings, Groups) on a page of their own, in the chapter style.
+\titleformat{\part}[display]
+{\normalfont\sffamily\Huge\bfseries\boldmath\color{ChapTitleText}\centering}
+{\LARGE\color{ChapNumberText}\partname\ \thepart}
+{3ex}
+{}
+
+% --- Numbered sections (6.1, 6.2, ...); subsections stay unnumbered ----
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{2}
+% The footer shows the subsection title without the number it no longer has.
+\renewcommand{\subsectionmark}[1]{\extramarks{#1}{#1}}
+\titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}
+  {\SecSym\thesection}{0.6em}
+  {\color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}}[\SecRule]
+\titleformat{name=\section,numberless}{\normalfont\Large\sffamily\bfseries\boldmath}
+  {}{0pt}{\SecSym}[\SecRule]
+
+% --- Additions beyond the lecture --------------------------------------
+% Mathematics the lectures did not give (a proof, a fact, an example) goes in this
+% box; names and notations used in textbooks but not in the lectures go in footnotes.
+\newtcolorbox{beyond}[1][]{
+enhanced,
+colback=EnvAIBg,
+colframe=EnvAIBorder,
+dynamic shadow,
+fonttitle=\bfseries\sffamily,
+coltitle=EnvAITitleText,
+title={\faPlusCircle\ \ Beyond the Lecture\ifblank{#1}{}{: #1}},
+boxrule=1pt,
+arc=3pt,
+breakable
+}
+
+% --- Placeholder chapters (pilot) ---------------------------------------
+\newtcolorbox{stubnote}{
+enhanced,
+colback=black!3,
+colframe=black!30,
+boxrule=0.8pt,
+arc=3pt,
+fontupper=\sffamily\small\color{black!70},
+breakable
+}
+
+% --- Sources of a section ------------------------------------------------
+% \source{W5 Tue 00:10:11--00:26:03} after a section heading names the lecture
+% passages it is built from. Invisible unless \booksourcestrue (algebra-1-book.tex).
+\newif\ifbooksources
+\newcommand{\source}[1]{%
+  \ifbooksources
+    \par\noindent{\footnotesize\sffamily\color{black!45}\faVideo\ \ #1}\par\smallskip
+  \fi}
