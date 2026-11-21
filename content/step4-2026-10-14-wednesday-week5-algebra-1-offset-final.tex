@@ -1,3 +1,10 @@
+% Checked 2026-11-22 against the Hydrogen XHIGH rerun of 2026-11-21 (reruns/week5-wed-xhigh-3parts)
+% and video frames: the speech text stays (94.8% word-identical, no passage or slip gained), but
+% from 00:24 on the block times were late by 35 s growing to 2 min 50 s. The 16 blocks from
+% 00:23:46 on are re-timed to the rerun's times of their first and last words; nine frames
+% (00:25:00, 00:27:05, 00:29:05, 00:30:40, 00:32:15, 00:34:05, 00:36:25, 00:38:55, 00:40:50)
+% show the board at each new time and not yet at the old one. Date corrected: Wednesday 14 October,
+% not 15 (one day late, like the Tuesday); file renamed from step4-2026-10-15-wednesday-week5-...
 % ==========================================
 % Step 4/4 - Final refinement (refinement step 3)
 % Output: step4-2026-10-15-wednesday-week5-algebra-1-offset-final.tex
@@ -89,7 +96,7 @@
 % Primary Language: English
 % End of the video: 00:42:03
 
-\lecturechapter[5]{Wednesday}{15 Oct}{15 October 2026}{The Chinese Remainder Theorem and Polynomial Rings}
+\lecturechapter[5]{Wednesday}{14 Oct}{14 October 2026}{The Chinese Remainder Theorem and Polynomial Rings}
 % Old chapter title: The Chinese Remainder Theorem and Polynomial Rings
 
 \begin{overview}[Course Content Overview]
@@ -614,7 +621,8 @@ Okay. And now here is something that one has to just state a little bit carefull
 % open_loops: none
 \end{hidden}
 
-\begin{speech}[00:23:46 - 00:25:16]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:23:46-00:25:16; rerun and frames]
+\begin{speech}[00:23:46 - 00:24:40]
 And so, the degree of the polynomial is that you write the polynomial, you find some coefficient, the highest coefficient which is not zero \inlinemetanote{writes \qt{$c_d x^d$} above}, so, this is the highest coefficient \inlinemetanote{writes: highest coeff.} which is not zero \inlinemetanote{writes: which is not zero}.
 
 And that makes sense, because a polynomial is just some list of these coefficients. You find the highest one that's not zero, you look at the $d$ index, and that's the degree. So, this is the degree of this polynomial. Another way to write it informally: the degree of $f$ is equal to this $d$ \inlinemetanote{writes: $\deg(f) = d$}, where $d$ is the coefficient of the highest not zero. Okay, is that clear?
@@ -622,7 +630,8 @@ And that makes sense, because a polynomial is just some list of these coefficien
 And the only subtle point of this is: what is the degree of the zero polynomial? \inlinemetanote{writes: $\deg(0)$} That is a super unpleasant thing to think about, because it has no coefficient that's not zero.
 \end{speech}
 
-\begin{speech}[00:25:16 - 00:26:46]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:25:16-00:26:46; rerun and frames]
+\begin{speech}[00:24:41 - 00:25:40]
 So, there's some kind of conventions about it, but the convention that's correct is that this is undefined \inlinemetanote{writes: undefined}.
 
 You can make up your own conventions, but the convention that works the best is it's undefined. So, that was my whole point of having the degree, right? It's kind of an annoying thing, but you see that this recipe makes no sense, because you're supposed to write it out, find the highest coefficient which is not zero, and say that's the degree. But if it's zero, all the coefficients are zero, so, you're kind of, you know...
@@ -632,7 +641,8 @@ Anyway, so, it's an important thing and it sounds silly, and in a sense it's sil
 The degree of a constant is okay. The degree of a constant, like the degree of the polynomial $7$, as long as that $7$ is not zero, that has degree zero. But the degree of zero, you don't talk about.
 \end{speech}
 
-\begin{speech}[00:26:46 - 00:27:36]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:26:46-00:27:36; rerun and frames]
+\begin{speech}[00:25:40 - 00:26:17]
 I hope that wasn't too polemic, but that's just the standard mathematical definition, and since I'm supposed to be teaching you mathematics, I tell you the definition.
 
 So, that should have been also when you learned about polynomials in school, you should have asked your teacher: what is the degree of the zero polynomial? You should have asked that question. \inlinemetanote{erases the middle chalkboard to the left}
@@ -685,7 +695,8 @@ Some textbooks set $\deg(0) := -\infty$, so that the degree formula $\deg(f \cdo
 
 \subsection{Polynomial Long Division}
 
-\begin{speech}[00:27:36 - 00:29:16]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:27:36-00:29:16; rerun and frames]
+\begin{speech}[00:26:17 - 00:28:09]
 Okay, so, very important for us, and I'm not going to review it because you definitely learned it in school. At least I think you did. I think I went to school, but it's been a long time since I remember, but...
 
 So, is polynomial long division \inlinemetanote{writes: Poly long div}.
@@ -724,7 +735,8 @@ Because $\deg(0)$ is undefined, one cannot simply state the degree condition as 
 % open_loops: none
 \end{hidden}
 
-\begin{speech}[00:29:16 - 00:30:46]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:29:16-00:30:46; rerun and frames]
+\begin{speech}[00:28:10 - 00:29:08]
 So, that's polynomial long division, and as I said, you know this. I'm not going to talk about how to prove it. But maybe we talk about some things about the uniqueness. So, polynomial long division is maybe you have some like $3x + 1$, that's your $g$, and this is... I can't believe I'm writing this thing, $x^4$ like this \inlinemetanote{writes: $3x+1 \overline{\smash{\big)}\, x^4 + \dots}$}, and then you divide it, okay? And when you divide it, you get somebody, that's this, and what's left over is that. And if you think about it, they'll satisfy these properties. That's as much as I can possibly say about this.
 
 Okay, so, what about... Did you write it like this?
@@ -736,7 +748,8 @@ So, maybe something that you didn't emphasize in school is the uniqueness, so, m
 So, this says that if I have... \inlinemetanote{writes \qt{$f(x) = q(x) g(x) + r(x)$} and below \qt{$\hat{q}(x) g(x) + \hat{r}(x)$}}
 \end{speech}
 
-\begin{speech}[00:30:46 - 00:32:21]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:30:46-00:32:21; rerun and frames]
+\begin{speech}[00:29:08 - 00:30:46]
 I think if you remember every single thing you learned in school, you could almost be a professor.
 
 So, suppose if I have two of these things here. So, if I have two ways to write it, I have to show that they're the same as long as they satisfy these conditions. So, of course, what do I do? I subtract them \inlinemetanote{writes: $0 = (q - \hat{q}) g + (r - \hat{r})$}. I get zero is equal to $q$ minus $q$ hat (I don't always write the $x$'s, that's just, you know, for emphasis it's a polynomial): $(q - \hat{q})g + (r - \hat{r})$. Okay.
@@ -788,7 +801,8 @@ The lecture does not prove existence (\qt{I'm not going to talk about how to pro
 
 \subsection{Every Ideal in \texorpdfstring{$k[x]$}{k[x]} is Principal}
 
-\begin{speech}[00:32:21 - 00:34:09]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:32:21-00:34:09; rerun and frames]
+\begin{speech}[00:30:47 - 00:32:22]
 But this is an extremely important way to think about these polynomials. I mean, the long division is just an important thing. It sounds silly, but it's important.
 
 It seems like if you went to high school in Basel, you should learn about the Bernoulli numbers, though. If I were in charge of the curriculum... \inlinemetanote{erases the middle chalkboard}
@@ -810,7 +824,8 @@ That is, every ideal in the polynomial ring $k[x]$ is a \newterm{principal ideal
 
 \begin{proofWrapper}[Proof of \cref{prop:kx-ideals-principal}]
 
-\begin{speech}[00:34:09 - 00:35:48]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:34:09-00:35:48; rerun and frames]
+\begin{speech}[00:32:22 - 00:34:07]
 Proof. \inlinemetanote{writes: Proof} So, again, we take $I$ \inlinemetanote{writes: $I \subset k[x]$}. We know nothing about $I$ except it's an ideal.
 
 So, the first case, which is annoying, is that $I$ could be the zero ideal \inlinemetanote{writes: $I = (0)$}. And then we're okay, we're happy \inlinemetanote{writes: $\implies$ happy, $0 \in I$}, since zero is in $I$, because $I$ is... So, this case is fine.
@@ -840,7 +855,8 @@ Because the set of degrees are some set of integers. As long as it's not empty, 
 \end{description}
 \end{content}
 
-\begin{speech}[00:35:48 - 00:37:19]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:35:48-00:37:19; rerun and frames]
+\begin{speech}[00:34:07 - 00:35:15]
 So, now we have to prove it. So, then let $g$ in $I$ be any element \inlinemetanote{writes: Let $g \in I$ be any element}. I'm going to use now polynomial long division. Except I'm going to divide $g$ by $f$, so, it's $q(x) \cdot f + r$ \inlinemetanote{writes: $g = q(x) \cdot f + r(x)$}, which is the opposite I did there, but nevertheless, okay?
 
 So, I take this $g$, here's my $f$ that's the lowest, that's the minimal one. I take any $g$ and I use this polynomial long division, all right? So, now remember the cases are... So, the first thing I notice about this polynomial long division is that $f$ is in $I$ \inlinemetanote{writes \qt{$\in I$} under $f$}, so, this whole product is in $I$ \inlinemetanote{writes \qt{$\in I$} under $q(x)f$}, and $g$ is in $I$ \inlinemetanote{writes \qt{$\in I$} under $g$}, so, the conclusion is $r(x)$ is in $I$ \inlinemetanote{writes: $\implies r(x) \in I$}, okay?
@@ -861,7 +877,8 @@ r(x) = \underbrace{g(x)}_{\in I} - \underbrace{q(x) f(x)}_{\in I} \in I.
 Thus, the remainder $r(x)$ is itself an element of the ideal $I$.
 \end{content}
 
-\begin{speech}[00:37:19 - 00:38:47]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:37:19-00:38:47; rerun and frames]
+\begin{speech}[00:35:16 - 00:36:26]
 Okay, so, what are the possibilities for the remainder? The remainder could be zero \inlinemetanote{writes: $r(x) = 0$}. That's good for us, because then again we're happy again, because then that means that $g$ is in \inlinemetanote{writes: $\implies g \in (f)$}... because if this is zero, that means $g$ is in the ideal generated by $f$. Okay?
 
 What's the other possibility? This $r(x)$ is not zero \inlinemetanote{writes: $r(x) \neq 0$} and the degree of $r$ is strictly less than the degree of $f$ \inlinemetanote{writes: $\implies \deg(r) < \deg(f)$}. But that's not possible, because that $r$ would then be an element of $I$ with degree strictly less than $f$, which doesn't exist, because $f$ is minimal with respect to degree.
@@ -905,7 +922,8 @@ This proof mirrors the classical proof that every ideal in $\mathbb{Z}$ is princ
 
 \subsection{Principal Ideal Domains (PIDs)}
 
-\begin{speech}[00:38:47 - 00:40:01]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:38:47-00:40:01; rerun and frames]
+\begin{speech}[00:36:27 - 00:37:20]
 So, the outcome of this is that one can think --- of course, this breaks down at a certain point, but it's useful to think about these polynomial rings a little bit like the way you think about the integers. Integers have... I mean, this kind of polynomial in one variable with a field, that they have this property that all the ideals are just generated by one element, just like in the integers. And there's a name for such rings, and they'll play a role later in the class, but maybe I say it.
 
 So, in words, the definition is: $R$ is... so, the ring $R$ is a principal ideal domain, which is called PID, but not \qt{pid}. Yeah.
@@ -915,7 +933,8 @@ So, in words, the definition is: $R$ is... so, the ring $R$ is a principal ideal
 Why is $q$ in the ideal?
 \end{student}
 
-\begin{speech}[00:40:04 - 00:40:09]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:40:04-00:40:09; rerun and frames]
+\begin{speech}[00:37:24 - 00:37:30]
 $q$? I never said $q$'s in the ideal. So, I can't answer that question.
 \end{speech}
 
@@ -923,7 +942,8 @@ $q$? I never said $q$'s in the ideal. So, I can't answer that question.
 Ah, das ist ein Elementzeichen... \inlinemetanote{realizes the chalk inscription was $f \in I$, not $q \in I$}
 \end{student}
 
-\begin{speech}[00:40:09 - 00:40:29]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:40:09-00:40:29; rerun and frames]
+\begin{speech}[00:37:34 - 00:37:39]
 $f$ is in the ideal, and this is for the product.
 \end{speech}
 
@@ -931,7 +951,8 @@ $f$ is in the ideal, and this is for the product.
 Oh, okay. Thank you.
 \end{student}
 
-\begin{speech}[00:40:29 - 00:41:37]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:40:29-00:41:37; rerun and frames]
+\begin{speech}[00:37:40 - 00:39:52]
 Okay, so, $R$ is a principal ideal domain in words if every ideal $I \subset R$ is principal \inlinemetanote{writes: $R$ is a PID if every ideal $I \subset R$ is principal}.
 
 So, that's in words. It means exactly: for every ideal in $R$, there exists some element of the ideal such that the ideal is generated by that element \inlinemetanote{writes: $[\forall$ ideal $I \subset R, \, \exists f \in I$ s.t. $I = (f)]$}, okay? This is just repeating it.
@@ -980,7 +1001,8 @@ Every ideal of $\faktor{\mathbb{Z}}{6\mathbb{Z}}$ is principal. The ring fails t
 
 \subsection{Rings that are Not Principal Ideal Domains}
 
-\begin{speech}[00:41:37 - 00:41:50]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:41:37-00:41:50; rerun and frames]
+\begin{speech}[00:39:52 - 00:40:44]
 Something I should have said kind of clearly here is that that division algorithm that you learn in school uses the fact that you have a field, because, you know, you might have to divide by the leading coefficients. So, that was used in the way that the division algorithm works.
 
 So, some things that are not... rings that are not principal ideal domains \inlinemetanote{writes: Rings that are not PIDs}.
@@ -994,7 +1016,8 @@ I don't expect you to give me a proof of it, but what do you think would be prob
 $x^2 + 1$?
 \end{student}
 
-\begin{speech}[00:41:52 - 00:42:03]
+% [TIMESTAMP-CORRECTED (2026-11-22): was 00:41:52-00:42:03; rerun and frames]
+\begin{speech}[00:40:48 - 00:42:03]
 Yeah, I think that might be principal. But, you know, if you're just using the $x$ part with leading terms $1$... yeah, okay, you can think about that ideal, I think that one is principal. The standard example is you use something from $\mathbb{Z}$, like the $2$, and something from $x$ on this side \inlinemetanote{writes: $\supset (2, x)$}. This is like the canonical one.
 
 Yeah, yours is principal, I'd say. I think.
