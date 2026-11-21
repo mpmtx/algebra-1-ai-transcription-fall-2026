@@ -47,9 +47,9 @@ so keep regexes in files like these rather than inline.
      `(Recall:` counts must not drop.
    - `py -3 tools/rerun-check/fwdrefs.py` - references from Weeks 1-6 into the
      group chapters; `showlabel.py 1 9 <label>` shows a label's box.
-7. **Review, build, commit.** A Gemini Hydrogen review of the applied diff
-   (batch several lectures when quota is low), then build the PDF and commit it
-   with the lecture. To give each lecture its own commit with a matching PDF, build
+7. **Build, commit.** Build the PDF and commit it with the lecture. A Gemini
+   review of the applied diff only when the user asks for one (the standing
+   review rule was dropped on 2026-11-21: it costs tokens). To give each lecture its own commit with a matching PDF, build
    the intermediate states in copies of `git archive HEAD` with the lecture files
    overlaid.
 
