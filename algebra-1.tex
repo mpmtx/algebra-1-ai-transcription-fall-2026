@@ -1178,28 +1178,34 @@ breakable
 % 11. Dynamic Proof Wrappers
 \makeatletter
 
+% The badge's box includes its drop shadow and frame (the \path), so the shadow keeps a small
+% margin from the right edge of the text and from the line below.
 \newcommand{\qedbadge}{%
-  \tikz[baseline=(Q.base)]\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};%
+  \tikz[baseline=(Q.base)]{\node[draw=ProofTint, fill=ProofQEDBg, line width=1pt, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries\small, text=ProofQEDText, drop shadow={shadow xshift=0.5ex, shadow yshift=-0.5ex, fill=ProofTint, opacity=0.4}] (Q) {Q.E.D.};%
+    \path ([xshift=0.5ex+0.5pt, yshift=-0.5ex-0.5pt]Q.south east) ([xshift=-0.5pt, yshift=0.5pt]Q.north west);}%
 }
 
 
 
-% SHORT PROOF 
+% SHORT PROOF
+% The first line follows the title "Proof" after an ordinary line break, and the text after the
+% badge goes on after an ordinary paragraph break (2026-11-22; before, 1ex under the title and
+% 2ex after the badge).
 \renewenvironment{proof}[1][Proof]{%
     \par\addvspace{2ex plus 0.5ex minus 0.2ex}%
-    \insideprooftrue 
+    \insideprooftrue
     \noindent\textcolor{ProofTint}{\faPenNib}\hspace{0.5em}%
     {\normalfont\sffamily\bfseries\color{ProofTint}#1}%
-    \par\nobreak\vspace{1ex plus .2ex}\vspace{-\parskip}%
+    \par\nobreak\vspace{-\parskip}%
     \@afterindentfalse\@afterheading
 }{%
     \ifmmode
       \mathqed
     \else
       \ifhmode
-        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par\vspace{2ex}%
+        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par
       \else
-        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par\vspace{2ex}%
+        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par
       \fi
     \fi
 }
@@ -1314,13 +1320,14 @@ breakable
     \par\nobreak\vspace{\proofwrapper@afterspace}\vspace{-\parskip}%
     \@afterindentfalse\@afterheading
 }{%
+    % The title keeps the space of a heading; after the badge, an ordinary paragraph break.
     \ifmmode
       \mathqed
     \else
       \ifhmode
-        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par\vspace{2ex}%
+        \unskip\nobreak\hfill\penalty50\hskip2em\hbox{}\nobreak\hfill\qedbadge\par
       \else
-        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par\vspace{2ex}%
+        \par\vspace{-\parskip}\noindent\hfill\qedbadge\par
       \fi
     \fi
     \proofwrapper@tocclose
