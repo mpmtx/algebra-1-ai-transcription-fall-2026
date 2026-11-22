@@ -468,6 +468,18 @@ pdfauthor={Prof. Rahul Pandharipande}
   \renewcommand{\footrule}{}%
 }
 
+% 2026-11-22: Contents pages show "Contents" in the header only. report's \tableofcontents puts it
+% into both marks, and the footer prints the right mark, so it appeared twice on every page.
+\makeatletter
+\let\lecture@tableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\begingroup\def\@mkboth##1##2{\markboth{##1}{}}\lecture@tableofcontents\endgroup}
+\makeatother
+
+% 2026-11-22: Footnotes are never split across pages (a split one broke inside a word), and there is
+% more room above the footnote rule, which touched displayed equations and tall fractions.
+\interfootnotelinepenalty=10000
+\setlength{\skip\footins}{16pt plus 4pt minus 2pt}
+
 \renewcommand{\chaptermark}[1]{}
 \renewcommand{\sectionmark}[1]{%
 \markright{\thesection.\ #1}%
