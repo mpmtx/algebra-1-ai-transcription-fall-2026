@@ -317,7 +317,7 @@ and Neon agreeing; each changed block carries a `% [WORD-CHECKED (2026-11-22): .
 | W9 Tue:219 (C16) | `it's a very good answer` | "it's a very good answer" | kept |
 | W9 Tue:319 (C16) | `a hard question, not the answer, but` | "a hard question know the answer" | now `a hard question to know the answer, but` |
 | W10 Wed:620 (C17) | `I'm just saying over what I've said already.` | "I've just saying over what I've said already" | kept |
-| W10 Wed:866 (C17) | `because I don't have...` | "because we're [unclear]" | kept; three hearings, three versions (the rerun: "because you remember it") |
+| W10 Wed:866 (C17) | `because I don't have...` | "because we're [unclear]" | now `because...`: three hearings, three versions after "because" (the rerun: "you remember it"), and the user could not make it out either |
 | W5 Wed:345 (Argon II.B.5) | `you pick where that you want` | "you pick where that you want" | spoken words kept, `(i.e., whatever you want)` added |
 | W6 Tue:946 (Argon II.B.12) | `one at a time using if two` | "one at a time using, if you just, two" | kept, `(i.e., the case of two)` added |
 
