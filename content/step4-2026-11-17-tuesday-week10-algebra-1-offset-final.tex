@@ -2071,11 +2071,11 @@ Choosing the standard basis vector
 \]
 the finite Orbit-Stabilizer Theorem gives
 \[
-\left|\operatorname{Orb}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right| = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right|}.
+\left|\operatorname{Orb}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right| = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\bigl((1, 0, \dots, 0)^T\bigr)\right|}.
 \]
 Because every non-zero vector lies in the same orbit $V \setminus \{0\}$, and $|V| = |\mathbb{F}_p^n| = p^n$ (each of the $n$ coordinates has $p$ choices in $\mathbb{F}_p$), removing the zero vector leaves $\left|\operatorname{Orb}(1, 0, \dots, 0)^T\right| = |V \setminus \{0\}| = p^n - 1$. Substituting this on the left-hand side gives
 \begin{equation}\label{eq:gln-orb-stab-step1}
-p^n - 1 = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right|}.
+p^n - 1 = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\bigl((1, 0, \dots, 0)^T\bigr)\right|}.
 \end{equation}
 \end{content}
 
@@ -2144,7 +2144,7 @@ Doesn't matter at all.
 \end{student}
 
 \begin{speech}[01:17:43 - 01:18:02]
-Yeah, doesn't matter at all. You can put anything you want here \inlinemetanote{writes stars across the rest of the first row with an overbrace labeled \qt{anything}}.
+Yeah, doesn't matter at all. You can put anything you want here \inlinemetanote{writes stars and a squiggle across the rest of the first row}.
 
 So, the answer to who is in the stabilizer: it's exactly this picture. You take a $\mathrm{GL}_{n-1}$, you put it in the lower right-hand corner, you put a $1$ here, and you populate this in any random way you want. Okay?
 \end{speech}
@@ -2156,7 +2156,7 @@ We wish to characterize the subgroup
 \]
 An $n \times n$ matrix $A \in \mathrm{GL}_n(\mathbb{F}_p)$ fixes the first standard basis vector $(1, 0, \dots, 0)^T$ if and only if its first column equals $(1, 0, \dots, 0)^T$. Moreover, expanding $\det(A)$ down the first column gives $1 \cdot \det(B)$, where $B$ is the lower-right $(n-1) \times (n-1)$ submatrix; thus, $A$ is invertible if and only if $B \in \mathrm{GL}_{n-1}(\mathbb{F}_p)$, leaving the remaining $n-1$ entries of the first row completely arbitrary:
 \begin{equation}\label{eq:stab-block-matrix}
-\operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} = \left\{ \left[ \begin{array}{c|c} 1 & \overbrace{\ast \ \cdots \ \ast}^{\text{anything}} \\[4pt] \cline{2-2} \begin{matrix} 0 \\ \vdots \\ 0 \end{matrix} & \mathrm{GL}_{n-1}(\mathbb{F}_p) \end{array} \right] \right\}.
+\operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} = \left\{ \left[ \begin{array}{c|c} \multicolumn{1}{c}{1} & \ast \ \cdots \ \ast \\[2pt] \cline{2-2} \begin{matrix} 0 \\ \vdots \\ 0 \end{matrix} & \mathrm{GL}_{n-1}(\mathbb{F}_p) \end{array} \right] \right\}.
 \end{equation}
 
 \begin{steps}[Verifying the Block Characterization]
