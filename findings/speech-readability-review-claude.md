@@ -315,7 +315,7 @@ and Neon agreeing; each changed block carries a `% [WORD-CHECKED (2026-11-22): .
 | W5 Wed:1025 (C9) | `something from the two side` | "the two-- the Z side and something from the two side" | spoken word kept, `(i.e., $x$)` added: the ideal is $(2, x)$ |
 | W1 Wed:921 (C12) | `That's a wider property.` | "a-- a wider property" | kept |
 | W9 Tue:219 (C16) | `it's a very good answer` | "it's a very good answer" | kept |
-| W9 Tue:319 (C16) | `a hard question, not the answer, but` | "a hard question know the answer" | now `a hard question to know the answer, but` |
+| W9 Tue:319 (C16) | `a hard question, not the answer, but` | "a hard question know the answer" | now `a hard question, you don't know the answer, but`: the first (Flash) run's Stage 1 wrote exactly that; the book's base, the Hydrogen XHIGH run, had "not the answer" |
 | W10 Wed:620 (C17) | `I'm just saying over what I've said already.` | "I've just saying over what I've said already" | kept |
 | W10 Wed:866 (C17) | `because I don't have...` | "because we're [unclear]" | now `because...`: three hearings, three versions after "because" (the rerun: "you remember it"), and the user could not make it out either |
 | W5 Wed:345 (Argon II.B.5) | `you pick where that you want` | "you pick where that you want" | spoken words kept, `(i.e., whatever you want)` added |
