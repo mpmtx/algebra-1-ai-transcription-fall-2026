@@ -3,7 +3,8 @@
 Checked 2026-11-22 by Claude (Opus 5.5), on the book at `HEAD` = `e9c395c` (all reruns merged, dash and
 connector-comma passes done). I read every `speech` and `student` block of the 19 lectures in full, with the
 `\inlinemetanote`s stripped, and looked at the board notes wherever a sentence depends on them. Line numbers refer to
-`content/step4-*.tex` at `e9c395c`. **Nothing has been changed yet.**
+`content/step4-*.tex` at `e9c395c`. **Applied on 2026-11-22 together with Gemini Argon's review; what was applied,
+what was not, and what waits for the audio is in the status section at the end.**
 
 The question: is anything strange left in the speech blocks (weird sentences, repetitions, false starts) that is
 worth changing in the book as it stands? The prompts are out of scope.
@@ -250,3 +251,69 @@ order, lecture by lecture. Candidates were then located in the source by exact s
 context; counts (`Okay, so,`, `So,`, um/uh, the glosses in B1/B2, speech boxes without speech) come from greps over
 `content/step4-*.tex`. No audio was played and no frames were taken for this review: everything marked "Audio" in C
 is unverified.
+
+## Status, 2026-11-22: Argon's check, and what was applied
+
+Gemini Argon reviewed this file and the 19 lectures: `findings/speech-readability-review-argon.md`, committed
+unchanged in `5560299`. I checked each of its items against the source. The commit that adds this section applies
+both reviews: 18 lecture files, 88 changed lines, every edit matched by its exact old text; PDF rebuilt (745 pages, no
+errors, no undefined references).
+
+### How Argon's file relates to this one
+
+- Its proof of reading to the end is right (W10 Wed:1037).
+- **Its Part I ("Verification of Claude's Findings") does not follow this file.** Its A1, A2, A4–A7, B10–B12, C1,
+  C2, C5, C16 and C17 are spots this file never named; they are Argon's own finds, most of them good. Of this file's
+  items it skips A2, B2, B4, B10–B12, C1, C2, C5, C16, C17 and D2/D3, and its Part II lists A1 and A7 as "missed by
+  Claude".
+- **It quotes rules that are not in `speech-refinement.md`:** a §3 sentence naming `Okay, so, / All right, so,`, a §4
+  "maximum 2 `---` per sentence" and a §5 "never repeat the pre-dash word after the closing `---`". The two edits it
+  bases on §5 (W6 Tue:220, W7 Tue:307) still hold under the real rule on looping restarts (line 449).
+- Its version of A9 appends the note to a sentence that is not in the file (`All right, so, let me state these
+  properties carefully.`; line 1962 is `You know this function, right?`).
+- **Where it corrected this file:** C10 is line 702, not 703. W10 Wed misses the comma 14 times, not 5 (one more
+  `Okay, so` at 599 and eight `All right, so`; the book has `All right, so,` 68 times). My semicolon option in A3
+  breaks the Stage 3 semicolon rule. "Metaphor" (C14) is right: it is ETH D-MATH's course-page site,
+  metaphor.ethz.ch. And "take this flight by $C$" (W10 Tue:496, flagged WORD-SUSPECT) matches the lecturer's own "the
+  direct flight here" for following an arrow in W8 Tue:492.
+
+### Applied
+
+From this file: A1–A8 (A3 with a period, Argon's form; A4 writes `$1$`, as spoken), A7 at all 14 spots in W10 Wed,
+B1–B13 (B4 keeps only "nontrivial", since Stage 3 drops a slip corrected at once; B13 in the student lines too, with
+Argon's three small fixes there), C1, C2, C4 (my gloss, not Argon's "(i.e., exponent)"), C5 as a gloss, C6 (Argon's
+form), C7, C8 (Argon's gloss), C10, C11 (`what's this $(4)$?`: "for" and "four" sound alike, and he explains the
+notation $(4)$ right after, so no recording can settle it better than the context), and C15's line 816.
+
+From Argon's own finds: W7 Wed:1184 (as `take the rotations of this cube`, not Argon's "this rotation group of the
+cube is a group"), W9 Tue:1562, W7 Tue:307, W7 Tue:556, W7 Tue:1789, W8 Tue:1429, W7 Wed:317, W7 Wed:755, W10
+Tue:757 (a comma, `play with, with the actions`, instead of Argon's "for"), and its Part II.B items 1–4, 6–11, 13–19
+and 21. The WORD-SUSPECT comment at W10 Tue:492 became a WORD-CHECKED note citing W8 Tue (not heard).
+
+Prompt side: the connector lists of Stages 1, 3 and 4 had `Okay, so,` since `a2ecbfd`; `All right, so,` followed in
+`c3c31c0` (prompt-engineering).
+
+### Not applied
+
+- A9 (the speech box without speech): taste, and Argon's version rests on a sentence that does not exist.
+- D1–D4: authentic; Argon agrees on D1 and D4.
+- W1 Wed:1217 `(application?)`: stays, as its WORD-CHECKED comment decided after three hearings (Argon wanted
+  `(i.e., application)`).
+- Argon II.B.20 (W10 Wed:325, "the stabilizer" for $X$): he corrects himself in the same block, and the aiNote right
+  after explains it.
+- Argon C5 (W9 Tue:2463): already follows the slip convention.
+
+### Waiting for the audio
+
+Each keeps its current words until heard:
+
+| Spot | Now | Candidate |
+|---|---|---|
+| W5 Wed:1025 (C9) | `something from the two side` | `the $x$ side` (the ideal is $(2, x)$) |
+| W1 Wed:921 (C12) | `That's a wider property.` | `weirder`; both reviews would keep `wider` |
+| W9 Tue:219 (C16) | `it's a very good answer` | `question` |
+| W9 Tue:319 (C16) | `a hard question, not the answer, but` | `a hard question to answer, but` |
+| W10 Wed:620 (C17) | `I'm just saying over what I've said already.` | `going over` |
+| W10 Wed:866 (C17) | `because I don't have...` | the rerun has "because you remember it" |
+| W5 Wed:345 (Argon II.B.5) | `you pick where that you want` | `whatever you want` |
+| W6 Tue:946 (Argon II.B.12) | `separating them off one at a time using if two` | `using the case of two` |
