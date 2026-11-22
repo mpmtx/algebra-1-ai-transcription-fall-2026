@@ -303,17 +303,22 @@ Prompt side: the connector lists of Stages 1, 3 and 4 had `Okay, so,` since `a2e
   after explains it.
 - Argon C5 (W9 Tue:2463): already follows the slip convention.
 
-### Waiting for the audio
+### Settled by the audio (Gemini Neon, 2026-11-22)
 
-Each keeps its current words until heard:
+The eight spots that needed the recording were cut as 27–44 s clips around each spot (ffmpeg, mono mp3), renamed
+`clip1`–`clip8` so the file names gave nothing away, and transcribed word for word by Gemini 4 Neon XHigh through
+`agy`, four clips per call, with no hint of the disputed words. One hearing each, so a settled word rests on Stage 1
+and Neon agreeing; each changed block carries a `% [WORD-CHECKED (2026-11-22): ...]` comment.
 
-| Spot | Now | Candidate |
-|---|---|---|
-| W5 Wed:1025 (C9) | `something from the two side` | `the $x$ side` (the ideal is $(2, x)$) |
-| W1 Wed:921 (C12) | `That's a wider property.` | `weirder`; both reviews would keep `wider` |
-| W9 Tue:219 (C16) | `it's a very good answer` | `question` |
-| W9 Tue:319 (C16) | `a hard question, not the answer, but` | `a hard question to answer, but` |
-| W10 Wed:620 (C17) | `I'm just saying over what I've said already.` | `going over` |
-| W10 Wed:866 (C17) | `because I don't have...` | the rerun has "because you remember it" |
-| W5 Wed:345 (Argon II.B.5) | `you pick where that you want` | `whatever you want` |
-| W6 Tue:946 (Argon II.B.12) | `separating them off one at a time using if two` | `using the case of two` |
+| Spot | Book before | Neon heard | Result |
+|---|---|---|---|
+| W5 Wed:1025 (C9) | `something from the two side` | "the two-- the Z side and something from the two side" | spoken word kept, `(i.e., $x$)` added: the ideal is $(2, x)$ |
+| W1 Wed:921 (C12) | `That's a wider property.` | "a-- a wider property" | kept |
+| W9 Tue:219 (C16) | `it's a very good answer` | "it's a very good answer" | kept |
+| W9 Tue:319 (C16) | `a hard question, not the answer, but` | "a hard question know the answer" | now `a hard question to know the answer, but` |
+| W10 Wed:620 (C17) | `I'm just saying over what I've said already.` | "I've just saying over what I've said already" | kept |
+| W10 Wed:866 (C17) | `because I don't have...` | "because we're [unclear]" | kept; three hearings, three versions (the rerun: "because you remember it") |
+| W5 Wed:345 (Argon II.B.5) | `you pick where that you want` | "you pick where that you want" | spoken words kept, `(i.e., whatever you want)` added |
+| W6 Tue:946 (Argon II.B.12) | `one at a time using if two` | "one at a time using, if you just, two" | kept, `(i.e., the case of two)` added |
+
+Committed with the PDF rebuilt (745 pages, no errors, no undefined references).
