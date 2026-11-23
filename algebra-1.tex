@@ -316,8 +316,8 @@ pdfauthor={Prof. Rahul Pandharipande}
 
 % --- GLOBAL BOX SPACING & SEAMLESS PAGE-BREAKING ENGINE ---
 \tcbsetforeverylayer{
-  before skip=14pt plus 3pt minus 2pt, 
-  after skip=14pt plus 3pt minus 2pt,
+  before skip=1.0\textline plus 0.21\textline minus 0.14\textline,
+  after skip=1.0\textline plus 0.21\textline minus 0.14\textline,
   pad at break=2.5mm,
   lines before break=2,
   shrink break goal=2mm,
@@ -344,11 +344,57 @@ pdfauthor={Prof. Rahul Pandharipande}
 % ==========================================
 % TYPOGRAPHY, ADVANCED SPACING & CORNER CASES
 % ==========================================
-\linespread{1.05}
+% --- VERTICAL RHYTHM (2026-11-23) ---
+% Every vertical space is a multiple of \textline, the line distance of the body text (\baselineskip
+% at \normalsize: 14.28pt with 11pt type and \linespread{1.05}). A different line spacing scales
+% every gap with the lines; to try one, define \textlinespread before the preamble is read, e.g.
+%   pdflatex -jobname=test '\def\textlinespread{1.3}\input{algebra-1}'
+% The multiples come from the earlier pt/ex values, so text, statements and proofs look as before.
+% Boxes and headings were brought into harmony: boxes stand 1 L apart, and every heading has 1 L
+% below it (where its first box follows) and clearly more above it, so it belongs to what follows.
+%
+%   line break                         0
+%   paragraph                          0.21 L           \parskip (\customparskip, 3pt)
+%   block: statement, proof, steps,    0.30 L + 0.21 L  \customenvspace plus the paragraph skip
+%     run-in heading
+%   display formula                    0.25 L           (short: 0.10 L above, 0.17 L below)
+%   centred figure or table            0.63 L + 0.21 L  \topsep of center, plus \parskip
+%   box (speech, content, notes, ...)  1 L              tcolorbox before/after skip
+%   subsubsection / subsection /       2 / 2.25 / 2.5 L above, 1 L below
+%     section; titled long proof       2 L above, 1 L below
+%   footnotes                          1.12 L           above the footnote rule
+%
+% (The contents pages keep their own ex-based spacing, and so do the insides of boxes and formulas.)
+\providecommand{\textlinespread}{1.05}
+\linespread{\textlinespread}
+\newlength{\textline}
+\makeatletter
+\newcommand{\rhythm@displayskips}{%
+  \setlength{\abovedisplayskip}{0.25\textline plus 0.18\textline minus 0.07\textline}%
+  \setlength{\belowdisplayskip}{0.25\textline plus 0.18\textline minus 0.07\textline}%
+  \setlength{\abovedisplayshortskip}{0.10\textline plus 0.07\textline}%
+  \setlength{\belowdisplayshortskip}{0.17\textline plus 0.07\textline minus 0.04\textline}}
+% \normalsize resets the display skips to the class's 11pt; this keeps ours.
+\g@addto@macro\normalsize{\ifdim\textline>\z@\rhythm@displayskips\fi}
+\AtBeginDocument{%
+  \normalsize
+  \setlength{\textline}{\baselineskip}%
+  \setlength{\customparskip}{0.21\textline plus 0.105\textline minus 0.035\textline}%
+  \setlength{\parskip}{\customparskip}%
+  \setlength{\customenvspace}{0.30\textline plus 0.066\textline minus 0.033\textline}%
+  \rhythm@displayskips
+  \setlength{\topsep}{0.63\textline plus 0.21\textline minus 0.35\textline}%
+  \setlength{\partopsep}{0.21\textline plus 0.07\textline minus 0.07\textline}%
+  \setlength{\intextsep}{0.315\textline plus 0.36\textline minus 0.36\textline}%
+  \setlength{\textfloatsep}{0.42\textline plus 0.36\textline minus 0.36\textline}%
+  \setlength{\skip\footins}{1.12\textline plus 0.28\textline minus 0.14\textline}%
+}
+\makeatother
 
 \newlength{\standardparindent}
-\setlength{\standardparindent}{17pt} 
+\setlength{\standardparindent}{17pt}
 
+% The values below are placeholders until \begin{document} sets them from \textline.
 \newlength{\customparskip}
 \setlength{\customparskip}{3pt plus 1.5pt minus 0.5pt}
 
@@ -358,23 +404,11 @@ pdfauthor={Prof. Rahul Pandharipande}
 \newlength{\customenvspace}
 \setlength{\customenvspace}{0.9ex plus 0.2ex minus 0.1ex}
 
-% Inline-Mathe "Atemluft" 
+% Inline-Mathe "Atemluft"
 \setlength{\mathsurround}{1pt}
 
-% Matrix- und Tabellen-Zeilen 
+% Matrix- und Tabellen-Zeilen
 \renewcommand{\arraystretch}{1.15}
-
-% Floats im Text 
-\setlength{\intextsep}{1.5\customparskip plus 1ex minus 1ex}
-\setlength{\textfloatsep}{2\customparskip plus 1ex minus 1ex}
-
-% Proportional Math Spacing
-\AtBeginDocument{
-  \setlength{\abovedisplayskip}{1.2\customparskip plus 0.5ex minus 0.2ex}
-  \setlength{\belowdisplayskip}{1.2\customparskip plus 0.5ex minus 0.2ex}
-  \setlength{\abovedisplayshortskip}{0.5\customparskip plus 0.2ex}
-  \setlength{\belowdisplayshortskip}{0.8\customparskip plus 0.2ex minus 0.1ex}
-}
 
 % --- LIST SPACING FIX & VIBRANT COLORS ---
 \usepackage{enumitem}
@@ -667,8 +701,8 @@ pdfauthor={Prof. Rahul Pandharipande}
 % lecturer states again. Before a restatement on the board it cites the first version, and the
 % restated one carries its label plus a week tag (def:ring-w2). A recap the lecturer only speaks
 % gets a line of its own; that is the use the transcription prompt teaches.
-\newcommand{\recap}[1]{\par\smallskip\noindent{\sffamily\bfseries\color{EnvRemark}\faHistory\ Recap:}\ #1\par\smallskip}
-\NewDocumentCommand{\checkline}{ O{Check} m }{\par\smallskip\noindent{\sffamily\bfseries\color{EnvRemark}\faCheckCircle\ #1:}\ #2\par\smallskip}
+\newcommand{\recap}[1]{\par\vspace{0.21\textline plus 0.07\textline minus 0.07\textline}\noindent{\sffamily\bfseries\color{EnvRemark}\faHistory\ Recap:}\ #1\par\vspace{0.21\textline plus 0.07\textline minus 0.07\textline}}
+\NewDocumentCommand{\checkline}{ O{Check} m }{\par\vspace{0.21\textline plus 0.07\textline minus 0.07\textline}\noindent{\sffamily\bfseries\color{EnvRemark}\faCheckCircle\ #1:}\ #2\par\vspace{0.21\textline plus 0.07\textline minus 0.07\textline}}
 
 % Custom Theorem Styles: one per family, each with its own icon and color (after ta-notes).
 % \NewIconThmStyle{<style>}{<color>}{<icon>}
@@ -685,6 +719,18 @@ pdfauthor={Prof. Rahul Pandharipande}
 \NewIconThmStyle{questionthm}{EnvQuestion}{\faQuestionCircle}
 \NewIconThmStyle{answerthm}{EnvQuestion}{\faCommentDots}
 \NewIconThmStyle{importantremarkthm}{EnvImportantRemark}{\faExclamationTriangle}
+% amsthm takes the paragraph skip away above a statement and leaves it below; the patch adds it
+% above too, so a statement has the same gap on both sides. It also reads \customenvspace afresh at
+% every statement: \newtheoremstyle stores the value the length had when the style was defined.
+% cleveref keeps amsthm's \@thm in two copies, with and without an optional argument.
+\makeatletter
+\patchcmd{\cref@thmnoarg}{\@topsep\thm@preskip}{\thm@preskip\customenvspace\thm@postskip\customenvspace
+  \@topsep\thm@preskip\advance\@topsep\parskip}{}%
+  {\PackageWarningNoLine{algebra-1}{Patching amsthm's theorem space failed (noarg)}}
+\patchcmd{\cref@thmoptarg}{\@topsep\thm@preskip}{\thm@preskip\customenvspace\thm@postskip\customenvspace
+  \@topsep\thm@preskip\advance\@topsep\parskip}{}%
+  {\PackageWarningNoLine{algebra-1}{Patching amsthm's theorem space failed (optarg)}}
+\makeatother
 
 % Math Environments (English), grouped by style. All numbered ones share the theorem counter.
 \theoremstyle{purplethm}
@@ -841,7 +887,7 @@ code={
   \fi
 },
 title={\sffamily\bfseries\textcolor{\ifinsideproof EnvSpokenProof\else EnvSpoken\fi}{\faMicrophone\ \ Spoken Transcript\ifblank{#1}{}{ [#1]}\speakertag}},
-attach title to upper={\par\setlength{\parindent}{\standardparindent}\setlength{\parskip}{\customparskip}\vspace{1ex}},
+attach title to upper={\par\setlength{\parindent}{\standardparindent}\setlength{\parskip}{\customparskip}\vspace{0.36\textline}},
 breakable
 }
 
@@ -923,7 +969,7 @@ code={
   \fi
 },
 title={\sffamily\bfseries\textcolor{\ifinsideproof EnvTeacherProof\else EnvTeacherBorder\fi}{\textit{\faLightbulb\ \ Insight:} #1}},
-attach title to upper=\par\vspace{0.5ex},
+attach title to upper=\par\vspace{0.18\textline},
 breakable
 }
 
@@ -1065,7 +1111,7 @@ code={
     \tcbset{notitle}
   }{
     \tcbset{title={\sffamily\bfseries\textcolor{\ifinsideproof EnvSpokenProof\else EnvSpoken\fi}{\faChalkboard\ \ #1}}, 
-    attach title to upper={\par\setlength{\parindent}{0pt}\setlength{\parskip}{\customparskip}\vspace{1ex}}}
+    attach title to upper={\par\setlength{\parindent}{0pt}\setlength{\parskip}{\customparskip}\vspace{0.36\textline}}}
   }
 }
 }
@@ -1085,7 +1131,7 @@ code={
   \fi
 },
 title={\sffamily\bfseries\textcolor{\ifinsideproof EnvMetaProof\else EnvMeta\fi}{\faEye\ \ #1}},
-attach title to upper=\par\vspace{1ex},
+attach title to upper=\par\vspace{0.36\textline},
 breakable
 }
 
@@ -1155,24 +1201,26 @@ code={
   \fi
 },
 title={\sffamily\bfseries\textcolor{\ifinsideproof EnvStudentProof\else EnvStudent\fi}{\faUserGraduate\ \ #1}},
-attach title to upper=\par\vspace{1ex},
+attach title to upper=\par\vspace{0.36\textline},
 breakable
 }
 
 % 9. Explanation of Steps
+% The block gap of a statement (\customenvspace plus the paragraph skip), merged with the gap
+% before or after it rather than added to it.
 \newenvironment{steps}[1][Explanation]{
-\par\vspace{1ex}\noindent\textbf{\textcolor{ExplanationIconColor}{\faListUl\ \ #1:}}
+\par\addvspace{\customenvspace}\noindent\textbf{\textcolor{ExplanationIconColor}{\faListUl\ \ #1:}}%
 }{
-\par\vspace{1ex}
+\par\addvspace{\customenvspace}
 }
 
 % 10. Subsection-like heading for proofs
 \newenvironment{proof-subsection}[1]{
-\par\vspace{1ex}\noindent
+\par\vspace{0.36\textline}\noindent
 \tikz[baseline=(A.base)]\node[fill=ProofSubBg, text=ProofSubText, rounded corners=2pt, inner xsep=4pt, inner ysep=2pt, font=\sffamily\bfseries, drop shadow] (A) {#1};
-\vspace{0.5ex}\par
+\vspace{0.18\textline}\par
 }{
-\par\vspace{1ex}
+\par\vspace{0.36\textline}
 }
 
 % 11. Dynamic Proof Wrappers
@@ -1188,15 +1236,15 @@ breakable
 
 
 % SHORT PROOF
-% The first line follows the title "Proof" after an ordinary line break, and the text after the
-% badge goes on after an ordinary paragraph break (2026-11-22; before, 1ex under the title and
-% 2ex after the badge).
+% It starts after the block gap of a statement, the first paragraph follows the title "Proof"
+% after an ordinary paragraph break (the title stands on a line of its own), and the text after
+% the badge goes on after an ordinary paragraph break (2026-11-23, as in the textbook).
 \renewenvironment{proof}[1][Proof]{%
-    \par\addvspace{2ex plus 0.5ex minus 0.2ex}%
+    \par\addvspace{\customenvspace}%
     \insideprooftrue
     \noindent\textcolor{ProofTint}{\faPenNib}\hspace{0.5em}%
     {\normalfont\sffamily\bfseries\color{ProofTint}#1}%
-    \par\nobreak\vspace{-\parskip}%
+    \par\nobreak
     \@afterindentfalse\@afterheading
 }{%
     \ifmmode
@@ -1285,28 +1333,9 @@ breakable
     \normalsize% 3: subsubsection
   \fi
 }
-\newcommand{\proofwrapper@beforespace}{%
-  \ifcase\proofwrapper@depth
-    3.5ex plus 1ex minus .2ex% 0: chapter
-  \or
-    3.5ex plus 1ex minus .2ex% 1: section
-  \or
-    3ex plus 1ex minus .2ex% 2: subsection
-  \else
-    2.5ex plus 1ex minus .2ex% 3: subsubsection
-  \fi
-}
-\newcommand{\proofwrapper@afterspace}{%
-  \ifcase\proofwrapper@depth
-    1.5ex plus .2ex% 0: chapter
-  \or
-    1.5ex plus .2ex% 1: section
-  \or
-    1.2ex plus .2ex% 2: subsection
-  \else
-    1ex plus .2ex% 3: subsubsection
-  \fi
-}
+% Spacing as for a subsubsection heading at every depth (see "Vertical rhythm").
+\newcommand{\proofwrapper@beforespace}{\headingbefore{2\textline plus 0.36\textline minus 0.07\textline}}
+\newcommand{\proofwrapper@afterspace}{1\textline plus 0.07\textline}
 
 \newenvironment{proofWrapper}[1][Proof]{%
     \par\addvspace{\proofwrapper@beforespace}%
@@ -1349,7 +1378,7 @@ code={
   \fi
 },
 title={\sffamily\bfseries\centering\textcolor{\ifinsideproof EnvBreakProof\else EnvBreak\fi}{\faCoffee\ \ #1}},
-attach title to upper=\par\vspace{1ex},
+attach title to upper=\par\vspace{0.36\textline},
 fontupper=\centering\itshape\color{\ifinsideproof EnvBreakProof\else EnvBreak\fi},
 breakable
 }
@@ -1510,14 +1539,14 @@ breakable
   \markboth{Prerequisites\ \ ---\ \ #2}{}%
 }
 
-\titlespacing*{\chapter}{0pt}{-20pt}{18pt plus 4pt minus 2pt}
+\titlespacing*{\chapter}{0pt}{-1.4\textline}{1.26\textline plus 0.28\textline minus 0.14\textline}
 
 \titleformat{\chapter}[display]
 {\normalfont\sffamily\Large\bfseries\boldmath\color{ChapTitleText}}
 {\raggedleft\large\color{ChapNumberText}\chapterlabel}
-{1ex}
-{\ChapRule\endgraf\nopagebreak\vspace{2ex}\raggedleft} 
-[\endgraf\nopagebreak\vspace{1ex}\ChapRule]
+{0.462\textline}
+{\ChapRule\endgraf\nopagebreak\vspace{0.924\textline}\raggedleft} 
+[\endgraf\nopagebreak\vspace{0.462\textline}\ChapRule]
 
 \newcommand{\SecRule}{%
   \vspace{-0.55em}\noindent%
@@ -1564,9 +1593,18 @@ breakable
 \titleformat{\subsubsection}{\normalfont\normalsize\sffamily\bfseries\boldmath}{}{0pt}{\SubsubsecSym}
 \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\boldmath}{\theparagraph}{1em}{\phantomsection} % the class default, plus a link target on the heading (unnumbered, it has none)
 
-\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{1.8ex plus .2ex}
-\titlespacing*{\subsection}{0pt}{3ex plus 1ex minus .2ex}{1.2ex plus .2ex}
-\titlespacing*{\subsubsection}{0pt}{2.5ex plus 1ex minus .2ex}{1ex plus .2ex}
+% 1 L below every heading, where its first box follows at the box gap, and more above it, so the
+% heading belongs to what follows (see "Vertical rhythm"; before: 3.5ex/1.8ex, 3ex/1.2ex, 2.5ex/1ex).
+% A heading right after another heading (a section with its first subsection, say) follows at
+% the 1 L below the first one, so the two stay together: \headingbefore gives no space of its
+% own while \if@nobreak says that no text has come since the last heading.
+\makeatletter
+\newcommand{\headingbefore}[1]{\if@nobreak 0pt\else #1\fi}
+\makeatother
+\titlespacing*{\section}{0pt}{\headingbefore{2.5\textline plus 0.5\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
+\titlespacing*{\subsection}{0pt}{\headingbefore{2.25\textline plus 0.45\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
+\titlespacing*{\subsubsection}{0pt}{\headingbefore{2\textline plus 0.4\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
+\titlespacing*{\paragraph}{0pt}{\customenvspace}{1em}
 
 
 % =====================================================================
