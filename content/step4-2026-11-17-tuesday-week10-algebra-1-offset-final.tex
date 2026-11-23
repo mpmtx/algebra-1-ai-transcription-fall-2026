@@ -94,22 +94,22 @@
 % End of the video: 01:29:40
 
 % Date: the video file is named 11-18 after its download day; the lecture was Tuesday 2026-11-17.
-\lecturechapter[10]{Tuesday}{17 Nov}{17 November 2026}{Equivariance, the Upgraded Orbit-Stabilizer Theorem, and Applications}
+\lecturechapter[10]{Tuesday}{17 Nov}{17 November 2026}{Equivariance, the Upgraded Orbit--Stabilizer Theorem, and Applications}
 
 \begin{overview}[Course Content Overview]
-This lecture reviews the Orbit-Stabilizer Theorem without finiteness assumptions, upgrades it to an equivariant statement about sets with $G$-actions, and applies it to combinatorics and finite linear algebra:
+This lecture reviews the Orbit--Stabilizer Theorem without finiteness assumptions, upgrades it to an equivariant statement about sets with $G$-actions, and applies it to combinatorics and finite linear algebra:
 \begin{itemize}
-    \item \textbf{Orbit-Stabilizer Review and Cardinality:} Recalling the set-level bijection $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ and how $\left|\faktor{G}{\operatorname{Stab}(x)}\right| = |\operatorname{Orb}(x)|$ specializes to $\frac{|G|}{|\operatorname{Stab}(x)|} = |\operatorname{Orb}(x)|$ when $G$ is finite.
+    \item \textbf{Orbit--Stabilizer Review and Cardinality:} Recalling the set-level bijection $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ and how $\left|\faktor{G}{\operatorname{Stab}(x)}\right| = |\operatorname{Orb}(x)|$ specializes to $\frac{|G|}{|\operatorname{Stab}(x)|} = |\operatorname{Orb}(x)|$ when $G$ is finite.
     \item \textbf{Canonical $G$-Actions, Upgrade, and Equivariance:} Introducing left multiplication and conjugation on $G$, the canonical left action on left cosets $\faktor{G}{H}$, and $G$-equivariant maps between sets with $G$-actions, and proving that $C$ is $G$-equivariant.
     \item \textbf{Application I (Binomial Non-Divisibility):} Proving $p \nmid \binom{n}{p^k}$ for $n = p^k m$ ($p \nmid m$) by letting $G = \faktor{\mathbb{Z}}{p^k\mathbb{Z}}$ act on the set $T$ of $p^k$-element subsets of $G \times \{1, \dots, m\}$ and counting $G$-fixed points modulo $p$.
     \item \textbf{Application II (Order of $\mathrm{GL}_n(\mathbb{F}_p)$):} Computing $\left|\mathrm{GL}_n(\mathbb{F}_p)\right| = (p^n - 1)(p^n - p)\cdots(p^n - p^{n-1})$ via the action of $\mathrm{GL}_n(\mathbb{F}_p)$ on $\mathbb{F}_p^n$ (and verifying the formula by row counting), then showing $\mathrm{GL}_2(\mathbb{F}_2) \cong S_3$.
 \end{itemize}
 \end{overview}
 
-\section{Review of the Orbit-Stabilizer Theorem}
+\section{Review of the Orbit--Stabilizer Theorem}
 
 \begin{speech}[00:00:00 - 00:00:58]
-Okay, so, we start, and the topic last time was this orbit-stabilizer theorem, which I review now, and we will make a slight upgrade today \inlinemetanote{writes \qt{Orbit-Stab Thm}, underlined twice}.
+Okay, so, we start, and the topic last time was this orbit--stabilizer theorem, which I review now, and we will make a slight upgrade today \inlinemetanote{writes \qt{Orbit-Stab Thm}, underlined twice}.
 
 So, the starting point is you have a group action $G \times T \to T$, and for this group action there's no finiteness, no finiteness assumed \inlinemetanote{writes \qt{$\phi \colon G \times T \to T$} and \qt{(no finiteness assumed)}}. Which means that $G$ could be infinite, $T$ could be infinite, they could both be infinite. It's just not an issue here.
 
@@ -161,15 +161,15 @@ Neither $G$ nor $T$ is assumed to be finite; either or both may be infinite. Cho
 \end{content}
 
 \begin{speech}[00:00:58 - 00:02:28]
-And the orbit-stabilizer theorem is about these maps: $G$, there's the map $A$ to the orbit of $x$, where $A(g)$ is equal to $g \cdot x$ \inlinemetanote{writes \qt{$G \xrightarrow{A} \operatorname{Orb}(x)$} and \qt{$A(g) = g \cdot x$}}. Then there's also a map $B$ to the left coset space $\faktor{G}{\operatorname{Stab}(x)}$, and the stabilizer of $x$ sits here as a subgroup: this is those $g$ in $G$ such that $g x$ is equal to $x$ \inlinemetanote{draws arrow $G \xrightarrow{B} \faktor{G}{\operatorname{Stab}(x)}$ and writes \qt{$\operatorname{Stab}(x) \subset G$}, with a curly brace down to \qt{$g \in G$ such that $g \cdot x = x$}}. That's the stabilizer.
+And the orbit--stabilizer theorem is about these maps: $G$, there's the map $A$ to the orbit of $x$, where $A(g)$ is equal to $g \cdot x$ \inlinemetanote{writes \qt{$G \xrightarrow{A} \operatorname{Orb}(x)$} and \qt{$A(g) = g \cdot x$}}. Then there's also a map $B$ to the left coset space $\faktor{G}{\operatorname{Stab}(x)}$, and the stabilizer of $x$ sits here as a subgroup: this is those $g$ in $G$ such that $g x$ is equal to $x$ \inlinemetanote{draws arrow $G \xrightarrow{B} \faktor{G}{\operatorname{Stab}(x)}$ and writes \qt{$\operatorname{Stab}(x) \subset G$}, with a curly brace down to \qt{$g \in G$ such that $g \cdot x = x$}}. That's the stabilizer.
 
-That's the space of left cosets, and the claim of the orbit-stabilizer theorem is about this map $C$, when we defined $C$ last time: it's from this left coset space to $\operatorname{Orb}(x)$ \inlinemetanote{draws arrow $\faktor{G}{\operatorname{Stab}(x)} \xrightarrow{C} \operatorname{Orb}(x)$ and writes: $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$}. And it's defined by: $C$ of some particular left coset --- I mean, left cosets can always be written in this form --- is equal to $g \cdot x$ \inlinemetanote{writes: $C(g \cdot \operatorname{Stab}(x)) \stackrel{\text{def}}{=} g \cdot x$}. That's the definition.
+That's the space of left cosets, and the claim of the orbit--stabilizer theorem is about this map $C$, when we defined $C$ last time: it's from this left coset space to $\operatorname{Orb}(x)$ \inlinemetanote{draws arrow $\faktor{G}{\operatorname{Stab}(x)} \xrightarrow{C} \operatorname{Orb}(x)$ and writes: $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$}. And it's defined by: $C$ of some particular left coset --- I mean, left cosets can always be written in this form --- is equal to $g \cdot x$ \inlinemetanote{writes: $C(g \cdot \operatorname{Stab}(x)) \stackrel{\text{def}}{=} g \cdot x$}. That's the definition.
 
 And we checked several things. In particular, we checked that this $C$ is well-defined, and we also checked that $C$ is bijective \inlinemetanote{writes \qt{$C$ is well defined} and \qt{$C$ is bijective}}.
 \end{speech}
 
-\begin{content}[Maps, Stabilizer, and the Orbit-Stabilizer Bijection]
-The orbit-stabilizer theorem (Week 9, \cref{thm:orbit-stabilizer}) relates the group $G$, the left coset space $\faktor{G}{\operatorname{Stab}(x)}$, and the orbit $\operatorname{Orb}(x)$ via three maps $A$, $B$, and $C$:
+\begin{content}[Maps, Stabilizer, and the Orbit--Stabilizer Bijection]
+The orbit--stabilizer theorem (Week 9, \cref{thm:orbit-stabilizer}) relates the group $G$, the left coset space $\faktor{G}{\operatorname{Stab}(x)}$, and the orbit $\operatorname{Orb}(x)$ via three maps $A$, $B$, and $C$:
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \definecolor{figRed}{HTML}{B5241C} % RGB (181, 36, 28): brick red (BrickRed)
@@ -215,7 +215,7 @@ $B \colon G \to \faktor{G}{\operatorname{Stab}(x)}$ is the projection onto left 
 \operatorname{Stab}(x) = \{ g \in G \text{ such that } g x = x \}.
 \]
 
-\begin{theorem}[Orbit-Stabilizer Theorem, Set-Level Form]\label[theorem]{thm:orbit-stabilizer-set}
+\begin{theorem}[Orbit--Stabilizer Theorem, Set-Level Form]\label[theorem]{thm:orbit-stabilizer-set}
 Let $G \times T \to T$ be a group action and let $x \in T$. Define $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ by
 \[
 C\bigl(g \cdot \operatorname{Stab}(x)\bigr) \stackrel{\text{def}}{=} g \cdot x.
@@ -236,7 +236,7 @@ The lecturer writes $\subset$ for subset and subgroup inclusions (e.g., $\operat
 \subsection{Cardinality and the Finite Case}
 
 \begin{speech}[00:02:28 - 00:04:46]
-So, that's the first pass with the orbit-stabilizer theorem. We'll do an upgrade today, but I want to just say some things because people asked me last time.
+So, that's the first pass with the orbit--stabilizer theorem. We'll do an upgrade today, but I want to just say some things because people asked me last time.
 
 So, this says that this $C$ is a bijection \inlinemetanote{writes: $C \colon \faktor{G}{\operatorname{Stab}(x)} \xrightarrow{\text{biject.}} \operatorname{Orb}(x)$}. This is $\faktor{G}{\operatorname{Stab}(x)}$, this is a set, and this is a bijection to another set, which is this (i.e., $\operatorname{Orb}(x)$), this is another set. So, there's two sets, and it's a bijection.
 
@@ -270,19 +270,19 @@ When $G$ is infinite, dividing $|G|$ by $|\operatorname{Stab}(x)|$ is not meanin
 \end{steps}
 \end{content}
 
-\section{Upgrading the Orbit-Stabilizer Theorem}
+\section{Upgrading the Orbit--Stabilizer Theorem}
 
 \begin{speech}[00:04:46 - 00:05:39]
 All right, that's not the upgrade. The upgrade concerns the fact that... sorry, I'm pressing the wrong one.
 
-This bijection is great on the level of sets, meaning if you're interested in this orbit as a set --- you know, there's $T$, there's $x$, and there's its orbit \inlinemetanote{points at the diagram of $T$ and $\operatorname{Orb}(x)$} --- if you're interested in the orbit as a set, this orbit-stabilizer theorem gives you the answer: it's this set, it's in bijection with this set \inlinemetanote{points at $\faktor{G}{\operatorname{Stab}(x)}$ and $\operatorname{Orb}(x)$}.
+This bijection is great on the level of sets, meaning if you're interested in this orbit as a set --- you know, there's $T$, there's $x$, and there's its orbit \inlinemetanote{points at the diagram of $T$ and $\operatorname{Orb}(x)$} --- if you're interested in the orbit as a set, this orbit--stabilizer theorem gives you the answer: it's this set, it's in bijection with this set \inlinemetanote{points at $\faktor{G}{\operatorname{Stab}(x)}$ and $\operatorname{Orb}(x)$}.
 
 And why is this considered an answer? Because this set (i.e., $\faktor{G}{\operatorname{Stab}(x)}$) is somehow internal to $G$. There's $G$, and the stabilizer is inside $G$. You just have to look at $G$ to figure out what's going on, you don't have to look at $T$. So, it's kind of an answer, that's kind of a philosophical answer to this question, that gives you the understanding of the orbit by looking inside $G$.
 \end{speech}
 
 \begin{hidden}
 % timestamp: 00:05:39
-% topic: Review of set-level Orbit-Stabilizer Theorem and cardinality; motivating the upgrade
+% topic: Review of set-level Orbit--Stabilizer Theorem and cardinality; motivating the upgrade
 % board_state: thm:orbit-stabilizer-set, eq:orb-stab-card-general, eq:orb-stab-card-finite
 % next_goal: Show that Orb(x) carries a G-action and state the goal of understanding this action
 % open_loops: none
@@ -317,7 +317,7 @@ by the associativity axiom of the group action on $T$. Since $gh \in G$, the res
 \end{content}
 
 \begin{speech}[00:07:16 - 00:08:32]
-And so, this is why this (i.e., the set-level statement) is slightly unsatisfying, because the way we've stated the orbit-stabilizer theorem tells us what the orbit is as a set, but it doesn't tell us... we haven't made any claim about the identification of the $G$-action on the orbit, which is like how $G$ spins the orbit around. And so, this is where the upgrade is.
+And so, this is why this (i.e., the set-level statement) is slightly unsatisfying, because the way we've stated the orbit--stabilizer theorem tells us what the orbit is as a set, but it doesn't tell us... we haven't made any claim about the identification of the $G$-action on the orbit, which is like how $G$ spins the orbit around. And so, this is where the upgrade is.
 
 So, the proximate goal is to upgrade to understand the $G$-action on $\operatorname{Orb}(x)$ \inlinemetanote{writes \qt{Upgrade to understand} and \qt{the $G$-action on $\operatorname{Orb}(x)$}}. It's not going to be a surprise what's going to happen here. In fact, the simplest thing is going to be true, but in order to say it we have to make some comments, all right? So, anyway, that's what we're going to do. Now...
 
@@ -328,7 +328,7 @@ If we're going to identify the $G$-action, we need to know some $G$-actions. Oth
 \end{speech}
 
 \begin{content}[Goal of the Upgrade]
-The set-level Orbit-Stabilizer Theorem (\cref{thm:orbit-stabilizer-set}) identifies $\operatorname{Orb}(x)$ only as a set, without saying how the $G$-action on $\operatorname{Orb}(x)$ behaves. Our proximate goal is therefore:
+The set-level Orbit--Stabilizer Theorem (\cref{thm:orbit-stabilizer-set}) identifies $\operatorname{Orb}(x)$ only as a set, without saying how the $G$-action on $\operatorname{Orb}(x)$ behaves. Our proximate goal is therefore:
 \[
 \text{Upgrade to understand the } G\text{-action on } \operatorname{Orb}(x).
 \]
@@ -376,9 +376,9 @@ Here \qt{for free} means \qt{at no extra cost}: these actions come with every gr
 \begin{speech}[00:10:16 - 00:12:14]
 But there's another kind of action that is extremely useful, and it's not quite for free: you need to pick a subgroup. So, suppose you pick a subgroup $H$ in $G$ \inlinemetanote{writes \qt{Suppose you pick} and \qt{$H \subset G$}}. Then you get another action. And as I said, this is not quite for free because you have to pick a subgroup --- maybe it costs extra, I don't know, but, you know.
 
-But if you have a subgroup, you get another action, and this is the left action on the cosets $\faktor{G}{H}$ \inlinemetanote{writes \qt{left action on coset $\faktor{G}{H}$}}. So, I explain a little bit about it because we haven't seen it before, but of course it's extremely relevant to this orbit-stabilizer theorem.
+But if you have a subgroup, you get another action, and this is the left action on the cosets $\faktor{G}{H}$ \inlinemetanote{writes \qt{left action on coset $\faktor{G}{H}$}}. So, I explain a little bit about it because we haven't seen it before, but of course it's extremely relevant to this orbit--stabilizer theorem.
 
-So, we've said many times $\faktor{G}{H}$, this is the space --- this is equal, definition --- space of left... set of left cosets of $H$ in $G$ \inlinemetanote{writes \qt{$\faktor{G}{H} \stackrel{\text{def}}{=}$ Set of left cosets of $H$ in $G$}}. So, an element of this looks like some element of $G$ --- I don't want to use $x$ since I already used it here, I don't know --- so, if you have a $\gamma$ in $G$, then an element here would be some $\gamma H$, that's a left coset \inlinemetanote{writes \qt{$\gamma \in G$} and \qt{$\gamma H \in \faktor{G}{H}$}}. Okay? So, we've discussed this many times.
+So, we've said many times $\faktor{G}{H}$, this is the space... This is equal, definition, space of left... set of left cosets of $H$ in $G$ \inlinemetanote{writes \qt{$\faktor{G}{H} \stackrel{\text{def}}{=}$ Set of left cosets of $H$ in $G$}}. So, an element of this looks like some element of $G$ --- I don't want to use $x$ since I already used it here, I don't know --- so, if you have a $\gamma$ in $G$, then an element here would be some $\gamma H$, that's a left coset \inlinemetanote{writes \qt{$\gamma \in G$} and \qt{$\gamma H \in \faktor{G}{H}$}}. Okay? So, we've discussed this many times.
 
 And it turns out once you pick $H$, there's a canonical left action on this space of left cosets. So, here's the $G$-action on the space of left cosets \inlinemetanote{writes \qt{$G$-action on $\faktor{G}{H}$}}. And this is: if you have a $g$ and you have a left coset, I have to give you another left coset. And what could you possibly do here? Not much. You can just take this --- this is an element of $G$ (i.e., $g$), that's an element of $G$ (i.e., $\gamma$) --- you can multiply these together, and you get a new left coset, okay \inlinemetanote{writes: $\phi(g, \gamma H) = g \gamma H$}? This is more or less the only thing you could possibly write.
 \end{speech}
@@ -456,24 +456,24 @@ You could say, well, what happens if $H$ is the trivial subgroup which consists 
 
 Yeah, it's the left one that's already there, so you don't get that for free. Well, you already had it, so you don't get another one for free. If $H$ is the trivial subgroup with just the neutral element, then this action is the same as this action of $G$ on itself.
 
-Okay, so, now you can imagine what this upgrade of this orbit-stabilizer theorem is going to be.
+Okay, so, now you can imagine what this upgrade of this orbit--stabilizer theorem is going to be.
 \end{speech}
 
 \begin{insight}[Why the Trivial Subgroup Gives Nothing New]
 Taking $H = \{e\}$ (the trivial subgroup consisting only of the neutral element) gives a subgroup \qt{for free} without any real choice, so one might wonder whether it yields a third action for free. However, the cosets $\gamma \{e\} = \{\gamma\}$ simply identify $\faktor{G}{\{e\}}$ with $G$ itself, so the left coset action reduces to the left $G$-action $g, \gamma \mapsto g\gamma$ that $G$ already has for free.
 \end{insight}
 
-\section{Proving the Orbit-Stabilizer Upgrade}
+\section{Proving the Orbit--Stabilizer Upgrade}
 
 \begin{speech}[00:14:29 - 00:16:01]
-So, we have all the assumptions I already wrote, so I maybe only write in abbreviated form. So, upgrade to this orbit-stabilizer theorem \inlinemetanote{writes \qt{Upgrade to Orbit-Stab Thm}, underlined}. There we had this $G \times T \to T$ is like $G$-action, and we have $x \in T$ \inlinemetanote{writes \qt{$\phi \colon G \times T \to T$} and \qt{$x \in T$}}. And we have here $G$... the output so far is we constructed this bijection $C$ from this left coset space to $\operatorname{Orb}(x)$ \inlinemetanote{writes \qt{$\implies$ We constructed} and \qt{$C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$}}.
+So, we have all the assumptions I already wrote, so I maybe only write in abbreviated form. So, upgrade to this orbit--stabilizer theorem \inlinemetanote{writes \qt{Upgrade to Orbit-Stab Thm}, underlined}. There we had this $G \times T \to T$ is like $G$-action, and we have $x \in T$ \inlinemetanote{writes \qt{$\phi \colon G \times T \to T$} and \qt{$x \in T$}}. And we have here $G$... the output so far is we constructed this bijection $C$ from this left coset space to $\operatorname{Orb}(x)$ \inlinemetanote{writes \qt{$\implies$ We constructed} and \qt{$C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$}}.
 
 And the upgrade statement --- upgrade claim \inlinemetanote{writes \qt{Upgrade claim:}, underlined} --- is that, well, we have $G$ acting on this $\faktor{G}{\operatorname{Stab}(x)}$ (that's what we just discussed: the stabilizer is a subgroup, this is the set of left cosets, so $G$ acts naturally on this, that's what we just discussed) \inlinemetanote{writes: $G \curvearrowright \faktor{G}{\operatorname{Stab}(x)}$}, and $G$ acts naturally on this orbit space \inlinemetanote{writes: $G \curvearrowright \operatorname{Orb}(x)$}.
 
 So, this (i.e., $C$) is just a map of sets, but we have $G$-actions on both sides, and the upgrade claim is that --- so this is the claim --- $C$ respects the $G$-actions \inlinemetanote{writes \qt{$C$ respects the $G$-actions}, with \qt{the $G$-actions} underlined}.
 \end{speech}
 
-\begin{content}[Statement of the Orbit-Stabilizer Upgrade]
+\begin{content}[Statement of the Orbit--Stabilizer Upgrade]
 Assuming, as before, a group action $G \times T \to T$ and a point $x \in T$, we previously constructed the bijection
 \[
 C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x), \qquad C\bigl(g \cdot \operatorname{Stab}(x)\bigr) = g \cdot x.
@@ -497,7 +497,7 @@ Then we can do two things: we can either take this coset and apply the $G$-actio
 
 So, the claim is $C$ respects the $G$-action. What \qt{$C$ respects the $G$-action} means is that for any element of the left coset (i.e., any left coset in $\faktor{G}{\operatorname{Stab}(x)}$) and any $g$, you can do the $G$-action inside and then apply $C$, or it's the same thing as doing $C$ first, then $g$ outside. All right? That's what it means by \qt{respects}.
 
-And so, let's prove... I'll say more about this because this is an interesting idea, and in some sense, explaining it in the context where it's already true in the end of the orbit-stabilizer theorem is not the clearest way to explain it. But anyway, this is the statement. Is this statement clear?
+And so, let's prove... I'll say more about this because this is an interesting idea, and in some sense, explaining it in the context where it's already true in the end of the orbit--stabilizer theorem is not the clearest way to explain it. But anyway, this is the statement. Is this statement clear?
 \end{speech}
 
 \begin{content}[What It Means for \texorpdfstring{$C$}{C} to Respect the \texorpdfstring{$G$}{G}-Actions]
@@ -515,7 +515,7 @@ A few minutes later the lecturer gives this property its name: a map satisfying 
 
 \begin{hidden}
 % timestamp: 00:17:55
-% topic: Statement of the Orbit-Stabilizer Upgrade and definition of respecting G-actions
+% topic: Statement of the Orbit--Stabilizer Upgrade and definition of respecting G-actions
 % board_state: clm:c-respects-g-actions, eq:equivariance-goal
 % next_goal: Prove that C respects the G-actions by expanding both sides
 % open_loops: none
@@ -569,7 +569,7 @@ All right. So, let me say some more about this because, you know, it's all tauto
 \end{speech}
 
 \begin{insight}[What the Upgrade Achieves]
-With this upgrade, the Orbit-Stabilizer Theorem describes $\operatorname{Orb}(x)$ not merely as a bare set in bijection with $\faktor{G}{\operatorname{Stab}(x)}$, but together with its $G$-action: $G$ moves points of $\operatorname{Orb}(x)$ in the exact same way it moves the left cosets of $\operatorname{Stab}(x)$ in $G$. Everything about both the orbit and the action on it is captured purely in terms of data internal to $G$. At the same time, as the lecturer notes, checking the algebraic identities line by line is almost tautological and does not by itself supply geometric or structural intuition --- which is why he turns next to examining maps that respect $G$-actions in a broader setting.
+With this upgrade, the Orbit--Stabilizer Theorem describes $\operatorname{Orb}(x)$ not merely as a bare set in bijection with $\faktor{G}{\operatorname{Stab}(x)}$, but together with its $G$-action: $G$ moves points of $\operatorname{Orb}(x)$ in the exact same way it moves the left cosets of $\operatorname{Stab}(x)$ in $G$. Everything about both the orbit and the action on it is captured purely in terms of data internal to $G$. At the same time, as the lecturer notes, checking the algebraic identities line by line is almost tautological and does not by itself supply geometric or structural intuition --- which is why he turns next to examining maps that respect $G$-actions in a broader setting.
 \end{insight}
 
 \section{Maps Respecting \texorpdfstring{$G$}{G}-Actions}
@@ -618,13 +618,13 @@ The two phrases are completely synonymous:
 \begin{speech}[00:23:08 - 00:24:22]
 So, that's a definition in the context of anytime $G$ acts on two sets and you have a way of getting from one set to the other, you can ask whether this way respects the $G$-action. And it respects it if and only if this equation holds whenever it makes sense \inlinemetanote{points at $f(g \cdot t) = g \cdot f(t)$}.
 
-And what that is saying here is that another way of saying what's there \inlinemetanote{points at the upper board} is that the upgrade to the orbit-stabilizer theorem is just the statement that $C$ is $G$-equivariant \inlinemetanote{draws a vertical line, writes \qt{Upgrade to Orbit-Stab.} with an upward arrow above it, and writes \qt{$C$ is $G$-equivariant}, boxed}.
+And what that is saying here is that another way of saying what's there \inlinemetanote{points at the upper board} is that the upgrade to the orbit--stabilizer theorem is just the statement that $C$ is $G$-equivariant \inlinemetanote{draws a vertical line, writes \qt{Upgrade to Orbit-Stab.} with an upward arrow above it, and writes \qt{$C$ is $G$-equivariant}, boxed}.
 
 I mean we already know it's a bijection, but it's $G$-equivariant. And this, if you have, from the language of that --- we discussed categories --- you know, if you have fixed a group $G$, then you can consider sets with $G$-actions as a category, and the morphisms are $G$-equivariant maps. Okay, so, that's the upgrade, and now we'll do some applications, which is actually the fun part of the group actions.
 \end{speech}
 
 \begin{content}[The Upgrade Restated as \texorpdfstring{$G$}{G}-Equivariance]
-Using \cref{def:g-equivariant}, the upgrade to the Orbit-Stabilizer Theorem (\cref{clm:c-respects-g-actions}) can be restated concisely:
+Using \cref{def:g-equivariant}, the upgrade to the Orbit--Stabilizer Theorem (\cref{clm:c-respects-g-actions}) can be restated concisely:
 \[
 \text{Upgrade to Orbit-Stab.:} \qquad \boxed{C \text{ is } G\text{-equivariant}.}
 \]
@@ -632,19 +632,19 @@ Because we already know from \cref{thm:orbit-stabilizer-set} that $C \colon \fak
 \end{content}
 
 \begin{insight}[Sets with \texorpdfstring{$G$}{G}-Actions as a Category]
-In the language of categories discussed earlier in the course (Week 2, \cref{def:category-foundations}), fixing a group $G$ gives rise to a category whose objects are sets equipped with a $G$-action and whose morphisms are the $G$-equivariant maps between them. In these terms, the upgraded Orbit-Stabilizer Theorem says that the bijection $C$ is a morphism of this category. Going beyond the lecture: the inverse of a $G$-equivariant bijection is again $G$-equivariant, so $C$ is an isomorphism there (\cref{def:categorical-isomorphism}).
+In the language of categories discussed earlier in the course (Week 2, \cref{def:category-foundations}), fixing a group $G$ gives rise to a category whose objects are sets equipped with a $G$-action and whose morphisms are the $G$-equivariant maps between them. In these terms, the upgraded Orbit--Stabilizer Theorem says that the bijection $C$ is a morphism of this category. Going beyond the lecture: the inverse of a $G$-equivariant bijection is again $G$-equivariant, so $C$ is an isomorphism there (\cref{def:categorical-isomorphism}).
 \end{insight}
 
 \begin{hidden}
 % timestamp: 00:24:22
-% topic: G-equivariant maps and restating the Orbit-Stabilizer upgrade as G-equivariance
+% topic: G-equivariant maps and restating the Orbit--Stabilizer upgrade as G-equivariance
 % board_state: clm:c-respects-g-actions, eq:equivariance-goal, def:g-equivariant, eq:g-equivariant-def
 % next_goal: Transition to Application I (non-divisibility of a binomial coefficient by p)
 % open_loops: none
 \end{hidden}
 
 \begin{speech}[00:24:32 - 00:25:27]
-But the mathematics around this orbit-stabilizer theorem, it looks like it's very simple and there's nothing going on, which is correct, but it's incredibly useful, and it's surprisingly useful.
+But the mathematics around this orbit--stabilizer theorem, it looks like it's very simple and there's nothing going on, which is correct, but it's incredibly useful, and it's surprisingly useful.
 
 I mean all the proofs are basically tautologies. And as I said, that's because the definitions have been engineered correctly from the beginning.
 \end{speech}
@@ -865,7 +865,7 @@ So, what does that mean? If I take class $\alpha$ here (this is why I cunningly 
 
 So, that's a rule that takes an element of the group, an element of this $\widehat{T}$ set, and gets another $\widehat{T}$. Are you happy with that?
 
-And then you have to check it's an action. It's certainly well-defined because addition is well-defined in that group --- the addition is in this group \inlinemetanote{draws an arrow from $+$ down to \qt{addition in $\faktor{\mathbb{Z}}{p^k\mathbb{Z}}$}}. So, it's certainly well-defined, but then you have to check it satisfies the group axioms: like, if you take the neutral element here, the neutral element is $0$, and it doesn't change anything, that's correct. And then you have to check associativity, and associativity holds because addition is associative.
+And then you have to check it's an action. It's certainly well-defined because addition is well-defined in that group. The addition is in this group \inlinemetanote{draws an arrow from $+$ down to \qt{addition in $\faktor{\mathbb{Z}}{p^k\mathbb{Z}}$}}. So, it's certainly well-defined, but then you have to check it satisfies the group axioms: like, if you take the neutral element here, the neutral element is $0$, and it doesn't change anything, that's correct. And then you have to check associativity, and associativity holds because addition is associative.
 \end{speech}
 
 \begin{content}[Step (1): The \texorpdfstring{$G$}{G}-Action on \texorpdfstring{$\widehat{T}$}{T-hat}]
@@ -969,7 +969,7 @@ Okay, and this $\widehat{T}$... so that's the $\widehat{T}$, sorry \inlinemetano
 
 So, let's just suppose it was a three-element subset. The picture here is of the $n$-element set, and then I take a subset like this \inlinemetanote{draws a loop around three dots inside $\widehat{T}$}. This is a subset. And I need to know how $G$ acts on the set of subsets.
 
-But I already know how $G$ acts on the elements here --- that's here, right \inlinemetanote{points at the upper board}? So, $G$ maybe moves this element to there, and that element to there \inlinemetanote{draws arrows from the three dots inside the subset to three other dots inside $\widehat{T}$} --- if I pick some $\alpha$ in $G$, then $\alpha$ maybe moves this element there, and that... it moves them somewhere, who knows where \inlinemetanote{writes $\alpha$ above the top arrow}. Right? So, then I can say it moves this whole subset to this new subset \inlinemetanote{draws a loop around the three target dots}. That's the action on the subsets. You just see what happens to the elements and it makes a new subset.
+But I already know how $G$ acts on the elements here --- that's here, right \inlinemetanote{points at the upper board}? So, $G$ maybe moves this element to there, and that element to there \inlinemetanote{draws arrows from the three dots inside the subset to three other dots inside $\widehat{T}$}. If I pick some $\alpha$ in $G$, then $\alpha$ maybe moves this element there, and that... it moves them somewhere, who knows where \inlinemetanote{writes $\alpha$ above the top arrow}. Right? So, then I can say it moves this whole subset to this new subset \inlinemetanote{draws a loop around the three target dots}. That's the action on the subsets. You just see what happens to the elements and it makes a new subset.
 
 So, are there any questions? Is this confusing or do you understand this? \inlinemetanote{pauses briefly; no questions are asked}
 
@@ -1059,10 +1059,10 @@ And now this is a picture of $T$, which is different than $\widehat{T}$ --- but 
 
 As we said, we have this equation that the number of elements of $T$, which we know is $n$ choose $p^k$, is equal to the sum, where we choose an $x_i$ for every orbit --- we pick an element $x_1, x_2$, such that it generates the orbit \inlinemetanote{marks dots labeled $x_1, x_2$ in two of the orbits} --- and then we have to put here the size of the orbit \inlinemetanote{writes \qt{$|T| = \sum_{x_i \in \text{Orbits}} |\operatorname{Orb}(x_i)|$} with \qt{$\binom{n}{p^k}$} written below $|T|$}. Right? So, this is our formula for taking $T$ and breaking it up into all of its orbits. The elements of $T$ add up to $n$ choose $p^k$, and it's the sum over all the orbits. Okay.
 
-Now we can use the Orbit-Stabilizer theorem, and maybe I should just put sum over $x_i$ \inlinemetanote{writes: $= \sum_{x_i}$}. For each $x_i$, there's the Orbit-Stabilizer theorem that says this is the size of $\mathbb{Z} \bmod p^k \mathbb{Z}$ mod the stabilizer \inlinemetanote{writes: $\frac{\left|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}\right|}{|\operatorname{Stab}(x_i)|}$}. Okay? Now I'm using the Orbit-Stabilizer theorem in the context of something finite, so I can take it and write it as the order of the group and the order of the stabilizer \inlinemetanote{points at $|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}|$ and $|\operatorname{Stab}(x_i)|$}.
+Now we can use the Orbit--Stabilizer theorem, and maybe I should just put sum over $x_i$ \inlinemetanote{writes: $= \sum_{x_i}$}. For each $x_i$, there's the Orbit--Stabilizer theorem that says this is the size of $\mathbb{Z} \bmod p^k \mathbb{Z}$ mod the stabilizer \inlinemetanote{writes: $\frac{\left|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}\right|}{|\operatorname{Stab}(x_i)|}$}. Okay? Now I'm using the Orbit--Stabilizer theorem in the context of something finite, so I can take it and write it as the order of the group and the order of the stabilizer \inlinemetanote{points at $|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}|$ and $|\operatorname{Stab}(x_i)|$}.
 \end{speech}
 
-\begin{content}[Orbit Partition of \texorpdfstring{$T$}{T} and the Orbit-Stabilizer Sum]
+\begin{content}[Orbit Partition of \texorpdfstring{$T$}{T} and the Orbit--Stabilizer Sum]
 We now have the finite group $G = \faktor{\mathbb{Z}}{p^k\mathbb{Z}}$ acting on the finite set $T$ of cardinality $|T| = \binom{n}{p^k}$. Partitioning $T$ into its disjoint $G$-orbits and choosing one representative $x_i \in T$ from each orbit gives the following picture:
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
@@ -1115,7 +1115,7 @@ We now have the finite group $G = \faktor{\mathbb{Z}}{p^k\mathbb{Z}}$ acting on 
 \end{tikzpicture}
 \end{center}
 
-Summing the sizes of the disjoint orbits (as in Week 9, \cref{prop:orbit-decomposition}) and applying the finite Orbit-Stabilizer Theorem \eqref{eq:orb-stab-card-finite} to each orbit yields
+Summing the sizes of the disjoint orbits (as in Week 9, \cref{prop:orbit-decomposition}) and applying the finite Orbit--Stabilizer Theorem \eqref{eq:orb-stab-card-finite} to each orbit yields
 \begin{align}
 |T| = \binom{n}{p^k} &= \sum_{x_i \in \text{Orbits}} |\operatorname{Orb}(x_i)| \nonumber \\
 &= \sum_{x_i} \frac{\left|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}\right|}{|\operatorname{Stab}(x_i)|}. \label{eq:orbit-sum-stabilizer}
@@ -1124,7 +1124,7 @@ Summing the sizes of the disjoint orbits (as in Week 9, \cref{prop:orbit-decompo
 
 \begin{hidden}
 % timestamp: 00:40:58
-% topic: Orbit partition of T and Orbit-Stabilizer sum for \binom{n}{p^k}
+% topic: Orbit partition of T and Orbit--Stabilizer sum for \binom{n}{p^k}
 % board_state: clm:binomial-nondivisibility, eq:card-t, eq:action-on-that, eq:induced-action-on-t, eq:orbit-sum-stabilizer
 % next_goal: Analyze divisors of p^k, reduce modulo p to fixed points, and handle mid-lecture break
 % open_loops: identify the fixed points of G on T to evaluate \binom{n}{p^k} mod p
@@ -1196,7 +1196,7 @@ So, we're trying to prove this strange property that $n$ is equal to $p^k$ times
 
 And the strategy is, out of nowhere, to have this group $G$, $\mathbb{Z} \bmod p^k \mathbb{Z}$ \inlinemetanote{writes: $G = \faktor{\mathbb{Z}}{p^k\mathbb{Z}}$}. And I will in the argument just always call it $G$ instead of always writing this $p^k$. That was maybe part of the confusion.
 
-So, that's the group, and then we want to construct --- again, this is where the idea in this proof is --- we need to construct an action onto a set. And you can imagine if we're going to use this Orbit-Stabilizer theorem at the end, we need to find a set that has order $n$ choose $p^k$. That's our goal. All right?
+So, that's the group, and then we want to construct --- again, this is where the idea in this proof is --- we need to construct an action onto a set. And you can imagine if we're going to use this Orbit--Stabilizer theorem at the end, we need to find a set that has order $n$ choose $p^k$. That's our goal. All right?
 
 And the way that this went before --- the way the argument went --- is that the first thing I do is I construct this set $\widehat{T}$, and this set is just $G$ cross $1$ to $m$ \inlinemetanote{writes: $\widehat{T} = G \times \{1, \dots, m\}$}. And this set has order $n$, which is $p^k$ --- that's from this side --- times $m$ from that side \inlinemetanote{writes: $|\widehat{T}| = n = p^k \cdot m$}.
 
@@ -1246,7 +1246,7 @@ Conceptually, this is simply the left translation action of $G$ on itself, repli
 \begin{speech}[00:48:14 - 00:49:30]
 So, it's the first thing to understand, that there is this set $\widehat{T}$ \inlinemetanote{writes $\widehat{T}$ and draws a large loop}. And you can imagine this set $\widehat{T}$, if you want to picture it, is that there's one copy of $\mathbb{Z} \bmod p \mathbb{Z}$ (i.e., $\faktor{\mathbb{Z}}{p^k\mathbb{Z}}$)... $p\mathbb{Z}$ to the $k$ here, and there's another copy, another copy, there's another copy, there's another copy \inlinemetanote{draws five vertical columns of dots inside $\widehat{T}$}. The number of copies is $m$ \inlinemetanote{draws a brace above the columns labeled $m$}. You just put it in $m$ times, one for every index here \inlinemetanote{points at $\{1, \dots, m\}$}. Right? And then its action is just spinning the way that the group acts on itself, on each one of these \inlinemetanote{gestures rotating along one column}. Okay?
 
-So, is that clear how it's going on here? This is the first idea, is to make this set. And it's not clear why you do this --- of course in this kind of argument, the reasons all come at the end, in the punchline --- but we make this set. And this is not the set which we apply the Orbit-Stabilizer theorem to. It's an auxiliary step, it's a first step.
+So, is that clear how it's going on here? This is the first idea, is to make this set. And it's not clear why you do this --- of course in this kind of argument, the reasons all come at the end, in the punchline --- but we make this set. And this is not the set which we apply the Orbit--Stabilizer theorem to. It's an auxiliary step, it's a first step.
 
 But is it clear what this thing is? And what's very important is its order is $n$ \inlinemetanote{writes \qt{$= n$} next to $\widehat{T}$}. And as I said, if you want to picture it, you just picture it like that \inlinemetanote{points at the $m$-column picture of $\widehat{T}$}: there's my group, and I just put it together --- just as a set --- put it together $m$ times. This is $m$ of them. Okay?
 \end{speech}
@@ -1422,7 +1422,7 @@ Okay, so, here's $T$, that's our set of the red subsets. Maybe in an impromptu p
 
 And now we know that $T$ --- it's a finite set, it has cardinality $n$, $p^k$ \inlinemetanote{writes: $|T| = \binom{n}{p^k}$} --- and it has the $G$-action, so I can divide it up into its orbits \inlinemetanote{draws curved partition lines inside $T$}. All right? So, that's its division into its orbits, and I pick one element $x_i$ in every orbit so I can talk about it \inlinemetanote{marks dots labeled $x_1, x_2$ in two of the orbits}. It has these orbits, finitely many orbits. For each orbit I pick one element.
 
-And then I write down my equation, which says that the size of $T$ is equal to the sum over all of these $x_i$, and then the size of the orbit \inlinemetanote{writes \qt{$|T| = \sum_{x_i} |\operatorname{Orb}(x_i)|$} and writes \qt{$\binom{n}{p^k}$} underneath $|T|$}. So, this is an entirely uncontroversial statement: I've just taken this $P$ (i.e., $T$) and I've cut it up into the orbits. And now I want to apply the Orbit-Stabilizer theorem for each one of these --- remember, this is $n$, $p^k$ --- so to each one of these I apply the Orbit-Stabilizer theorem.
+And then I write down my equation, which says that the size of $T$ is equal to the sum over all of these $x_i$, and then the size of the orbit \inlinemetanote{writes \qt{$|T| = \sum_{x_i} |\operatorname{Orb}(x_i)|$} and writes \qt{$\binom{n}{p^k}$} underneath $|T|$}. So, this is an entirely uncontroversial statement: I've just taken this $P$ (i.e., $T$) and I've cut it up into the orbits. And now I want to apply the Orbit--Stabilizer theorem for each one of these --- remember, this is $n$, $p^k$ --- so to each one of these I apply the Orbit--Stabilizer theorem.
 \end{speech}
 
 \begin{content}[Counting \texorpdfstring{$T$}{T} by Its Orbits]
@@ -1578,11 +1578,11 @@ An element $x_i \in T$ whose orbit consists only of itself ($|\operatorname{Orb}
 \begin{speech}[00:55:07 - 00:56:59]
 Or it could be more points \inlinemetanote{draws an arrow down from $\operatorname{Orb}(x_i)$ and writes: more pts}. It's at least $1$ point because it has $x_i$ in it. And the claim here, if it's more points, the number of points has to be $p$ to the $\ell$ with $\ell$ positive \inlinemetanote{writes: $\longrightarrow \#\text{ pts have } p^{\ell > 0}$}. In other words, the size of the orbit is equal to $p$ to the $\ell$, where $\ell$ is positive \inlinemetanote{writes: $|\operatorname{Orb}(x_i)| = p^{\ell > 0}$}.
 
-And the reason is that the size of this orbit, by the Orbit-Stabilizer theorem, is equal to the size of $G$ divided by the size of the stabilizer \inlinemetanote{writes: $\operatorname{Orb}(x_i) = \frac{|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}|}{|\operatorname{Stab}(x_i)|}$, without bars on the left}. That's the Orbit-Stabilizer theorem. The guy on top here is $p$ to the $k$ \inlinemetanote{writes \qt{$\leftarrow p^k$} next to the numerator}. And if you take $p$ to the $k$ and you divide something to get a number, you could get $1$, that's if the stabilizer's the whole thing --- that's this case \inlinemetanote{points at the $1\text{ pt}$ branch}. But if you don't get $1$, you get a power of $p$, that's with $p$ to the $\ell$ with $\ell$ greater than $0$. Is that clear?
+And the reason is that the size of this orbit, by the Orbit--Stabilizer theorem, is equal to the size of $G$ divided by the size of the stabilizer \inlinemetanote{writes: $\operatorname{Orb}(x_i) = \frac{|\faktor{\mathbb{Z}}{p^k\mathbb{Z}}|}{|\operatorname{Stab}(x_i)|}$, without bars on the left}. That's the Orbit--Stabilizer theorem. The guy on top here is $p$ to the $k$ \inlinemetanote{writes \qt{$\leftarrow p^k$} next to the numerator}. And if you take $p$ to the $k$ and you divide something to get a number, you could get $1$, that's if the stabilizer's the whole thing --- that's this case \inlinemetanote{points at the $1\text{ pt}$ branch}. But if you don't get $1$, you get a power of $p$, that's with $p$ to the $\ell$ with $\ell$ greater than $0$. Is that clear?
 
 So, here, since the top is $p$ to the $k$, the result is either $1$ or $p$ to the $\ell$ with $\ell$ positive, and the $1$ was already this case, so it's not this one \inlinemetanote{writes \qt{so result is either $1$ or $p^{\ell > 0}$} and crosses out $1$}. Okay?
 
-So, you happy with that logic? It's because this group has been cunningly chosen to have order a power of $p$, and this Orbit-Stabilizer theorem has to do with divisors of the size of that group, and $p$ to the $k$ has very few divisors. It's part of the cunningness of the setup here.
+So, you happy with that logic? It's because this group has been cunningly chosen to have order a power of $p$, and this Orbit--Stabilizer theorem has to do with divisors of the size of that group, and $p$ to the $k$ has very few divisors. It's part of the cunningness of the setup here.
 
 Then you come to the last equation I wrote.
 \end{speech}
@@ -1596,7 +1596,7 @@ If $\operatorname{Orb}(x_i)$ has more points ($\text{more pts}$, i.e., $|\operat
 \end{claim}
 
 \begin{proof}[Proof of \cref{clm:nontrivial-orbit-size}]
-By the finite Orbit-Stabilizer Theorem \eqref{eq:orb-stab-card-finite},
+By the finite Orbit--Stabilizer Theorem \eqref{eq:orb-stab-card-finite},
 \[
 |\operatorname{Orb}(x_i)| = \frac{|G|}{|\operatorname{Stab}(x_i)|}.
 \]
@@ -1635,7 +1635,10 @@ Okay, so, this is really good news for us, because the whole goal was to prove -
 \begin{content}[Reduction of the Divisibility Goal to Fixed Points]
 Summing the orbit sizes in $|T| = \sum_{x_i} |\operatorname{Orb}(x_i)|$ and reducing modulo $p$, every non-singleton orbit has cardinality $p^\ell \equiv 0 \pmod{p}$ ($\ell > 0$) by \cref{clm:nontrivial-orbit-size} and drops out, while each $G$-fixed point contributes $1$:
 \begin{equation}\label{eq:binomial-mod-p-fixed-pts}
-\binom{n}{p^k} = |T| \equiv \#\text{fixed pts} \pmod{p} \qquad \text{(written on the board as } \binom{n}{p^k} = |T| = \#\text{fixed pts} \bmod p\text{)}.
+\begin{gathered}
+\binom{n}{p^k} = |T| \equiv \#\text{fixed pts} \pmod{p} \\
+\text{(written on the board as } \binom{n}{p^k} = |T| = \#\text{fixed pts} \bmod p\text{)}.
+\end{gathered}
 \end{equation}
 Consequently, our goal becomes:
 \[
@@ -1756,7 +1759,7 @@ If we pick the columns.
 \begin{speech}[01:04:32 - 01:05:03]
 Yeah, if we pick a column. So, if we want to pick something that when I act by the $\mathbb{Z} \bmod p$ it stays inside, this is an idea \inlinemetanote{draws a vertical loop enclosing the entire $i=m$ column in $\widehat{T}$}. And this has exactly $\mathbb{Z}$ to the $p$... this has exactly $p$ to the $k$ elements. And it's an idea, because then if I move elements, it stays in the set.
 
-Of course I could also pick this one \inlinemetanote{draws a vertical loop enclosing the entire $i=1$ column in $\widehat{T}$}. And could I pick anything else? Yeah?
+Of course, I could also pick this one \inlinemetanote{draws a vertical loop enclosing the entire $i=1$ column in $\widehat{T}$}. And could I pick anything else? Yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -2036,20 +2039,20 @@ Let $v, w \in V \setminus \{0\}$ be any two non-zero vectors in $\mathbb{F}_p^n$
 \end{proof}
 \end{content}
 
-\subsection{Applying Orbit-Stabilizer and Computing the Stabilizer}
+\subsection{Applying Orbit--Stabilizer and Computing the Stabilizer}
 
 \begin{speech}[01:12:43 - 01:12:54]
-So, we're going to use the Orbit-Stabilizer theorem --- well, there's two orbits, and we're not going to use it on zero, because, you know, as a general principle you don't learn much from zero.
+So, we're going to use the Orbit--Stabilizer theorem --- well, there's two orbits, and we're not going to use it on zero, because, you know, as a general principle you don't learn much from zero.
 
 So, we're going to use it on the other one.
 \end{speech}
 
 \begin{speech}[01:13:33 - 01:14:31]
-Okay, so, now we think about this Orbit-Stabilizer theorem: let us pick a point that's not there (i.e., not zero). Let's pick the basis vector that has a $1$ in the top, okay? So, this is one of the vectors: $1$, then all zeros \inlinemetanote{writes \qt{$\operatorname{Orb}$} of the column vector $(1, 0, \dots, 0)^T$ and that column vector $\in V$ below it}. This is inside our $V$, all right?
+Okay, so, now we think about this Orbit--Stabilizer theorem: let us pick a point that's not there (i.e., not zero). Let's pick the basis vector that has a $1$ in the top, okay? So, this is one of the vectors: $1$, then all zeros \inlinemetanote{writes \qt{$\operatorname{Orb}$} of the column vector $(1, 0, \dots, 0)^T$ and that column vector $\in V$ below it}. This is inside our $V$, all right?
 
 I can pick anyone I want, but I want to say that the size of that orbit is equal to the full group --- this is the thing we want to calculate --- divided... and everything's finite here, so I can, you know... by the stabilizer of this fellow \inlinemetanote{writes absolute value bars around the orbit, equal to $\frac{|\mathrm{GL}_n(\mathbb{F}_p)|}{|\operatorname{Stab}|}$ of the same column vector}.
 
-Okay, so, that's the Orbit-Stabilizer theorem. The left-hand side we know. Oh yeah, what is the order of this \inlinemetanote{points at the orbit size on the left}? I was about to tell you, but yeah?
+Okay, so, that's the Orbit--Stabilizer theorem. The left-hand side we know. Oh yeah, what is the order of this \inlinemetanote{points at the orbit size on the left}? I was about to tell you, but yeah?
 \end{speech}
 
 \begin{student}[Student Answer]
@@ -2064,16 +2067,16 @@ Meaning that if we want to use this to solve for this \inlinemetanote{points at 
 So, in order to use this, we need to think about the stabilizer --- this is unavoidable. What is the stabilizer?
 \end{speech}
 
-\begin{content}[Orbit-Stabilizer Equation for the First Basis Vector]
+\begin{content}[Orbit--Stabilizer Equation for the First Basis Vector]
 Choosing the standard basis vector
 \[
 \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} \in V,
 \]
-the finite Orbit-Stabilizer Theorem gives
+the finite Orbit--Stabilizer Theorem gives
 \[
 \left|\operatorname{Orb}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right| = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\bigl((1, 0, \dots, 0)^T\bigr)\right|}.
 \]
-Because every non-zero vector lies in the same orbit $V \setminus \{0\}$, and $|V| = |\mathbb{F}_p^n| = p^n$ (each of the $n$ coordinates has $p$ choices in $\mathbb{F}_p$), removing the zero vector leaves $\left|\operatorname{Orb}(1, 0, \dots, 0)^T\right| = |V \setminus \{0\}| = p^n - 1$. Substituting this on the left-hand side gives
+Because every non-zero vector lies in the same orbit $V \setminus \{0\}$, and $|V| = |\mathbb{F}_p^n| = p^n$ (each of the $n$ coordinates has $p$ choices in $\mathbb{F}_p$), removing the zero vector leaves $\left|\operatorname{Orb}\bigl((1, 0, \dots, 0)^T\bigr)\right| = |V \setminus \{0\}| = p^n - 1$. Substituting this on the left-hand side gives
 \begin{equation}\label{eq:gln-orb-stab-step1}
 p^n - 1 = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{Stab}\bigl((1, 0, \dots, 0)^T\bigr)\right|}.
 \end{equation}
@@ -2081,7 +2084,7 @@ p^n - 1 = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{\left|\operatorname{St
 
 \begin{hidden}
 % timestamp: 01:15:22
-% topic: Orbit-Stabilizer equation for (1, 0, ..., 0)^T in V = F_p^n
+% topic: Orbit--Stabilizer equation for (1, 0, ..., 0)^T in V = F_p^n
 % board_state: def:gl-n-fp, q:order-gl-n-fp, eq:gln-orb-stab-step1
 % next_goal: Determine the block-matrix structure and cardinality of Stab((1, 0, ..., 0)^T)
 % open_loops: solve for |GL_n(F_p)| from the resulting recursion
@@ -2539,9 +2542,9 @@ Some of this was off-piste, I don't know if it's in the book, we'll see... But i
 
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
-    \item \textbf{Set-Level Orbit-Stabilizer Theorem and Cardinality:} For any group action $G \times T \to T$ (without finiteness assumptions) and any $x \in T$, the map $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ defined by $C(g \cdot \operatorname{Stab}(x)) = g \cdot x$ is a bijection, giving $\left|\faktor{G}{\operatorname{Stab}(x)}\right| = |\operatorname{Orb}(x)|$ in general and $\frac{|G|}{|\operatorname{Stab}(x)|} = |\operatorname{Orb}(x)|$ whenever $|G|$ is finite.
+    \item \textbf{Set-Level Orbit--Stabilizer Theorem and Cardinality:} For any group action $G \times T \to T$ (without finiteness assumptions) and any $x \in T$, the map $C \colon \faktor{G}{\operatorname{Stab}(x)} \to \operatorname{Orb}(x)$ defined by $C(g \cdot \operatorname{Stab}(x)) = g \cdot x$ is a bijection, giving $\left|\faktor{G}{\operatorname{Stab}(x)}\right| = |\operatorname{Orb}(x)|$ in general and $\frac{|G|}{|\operatorname{Stab}(x)|} = |\operatorname{Orb}(x)|$ whenever $|G|$ is finite.
     \item \textbf{Canonical $G$-Actions:} A group $G$ always carries the left multiplication action ($g, h \mapsto gh$) and the conjugation action ($g, h \mapsto ghg^{-1}$). Picking any subgroup $H \subset G$ yields the canonical left action $\phi(g, \gamma H) = g\gamma H$ on the left coset space $\faktor{G}{H}$ (which reduces to left multiplication on $G$ when $H = \{e\}$).
-    \item \textbf{$G$-Equivariance and the Upgraded Orbit-Stabilizer Theorem:} Given two sets $T_1, T_2$ with $G$-actions, a map $f \colon T_1 \to T_2$ is \emph{$G$-equivariant} (synonymously, \emph{respects the $G$-action}) if $f(g \cdot t) = g \cdot f(t)$ for all $t \in T_1$ and $g \in G$. Since $\operatorname{Orb}(x) \subset T$ is $G$-invariant, the Orbit-Stabilizer bijection $C$ is $G$-equivariant, identifying $\operatorname{Orb}(x)$ together with its $G$-action internally in terms of $\faktor{G}{\operatorname{Stab}(x)}$.
+    \item \textbf{$G$-Equivariance and the Upgraded Orbit--Stabilizer Theorem:} Given two sets $T_1, T_2$ with $G$-actions, a map $f \colon T_1 \to T_2$ is \emph{$G$-equivariant} (synonymously, \emph{respects the $G$-action}) if $f(g \cdot t) = g \cdot f(t)$ for all $t \in T_1$ and $g \in G$. Since $\operatorname{Orb}(x) \subset T$ is $G$-invariant, the Orbit--Stabilizer bijection $C$ is $G$-equivariant, identifying $\operatorname{Orb}(x)$ together with its $G$-action internally in terms of $\faktor{G}{\operatorname{Stab}(x)}$.
     \item \textbf{Application I ($p \nmid \binom{n}{p^k}$):} Writing $n = p^k m$ with $p$ prime and $p \nmid m$, the group $G = \faktor{\mathbb{Z}}{p^k\mathbb{Z}}$ acts on $\widehat{T} = G \times \{1, \dots, m\}$ by translation on the first factor and canonically on the set $T$ of $p^k$-element subsets of $\widehat{T}$ ($|T| = \binom{n}{p^k}$). Every non-singleton orbit has cardinality $p^\ell$ ($\ell > 0$), while the $G$-fixed points are precisely the $m$ columns $G \times \{i\}$, yielding $\binom{n}{p^k} \equiv m \not\equiv 0 \pmod{p}$.
     \item \textbf{Application II (Order of $\mathrm{GL}_n(\mathbb{F}_p)$ and $\mathrm{GL}_2(\mathbb{F}_2) \cong S_3$):} Letting $\mathrm{GL}_n(\mathbb{F}_p)$ act on $V = \mathbb{F}_p^n$ splits $V$ into the fixed orbit $\{0\}$ and the non-zero orbit $V \setminus \{0\}$ of size $p^n - 1$. Computing $\left|\operatorname{Stab}(1, 0, \dots, 0)^T\right| = p^{n-1} \left|\mathrm{GL}_{n-1}(\mathbb{F}_p)\right|$ gives the closed-form product $\left|\mathrm{GL}_n(\mathbb{F}_p)\right| = (p^n - 1)(p^n - p)\cdots(p^n - p^{n-1})$, confirmed independently by counting linearly independent rows. For $n = p = 2$, the permutation action on the three non-zero vectors of $\mathbb{F}_2 \times \mathbb{F}_2$ yields $\mathrm{GL}_2(\mathbb{F}_2) \cong S_3$.
 \end{itemize}

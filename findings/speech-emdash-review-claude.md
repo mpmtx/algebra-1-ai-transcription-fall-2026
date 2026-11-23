@@ -399,11 +399,20 @@ explain little of what is in the book.
     still come through as dashes in about a third of the unpaired cases, and Stage 3 still turns some `...` into
     `---`. A like-for-like test would be the original D9: the new Stage 3 on Week 7 Tuesday's Hydrogen Stage 2 file
     (it costs requests).
+- **D9 after `9b6915e`** (closed 2026-11-23): `prompt-engineering` `9b6915e` (2026-11-21 11:57) removed the prompt
+  text and examples behind the leftovers (a clause that stops unfinished ends in `...`; a phrase said again after a
+  dash is a restart; the self-check reads dashes, `...` and `;`), reviewed by Gemini 4 Hydrogen XHIGH. The first run
+  after it is the Week 10 Wednesday XHIGH rerun in `reruns/week10-wed-xhigh-3parts/` (finished 2026-11-21 22:10, before
+  the next Stage 3 change `a2ecbfd`; the prompt log was not checked). Gemini Neon measured it
+  (`findings/post-apply-review-neon.md` §1.3), and `speech-density.py --punct` gives the same: 30 blocks, 4,900 words,
+  8.4 `---`/1k, 5 sentences with an odd dash count, 0 `---,`, 0.0 `;`/1k. The reviewed HIGH run in the book has 8.7/1k
+  and 8 odd sentences. The Week 10 Tuesday run measured above (`179c9e2`'s prompt) had 13.8/1k and 28. This counts the output
+  only, not what Stage 3 kept, removed and added from its own input; a like-for-like run on Week 7 Tuesday was not
+  done, to spare requests.
+  - Two of the five restarts listed above ("addition is well-defined in that group --- the addition is in this group"
+    and "moves this element to there ... --- if I pick some $\alpha$") had reached the book's Week 10 Tuesday. Neon
+    found them; both dashes became periods on 2026-11-23, with every word kept.
 - **Open:**
-  - The next lecture's Stage 3 run, measured the same way: the first with `prompt-engineering` `9b6915e`
-    (2026-11-21), which removed the prompt text and examples behind the D9 leftovers (a clause that stops unfinished
-    ends in `...`; a phrase said again after a dash is a restart; the self-check reads dashes, `...` and `;`).
-    Reviewed by Gemini 4 Hydrogen XHIGH. A like-for-like run on Week 7 Tuesday was not done, to spare requests.
   - The app half of D10.
   - Week 5 Tuesday's double opening (L458) has no dash, and a review had restored the clause, so it was left as it
     is.

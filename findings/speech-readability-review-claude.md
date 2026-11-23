@@ -302,6 +302,9 @@ Prompt side: the connector lists of Stages 1, 3 and 4 had `Okay, so,` since `a2e
 - Argon II.B.20 (W10 Wed:325, "the stabilizer" for $X$): he corrects himself in the same block, and the aiNote right
   after explains it.
 - Argon C5 (W9 Tue:2463): already follows the slip convention.
+- C3 (W1 Wed:44, `multiply it by $1$`), C13 (W1 Wed:42, `confused our multiplication`) and C15's lines 784
+  (`the inertia of language`) and 178 (`so, I wanted to say.`): left as spoken, as Argon advised ("keep as is"); no
+  recording was played for them. (Recorded here on 2026-11-23, after Neon's post-apply review.)
 
 ### Settled by the audio (Gemini Neon, 2026-11-22)
 
@@ -322,3 +325,31 @@ and Neon agreeing; each changed block carries a `% [WORD-CHECKED (2026-11-22): .
 | W6 Tue:946 (Argon II.B.12) | `one at a time using if two` | "one at a time using, if you just, two" | kept, `(i.e., the case of two)` added |
 
 Committed with the PDF rebuilt (745 pages, no errors, no undefined references).
+
+### Neon's post-apply review (2026-11-23)
+
+Gemini Neon checked how the reviews were applied: `findings/post-apply-review-neon.md`, committed unchanged with
+the edits below. Each item was checked against the source.
+
+- **Applied:**
+  - **C10 and Argon II.B.7 (W5 Wed:701–707) were wrong:** both guessed a missing word. The XHIGH rerun hears one
+    sentence, "very important for us --- ... --- is polynomial long division", so the two paragraphs are one
+    sentence again. It also hears "so in division", which replaced "so when doing division". The block carries a
+    WORD-CHECKED comment.
+  - WORD-CHECKED comments on the three kept spots in the table above (W1 Wed:921, W9 Tue:219, W10 Wed:620).
+  - C3, C13 and C15 (784, 178) are now listed under Not applied.
+  - **W10 Tue:**
+    - The overfull equation (51 pt, the book's only one): the board form moved to a second line of the same
+      equation, so the board notation stays in the box.
+    - `Of course, I could`.
+    - `this is the space... This is equal, definition, space of left... set of left cosets`: the restart ends in
+      `...`, and the board reading has commas instead of a dash pair.
+    - The two D9 restart dashes (868, 972) became periods.
+    - `\operatorname{Orb}\bigl((1, 0, \dots, 0)^T\bigr)` at 2076, as on the lines around it.
+  - `Orbit--Stabilizer` with an en dash everywhere in prose (54 capitalised and 14 lower-case spots in W8 Tue, W9
+    Wed and W10 Tue and Wed). The labels `thm:orbit-stabilizer` etc. are unchanged.
+- **Not applied:**
+  - C11 `what's this $(4)$?`: the rerun leaves the aside out, and the context still decides it (see above).
+  - Argon II.B.20: the reason under Not applied still holds.
+  - The semicolons of Weeks 1–9 (left out of D11 on purpose).
+  - The footnote comment in `algebra-1.tex`: it says why the setting exists (the textbook).
