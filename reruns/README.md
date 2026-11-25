@@ -1,7 +1,7 @@
 # Raw pipeline reruns
 
 Unedited step-4 output of pipeline reruns of lectures that are already in the book, kept as
-the fixed witness a comparison refers to. `algebra-1.tex` does not load these files. The book
+the fixed witness a comparison refers to. `algebra-1-transcription.tex` does not load these files. The book
 stays the base: whatever a rerun gets right is carried into the lecture in `content/`, with
 the comparison method of `tools/rerun-check/README.md`.
 

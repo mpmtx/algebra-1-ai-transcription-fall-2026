@@ -348,7 +348,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 % Every vertical space is a multiple of \textline, the line distance of the body text (\baselineskip
 % at \normalsize: 14.28pt with 11pt type and \linespread{1.05}). A different line spacing scales
 % every gap with the lines; to try one, define \textlinespread before the preamble is read, e.g.
-%   pdflatex -jobname=test '\def\textlinespread{1.3}\input{algebra-1}'
+%   pdflatex -jobname=test '\def\textlinespread{1.3}\input{algebra-1-transcription}'
 % The multiples come from the earlier pt/ex values, so text, statements and proofs look as before.
 % Boxes and headings were brought into harmony: boxes stand 1 L apart, and every heading has 1 L
 % below it (where its first box follows) and clearly more above it, so it belongs to what follows.
@@ -726,10 +726,10 @@ pdfauthor={Prof. Rahul Pandharipande}
 \makeatletter
 \patchcmd{\cref@thmnoarg}{\@topsep\thm@preskip}{\thm@preskip\customenvspace\thm@postskip\customenvspace
   \@topsep\thm@preskip\advance\@topsep\parskip}{}%
-  {\PackageWarningNoLine{algebra-1}{Patching amsthm's theorem space failed (noarg)}}
+  {\PackageWarningNoLine{algebra-1-transcription}{Patching amsthm's theorem space failed (noarg)}}
 \patchcmd{\cref@thmoptarg}{\@topsep\thm@preskip}{\thm@preskip\customenvspace\thm@postskip\customenvspace
   \@topsep\thm@preskip\advance\@topsep\parskip}{}%
-  {\PackageWarningNoLine{algebra-1}{Patching amsthm's theorem space failed (optarg)}}
+  {\PackageWarningNoLine{algebra-1-transcription}{Patching amsthm's theorem space failed (optarg)}}
 \makeatother
 
 % Math Environments (English), grouped by style. All numbered ones share the theorem counter.
