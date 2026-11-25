@@ -2157,7 +2157,7 @@ We wish to characterize the subgroup
 \[
 \operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} \subset \mathrm{GL}_n(\mathbb{F}_p).
 \]
-An $n \times n$ matrix $A \in \mathrm{GL}_n(\mathbb{F}_p)$ fixes the first standard basis vector $(1, 0, \dots, 0)^T$ if and only if its first column equals $(1, 0, \dots, 0)^T$. Moreover, expanding $\det(A)$ down the first column gives $1 \cdot \det(B)$, where $B$ is the lower-right $(n-1) \times (n-1)$ submatrix; thus, $A$ is invertible if and only if $B \in \mathrm{GL}_{n-1}(\mathbb{F}_p)$, leaving the remaining $n-1$ entries of the first row completely arbitrary:
+For $n \ge 2$, an $n \times n$ matrix $A \in \mathrm{GL}_n(\mathbb{F}_p)$ fixes the first standard basis vector $(1, 0, \dots, 0)^T$ if and only if its first column equals $(1, 0, \dots, 0)^T$. Moreover, expanding $\det(A)$ down the first column gives $1 \cdot \det(B)$, where $B$ is the lower-right $(n-1) \times (n-1)$ submatrix; thus, $A$ is invertible if and only if $B \in \mathrm{GL}_{n-1}(\mathbb{F}_p)$, leaving the remaining $n-1$ entries of the first row completely arbitrary:
 \begin{equation}\label{eq:stab-block-matrix}
 \operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} = \left\{ \left[ \begin{array}{c|c} \multicolumn{1}{c}{1} & \ast \ \cdots \ \ast \\[2pt] \cline{2-2} \begin{matrix} 0 \\ \vdots \\ 0 \end{matrix} & \mathrm{GL}_{n-1}(\mathbb{F}_p) \end{array} \right] \right\}.
 \end{equation}
@@ -2202,7 +2202,7 @@ From the block characterization \eqref{eq:stab-block-matrix}, the first column i
 \[
 \left|\operatorname{Stab}\begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}\right| = p^{n-1} \cdot \left|\mathrm{GL}_{n-1}(\mathbb{F}_p)\right|.
 \]
-Substituting this into \eqref{eq:gln-orb-stab-step1} yields the recurrence relation (which \qt{Solves the problem}):
+Substituting this into \eqref{eq:gln-orb-stab-step1} yields the recurrence relation for $n \ge 2$ (which \qt{Solves the problem}):
 \begin{equation}\label{eq:gln-recursion}
 p^n - 1 = \frac{\left|\mathrm{GL}_n(\mathbb{F}_p)\right|}{p^{n-1} \cdot \left|\mathrm{GL}_{n-1}(\mathbb{F}_p)\right|}, \qquad \text{i.e.,} \qquad \left|\mathrm{GL}_n(\mathbb{F}_p)\right| = (p^n - 1)\, p^{n-1} \left|\mathrm{GL}_{n-1}(\mathbb{F}_p)\right|.
 \end{equation}

@@ -907,7 +907,7 @@ The five Platonic solids --- the regular, convex polyhedra in $\mathbb{R}^3$ who
      outer decagon r_2 = 0.92 at 90, 126, 162, 198, 234, 270, 306, 342, 18, 54 deg;
      inner front pentagon r_1 = r_2 / phi = 0.92 / 1.618 = 0.57 at 90, 162, 234, 306, 18 deg;
      5 radial spokes from (a:0.57) to (a:0.92), forming 1 central regular pentagon + 5 surrounding pentagons.
-  5. Icosahedron (x around 12.0, centre C5=(12.0, 0.95)): inner triangle r=0.44 at 90, 210, 330 deg;
+  5. Icosahedron (x around 12.0, centre C5=(12.0, 0.95)): inner triangle r=0.90/phi=0.556 at 90, 210, 330 deg;
      outer hexagon r=0.90 at 30, 90, 150, 210, 270, 330 deg; each inner vertex a connects to outer a and a+-60.
 - Captions: anchor north at (x_i, -0.25), text width 2.3cm, align flush center, 0.4 apart;
   under Dodecahedron: "Dodecahedron\\($12$ faces)" preserving the board's "12".
@@ -943,13 +943,13 @@ The five Platonic solids --- the regular, convex polyhedra in $\mathbb{R}^3$ who
 
     % 5. Icosahedron (front projection)
     \coordinate (C5) at (12.0, 0.95);
-    \draw[figBlue] ($(C5)+(90:0.44)$) -- ($(C5)+(210:0.44)$) -- ($(C5)+(330:0.44)$) -- cycle;
+    \draw[figBlue] ($(C5)+(90:0.556)$) -- ($(C5)+(210:0.556)$) -- ($(C5)+(330:0.556)$) -- cycle;
     \draw[figBlue] ($(C5)+(30:0.90)$) -- ($(C5)+(90:0.90)$) -- ($(C5)+(150:0.90)$) -- ($(C5)+(210:0.90)$)
         -- ($(C5)+(270:0.90)$) -- ($(C5)+(330:0.90)$) -- cycle;
     \foreach \a [evaluate=\a as \am using \a-60, evaluate=\a as \ap using \a+60] in {90, 210, 330} {
-        \draw[figBlue] ($(C5)+(\a:0.44)$) -- ($(C5)+(\a:0.90)$);
-        \draw[figBlue] ($(C5)+(\a:0.44)$) -- ($(C5)+(\am:0.90)$);
-        \draw[figBlue] ($(C5)+(\a:0.44)$) -- ($(C5)+(\ap:0.90)$);
+        \draw[figBlue] ($(C5)+(\a:0.556)$) -- ($(C5)+(\a:0.90)$);
+        \draw[figBlue] ($(C5)+(\a:0.556)$) -- ($(C5)+(\am:0.90)$);
+        \draw[figBlue] ($(C5)+(\a:0.556)$) -- ($(C5)+(\ap:0.90)$);
     }
 
     % Text last
@@ -1207,7 +1207,7 @@ Consider the group homomorphism
 Since $|\operatorname{Rot}(\text{Cube})| = 24 = |S_4|$, proving that $\phi$ is injective automatically implies that $\phi$ is bijective, and hence an isomorphism (this is left to the reader).
 
 \begin{proof}[Proof of Injectivity (beyond the lecture)]
-The lecture leaves injectivity to the students (\qt{I leave that to you to think about}). Let the four long diagonals of $[-1, 1]^3$ be spanned by the vectors
+The lecture leaves injectivity to the students (\qt{I leave that to you to think about}). That $\phi$ is a homomorphism follows from $(R_1 \circ R_2)(\ell) = R_1(R_2(\ell))$ for every long diagonal $\ell$. Let the four long diagonals of $[-1, 1]^3$ be spanned by the vectors
 \[
 v_1 = (1, 1, 1), \quad v_2 = (-1, 1, 1), \quad v_3 = (1, -1, 1), \quad v_4 = (1, 1, -1).
 \]

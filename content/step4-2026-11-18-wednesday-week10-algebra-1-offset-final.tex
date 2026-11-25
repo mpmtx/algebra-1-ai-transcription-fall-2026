@@ -1068,6 +1068,11 @@ Thus, $\{P\}$ is the unique $P$-orbit of size $1$, while every other $P$-orbit i
 \end{proof}
 \end{content}
 
+\begin{aiNote}[Beyond the Lecture: The Number of \texorpdfstring{$p$}{p}-Sylow Subgroups Divides \texorpdfstring{$m$}{m}]
+% [PERSISTENT, ADDITION]
+By Sylow III (\cref{thm:sylow-3}), the conjugation action $G \curvearrowright S$ has a single orbit, the orbit of $P$, with stabilizer $N_G(P) \supset P$. So, $p^k = |P|$ divides $|N_G(P)|$, which divides $|G| = p^k m$: $|N_G(P)| = p^k d$ with $d \mid m$. By the Orbit--Stabilizer Theorem, $|S| = \frac{|G|}{|N_G(P)|} = \frac{m}{d}$ divides $m$. Textbooks write $n_p$ for this number and state both conditions together: $n_p \equiv 1 \pmod p$ and $n_p \mid m$.
+\end{aiNote}
+
 \begin{overview}[Summary of Key Concepts]
 For a finite group $G$ of order $n = p^k m$ with $p$ prime and $(m, p) = 1$, a subgroup $S \subset G$ of order $|S| = p^k$ is called a \newterm{$p$-Sylow subgroup} of $G$. The lecture established the following results:
 \begin{itemize}
