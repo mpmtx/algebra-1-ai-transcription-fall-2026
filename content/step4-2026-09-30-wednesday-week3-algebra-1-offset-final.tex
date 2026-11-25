@@ -236,7 +236,7 @@ Let $R$ be an arbitrary commutative ring with identity $1$. The \newterm{polynom
 \begin{equation}\label{eq:polynomial-set-def}
 R[x] := \left\{ a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \;\middle|\; n \in \mathbb{N}, \ a_i \in R \right\}.
 \end{equation}
-Equipped with the standard polynomial addition and Cauchy multiplication:
+Equipped with the standard polynomial addition (the shorter of the two summands is padded with zero coefficients) and Cauchy multiplication:
 \begin{align}
     \left( \sum_{i=0}^n a_i x^i \right) + \left( \sum_{i=0}^n b_i x^i \right) &:= \sum_{i=0}^n (a_i + b_i) x^i, \label{eq:poly-addition-w3wed} \\
     \left( \sum_{i=0}^n a_i x^i \right) \cdot \left( \sum_{j=0}^m b_j x^j \right) &:= \sum_{k=0}^{n+m} \left( \sum_{i+j=k} a_i b_j \right) x^k, \label{eq:poly-multiplication-w3wed}
@@ -411,7 +411,7 @@ Let $f(x) = \sum_{i=0}^n a_i x^i$ and $g(x) = \sum_{j=0}^m b_j x^j$. Using the C
     \hat{\phi}(f \cdot g) &= \hat{\phi}\left( \sum_{k=0}^{n+m} \left( \sum_{i+j=k} a_i b_j \right) x^k \right) \nonumber \\
     &= \sum_{k=0}^{n+m} \phi\left( \sum_{i+j=k} a_i b_j \right) y^k && \text{(by definition of $\hat{\phi}$)} \nonumber \\
     &= \sum_{k=0}^{n+m} \left( \sum_{i+j=k} \phi(a_i) \phi(b_j) \right) y^k && \text{($\phi$ is a ring homomorphism)} \nonumber \\
-    &= \left( \sum_{i=0}^n \phi(a_i) y^i \right) \cdot \left( \sum_{j=0}^m \phi(b_j) y^j \right) && \text{(distributivity and Cauchy product in $S$)} \nonumber \\
+    &= \left( \sum_{i=0}^n \phi(a_i) y^i \right) \cdot \left( \sum_{j=0}^m \phi(b_j) y^j \right) && \text{(distributivity and commutativity in $S$)} \nonumber \\
     &= \hat{\phi}(f) \cdot \hat{\phi}(g). \label{eq:multiplicativity-check}
 \end{align}
 Furthermore, $\hat{\phi}(1) = \phi(1) = 1_S$. Thus, $\hat{\phi}$ is a ring homomorphism.
@@ -546,7 +546,7 @@ And the highest term, meaning the highest-degree term in $x$...
 \end{speech}
 
 \begin{content}[Leading and Constant Terms in Polynomial Multiplication]
-Let $R$ be a commutative ring with identity, and let $f(x), g(x) \in R[x]$ be non-zero polynomials represented in canonical form:
+Let $R$ be a commutative ring with identity, and let $f(x), g(x) \in R[x]$ be non-zero polynomials represented in canonical form (for the degree, see \cref{def:poly-degree} in Week~5):
 \begin{align}
     f(x) &= a_0 + a_1 x + \dots + a_n x^n, \quad a_n \neq 0 \ (\deg(f) = n), \label{eq:poly-f-rep} \\
     g(x) &= b_0 + b_1 x + \dots + b_m x^m, \quad b_m \neq 0 \ (\deg(g) = m). \label{eq:poly-g-rep}
@@ -614,7 +614,7 @@ The proof relies on the fundamental degree formula:
 \[
 \deg(f \cdot g) = \deg(f) + \deg(g),
 \]
-which holds for all non-zero polynomials $f, g \in R[x]$ if and only if $R$ has no zero divisors. If $R$ possessed non-trivial zero divisors, the leading coefficient $a_n b_m$ could vanish, causing $\deg(f \cdot g) < \deg(f) + \deg(g)$.
+which holds for all non-zero polynomials $f, g \in R[x]$ if and only if $R$ has no zero divisors. If $R$ possessed non-trivial zero divisors, the leading coefficient $a_n b_m$ could vanish, causing $f \cdot g = 0$ or $\deg(f \cdot g) < \deg(f) + \deg(g)$.
 \end{steps}
 \end{content}
 
@@ -687,7 +687,7 @@ Let $R$ be a commutative ring with identity $1$.
 \begin{enumerate}[label=\textbf{(\arabic*)}]
     \setcounter{enumi}{0} \item \textbf{Sequence Perspective:} Formally, a \newterm{formal power series} with coefficients in $R$ is an infinite sequence of elements of $R$:
     \begin{equation}\label{eq:power-series-sequence}
-    (a_0, a_1, a_2, \dots, a_n, \dots) \in R^{\mathbb{N}}.
+    (a_0, a_1, a_2, \dots, a_n, \dots) \in R^{\mathbb{N}_0}.
     \end{equation}
     In contrast to polynomials in $R[x]$ (sequences $(a_0, a_1, \dots, a_n, 0, 0, 0, \dots)$ with $a_k = 0$ for all sufficiently large $k$), no vanishing condition is imposed on the terms of a formal power series.
     \setcounter{enumi}{1} \item \textbf{Notation:} The set of all formal power series in the indeterminate $x$ with coefficients in $R$ is denoted by:
@@ -721,7 +721,7 @@ Okay, so, that's the exciting rule: it's component-wise addition.
 \end{speech}
 
 \begin{content}[Representation as Formal Sums]
-Every formal power series $(a_n)_{n \in \mathbb{N}} \in R[[x]]$ is represented as a formal infinite sum:
+Every formal power series $(a_n)_{n \in \mathbb{N}_0} \in R[[x]]$ is represented as a formal infinite sum:
 \begin{equation}\label{eq:power-series-sum-notation}
 a_0 + a_1 x + a_2 x^2 + \dots = \sum_{i=0}^\infty a_i x^i, \quad a_i \in R.
 \end{equation}
@@ -1041,11 +1041,11 @@ So, maybe we'll talk a little bit more about that next time. \inlinemetanote{cla
 
 \begin{content}[Step 4: Well-Definedness via Divisibility by Powers of $x$]
 \textbf{Why the Infinite Sum of Power Series Is Algebraically Sound:}
-In an arbitrary ring, infinite sums are not defined. However, because $\gamma$ has no constant term (its lowest degree term is $b_1 x$), $x$ divides $\gamma$:
+In an arbitrary ring, infinite sums are not defined. However, because $\gamma$ has no constant term, $x$ divides $\gamma$:
 \begin{equation}\label{eq:x-divisibility-chain}
 x \mid \gamma \implies x^2 \mid \gamma^2 \implies \dots \implies x^k \mid \gamma^k.
 \end{equation}
-Consequently, the lowest power of $x$ appearing with non-zero coefficient in $\gamma^k$ is at least $x^k$:
+Consequently, $\gamma^k$ has no terms of degree less than $k$:
 \[
 \gamma^k = (b_1 x + b_2 x^2 + \dots)^k = b_1^k x^k + (\text{terms of degree } \ge k+1).
 \]

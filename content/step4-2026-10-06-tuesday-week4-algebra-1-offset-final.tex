@@ -372,10 +372,12 @@ It is called the \newterm{field of Laurent series}: when $R = K$ is a field, it 
 
 \subsection{Formal Laurent Series with Finitely Many Negative Powers}
 
+% [WORD-CHECKED (2026-11-25): he says "negative coefficients" both times (Gemini Neon hearing of a 60 s clip) and writes
+% "negative powers"; the anchor gives what is meant.]
 \begin{speech}[00:10:48 - 00:12:45]
 Have you seen Laurent series already in the complex analysis class? No? All right, well, we'll see. 
 
-So, you won't go wrong if you think about it this way --- that's the definition, that's how we constructed it. But there's another way, which is why it's called the field of Laurent series. So, what is a Laurent series? A Laurent series is a power series where you are allowed to have finitely many negative coefficients, that's the definition. 
+So, you won't go wrong if you think about it this way --- that's the definition, that's how we constructed it. But there's another way, which is why it's called the field of Laurent series. So, what is a Laurent series? A Laurent series is a power series where you are allowed to have finitely many negative coefficients (i.e., negative powers), that's the definition. 
 
 So, I can say this: \inlinemetanote{writes on the board: Laurent series in $x$} Laurent series in a variable $x$, this is a power series with --- and this is the crucial thing --- \inlinemetanote{writes \qt{is a power series with}} finitely many negative coefficients... \inlinemetanote{writes \qt{finitely many negative powers}} You can have as many positive coefficients, positive degree coefficients as you want, it's a power series, but only finitely many negative powers. So, that's the crucial thing for a Laurent series. 
 
@@ -400,9 +402,9 @@ where $N \in \mathbb{Z}$ and $a_n \in R$ for all $n \ge -N$. That is, $f(x)$ con
     1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots \in R[[x]].
     \]
     (For this series, $R$ must contain $\mathbb{Q}$, e.g.\ $R = \mathbb{R}$, so that the coefficients $\frac{1}{k!}$ lie in $R$.)
-    \item \textbf{Laurent Series:} Elements can have negative exponents up to some lowest power:
+    \item \textbf{Laurent Series:} Elements can have negative exponents up to some lowest power; over a field $K$, such a series is an element of $K((x))$ (\cref{thm:laurent-field-isomorphism}):
     \[
-    x^{-12} + 3 x^{-2} + x^{-1} + 17 + x + x^{15} + \dots \in R((x)).
+    x^{-12} + 3 x^{-2} + x^{-1} + 17 + x + x^{15} + \dots \in K((x)).
     \]
 \end{itemize}
 \end{example}
@@ -423,7 +425,7 @@ So, anyway, that's just this comment here. This field of Laurent series, it turn
 \end{speech}
 
 \begin{content}[Isomorphism between Laurent Series and the Field of Fractions]
-\begin{theorem}[Algebraic Characterization of $R((x))$]\label[theorem]{thm:laurent-field-isomorphism}
+\begin{theorem}[Algebraic Characterization of $K((x))$]\label[theorem]{thm:laurent-field-isomorphism}
 When $K$ is a field, the set of formal Laurent series over $K$ with finitely many negative powers (\cref{def:laurent-series}) forms a field under formal addition and multiplication, and this field is naturally isomorphic to the field of fractions $K((x)) = \operatorname{Frac}(K[[x]])$ of \cref{def:frac-power-series}:
 \begin{equation}\label{eq:laurent-isomorphism}
 \{\text{formal Laurent series over } K\} \cong K((x)) = \operatorname{Frac}(K[[x]]).
@@ -1874,7 +1876,7 @@ For any polynomial $p(x) \in \mathbb{Q}[x]$, there exist unique polynomials $q(x
 \begin{equation}\label{eq:poly-division-x2-plus-1}
 p(x) = q(x)(x^2 + 1) + r(x), \quad \text{with } r = 0 \text{ or } \deg(r) < 2.
 \end{equation}
-In particular, the remainder $r(x)$ is a linear polynomial with rational coefficients:
+In particular, the remainder $r(x)$ is a linear polynomial with rational coefficients (which may be zero):
 \begin{equation}\label{eq:remainder-linear-form}
 r(x) = r_1 x + r_2, \qquad r_1, r_2 \in \mathbb{Q}.
 \end{equation}

@@ -164,7 +164,7 @@ Let $R$ be a unique factorization domain, and let $p \in R \setminus \{0\}$. Pro
 \begin{proof}[Proof Outline for the Exercise (beyond the lecture)]
 The lecture leaves this as an exercise (\qt{I don't do it here}). In any integral domain $R$, a prime element is always irreducible:
 \begin{itemize}
-    \item \textbf{Prime implies Irreducible:} If $(p)$ is prime and $p = ab$, then $ab \in (p)$, so $p \mid a$ or $p \mid b$. If $p \mid a$, write $a = pr$. Then $p = prb \implies 1 = rb$, so $b$ is a unit in $R$. Thus, $p$ is irreducible.
+    \item \textbf{Prime implies Irreducible:} If $(p)$ is a prime ideal, then $(p) \neq R$, so $p$ is not a unit. If $p = ab$, then $ab \in (p)$, so $p \mid a$ or $p \mid b$. If $p \mid a$, write $a = pr$. Then $p = prb \implies 1 = rb$, so $b$ is a unit in $R$. Thus, $p$ is irreducible.
     \item \textbf{Irreducible implies Prime (requires UFD):} Suppose $p$ is irreducible and $p \mid ab$. Then $ab = pc$ for some $c \in R$. If $a = 0$ or $b = 0$, there is nothing to prove; if $a$ is a unit, then $p \mid a^{-1} a b = b$, and similarly if $b$ is a unit. Otherwise, factoring $a, b$ (and $c$, unless it is a unit) into products of irreducible elements, the irreducible element $p$ appearing on the right-hand side must, by uniqueness of factorization up to associates, be associate to one of the irreducible factors of $a$ or of $b$. Hence, $p \mid a$ or $p \mid b$, which implies $(p)$ is a prime ideal.
 \end{itemize}
 The second half is the generalization of Euclid's lemma (\cref{fact:pre-euclid}) to UFDs; for PIDs it was proved directly as Step~2 of Theorem~A (\cref{lem:step2-pid-irr-implies-prime}). The first half, together with Step~1 of Theorem~A (\cref{clm:step1-uniqueness}), shows: a domain in which every non-zero non-unit has a factorization into irreducibles is a UFD if and only if every irreducible element is prime.
@@ -216,7 +216,7 @@ a_j = u_j \prod_{i=1}^m p_i^{k_{ij}},
 where $u_j \in \mathcal{U}_R$ is a unit, $p_1, \dots, p_m$ are pairwise non-associate irreducible (prime) elements, and $k_{ij} \ge 0$.
 The greatest common divisor of several elements is defined as for two (\cref{def:gcd-ufd}: a common divisor that every common divisor divides), and the argument of \cref{thm:gcd-formula-ufd} gives it by minimal exponents. So, the greatest common divisor of the non-zero coefficients is:
 \begin{equation}\label{eq:gcd-prime-powers}
-\operatorname{GCD}(a_0, a_1, \dots, a_n) = \prod_{i=1}^m p_i^{\min \{ k_{ij} \mid a_j \neq 0 \}}.
+\operatorname{GCD}(a_0, a_1, \dots, a_n) \sim \prod_{i=1}^m p_i^{\min \{ k_{ij} \mid a_j \neq 0 \}}.
 \end{equation}
 
 \begin{remark}[Ambiguity Up to Units]\label[remark]{rem:content-unit-ambiguity}
@@ -490,11 +490,11 @@ So, that's the proof of this too. Now with these preliminaries, we can finally p
 
 \begin{content}
 \begin{proof}[Proof of \cref{clm:primitive-divisibility}]
-By assumption, $g \mid bf$ in $R[x]$, which means there exists a polynomial $h \in R[x]$ such that:
+If $f = 0$, there is nothing to prove, so let $f \neq 0$. By assumption, $g \mid bf$ in $R[x]$, which means there exists a polynomial $h \in R[x]$ such that:
 \begin{equation}\label{eq:bf-hg}
 bf = hg.
 \end{equation}
-We express each side in terms of its canonical decomposition into content and primitive part:
+Since $bf \neq 0$, also $h \neq 0$. We express each side in terms of its canonical decomposition into content and primitive part:
 \begin{align*}
 \text{Left-hand side:} \quad bf &= C(bf) \cdot (bf)^* \sim b \cdot C(f) \cdot f^*, \\
 \text{Right-hand side:} \quad hg &= (C(h) \cdot h^*) \cdot g = C(h) \cdot (h^* g).
@@ -799,7 +799,7 @@ Now, $f^*$ is primitive because that's what happens when you extract the content
 Suppose $p \in R[x]$ is irreducible with $\deg(p) = 0$. Then $p = c \in R$.
 Since $p$ is irreducible in $R[x]$, it is irreducible in $R$ (a factorization in $R$ is one in $R[x]$, and the units agree). Because $R$ is a UFD, $p$ is a prime element in $R$ (\cref{exer:irred-prime-ufd}).
 
-Suppose $p \mid fg$ in $R[x]$ and $p \nmid f$.
+Suppose $p \mid fg$ in $R[x]$ and $p \nmid f$. Then $f \neq 0$, and we may assume $g \neq 0$ (if $g = 0$, then $g \in (p)$).
 Decomposing $f$ and $g$ into their content and primitive parts:
 \[
 f = C(f) \cdot f^* \quad \text{and} \quad g = C(g) \cdot g^*,

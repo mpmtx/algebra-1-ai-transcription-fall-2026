@@ -91,8 +91,8 @@ In an integral domain (\cref{def:integral-domain}, Week~2), a non-zero element t
 \begin{steps}[Algebraic Intuition: The Concept of Associates]
 Going beyond the lecture: in a unique factorization domain (such as $\mathbb{Z}$, by \cref{fact:pre-unique-factorization}, or $\mathbb{Z}[i]$, as the course shows later), factorizations into irreducible elements are unique up to multiplication by units and order. Two elements $x, y \in R$ are called \newterm{associates} if $x = u \cdot y$ for some unit $u \in \mathcal{U}_R$.
 \begin{itemize}
-    \item \textbf{Associates in $\mathbb{Z}$:} The only units are $\pm 1$, meaning every prime $p$ has two associates: $p$ and $-p$.
-    \item \textbf{Associates in {$\mathbb{Z}[i]$}:} Since $i \cdot (-i) = 1$ (i.e., $(-i) \cdot i = 1$), the imaginary units $i$ and $-i$ are also units. Consequently, every Gaussian integer $q$ has four associates:
+    \item \textbf{Associates in $\mathbb{Z}$:} The only units are $\pm 1$, meaning every prime $p$ has two associates: $p$ and $-p$. (\Cref{def:primes-associates} counts $-p$ as a prime of the ring $\mathbb{Z}$, too; an integer prime without further comment is positive, $p \ge 2$, as in \cref{def:pre-divisibility}.)
+    \item \textbf{Associates in {$\mathbb{Z}[i]$}:} Since $i \cdot (-i) = 1$ (i.e., $(-i) \cdot i = 1$), the imaginary units $i$ and $-i$ are also units. Consequently, every non-zero Gaussian integer $q$ has four associates:
     \[
     q, \quad -q, \quad iq, \quad -iq.
     \]
@@ -137,7 +137,7 @@ An element that has no non-trivial divisors in $\mathbb{Z}$ might acquire non-tr
 \end{steps}
 
 \par\vspace{1ex}\noindent
-To investigate whether $p$ factors non-trivially in $\mathbb{Z}[i]$, suppose there exists a non-unit divisor:
+To investigate whether $p$ factors non-trivially in $\mathbb{Z}[i]$, suppose $p = z (a + bi)$ with neither factor a unit, so that $a + bi$ is a divisor of $p$ that is neither a unit nor an associate of $p$:
 \begin{equation}\label{eq:gaussian-divisor}
 (a + bi) \mid p \quad \text{in } \mathbb{Z}[i] \quad (a, b \in \mathbb{Z}).
 \end{equation}
@@ -648,6 +648,8 @@ that is, $0_{R_2} = 0_{R_2} + f(0_{R_1}) = f(0_{R_1})$. Thus, $f(0_{R_1}) = 0_{R
 
 \subsection{Why Identity Preservation Must Be Axiomatized}
 
+% [WORD-CHECKED (2026-11-25): he says "we don't always have multiplicative inverses in R", as on the board; Gemini Neon
+% and Flash hearings of a 60 s clip agree. The text had "in R_1".]
 \begin{speech}[00:22:25 - 00:24:16]
 Then maybe the question is: \qt{Well, then why do I put $f(1) = 1$?} That's a reasonable question. They're treated not symmetrically.
 
@@ -657,7 +659,7 @@ Yeah, it has to do with the fact that I cannot... I mean, maybe this is what you
 
 This is about the definitions, and as I said, the strange thing about mathematics is that when it's taught, the definitions are first, but somehow when it's understood, the definitions are last. So, it's somehow a constant difficulty. \inlinemetanote{erases more board space and begins writing}
 
-So, the point is: we don't always have multiplicative inverses in $R_1$, and so, we can't use this argument \inlinemetanote{writes \qt{We don't have mult. inverses in $R$, so we can't use that argument} and draws an arrow pointing to it} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
+So, the point is: we don't always have multiplicative inverses in $R$, and so, we can't use this argument \inlinemetanote{writes \qt{We don't have mult. inverses in $R$, so we can't use that argument} and draws an arrow pointing to it} --- the one that's in the corner there (i.e., the cancellation argument for $f(0) = 0$, \cref{prop:homomorphism-preserves-zero}) \inlinemetanote{points at the proof of $f(0)=0$ in the corner of the board}.
 
 So, to fix that, we just say at the beginning: $f(1) = 1$. We don't leave it to chance. You could hope, maybe, that even though we couldn't use this argument, maybe you could find some different argument. You could hope that, but it's not true.
 \end{speech}
@@ -843,7 +845,7 @@ $\bar{1}$ & $\bar{0}$ & $\bar{1}$
 \end{steps}
 
 \begin{proposition}[Canonical Projection Homomorphism]\label[proposition]{prop:canonical-projection}
-The reduction map modulo $n$:
+For any integer $n \ge 1$, the reduction map modulo $n$:
 \[
 f \colon \mathbb{Z} \to \faktor{\mathbb{Z}}{n\mathbb{Z}}, \quad f(a) = \bar{a}
 \]

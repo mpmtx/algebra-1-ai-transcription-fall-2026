@@ -255,6 +255,8 @@ Equivalently, a field is a ring whose non-zero elements form an abelian group un
 (R \setminus \{0\}, \cdot, 1) \text{ is an abelian group}.
 \]
 \end{definition}
+
+The second form relies on two facts: $0 \cdot a = 0$ (Week~1, \cref{prop:mult-by-zero}), so that $a \cdot a^{-1} = 1 \neq 0$ gives $a^{-1} \neq 0$; and a product of two non-zero elements of a field is not zero (\cref{ex:fields-are-domains}, next lecture), so that the multiplication restricts to $R \setminus \{0\}$.
 \end{content}
 
 \begin{insight}[Asymptotic Understanding in Mathematics]
@@ -1701,7 +1703,7 @@ The lecturer returns to this ideal in Week~5 and shows that it is not a prime id
 
 \begin{aiNote}[Notation: Compactly Supported Functions]
 % [PERSISTENT]
-Many textbooks write $C_c^\infty(\mathbb{R})$ for this ideal. The lecturer calls it $I$.
+Many textbooks write $C_c^\infty(\mathbb{R})$ for this ideal. The lecturer calls it $I$. Smooth functions of the shape in the picture are usually called \newterm{bump functions} (\cref{fact:pre-flat-function}); in analysis, \qt{hat function} mostly means the piecewise linear tent function.
 \end{aiNote}
 
 \subsection{A Strictly Larger Ideal: Functions Vanishing on a Right Half-Line}
@@ -2128,6 +2130,7 @@ A \newterm{category} $\operatorname{Cat}$ consists of:
     % Identity loops
     \draw[->, thick, BurntOrange] (A) to[out=150, in=210, looseness=4] node[left] {$\operatorname{Id}_A$} (A);
     \draw[->, thick, BurntOrange] (B) to[out=30, in=-30, looseness=4] node[right] {$\operatorname{Id}_B$} (B);
+    \draw[->, thick, BurntOrange] (C) to[out=60, in=120, looseness=4] node[above] {$\operatorname{Id}_C$} (C);
 \end{tikzpicture}
 \end{center}
 
