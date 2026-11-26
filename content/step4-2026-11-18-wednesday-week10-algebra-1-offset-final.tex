@@ -153,7 +153,7 @@ Lagrange's Theorem (Week 7, \cref{thm:lagrange}) states that the order of any su
 \end{remark}
 
 \begin{exercise}[Failure of the Full Converse in \texorpdfstring{$A_4$}{A4}]\label[exercise]{exer:a4-no-order-6}
-Show that the alternating group $A_4$ (of order $12$) does not have a subgroup of order $6$, even though $6 \mid 12$.
+Show that the alternating group $A_4$ (of order $12$) does not have a subgroup of order $6$, even though $6 \mid 12$. (The next lecture does this, \cref{prop:a4-no-order-6}.)
 \end{exercise}
 \end{content}
 
@@ -1047,7 +1047,7 @@ Prove \cref{thm:sylow-4} by considering the set $S$ of all $p$-Sylow subgroups o
 \end{exercise}
 
 \begin{proof}[Proof of \cref{thm:sylow-4} (beyond the lecture)]
-The lecture leaves this to the students (\qt{I recommend really trying to prove this}). The following argument uses its hint, the conjugation action, restricted to one $p$-Sylow subgroup.
+The lecture leaves this to the students (\qt{I recommend really trying to prove this}). The following argument uses its hint, the conjugation action, restricted to one $p$-Sylow subgroup. The next lecture gives this argument in class (Week 11, \cref{thm:sylow-iv}).
 
 Let $S$ be the set of all $p$-Sylow subgroups of $G$, and fix one $p$-Sylow subgroup $P \in S$ (which exists by \cref{thm:sylow-1}). We restrict the conjugation action $G \curvearrowright S$ (given by $g \cdot Q := g Q g^{-1}$; it maps $S$ to $S$, since $g Q g^{-1}$ is the image of $Q$ under the automorphism $c_g$, a subgroup with $|Q| = p^k$ elements, and it is an action since $(g_2 g_1)^{-1} = g_1^{-1} g_2^{-1}$) to the subgroup $P \subset G$, obtaining an action $P \curvearrowright S$.
 
@@ -1059,7 +1059,7 @@ By the Orbit--Stabilizer Theorem, each orbit size $|\operatorname{Orb}_P(Q_i)| =
 
 We determine which elements $Q \in S$ are $P$-fixed points (i.e., form orbits of size $1$). Clearly, $x P x^{-1} = P$ for all $x \in P$, so $P$ itself is a $P$-fixed point.
 
-Conversely, suppose $Q \in S$ is $P$-fixed, so $x Q x^{-1} = Q$ for all $x \in P$. This means $P \subset N_G(Q)$, where $N_G(Q) := \{ g \in G \mid g Q g^{-1} = Q \}$ is a subgroup of $G$, namely the stabilizer of $Q$ for the conjugation action of $G$ on $S$ (\cref{lem:stab-subgroup}; in textbooks: the normalizer of $Q$ in $G$, a name the lecture does not use). Note also that $Q \subset N_G(Q)$: for $q \in Q$, $q Q q^{-1} \subset Q$ since $Q$ is a subgroup, and both sides have $p^k$ elements, so $q Q q^{-1} = Q$. Because $|N_G(Q)|$ divides $|G| = p^k m$ with $(m, p) = 1$, the highest power of $p$ dividing $|N_G(Q)|$ is at most $p^k$, and because $P \subset N_G(Q)$, $p^k = |P|$ divides $|N_G(Q)|$; so $p^k$ is the highest power of $p$ dividing $|N_G(Q)|$; hence, $P$ and $Q$ are both $p$-Sylow subgroups of $N_G(Q)$. Applying Sylow III (\cref{thm:sylow-3}) to the group $N_G(Q)$, there exists $g \in N_G(Q)$ such that $P = g Q g^{-1}$. Since $g \in N_G(Q)$, we have $g Q g^{-1} = Q$, and therefore $P = Q$.
+Conversely, suppose $Q \in S$ is $P$-fixed, so $x Q x^{-1} = Q$ for all $x \in P$. This means $P \subset N_G(Q)$, where $N_G(Q) := \{ g \in G \mid g Q g^{-1} = Q \}$ is a subgroup of $G$, namely the stabilizer of $Q$ for the conjugation action of $G$ on $S$ (\cref{lem:stab-subgroup}; the normalizer of $Q$, a name the next lecture introduces, \cref{def:normalizer}). Note also that $Q \subset N_G(Q)$: for $q \in Q$, $q Q q^{-1} \subset Q$ since $Q$ is a subgroup, and both sides have $p^k$ elements, so $q Q q^{-1} = Q$. Because $|N_G(Q)|$ divides $|G| = p^k m$ with $(m, p) = 1$, the highest power of $p$ dividing $|N_G(Q)|$ is at most $p^k$, and because $P \subset N_G(Q)$, $p^k = |P|$ divides $|N_G(Q)|$; so $p^k$ is the highest power of $p$ dividing $|N_G(Q)|$; hence, $P$ and $Q$ are both $p$-Sylow subgroups of $N_G(Q)$. Applying Sylow III (\cref{thm:sylow-3}) to the group $N_G(Q)$, there exists $g \in N_G(Q)$ such that $P = g Q g^{-1}$. Since $g \in N_G(Q)$, we have $g Q g^{-1} = Q$, and therefore $P = Q$.
 
 Thus, $\{P\}$ is the unique $P$-orbit of size $1$, while every other $P$-orbit in $S$ has size $p^{r_i}$ with $r_i \ge 1$ and is therefore divisible by $p$. Reducing the orbit sum modulo $p$ yields:
 \[
@@ -1079,6 +1079,6 @@ For a finite group $G$ of order $n = p^k m$ with $p$ prime and $(m, p) = 1$, a s
     \item \textbf{Sylow I (\cref{thm:sylow-1}):} $G$ contains at least one $p$-Sylow subgroup $S \subset G$ of order $p^k$. This acts as a partial converse to Lagrange's Theorem (whereas the full converse fails, e.g., $A_4$ has order $12$ but no subgroup of order $6$). The proof sets $T = \{ X \subset G \mid |X| = p^k \}$, uses $p \nmid \binom{n}{p^k}$ to find an orbit $\operatorname{Orb}(X_j)$ with $p \nmid |\operatorname{Orb}(X_j)|$, and combines $|\operatorname{Stab}(X_j)| \le p^k$ (via injection $g \mapsto g \cdot a_1$) with the Orbit--Stabilizer Theorem ($p^k \mid |\operatorname{Stab}(X_j)|$) to obtain $|\operatorname{Stab}(X_j)| = p^k$.
     \item \textbf{Sylow II (\cref{thm:sylow-2}):} Every subgroup $H \subset G$ of order $p^\ell$ is contained in some $p$-Sylow subgroup of $G$. Fixing a $p$-Sylow subgroup $P \subset G$ and restricting the left coset action to $H \curvearrowright \faktor{G}{P}$ (where $|\faktor{G}{P}| = m$ is coprime to $p$) yields an $H$-fixed coset $x P$, giving $H \subset x P x^{-1}$.
     \item \textbf{Sylow III (\cref{thm:sylow-3}):} All $p$-Sylow subgroups of $G$ are conjugate: for any two $p$-Sylow subgroups $P_1, P_2 \subset G$, there exists $x \in G$ with $P_1 = x P_2 x^{-1}$, deduced immediately from the Sylow II argument with $H = P_1$ and $P = P_2$.
-    \item \textbf{Sylow IV (\cref{thm:sylow-4}):} The number of $p$-Sylow subgroups of $G$ is congruent to $1 \pmod p$, left as an exercise to prove via the conjugation action on the set $S$ of all $p$-Sylow subgroups.
+    \item \textbf{Sylow IV (\cref{thm:sylow-4}):} The number of $p$-Sylow subgroups of $G$ is congruent to $1 \pmod p$, left as an exercise to prove via the conjugation action on the set $S$ of all $p$-Sylow subgroups (proved in the next lecture, \cref{thm:sylow-iv}).
 \end{itemize}
 \end{overview}

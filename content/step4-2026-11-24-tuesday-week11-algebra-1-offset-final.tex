@@ -92,10 +92,10 @@
 % Primary Language: English
 % End of the video: 01:32:24
 
-\lecturechapter{Tuesday}{24 Nov}{24 November 2026}{Sylow's Fourth Theorem, Simplicity of \texorpdfstring{$A_5$}{A5}, and Root Field Extensions}
+\lecturechapter[11]{Tuesday}{24 Nov}{24 November 2026}{Sylow's Fourth Theorem, Simple Groups, and Field Extensions}
 
 \begin{overview}[Course Content Overview]
-This lecture begins with a recap of the first three Sylow theorems and states and proves Sylow's fourth theorem, showing that the number of $p$-Sylow subgroups of a finite group is congruent to $1$ modulo $p$ via a conjugation action on the set of $p$-Sylow subgroups. It then proves that the alternating group $A_4$ of order $12$ has no subgroup of order $6$ as a counterexample to the full converse of Lagrange's theorem, introduces simple groups, proves that $A_5$ is simple while $A_4$ is not, and outlines classification hints for groups of order $p$, $p^2$, and $pq$ alongside broader directions in group theory (the classification of finite simple groups, representation theory, Klein's Erlangen program, Lie groups, and reflections on formalization and AI in mathematics). In the second half, the lecture turns to field theory and the problem of solving irreducible polynomial equations $f(\alpha) = 0$ over a field $k$, constructing the quotient field extension $K = \frac{k[x]}{(f)}$ containing $k$ canonically and a root $\alpha = \bar{x}$ (illustrated by $\frac{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$), and proving the uniqueness theorem $K \cong k(\beta)$ for any field extension $F$ over $k$ containing a root $\beta$ of $f$.
+This lecture begins with a recap of the first three Sylow theorems and states and proves Sylow's fourth theorem, showing that the number of $p$-Sylow subgroups of a finite group is congruent to $1$ modulo $p$ via a conjugation action on the set of $p$-Sylow subgroups. It then proves that the alternating group $A_4$ of order $12$ has no subgroup of order $6$ as a counterexample to the full converse of Lagrange's theorem, introduces simple groups, proves that $A_5$ is simple while $A_4$ is not, and outlines classification hints for groups of order $p$, $p^2$, and $pq$ alongside broader directions in group theory (the classification of finite simple groups, representation theory, Klein's Erlangen program, Lie groups, and reflections on formalization and AI in mathematics). In the second half, the lecture turns to field theory and the problem of solving irreducible polynomial equations $f(\alpha) = 0$ over a field $k$, constructing the quotient field extension $K = \faktor{k[x]}{(f)}$ containing $k$ canonically and a root $\alpha = \bar{x}$ (illustrated by $\faktor{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$), and proving the uniqueness theorem $K \cong k(\beta)$ for any field extension $F$ over $k$ containing a root $\beta$ of $f$.
 \end{overview}
 
 \section{Sylow's Fourth Theorem}
@@ -105,33 +105,33 @@ This lecture begins with a recap of the first three Sylow theorems and states an
 \begin{speech}[00:00:00 - 00:01:49]
 Okay, so, last week was formally the end of group theory, but I wanted to say a few comments because there's some fun things to say.
 
-So, the last topic was the Sylow theorems \inlinemetanote{writes: Sylow Theorems}. And for this, $G$ is a finite group, and we look at a prime $p^k m = n$, where this (i.e., $p^k$) is the largest prime factor (power dividing $n$) \inlinemetanote{writes \qt{$G$ finite}, \qt{$p^k m = n$}, and \qt{$(p, m) = 1$}}.
+So, the last topic was the Sylow theorems \inlinemetanote{writes: Sylow Theorems}. And for this, $G$ is a finite group, and we look at a prime $p^k m = n$, where this (i.e., $p^k$) is the largest prime factor (power dividing $n$) \inlinemetanote{writes \qt{$|G| = n$}, \qt{$p^k m = n$}, and \qt{$(p, m) = 1$}}.
 
 And I remind you that the Sylow $1$ was that there exists a $p$-Sylow subgroup --- that's some subgroup inside $G$ where the size is the biggest prime (power) \inlinemetanote{writes \qt{S I:}, \qt{$\exists$ $p$-Sylow subgrp}, \qt{$P \subset G$}, and \qt{$|P| = p^k$}}.
 
-$S_2$ says that if $H$ has a power of $p$ and $H$ is a subgroup, then $H$ is contained in some $p$-Sylow subgroup \inlinemetanote{writes \qt{S II:}, \qt{If $|H| = p^\ell$, $H \subset G$}, and \qt{$\implies H \subset P'$ some $p$-Sylow}}.
+S~II says that if $H$ has a power of $p$ and $H$ is a subgroup, then $H$ is contained in some $p$-Sylow subgroup \inlinemetanote{writes \qt{S II:}, \qt{If $|H| = p^\ell$, $H \subset G$}, and \qt{$\implies H \subset P'$ some $p$-Sylow}}.
 
-And the third one, $S_3$, was that all $p$-Sylow subgroups are conjugate \inlinemetanote{writes \qt{S III:} and \qt{All $p$-Sylow subgrps $\subset G$ are conj.}}.
+And the third one, S~III, was that all $p$-Sylow subgroups are conjugate \inlinemetanote{writes \qt{S III:} and \qt{All $p$-Sylow subgrps $\subset G$ are conj.}}.
 
-So, I wanted to just give you the next one, $S_4$, which was what I was speaking about at the last moment of last class: this is about what is the number of $p$-Sylow subgroups of $G$ \inlinemetanote{writes \qt{S IV:} and \qt{What is number of $p$-Sylow subgrps of $G$?}}.
+So, I wanted to just give you the next one, S~IV, which was what I was speaking about at the last moment of last class: this is about what is the number of $p$-Sylow subgroups of $G$ \inlinemetanote{writes \qt{S IV:} and \qt{What is number of $p$-Sylow subgrps of $G$?}}.
 \end{speech}
 
 \begin{content}[Recap of Sylow I--III and the Counting Question]
 \begin{remark}[Recap: Sylow Theorems I--III]\label[remark]{rem:sylow-1-3-recap}
 Let $G$ be a finite group of order $n = p^k m$, where $p$ is a prime and $(p, m) = 1$ (so $p^k$ is the highest power of $p$ dividing $n$).
 \begin{itemize}
-    \item \textbf{S I:} There exists a $p$-Sylow subgroup $P \subset G$ with $|P| = p^k$.
-    \item \textbf{S II:} If $H \subset G$ is a subgroup with $|H| = p^\ell$, then $H \subset P'$ for some $p$-Sylow subgroup $P'$ of $G$.
-    \item \textbf{S III:} All $p$-Sylow subgroups of $G$ are conjugate in $G$.
+    \item \textbf{S I:} There exists a $p$-Sylow subgroup $P \subset G$ with $|P| = p^k$ (Week 10, \cref{thm:sylow-1}).
+    \item \textbf{S II:} If $H \subset G$ is a subgroup with $|H| = p^\ell$, then $H \subset P'$ for some $p$-Sylow subgroup $P'$ of $G$ (\cref{thm:sylow-2}).
+    \item \textbf{S III:} All $p$-Sylow subgroups of $G$ are conjugate in $G$ (\cref{thm:sylow-3}).
 \end{itemize}
 \end{remark}
 
-\textbf{S IV (Question):} What is the number of $p$-Sylow subgroups of $G$?
+\textbf{S IV (Question):} What is the number of $p$-Sylow subgroups of $G$? The previous lecture stated the answer (\cref{thm:sylow-4}) and left its proof as an exercise (\cref{exer:sylow-4-proof}); this lecture proves it.
 \end{content}
 
 \begin{aiNote}[Notation: \texorpdfstring{$\subset$}{subset} for Any Subgroup or Subset]
 % [PERSISTENT]
-Throughout this lecture, the lecturer writes $\subset$ for any subset or subgroup (not $\subseteq$ or $\le$). We preserve the exact symbol $\subset$ everywhere to match the blackboard.
+As in the earlier lectures, $\subset$ is the board's sign for subsets and subgroups (Week 4, \cref{not:subset-board}).
 \end{aiNote}
 
 \begin{speech}[00:01:49 - 00:02:55]
@@ -139,7 +139,7 @@ So, we can answer this because it gives an example of a different group action w
 
 This is a finite set, and I want to count the number. So, this question is: what is the cardinality of this \inlinemetanote{writes: $|V| = ?$}?
 
-And of course we're not going to get the answer to that --- it just depends on the group --- but the statement of $S_4$, Sylow $4$, says that this cardinality is congruent to $1$ mod $p$ \inlinemetanote{writes and boxes: S IV: $|V| \equiv 1 \pmod p$}.
+And of course we're not going to get the answer to that --- it just depends on the group --- but the statement of S~IV, Sylow $4$, says that this cardinality is congruent to $1$ mod $p$ \inlinemetanote{writes and boxes: S IV: $|V| \equiv 1 \pmod p$}.
 
 All right? And this is the last group action argument, somehow in the package, although it seems like maybe it's not exactly in the syllabus. We should put it in it.
 
@@ -168,7 +168,7 @@ The number $|V|$ of $p$-Sylow subgroups of $G$ satisfies:
 \begin{speech}[00:02:55 - 00:04:36]
 So, I want to prove this now: proof \inlinemetanote{writes: Proof:}. We start with a $p$-Sylow subgroup, with one of them \inlinemetanote{writes: Start with $P \in V$}. So, we have the subgroup $P$ inside $G$ where the order is $p^k$ \inlinemetanote{writes \qt{$P \subset G$} and \qt{$|P| = p^k$}}. Okay?
 
-And now we're going to act on this set $V$. So, the idea in all of these Sylows is picking the right group action. Here's the idea: $G$ acts on $V$ by conjugation, meaning that if I have an element of $G$, and I have a $Q$ --- so this is an element of the group and this is a $p$-Sylow subgroup --- then I can define the action to be $g Q g^{-1}$, which is a new $p$-Sylow subgroup, or maybe new, who says \inlinemetanote{writes \qt{Idea:}, \qt{$G \curvearrowright V$ by conjug.}, \qt{$(g, Q)$}, \qt{$\in G$} below $g$, \qt{$\in V$} below $Q$, \qt{$\mapsto g Q g^{-1}$}, and \qt{$\in V$} below $g Q g^{-1}$}.
+And now we're going to act on this set $V$. So, the idea in all of these Sylows is picking the right group action. Here's the idea: $G$ acts on $V$ by conjugation, meaning that if I have an element of $G$, and I have a $Q$ --- so this is an element of the group and this is a $p$-Sylow subgroup --- then I can define the action to be $g Q g^{-1}$, which is a new $p$-Sylow subgroup, or maybe new, who says \inlinemetanote{writes \qt{Idea:}, \qt{$G \curvearrowright V$ by conjug.}, \qt{$\phi(g, Q) = g Q g^{-1}$}, and \qt{$G$}, \qt{$V$}, \qt{$V$} under $g$, $Q$ and $g Q g^{-1}$, each with a small arrow pointing up}.
 
 So, $G$ acts on the set of $p$-Sylow subgroups by conjugation. This is the crucial idea. All right?
 
@@ -181,15 +181,14 @@ And we know various things, like Sylow $3$ (\cref{rem:sylow-1-3-recap}) says thi
 Start with a fixed $p$-Sylow subgroup $P \in V$, so $P \subset G$ with $|P| = p^k$.
 
 \textbf{Idea:} The group $G$ acts on the set $V$ by conjugation ($G \curvearrowright V$):
-\begin{align*}
-G \times V &\to V \\
-(g, Q) &\mapsto g Q g^{-1}.
-\end{align*}
+\[
+\phi \colon G \times V \to V, \qquad \phi(g, Q) = g Q g^{-1}.
+\]
 Indeed, since conjugation by $g \in G$ is an automorphism of $G$, $g Q g^{-1}$ is a subgroup of $G$ of the same cardinality $|g Q g^{-1}| = |Q| = p^k$, so $g Q g^{-1} \in V$.
 \end{content}
 
 \begin{speech}[00:04:36 - 00:05:24]
-So, we restrict this action to this particular $p$-Sylow subgroup \inlinemetanote{writes: We restrict the action to $P \subset G$}. We get that this particular $p$-Sylow subgroup acts on the set of all $p$-Sylow subgroups by the same action, where if you take $g$ in $P$ and you take $Q$ in $V$, then this action is just the same thing, but I write it down anyway \inlinemetanote{writes \qt{$P \curvearrowright V$} and \qt{$g \in P, Q \in V \quad (g, Q) \mapsto g Q g^{-1}$}}.
+So, we restrict this action to this particular $p$-Sylow subgroup \inlinemetanote{writes: We restrict the action to $P \subset G$}. We get that this particular $p$-Sylow subgroup acts on the set of all $p$-Sylow subgroups by the same action, where if you take $g$ in $P$ and you take $Q$ in $V$, then this action is just the same thing, but I write it down anyway \inlinemetanote{writes \qt{$P \curvearrowright V$}, \qt{$g \in P, Q \in V$}, and \qt{$\phi(g, V) = g V g^{-1}$}, a slip for $\phi(g, Q) = g Q g^{-1}$}.
 
 All right? So, since the whole group acts on the set, we can just look at the action of a subgroup --- in fact, this subgroup $P$, the one we chose \inlinemetanote{writes: $|P| = p^k$}.
 \end{speech}
@@ -197,44 +196,38 @@ All right? So, since the whole group acts on the set, we can just look at the ac
 \begin{content}[Restricting the Action to \texorpdfstring{$P$}{P}]
 We restrict the conjugation action of $G$ on $V$ to the chosen $p$-Sylow subgroup $P \subset G$ (with $|P| = p^k$), giving an action $P \curvearrowright V$:
 \[
-(g, Q) \mapsto g Q g^{-1} \quad \text{for } g \in P, \; Q \in V.
+\phi(g, Q) = g Q g^{-1} \quad \text{for } g \in P, \; Q \in V.
 \]
 \end{content}
 
 \begin{speech}[00:05:24 - 00:07:01]
-Okay, so, then now we use the theorem we've used many times that when I have a group action on a set --- so this is $V$, this is the picture I drew many times last week \inlinemetanote{draws a closed oval representing $V$ divided into orbit slices with one dot in a small region and writes \qt{orbit decomp.} below} --- it breaks it up into the orbit spaces of this group action. So, this is this orbit decomposition.
+Okay, so, then now we use the theorem we've used many times that when I have a group action on a set --- so this is $V$, this is the picture I drew many times last week \inlinemetanote{draws a closed curve labeled $V$, divides it by curved lines into orbits, and writes \qt{Orb decomp} below} --- it breaks it up into the orbit spaces of this group action. So, this is this orbit decomposition.
 
-And so we can write the equation: that's everybody in $V$ is equal to the sum of the size of the orbits \inlinemetanote{writes: $|V| =$}. And now I just skip the steps here because we did it several times, so this is the number of fixed points --- those are the orbits that are just by themselves --- then there'd be plus the size of the orbits that are not fixed points \inlinemetanote{writes: $\#$ fixed pt.}.
+And so, we can write the equation: that's everybody in $V$ is equal to the sum of the size of the orbits \inlinemetanote{writes: $|V| =$}. And now I just skip the steps here because we did it several times, so this is the number of fixed points --- those are the orbits that are just by themselves --- then there'd be plus the size of the orbits that are not fixed points \inlinemetanote{writes: $\#$ fixed pt.}.
 
 But those orbits that are not fixed points, their size is a power of $p$, because this thing (i.e., $P$) has order $p^k$ \inlinemetanote{points at $|P| = p^k$}. So, the orbits that are not fixed points, their sizes are powers of $p$ and not the zeroth power --- the zeroth power's been put here (i.e., in the fixed points). We did this several times.
 
-So, the answer is that we can write this is congruent to number of fixed points mod $p$ \inlinemetanote{changes $=$ to $\equiv$ and adds $\pmod p$, writing: $|V| \equiv \#\text{ fixed pt.} \pmod p$}. All right? I put congruent and mod $p$ twice, so maybe I just put here: it's equal to this mod $p$ (meaning congruent mod $p$). And that is the output of looking at this decomposition of $V$ in terms of orbits. The orbits have to be powers of $p$. The powers of $p$, if they're positive powers of $p$, then they're $0 \pmod p$. If they're $p^0$, they're fixed points. So, that's this equation \inlinemetanote{circles $\#$ fixed pt.}.
+So, the answer is that we can write this is congruent to number of fixed points mod $p$ \inlinemetanote{writes \qt{mod $p$} after it, so the line reads $|V| = \#\text{ Fixed pt} \bmod p$}. All right? I put congruent and mod $p$ twice, so maybe I just put here: it's equal to this mod $p$ (meaning congruent mod $p$). And that is the output of looking at this decomposition of $V$ in terms of orbits. The orbits have to be powers of $p$. The powers of $p$, if they're positive powers of $p$, then they're $0 \pmod p$. If they're $p^0$, they're fixed points. So, that's this equation \inlinemetanote{circles $\#$ fixed pt.}.
 \end{speech}
 
 \begin{content}[Orbit Decomposition and Fixed-Point Congruence]
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
-\definecolor{figRed}{HTML}{B5251C} % RGB (181, 37, 28): brick red (BrickRed)
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
 \begin{hidden}
-- Canvas: no scale, cm; oval for V centred at (0, 0) with half-axes 2.0 and 2.3; picture x in [-2.4, 7.6], y in [-3.1, 2.7]
-- Order: (1) fill of V (figBlue!8); (2) clipped internal orbit boundary curves inside V; (3) outline of V; (4) fixed-point dot and thin pointer arrow; (5) all text last
+- Canvas: no scale, cm; oval for V centred at (0, 0) with half-axes 2.0 and 2.3, as on the board (frame 00:09:30: a closed curve labeled V, cut by curved lines into orbits, "Orb decomp" below it; no dot and no side notes on the board)
+- Order: (1) fill of V (figBlue!8); (2) clipped orbit boundary curves inside V; (3) outline of V; (4) text last
 - Coordinates:
   Outline: ellipse (0, 0) radii 2.0 and 2.3.
   Partition curves (drawn inside \begin{scope} \clip (0, 0) ellipse (2.0 and 2.3); ... \end{scope}):
-  - Upper fixed-point cell: curve from (-2.1, 1.9) to (2.1, 1.9) bowing down to (0, 1.375), containing the fixed-point dot at (0, 1.75).
-    At x = 0, ellipse top is y = 2.3, curve is at y = 1.375, so dot at (0, 1.75) is well inside.
-  - Second curve: (-2.1, 0.7) to (2.1, 0.7) bowing to (0, 0.325).
-  - Third curve: (-2.1, -0.4) to (2.1, -0.4) bowing to (0, -0.775).
-  - Fourth curve: (-2.1, -1.3) to (2.1, -1.3) bowing to (0, -1.6).
-- Labels (§ Attaching Labels), all with inner sep=0.15cm:
-  "V" anchor south at top of ellipse (0, 2.3)
-  "orbit decomposition" anchor north at bottom of ellipse (0, -2.3)
-  "fixed point (orbit of size $1$)" anchor west at (2.5, 1.75) outside V, with a thin arrow from (2.5, 1.75) to (0.15, 1.75)
-  "orbits of size $p^a$ ($a \ge 1$)" anchor west at (2.5, -0.2) outside V, with a thin arrow from (2.5, -0.2) to (1.2, -0.2)
-- Collisions: both notes lie at x >= 2.5, 0.5 right of V's widest point x = 2.0, separated vertically by 1.95 cm; "V" is above the top of the ellipse, "orbit decomposition" below the bottom.
+  - (-2.1, 1.9) to (2.1, 1.9) bowing down to (0, 1.375)
+  - (-2.1, 0.7) to (2.1, 0.7) bowing to (0, 0.325)
+  - (-2.1, -0.4) to (2.1, -0.4) bowing to (0, -0.775)
+  - (-2.1, -1.3) to (2.1, -1.3) bowing to (0, -1.6)
+- Labels, inner sep=0.15cm: "V" anchor south at the top of the ellipse (0, 2.3); "orbit decomposition" anchor north at the bottom (0, -2.3)
+- Collisions: none; both labels sit outside the ellipse.
 \end{hidden}
 \begin{center}
-\begin{tikzpicture}[>=Stealth]
+\begin{tikzpicture}
     % (1) Fill of V
     \fill[figBlue!8] (0, 0) ellipse (2.0 and 2.3);
 
@@ -250,16 +243,9 @@ So, the answer is that we can write this is congruent to number of fixed points 
     % (3) Outline of V
     \draw[thick, figBlue] (0, 0) ellipse (2.0 and 2.3);
 
-    % (4) Fixed point dot and pointer arrows
-    \fill[figRed] (0, 1.75) circle (2.2pt);
-    \draw[->, thin, figRed] (2.5, 1.75) -- (0.15, 1.75);
-    \draw[->, thin, figGray] (2.5, -0.2) -- (1.2, -0.2);
-
-    % (5) Text last
+    % (4) Text last
     \node[anchor=south, inner sep=0.15cm, figBlue] at (0, 2.3) {$V$};
     \node[anchor=north, inner sep=0.15cm, figGray] at (0, -2.3) {orbit decomposition};
-    \node[anchor=west, inner sep=0.15cm, figRed] at (2.5, 1.75) {fixed point (orbit of size $1$)};
-    \node[anchor=west, inner sep=0.15cm, figGray] at (2.5, -0.2) {orbits of size $p^a$ ($a \ge 1$)};
 \end{tikzpicture}
 \end{center}
 
@@ -269,10 +255,10 @@ Decomposing $V$ into disjoint $P$-orbits yields:
 \end{equation}
 
 \begin{steps}[Why Non-Fixed Orbits Vanish Modulo \texorpdfstring{$p$}{p}]
-By the Orbit-Stabilizer Theorem, the size of any $P$-orbit $\mathcal{O}_Q = \{ g Q g^{-1} \mid g \in P \}$ divides the order of the acting group $|P| = p^k$. Thus, every orbit size is a power $p^a$ with $0 \le a \le k$:
+The lecture skips these steps (\qt{we did it several times}; Week 10, \cref{clm:nontrivial-orbit-size}). By the Orbit--Stabilizer Theorem (Week 9, \cref{thm:orbit-stabilizer}), the size of any $P$-orbit $\operatorname{Orb}_P(Q) = \{ g Q g^{-1} \mid g \in P \}$ divides the order of the acting group $|P| = p^k$. Thus, every orbit size is a power $p^a$ with $0 \le a \le k$:
 \begin{itemize}
-    \item If $a = 0$, then $|\mathcal{O}_Q| = 1$, meaning $Q$ is a fixed point of the $P$-action.
-    \item If $a \ge 1$, then $p \mid p^a = |\mathcal{O}_Q|$, so $|\mathcal{O}_Q| \equiv 0 \pmod p$.
+    \item If $a = 0$, then $|\operatorname{Orb}_P(Q)| = 1$, meaning $Q$ is a fixed point of the $P$-action.
+    \item If $a \ge 1$, then $p \mid p^a = |\operatorname{Orb}_P(Q)|$, so $|\operatorname{Orb}_P(Q)| \equiv 0 \pmod p$.
 \end{itemize}
 Summing all orbit sizes to get $|V|$ and reducing modulo $p$ leaves only the count of fixed points in \eqref{eq:sylow4-orbit-cong}.
 \end{steps}
@@ -287,15 +273,15 @@ Summing all orbit sizes to get $|V|$ and reducing modulo $p$ leaves only the cou
 \end{hidden}
 
 \begin{speech}[00:07:01 - 00:08:40]
-And so then the final claim: certainly $P$ in $V$ is a fixed point \inlinemetanote{writes: Certainly $P \in V$ is fixed pt.}.
+And so, then the final claim: certainly $P$ in $V$ is a fixed point \inlinemetanote{writes: Certainly $P \in V$ is fixed pt.}.
 
 This is now confusing, because, you know, we have this group action is $P$ cross $V$ goes to $V$, but $P$ is also a point in here (i.e., in $V$) \inlinemetanote{writes: $P \times V \to V$}. Right? Because $P$ is itself a $p$-Sylow subgroup. So, $P$ is also a point.
 
 Here we view $P$ as a group, $V$ is the set of all $p$-Sylow subgroups, so $P$ is a point of that, and $P$ is a fixed point. You just have to look at the definitions: if I take this (i.e., $Q$) to be $P$ \inlinemetanote{points at the action formula $g Q g^{-1}$}, and I take an element in $P$, then it stays in $P$. It's kind of tautologically a fixed point.
 
-And so the whole proof here is we have to show that $P$ in $V$ is the unique fixed point \inlinemetanote{writes: Show that $P \in V$ is Unique fixed pt.}. So, it's kind of a nice argument also.
+And so, the whole proof here is we have to show that $P$ in $V$ is the unique fixed point \inlinemetanote{writes: Show that $P \in V$ is Unique fixed pt.}. So, it's kind of a nice argument also.
 
-This proof is going to show that actually the number of fixed points \inlinemetanote{points at $\#$ fixed pt.}, this is actually just $1$. And so you get the number of $p$-Sylow subgroups is $1 \pmod p$.
+This proof is going to show that actually the number of fixed points \inlinemetanote{draws an arrow from the circled \qt{\# Fixed pt} to a \qt{$1$}}, this is actually just $1$. And so, you get the number of $p$-Sylow subgroups is $1 \pmod p$.
 
 Right? So, the crucial thing here is to show that this action on the set of $p$-Sylow subgroups by one $p$-Sylow subgroup has a unique fixed point, and that unique fixed point is that $p$-Sylow subgroup. That's what you have to show. And that also has a clever argument, which I give.
 \end{speech}
@@ -374,7 +360,7 @@ So, the conclusion of this is that $Q$ is also a $p$-Sylow subgroup of $N$ \inli
 \end{speech}
 
 \begin{content}[\texorpdfstring{$Q$}{Q} as a \texorpdfstring{$p$}{p}-Sylow Subgroup of \texorpdfstring{$N$}{N}]
-In the chain $Q \subset N \subset G$, we know $|Q| = p^k$ and $|G| = p^k m$ with $(p, m) = 1$. By Lagrange's Theorem, $|Q|$ divides $|N|$ and $|N|$ divides $|G| = p^k m$. Consequently, $p^k$ is also the highest power of $p$ dividing $|N|$, which means $Q$ is a $p$-Sylow subgroup of $N$.
+In the chain $Q \subset N \subset G$, we know $|Q| = p^k$ and $|G| = p^k m$ with $(p, m) = 1$. By Lagrange's Theorem (Week 7, \cref{thm:lagrange}), $|Q|$ divides $|N|$ and $|N|$ divides $|G| = p^k m$. Consequently, $p^k$ is also the highest power of $p$ dividing $|N|$, which means $Q$ is a $p$-Sylow subgroup of $N$.
 \end{content}
 
 \begin{hidden}
@@ -386,7 +372,7 @@ In the chain $Q \subset N \subset G$, we know $|Q| = p^k$ and $|G| = p^k m$ with
 \end{hidden}
 
 \begin{speech}[00:13:08 - 00:13:50]
-Since $Q$ is a fixed point, this implies that $P$ is also a $p$-Sylow subgroup of $N$ \inlinemetanote{writes \qt{Since $Q$ is $P$-conj. fixed pt} and \qt{$\implies$ $P$ is also a $p$-Syl. of $N$}}.
+Since $Q$ is a fixed point, this implies that $P$ is also a $p$-Sylow subgroup of $N$ \inlinemetanote{writes \qt{Since $Q$ is $P \curvearrowright V$ fixed pt $\implies$} and \qt{$P$ is also $p$-Syl. of $N$}}.
 
 Since it's a fixed point, any element of $P$ satisfies this equation (i.e., $x Q x^{-1} = Q$). So, all of $P$ is inside here (i.e., $N$). We have this picture: we have $N$ inside $G$, and both $Q$ and $P$ are inside $N$, and they're both $p$-Sylow subgroups of $N$ \inlinemetanote{writes: $Q, P \subset N \subset G$}. Okay? This argument's about to end, and it'll end in a surprising way.
 \end{speech}
@@ -406,7 +392,7 @@ That's a beautiful argument also at the end. Because that's exactly what $N$ is:
 \end{speech}
 
 \begin{content}[Conclusion: \texorpdfstring{$P = Q$}{P = Q}]
-Applying Sylow III (\cref{rem:sylow-1-3-recap}) to the group $N$, all $p$-Sylow subgroups of $N$ are conjugate in $N$. Therefore, $P$ and $Q$ are conjugate in $N$: there exists $x \in N$ such that
+Applying Sylow III (\cref{thm:sylow-3}) to the group $N$, all $p$-Sylow subgroups of $N$ are conjugate in $N$. Therefore, $P$ and $Q$ are conjugate in $N$: there exists $x \in N$ such that
 \[
 P = x Q x^{-1}.
 \]
@@ -442,7 +428,9 @@ Okay? So, this says that the full converse to Lagrange is impossible. The full c
 \end{speech}
 
 \begin{content}
-While Sylow's theorems provide a partial converse to Lagrange's theorem (guaranteeing subgroups whose orders are prime powers dividing $|G|$), the full converse is false.
+\recap{The previous lecture left this as an exercise (Week 10, \cref{exer:a4-no-order-6}).}
+
+While Sylow's theorems provide a partial converse to Lagrange's theorem (Week 10, \cref{rem:partial-converse-lagrange}), the full converse is false.
 
 \begin{proposition}[No Subgroup of Order \texorpdfstring{$6$}{6} in \texorpdfstring{$A_4$}{A4}]\label[proposition]{prop:a4-no-order-6}
 Consider the alternating group $A_4$, which has order $|A_4| = 12$. Then $A_4$ does not have a subgroup of order $6$.
@@ -466,11 +454,7 @@ It's easy to prove, and you should think about it if you did not understand the 
 \begin{content}[Normality of an Index-\texorpdfstring{$2$}{2} Subgroup]
 Suppose for contradiction that there exists a subgroup $H \subset A_4$ with $|H| = 6$.
 
-Since $|H| = 6 = \frac{1}{2}|A_4|$ (so $H$ has index $2$ in $A_4$), $H$ would have to be a normal subgroup of $A_4$.
-
-\begin{steps}[Why Index \texorpdfstring{$2$}{2} Implies Normality]
-Going beyond the lecture: if $[G : H] = 2$, there are only two left cosets ($H$ and $G \setminus H$) and only two right cosets ($H$ and $G \setminus H$). Hence, for any $g \in G \setminus H$, we must have $gH = G \setminus H = Hg$, while for $g \in H$ we have $gH = H = Hg$. Thus, $gHg^{-1} = H$ for all $g \in G$, so $H$ is normal.
-\end{steps}
+Since $|H| = 6 = \frac{1}{2}|A_4|$ (so $H$ has index $2$ in $A_4$), $H$ would have to be a normal subgroup of $A_4$, by the comment from an earlier lecture (Week 9, \cref{prop:index-2-normal}).
 \end{content}
 
 \begin{speech}[00:18:17 - 00:18:45]
@@ -480,7 +464,7 @@ Because a normal subgroup --- if you have an element of a normal subgroup, then 
 \end{speech}
 
 \begin{content}[Union of Conjugacy Classes]
-Because $H$ is normal in $A_4$, it is invariant under conjugation ($g H g^{-1} = H$ for all $g \in A_4$). Therefore, whenever an element lies in $H$, its entire conjugacy class in $A_4$ must lie in $H$. Consequently, $H$ must be a union of conjugacy classes of $A_4$.
+Because $H$ is normal in $A_4$, it is invariant under conjugation ($g H g^{-1} = H$ for all $g \in A_4$; Week 8, \cref{rem:normal-conjugate-closed}). Therefore, whenever an element lies in $H$, its entire conjugacy class in $A_4$ must lie in $H$. Consequently, $H$ must be a union of conjugacy classes of $A_4$.
 \end{content}
 
 \begin{hidden}
@@ -492,11 +476,11 @@ Because $H$ is normal in $A_4$, it is invariant under conjugation ($g H g^{-1} =
 \end{hidden}
 
 \begin{speech}[00:18:45 - 00:20:42]
-So, we have to think about $A_4$: what are the conjugacy classes \inlinemetanote{writes: $A_4$}? Well, of course, there's the neutral element, and that has conjugacy class of size $1$ \inlinemetanote{writes $(1)$ with a downward arrow and \qt{$1$}}.
+So, we have to think about $A_4$: what are the conjugacy classes \inlinemetanote{writes: $A_4$}? Well, of course, there's the neutral element, and that has conjugacy class of size $1$ \inlinemetanote{writes $(e)$ with a downward arrow and \qt{$1$}}.
 
 Then there's elements that look like this and their conjugates \inlinemetanote{writes $(12)(34)$ with a downward arrow}. How many of these are there? So, how many elements in $A_4$ are conjugate to this, you have to think about all the ways... Yeah? \inlinemetanote{inaudible response from a student} Three, because you can write this in three ways. You can check that yourself: three \inlinemetanote{writes: $3$}.
 
-Then, an interesting question is that then there's the conjugacy class of $3$-cycles --- that's also even, these are even \inlinemetanote{writes $(123)$ with a downward arrow}. This is a harder question, I'll tell you the answer: there's actually $8$ of these. So, there's $8$ elements like this, because there's $4$ choose $3$, which is $4$, and then there's two ways to put a $3$-cycle, so there's $8$ of them. And they're all conjugate in $S_4$, but $S_4$ is not $A_4$. It's harder to be conjugate in $A_4$ because you have fewer elements to conjugate with. And it turns out that this breaks up into two conjugacy classes of $4$ and $4$ \inlinemetanote{writes \qt{$4$} under $(123)$, and writes $(132)$ with a downward arrow to \qt{$4$}}. And this better add up to $12$, which it does.
+Then, an interesting question is that then there's the conjugacy class of $3$-cycles --- that's also even, these are even \inlinemetanote{writes $(123)$ with a downward arrow}. This is a harder question, I'll tell you the answer: there's actually $8$ of these. So, there's $8$ elements like this, because there's $4$ choose $3$, which is $4$, and then there's two ways to put a $3$-cycle, so there's $8$ of them. And they're all conjugate in $S_4$, but $S_4$ is not $A_4$. It's harder to be conjugate in $A_4$ because you have fewer elements to conjugate with. And it turns out that this breaks up into two conjugacy classes of $4$ and $4$ \inlinemetanote{draws two arrows down from $(123)$ and writes \qt{$4$} under each}. And this better add up to $12$, which it does.
 
 So, these are the sizes of the conjugacy classes in $A_4$. One thing you have to check is that for here, there's $8$ cycles that look like this, but they break up into two conjugacy classes, and you have to check that one way or the other.
 
@@ -506,26 +490,26 @@ Running the logic: if there were a subgroup of order $6$, it would have to be no
 \end{speech}
 
 \begin{content}[Conjugacy Class Sizes of \texorpdfstring{$A_4$}{A4}]
-The $12$ elements of $A_4$ partition into four conjugacy classes with the following representatives and sizes:
+The conjugacy classes of $A_4$ have the following sizes (as on the board):
 \begin{center}
 \begin{tabular}{c c c c}
 \toprule
-$(1)$ & $(12)(34)$ & $(123)$ & $(132)$ \\
-$\downarrow$ & $\downarrow$ & $\downarrow$ & $\downarrow$ \\
+$(e)$ & $(12)(34)$ & \multicolumn{2}{c}{$(123)$} \\
+$\downarrow$ & $\downarrow$ & $\swarrow$ & $\searrow$ \\
 $1$ & $3$ & $4$ & $4$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Note that while all eight $3$-cycles are conjugate in $S_4$, in $A_4$ there are fewer elements available to conjugate by, so the eight $3$-cycles split into two conjugacy classes of size $4$ each.
+The eight $3$-cycles are all conjugate in $S_4$, but in $A_4$ there are fewer elements available to conjugate by, and they split into two conjugacy classes of size $4$ each (left to the students to check).
 
 No combination of these conjugacy class sizes sums to $6$:
 \[
 1 + 3 = 4, \quad 1 + 4 = 5, \quad 1 + 3 + 4 = 8, \quad 1 + 4 + 4 = 9, \quad 1 + 3 + 4 + 4 = 12
 \]
-(and $H$ must contain the identity $(1)$ of class size $1$; even without that, $\{3, 4, 4\}$ cannot sum to $6$). This contradiction shows that $A_4$ has no subgroup of order $6$.
+(and $H$ must contain the identity $(e)$ of class size $1$; even without that, $\{3, 4, 4\}$ cannot sum to $6$). This contradiction shows that $A_4$ has no subgroup of order $6$.
 
 \begin{steps}[Why the \texorpdfstring{$3$}{3}-Cycles Split in \texorpdfstring{$A_4$}{A4}]
-Going beyond the lecture: in $A_4$, the centralizer of $(123)$ in $S_4$ consists only of the cyclic group $\langle (123) \rangle$ of order $3$, which lies entirely in $A_4$. By the Orbit-Stabilizer Theorem, the size of the conjugacy class of $(123)$ in $A_4$ is $|A_4| / |\langle (123) \rangle| = 12 / 3 = 4$. Thus, $(123)$ and $(132)$ lie in distinct $A_4$-conjugacy classes of size $4$ each.
+Going beyond the lecture: the elements of $S_4$ that commute with $(123)$ form the subgroup $\langle (123) \rangle$ of order $3$, which lies in $A_4$. By the Orbit--Stabilizer Theorem for the conjugation action of $A_4$ on itself (Week 9, \cref{thm:orbit-stabilizer}), the conjugacy class of $(123)$ in $A_4$ has $12 / 3 = 4$ elements, namely $(123)$, $(134)$, $(142)$, $(243)$, and the same count holds for every $3$-cycle. So the eight $3$-cycles form two classes of four. The other class contains $(132)$: the elements of $S_4$ that conjugate $(123)$ into $(132)$ form the coset $(23)\langle (123) \rangle$, and all of them are odd permutations.
 \end{steps}
 \end{content}
 
@@ -540,14 +524,14 @@ So, that's the non-brute-force way. And if you understand this argument, you can
 \begin{speech}[00:21:38 - 00:22:28]
 So, here we were lucky because we were searching for any subgroup, it just happened that a subgroup of order $6$ had to be normal, so we could use properties of normal subgroups, which is easier to handle.
 
-So, the natural generalization of this argument --- let's do it for $A_5$. It's a definition: $G$ is a simple --- it's a definition of this term, \newterm{simple} --- finite group, well let's just say doesn't have to be finite, simple group, and this is the definition: $G$ has no non-trivial normal subgroups \inlinemetanote{writes \qt{Def.}, \qt{$G$ is a simple} (underlined), \qt{finite}, then erases \qt{finite} and writes \qt{group}, \qt{iff}, and \qt{$G$ has no non-trivial Normal subgroups.}}.
+So, the natural generalization of this argument --- let's do it for $A_5$. It's a definition: $G$ is a simple --- it's a definition of this term, \newterm{simple} --- finite group, well let's just say doesn't have to be finite, simple group, and this is the definition: $G$ has no non-trivial normal subgroups \inlinemetanote{writes \qt{Def.}, \qt{$G$ is a simple} (underlined), \qt{finite}, then erases \qt{finite} and writes \qt{group}, a vertical double arrow marked \qt{def}, and \qt{$G$ has no nontrivial Normal Subgroups.}}.
 
 Because always the neutral element and all of $G$, they're always normal subgroups, so if it's simple, it has no non-trivial normal subgroups. All right?
 \end{speech}
 
 \begin{content}
 \begin{definition}[Simple Group]\label[definition]{def:simple-group}
-A group $G$ is called a \newterm{simple group} if and only if $G$ has no non-trivial normal subgroups (i.e., its only normal subgroups are $\{e\}$ and $G$).
+A group $G$ is a \newterm{simple group} $\stackrel{\text{def}}{\iff}$ $G$ has no non-trivial normal subgroups (i.e., its only normal subgroups are $\{e\}$ and $G$).
 \end{definition}
 \end{content}
 
@@ -607,7 +591,7 @@ Going beyond the lecture: the even permutations in $S_5$ have cycle types $(1)$,
 % topic: Proof that A_5 is simple using conjugacy class sizes
 % board_state: def:simple-group, prop:a5-simple
 % next_goal: Conclude that no proper divisor of 60 can be formed from the class sizes including 1
-% open_loops: comparison with A_4 cut off at video end
+% open_loops: none
 \end{hidden}
 
 \begin{speech}[00:25:12 - 00:25:52]
@@ -642,7 +626,7 @@ You could say, \qt{Well, what about here \inlinemetanote{points up to the $A_4$ 
 
 So, that says it's possible: a candidate for a normal subgroup of $A_4$ would be the neutral element and all these products of two cycles, and that is true --- it is a subgroup, and it's a normal subgroup. So, $A_4$ is not simple.
 
-But $A_5$ you can't do it. Okay, so that was a second thing. In Galois theory this is an important point.
+But $A_5$ you can't do it. Okay, so, that was a second thing. In Galois theory this is an important point.
 \end{speech}
 
 \begin{content}
@@ -655,7 +639,7 @@ Indeed, the union of the identity class and the conjugacy class of products of t
 \end{remark}
 
 \begin{steps}[Explicit Verification for \texorpdfstring{$A_4$}{A4}]
-Going beyond the lecture: the subset $V_4 := \{ (1), (12)(34), (13)(24), (14)(23) \} \subset A_4$ is closed under composition (every non-identity element has order $2$, and the product of any two distinct ones is the third), so it is a subgroup (the Klein four-group). Since it is a union of conjugacy classes of $A_4$, it is normal in $A_4$.
+Going beyond the lecture: the subset $V_4 := \{ (e), (12)(34), (13)(24), (14)(23) \} \subset A_4$ is closed under composition (every non-identity element has order $2$, and the product of any two distinct ones is the third), so it is a subgroup (the Klein four-group). Since it is a union of conjugacy classes of $A_4$, it is normal in $A_4$.
 \end{steps}
 \end{content}
 
@@ -672,15 +656,15 @@ Going beyond the lecture: the subset $V_4 := \{ (1), (12)(34), (13)(24), (14)(23
 \begin{speech}[00:26:56 - 00:27:59]
 There's a lot more one can say using the theory we've developed, and it generally goes beyond what's done in this class, so I won't do much of it, but I'll give you some hints for you to think about \inlinemetanote{erases the upper board}.
 
-So, a direction is this idea of classification, which is try to understand what groups are really out there. We know that if $G$ has order $p$, where $p$ is a prime, we've already seen that this implies $G$ is actually $\mathbb{Z}$ mod $p\mathbb{Z}$ with addition \inlinemetanote{writes \qt{If $|G| = p$}, \qt{prime}, and \qt{$\implies G = (\faktor{\mathbb{Z}}{p\mathbb{Z}}, +)$}}.
+So, a direction is this idea of classification, which is try to understand what groups are really out there. We know that if $G$ has order $p$, where $p$ is a prime, we've already seen that this implies $G$ is actually $\mathbb{Z}$ mod $p\mathbb{Z}$ with addition \inlinemetanote{writes \qt{If $|G| = p$}, \qt{prime}, and \qt{$\implies G = (\faktor{\mathbb{Z}}{p\mathbb{Z}}, 0, +)$}}.
 
 In that sense, this is a kind of statement of classification: that I know all groups of order $p$ --- you also know them --- everybody knows all groups of prime order.
 \end{speech}
 
 \begin{content}[Groups of Prime Order]
-If $|G| = p$ where $p$ is prime, then every non-identity element generates $G$, so up to isomorphism:
+If $|G| = p$ where $p$ is prime, then, as shown in Week 9 (\cref{clm:prime-order-cyclic}), up to isomorphism:
 \[
-G \cong \bigl(\faktor{\mathbb{Z}}{p\mathbb{Z}}, +\bigr).
+G \cong \bigl(\faktor{\mathbb{Z}}{p\mathbb{Z}}, 0, +\bigr).
 \]
 Thus, all groups of prime order are completely classified.
 \end{content}
@@ -701,9 +685,9 @@ Let $p$ be a prime and let $G$ be a group of order $|G| = p^2$. Prove that $G$ i
 \end{exercise}
 
 \begin{proof}[Proof (beyond the lecture)]
-Let $Z(G) := \{ z \in G \mid zg = gz \text{ for all } g \in G \}$ be the center of $G$. By the class equation (a consequence of the conjugation action of $G$ on itself), $|G| = |Z(G)| + \sum_i |\mathcal{O}_i|$, where each non-central orbit size $|\mathcal{O}_i|$ divides $p^2$ and is greater than $1$, hence is divisible by $p$. Since $p \mid |G| = p^2$, it follows that $p \mid |Z(G)|$. Because $e \in Z(G)$, we have $|Z(G)| \ge 1$, so $|Z(G)| \in \{p, p^2\}$.
+The lecture leaves this exercise to the students (\qt{this is an exercise, you can do it}). Let $Z(G)$ be the center of $G$ (Week 8, \cref{def:center-of-group}). Decomposing $G$ into the orbits of the conjugation action of $G$ on itself (Week 9, \cref{ex:conjugation-action}), whose orbits of size $1$ are exactly the elements of $Z(G)$, gives $|G| = |Z(G)| + \sum_i |\operatorname{Orb}(x_i)|$, where each remaining orbit size divides $p^2$ (\cref{thm:orbit-stabilizer}) and is greater than $1$, hence is divisible by $p$. Since $p \mid |G| = p^2$, it follows that $p \mid |Z(G)|$. Because $e \in Z(G)$, we have $|Z(G)| \ge 1$, so $|Z(G)| \in \{p, p^2\}$.
 
-If $|Z(G)| = p^2$, then $G = Z(G)$ and $G$ is abelian. Suppose instead that $|Z(G)| = p$. Then the quotient group $\faktor{G}{Z(G)}$ has order $\frac{p^2}{p} = p$, which is prime, so $\faktor{G}{Z(G)}$ is cyclic, say generated by $g Z(G)$. Then every element of $G$ has the form $g^k z$ with $k \in \mathbb{Z}$ and $z \in Z(G)$. For any two elements $g^k z_1, g^\ell z_2 \in G$:
+If $|Z(G)| = p^2$, then $G = Z(G)$ and $G$ is abelian. Suppose instead that $|Z(G)| = p$. Then the quotient group $\faktor{G}{Z(G)}$ ($Z(G)$ is normal, \cref{prop:center-as-kernel}) has order $\frac{p^2}{p} = p$, which is prime, so $\faktor{G}{Z(G)}$ is cyclic, say generated by $g Z(G)$. Then every element of $G$ has the form $g^k z$ with $k \in \mathbb{Z}$ and $z \in Z(G)$. For any two elements $g^k z_1, g^\ell z_2 \in G$:
 \[
 (g^k z_1)(g^\ell z_2) = g^{k+\ell} z_1 z_2 = (g^\ell z_2)(g^k z_1),
 \]
@@ -712,7 +696,7 @@ so $G$ is abelian (forcing $|Z(G)| = p^2$, a contradiction). Hence, $G$ is abeli
 \end{content}
 
 \begin{speech}[00:28:49 - 00:29:36]
-A harder exercise is what if $G$ (i.e., $|G|$) is equal to $p$ times $q$, where $p$ and $q$ are distinct primes \inlinemetanote{writes \qt{What if $|G| = p \cdot q$} and \qt{$p, q$ primes}}? So, you can say they're distinct by making $p$ bigger than $q$ \inlinemetanote{writes: $p > q$}.
+A harder exercise is what if $G$ (i.e., $|G|$) is equal to $p$ times $q$, where $p$ and $q$ are distinct primes \inlinemetanote{writes \qt{What if $G = p \cdot q$}, a slip for $|G|$, and \qt{$p, q$ primes}}? So, you can say they're distinct by making $p$ bigger than $q$ \inlinemetanote{writes: $p > q$}.
 
 And you know already that they couldn't all be abelian here. The reason you know that is that an example is the dihedral group. Dihedral $D_{2n}$ has order $2$ times $n$, so I could take $n$ to be a prime, and then this would be $2$ times $p$, and we know the dihedral group is an interesting group --- it's not an abelian group \inlinemetanote{writes: (Dihed.\ $|D_{2n}| = 2n$)}. So, there's no hope to say that groups of order $p$ times $q$ are abelian, we already know examples which are not.
 \end{speech}
@@ -720,7 +704,7 @@ And you know already that they couldn't all be abelian here. The reason you know
 \begin{content}[Groups of Order \texorpdfstring{$p \cdot q$}{p * q}]
 Consider now a group $G$ of order $|G| = p \cdot q$, where $p$ and $q$ are distinct primes with $p > q$.
 
-Unlike the case $|G| = p^2$, groups of order $p \cdot q$ are not necessarily abelian: for example, the dihedral group $D_{2n}$ has order $|D_{2n}| = 2n$, so taking $n = p$ an odd prime gives a non-abelian group $D_{2p}$ of order $2p$.
+Unlike the case $|G| = p^2$, groups of order $p \cdot q$ are not necessarily abelian: for example, the dihedral group $D_{2n}$ (Week 9, \cref{def:dihedral-group}) has order $|D_{2n}| = 2n$, so taking $n = p$ an odd prime gives a non-abelian group $D_{2p}$ of order $2p$.
 \end{content}
 
 \begin{speech}[00:29:36 - 00:31:07]
@@ -736,9 +720,9 @@ So, we know from this Sylow theory that this $G$ somehow has these two very easy
 \end{speech}
 
 \begin{content}[Sylow Subgroups in Order \texorpdfstring{$p \cdot q$}{p * q}]
-To study a group $G$ of order $|G| = p \cdot q$ ($p > q$ primes), Sylow I (\cref{rem:sylow-1-3-recap}) guarantees the existence of:
+To study a group $G$ of order $|G| = p \cdot q$ ($p > q$ primes), Sylow I (\cref{thm:sylow-1}) guarantees the existence of:
 \begin{itemize}
-    \item a $p$-Sylow subgroup $A \subset G$ with $|A| = p$, so $A \cong \faktor{\mathbb{Z}}{p\mathbb{Z}}$, and
+    \item a $p$-Sylow subgroup $A \subset G$ with $|A| = p$, so $A \cong \faktor{\mathbb{Z}}{p\mathbb{Z}}$ (\cref{clm:prime-order-cyclic}), and
     \item a $q$-Sylow subgroup $B \subset G$ with $|B| = q$, so $B \cong \faktor{\mathbb{Z}}{q\mathbb{Z}}$.
 \end{itemize}
 
@@ -776,9 +760,9 @@ And there's another hint --- this is now for you --- is Sylow $4$, if you think 
 
 And the way you prove that is you use Sylow $4$ (\cref{thm:sylow-iv}): we know the number is $1$ mod $p$. It's at least $1$. The next chance is $p + 1$, and you show that that's too big --- you can't get to $p + 1$ by the conjugation action.
 
-So, it's normal. That means it's kind of great: we have here $G$, we have $\mathbb{Z}$ mod $p\mathbb{Z}$ in here as a normal subgroup, and we take the generator $x$ here (i.e., in $\faktor{\mathbb{Z}}{q\mathbb{Z}}$) \inlinemetanote{draws a diagram with $G$ at top, $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ on the left labeled \qt{normal}, and a branch on the right, and writes \qt{$x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$}}. That means $x$ conjugates this \inlinemetanote{draws a curved arrow from $x$ to $\faktor{\mathbb{Z}}{p\mathbb{Z}}$}.
+So, it's normal. That means it's kind of great: we have here $G$, we have $\mathbb{Z}$ mod $p\mathbb{Z}$ in here as a normal subgroup, and we take the generator $x$ here (i.e., in $\faktor{\mathbb{Z}}{q\mathbb{Z}}$) \inlinemetanote{writes \qt{$\faktor{\mathbb{Z}}{p\mathbb{Z}} \subset G$} with \qt{norm.} below it, and adds \qt{$\ni x$} beside $\faktor{\mathbb{Z}}{q\mathbb{Z}}$ in the diagram}. That means $x$ conjugates this \inlinemetanote{gestures from $x$ to $\faktor{\mathbb{Z}}{p\mathbb{Z}}$}.
 
-You know, conjugation by $x$ takes $\mathbb{Z}$ mod $p\mathbb{Z}$ to $\mathbb{Z}$ mod $p\mathbb{Z}$ \inlinemetanote{writes and circles: $c_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}$}.
+You know, conjugation by $x$ takes $\mathbb{Z}$ mod $p\mathbb{Z}$ to $\mathbb{Z}$ mod $p\mathbb{Z}$ \inlinemetanote{writes and circles: $\operatorname{Conj}_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}$}.
 
 And this particular piece of data --- how $x$ acts by conjugation here --- tells you everything about the group, because it tells you the one thing you didn't know: how the generator of $\mathbb{Z}$ mod $q\mathbb{Z}$ and generator of $\mathbb{Z}$ mod $p\mathbb{Z}$ interact.
 
@@ -786,51 +770,17 @@ So, I leave it at that: you can look, there's more you can say here, but you can
 \end{speech}
 
 \begin{content}[Normality via Sylow IV and Classification via Conjugation]
-By Sylow IV (\cref{thm:sylow-iv}), the number $n_p$ of $p$-Sylow subgroups of $G$ satisfies $n_p \equiv 1 \pmod p$ (so $\gcd(n_p, p) = 1$) and, by the Orbit-Stabilizer Theorem on the transitive conjugation action, $n_p \mid |G| = p q$; hence, $n_p \mid q$. Since $p > q$, the smallest candidate larger than $1$, namely $p + 1$, already exceeds $q$. Thus, $n_p = 1$: the $p$-Sylow subgroup $\faktor{\mathbb{Z}}{p\mathbb{Z}} \subset G$ is unique, and hence normal in $G$.
+Sylow IV (\cref{thm:sylow-iv}) implies that $\faktor{\mathbb{Z}}{p\mathbb{Z}} \subset G$ is a normal subgroup, which is the same as saying that the number of $p$-Sylow subgroups of $G$ is exactly $1$. The lecture leaves this as a hint for the students (\qt{this is now for you}): the number is $1 \bmod p$, so it is $1$ or at least $p + 1$, and $p + 1$ is too big.
 
-\definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
-\definecolor{figGreen}{HTML}{3D8251} % RGB (61, 130, 81): dark green (ForestGreen!70!black)
-\definecolor{figRed}{HTML}{B5251C} % RGB (181, 37, 28): brick red (BrickRed)
-\definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
-\begin{hidden}
-- Canvas: no scale, cm; G at (0, 2.2), normal Z/pZ at (-2.2, 0), x in Z/qZ at (2.2, 0), conjugation box c_x at (6.0, 1.1)
-- Order: (1) subgroup edges from G to Z/pZ and x in Z/qZ; (2) curved conjugation arrow from x to Z/pZ; (3) framed box for c_x; (4) text last
-- Coordinates:
-  G at (0, 2.2)
-  Zp at (-2.2, 0), label "normal" anchored north below Zp at (-2.2, -0.6) (x in [-2.8, -1.6])
-  Zq at (2.2, 0) holding "x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}" (left edge ~1.25, right edge ~3.15)
-  Curved arrow from (1.1, 0.0) to (-1.45, 0.0) bending down slightly (bend left=20); midpoint cmid is at (-0.175, -0.225).
-  Label "conjugation" anchored north at cmid (x in [-1.1, 0.75], y in [-0.7, -0.22]), leaving >= 0.5 cm gap to "normal".
-  Conjugation map c_x placed as rounded box at (6.0, 1.1), minimum width=4.4, minimum height=0.9 (x in [3.8, 8.2], >= 0.65 right of Zq).
-- Collisions: Zp and Zq are 4.4 cm apart; curved arrow stays between y = -0.225 and y = 0, well clear of subgroup edges; "conjugation" and "normal" have >= 0.5 cm horizontal separation; c_x box sits >= 0.65 cm right of Zq.
-\end{hidden}
-\begin{center}
-\begin{tikzpicture}[>=Stealth]
-    % (1) Subgroup lines
-    \draw[thick, figGray] (-0.3, 1.85) -- (-1.8, 0.45);
-    \draw[thick, figGray] (0.3, 1.85) -- (1.75, 0.45);
+\begin{proof}[Proof (beyond the lecture)]
+The lecture leaves the details to the students. Let $n_p$ be the number of $p$-Sylow subgroups of $G$. They are all conjugate (\cref{thm:sylow-3}), so they form a single orbit of the conjugation action of $G$, and by the Orbit--Stabilizer Theorem (\cref{thm:orbit-stabilizer}) $n_p$ divides $|G| = pq$. Since $n_p \equiv 1 \pmod p$, $p \nmid n_p$, so $n_p \mid q$. If $n_p \neq 1$, then $n_p \ge p + 1 > q$, which is impossible. Hence, $n_p = 1$. Every conjugate $x A x^{-1}$ of the $p$-Sylow subgroup $A$ is again a $p$-Sylow subgroup, hence equal to $A$, so $A$ is normal in $G$.
+\end{proof}
 
-    % (2) Conjugation arrow from x to Z/pZ
-    \draw[->, thick, figRed] (1.1, 0.0) to[bend left=20] coordinate[midway] (cmid) (-1.45, 0.0);
-
-    % (3) Box for c_x
-    \node[draw=figRed, thick, rounded corners=4pt, minimum width=4.4cm, minimum height=0.9cm, fill=figRed!5] (cxbox) at (6.0, 1.1) {};
-
-    % (4) Text last
-    \node[inner sep=0.15cm] at (0, 2.2) {$G$};
-    \node[inner sep=0.15cm, figBlue] (zp) at (-2.2, 0) {$\faktor{\mathbb{Z}}{p\mathbb{Z}}$};
-    \node[anchor=north, inner sep=0.15cm, figBlue, font=\small] at (-2.2, -0.6) {normal};
-    \node[inner sep=0.15cm, figGreen] at (2.2, 0) {$x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$};
-    \node[anchor=north, inner sep=0.15cm, figRed, font=\small] at (cmid) {conjugation};
-    \node[figRed] at (cxbox) {$c_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}$};
-\end{tikzpicture}
-\end{center}
-
-Taking a generator $x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$, normality of $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ ensures that conjugation by $x$,
+Taking a generator $x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$, normality of $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ ensures that conjugation by $x$ maps $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ to itself:
 \[
-c_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}, \qquad y \mapsto x y x^{-1},
+\operatorname{Conj}_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}, \qquad y \mapsto x y x^{-1}.
 \]
-is a well-defined automorphism of $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ of order dividing $q$. Studying the possible homomorphisms $c_x$ classifies all groups of order $p q$.
+This map tells how the generators of $\faktor{\mathbb{Z}}{q\mathbb{Z}}$ and $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ interact, and studying what it can be classifies all groups of order $p q$.
 \end{content}
 
 \begin{hidden}
@@ -860,7 +810,7 @@ And this is a direction in mathematics that was really exhaustively studied in t
 \end{speech}
 
 \begin{content}[Classification of Finite Simple Groups]
-Starting from the study of groups $G$ (mostly finite in this course), a first major direction is \newterm{classification}: determining all groups of a given order. By decomposing finite groups via normal subgroups and quotients, this reduces to the \newterm{classification of finite simple groups}, which was completed in the $20$th century and consists of infinite families together with finitely many exotic (sporadic) examples.
+Starting from the study of groups $G$ (mostly finite in this course), a first major direction is \newterm{classification}: determining all groups of a given order. By decomposing finite groups via normal subgroups and quotients, this reduces to the \newterm{classification of finite simple groups}, which was exhaustively studied in the $20$th century: the answer consists of some infinite families and some exotic examples (in textbooks: the sporadic groups).
 \end{content}
 
 \subsection{Representation Theory}
@@ -868,22 +818,22 @@ Starting from the study of groups $G$ (mostly finite in this course), a first ma
 \begin{speech}[00:35:02 - 00:35:43]
 So, then there's another direction, it's called representation theory \inlinemetanote{writes: Representation theory}.
 
-And this is easy to explain: it basically asks to study homomorphisms from $G$ to matrix groups, $\operatorname{GL}_n$ over some field \inlinemetanote{writes: $\{ f \colon G \to GL_n(K) \}$}. That's the study of such representations --- study of homomorphisms \inlinemetanote{writes: study of homoms.}.
+And this is easy to explain: it basically asks to study homomorphisms from $G$ to matrix groups, $\operatorname{GL}_n$ over some field \inlinemetanote{writes: $( f \colon G \to GL_n(k) )$}. That's the study of such representations, study of homomorphisms \inlinemetanote{writes: study of homoms.}.
 
 And this is an amazingly rich thing to do. Sometimes in Algebra $2$ at the end there's some discussion about this. There's many books on this.
 \end{speech}
 
 \begin{content}[Representation Theory]
-A second major direction is \newterm{representation theory}: the study of group homomorphisms from $G$ into matrix groups over a field $K$:
+A second major direction is \newterm{representation theory}: the study of group homomorphisms from $G$ into matrix groups over a field $k$:
 \[
-\left\{ f \colon G \to \operatorname{GL}_n(K) \right\}.
+\left\{ f \colon G \to \operatorname{GL}_n(k) \right\}.
 \]
 \end{content}
 
 \subsection{Klein's Erlangen Program and Lie Groups}
 
 \begin{speech}[00:35:43 - 00:37:16]
-So, then there's another direction which is maybe the richest vein here, which starts with these ideas of Felix Klein in the $19$th century, and it goes under the name of Klein's Erlangen program \inlinemetanote{writes: Klein (Erlangen Program)}.
+So, then there's another direction which is maybe the richest vein here, which starts with these ideas of Felix Klein in the $19$th century, and it goes under the name of Klein's Erlangen program \inlinemetanote{writes: F.~Klein (Erlangen Program)}.
 
 Usually, if anything is called a program, it means that that's kind of a slightly propagandistic term and you should be nervous about it... In particular, programs never end, that's just a fact of human politics.
 
@@ -901,7 +851,7 @@ And one of the most amazing aspects of this --- it was taken seriously by some p
 
 Just tried to classify all continuous symmetry groups. And roughly speaking, this is like the two classification worlds: classification of finite simple groups, finite groups --- that's kind of very discrete --- and this is the classification of continuous symmetry groups.
 
-And this has proved to be totally consequential in many directions in $20$th-century mathematics. And so it's at the center of developments in geometry, topology, and also mathematical physics \inlinemetanote{draws a curved arrow and writes: Center: geometry, topology, math.\ physics}.
+And this has proved to be totally consequential in many directions in $20$th-century mathematics. And so, it's at the center of developments in geometry, topology, and also mathematical physics \inlinemetanote{draws a curved arrow and writes: Center: geometry, topology, math.\ physics}.
 \end{speech}
 
 \begin{content}[Sophus Lie and Continuous Symmetry Groups]
@@ -913,7 +863,7 @@ And the reason for this is that... Well, yeah. So, let me first give you... so t
 
 Is how do you find these groups of continuous symmetries? Well, we've seen them already! Like you can take $\operatorname{GL}_n$, let's just say $\mathbb{R}$ \inlinemetanote{writes \qt{$\mathbb{R}^n$} and below it \qt{$GL_n(\mathbb{R})$}}. You can also change the field, but $\operatorname{GL}_n$, that group --- that's a continuous, it's not a finite group, it's kind of continuous symmetries of a vector space. And you could take maybe $\operatorname{SL}_n$, that's the determinant $1$ \inlinemetanote{writes: $SL_n(\mathbb{R})$}. That's just of a vector space $\mathbb{R}^n$.
 
-You could also take a vector space with some kind of inner product and look at the continuous symmetries of that, and these groups are called $O_n$, for the orthogonal groups \inlinemetanote{writes \qt{$V, \langle , \rangle$} and \qt{$O_n$}}. And then you can take $\operatorname{SO}$, that's the... \inlinemetanote{writes: $SO_n$}
+You could also take a vector space with some kind of inner product and look at the continuous symmetries of that, and these groups are called $O_n$, for the orthogonal groups \inlinemetanote{writes \qt{$\mathbb{R}^n, \langle , \rangle$} and \qt{$O_n$}}. And then you can take $\operatorname{SO}$, that's the... \inlinemetanote{writes: $SO_n$}
 
 Or you could have some complex thing and have a Hermitian inner product, and these things are called the unitary groups and $\operatorname{SU}$ \inlinemetanote{writes \qt{$\mathbb{C}, \langle , \rangle$}, \qt{$U_n$}, and \qt{$SU_n$}}.
 
@@ -921,7 +871,7 @@ Or you could take some kind of vector space --- I don't know if you've learned a
 
 So, these are the standard families of infinite connected groups, and they relate directly to ideas in mathematical physics. For example, this symplectic group turns out to be classical mechanics, and this unitary group is related to quantum mechanics, and this orthogonal group is related to relativity.
 
-And, you know, there's this idea that there's only very few of these continuous symmetry groups. And if you believe that there's some physical equations describing the universe, those equations should be invariant under some continuous group of symmetries of the universe, you are going to inevitably find these groups. And so that's why they play such an incredibly important role in all of these directions.
+And, you know, there's this idea that there's only very few of these continuous symmetry groups. And if you believe that there's some physical equations describing the universe, those equations should be invariant under some continuous group of symmetries of the universe, you are going to inevitably find these groups. And so, that's why they play such an incredibly important role in all of these directions.
 \end{speech}
 
 \begin{content}[Overview of Group Theory Directions and Classical Lie Groups]
@@ -933,7 +883,7 @@ And, you know, there's this idea that there's only very few of these continuous 
 - Canvas: no scale, cm; branching diagram from G on the left to the three main directions, with Lie's branch continuing right
 - Boxes: name | lines | w x h (cm) | placed
   G      | 1 letter "$G$" | 0.9 x 0.9 | first, at (0, 0)
-  rep    | 2 (\small): "Representation theory" / "$\{f \colon G \to \operatorname{GL}_n(K)\}$" (widest 21 chars = 3.78) | 4.8 x 1.2 | right=1.2cm of G
+  rep    | 2 (\small): "Representation theory" / "$\{f \colon G \to \operatorname{GL}_n(k)\}$" (widest 21 chars = 3.78) | 4.8 x 1.2 | right=1.2cm of G
   cls    | 2 (\small): "Classification" / "(finite simple groups)" (widest 22 chars = 3.96) | 4.8 x 1.2 | above=0.6cm of rep.north west, anchor=south west
   kln    | 1 (\small): "Klein (Erlangen Program)" (24 chars = 4.32) | 5.2 x 0.75 | below=0.6cm of rep.south west, anchor=north west
   lie    | 2 (\small): "Sophus Lie: continuous" / "symmetry groups" (widest 22 chars = 3.96) | 4.8 x 1.2 | right=1.0cm of kln
@@ -948,7 +898,7 @@ And, you know, there's this idea that there's only very few of these continuous 
   dirbox/.style={draw=figBlue, thick, rounded corners=3pt, fill=figBlue!6, align=center, inner xsep=0.25cm, inner ysep=0.15cm}]
     \node[draw=figGray, thick, circle, minimum size=0.9cm] (G) at (0, 0) {$G$};
     \node[dirbox, minimum width=4.8cm, minimum height=1.2cm, right=1.2cm of G] (rep)
-        {Representation theory\\$\{f \colon G \to \operatorname{GL}_n(K)\}$};
+        {Representation theory\\$\{f \colon G \to \operatorname{GL}_n(k)\}$};
     \node[dirbox, minimum width=4.8cm, minimum height=1.2cm, above=0.6cm of rep.north west, anchor=south west] (cls)
         {Classification\\(finite simple groups)};
     \node[dirbox, draw=figGreen, fill=figGreen!6, minimum width=5.2cm, minimum height=0.75cm, below=0.6cm of rep.south west, anchor=north west] (kln)
@@ -973,7 +923,7 @@ The classical families of continuous symmetry groups arise as symmetries of vect
 \textbf{Underlying Structure} & \textbf{Classical Lie Groups} & \textbf{Physics Connection} \\
 \midrule
 $\mathbb{R}^n$ (vector space) & $\operatorname{GL}_n(\mathbb{R})$, $\operatorname{SL}_n(\mathbb{R})$ & --- \\
-$V, \langle \cdot, \cdot \rangle$ (real inner product) & $O_n$, $SO_n$ & Relativity \\
+$\mathbb{R}^n, \langle \cdot, \cdot \rangle$ (inner product) & $O_n$, $SO_n$ & Relativity \\
 $\mathbb{C}, \langle \cdot, \cdot \rangle$ (Hermitian inner product) & $U_n$, $SU_n$ & Quantum mechanics \\
 $V, \langle \cdot, \cdot \rangle^{\text{sympl}}$ (skew-symmetric) & $Sp_{2n}$ & Classical mechanics \\
 \bottomrule
@@ -992,7 +942,7 @@ $V, \langle \cdot, \cdot \rangle^{\text{sympl}}$ (skew-symmetric) & $Sp_{2n}$ & 
 \begin{speech}[00:40:22 - 00:41:13]
 So, there is a class on this, it's usually called like Lie theory or, I don't know, Lie groups \inlinemetanote{writes and boxes: Lie groups}.
 
-And one of the interesting things is that this too has some exotic members. These are the ones that come in families, but it has some exotic members in classification, and these exotic members --- I'll just tell you the names of them: there's some $G_2$, $F_4$ --- you know, it's like naming butterflies --- $E_6, E_7, E_8$ \inlinemetanote{writes \qt{$G_2, F_4,$} and \qt{$E_6, E_7, E_8$}}.
+And one of the interesting things is that this too has some exotic members. These are the ones that come in families, but it has some exotic members in classification. And these exotic members, I'll just tell you the names of them: there's some $G_2$, $F_4$ --- you know, it's like naming butterflies --- $E_6, E_7, E_8$ \inlinemetanote{writes \qt{$G_2, F_4,$} and \qt{$E_6, E_7, E_8$}}.
 
 And this $E_8$ is really the most exotic, exceptional symmetry group that's classified in this classification, and it's totally a wild structure. It's one of the most beautiful objects in mathematics. It's a group of dimension $248$ \inlinemetanote{draws an arrow from $E_8$ and circles: $248$}.
 
@@ -1064,13 +1014,13 @@ Okay, so, we start again. And the next topic is about fields \inlinemetanote{wri
 
 And I already lectured a bit about fields at the beginning of the class. So, when we talked about fields... \inlinemetanote{writes: $k$} The standard letter for a field is $k$, for \emph{Körper}.
 
-When we lectured about fields --- when I lectured about fields at the beginning of the class, we had proven some results, and one of the constructions was to consider this polynomial ring \inlinemetanote{writes: $\to k[x]$}. That's the polynomials in $x$ \inlinemetanote{writes \qt{poly. in $x$} below $k[x]$}.
+When we lectured about fields --- when I lectured about fields at the beginning of the class, we had proven some results, and one of the constructions was to consider this polynomial ring \inlinemetanote{writes: $\rightsquigarrow k[x]$}. That's the polynomials in $x$ \inlinemetanote{writes \qt{poly. in $x$} below $k[x]$}.
 
 So, I hope you remember this object, and we proved some things about it: it's a principal ideal domain, and it's also a unique factorization domain \inlinemetanote{draws an upper arrow from $k[x]$ and writes \qt{PID}, and draws a lower arrow from $k[x]$ and writes \qt{UFD}}. So, that was some ways of studying polynomials whose coefficients are a field.
 \end{speech}
 
 \begin{content}[{Recap: The Polynomial Ring \texorpdfstring{$k[x]$}{k[x]}}]
-\recap{For a field $k$ (denoted $k$ from the German \emph{Körper}), we previously constructed the polynomial ring $k[x]$ of polynomials in one indeterminate $x$ with coefficients in $k$, and proved that $k[x]$ is both a \newterm{principal ideal domain} ($\mathrm{PID}$) and a \newterm{unique factorization domain} ($\mathrm{UFD}$).}
+\recap{For a field $k$ (denoted $k$ from the German \emph{Körper}), we previously constructed the polynomial ring $k[x]$ of polynomials in one indeterminate $x$ with coefficients in $k$ (Week 5, \cref{def:poly-ring-k}), and proved that $k[x]$ is both a principal ideal domain ($\mathrm{PID}$, \cref{prop:kx-ideals-principal}) and a unique factorization domain ($\mathrm{UFD}$, Week 6, \cref{ex:kx-ufd}).}
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
@@ -1087,7 +1037,7 @@ So, I hope you remember this object, and we proved some things about it: it's a 
 \begin{center}
 \begin{tikzpicture}[>=Stealth]
     % (1) Arrows
-    \draw[->, thick, figGray] (0.4, 0) -- (1.9, 0);
+    \draw[->, thick, figGray, decorate, decoration={snake, amplitude=1.2pt, segment length=6pt, post length=3pt}] (0.4, 0) -- (1.9, 0);
     \draw[->, thick, figBlue] (3.1, 0.1) -- (4.8, 0.65);
     \draw[->, thick, figBlue] (3.1, -0.1) -- (4.8, -0.65);
 
@@ -1104,7 +1054,7 @@ So, I hope you remember this object, and we proved some things about it: it's a 
 \subsection{Solving Polynomial Equations Over a Field}
 
 \begin{speech}[00:48:29 - 00:49:35]
-And we are going to be interested in this second pass at field theory in a different question. It's related to all of this, but a different question. The question --- and in some sense a more elementary question: suppose I have a polynomial here --- so this $f$ explicitly has some coefficients, and has a highest degree, because polynomials are finite objects, and it has some lower degrees \inlinemetanote{writes \qt{$f =$} and \qt{$c_0 x^d + c_1 x^{d-1} + \dots + c_d$}}. So, that's like a polynomial.
+And we are going to be interested in this second pass at field theory in a different question. It's related to all of this, but a different question. The question, and in some sense a more elementary question: suppose I have a polynomial here --- so this $f$ explicitly has some coefficients, and has a highest degree, because polynomials are finite objects, and it has some lower degrees \inlinemetanote{writes \qt{$f \in k[x]$}, \qt{$f =$}, and \qt{$c_d x^d + c_{d-1} x^{d-1} + \dots + c_0$}}. So, that's like a polynomial.
 
 And the basic problem about polynomials in algebra --- you can't get a more basic problem than this --- is try to solve this polynomial \inlinemetanote{writes and underlines \qt{solve}: Try to solve}. Solve the equation $f(x) = 0$ for... now $x$ is considered some variable \inlinemetanote{writes: $f(x) = 0$}. So, maybe I should put here $\alpha$. The notation is confusing, and it's really... in $k$ \inlinemetanote{overwrites $x$ with $\alpha$ and writes: $f(\alpha) = 0$ for $\alpha \in k$}.
 
@@ -1114,7 +1064,7 @@ So, we try to solve this polynomial, I mean, we try to find some elements of the
 \begin{content}[The Root-Finding Problem]
 Given a polynomial $f \in k[x]$ written explicitly in terms of its coefficients as
 \[
-f = c_0 x^d + c_1 x^{d-1} + \dots + c_d \qquad (c_i \in k),
+f = c_d x^d + c_{d-1} x^{d-1} + \dots + c_0 \qquad (c_i \in k),
 \]
 the fundamental algebraic problem is to solve the polynomial equation:
 \[
@@ -1153,7 +1103,7 @@ So, this means --- this is a very elementary idea which is, you know, already in
 
 So, this means we should restrict to the case where $f$ is irreducible \inlinemetanote{writes and underlines \qt{irreducible}: This means we should restrict to case where $f$ is irreducible.}. This is using the language of unique factorization: $f$ is irreducible, that means $f$ does not factor. So, the first thing to do, we only think about polynomials which are irreducible, because if they're reducible, we would reduce them and try to solve one of the pieces.
 
-And I remind you this term \qt{irreducible} was technical: this means that $f$ is not zero, $f$ is not a unit, because irreducible polynomials --- we threw these out, you can't be zero or unit \inlinemetanote{writes \qt{$f \neq 0$} and \qt{$f \neq \text{unit}$}}. The units here, by the way, if you remember, the units of $k[x]$ equal the constants that are non-zero \inlinemetanote{writes: $\operatorname{units}(k[x]) = k^*$}.
+And I remind you this term \qt{irreducible} was technical: this means that $f$ is not zero, $f$ is not a unit, because irreducible polynomials --- we threw these out, you can't be zero or unit \inlinemetanote{writes \qt{$f \neq 0$} and \qt{$f \neq \text{unit}$}}. The units here, by the way, if you remember, the units of $k[x]$ equal the constants that are non-zero \inlinemetanote{writes: $\operatorname{Units}(k[x]) = k^*$}.
 
 So, we don't want --- I mean, this would be silly anyway to try to solve the polynomial zero, that's kind of a waste of time, everything (is a root), and solving a polynomial that's $7$, of course you're not going to find a zero of that. So, these are kind of silly cases.
 \end{speech}
@@ -1162,7 +1112,7 @@ So, we don't want --- I mean, this would be silly anyway to try to solve the pol
 By factoring, we restrict attention to the case where $f \in k[x]$ is \newterm{irreducible} (does not factor non-trivially). Recall the technical exclusions in the definition of irreducibility:
 \begin{itemize}
     \item $f \neq 0$ (otherwise every $\alpha \in k$ is a trivial solution), and
-    \item $f$ is not a unit, where $\operatorname{units}(k[x]) = k^*$ consists of the non-zero constant polynomials (which have no roots at all).
+    \item $f$ is not a unit, where $\operatorname{Units}(k[x]) = k^* = k \setminus \{0\}$ consists of the non-zero constant polynomials (Week 3, \cref{thm:units-polynomial-ring-integral-domain}), which have no roots at all.
 \end{itemize}
 \end{content}
 
@@ -1171,13 +1121,13 @@ Something else --- so, do you remember this term \qt{irreducible}?
 
 Something else is that we could try to solve a polynomial that's linear, like $c_1 x + c_2$ \inlinemetanote{writes: $f = c_1 x + c_2$}. Then we'd have to solve this: $c_1 \alpha + c_2 = 0$, where these $c_1$ and $c_2$ are in our field \inlinemetanote{writes \qt{$c_1 \alpha + c_2 = 0$} and \qt{$c_1, c_2 \in k$}}. This is also silly, because this is linear algebra \inlinemetanote{writes \qt{lin alg} below $c_1 \alpha + c_2 = 0$}.
 
-We know this, that either it has infinitely many solutions or it has a solution. We're not worried about solving linear polynomials. So, the interesting case --- although it's okay, this is still irreducible \inlinemetanote{adds \qt{irr} above $f = c_1 x + c_2$} --- the interesting case for us will be: case is $f$ is irreducible and the degree of $f$ is at least $2$ \inlinemetanote{writes: Interesting case is: $f$ is irr.\ and $\deg(f) \ge 2$}.
+We know this, that either it has infinitely many solutions or it has a solution. We're not worried about solving linear polynomials. So, the interesting case --- although it's okay, this is still irreducible \inlinemetanote{adds \qt{irr} above $f = c_1 x + c_2$} --- the interesting case for us will be: case is $f$ is irreducible and the degree of $f$ is at least $2$ \inlinemetanote{writes: Interesting case is: $f$ is irr, and $\operatorname{dg}(f) \ge 2$}.
 
 But this \qt{$f$ is irreducible} in degree $1$ will be contained in the theory, although we just don't have many questions about it, because we know how to solve linear. All right?
 \end{speech}
 
 \begin{speech}[00:53:36 - 00:54:37]
-So, all of this is saying that, all right, if we're interested in solving, we have this field $k$, I have a polynomial $f \in k[x]$, and I will just start at the beginning that $f$ is irreducible, and usually degree of $f$ is at least $2$ \inlinemetanote{draws vertical divider lines and writes \qt{$k$}, \qt{$f \in k[x]$}, \qt{$f$ is irr.}, and \qt{(usually $\deg(f) \ge 2$)}}. And one more condition, which is very standard, is that $f$ is monic, because, you know, if you're trying to solve the polynomial, you can divide by the leading coefficient and make it monic, it doesn't matter \inlinemetanote{writes: $f$ is monic}. So, these are just kind of standard. If I'm trying to solve... Okay, so...
+So, all of this is saying that, all right, if we're interested in solving, we have this field $k$, I have a polynomial $f \in k[x]$, and I will just start at the beginning that $f$ is irreducible, and usually degree of $f$ is at least $2$ \inlinemetanote{draws vertical divider lines and writes \qt{$k$}, \qt{$f \in k[x]$}, \qt{$f$ is irr.}, and \qt{(usually $\operatorname{dg}(f) \ge 2$)}}. And one more condition, which is very standard, is that $f$ is monic, because, you know, if you're trying to solve the polynomial, you can divide by the leading coefficient and make it monic, it doesn't matter \inlinemetanote{writes: $f$ is monic}. So, these are just kind of standard. If I'm trying to solve... Okay, so...
 
 And it is a fact that you can't always solve. This is a fact that you grow up with, it's some sad fact you learn at some point in your life: you cannot always solve these polynomials.
 \end{speech}
@@ -1197,9 +1147,9 @@ Our standard starting data are therefore:
 \begin{speech}[00:55:12 - 00:56:32]
 All right, so, if you ever find this, here's the first proposition: that if $f$ in $k[x]$ is any polynomial --- so, not all these conditions here --- then there exists $\alpha$ in $k$ such that $\alpha$ is a root if and only if $x - \alpha$ divides $f$ \inlinemetanote{writes \qt{Prop:}, \qt{If $f \in k[x]$ is any poly.}, \qt{then $\exists \alpha \in k$ s.t. $f(\alpha) = 0$}, and \qt{$\iff (x - \alpha) \mid f$}}. Okay?
 
-So, this is something we proved before. This uses --- I'm not going to prove it again --- this uses the division algorithm \inlinemetanote{writes: (Prev.\ by div.\ alg.)}.
+So, this is something we proved before. This uses --- I'm not going to prove it again --- this uses the division algorithm \inlinemetanote{writes \qt{Div alg for $k[x]$} after a large opening parenthesis}.
 
-Do you remember this argument? Maybe I should write it: you write $f$ is equal to some $g$ times $(x - a)$ --- this is the division algorithm --- plus $f(a)$ \inlinemetanote{writes: $f = g \cdot (x - a) + f(a)$}. When you do the division algorithm here, the remainder is a constant, and that constant has to be $f(a)$. So, if this (i.e., $f(a)$) is zero, is if and only if $x - a$ divides $f$. Okay?
+Do you remember this argument? Maybe I should write it: you write $f$ is equal to some $g$ times $(x - a)$ --- this is the division algorithm --- plus $f(a)$ \inlinemetanote{writes: $f = g \cdot (x - \alpha) + f(\alpha)$}. When you do the division algorithm here, the remainder is a constant, and that constant has to be $f(a)$. So, if this (i.e., $f(a)$) is zero, is if and only if $x - a$ divides $f$. Okay?
 \end{speech}
 
 \begin{content}[Roots and Divisibility by Linear Factors]
@@ -1211,22 +1161,22 @@ f(\alpha) = 0 \iff (x - \alpha) \mid f.
 \end{proposition}
 
 \begin{proof}[Proof Sketch (via the Division Algorithm)]
-By the division algorithm in $k[x]$, dividing $f$ by the monic degree-$1$ polynomial $(x - a)$ (for $a \in k$) yields a quotient $g \in k[x]$ and a remainder $r \in k[x]$ of degree less than $1$ (hence, a constant $r \in k$):
+By the division algorithm in $k[x]$ (Week 5, \cref{thm:poly-long-division}), dividing $f$ by the monic degree-$1$ polynomial $(x - \alpha)$ yields a quotient $g \in k[x]$ and a remainder $r \in k[x]$ of degree less than $1$ (hence, a constant $r \in k$):
 \[
-f = g \cdot (x - a) + r.
+f = g \cdot (x - \alpha) + r.
 \]
-Evaluating both sides at $x = a$ gives $f(a) = g(a) \cdot 0 + r = r$, so
+Evaluating both sides at $x = \alpha$ gives $f(\alpha) = g(\alpha) \cdot 0 + r = r$, so
 \[
-f = g \cdot (x - a) + f(a).
+f = g \cdot (x - \alpha) + f(\alpha).
 \]
-Therefore, the remainder $f(a)$ vanishes if and only if $(x - a) \mid f$.
+Therefore, the remainder $f(\alpha)$ vanishes if and only if $(x - \alpha) \mid f$.
 \end{proof}
 \end{content}
 
 \begin{speech}[00:56:32 - 00:57:30]
-So, the outcome of this is also conceptual: if we ever find something here --- if $f$ is irreducible and degree at least $2$, then there are no solutions \inlinemetanote{writes in brackets: $\bigl[\,\text{If } f \text{ is irr.\ and } \deg \ge 2 \implies \text{There are no solutions!}\,\bigr]$}. Because if there were a solution, I could factor it.
+So, the outcome of this is also conceptual: if we ever find something here --- if $f$ is irreducible and degree at least $2$, then there are no solutions \inlinemetanote{writes in brackets: $\bigl[\,\text{If } f \text{ is irr and } \operatorname{dg} \ge 2 \implies \text{There are no solutions!}\,\bigr]$}. Because if there were a solution, I could factor it.
 
-All right? So, the real input is this... The starting point here is we have this $k$, $f \in k[x]$, $f$ irreducible, and if it's degree $2$ or higher, this means there are no solutions \inlinemetanote{draws vertical divider lines and writes \qt{$k$, $f \in k[x]$, $f$ is irr.} and \qt{$\deg(f) \ge 2 \implies \text{no solns in } k$}}.
+All right? So, the real input is this... The starting point here is we have this $k$, $f \in k[x]$, $f$ irreducible, and if it's degree $2$ or higher, this means there are no solutions \inlinemetanote{draws vertical divider lines and writes \qt{$k$, $f \in k[x]$, $f$ is irr.} and \qt{$\operatorname{dg}(f) \ge 2 \implies \text{No solns in } k$}}.
 \end{speech}
 
 \begin{content}[No Roots for Irreducible Polynomials of Degree at Least \texorpdfstring{$2$}{2}]
@@ -1279,7 +1229,7 @@ Going beyond the lecture: if a polynomial $f \in k[x]$ of degree $2$ or $3$ fact
 \inlinemetanote{erases the lower board} So, yeah, I'd say this discussion in a sense is really closer to the spirit of high school algebra: you know, you try to actually solve polynomials.
 \end{speech}
 
-\subsection{Constructing a Field Extension \texorpdfstring{$K = \frac{k[x]}{(f)}$}{K = k[x]/(f)}}
+\subsection{Constructing a Field Extension \texorpdfstring{$K = \faktor{k[x]}{(f)}$}{K = k[x]/(f)}}
 
 \begin{speech}[01:00:02 - 01:01:34]
 So, yeah, the starting point, which I've said now many times, here we have this $k$ \inlinemetanote{writes: $k$}. You imagine you have this $k$, and you have this particular polynomial here, and $f$ is irreducible \inlinemetanote{writes \qt{$f \in k[x]$} and \qt{$f$ is irr.}}.
@@ -1300,27 +1250,27 @@ So, wish $1$, I want this, and so this is the granting of this wish: we make a f
 
 This is very standard notation, and for this my board work has to be good, because I will try to keep that there will be this little $k$, that's the field we start with, and the big $K$ is the field that is granted by the genie.
 
-So, it's this field, and as you'll see, the genie writes down this field: $K = \frac{k[x]}{(f)}$ \inlinemetanote{writes: $= \frac{k[x]}{(f)}$}.
+So, it's this field, and as you'll see, the genie writes down this field: $K = \faktor{k[x]}{(f)}$ \inlinemetanote{writes: $= \faktor{k[x]}{(f)}$}.
 
-So, what is this object? This is a ring, and that's an ideal \inlinemetanote{draws an upper arrow from $k[x]$ and writes \qt{ring}, and draws a lower arrow from $(f)$ and writes \qt{ideal}}. That's the ideal generated by $f$. All right? You should grant me that this thing exists: it's a quotient, it's a ring quotient by an ideal, so this is some ring \inlinemetanote{underlines $K = \frac{k[x]}{(f)}$ and writes \qt{Ring} below}. This is a ring.
+So, what is this object? This is a ring, and that's an ideal \inlinemetanote{draws an upper arrow from $k[x]$ and writes \qt{ring}, and draws a lower arrow from $(f)$ and writes \qt{ideal}}. That's the ideal generated by $f$. All right? You should grant me that this thing exists: it's a quotient, it's a ring quotient by an ideal, so this is some ring \inlinemetanote{underlines $K = \faktor{k[x]}{(f)}$ and writes \qt{Ring} below}. This is a ring.
 \end{speech}
 
-\begin{content}[{Granting Wish 1: The Quotient Ring \texorpdfstring{$K := \frac{k[x]}{(f)}$}{K := k[x]/(f)}}]
+\begin{content}[{Granting Wish 1: The Quotient Ring \texorpdfstring{$K := \faktor{k[x]}{(f)}$}{K := k[x]/(f)}}]
 Starting from a base field $k$ and an irreducible polynomial $f \in k[x]$ (which in general has no root in $k$), we construct a larger algebraic structure by forming the quotient ring:
 \[
-K := \frac{k[x]}{(f)},
+K := \faktor{k[x]}{(f)},
 \]
 where $k[x]$ is the polynomial ring and $(f) := f \cdot k[x]$ is the principal ideal generated by $f$. Note the notation convention: lowercase $k$ denotes the original base field, while uppercase $K$ denotes the constructed quotient object.
 \end{content}
 
 \begin{insight}[The Genie (\emph{Wunschgeist}) and the Three Wishes]
-The lecturer frames the construction of field extensions through a playful analogy: we wish to solve an irreducible polynomial $f \in k[x]$ (\qt{Wish 1}). As the lecturer quotes (\qt{in dreams begin responsibilities}), the \emph{Wunschgeist} grants this wish by handing us the quotient ring $K = \frac{k[x]}{(f)}$ --- and, as with classic genie tales of three wishes, solving one equation naturally leads to further wishes.
+The lecturer frames the construction of field extensions through a playful analogy: we wish to solve an irreducible polynomial $f \in k[x]$ (\qt{Wish 1}). As the lecturer quotes (\qt{in dreams begin responsibilities}), the \emph{Wunschgeist} grants this wish by handing us the quotient ring $K = \faktor{k[x]}{(f)}$ --- and, as with classic genie tales of three wishes, solving one equation naturally leads to further wishes.
 \end{insight}
 
 \begin{speech}[01:02:36 - 01:03:42]
 Okay, so, the first claim is that $K$ is a field \inlinemetanote{writes: (1) $K$ is a field}.
 
-All right, let's try to prove this. Proof: $K$ is a field --- this big $K$ is a field --- if and only if this ideal is a maximal ideal \inlinemetanote{writes \qt{proof}, \qt{$K$ is a field}, and \qt{$\iff (f)$ is a max.\ ideal}}.
+All right, let's try to prove this. Proof: $K$ is a field, this big $K$ is a field, if and only if this ideal is a maximal ideal \inlinemetanote{writes \qt{proof}, \qt{$K$ is a field}, and \qt{$\iff (f)$ is a max.\ ideal}}.
 
 So, the issue here you have to remember now things back to the beginning of the class. If you have a ring quotient by an ideal, the only way this can be a field is if it's a maximal ideal, and if it's a maximal ideal, it's a field. So, we have to check that $(f)$ inside $k[x]$ is a maximal ideal \inlinemetanote{writes: We have to check that $(f) \subset k[x]$ is a max.\ ideal.}.
 
@@ -1328,8 +1278,8 @@ Then you have to remember: what is a maximal ideal? A maximal ideal is an ideal 
 \end{speech}
 
 \begin{content}
-\begin{claim}[\texorpdfstring{$K = \frac{k[x]}{(f)}$}{K = k[x]/(f)} is a Field]\label[claim]{clm:quotient-is-field}
-For any field $k$ and any irreducible polynomial $f \in k[x]$, the quotient ring $K = \frac{k[x]}{(f)}$ is a field.
+\begin{claim}[\texorpdfstring{$K = \faktor{k[x]}{(f)}$}{K = k[x]/(f)} is a Field]\label[claim]{clm:quotient-is-field}
+For any field $k$ and any irreducible polynomial $f \in k[x]$, the quotient ring $K = \faktor{k[x]}{(f)}$ is a field.
 \end{claim}
 \end{content}
 
@@ -1346,7 +1296,7 @@ For any field $k$ and any irreducible polynomial $f \in k[x]$, the quotient ring
 \begin{speech}[01:04:39 - 01:05:54]
 Okay, just to remind you because it's been a long time.
 
-The first thing is that to be a maximal ideal, $(f)$ can't be all of the thing \inlinemetanote{writes \qt{To be a max ideal:} (underlined) and \qt{$(f) \neq k[x]$}}. Maximal ideals are not the whole --- that's part of the definition, right? And this is true by definition since $f$ is not a unit \inlinemetanote{writes: True by defn since $f$ is not a unit}. Irreducible implies it's not a unit. All right? I mean, the only way this would be true is if $f$ were a constant polynomial, and we're ruling that out.
+The first thing is that to be a maximal ideal, $(f)$ can't be all of the thing \inlinemetanote{writes \qt{To be a max ideal:} (underlined) and \qt{$(f) \neq k[x]$}}. Maximal ideals are not the whole --- that's part of the definition, right? And this is true by definition since $f$ is not a unit \inlinemetanote{writes: True by def since $f \neq$ unit}. Irreducible implies it's not a unit. All right? I mean, the only way this would be true is if $f$ were a constant polynomial, and we're ruling that out.
 
 The second thing we have to show is that suppose I have an ideal in between, then either $I$ is equal to $(f)$ or $I$ is equal to the whole thing \inlinemetanote{writes \qt{Suppose $(f) \subset I \subset k[x]$} and \qt{then either $I = (f)$ or $I = k[x]$}}.
 
@@ -1354,7 +1304,7 @@ Those are the two conditions to be a maximal ideal. Do you remember this? That m
 \end{speech}
 
 \begin{content}[Maximal Ideal Criterion and Properness]
-Recall that for a commutative ring $R$ with $1$ and an ideal $\mathfrak{m} \subset R$, the quotient $\frac{R}{\mathfrak{m}}$ is a field if and only if $\mathfrak{m}$ is a \newterm{maximal ideal}. Thus, it suffices to verify that $(f) \subset k[x]$ is a maximal ideal, which requires two conditions:
+Recall that for a ring $R$ and an ideal $m \subset R$, the quotient $\faktor{R}{m}$ is a field if and only if $m$ is a maximal ideal (Week 5, \cref{prop:quotient-field-maximal}). Thus, it suffices to verify that $(f) \subset k[x]$ is a maximal ideal, which requires two conditions:
 
 \textbf{Condition 1 (Proper ideal):} $(f) \neq k[x]$.
 Indeed, $1 \in (f)$ would mean $1 = f \cdot q$ for some $q \in k[x]$, making $f$ a unit. Since $f$ is irreducible, $f$ is not a unit by definition, so $(f) \neq k[x]$.
@@ -1390,13 +1340,13 @@ Since $f$ is irreducible, by definition either $g$ or $h$ must be a unit in $k[x
     \item If $g$ is a unit, then $1 = g \cdot g^{-1} \in (g) = I$, so $I = k[x]$.
     \item If $h$ is a unit, then $g = f \cdot h^{-1} \in (f)$, so $(g) \subset (f)$, and hence $I = (g) = (f)$.
 \end{itemize}
-Therefore, $(f)$ is a maximal ideal of $k[x]$, and consequently $K = \frac{k[x]}{(f)}$ is a field.
+Therefore, $(f)$ is a maximal ideal of $k[x]$, and consequently $K = \faktor{k[x]}{(f)}$ is a field.
 \end{content}
 
 \end{proofWrapper}
 
 \begin{speech}[01:08:17 - 01:09:07]
-The first step is to understand for this granting of the wish that this $\frac{k[x]}{(f)}$ is a field. It's born a ring, but since it's maximal, it's a field. So, that's one.
+The first step is to understand for this granting of the wish that this $\faktor{k[x]}{(f)}$ is a field. It's born a ring, but since it's maximal, it's a field. So, that's one.
 
 Okay. The second thing --- see, it's all going to be very simple and almost tautological, and you're going to regret you made this wish \inlinemetanote{erases the lower chalkboard}.
 
@@ -1408,15 +1358,15 @@ The first statement was $K$ is a field. Maybe I leave that up here.
 % topic: Completed proof that K = k[x]/(f) is a field; starting canonical embedding k subset K
 % board_state: clm:quotient-is-field (proved)
 % next_goal: Define and prove canonical embedding k -> K
-% open_loops: homomorphism properties and injectivity of k -> K cut off at video end
+% open_loops: none
 \end{hidden}
 
 \begin{speech}[01:09:07 - 01:11:18]
-I write it in the corner: so, $K = \frac{k[x]}{(f)}$ is a field \inlinemetanote{writes: $K = \frac{k[x]}{(f)}$ is a field}. So, we've proven that \inlinemetanote{draws a checkmark beside \qt{is a field}}.
+I write it in the corner: so, $K = \faktor{k[x]}{(f)}$ is a field \inlinemetanote{writes: $K = \faktor{k[x]}{(f)}$ is a field}. So, we've proven that \inlinemetanote{draws a checkmark beside \qt{is a field}}.
 
 The second is that our original $k$ sits inside $K$ canonically \inlinemetanote{writes: $k \subset K$ canonically}. This is a difficult subject if you have bad handwriting, all right? So, my big $K$ is a field, we've proven it, and the second is that the little $k$ we started with sits inside canonically. It's a subfield.
 
-And the proof of this is just I give you the map: if you have an element, say $\gamma$ in little $k$, how do I get to big $K$? I just consider the quotient class of $\gamma$ in big $K$ \inlinemetanote{writes \qt{pf: $\gamma \in k$} and \qt{$\longmapsto \bar{\gamma} \in K$}}. And that's the homomorphism from little $k$ to big $K$ \inlinemetanote{writes: $k \to K$}. It's just you take the equivalence class, and nothing else happens.
+And the proof of this is just I give you the map: if you have an element, say $\gamma$ in little $k$, how do I get to big $K$? I just consider the quotient class of $\gamma$ in big $K$ \inlinemetanote{writes \qt{pf: $\gamma \in k$} and \qt{$\longmapsto \bar{\gamma} \in K$}}. And that's the homomorphism from little $k$ to big $K$ \inlinemetanote{writes: $\Phi \colon k \to K$}. It's just you take the equivalence class, and nothing else happens.
 
 So, you have to worry: this is a homomorphism from one field to the other. So, there are only two possibilities: either it's an injection, or it's zero --- but it can't be zero because $1$ goes to $1$. Another way to say it is that if I take two constants... how could a constant that's not zero go to zero here? The only way is if that constant were in this ideal. But that's impossible, because this is some polynomial of some degree; this ideal doesn't have any constants in it. So, the constants live.
 
@@ -1425,15 +1375,15 @@ This is a confusing way of saying something very simple: this quotient has the n
 
 \begin{content}[{Canonical Embedding of \texorpdfstring{$k$}{k} into \texorpdfstring{$K$}{K}}]
 \begin{claim}[\texorpdfstring{$k \subset K$}{k subset K} Canonically]\label[claim]{clm:canonical-embedding}
-The original field $k$ sits canonically inside $K = \frac{k[x]}{(f)}$ as a subfield.
+The original field $k$ sits canonically inside $K = \faktor{k[x]}{(f)}$ as a subfield.
 \end{claim}
 
 \begin{proof}
-Define the map $k \to K$ by sending each element $\gamma \in k$ (viewed as a constant polynomial in $k[x]$) to its residue class modulo $(f)$:
+Define the map $\Phi \colon k \to K$ by sending each element $\gamma \in k$ (viewed as a constant polynomial in $k[x]$) to its residue class modulo $(f)$:
 \[
 \gamma \in k \longmapsto \bar{\gamma} \in K.
 \]
-This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $k \to K$ is injective, embedding $k$ canonically as a subfield of $K$.
+This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $\Phi$ is injective, embedding $k$ canonically as a subfield of $K$.
 \end{proof}
 
 \begin{steps}[Why the Ideal \texorpdfstring{$(f)$}{(f)} Contains No Non-Zero Constants]
@@ -1446,9 +1396,9 @@ Any non-zero element of the principal ideal $(f)$ has the form $f \cdot q$ with 
 \begin{speech}[01:11:18 - 01:13:26]
 Right, so, what we have is what's called a \newterm{field extension}. We have our little $k$, and it sits inside big $K$ \inlinemetanote{writes \qt{$k$} and writes \qt{$K$} above $k$ connected by a vertical line}. Often it's written like this. If you see this in a math book, this is called a field extension, and it just means you have one field inside another field \inlinemetanote{writes \qt{field extension} with an arrow pointing to the diagram, and writes \qt{$k \subset K$}}. That's all it means. And here, there's this identification: this field exists by itself, and we put it inside by taking the equivalence classes. All right.
 
-So, that's step two. The answer to the question: first is this production of the big field $K$, and the second is realizing our little field lives inside the big field, and of course the third is the root --- the production of the root \inlinemetanote{writes: Root:}. And so, we let $\alpha$ in big $K$ be the equivalence class of $x$ \inlinemetanote{writes \qt{$\alpha \in K$} and \qt{$\alpha = \bar{x}$}}. Okay?
+So, that's step two. The answer to the question: first is this production of the big field $K$, and the second is realizing our little field lives inside the big field, and of course the third is the root, the production of the root \inlinemetanote{writes: Root:}. And so, we let $\alpha$ in big $K$ be the equivalence class of $x$ \inlinemetanote{writes \qt{$\alpha \in K$} and \qt{$\alpha = \bar{x}$}}. Okay?
 
-Now I've given you --- or the genie's given you --- this big field, this is the original field that you were suffering with, and also an element \inlinemetanote{writes \qt{$K$}, \qt{$k$} below $K$ connected by a vertical line, and \qt{$\ni \alpha$}}. Do you agree? And almost nothing's happened here. But do you agree with this? It's important to understand: this is $\bar{x}$, and $\bar{x}$ is a well-defined element here (i.e., in $K$), meaning it's the equivalence class of $x$.
+Now I've given you, or the genie's given you, this big field, this is the original field that you were suffering with, and also an element \inlinemetanote{writes \qt{$K$}, \qt{$k$} below $K$ connected by a vertical line, and \qt{$\ni \alpha$}}. Do you agree? And almost nothing's happened here. But do you agree with this? It's important to understand: this is $\bar{x}$, and $\bar{x}$ is a well-defined element here (i.e., in $K$), meaning it's the equivalence class of $x$.
 
 All right. And now the third thing is we check: we take this polynomial; the polynomial was born here, little $k$ \inlinemetanote{writes: $f \in k[x]$}. But we can also view it --- since this is inside big $K$ --- we can view this polynomial to be a polynomial here, because little $k$ are just some elements of big $K$, so we can just view it as a polynomial with coefficients in big $K$ \inlinemetanote{writes \qt{$\subset K[x]$}, \qt{we can view}, and \qt{$f \in K[x]$}}.
 \end{speech}
@@ -1460,7 +1410,7 @@ When a field $k$ is a subfield of a field $K$ ($k \subset K$), we call $K$ a \ne
 
 Using the canonical embedding $k \subset K$ from \cref{clm:canonical-embedding}, we define the candidate root $\alpha \in K$ as the residue class of the indeterminate $x$:
 \[
-\alpha := \bar{x} \in K = \frac{k[x]}{(f)}.
+\alpha := \bar{x} \in K = \faktor{k[x]}{(f)}.
 \]
 Moreover, because $k \subset K$, any polynomial $f \in k[x]$ can be viewed as a polynomial with coefficients in $K$, i.e., $f \in k[x] \subset K[x]$.
 
@@ -1510,7 +1460,7 @@ So, the first claim was that big $K$ is a field, the second claim is that little
 
 First I'd like to see it makes sense, because said $f$ is this polynomial --- it makes sense: $\alpha$ is an element of $K$, I can stick $\alpha$ in there, I get some number. The claim is I get zero.
 
-So, the proof of this is that, okay, let's try to do it: $f$ of $\alpha$, well, this is $f$ of $\bar{x}$, because $\alpha$ is $\bar{x}$ \inlinemetanote{writes \qt{pf:}, \qt{$f(\alpha) =$}, and \qt{$f(\bar{x})$}}. $f$, all its coefficients are just elements of little $k$, so this is equal to $\overline{f}$ \inlinemetanote{writes: $= \overline{f(x)}$}. And $\overline{f}$ is equal to zero in $\frac{k[x]}{(f)}$, precisely because we're taking out $f$, which equals $K$ \inlinemetanote{writes \qt{$= 0$}, \qt{$\in \frac{k[x]}{(f)}$}, and \qt{$= K$} and draws a QED box}. So, that's the end of it.
+So, the proof of this is that, okay, let's try to do it: $f$ of $\alpha$, well, this is $f$ of $\bar{x}$, because $\alpha$ is $\bar{x}$ \inlinemetanote{writes \qt{pf:}, \qt{$f(\alpha) =$}, and \qt{$f(\bar{x})$}}. $f$, all its coefficients are just elements of little $k$, so this is equal to $\overline{f}$ \inlinemetanote{writes: $= \overline{f(x)}$}. And $\overline{f}$ is equal to zero in $\faktor{k[x]}{(f)}$, precisely because we're taking out $f$, which equals $K$ \inlinemetanote{writes \qt{$= 0$}, \qt{$\in \faktor{k[x]}{(f)}$}, and \qt{$= K$} and draws a QED box}. So, that's the end of it.
 
 Right? It's entirely tautological, this construction.
 \end{speech}
@@ -1523,27 +1473,27 @@ With $\alpha := \bar{x} \in K$, we have $f(\alpha) = 0$ in $K$.
 \begin{proof}
 Viewing $f \in k[x] \subset K[x]$, we evaluate $f$ at $\alpha = \bar{x} \in K$:
 \[
-f(\alpha) = f(\bar{x}) = \overline{f(x)} = 0 \in \frac{k[x]}{(f)} = K,
+f(\alpha) = f(\bar{x}) = \overline{f(x)} = 0 \in \faktor{k[x]}{(f)} = K,
 \]
-since $f(x) \in (f)$ represents the zero residue class in the quotient $\frac{k[x]}{(f)}$.
+since $f(x) \in (f)$ represents the zero residue class in the quotient $\faktor{k[x]}{(f)}$.
 \end{proof}
 
 \begin{steps}[Expanding the Quotient Evaluation Explicitly]
-Writing $f(x) = c_0 x^d + c_1 x^{d-1} + \dots + c_d$ with $c_i \in k$, the canonical embedding identifies each coefficient $c_i$ with $\bar{c}_i \in K$. Because addition and multiplication in the quotient ring $\frac{k[x]}{(f)}$ satisfy $\bar{a} + \bar{b} = \overline{a + b}$ and $\bar{a} \cdot \bar{b} = \overline{a \cdot b}$, we have:
+Writing $f(x) = c_d x^d + c_{d-1} x^{d-1} + \dots + c_0$ with $c_i \in k$, the canonical embedding identifies each coefficient $c_i$ with $\bar{c}_i \in K$. Because addition and multiplication in the quotient ring $\faktor{k[x]}{(f)}$ satisfy $\bar{a} + \bar{b} = \overline{a + b}$ and $\bar{a} \cdot \bar{b} = \overline{a \cdot b}$, we have:
 \begin{align*}
-f(\alpha) &= \bar{c}_0 \bar{x}^d + \bar{c}_1 \bar{x}^{d-1} + \dots + \bar{c}_d \\
-&= \overline{c_0 x^d + c_1 x^{d-1} + \dots + c_d} \\
+f(\alpha) &= \bar{c}_d \bar{x}^d + \bar{c}_{d-1} \bar{x}^{d-1} + \dots + \bar{c}_0 \\
+&= \overline{c_d x^d + c_{d-1} x^{d-1} + \dots + c_0} \\
 &= \overline{f(x)} = \bar{0} \in K.
 \end{align*}
 \end{steps}
 \end{content}
 
 \begin{speech}[01:15:23 - 01:17:00]
-So, that's the answer to the wish here: you start with this $k$, and $f$ in $k$ of $x$ irreducible, and you wish for a solution, and the granting of this wish is this field extension --- you have to go to a bigger field, because we know there's no solutions in that field --- a field extension and an element such that you can solve \inlinemetanote{writes \qt{$k, \; f \in k[x]$ irr}, draws a downward squiggly arrow, and writes \qt{$K$} over \qt{$k$} connected by a vertical line, \qt{$\ni \alpha$}, and \qt{s.t.\ $f(\alpha) = 0$}}.
+So, that's the answer to the wish here: you start with this $k$, and $f$ in $k$ of $x$ irreducible, and you wish for a solution, and the granting of this wish is this field extension --- you have to go to a bigger field, because we know there's no solutions in that field --- a field extension and an element such that you can solve \inlinemetanote{writes \qt{$k, \; f \in k[x]$ irr}, draws a downward double arrow, and writes \qt{$K$} over \qt{$k$} connected by a vertical line, \qt{$\ni \alpha$}, and \qt{s.t.\ $f(\alpha) = 0$}}.
 
-That's the specific granting of the wish. And everything here is explicit: this thing is that, and this is $\bar{x}$, okay \inlinemetanote{writes \qt{$\frac{k[x]}{(f)} = K$} and \qt{$\bar{x} = \alpha$}}? It's totally explicit, maybe completely unsatisfying, because the whole matter is tautological, but this is a really important construction. Are there any questions about it?
+That's the specific granting of the wish. And everything here is explicit: this thing is that, and this is $\bar{x}$, okay \inlinemetanote{writes \qt{$\faktor{k[x]}{(f)} = K$} and \qt{$\bar{x} = \alpha$}}? It's totally explicit, maybe completely unsatisfying, because the whole matter is tautological, but this is a really important construction. Are there any questions about it?
 
-I mean, it's really the basis of many different ideas, but it says that if you have this field, the little $k$, and you find an irreducible polynomial, one thing is to feel sad you cannot solve that polynomial. The other side of the coin is that polynomial is creating you a beautiful new field, this one \inlinemetanote{points at $\frac{k[x]}{(f)} = K$}. And this field is maybe one you didn't know before; it's giving you a new field, and moreover it's giving you a solution for that polynomial in that field.
+I mean, it's really the basis of many different ideas, but it says that if you have this field, the little $k$, and you find an irreducible polynomial, one thing is to feel sad you cannot solve that polynomial. The other side of the coin is that polynomial is creating you a beautiful new field, this one \inlinemetanote{points at $\faktor{k[x]}{(f)} = K$}. And this field is maybe one you didn't know before; it's giving you a new field, and moreover it's giving you a solution for that polynomial in that field.
 \end{speech}
 
 \begin{content}[Summary of Wish 1 Granted]
@@ -1555,36 +1505,36 @@ I mean, it's really the basis of many different ideas, but it says that if you h
 - Order: (1) downward arrow from top data to K; (2) vertical line K--k; (3) all text last
 - Coordinates:
   Top: "(0, 2.95)" holding "$k, \; f \in k[x] \text{ irr}$"
-  Downward squiggly arrow from (0, 2.55) to (0, 1.7)
+  Downward double arrow (the board has a double arrow, not a squiggle) from (0, 2.55) to (0, 1.7)
   Tower: K at (0, 1.3), k at (0, 0), vertical line (0, 0.32) to (0, 0.98)
-  Left annotations: "\dfrac{k[x]}{(f)} =" anchor east at (-0.45, 1.3)
+  Left annotations: "\faktor{k[x]}{(f)} =" anchor east at (-0.45, 1.3)
   Right annotations: "\ni \alpha" anchor west at (0.3, 1.3), "\bar{x} = \alpha" anchor west at (0.4, 1.9), "s.t.\ f(\alpha) = 0" anchor west at (0.55, 0.65)
 - Collisions: vertical tower at x=0; left formula ends at -0.45; right labels start at +0.3 and are stacked at distinct y values (1.9, 1.3, 0.65).
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth]
     % (1), (2) Construction arrow and tower line
-    \draw[->, thick, figBlue, decorate, decoration={snake, amplitude=1.5pt, segment length=8pt, post length=4pt}] (0, 2.55) -- (0, 1.7);
+    \draw[-{Implies}, double, thick, figBlue] (0, 2.55) -- (0, 1.7);
     \draw[thick, figGray] (0, 0.32) -- (0, 0.98);
 
     % (3) Text last
     \node[inner sep=0.15cm] at (0, 2.95) {$k, \; f \in k[x] \text{ irr}$};
     \node[inner sep=0.15cm, figBlue] at (0, 1.3) {$K$};
     \node[inner sep=0.15cm] at (0, 0) {$k$};
-    \node[anchor=east, inner sep=0.15cm, figBlue] at (-0.45, 1.3) {$\dfrac{k[x]}{(f)} =$};
+    \node[anchor=east, inner sep=0.15cm, figBlue] at (-0.45, 1.3) {$\faktor{k[x]}{(f)} =$};
     \node[anchor=west, inner sep=0.15cm, figRed] at (0.3, 1.3) {$\ni \alpha$};
     \node[anchor=west, inner sep=0.15cm, figRed] at (0.4, 1.9) {$\bar{x} = \alpha$};
     \node[anchor=west, inner sep=0.15cm] at (0.55, 0.65) {s.t.\ $f(\alpha) = 0$};
 \end{tikzpicture}
 \end{center}
 
-Everything in this construction is completely explicit: $K = \frac{k[x]}{(f)}$ is a field containing $k$ canonically, and $\alpha = \bar{x} \in K$ satisfies $f(\alpha) = 0$.
+Everything in this construction is completely explicit: $K = \faktor{k[x]}{(f)}$ is a field containing $k$ canonically, and $\alpha = \bar{x} \in K$ satisfies $f(\alpha) = 0$.
 \end{content}
 
 \begin{speech}[01:17:00 - 01:18:26]
-So, for example, if you do this with $\mathbb{R}$ --- the most famous example is if your little field is $\mathbb{R}$, and your polynomial is $x^2 + 1$ --- then what this construction gives you is $\mathbb{R}$ adjoin $x$ modulo $x^2 + 1$ \inlinemetanote{writes \qt{$k = \mathbb{R}$}, \qt{$f = x^2 + 1$}, and \qt{$K = \frac{\mathbb{R}[x]}{(x^2+1)}$}}.
+So, for example, if you do this with $\mathbb{R}$ --- the most famous example is if your little field is $\mathbb{R}$, and your polynomial is $x^2 + 1$ --- then what this construction gives you is $\mathbb{R}$ adjoin $x$ modulo $x^2 + 1$ \inlinemetanote{writes \qt{$k = \mathbb{R}$}, \qt{$f = x^2 + 1$}, and \qt{$K = \faktor{\mathbb{R}[x]}{(x^2+1)}$}}.
 
-And it was an exercise, or we discussed, this is isomorphic actually to the complex numbers \inlinemetanote{writes: $\cong \mathbb{C}$}. And the isomorphism takes $\bar{x}$ to $i$, and so that $\alpha$ is $i$ \inlinemetanote{writes: $\bar{x} \mapsto i$}. It gives you the complex numbers. If you understood all of this before discovering the complex numbers --- I think no human has done that, but anyway --- if you developed algebra up to here without discovering the complex numbers, and you said, \qt{Okay, I'll start with $\mathbb{R}$, and this is the polynomial I want to find,} you get the complex numbers.
+And it was an exercise, or we discussed, this is isomorphic actually to the complex numbers \inlinemetanote{writes: $\cong \mathbb{C}$}. And the isomorphism takes $\bar{x}$ to $i$, and so that $\alpha$ is $i$ \inlinemetanote{writes \qt{$\alpha = \bar{x} = i$} and draws $K$ over $\mathbb{R}$}. It gives you the complex numbers. If you understood all of this before discovering the complex numbers --- I think no human has done that, but anyway --- if you developed algebra up to here without discovering the complex numbers, and you said, \qt{Okay, I'll start with $\mathbb{R}$, and this is the polynomial I want to find,} you get the complex numbers.
 
 And you get lots and lots of other fields. This is a spectacularly rich way to make fields: you take any field you want, and you take any polynomial you can't solve that's irreducible, and then you get a new field. All right.
 \end{speech}
@@ -1593,14 +1543,14 @@ And you get lots and lots of other fields. This is a spectacularly rich way to m
 \begin{example}[Constructing \texorpdfstring{$\mathbb{C}$}{C} from \texorpdfstring{$\mathbb{R}$}{R} and \texorpdfstring{$x^2 + 1$}{x\textasciicircum 2 + 1}]\label[example]{ex:complex-numbers-quotient}
 Take $k = \mathbb{R}$ and the irreducible polynomial $f(x) = x^2 + 1 \in \mathbb{R}[x]$. The quotient construction produces the field extension
 \[
-K = \frac{\mathbb{R}[x]}{(x^2 + 1)} \cong \mathbb{C},
+K = \faktor{\mathbb{R}[x]}{(x^2 + 1)} \cong \mathbb{C},
 \]
-where the isomorphism sends the canonical root $\alpha = \bar{x} \in K$ to the imaginary unit $i \in \mathbb{C}$ (satisfying $i^2 + 1 = 0$).
+where the isomorphism sends the canonical root $\alpha = \bar{x} \in K$ to the imaginary unit $i \in \mathbb{C}$ (satisfying $i^2 + 1 = 0$). Week 4 proved the same over $\mathbb{Q}$: $\faktor{\mathbb{Q}[x]}{(x^2+1)} \cong \mathbb{Q}[i]$ (\cref{thm:first-isom-applied-qi}).
 \end{example}
 \end{content}
 
 \begin{insight}[The Two Sides of an Irreducible Polynomial]
-As the lecturer emphasizes, encountering an irreducible polynomial $f \in k[x]$ with no roots in $k$ has two sides: one side is the disappointment that $f$ cannot be solved inside $k$; the other side of the coin is that $f$ itself creates a new field $K = \frac{k[x]}{(f)}$ containing $k$ together with a solution $\alpha = \bar{x}$ to $f(\alpha) = 0$. Applied to $\mathbb{R}$ and $x^2 + 1$, this single algebraic machine generates the complex numbers $\mathbb{C}$ automatically.
+As the lecturer emphasizes, encountering an irreducible polynomial $f \in k[x]$ with no roots in $k$ has two sides: one side is the disappointment that $f$ cannot be solved inside $k$; the other side of the coin is that $f$ itself creates a new field $K = \faktor{k[x]}{(f)}$ containing $k$ together with a solution $\alpha = \bar{x}$ to $f(\alpha) = 0$. Applied to $\mathbb{R}$ and $x^2 + 1$, this single algebraic machine generates the complex numbers $\mathbb{C}$ automatically.
 \end{insight}
 
 \subsection{Uniqueness of the Extension: \texorpdfstring{$K \cong k(\beta)$}{K iso k(beta)}}
@@ -1634,7 +1584,7 @@ Let $k$ be a field and let $f \in k[x]$ be irreducible. Suppose we have any fiel
 \end{content}
 
 \begin{speech}[01:21:05 - 01:22:43]
-Then the claim is that if we write this extension $F$ --- where this is the subfield generated by $\beta$ \inlinemetanote{writes \qt{then}, draws a tower $F$ over $k(\beta)$ over $k$, and writes \qt{$\leftarrow$ subfield gen.\ by $\beta$}} ---...
+Then the claim is that if we write this extension $F$ --- where this is the subfield generated by $\beta$ \inlinemetanote{writes \qt{then}, draws a tower $F$ over $k(\beta)$ over $k$, and writes \qt{$\leftarrow$ subfield gen.\ by $\beta$}}...
 
 Do I have to explain what this is? We did discuss some things like this, but not exactly, so maybe so. If I have this $F$ is a big field and $k$ is a subfield, if I take any element, I can take the subfield generated by $\beta$, and let me just define it in here: define $k(\beta)$ is the smallest subfield of $F$ which contains the original field and the element $\beta$ \inlinemetanote{writes \qt{Def:} and \qt{$k(\beta)$ is the smallest subfield of $F$ which contains $k$ and $\beta$.}}.
 
@@ -1665,14 +1615,14 @@ So, this is the sense in the claim that the original answer --- this is the only
 \end{speech}
 
 \begin{content}[Statement of the Uniqueness Theorem]
-\begin{theorem}[Uniqueness of the Simple Field Extension]\label[theorem]{thm:uniqueness-root-extension}
+\begin{theorem}[Uniqueness of the Construction]\label[theorem]{thm:uniqueness-root-extension}
 Let $k$ be a field and $f \in k[x]$ be irreducible. Suppose we have a field extension $F$ over $k$ in which there exists an element $\beta \in F$ such that $f(\beta) = 0$. Let $k(\beta) \subset F$ be the subfield generated by $\beta$ over $k$ (\cref{def:subfield-generated-by-beta}).
 
 Then there exists a canonical field isomorphism
 \[
 \Phi \colon K \xrightarrow{\;\sim\;} k(\beta)
 \]
-extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \in k(\beta)$), where $K = \frac{k[x]}{(f)}$.
+extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \in k(\beta)$), where $K = \faktor{k[x]}{(f)}$.
 \end{theorem}
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
@@ -1733,13 +1683,13 @@ So, proof: you will be left totally dissatisfied, but anyway, here \inlinemetano
 
 And one side is what we're given: suppose you go out in nature, you find some field extension with an element $\beta$ which has the property that $f$ of $\beta$ equals zero \inlinemetanote{writes $F \ni \beta$ over $k$ with $f(\beta) = 0$}. That means you go out and find some algebraic structure which is an extension of this, and you solve the polynomial there, okay?
 
-And then we have, ourselves, this one, which is equal to $k$ of $x$ mod $(f)$, we have that, and we have the element here $\alpha$, which is $\bar{x}$, I remind you, okay \inlinemetanote{draws a slanted line from $k$ up to $K$, writes \qt{$\frac{k[x]}{(f)}$} below $K$, and writes \qt{$\alpha = \bar{x} \in K$}}?
+And then we have, ourselves, this one, which is equal to $k$ of $x$ mod $(f)$, we have that, and we have the element here $\alpha$, which is $\bar{x}$, I remind you, okay \inlinemetanote{draws a slanted line from $k$ up to $K$, writes \qt{$\faktor{k[x]}{(f)}$} below $K$, and writes \qt{$\alpha = \bar{x} \in K$}}?
 
 So, this is the one that we constructed, and that's some one you find in nature. The theorem says that actually they're related. Let's draw that picture again --- because the confusing thing about this, perhaps... okay, let's not draw it. Okay, so:
 \end{speech}
 
 \begin{content}[Setup Comparing \texorpdfstring{$K$}{K} and \texorpdfstring{$F$}{F}]
-We compare our explicit construction $K = \frac{k[x]}{(f)}$ (containing $\alpha = \bar{x}$ with $f(\alpha) = 0$) against the arbitrary extension $F$ over $k$ (containing $\beta$ with $f(\beta) = 0$).
+We compare our explicit construction $K = \faktor{k[x]}{(f)}$ (containing $\alpha = \bar{x}$ with $f(\alpha) = 0$) against the arbitrary extension $F$ over $k$ (containing $\beta$ with $f(\beta) = 0$).
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \definecolor{figGreen}{HTML}{3D8251} % RGB (61, 130, 81): dark green (ForestGreen!70!black)
@@ -1750,9 +1700,9 @@ We compare our explicit construction $K = \frac{k[x]}{(f)}$ (containing $\alpha 
 - Coordinates:
   k at (0, 0)
   F at (0, 2.0), "\ni \beta" anchor west at (0.3, 2.0), "f(\beta) = 0" anchor west at (1.55, 2.0)
-  K at (-2.2, 2.0), "\alpha = \bar{x} \in" anchor east at (-2.55, 2.0), "\dfrac{k[x]}{(f)}" anchor north at (-2.2, 1.55)
+  K at (-2.2, 2.0), "\alpha = \bar{x} \in" anchor east at (-2.55, 2.0), "\faktor{k[x]}{(f)}" anchor north at (-2.2, 1.55)
   Lines: (0, 0.35)--(0, 1.65) and (-0.25, 0.3)--(-1.95, 1.7)
-- Collisions: K is 2.2 left of F, "\dfrac{k[x]}{(f)}" sits below K at x=-2.2 away from the slanted line; "\ni \beta" ends near x=1.25, leaving 0.3 cm before "f(\beta) = 0" at 1.55.
+- Collisions: K is 2.2 left of F, "\faktor{k[x]}{(f)}" sits below K at x=-2.2 away from the slanted line; "\ni \beta" ends near x=1.25, leaving 0.3 cm before "f(\beta) = 0" at 1.55.
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth]
@@ -1768,7 +1718,7 @@ We compare our explicit construction $K = \frac{k[x]}{(f)}$ (containing $\alpha 
 
     \node[inner sep=0.15cm, figBlue] at (-2.2, 2.0) {$K$};
     \node[anchor=east, inner sep=0.15cm, figBlue] at (-2.55, 2.0) {$\alpha = \bar{x} \in$};
-    \node[anchor=north, inner sep=0.15cm, figBlue] at (-2.2, 1.55) {$\dfrac{k[x]}{(f)}$};
+    \node[anchor=north, inner sep=0.15cm, figBlue] at (-2.2, 1.55) {$\faktor{k[x]}{(f)}$};
 \end{tikzpicture}
 \end{center}
 \end{content}
@@ -1809,7 +1759,7 @@ Okay, so, when we have a homomorphism of rings, we could find the kernel: what i
 
 Well, the kernel of $\Phi$ are what would go to zero on this... We don't really know what in the kernel of $\Phi$ is yet, but we certainly know $(f)$ is in the kernel, because $f$ of $\beta$ is equal to zero, that's what we're starting with \inlinemetanote{writes \qt{$(f) \subset \ker(\Phi)$} and \qt{since $f(\beta) = 0$}}. Okay?
 
-But we also know that $(f)$ is a maximal ideal \inlinemetanote{writes: But $(f)$ is max.\ ideal}. We argued that at the beginning. And we know that this map --- this is a ring map --- takes $1$ to $1$. It doesn't take everything to zero. So, there's no room for anything else. $(f)$ has to be the kernel.
+But we also know that $(f)$ is a maximal ideal \inlinemetanote{writes: But $(f)$ is max.\ ideal}. We argued that at the beginning. And we know that this map, this is a ring map, takes $1$ to $1$. It doesn't take everything to zero. So, there's no room for anything else. $(f)$ has to be the kernel.
 
 If the kernel's an ideal that contains this, the only possibility is it's equal to $(f)$ or it's the whole ring, and it can't be the whole ring because $1$ doesn't go to zero. So, $(f)$ is equal to the kernel \inlinemetanote{writes and boxes: So $(f) = \ker(\Phi)$}.
 \end{speech}
@@ -1832,15 +1782,15 @@ However, $\Phi$ is a ring homomorphism sending $1 \in k \subset k[x]$ to $1 \in 
 \begin{speech}[01:29:23 - 01:30:44]
 Then we use this ring isomorphism theorem. I have a few moments here; we'll start also tomorrow... \inlinemetanote{swaps the lower board up and the upper board down, and erases the left side of the lower board}
 
-So, when we studied rings, we know that using that we have this $\Phi$ from here to $F$, where $x$ goes to $\beta$, and the kernel we know is this, then we can conclude (that's one of our isomorphism theorems) that this modulo $(f)$ maps to $F$ \inlinemetanote{writes \qt{$\Phi \colon k[x] \to F$}, \qt{$x \mapsto \beta$}, \qt{$\ker(\Phi) = (f)$}, and \qt{$\frac{k[x]}{(f)} \hookrightarrow F$} with $k$ below connected to both}.
+So, when we studied rings, we know that using that we have this $\Phi$ from here to $F$, where $x$ goes to $\beta$, and the kernel we know is this, then we can conclude (that's one of our isomorphism theorems) that this modulo $(f)$ maps to $F$ \inlinemetanote{writes \qt{$\Phi \colon k[x] \to F$}, \qt{$x \mapsto \beta$}, \qt{$\ker(\Phi) = (f)$}, and \qt{$\faktor{k[x]}{(f)} \hookrightarrow F$} with $k$ below connected to both}.
 
-If we have a kernel, then the quotient maps here, all right? This is our $K$ already, and our element $\alpha$ here is this $\bar{x}$, and the $\alpha$ here goes to the $\beta$ \inlinemetanote{writes \qt{$K =$} to the left of $\frac{k[x]}{(f)}$, connects $K$ down to $k$, writes $\alpha$ above $K$, $\beta$ above $F$, and draws \qt{$\alpha \mapsto \beta$}}. So, we've already done most of it: we have this $K$.
+If we have a kernel, then the quotient maps here, all right? This is our $K$ already, and our element $\alpha$ here is this $\bar{x}$, and the $\alpha$ here goes to the $\beta$ \inlinemetanote{writes \qt{$K =$} to the left of $\faktor{k[x]}{(f)}$, connects $K$ down to $k$, writes $\alpha$ above $K$, $\beta$ above $F$, and draws \qt{$\alpha \mapsto \beta$}}. So, we've already done most of it: we have this $K$.
 \end{speech}
 
 \begin{content}[Induced Embedding of \texorpdfstring{$K$}{K} into \texorpdfstring{$F$}{F}]
-By the ring isomorphism theorem, since $\Phi \colon k[x] \to F$ has kernel $\ker(\Phi) = (f)$, it descends to an injective ring homomorphism (field embedding) on the quotient:
+By the First Isomorphism Theorem for rings (Week 4, \cref{thm:first-isomorphism-theorem-statement}), since $\Phi \colon k[x] \to F$ has kernel $\ker(\Phi) = (f)$, it descends to an injective ring homomorphism (field embedding) on the quotient:
 \[
-\bar{\Phi} \colon K = \frac{k[x]}{(f)} \hookrightarrow F,
+\bar{\Phi} \colon K = \faktor{k[x]}{(f)} \hookrightarrow F,
 \]
 which acts as the identity on the base subfield $k \subset K$ and maps $\alpha = \bar{x} \in K$ to $\beta \in F$.
 
@@ -1854,8 +1804,8 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
 - Coordinates:
   Left: kx at (0, 1.8), F1 at (2.8, 1.8); arrow (0.55, 1.8) -- (2.45, 1.8) with "\Phi" above (auto);
   notes below: "x \mapsto \beta" at (1.3, 0.9), "\ker(\Phi) = (f)" at (1.3, 0.25)
-  Right (shifted to x >= 4.8): K_q at (6.0, 1.8) holding "K = \dfrac{k[x]}{(f)}" (spans x in [4.95, 7.05], y in [1.2, 2.4]), F2 at (9.6, 1.8), k_bot at (8.1, 0);
-  hook arrow (7.25, 1.8) -- (9.2, 1.8) with "\bar{\Phi}" below ([auto, swap]);
+  Right (shifted to x >= 4.8): K_q at (6.0, 1.8) holding "K = \faktor{k[x]}{(f)}" (spans about x in [4.75, 7.3], y in [1.2, 2.4]: the slanted quotient is wider than the stacked fraction it replaced at review), F2 at (9.6, 1.8), k_bot at (8.1, 0);
+  hook arrow (7.55, 1.8) -- (9.2, 1.8) (moved right at review, clear of the wider label) with "\bar{\Phi}" below ([auto, swap]);
   tower lines (7.85, 0.32)--(6.45, 1.12) and (8.3, 0.32)--(9.45, 1.45);
   top map \alpha at (6.5, 2.85) -> \beta at (9.6, 2.85), arrow (6.85, 2.85) -- (9.25, 2.85)
 - Collisions: left panel x in [-0.45, 3.2], right panel x in [4.95, 10.0], gap >= 1.75 cm; hook arrow starts at 7.25 right of K_q; tower line stops at (6.45, 1.12) below the denominator of K_q; top \alpha \mapsto \beta sits at y=2.85, well above K_q -> F at y=1.8.
@@ -1865,7 +1815,7 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
     % (1) Arrows and inclusion lines
     \draw[->, thick, figBlue] (0.55, 1.8) -- (2.45, 1.8);
 
-    \draw[right hook->, thick, figRed] (7.25, 1.8) -- (9.2, 1.8);
+    \draw[right hook->, thick, figRed] (7.55, 1.8) -- (9.2, 1.8);
     \draw[thick, figGray] (7.85, 0.32) -- (6.45, 1.12);
     \draw[thick, figGray] (8.3, 0.32) -- (9.45, 1.45);
     \draw[|->, thick, figRed] (6.85, 2.85) -- (9.25, 2.85);
@@ -1877,10 +1827,10 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
     \node[inner sep=0.15cm, font=\small] at (1.3, 0.9) {$x \mapsto \beta$};
     \node[inner sep=0.15cm, font=\small] at (1.3, 0.25) {$\ker(\Phi) = (f)$};
 
-    \node[inner sep=0.15cm, figBlue] at (6.0, 1.8) {$K = \dfrac{k[x]}{(f)}$};
+    \node[inner sep=0.15cm, figBlue] at (6.0, 1.8) {$K = \faktor{k[x]}{(f)}$};
     \node[inner sep=0.15cm, figGreen] at (9.6, 1.8) {$F$};
     \node[inner sep=0.15cm] at (8.1, 0) {$k$};
-    \path (7.25, 1.8) -- (9.2, 1.8) node[midway, auto, swap, inner sep=0.12cm, figRed] {$\bar{\Phi}$};
+    \path (7.55, 1.8) -- (9.2, 1.8) node[midway, auto, swap, inner sep=0.12cm, figRed] {$\bar{\Phi}$};
     \node[inner sep=0.15cm, figBlue] at (6.5, 2.85) {$\alpha$};
     \node[inner sep=0.15cm, figGreen] at (9.6, 2.85) {$\beta$};
 \end{tikzpicture}
@@ -1888,7 +1838,7 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
 \end{content}
 
 \begin{speech}[01:30:44 - 01:31:46]
-Then the final thing is what's the image \inlinemetanote{writes $\bar{\Phi}$ above the arrow $\frac{k[x]}{(f)} \hookrightarrow F$}? This is maybe called $\bar{\Phi}$, but it's still $\Phi$. What is the image of this?
+Then the final thing is what's the image \inlinemetanote{writes $\bar{\Phi}$ above the arrow $\faktor{k[x]}{(f)} \hookrightarrow F$}? This is maybe called $\bar{\Phi}$, but it's still $\Phi$. What is the image of this?
 
 Well, the image has to be a field, is a subfield, because this is a field, and the homomorphic images of fields have to be fields, so it's a subfield \inlinemetanote{writes \qt{$\operatorname{Im}(\bar{\Phi}) \subset F$} and \qt{is a subfield}}. And it sits in between: this is the image, it's a subfield that sits in between, and it contains $\beta$ \inlinemetanote{draws a tower $F$ over $\operatorname{Im}(\bar{\Phi})$ over $k$ and writes \qt{$\ni \beta$} next to $\operatorname{Im}(\bar{\Phi})$}.
 
@@ -1929,7 +1879,7 @@ Okay. That's it.
     \item \textbf{Counterexample to the Full Converse of Lagrange ($A_4$):} By listing the conjugacy class sizes of $A_4$ ($1, 3, 4, 4$) and using that any subgroup of index $2$ must be normal (hence a union of conjugacy classes), $A_4$ of order $12$ has no subgroup of order $6$ (\cref{prop:a4-no-order-6}).
     \item \textbf{Simple Groups and Simplicity of $A_5$:} A group is simple (\cref{def:simple-group}) if it has no non-trivial normal subgroups. Using the conjugacy class sizes of $A_5$ ($1, 15, 20, 12, 12$), no proper sum containing $1$ divides $60$, so $A_5$ is simple (\cref{prop:a5-simple}), whereas $A_4$ has a normal subgroup of order $1 + 3 = 4$ and is not simple.
     \item \textbf{Classification Hints and Directions in Group Theory:} Groups of order $p$ are cyclic ($\faktor{\mathbb{Z}}{p\mathbb{Z}}$), groups of order $p^2$ are abelian (stated as an exercise), and groups of order $pq$ ($p > q$) have a unique normal $p$-Sylow subgroup $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ acted on by conjugation by $\faktor{\mathbb{Z}}{q\mathbb{Z}}$. Broader directions include the classification of finite simple groups, representation theory, Klein's Erlangen program, and Lie groups ($O_n, SO_n, U_n, SU_n, Sp_{2n}$, and exceptional groups $G_2, F_4, E_6, E_7, E_8$).
-    \item \textbf{Root Field Extensions ($K = \frac{k[x]}{(f)}$):} Given an irreducible polynomial $f \in k[x]$, the principal ideal $(f)$ is maximal in the $\mathrm{PID}$ $k[x]$, so $K = \frac{k[x]}{(f)}$ is a field (\cref{clm:quotient-is-field}) containing $k$ canonically (\cref{clm:canonical-embedding}) and a root $\alpha = \bar{x}$ of $f$ (\cref{clm:alpha-is-root}), as exemplified by $\frac{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$.
-    \item \textbf{Uniqueness of the Simple Extension (\cref{thm:uniqueness-root-extension}):} For any field extension $F \supset k$ containing a root $\beta \in F$ of $f$, the evaluation map $\Phi \colon k[x] \to F$ ($x \mapsto \beta$) has kernel $(f)$ and induces a canonical isomorphism $K \xrightarrow{\sim} k(\beta)$ onto the subfield generated by $\beta$ over $k$.
+    \item \textbf{The Field $K = \faktor{k[x]}{(f)}$:} Given an irreducible polynomial $f \in k[x]$, the principal ideal $(f)$ is maximal in the $\mathrm{PID}$ $k[x]$, so $K = \faktor{k[x]}{(f)}$ is a field (\cref{clm:quotient-is-field}) containing $k$ canonically (\cref{clm:canonical-embedding}) and a root $\alpha = \bar{x}$ of $f$ (\cref{clm:alpha-is-root}), as exemplified by $\faktor{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$.
+    \item \textbf{Uniqueness of the Construction (\cref{thm:uniqueness-root-extension}):} For any field extension $F \supset k$ containing a root $\beta \in F$ of $f$, the evaluation map $\Phi \colon k[x] \to F$ ($x \mapsto \beta$) has kernel $(f)$ and induces a canonical isomorphism $K \xrightarrow{\sim} k(\beta)$ onto the subfield generated by $\beta$ over $k$.
 \end{itemize}
 \end{overview}
