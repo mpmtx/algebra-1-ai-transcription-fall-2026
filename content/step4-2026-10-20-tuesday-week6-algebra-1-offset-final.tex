@@ -110,8 +110,8 @@ This lecture formally develops the theory of unique factorization domains (UFDs)
     \item \textbf{Unique Factorization Domains:} We define UFDs via the existence and uniqueness of irreducible factorizations (up to permutation and unit associates). We examine standard examples ($\mathbb{Z}$, fields $k$, $k[x]$, and multivariate polynomial rings $k[x_1, \dots, x_n]$ via Gauss's Theorem B) and investigate an explicit non-example: the subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ of polynomials lacking a linear term, whose picture, the lecturer says, is a cusp.
     \item \textbf{Proof of Theorem A ($\text{PID} \implies \text{UFD}$):} The core theorem is established across three sequential steps:
     \begin{description}
-        \item[Step 1:] \textbf{Uniqueness Property:} If every irreducible element in a domain generates a prime ideal, factorizations into irreducibles are unique up to permutation and unit associates.
-        \item[Step 2:] \textbf{Irreducible Implies Prime in a PID:} In any PID, every irreducible element generates a prime ideal, establishing the uniqueness property for all PIDs.
+        \item[Step 1:] \textbf{Uniqueness Property:} In any integral domain, PID or not: if every irreducible element generates a prime ideal, factorizations into irreducibles are unique up to permutation and unit associates.
+        \item[Step 2:] \textbf{Irreducible Implies Prime in a PID:} In any PID, every irreducible element generates a prime ideal. This is exactly the hypothesis of Step~1, so Step~1 applies and gives the uniqueness property for all PIDs.
         \item[Step 3:] \textbf{Existence Property:} By analyzing a recursive binary factorization tree, we show that any non-terminating factorization branch yields a strictly ascending chain of principal ideals $(x_0) \subsetneq (x_1) \subsetneq (x_2) \subsetneq \dots$, which is ruled out by the PID property on the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$.
     \end{description}
     \item \textbf{GCD, LCM, and Power Series:} We express greatest common divisors and least common multiples in arbitrary UFDs via prime factorizations, analyze associate classes and unit ambiguities, prove the identity $\operatorname{GCD}(x, y) \cdot \operatorname{LCM}(x, y) \sim x \cdot y$, and conclude with the exercise that formal power series rings $k[[x]]$ are PIDs and UFDs.
@@ -871,7 +871,7 @@ In abstract ring theory, calling an element $x$ \newterm{prime} strictly refers 
 \end{steps}
 \end{content}
 
-\subsection{Step 1: Irreducible Implies Prime Yields Uniqueness}
+\subsection{Step 1: If Irreducible Elements Are Prime, Factorizations Are Unique}
 
 \begin{speech}[00:32:16 - 00:33:39]
 Okay. So, \textbf{Step 1} \inlinemetanote{writes: STEP 1} says: suppose --- Step 1 in the proof, there's three steps in the proof --- Step 1 is: suppose \inlinemetanote{writes: Suppose} $R$ satisfies the following property: \inlinemetanote{writes: $R$ satisfies the following property}
@@ -914,8 +914,8 @@ All right? Just to remind you, because that's what we're going to prove here.
 \end{speech}
 
 \begin{content}[Formulation of Step 1 and the Uniqueness Claim]
-\begin{claim}[Step 1: Irreducible Implies Prime Yields Uniqueness]\label[claim]{clm:step1-uniqueness}
-Let $R$ be an integral domain satisfying the property that every irreducible element is prime:
+\begin{claim}[Step 1: If Irreducible Elements Are Prime, Factorizations Are Unique]\label[claim]{clm:step1-uniqueness}
+Let $R$ be an integral domain, not necessarily a PID, satisfying the property that every irreducible element is prime:
 \begin{equation}\label{eq:condition-irr-implies-prime}
 \forall x \in R \setminus (\{0\} \cup \mathcal{U}_R), \quad x \text{ is irreducible} \implies (x) \text{ is a prime ideal}.
 \end{equation}
@@ -1167,13 +1167,19 @@ p \text{ is irreducible in } R \implies (p) \text{ is prime in } R.
 \end{equation}
 \end{lemma}
 
-\begin{steps}[Overview of the Architecture of the Proof of Theorem A]
-The proof of Theorem A ($R \text{ is a PID} \implies R \text{ is a UFD}$) is structured into three distinct steps:
+\begin{steps}[How the Three Steps of Theorem A Fit Together]
+The proof of Theorem A ($R \text{ is a PID} \implies R \text{ is a UFD}$) has three steps. Steps~1 and~2 prove the uniqueness property \textbf{(!)}, Step~3 the existence property \textbf{($\exists$)}. Steps~1 and~2 are linked by one condition on a domain, \emph{every irreducible element is prime}: Step~2 proves it for PIDs, and Step~1 takes it as its hypothesis. As implications (the lecturer's summary on the board at the start of Step~3, \cref{prop:part3-summary-steps12}):
+\begin{align*}
+R \text{ is a PID} \ &\xRightarrow{\text{Step 2}} \ \text{every irreducible element of } R \text{ is prime} \\
+&\xRightarrow{\text{Step 1}} \ R \text{ satisfies the uniqueness property } (!), \\
+R \text{ is a PID} \ &\xRightarrow{\text{Step 3}} \ R \text{ satisfies the existence property } (\exists).
+\end{align*}
 \begin{description}
-    \item[Step 1:] \textbf{General Domains:} If in an integral domain every irreducible element generates a prime ideal, then factorizations into irreducibles are unique (Uniqueness Property).
-    \item[Step 2:] \textbf{PIDs (Uniqueness):} In any PID, every irreducible element generates a prime ideal. Combining Step 2 with Step 1 proves the Uniqueness of factorizations in every PID.
+    \item[Step 1:] \textbf{Any integral domain, PID or not:} It compares two factorizations $p_1 \cdots p_n = q_1 \cdots q_m$ and matches their factors one by one. It uses only two things: that irreducible elements are prime, to find a partner $q_j$ of $p_1$, and cancellation, which holds in every domain. The PID property is never used.
+    \item[Step 2:] \textbf{PIDs (Uniqueness):} It looks at a single irreducible element $p$ and shows that $(p)$ is a prime ideal; it compares no factorizations. This is where the PID property enters, through the ideal $(a, p) = (z)$. Its conclusion is exactly the hypothesis of Step~1.
     \item[Step 3:] \textbf{PIDs (Existence):} In a PID, every ascending chain of principal ideals stabilizes (the argument of \cref{def:noetherian-ring}); from this one proves that every non-zero, non-unit element factors into a product of irreducibles (Existence Property).
 \end{description}
+So, Step~1 turns the question \qt{are factorizations unique?} into the question \qt{is every irreducible element prime?}, and Step~2 answers it with yes for PIDs. Step~1 is stated for all integral domains because it is used again: for Gauss's theorem (\cref{thm:ufd-polynomial-ring-w6wed}), the irreducible elements of $R[x]$ are shown to be prime (Week~6 Wednesday, \eqref{eq:irred-implies-prime-goal}), and Step~1 gives uniqueness there, although $R[x]$ is not a PID unless $R$ is a field.
 \end{steps}
 \end{content}
 
@@ -1430,6 +1436,10 @@ Combining Step 1 and Step 2:
     \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} $(\forall x \text{ irr} \colon (x) \text{ prime}) \implies R \text{ satisfies Uniqueness } (!)$.
     \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} $R \text{ is a PID} \implies (\forall p \text{ irr} \colon (p) \text{ prime})$.
 \end{description}
+The conclusion of Step 2 is the hypothesis of Step 1, so the two implications chain:
+\[
+R \text{ is a PID} \ \xRightarrow{\text{Step 2}} \ (\forall p \text{ irr} \colon (p) \text{ prime}) \ \xRightarrow{\text{Step 1}} \ R \text{ satisfies Uniqueness } (!).
+\]
 Therefore, every principal ideal domain $R$ satisfies the \textbf{Uniqueness Property (!)} of a unique factorization domain.
 
 It remains to establish Step 3:
@@ -1857,8 +1867,8 @@ This completes Step 3 and establishes \cref{lem:part3-step3-existence}.
 
 \begin{steps}[Summary of the Three-Step Proof]
 \begin{description}
-    \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} In any domain where irreducible elements are prime, factorizations into irreducibles are unique up to permutation and associates (\textbf{Uniqueness}).
-    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} In a PID, every irreducible element generates a prime ideal. By Step 1, factorizations in a PID are unique.
+    \item[Step 1:] \textbf{\cref{clm:step1-uniqueness}:} In any integral domain, PID or not, where irreducible elements are prime, factorizations into irreducibles are unique up to permutation and associates (\textbf{Uniqueness}).
+    \item[Step 2:] \textbf{\cref{lem:step2-pid-irr-implies-prime}:} In a PID, every irreducible element generates a prime ideal. This is the hypothesis of Step 1, so by Step 1, factorizations in a PID are unique.
     \item[Step 3:] \textbf{\cref{lem:part3-step3-existence}:} In a PID, there is no strictly ascending infinite chain of principal ideals (every ascending chain stabilizes), ruling out infinite factorization branches and proving that every non-zero non-unit admits a factorization into irreducibles (\textbf{Existence}).
 \end{description}
 \end{steps}
@@ -2230,8 +2240,8 @@ This lecture established the core structural theorems linking principal ideal do
     \item \textbf{Unique Factorization Domains:} A domain is a UFD if every non-zero, non-unit factors into irreducibles (Existence) uniquely up to permutation and unit associates (Uniqueness). The subring $R = \mathbb{Q}[x^2, x^3] \subset \mathbb{Q}[x]$ (whose picture is a cusp) fails to be a UFD because $x^6 = (x^2)^3 = (x^3)^2$.
     \item \textbf{Theorem A ($\text{PID} \implies \text{UFD}$):}
     \begin{description}
-        \item[Step 1:] \textbf{Uniqueness Criterion:} Irreducible implies prime yields uniqueness of factorizations.
-        \item[Step 2:] \textbf{Irreducible Implies Prime:} In a PID, every irreducible element generates a prime ideal, establishing uniqueness.
+        \item[Step 1:] \textbf{Uniqueness Criterion:} In any integral domain, PID or not, irreducible implies prime yields uniqueness of factorizations.
+        \item[Step 2:] \textbf{Irreducible Implies Prime:} In a PID, every irreducible element generates a prime ideal, so Step~1 applies and gives uniqueness.
         \item[Step 3:] \textbf{No Infinite Chains:} In a PID, a strictly ascending chain $(x_0) \subsetneq (x_1) \subsetneq \dots$ cannot go on forever, because the union ideal $J = \bigcup_{n=0}^\infty (x_n) = (w)$ is principal, forcing $(x_N) = J$. This rules out infinite factorization branches and establishes existence.
     \end{description}
     \item \textbf{GCD, LCM, and Power Series:} GCDs and LCMs exist in any UFD via minimum and maximum exponents of prime factorizations (unique up to units), satisfying $\operatorname{GCD}(x, y) \cdot \operatorname{LCM}(x, y) \sim x \cdot y$. Finally, formal power series rings $k[[x]]$ are PIDs, hence UFDs.
