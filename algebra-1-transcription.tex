@@ -1548,6 +1548,41 @@ breakable
   }
 \ExplSyntaxOff
 
+% Short forms for the running header (2026-11-27, this book only; the other preamble copies keep
+% the long header): "24 November 2026" -> 24.11.2026 and "Tuesday" -> Tue, so the header reads
+% "W11 | Tue, 24.11.2026 | Title". A date in another form is printed unchanged.
+\ExplSyntaxOn
+\seq_new:N \l__short_date_seq
+\cs_new:Npn \__short_date_month:n #1
+  {
+    \str_case:nnF {#1}
+      {
+        {January}{01} {February}{02} {March}{03} {April}{04} {May}{05} {June}{06}
+        {July}{07} {August}{08} {September}{09} {October}{10} {November}{11} {December}{12}
+      }
+      {#1}
+  }
+\cs_generate_variant:Nn \__short_date_month:n { e }
+\cs_new:Npn \__short_date_two_digits:n #1
+  {
+    \int_compare:nNnT {#1} < { 10 } { 0 }
+    \int_eval:n {#1}
+  }
+\cs_generate_variant:Nn \__short_date_two_digits:n { e }
+\NewDocumentCommand{\formatshortdate}{m}
+  {
+    \regex_extract_once:nnNTF { \A \s* (\d+) \s+ (\S+) \s+ (\d+) \s* \Z } {#1} \l__short_date_seq
+      {
+        \__short_date_two_digits:e { \seq_item:Nn \l__short_date_seq {2} } .
+        \__short_date_month:e { \seq_item:Nn \l__short_date_seq {3} } .
+        \seq_item:Nn \l__short_date_seq {4}
+      }
+      {#1}
+  }
+\NewDocumentCommand{\shortweekday}{m}
+  { \tl_range:nnn {#1} { 1 } { 3 } }
+\ExplSyntaxOff
+
 % Custom Lecture Chapter Command with Optional Semester/Week Number
 \newif\ifrestorelecturesubcounters
 \newcounter{currentweek}
@@ -1589,7 +1624,7 @@ breakable
     \setcounter{figure}{\TempFig}%
     \setcounter{table}{\TempTab}%
   \fi
-  \markboth{\chaptername\ \thechapter\ \ ---\ \ #2, \formatordinaldate{#4}\ \ ---\ \ #5}{}%
+  \markboth{W\thechapter\ \textbar\ \shortweekday{#2}, \formatshortdate{#4}\ \textbar\ #5}{}%
 }
 
 % Chapter 0 for the background the lectures assume (content/prerequisites.tex): its own part line
