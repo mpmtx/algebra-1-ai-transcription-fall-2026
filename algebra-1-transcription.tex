@@ -488,8 +488,82 @@ pdfauthor={Prof. Rahul Pandharipande}
 \fancyhead[L]{\parbox[b]{0.8\textwidth}{\sloppy\raggedright\small\sffamily\color{HeaderFooterFaint}\leftmark}}
 \fancyhead[R]{\parbox[b]{0.18\textwidth}{\sloppy\raggedleft\small\sffamily\color{HeaderFooterFaint}\textbf{\thepage} / \pageref*{LastPage}}}
 
-\fancyfoot[L]{\parbox[t]{0.47\textwidth}{\sloppy\raggedright\small\sffamily\color{HeaderFooterFaint}\rightmark}}
-\fancyfoot[R]{\parbox[t]{0.47\textwidth}{\sloppy\raggedleft\small\sffamily\color{HeaderFooterFaint}\lastxmark}}
+% 2026-11-26: The footer stays on one line. Before, the section (left) and the subsection (right)
+% each had a fixed box of 0.47\textwidth, and a longer title wrapped onto a second line (448 of 756
+% pages here, 26 of 226 in the textbook). Now the two share the line: the shorter one keeps its
+% natural width, the longer one gets the rest, and only a title that still does not fit is cut
+% after its last whole word that fits, ending in an ellipsis. Both stay flush with the margins.
+\newsavebox{\FooterLeftBox}
+\newsavebox{\FooterRightBox}
+\newsavebox{\FooterLineBox}
+\newlength{\FooterGap}
+\setlength{\FooterGap}{2em}
+\newlength{\FooterRoom}
+\newcommand{\FooterFont}{\small\sffamily}
+\newcommand{\FooterMarker}{\,\dots\unkern}% \unkern: \dots ends in a kern, which would keep a cut
+                                         % right-hand title off the margin
+% \FooterCut{<box>}{<width>}{<text>}: sets <box> to <text> cut after the last whole word that fits
+% in <width>, followed by \FooterMarker, at its natural width. TeX's line breaking finds the cut
+% (as in the truncate package): a paragraph whose first line is <width> wide, less the marker,
+% and whose second line is unlimited; the first line is then taken out and reboxed.
+\newcommand{\FooterCut}[3]{%
+  \begingroup
+  \setbox0\vbox{%
+    \FooterFont
+    \hsize=#2\relax
+    \settowidth{\rightskip}{\FooterMarker}%
+    \spaceskip=\fontdimen2\font plus \fontdimen3\font % spaces may stretch, never shrink
+    \xspaceskip=\spaceskip
+    \leftskip=0pt \parindent=0pt \parfillskip=0pt plus 1fil
+    \hyphenpenalty=10000 \exhyphenpenalty=10000
+    \tolerance=10000 \emergencystretch=0pt \hbadness=10000 \hfuzz=\maxdimen
+    \parshape 2 0pt \hsize 0pt \maxdimen
+    \noindent #3\par
+    \setbox0\lastbox \unskip \unpenalty
+    \setbox2\lastbox
+    \ifvoid2
+      \global\setbox\FooterLineBox\hbox{\unhbox0\unskip\unskip}%
+    \else
+      \global\setbox\FooterLineBox\hbox{\unhbox2\unskip\unskip\FooterMarker}%
+    \fi
+    \ifdim\wd\FooterLineBox>#2\relax
+      \global\setbox\FooterLineBox\hbox to #2{\unhbox\FooterLineBox}%
+    \fi}%
+  \endgroup
+  \setbox#1\box\FooterLineBox
+}
+% \OneLineFooter{<left>}{<right>}: the footer line, left text flush left, right text flush right.
+% The colour comes first, in vertical mode, as in the old footer boxes: the [t] box then has no
+% height and the line hangs below its top, so the footer sits where it always did. The boxes are
+% made after it, so they take its colour. The line gets the height of ordinary footer text
+% (\FooterTextHeight), so a tall title such as Z/mZ (\faktor) reaches up towards the rule
+% instead of lowering the footer on its page.
+\newlength{\FooterTextHeight}
+\newcommand{\OneLineFooter}[2]{%
+  \parbox[t]{\headwidth}{%
+    \color{HeaderFooterFaint}%
+    \sbox{\FooterLeftBox}{\FooterFont #1}%
+    \sbox{\FooterRightBox}{\FooterFont #2}%
+    \ifdim\dimexpr\wd\FooterLeftBox+\FooterGap+\wd\FooterRightBox\relax>\headwidth
+      \FooterRoom=\dimexpr(\headwidth-\FooterGap)/2\relax
+      \ifdim\wd\FooterLeftBox<\FooterRoom
+        \FooterRoom=\dimexpr\headwidth-\FooterGap-\wd\FooterLeftBox\relax
+        \FooterCut{\FooterRightBox}{\FooterRoom}{#2}%
+      \else\ifdim\wd\FooterRightBox<\FooterRoom
+        \FooterRoom=\dimexpr\headwidth-\FooterGap-\wd\FooterRightBox\relax
+        \FooterCut{\FooterLeftBox}{\FooterRoom}{#1}%
+      \else
+        \FooterCut{\FooterLeftBox}{\FooterRoom}{#1}%
+        \FooterCut{\FooterRightBox}{\FooterRoom}{#2}%
+      \fi\fi
+    \fi
+    \setbox\FooterLineBox\hbox to\headwidth{\usebox{\FooterLeftBox}\hfil\usebox{\FooterRightBox}}%
+    \settoheight{\FooterTextHeight}{\FooterFont fl}%
+    \ht\FooterLineBox=\FooterTextHeight
+    \box\FooterLineBox
+  }%
+}
+\fancyfoot[C]{\OneLineFooter{\rightmark}{\lastxmark}}
 
 % 2026-10-26: Header and footer rule thickness matched to nice box (overview) and aiNote at 1pt (previously 0.5pt):
 \renewcommand{\headrule}{\hbox to\headwidth{\color{HeaderFooterLine}\leaders\hrule height 1pt\hfill}}
