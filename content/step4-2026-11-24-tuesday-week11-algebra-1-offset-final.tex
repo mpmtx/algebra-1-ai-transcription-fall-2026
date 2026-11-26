@@ -1366,7 +1366,7 @@ I write it in the corner: so, $K = \faktor{k[x]}{(f)}$ is a field \inlinemetanot
 
 The second is that our original $k$ sits inside $K$ canonically \inlinemetanote{writes: $k \subset K$ canonically}. This is a difficult subject if you have bad handwriting, all right? So, my big $K$ is a field, we've proven it, and the second is that the little $k$ we started with sits inside canonically. It's a subfield.
 
-And the proof of this is just I give you the map: if you have an element, say $\gamma$ in little $k$, how do I get to big $K$? I just consider the quotient class of $\gamma$ in big $K$ \inlinemetanote{writes \qt{pf: $\gamma \in k$} and \qt{$\longmapsto \bar{\gamma} \in K$}}. And that's the homomorphism from little $k$ to big $K$ \inlinemetanote{writes: $\Phi \colon k \to K$}. It's just you take the equivalence class, and nothing else happens.
+And the proof of this is just I give you the map: if you have an element, say $\gamma$ in little $k$, how do I get to big $K$? I just consider the quotient class of $\gamma$ in big $K$ \inlinemetanote{writes \qt{pf: $\gamma \in k$} and \qt{$\longmapsto \bar{\gamma} \in K$}}. And that's the homomorphism from little $k$ to big $K$ \inlinemetanote{writes: $\phi \colon k \to K$}. It's just you take the equivalence class, and nothing else happens.
 
 So, you have to worry: this is a homomorphism from one field to the other. So, there are only two possibilities: either it's an injection, or it's zero --- but it can't be zero because $1$ goes to $1$. Another way to say it is that if I take two constants... how could a constant that's not zero go to zero here? The only way is if that constant were in this ideal. But that's impossible, because this is some polynomial of some degree; this ideal doesn't have any constants in it. So, the constants live.
 
@@ -1379,11 +1379,11 @@ The original field $k$ sits canonically inside $K = \faktor{k[x]}{(f)}$ as a sub
 \end{claim}
 
 \begin{proof}
-Define the map $\Phi \colon k \to K$ by sending each element $\gamma \in k$ (viewed as a constant polynomial in $k[x]$) to its residue class modulo $(f)$:
+Define the map $\phi \colon k \to K$ by sending each element $\gamma \in k$ (viewed as a constant polynomial in $k[x]$) to its residue class modulo $(f)$:
 \[
 \gamma \in k \longmapsto \bar{\gamma} \in K.
 \]
-This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $\Phi$ is injective, embedding $k$ canonically as a subfield of $K$.
+This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $\phi$ is injective, embedding $k$ canonically as a subfield of $K$.
 \end{proof}
 
 \begin{steps}[Why the Ideal \texorpdfstring{$(f)$}{(f)} Contains No Non-Zero Constants]
@@ -1605,7 +1605,7 @@ k(\beta) := \bigcap_{\substack{L \subset F \text{ subfield} \\ k \subset L, \; \
 \end{content}
 
 \begin{speech}[01:22:43 - 01:24:23]
-So, this is the conclusion: then there exists a canonical isomorphism $\Phi$ from our $K$ --- that's the one that was the first one --- and this is a subfield (i.e., $k$ is a subfield of both), to this subfield \inlinemetanote{writes \qt{Then $\exists$ canonical isom.\ $\Phi \colon$} and draws the triangle diagram with $K \xrightarrow{\sim} k(\beta)$ at top and $k$ below}.
+So, this is the conclusion: then there exists a canonical isomorphism $\phi$ from our $K$ --- that's the one that was the first one --- and this is a subfield (i.e., $k$ is a subfield of both), to this subfield \inlinemetanote{writes \qt{Then $\exists$ canonical isom.\ $\phi \colon$} and draws the triangle diagram with $K \xrightarrow{\sim} k(\beta)$ at top and $k$ below}.
 
 I have to prove this theorem, but the statement is a little complicated, so we will discuss it a little bit. The idea here is: this theorem is supposed to explain why there's no other construction than what you were given at the beginning, this big field. The idea was that you suppose you find any field where I have a root. This field has this subfield which just contains $k$ and $\beta$, and it's the smallest thing that contains that. That thing has to be isomorphic to the original construction. There's no other possibility.
 
@@ -1620,7 +1620,7 @@ Let $k$ be a field and $f \in k[x]$ be irreducible. Suppose we have a field exte
 
 Then there exists a canonical field isomorphism
 \[
-\Phi \colon K \xrightarrow{\;\sim\;} k(\beta)
+\phi \colon K \xrightarrow{\;\sim\;} k(\beta)
 \]
 extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \in k(\beta)$), where $K = \faktor{k[x]}{(f)}$.
 \end{theorem}
@@ -1638,7 +1638,7 @@ extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \i
 - Coordinates:
   Tower: F at (0, 2.8), k(\beta) at (0, 1.4), k at (0, 0); vertical lines (0, 1.75)--(0, 2.45) and (0, 0.35)--(0, 1.05).
   Triangle: K at (3.2, 1.8), k(\beta) at (6.2, 1.8), k_tri at (4.7, 0);
-  arrow K -> k(\beta) from (3.6, 1.8) to (5.65, 1.8) with "\Phi" above (auto) and "\sim" below ([auto, swap]) at midway.
+  arrow K -> k(\beta) from (3.6, 1.8) to (5.65, 1.8) with "\sim" above (auto) at midway; "\phi \colon" anchor east at (2.95, 1.8), left of K, as on the board ("\phi: K -> k(\beta)" with the tilde over the arrow, frame 01:32:20).
   Inclusion lines (4.5, 0.35)--(3.35, 1.45) and (4.9, 0.35)--(6.05, 1.45).
   Right summary: K_s at (9.5, 1.8), k_s at (9.5, 0), line (9.5, 0.35)--(9.5, 1.45), "\ni \alpha" anchor west at (9.85, 1.8), "only soln" anchor west at (9.85, 0.9).
 - Collisions: horizontal separation between Tower (x <= 0.5), Triangle (x in [2.8, 6.7]), and Summary (x >= 9.2) is >= 2.3 cm; "\ni \alpha" sits at 9.85, clear of K at 9.5.
@@ -1663,8 +1663,8 @@ extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \i
     \node[inner sep=0.15cm, figBlue] at (3.2, 1.8) {$K$};
     \node[inner sep=0.15cm, figGreen] at (6.2, 1.8) {$k(\beta)$};
     \node[inner sep=0.15cm] at (4.7, 0) {$k$};
-    \path (3.6, 1.8) -- (5.65, 1.8) node[midway, auto, inner sep=0.12cm, figRed] {$\Phi$}
-                                      node[midway, auto, swap, inner sep=0.12cm, figRed] {$\sim$};
+    \path (3.6, 1.8) -- (5.65, 1.8) node[midway, auto, inner sep=0.12cm, figRed] {$\sim$};
+    \node[anchor=east, inner sep=0.1cm, figRed] at (2.95, 1.8) {$\phi \colon$};
 
     \node[inner sep=0.15cm, figBlue] at (9.5, 1.8) {$K$};
     \node[anchor=west, inner sep=0.15cm, figRed] at (9.85, 1.8) {$\ni \alpha$};
@@ -1727,7 +1727,7 @@ We compare our explicit construction $K = \faktor{k[x]}{(f)}$ (containing $\alph
 % timestamp: 01:26:22
 % topic: Proof of uniqueness theorem: setup comparing K and F
 % board_state: thm:uniqueness-root-extension
-% next_goal: Define evaluation ring homomorphism Phi: k[x] -> F sending x -> beta and compute ker(Phi) = (f)
+% next_goal: Define evaluation ring homomorphism phi: k[x] -> F sending x -> beta and compute ker(phi) = (f)
 % open_loops: none
 \end{hidden}
 
@@ -1736,61 +1736,61 @@ I need to find some way to relate these two pictures. And for that, I need some 
 
 So, what could we do? Things in algebra are hard to map, because in order to make a homomorphism you have to respect multiplication here and there --- it's complicated. But there's one thing that's easy to map, and that's a polynomial ring. It's easy to write ring homs of polynomial rings \inlinemetanote{writes: Easy to write ring homs of poly.\ rings}.
 
-Because for a polynomial ring, you just have to say where the variable goes, and that's anything --- you can make any map. This argument starts by writing this homomorphism of a polynomial ring: $k$ just goes to $k$ isomorphically, because we have $k$ sitting inside here and here \inlinemetanote{writes \qt{$\Phi \colon k[x] \to F$} and \qt{$k \xrightarrow{\sim} k$}}. So, nothing happens with constants: we know how constants go here, right?
+Because for a polynomial ring, you just have to say where the variable goes, and that's anything --- you can make any map. This argument starts by writing this homomorphism of a polynomial ring: $k$ just goes to $k$ isomorphically, because we have $k$ sitting inside here and here \inlinemetanote{writes \qt{$\phi \colon k[x] \to F$} and \qt{$k \xrightarrow{\sim} k$}}. So, nothing happens with constants: we know how constants go here, right?
 
 And then we send our element $x$ goes to $\beta$ \inlinemetanote{writes: $x \mapsto \beta$}. So, this uniquely defines a homomorphism of rings from here to here \inlinemetanote{draws a brace and writes: uniquely defines a hom.\ of rings}. Do you accept that?
 \end{speech}
 
-\begin{content}[{Defining the Ring Homomorphism \texorpdfstring{$\Phi \colon k[x] \to F$}{Phi : k[x] -> F}}]
+\begin{content}[{Defining the Ring Homomorphism \texorpdfstring{$\phi \colon k[x] \to F$}{phi : k[x] -> F}}]
 Since it is straightforward to specify ring homomorphisms out of a polynomial ring (by specifying where constants and the indeterminate $x$ go), we define a ring homomorphism
 \[
-\Phi \colon k[x] \to F
+\phi \colon k[x] \to F
 \]
 by:
 \begin{align*}
 k &\xrightarrow{\;\sim\;} k \subset F && \text{(identity on constants)}, \\
 x &\longmapsto \beta && \text{(evaluation at $\beta$)}.
 \end{align*}
-These two conditions uniquely define a ring homomorphism $\Phi \colon k[x] \to F$, namely the evaluation map $\Phi(g(x)) = g(\beta)$ for every $g \in k[x]$.
+These two conditions uniquely define a ring homomorphism $\phi \colon k[x] \to F$, namely the evaluation map $\phi(g(x)) = g(\beta)$ for every $g \in k[x]$.
 \end{content}
 
 \begin{speech}[01:27:53 - 01:29:23]
-Okay, so, when we have a homomorphism of rings, we could find the kernel: what is the kernel of $\Phi$ \inlinemetanote{writes: $\ker(\Phi) \subset k[x]$}?
+Okay, so, when we have a homomorphism of rings, we could find the kernel: what is the kernel of $\phi$ \inlinemetanote{writes: $\ker(\phi) \subset k[x]$}?
 
-Well, the kernel of $\Phi$ are what would go to zero on this... We don't really know what in the kernel of $\Phi$ is yet, but we certainly know $(f)$ is in the kernel, because $f$ of $\beta$ is equal to zero, that's what we're starting with \inlinemetanote{writes \qt{$(f) \subset \ker(\Phi)$} and \qt{since $f(\beta) = 0$}}. Okay?
+Well, the kernel of $\phi$ are what would go to zero on this... We don't really know what in the kernel of $\phi$ is yet, but we certainly know $(f)$ is in the kernel, because $f$ of $\beta$ is equal to zero, that's what we're starting with \inlinemetanote{writes \qt{$(f) \subset \ker(\phi)$} and \qt{since $f(\beta) = 0$}}. Okay?
 
 But we also know that $(f)$ is a maximal ideal \inlinemetanote{writes: But $(f)$ is max.\ ideal}. We argued that at the beginning. And we know that this map, this is a ring map, takes $1$ to $1$. It doesn't take everything to zero. So, there's no room for anything else. $(f)$ has to be the kernel.
 
-If the kernel's an ideal that contains this, the only possibility is it's equal to $(f)$ or it's the whole ring, and it can't be the whole ring because $1$ doesn't go to zero. So, $(f)$ is equal to the kernel \inlinemetanote{writes and boxes: So $(f) = \ker(\Phi)$}.
+If the kernel's an ideal that contains this, the only possibility is it's equal to $(f)$ or it's the whole ring, and it can't be the whole ring because $1$ doesn't go to zero. So, $(f)$ is equal to the kernel \inlinemetanote{writes and boxes: So $(f) = \ker(\phi)$}.
 \end{speech}
 
-\begin{content}[{Determining the Kernel of \texorpdfstring{$\Phi$}{Phi}}]
-Consider the kernel $\ker(\Phi) \subset k[x]$, which is an ideal of $k[x]$. Since $\Phi(f) = f(\beta) = 0$, we have $f \in \ker(\Phi)$, and hence the principal ideal generated by $f$ is contained in the kernel:
+\begin{content}[{Determining the Kernel of \texorpdfstring{$\phi$}{phi}}]
+Consider the kernel $\ker(\phi) \subset k[x]$, which is an ideal of $k[x]$. Since $\phi(f) = f(\beta) = 0$, we have $f \in \ker(\phi)$, and hence the principal ideal generated by $f$ is contained in the kernel:
 \[
-(f) \subset \ker(\Phi).
+(f) \subset \ker(\phi).
 \]
-By the proof of \cref{clm:quotient-is-field}, $(f)$ is a \emph{maximal} ideal in $k[x]$. Therefore, there are only two possibilities for the ideal $\ker(\Phi)$:
+By the proof of \cref{clm:quotient-is-field}, $(f)$ is a \emph{maximal} ideal in $k[x]$. Therefore, there are only two possibilities for the ideal $\ker(\phi)$:
 \[
-\ker(\Phi) = (f) \qquad \text{or} \qquad \ker(\Phi) = k[x].
+\ker(\phi) = (f) \qquad \text{or} \qquad \ker(\phi) = k[x].
 \]
-However, $\Phi$ is a ring homomorphism sending $1 \in k \subset k[x]$ to $1 \in F$, and in a field $1 \neq 0$, so $1 \notin \ker(\Phi)$ and $\ker(\Phi) \neq k[x]$. Consequently:
+However, $\phi$ is a ring homomorphism sending $1 \in k \subset k[x]$ to $1 \in F$, and in a field $1 \neq 0$, so $1 \notin \ker(\phi)$ and $\ker(\phi) \neq k[x]$. Consequently:
 \[
-\boxed{(f) = \ker(\Phi)}.
+\boxed{(f) = \ker(\phi)}.
 \]
 \end{content}
 
 \begin{speech}[01:29:23 - 01:30:44]
 Then we use this ring isomorphism theorem. I have a few moments here; we'll start also tomorrow... \inlinemetanote{swaps the lower board up and the upper board down, and erases the left side of the lower board}
 
-So, when we studied rings, we know that using that we have this $\Phi$ from here to $F$, where $x$ goes to $\beta$, and the kernel we know is this, then we can conclude (that's one of our isomorphism theorems) that this modulo $(f)$ maps to $F$ \inlinemetanote{writes \qt{$\Phi \colon k[x] \to F$}, \qt{$x \mapsto \beta$}, \qt{$\ker(\Phi) = (f)$}, and \qt{$\faktor{k[x]}{(f)} \hookrightarrow F$} with $k$ below connected to both}.
+So, when we studied rings, we know that using that we have this $\phi$ from here to $F$, where $x$ goes to $\beta$, and the kernel we know is this, then we can conclude (that's one of our isomorphism theorems) that this modulo $(f)$ maps to $F$ \inlinemetanote{writes \qt{$\phi \colon k[x] \to F$}, \qt{$x \mapsto \beta$}, \qt{$\ker(\phi) = (f)$}, and \qt{$\faktor{k[x]}{(f)} \to F$} with $k$ below connected to both}.
 
 If we have a kernel, then the quotient maps here, all right? This is our $K$ already, and our element $\alpha$ here is this $\bar{x}$, and the $\alpha$ here goes to the $\beta$ \inlinemetanote{writes \qt{$K =$} to the left of $\faktor{k[x]}{(f)}$, connects $K$ down to $k$, writes $\alpha$ above $K$, $\beta$ above $F$, and draws \qt{$\alpha \mapsto \beta$}}. So, we've already done most of it: we have this $K$.
 \end{speech}
 
 \begin{content}[Induced Embedding of \texorpdfstring{$K$}{K} into \texorpdfstring{$F$}{F}]
-By the First Isomorphism Theorem for rings (Week 4, \cref{thm:first-isomorphism-theorem-statement}), since $\Phi \colon k[x] \to F$ has kernel $\ker(\Phi) = (f)$, it descends to an injective ring homomorphism (field embedding) on the quotient:
+By the First Isomorphism Theorem for rings (Week 4, \cref{thm:first-isomorphism-theorem-statement}), since $\phi \colon k[x] \to F$ has kernel $\ker(\phi) = (f)$, it descends to an injective ring homomorphism (field embedding) on the quotient:
 \[
-\bar{\Phi} \colon K = \faktor{k[x]}{(f)} \hookrightarrow F,
+\bar{\phi} \colon K = \faktor{k[x]}{(f)} \hookrightarrow F,
 \]
 which acts as the identity on the base subfield $k \subset K$ and maps $\alpha = \bar{x} \in K$ to $\beta \in F$.
 
@@ -1799,23 +1799,24 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
 \definecolor{figRed}{HTML}{B5251C} % RGB (181, 37, 28): brick red (BrickRed)
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
 \begin{hidden}
-- Canvas: no scale, cm; left side shows \Phi : k[x] -> F with x -> \beta and ker(\Phi) = (f); right side shows the factored triangle K = k[x]/(f) \hookrightarrow F over k, with \alpha \mapsto \beta above
+- Canvas: no scale, cm; left side shows \phi : k[x] -> F with x -> \beta and ker(\phi) = (f); right side shows the factored triangle K = k[x]/(f) -> F over k (a plain arrow on the board, frame 01:32:20), with \alpha \mapsto \beta above; x \mapsto \beta sits above the left arrow, as on the board
 - Order: (1) arrows and triangle lines; (2) all text last
 - Coordinates:
-  Left: kx at (0, 1.8), F1 at (2.8, 1.8); arrow (0.55, 1.8) -- (2.45, 1.8) with "\Phi" above (auto);
-  notes below: "x \mapsto \beta" at (1.3, 0.9), "\ker(\Phi) = (f)" at (1.3, 0.25)
+  Left: kx at (0, 1.8), F1 at (2.8, 1.8); arrow (0.55, 1.8) -- (2.45, 1.8) with "\phi" above (auto);
+  above: x at (0, 2.85) -> \beta at (2.8, 2.85), arrow (0.3, 2.85) -- (2.5, 2.85); below: "\ker(\phi) = (f)" at (1.3, 0.9)
   Right (shifted to x >= 4.8): K_q at (6.0, 1.8) holding "K = \faktor{k[x]}{(f)}" (spans about x in [4.75, 7.3], y in [1.2, 2.4]: the slanted quotient is wider than the stacked fraction it replaced at review), F2 at (9.6, 1.8), k_bot at (8.1, 0);
-  hook arrow (7.55, 1.8) -- (9.2, 1.8) (moved right at review, clear of the wider label) with "\bar{\Phi}" below ([auto, swap]);
+  arrow (7.55, 1.8) -- (9.2, 1.8), plain as on the board (moved right at review, clear of the wider label), with "\bar{\phi}" above (auto), as on the board;
   tower lines (7.85, 0.32)--(6.45, 1.12) and (8.3, 0.32)--(9.45, 1.45);
   top map \alpha at (6.5, 2.85) -> \beta at (9.6, 2.85), arrow (6.85, 2.85) -- (9.25, 2.85)
-- Collisions: left panel x in [-0.45, 3.2], right panel x in [4.95, 10.0], gap >= 1.75 cm; hook arrow starts at 7.25 right of K_q; tower line stops at (6.45, 1.12) below the denominator of K_q; top \alpha \mapsto \beta sits at y=2.85, well above K_q -> F at y=1.8.
+- Collisions: left panel x in [-0.45, 3.2], right panel x in [4.95, 10.0], gap >= 1.75 cm; the arrow starts at 7.55, right of K_q; \bar{\phi} above it stays below the top map at y = 2.85; tower line stops at (6.45, 1.12) below the denominator of K_q; top \alpha \mapsto \beta sits at y=2.85, well above K_q -> F at y=1.8.
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth]
     % (1) Arrows and inclusion lines
     \draw[->, thick, figBlue] (0.55, 1.8) -- (2.45, 1.8);
+    \draw[|->, thick, figBlue] (0.3, 2.85) -- (2.5, 2.85);
 
-    \draw[right hook->, thick, figRed] (7.55, 1.8) -- (9.2, 1.8);
+    \draw[->, thick, figRed] (7.55, 1.8) -- (9.2, 1.8);
     \draw[thick, figGray] (7.85, 0.32) -- (6.45, 1.12);
     \draw[thick, figGray] (8.3, 0.32) -- (9.45, 1.45);
     \draw[|->, thick, figRed] (6.85, 2.85) -- (9.25, 2.85);
@@ -1823,14 +1824,15 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
     % (2) Text last
     \node[inner sep=0.15cm] at (0, 1.8) {$k[x]$};
     \node[inner sep=0.15cm, figGreen] at (2.8, 1.8) {$F$};
-    \path (0.55, 1.8) -- (2.45, 1.8) node[midway, auto, inner sep=0.12cm, figBlue] {$\Phi$};
-    \node[inner sep=0.15cm, font=\small] at (1.3, 0.9) {$x \mapsto \beta$};
-    \node[inner sep=0.15cm, font=\small] at (1.3, 0.25) {$\ker(\Phi) = (f)$};
+    \path (0.55, 1.8) -- (2.45, 1.8) node[midway, auto, inner sep=0.12cm, figBlue] {$\phi$};
+    \node[inner sep=0.15cm] at (0, 2.85) {$x$};
+    \node[inner sep=0.15cm, figGreen] at (2.8, 2.85) {$\beta$};
+    \node[inner sep=0.15cm, font=\small] at (1.3, 0.9) {$\ker(\phi) = (f)$};
 
     \node[inner sep=0.15cm, figBlue] at (6.0, 1.8) {$K = \faktor{k[x]}{(f)}$};
     \node[inner sep=0.15cm, figGreen] at (9.6, 1.8) {$F$};
     \node[inner sep=0.15cm] at (8.1, 0) {$k$};
-    \path (7.55, 1.8) -- (9.2, 1.8) node[midway, auto, swap, inner sep=0.12cm, figRed] {$\bar{\Phi}$};
+    \path (7.55, 1.8) -- (9.2, 1.8) node[midway, auto, inner sep=0.12cm, figRed] {$\bar{\phi}$};
     \node[inner sep=0.15cm, figBlue] at (6.5, 2.85) {$\alpha$};
     \node[inner sep=0.15cm, figGreen] at (9.6, 2.85) {$\beta$};
 \end{tikzpicture}
@@ -1838,31 +1840,31 @@ which acts as the identity on the base subfield $k \subset K$ and maps $\alpha =
 \end{content}
 
 \begin{speech}[01:30:44 - 01:31:46]
-Then the final thing is what's the image \inlinemetanote{writes $\bar{\Phi}$ above the arrow $\faktor{k[x]}{(f)} \hookrightarrow F$}? This is maybe called $\bar{\Phi}$, but it's still $\Phi$. What is the image of this?
+Then the final thing is what's the image \inlinemetanote{writes $\bar{\phi}$ above the arrow $\faktor{k[x]}{(f)} \to F$}? This is maybe called $\bar{\phi}$, but it's still $\phi$. What is the image of this?
 
-Well, the image has to be a field, is a subfield, because this is a field, and the homomorphic images of fields have to be fields, so it's a subfield \inlinemetanote{writes \qt{$\operatorname{Im}(\bar{\Phi}) \subset F$} and \qt{is a subfield}}. And it sits in between: this is the image, it's a subfield that sits in between, and it contains $\beta$ \inlinemetanote{draws a tower $F$ over $\operatorname{Im}(\bar{\Phi})$ over $k$ and writes \qt{$\ni \beta$} next to $\operatorname{Im}(\bar{\Phi})$}.
+Well, the image has to be a field, is a subfield, because this is a field, and the homomorphic images of fields have to be fields, so it's a subfield \inlinemetanote{writes \qt{$\operatorname{Im}(\bar{\phi}) \subset F$} and \qt{is a subfield}}. And it sits in between: this is the image, it's a subfield that sits in between, and it contains $\beta$ \inlinemetanote{draws a tower $F$ over $\operatorname{Im}(\bar{\phi})$ over $k$ and writes \qt{$\ni \beta$} next to $\operatorname{Im}(\bar{\phi})$}.
 
-And now the claim is this is the smallest subfield that contains that and $\beta$, and the reason for that is the only thing in this field are polynomials in $k$ and $\beta$ --- that's it, because that's just the image of this, are polynomials in $k$ and $\beta$, so polynomials in $\beta$ with coefficients $k$. So, that means that the image is the smallest subfield \inlinemetanote{writes: $\operatorname{Im}(\bar{\Phi}) = k(\beta)$}.
+And now the claim is this is the smallest subfield that contains that and $\beta$, and the reason for that is the only thing in this field are polynomials in $k$ and $\beta$ --- that's it, because that's just the image of this, are polynomials in $k$ and $\beta$, so polynomials in $\beta$ with coefficients $k$. So, that means that the image is the smallest subfield \inlinemetanote{writes: $\operatorname{Im}(\phi) = k(\beta)$}.
 \end{speech}
 
 \begin{content}[Identifying the Image with \texorpdfstring{$k(\beta)$}{k(beta)}]
-Consider the image $\operatorname{Im}(\bar{\Phi}) \subset F$. Because $K$ is a field and $\bar{\Phi}$ is a non-zero ring homomorphism (indeed an injection), $\operatorname{Im}(\bar{\Phi})$ is a subfield of $F$. Moreover:
+Consider the image $\operatorname{Im}(\bar{\phi}) \subset F$. Because $K$ is a field and $\bar{\phi}$ is a non-zero ring homomorphism (indeed an injection), $\operatorname{Im}(\bar{\phi})$ is a subfield of $F$. Moreover:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item $\operatorname{Im}(\bar{\Phi})$ contains $k$ (since $\bar{\Phi}(\bar{\gamma}) = \gamma$ for all $\gamma \in k$) and contains $\beta$ (since $\bar{\Phi}(\alpha) = \beta$).
-    \item Conversely, every element of $\operatorname{Im}(\bar{\Phi})$ is of the form $\bar{\Phi}(\overline{g(x)}) = \Phi(g(x)) = g(\beta)$ for some polynomial $g \in k[x]$. Since any subfield of $F$ containing $k$ and $\beta$ must be closed under addition and multiplication and therefore must contain all polynomial expressions $g(\beta)$, $\operatorname{Im}(\bar{\Phi})$ is contained in every subfield of $F$ that contains $k$ and $\beta$.
+    \item $\operatorname{Im}(\bar{\phi})$ contains $k$ (since $\bar{\phi}(\bar{\gamma}) = \gamma$ for all $\gamma \in k$) and contains $\beta$ (since $\bar{\phi}(\alpha) = \beta$).
+    \item Conversely, every element of $\operatorname{Im}(\bar{\phi})$ is of the form $\bar{\phi}(\overline{g(x)}) = \phi(g(x)) = g(\beta)$ for some polynomial $g \in k[x]$. Since any subfield of $F$ containing $k$ and $\beta$ must be closed under addition and multiplication and therefore must contain all polynomial expressions $g(\beta)$, $\operatorname{Im}(\bar{\phi})$ is contained in every subfield of $F$ that contains $k$ and $\beta$.
 \end{enumerate}
-Hence, $\operatorname{Im}(\bar{\Phi})$ is the smallest subfield of $F$ containing $k$ and $\beta$, which by \cref{def:subfield-generated-by-beta} means
+Hence, $\operatorname{Im}(\bar{\phi})$ is the smallest subfield of $F$ containing $k$ and $\beta$, which by \cref{def:subfield-generated-by-beta} means
 \[
-\operatorname{Im}(\bar{\Phi}) = k(\beta).
+\operatorname{Im}(\bar{\phi}) = k(\beta).
 \]
-Since $\bar{\Phi} \colon K \hookrightarrow F$ is injective and has image $k(\beta)$, restricting its codomain gives the canonical field isomorphism $\Phi \colon K \xrightarrow{\sim} k(\beta)$ (which restricts to the identity on $k$ and maps $\alpha \mapsto \beta$). This completes the proof of \cref{thm:uniqueness-root-extension}.
+Since $\bar{\phi} \colon K \hookrightarrow F$ is injective and has image $k(\beta)$, restricting its codomain gives the canonical field isomorphism $\phi \colon K \xrightarrow{\sim} k(\beta)$ (which restricts to the identity on $k$ and maps $\alpha \mapsto \beta$). This completes the proof of \cref{thm:uniqueness-root-extension}.
 \end{content}
 
 \end{proofWrapper}
 
 \begin{aiNote}[Beyond the Lecture: Kronecker's Theorem and Polynomials in \texorpdfstring{$\beta$}{beta}]
 % [PERSISTENT, ADDITION]
-The existence result (\cref{clm:quotient-is-field}, \cref{clm:canonical-embedding}, and \cref{clm:alpha-is-root}) is commonly known as \emph{Kronecker's Theorem}. Notice also a striking consequence of the proof of \cref{thm:uniqueness-root-extension}: although $k(\beta)$ is defined in general as the smallest \emph{subfield} containing $k$ and $\beta$ (which normally requires quotients $g(\beta)/h(\beta)$), here $\operatorname{Im}(\bar{\Phi}) = \{ g(\beta) \mid g \in k[x] \}$ is already a field! Thus, every element of $k(\beta)$ can be written purely as a polynomial in $\beta$ over $k$ (and in fact uniquely of degree $< \deg(f)$).
+The existence result (\cref{clm:quotient-is-field}, \cref{clm:canonical-embedding}, and \cref{clm:alpha-is-root}) is commonly known as \emph{Kronecker's Theorem}. Notice also a striking consequence of the proof of \cref{thm:uniqueness-root-extension}: although $k(\beta)$ is defined in general as the smallest \emph{subfield} containing $k$ and $\beta$ (which normally requires quotients $g(\beta)/h(\beta)$), here $\operatorname{Im}(\bar{\phi}) = \{ g(\beta) \mid g \in k[x] \}$ is already a field! Thus, every element of $k(\beta)$ can be written purely as a polynomial in $\beta$ over $k$ (and in fact uniquely of degree $< \deg(f)$).
 \end{aiNote}
 
 \begin{speech}[01:31:46 - 01:32:24]
@@ -1880,6 +1882,6 @@ Okay. That's it.
     \item \textbf{Simple Groups and Simplicity of $A_5$:} A group is simple (\cref{def:simple-group}) if it has no non-trivial normal subgroups. Using the conjugacy class sizes of $A_5$ ($1, 15, 20, 12, 12$), no proper sum containing $1$ divides $60$, so $A_5$ is simple (\cref{prop:a5-simple}), whereas $A_4$ has a normal subgroup of order $1 + 3 = 4$ and is not simple.
     \item \textbf{Classification Hints and Directions in Group Theory:} Groups of order $p$ are cyclic ($\faktor{\mathbb{Z}}{p\mathbb{Z}}$), groups of order $p^2$ are abelian (stated as an exercise), and groups of order $pq$ ($p > q$) have a unique normal $p$-Sylow subgroup $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ acted on by conjugation by $\faktor{\mathbb{Z}}{q\mathbb{Z}}$. Broader directions include the classification of finite simple groups, representation theory, Klein's Erlangen program, and Lie groups ($O_n, SO_n, U_n, SU_n, Sp_{2n}$, and exceptional groups $G_2, F_4, E_6, E_7, E_8$).
     \item \textbf{The Field $K = \faktor{k[x]}{(f)}$:} Given an irreducible polynomial $f \in k[x]$, the principal ideal $(f)$ is maximal in the $\mathrm{PID}$ $k[x]$, so $K = \faktor{k[x]}{(f)}$ is a field (\cref{clm:quotient-is-field}) containing $k$ canonically (\cref{clm:canonical-embedding}) and a root $\alpha = \bar{x}$ of $f$ (\cref{clm:alpha-is-root}), as exemplified by $\faktor{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$.
-    \item \textbf{Uniqueness of the Construction (\cref{thm:uniqueness-root-extension}):} For any field extension $F \supset k$ containing a root $\beta \in F$ of $f$, the evaluation map $\Phi \colon k[x] \to F$ ($x \mapsto \beta$) has kernel $(f)$ and induces a canonical isomorphism $K \xrightarrow{\sim} k(\beta)$ onto the subfield generated by $\beta$ over $k$.
+    \item \textbf{Uniqueness of the Construction (\cref{thm:uniqueness-root-extension}):} For any field extension $F \supset k$ containing a root $\beta \in F$ of $f$, the evaluation map $\phi \colon k[x] \to F$ ($x \mapsto \beta$) has kernel $(f)$ and induces a canonical isomorphism $K \xrightarrow{\sim} k(\beta)$ onto the subfield generated by $\beta$ over $k$.
 \end{itemize}
 \end{overview}
