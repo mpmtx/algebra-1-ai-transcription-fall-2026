@@ -483,11 +483,6 @@ pdfauthor={Prof. Rahul Pandharipande}
 \pagestyle{fancy}
 \fancyhf{}
 
-% FIX: \parbox[b] sorgt dafür, dass sich mehrzeilige Header nach oben ausdehnen 
-% und immer perfekt bündig mit der Seitenzahl auf der Linie aufliegen.
-\fancyhead[L]{\parbox[b]{0.8\textwidth}{\sloppy\raggedright\small\sffamily\color{HeaderFooterFaint}\leftmark}}
-\fancyhead[R]{\parbox[b]{0.18\textwidth}{\sloppy\raggedleft\small\sffamily\color{HeaderFooterFaint}\textbf{\thepage} / \pageref*{LastPage}}}
-
 % 2026-11-26: The footer stays on one line. Before, the section (left) and the subsection (right)
 % each had a fixed box of 0.47\textwidth, and a longer title wrapped onto a second line (448 of 756
 % pages here, 26 of 226 in the textbook). Now the two share the line: the shorter one keeps its
@@ -499,7 +494,7 @@ pdfauthor={Prof. Rahul Pandharipande}
 \newlength{\FooterGap}
 \setlength{\FooterGap}{2em}
 \newlength{\FooterRoom}
-\newcommand{\FooterFont}{\small\sffamily}
+\newcommand{\FooterFont}{\footnotesize\sffamily}% 2026-11-27: one step smaller (was \small), header too
 \newcommand{\FooterMarker}{\,\dots\unkern}% \unkern: \dots ends in a kern, which would keep a cut
                                          % right-hand title off the margin
 % \FooterCut{<box>}{<width>}{<text>}: sets <box> to <text> cut after the last whole word that fits
@@ -565,13 +560,34 @@ pdfauthor={Prof. Rahul Pandharipande}
 }
 \fancyfoot[C]{\OneLineFooter{\rightmark}{\lastxmark}}
 
+% 2026-11-27: The header is one line too, with the page number on the same line. Before, the
+% lecture line had a box of 0.8\textwidth and wrapped onto a second line for about half the
+% lectures. Now the page number keeps its natural width at the right margin, the lecture line
+% ("W11 | Tue, 24.11.2026 | Title") gets the rest, and a title that does not fit is cut after its
+% last whole word that fits, with an ellipsis (\FooterCut, same font as the footer).
+\newsavebox{\HeaderLeftBox}
+\newsavebox{\HeaderRightBox}
+\newcommand{\OneLineHeader}[2]{%
+  \begingroup
+  \color{HeaderFooterFaint}%
+  \sbox{\HeaderRightBox}{\FooterFont #2}%
+  \sbox{\HeaderLeftBox}{\FooterFont #1}%
+  \FooterRoom=\dimexpr\headwidth-\FooterGap-\wd\HeaderRightBox\relax
+  \ifdim\wd\HeaderLeftBox>\FooterRoom
+    \FooterCut{\HeaderLeftBox}{\FooterRoom}{#1}%
+  \fi
+  \hbox to\headwidth{\usebox{\HeaderLeftBox}\hfil\usebox{\HeaderRightBox}}%
+  \endgroup
+}
+\fancyhead[C]{\OneLineHeader{\leftmark}{\textbf{\thepage} / \pageref*{LastPage}}}
+
 % 2026-10-26: Header and footer rule thickness matched to nice box (overview) and aiNote at 1pt (previously 0.5pt):
 \renewcommand{\headrule}{\hbox to\headwidth{\color{HeaderFooterLine}\leaders\hrule height 1pt\hfill}}
 \renewcommand{\footrule}{\hbox to\headwidth{\color{HeaderFooterLine}\leaders\hrule height 1pt\hfill}}
 
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyfoot[C]{\small\sffamily\color{HeaderFooterFaint}\textbf{\thepage} / \pageref*{LastPage}}%
+  \fancyfoot[C]{\footnotesize\sffamily\color{HeaderFooterFaint}\textbf{\thepage} / \pageref*{LastPage}}%
   \renewcommand{\headrule}{}%
   \renewcommand{\footrule}{}%
 }
