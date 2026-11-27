@@ -935,6 +935,11 @@ pdfauthor={Prof. Rahul Pandharipande}
 % here rather than in each lecture file; a lecture with a guest sets its own \setSpeaker.
 \setSpeaker{Prof. Rahul Pandharipande}
 
+% Width of the left bar of the speech, insight, student and content boxes (the first three
+% end in a curved tail). 2026-11-27: 2pt, twice the 1pt rule under the header and over the
+% footer (\headrule, \footrule); before, 3pt.
+\newcommand{\boxbarwidth}{2pt}
+
 % 1. Clean Spoken Protocol
 \newtcolorbox{speech}[1][]{
 enhanced,
@@ -951,14 +956,14 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvSpokenProof] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvSpokenProof] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \else
@@ -966,14 +971,14 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvSpoken] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvSpoken] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvSpoken] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvSpoken] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvSpoken] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \fi
@@ -1031,15 +1036,15 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvTeacherProof] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
         % 2026-10-25: Width matched to speech at 3pt (previously 2pt):
-        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvTeacherProof] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \else
@@ -1047,15 +1052,15 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvTeacherBorder] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
         % 2026-10-25: Width matched to speech at 3pt (previously 2pt):
-        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvTeacherBorder] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \fi
@@ -1195,9 +1200,9 @@ code={
   \ifinsideproof\tcbset{coltitle=EnvSpokenProof}\else\tcbset{coltitle=EnvSpoken}\fi % bold title text: see before title app
   % 2026-10-25: Content vertical bar matched to speech width at 3pt (previously 2pt):
   \ifinsideproof
-    \tcbset{borderline west={3pt}{0pt}{EnvMathProof}}
+    \tcbset{borderline west={\boxbarwidth}{0pt}{EnvMathProof}}
   \else
-    \tcbset{borderline west={3pt}{0pt}{EnvMath!50}}
+    \tcbset{borderline west={\boxbarwidth}{0pt}{EnvMath!50}}
   \fi
   \ifblank{#1}{
     \tcbset{notitle}
@@ -1265,14 +1270,14 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvStudentProof] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvStudentProof] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \else
@@ -1280,14 +1285,14 @@ code={
       underlay unbroken and last={
         % 2026-10-26: Split straight vertical bar as an axis-aligned rectangle and bottom-left corner arc.
         % This ensures uniform width across unbroken and broken boxes without pixel snapping discrepancies:
-        \fill[EnvStudent] (frame.north west) rectangle ([xshift=3pt, yshift=3mm]frame.south west);
+        \fill[EnvStudent] (frame.north west) rectangle ([xshift=\boxbarwidth, yshift=3mm]frame.south west);
         \fill[EnvStudent] ([yshift=3mm]frame.south west) arc (180:270:3mm) --
           ([xshift=5.5mm]frame.south west)
-          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=3pt, yshift=1.2mm]frame.south west) ..
-          ([xshift=3pt, yshift=3mm]frame.south west) -- cycle;
+          .. controls ([xshift=3.5mm, yshift=0.2pt]frame.south west) and ([xshift=\boxbarwidth, yshift=1.2mm]frame.south west) ..
+          ([xshift=\boxbarwidth, yshift=3mm]frame.south west) -- cycle;
       },
       underlay first and middle={
-        \fill[EnvStudent] (frame.north west) rectangle ([xshift=3pt]frame.south west);
+        \fill[EnvStudent] (frame.north west) rectangle ([xshift=\boxbarwidth]frame.south west);
       }
     }
   \fi
