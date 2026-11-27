@@ -1683,42 +1683,50 @@ So, proof: you will be left totally dissatisfied, but anyway, here \inlinemetano
 
 And one side is what we're given: suppose you go out in nature, you find some field extension with an element $\beta$ which has the property that $f$ of $\beta$ equals zero \inlinemetanote{writes $F \ni \beta$ over $k$ with $f(\beta) = 0$}. That means you go out and find some algebraic structure which is an extension of this, and you solve the polynomial there, okay?
 
-And then we have, ourselves, this one, which is equal to $k$ of $x$ mod $(f)$, we have that, and we have the element here $\alpha$, which is $\bar{x}$, I remind you, okay \inlinemetanote{draws a slanted line from $k$ up to $K$, writes \qt{$\faktor{k[x]}{(f)}$} below $K$, and writes \qt{$\alpha = \bar{x} \in K$}}?
+And then we have, ourselves, this one, which is equal to $k$ of $x$ mod $(f)$, we have that, and we have the element here $\alpha$, which is $\bar{x}$, I remind you, okay \inlinemetanote{writes \qt{$(\bar{x} =)\, \alpha \in K$}, a slanted equals sign under $K$ and \qt{$\faktor{k[x]}{(f)}$} below it, and draws a line from $K$ down towards $k$}?
 
 So, this is the one that we constructed, and that's some one you find in nature. The theorem says that actually they're related. Let's draw that picture again --- because the confusing thing about this, perhaps... okay, let's not draw it. Okay, so:
 \end{speech}
 
 \begin{content}[Setup Comparing \texorpdfstring{$K$}{K} and \texorpdfstring{$F$}{F}]
-We compare our explicit construction $K = \faktor{k[x]}{(f)}$ (containing $\alpha = \bar{x}$ with $f(\alpha) = 0$) against the arbitrary extension $F$ over $k$ (containing $\beta$ with $f(\beta) = 0$).
+We compare our explicit construction $K = \faktor{k[x]}{(f)}$ (containing $\alpha = \bar{x}$ with $f(\alpha) = 0$) against the arbitrary extension $F$ over $k$ (containing $\beta$ with $f(\beta) = 0$). As in \cref{def:field-extension}, a line from a field up to a bigger one means that the lower field is a subfield of the upper one, so the picture shows $k \subset K$ and $k \subset F$; how $K$ and $F$ are related is what the proof finds out.
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \definecolor{figGreen}{HTML}{3D8251} % RGB (61, 130, 81): dark green (ForestGreen!70!black)
+\definecolor{figRed}{HTML}{B5251C} % RGB (181, 37, 28): brick red (BrickRed)
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
 \begin{hidden}
-- Canvas: no scale, cm; V-shaped comparison diagram rooted at k = (0, 0), with F directly above k at (0, 2.0) and K branching up-left at (-2.2, 2.0)
-- Order: (1) inclusion lines k--F and k--K; (2) all text last
+- Enhanced beyond the board at the user's request (2026-11-27). The board (frame 01:31:44) has "(x-bar =) alpha in K" with a slanted equals sign under K and k[x]/(f) under it, a line from K down towards k, and "F ni beta, f(beta) = 0" with a vertical line to k. Here: two symmetric towers over k, K = k[x]/(f) written out, both roots with their equations, his words "constructed" and "found in nature" (speech 01:25:10) as captions, and a dashed arrow K -> F marked "?" for the map the proof builds next.
+- Canvas: no scale, cm; k at (0, 0); K at (-2.2, 2.2); F at (2.2, 2.2)
+- Order: (1) tower lines; (2) dashed arrow; (3) all text last
 - Coordinates:
-  k at (0, 0)
-  F at (0, 2.0), "\ni \beta" anchor west at (0.3, 2.0), "f(\beta) = 0" anchor west at (1.55, 2.0)
-  K at (-2.2, 2.0), "\alpha = \bar{x} \in" anchor east at (-2.55, 2.0), "\faktor{k[x]}{(f)}" anchor north at (-2.2, 1.55)
-  Lines: (0, 0.35)--(0, 1.65) and (-0.25, 0.3)--(-1.95, 1.7)
-- Collisions: K is 2.2 left of F, "\faktor{k[x]}{(f)}" sits below K at x=-2.2 away from the slanted line; "\ni \beta" ends near x=1.25, leaving 0.3 cm before "f(\beta) = 0" at 1.55.
+  Lines: (-0.2, 0.3)--(-2.0, 1.85) and (0.2, 0.3)--(2.0, 1.85)
+  Left of K: "\faktor{k[x]}{(f)} =" anchor east at (-2.5, 2.2); right of K: "\ni \alpha = \bar{x}" anchor west at (-1.95, 2.2) (x in [-1.95, -0.6])
+  Right of F: "\ni \beta" anchor west at (2.45, 2.2)
+  Below, outside the lines: "f(\alpha) = 0" anchor north east at (-2.45, 1.7), "constructed" anchor north east at (-2.45, 1.2); "f(\beta) = 0" anchor north west at (2.45, 1.7), "found in nature" anchor north west at (2.45, 1.2)
+  Dashed arrow (-2.0, 2.55) to (2.0, 2.55) bending up (bend left=22), "?" above its middle (top near y = 3.2)
+- Collisions: the lower labels sit at |x| >= 2.45, where the tower lines are at |x| <= 1.9 (y = 1.7) and |x| <= 1.3 (y = 1.2); the arrow starts and ends above K and F and clears "\ni \alpha = \bar{x}" (ink top about 2.45, arc about 2.8 there).
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}[>=Stealth]
-    % (1) Inclusion lines
-    \draw[thick, figGray] (0, 0.35) -- (0, 1.65);
-    \draw[thick, figGray] (-0.25, 0.3) -- (-1.95, 1.7);
+    % (1) Tower lines: a line up from k means that k is a subfield of the field above
+    \draw[thick, figGray] (-0.2, 0.3) -- (-2.0, 1.85);
+    \draw[thick, figGray] (0.2, 0.3) -- (2.0, 1.85);
 
-    % (2) Text last
+    % (2) The map the proof is looking for
+    \draw[->, thick, dashed, figRed] (-2.0, 2.55) to[bend left=22] node[midway, above, inner sep=0.1cm] {?} (2.0, 2.55);
+
+    % (3) Text last
     \node[inner sep=0.15cm] at (0, 0) {$k$};
-    \node[inner sep=0.15cm, figGreen] at (0, 2.0) {$F$};
-    \node[anchor=west, inner sep=0.15cm, figGreen] at (0.3, 2.0) {$\ni \beta$};
-    \node[anchor=west, inner sep=0.15cm] at (1.55, 2.0) {$f(\beta) = 0$};
-
-    \node[inner sep=0.15cm, figBlue] at (-2.2, 2.0) {$K$};
-    \node[anchor=east, inner sep=0.15cm, figBlue] at (-2.55, 2.0) {$\alpha = \bar{x} \in$};
-    \node[anchor=north, inner sep=0.15cm, figBlue] at (-2.2, 1.55) {$\faktor{k[x]}{(f)}$};
+    \node[inner sep=0.15cm, figBlue] at (-2.2, 2.2) {$K$};
+    \node[anchor=east, inner sep=0.15cm, figBlue] at (-2.5, 2.2) {$\faktor{k[x]}{(f)} =$};
+    \node[anchor=west, inner sep=0.15cm, figRed] at (-1.95, 2.2) {$\ni \alpha = \bar{x}$};
+    \node[inner sep=0.15cm, figGreen] at (2.2, 2.2) {$F$};
+    \node[anchor=west, inner sep=0.15cm, figGreen] at (2.45, 2.2) {$\ni \beta$};
+    \node[anchor=north east, inner sep=0.15cm, font=\small] at (-2.45, 1.7) {$f(\alpha) = 0$};
+    \node[anchor=north east, inner sep=0.15cm, font=\small\itshape, figGray] at (-2.45, 1.2) {constructed};
+    \node[anchor=north west, inner sep=0.15cm, font=\small] at (2.45, 1.7) {$f(\beta) = 0$};
+    \node[anchor=north west, inner sep=0.15cm, font=\small\itshape, figGray] at (2.45, 1.2) {found in nature};
 \end{tikzpicture}
 \end{center}
 \end{content}
