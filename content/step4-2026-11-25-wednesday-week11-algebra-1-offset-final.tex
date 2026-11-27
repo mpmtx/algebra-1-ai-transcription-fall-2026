@@ -90,7 +90,7 @@
 % Primary Language: English
 % End of the video: 00:45:01
 
-\lecturechapter{Wednesday}{25 Nov}{25 November 2026}{Simple Field Extensions, the Tower Law, and Constructible Numbers}
+\lecturechapter[11]{Wednesday}{25 Nov}{25 November 2026}{Simple Field Extensions, the Tower Law, and Constructible Numbers}
 
 \begin{overview}[Course Content Overview]
 This lecture examines simple field extensions constructed from roots of irreducible polynomials, proves the multiplicative Tower Law for dimensions of nested field extensions, and applies these tools to classical geometric impossibility results:
@@ -152,13 +152,13 @@ K := \faktor{k[x]}{(f)}.
 \end{content}
 
 \begin{speech}[00:01:46 - 00:02:23]
-And what we discussed last time was that we've already seen this big $K$ is a field \inlinemetanote{writes: $\bullet$ $K$ is field}, little $k$ sits naturally inside big $K$ as the constants here \inlinemetanote{writes \qt{$\bullet$ $k \in K$}, a slip for $k \subset K$}, and the very important thing is that if you take $\alpha$ to be the equivalence class of $x$ here, then $\alpha$ satisfies $f(\alpha) = 0$ --- that's the granting of the wish \inlinemetanote{writes \qt{$\bullet$ $\alpha = \bar{x}$} and \qt{$f(\alpha) = 0$}}.
+And what we discussed last time was that we've already seen this big $K$ is a field \inlinemetanote{writes: $\bullet$ $K$ is field}, little $k$ sits naturally inside big $K$ as the constants here \inlinemetanote{writes: $\bullet$ $k \subset K$}, and the very important thing is that if you take $\alpha$ to be the equivalence class of $x$ here, then $\alpha$ satisfies $f(\alpha) = 0$ --- that's the granting of the wish \inlinemetanote{writes \qt{$\bullet$ $\alpha = \bar{x}$} and \qt{$f(\alpha) = 0$}}.
 
 And this is totally tautological. There's really nothing happening, it's just... Once you understand what this construction is, all these properties are tautological.
 \end{speech}
 
 \begin{content}[Tautological Properties of \texorpdfstring{$K$}{K}]
-From the quotient construction $K = \faktor{k[x]}{(f)}$ with $f$ irreducible, we already established:
+From the quotient construction $K = \faktor{k[x]}{(f)}$ with $f$ irreducible, we already established in the previous lecture (\cref{clm:quotient-is-field,clm:canonical-embedding,clm:alpha-is-root}):
 \begin{itemize}
     \item $K$ is a field (since $(f)$ is a maximal ideal in $k[x]$).
     \item $k \subset K$ embeds naturally via the constant polynomials.
@@ -168,11 +168,6 @@ From the quotient construction $K = \faktor{k[x]}{(f)}$ with $f$ irreducible, we
     \]
 \end{itemize}
 \end{content}
-
-\begin{aiNote}[Board Slip: \texorpdfstring{$k \in K$}{k in K} vs. \texorpdfstring{$k \subset K$}{k subset K}]
-% [PERSISTENT]
-On the blackboard, the lecturer writes a middle bar in the second bullet ($k \in K$), which is a chalk slip for $k \subset K$ (the subfield embedding of $k$ into $K$ via constant polynomials, as stated verbally).
-\end{aiNote}
 
 \subsection{Vector Space Structure and Dimension of \texorpdfstring{$K$}{K}}
 
@@ -185,7 +180,7 @@ I could also consider this as a vector space over the big field \inlinemetanote{
 \end{speech}
 
 \begin{content}[Field Extensions as Vector Spaces]
-Whenever $K$ is a field extension of $k$ (written vertically as a tower with $K$ above $k$), $K$ is naturally a $k$-vector space:
+Whenever $K$ is a field extension of $k$ (\cref{def:field-extension}; written vertically as a tower with $K$ above $k$), $K$ is naturally a $k$-vector space:
 \begin{itemize}
     \item \textbf{Vector addition:} Addition in the field $K$.
     \item \textbf{Scalar multiplication:} Multiplication in $K$ restricted to scalars from the subfield $k \subset K$ acting on elements of $K$.
@@ -249,7 +244,7 @@ To prove that $\{\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}\}$ generates $K$ as a $k
 \begin{speech}[00:06:20 - 00:07:57]
 And there, again, there's nothing really to this, so use this division algorithm for polys --- we've discussed this, well, a long time ago --- so that says that we can write $g(x)$ is equal to $h(x)$ times $f(x)$ (we try to divide $g(x)$ by $f(x)$, and we can write it like this) plus a correction term, a remainder term \inlinemetanote{writes \qt{Use div.\ alg.\ for polys}, \qt{$g(x) = h(x) \cdot f(x)$}, and \qt{$+ r(x)$}}. And what we know about the remainder term is that the degree of this remainder term is strictly less than $d$, the degree of $f$ \inlinemetanote{writes: $\operatorname{degree}(r) < d$}. That's the division algorithm.
 
-So, this is about polynomials. If I want to now move this equation to big $K$, I just take the equivalence class, I just take bar everywhere \inlinemetanote{writes: $\overline{g(x)} = \overline{h(x)} \, \overline{f(x)}$}. $\bar{f}$ is zero. This is zero \inlinemetanote{crosses out $\overline{h(x)} \, \overline{f(x)}$ and writes $0$ below it}, because $f$'s in the ideal. So, this gets plus $\overline{r(x)}$ \inlinemetanote{writes: $+ \overline{r(x)}$}.
+So, this is about polynomials. If I want to now move this equation to big $K$, I just take the equivalence class, I just take bar everywhere \inlinemetanote{writes: $\overline{g(x)} = \overline{h(x)} \, \overline{f(x)}$}. $\bar{f}$ is zero. This is zero \inlinemetanote{strikes through $\overline{f(x)}$}, because $f$'s in the ideal. So, this gets plus $\overline{r(x)}$ \inlinemetanote{writes: $+ \overline{r(x)}$}.
 
 So, we get this arbitrary element \inlinemetanote{circles $\overline{g(x)}$} is given by this $\bar{r}$ \inlinemetanote{circles $\overline{r(x)}$}, but $\bar{r}$, since it's polynomials of degree strictly less than $d$, is expressible in terms of this \inlinemetanote{points at the candidate basis}. All right? So, that proves the generation statement \inlinemetanote{writes: $\overline{r(x)} =$ $k$-linear comb.\ of $\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}$}.
 
@@ -257,7 +252,7 @@ Precisely because it's of degree less than $d$. So, that's the generation statem
 \end{speech}
 
 \begin{content}[Generation via the Division Algorithm]
-By the division algorithm for polynomials in $k[x]$, we can divide $g(x)$ by $f(x)$ to write
+By the division algorithm for polynomials in $k[x]$ (\cref{thm:poly-long-division}), we can divide $g(x)$ by $f(x)$ to write
 \[
 g(x) = h(x) \cdot f(x) + r(x), \qquad \operatorname{degree}(r) < d,
 \]
@@ -285,7 +280,7 @@ Okay, and this is in some sense even easier, because how could there be a relati
 
 How could that be? That means this polynomial is zero here, that would mean that $f$ divides the polynomial without the bars, because the only way to be zero is if you're a multiple of $f$. So, it'd be $f$ divides the polynomial without the bars \inlinemetanote{writes: $f \mid \sum_{i=0}^{d-1} c_i x^i$}.
 
-But that's not possible, because $f$'s of degree $d$ and this is a polynomial of degree less than $d$ \inlinemetanote{writes \qt{$\operatorname{degree}(f) = d$} and \qt{$\operatorname{degree} < d$}}. So, it's not possible \inlinemetanote{writes: not possible}.
+But that's not possible, because $f$'s of degree $d$ and this is a polynomial of degree less than $d$. So, it's not possible \inlinemetanote{writes: not possible}.
 \end{speech}
 
 \begin{content}[Linear Independence]
@@ -312,6 +307,7 @@ So, this is, you know, not --- so to speak --- part of the wish; it's part of th
 
 \section{Uniqueness of the Construction}
 
+% [WORD-CHECKED: "for degrees greater than 2, degree at least greater than 2", a slip for at least 2; heard the same way by Gemini Neon (clip 00:10:20-00:10:55, 2026-11-27)]
 \begin{speech}[00:09:46 - 00:11:42]
 So, then the other topic I discussed last time --- but it was a little bit of a rush at the end --- was to explain why this is not just an answer, but the only possible answer. And I would like to say that again, because it's also very important. Meaning that in a sense there's no other answer to this wish besides this \inlinemetanote{erases the Wish, Granted, and property lists from the lower board}.
 
@@ -373,13 +369,13 @@ f(\beta) = 0.
 \begin{speech}[00:12:34 - 00:14:17]
 Then how to compare it to this canonical solution is I look at this field and I want to map my $K$ to it. So, I write here $k[x]$ \inlinemetanote{writes $k[x]$ connected to $k$}, and there is a unique map --- there exists a unique ring homomorphism, let's call that $\phi$ \inlinemetanote{draws arrow from $k[x]$ to $F$ labeled $\exists!$ above and $\phi$ below}.
 
-So, there exists a unique $\phi$ from $k[x]$ to $F$ with the properties that $\phi$ is the identity on little $k$ \inlinemetanote{writes \qt{$\exists! \; \phi \colon k[x] \to F$}, \qt{with properties}, and \qt{$\phi|_k = k$}, shorthand for $\id_k$}. So, little $k$ sits here \inlinemetanote{points at $k$ below $F$} and little $k$ sits here \inlinemetanote{points at $k \subset k[x]$}, and $\phi$ just takes... when you put in an actual constant, it's supposed to just do nothing. That's one of the hypotheses. And the second is that $\phi(x) = \beta$ \inlinemetanote{writes: $\phi(x) = \beta$}.
+So, there exists a unique $\phi$ from $k[x]$ to $F$ with the properties that $\phi$ is the identity on little $k$ \inlinemetanote{writes \qt{$\exists! \; \phi \colon k[x] \to F$}, \qt{with properties}, and \qt{$\rightarrow \phi|_{\operatorname{Id}}$ on $k$}, that is, $\phi$ is $\operatorname{Id}$ on $k$}. So, little $k$ sits here \inlinemetanote{points at $k$ below $F$} and little $k$ sits here \inlinemetanote{points at $k \subset k[x]$}, and $\phi$ just takes... when you put in an actual constant, it's supposed to just do nothing. That's one of the hypotheses. And the second is that $\phi(x) = \beta$ \inlinemetanote{writes: $\phi(x) = \beta$}.
 
 So, I explained this yesterday --- at the end it went kind of fast yesterday --- but this is a property we've seen before; this is a property of homomorphisms of polynomial rings. So, you're supposed to have remembered that, or go back --- you can rewind the tape and find it --- but it's a very important thing about polynomial rings: it's easy to find homomorphisms away from polynomial rings, all you have to do is find a home for the variables, and the rest takes care of itself. So, do you believe this? If anywhere you find this $F$ with this $\beta$, I can do that.
 \end{speech}
 
 \begin{content}[Universal Property of \texorpdfstring{$k[x]$}{k[x]}]
-By the universal property of the polynomial ring $k[x]$, there exists a unique ring homomorphism
+By the universal property of the polynomial ring $k[x]$ (\cref{thm:universal-property-polynomial-ring}), there exists a unique ring homomorphism
 \[
 \exists! \; \phi \colon k[x] \to F
 \]
@@ -391,15 +387,10 @@ satisfying the two properties:
 Explicitly, $\phi$ is the evaluation homomorphism $g(x) \mapsto g(\beta)$.
 \end{content}
 
-\begin{aiNote}[Board Shorthand: \texorpdfstring{$\phi|_k = k$}{phi|\_k = k}]
-% [PERSISTENT]
-On the blackboard, the lecturer writes $\phi|_k = k$ as rapid shorthand while saying \qt{$\phi$ is the identity on little $k$}. In the formal statement above this is written as $\phi|_k = \id_k$.
-\end{aiNote}
-
 \begin{speech}[00:14:17 - 00:15:54]
 And then I explained yesterday, also, that then you just have to study this map: what is the kernel \inlinemetanote{writes: $\ker(\phi)$}? The kernel of $\phi$ --- and we saw this yesterday --- has to be $f$ \inlinemetanote{writes \qt{$=$} and \qt{$(f)$}}. It certainly contains $f$, because $f(\beta) = 0$, and it can't be more than that, because $f$ is irreducible, so that's a maximal ideal. So, the kernel here \inlinemetanote{writes: $\ker(\phi) = (f)$} --- whenever I have a ring homomorphism, I can study the kernel, and this kernel has to be just the ideal $f$.
 
-And then using our theorem, which was one of the isomorphism theorems in ring theory, it says that when this happens, I get a map from $k$ mod $f$ --- which is our big $K$ \inlinemetanote{writes \qt{$\faktor{k[x]}{(f)}$} and \qt{$K =$}} --- which we're happy to see here, and we get a map here, $\bar{\phi}$, to the image \inlinemetanote{draws arrow from $K = \faktor{k[x]}{(f)}$ to $\operatorname{Im}(\phi) \subset F$ labeled $\bar{\phi}$ above and $\sim$ below}: the image of $\phi$ inside here \inlinemetanote{points at $F$}.
+And then using our theorem, which was one of the isomorphism theorems in ring theory, it says that when this happens, I get a map from $k$ mod $f$ --- which is our big $K$ \inlinemetanote{writes \qt{$\faktor{k[x]}{(f)}$} and \qt{$K =$}} --- which we're happy to see here, and we get a map here, $\bar{\phi}$, to the image \inlinemetanote{draws arrow from $K = \faktor{k[x]}{(f)}$ to $\operatorname{Im}(\phi) \subset F$ labeled $\bar{\phi}$}: the image of $\phi$ inside here \inlinemetanote{points at $F$}.
 
 Okay, so, that's an aspect of ring theory: when we have this map of polynomial rings, if we can calculate the kernel, this kernel's the ideal, and then the quotient --- that's our canonical construction --- then maps to $F$, and in this case it's an isomorphism onto its image. This is an isomorphism onto its image, and this is a field.
 \end{speech}
@@ -407,13 +398,13 @@ Okay, so, that's an aspect of ring theory: when we have this map of polynomial r
 \begin{content}[Kernel of \texorpdfstring{$\phi$}{phi} and Induced Isomorphism]
 We determine the kernel of $\phi \colon k[x] \to F$:
 \begin{itemize}
-    \item Since $\phi(f) = f(\beta) = 0$, we have $f \in \ker(\phi)$, so $(f) \subseteq \ker(\phi)$.
-    \item Since $f$ is irreducible in $k[x]$, the principal ideal $(f)$ is maximal in $k[x]$. Since $\ker(\phi) \neq k[x]$ (for instance, $\phi(1) = 1 \neq 0$), it follows that
+    \item Since $\phi(f) = f(\beta) = 0$, we have $f \in \ker(\phi)$, so $(f) \subset \ker(\phi)$.
+    \item Since $f$ is irreducible in $k[x]$, the principal ideal $(f)$ is maximal in $k[x]$ (shown in the proof of \cref{clm:quotient-is-field}). Since $\ker(\phi) \neq k[x]$ (for instance, $\phi(1) = 1 \neq 0$), it follows that
     \[
     \ker(\phi) = (f).
     \]
 \end{itemize}
-By the First Isomorphism Theorem for rings, $\phi$ factors through the quotient $K = \faktor{k[x]}{(f)}$ and induces a field isomorphism
+By the First Isomorphism Theorem for rings (\cref{thm:first-isomorphism-theorem-statement}), $\phi$ factors through the quotient $K = \faktor{k[x]}{(f)}$ and induces a field isomorphism
 \[
 \bar{\phi} \colon K = \faktor{k[x]}{(f)} \xrightarrow{\;\sim\;} \operatorname{Im}(\phi) \subset F
 \]
@@ -466,12 +457,13 @@ onto the image $\operatorname{Im}(\phi)$ inside $F$ (which is therefore a subfie
 \end{center}
 \end{content}
 
+% [WORD-CHECKED: no "Wait" before "it's important, and it's totally crucial to the Algebra 2 class"; Gemini Neon hears "It's kind of important. It's important, and ..." (clip 00:16:50-00:17:30, 2026-11-27)]
 \begin{speech}[00:15:54 - 00:17:35]
-So, the situation we've found here is that if you go and find any field $F$ \inlinemetanote{draws the vertical tower $F$ over $k$} that has a $\beta$ such that $f(\beta) = 0$, then actually the smallest subfield which contains $\beta$ is actually isomorphic to our $K$ \inlinemetanote{writes \qt{$\ni \beta$} and \qt{$f(\beta) = 0$}, and marks a subfield dot on the tower labeled \qt{subfield} on the right and \qt{$K \simeq$} on the left}.
+So, the situation we've found here is that if you go and find any field $F$ \inlinemetanote{draws the vertical tower $F$ over $k$} that has a $\beta$ such that $f(\beta) = 0$, then actually the smallest subfield which contains $\beta$ is actually isomorphic to our $K$ \inlinemetanote{writes \qt{$\ni \beta$} and \qt{$f(\beta) = 0$}, then $k(\beta)$ on the tower between $k$ and $F$, and \qt{$K \cong$} to its left, with a line from $K$ down to $k$}.
 
 And that smallest subfield which contains $\beta$ is the image \inlinemetanote{points at $\operatorname{Im}(\phi)$}. The image is a subfield, because we've shown it's isomorphic to our big $K$, and it's certainly the smallest subfield that contains $\beta$, because all it does is contain polynomials in $\beta$ and $k$, which have to be in any subfield that contains $\beta$. So, this is the sense in which there could be really no other answer; meaning if you try to give another answer, all you're doing is taking $K$ and adding some stuff that you didn't need.
 
-All right, so, that's the construction. And it seems so simple, so tautological, as to be practically useless, but that's not true, actually; it's kind of important. Wait --- it's important, and it's totally crucial to the Algebra $2$ class. Actually these last weeks, there'll be a few subjects here which are basically essential for Algebra $2$ \inlinemetanote{erases the lower right boards}.
+All right, so, that's the construction. And it seems so simple, so tautological, as to be practically useless, but that's not true, actually; it's kind of important. It's important, and it's totally crucial to the Algebra $2$ class. Actually these last weeks, there'll be a few subjects here which are basically essential for Algebra $2$ \inlinemetanote{erases the lower right boards}.
 \end{speech}
 
 \begin{content}[Smallest Subfield Containing \texorpdfstring{$\beta$}{beta}]
@@ -480,28 +472,30 @@ In any field extension $F$ of $k$ containing a root $\beta$ of $f$, the image $\
     \item isomorphic to $K = \faktor{k[x]}{(f)}$ (via $\bar{\phi}$), and hence a subfield of $F$,
     \item the \emph{smallest} subfield of $F$ containing $k$ and $\beta$, since every subfield of $F$ containing $k$ and $\beta$ must contain all polynomial expressions in $\beta$ with coefficients in $k$.
 \end{enumerate}
-Thus, $K$ is the unique minimal answer to the wish: any other extension containing a root simply contains an isomorphic copy of $K$ together with unnecessary extra elements.
+So $\operatorname{Im}(\phi)$ is the subfield $k(\beta)$ generated by $\beta$ over $k$ (\cref{def:subfield-generated-by-beta}), and $K \cong k(\beta)$, as in \cref{thm:uniqueness-root-extension}. Thus, $K$ is the unique minimal answer to the wish: any other extension containing a root simply contains an isomorphic copy of $K$ together with unnecessary extra elements.
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \begin{hidden}
-- Canvas: no scale, cm; tower F ni beta over k with intermediate subfield dot at (2.0, 1.3); x in [0, 5.4], y in [-0.3, 2.9]
-- Order: (1) vertical tower segment (2.0, 0.25)--(2.0, 2.35); (2) intermediate subfield dot at (2.0, 1.3); (3) all text last
+- Canvas: no scale, cm; tower k -- k(beta) -- F ni beta at x = 2.0, with K beside k(beta) as on the board; x in [-0.1, 4.7], y in [-0.3, 2.9]
+- Board (frames 00:16:05-00:17:25): F with "ni beta", k(beta) and k in one column, "K \cong" left of k(beta) with a line from K down to k, f(beta) = 0 right of k(beta); no dot and no word "subfield".
+- Order: (1) tower segments (2.0, 0.25)--(2.0, 1.02) and (2.0, 1.58)--(2.0, 2.35); (2) segment K -> k along unit (0.794, -0.607), trimmed: (0.66, 1.03)--(1.72, 0.21); (3) all text last
 - Labels (§ Attaching Labels), each with inner sep=0.15cm:
-  "F" at (2.0, 2.6), "\ni \beta" anchor west at (2.32, 2.6), "k" at (2.0, 0)
-  "f(\beta) = 0" anchor west at (3.7, 2.6)
-  "K \simeq" anchor east at (1.9, 1.3), "subfield (\operatorname{Im}(\phi))" anchor west at (2.1, 1.3)
-- Collisions: vertical segment stops 0.25 cm clear of F and k; "\ni \beta" at x=2.32 clears F; dot at (2.0, 1.3) separates K \simeq on the left from subfield on the right.
+  "F" at (2.0, 2.6), "\ni \beta" anchor west at (2.32, 2.6), "k(\beta)" at (2.0, 1.3), "k" at (2.0, 0)
+  "K" at (0.3, 1.3), "\cong" at (1.05, 1.3), "f(\beta) = 0" anchor west at (2.9, 1.3)
+- Collisions: k(beta) spans about x 1.55..2.45, y 1.0..1.6, so the tower segments stop clear of it; "\cong" (about 0.88..1.22) sits between K (to about 0.6) and k(beta); the K -> k segment passes 0.37 cm below "\cong" (y = 0.73 at x = 1.05); f(beta) = 0 starts at 2.9, right of k(beta).
 \end{hidden}
 \begin{center}
 \begin{tikzpicture}
-    \draw[thick, figBlue] (2.0, 0.25) -- (2.0, 2.35);
-    \fill[figBlue] (2.0, 1.3) circle (2pt);
+    \draw[thick, figBlue] (2.0, 0.25) -- (2.0, 1.02);
+    \draw[thick, figBlue] (2.0, 1.58) -- (2.0, 2.35);
+    \draw[thick, figBlue] (0.66, 1.03) -- (1.72, 0.21);
     \node[inner sep=0.15cm, figBlue] at (2.0, 2.6) {$F$};
     \node[anchor=west, inner sep=0.15cm] at (2.32, 2.6) {$\ni \beta$};
+    \node[inner sep=0.15cm, figBlue] at (2.0, 1.3) {$k(\beta)$};
     \node[inner sep=0.15cm] at (2.0, 0) {$k$};
-    \node[anchor=west, inner sep=0.15cm] at (3.7, 2.6) {$f(\beta) = 0$};
-    \node[anchor=east, inner sep=0.15cm, figBlue] at (1.9, 1.3) {$K \simeq$};
-    \node[anchor=west, inner sep=0.15cm] at (2.1, 1.3) {subfield ($\operatorname{Im}(\phi)$)};
+    \node[inner sep=0.15cm, figBlue] at (0.3, 1.3) {$K$};
+    \node[inner sep=0.15cm] at (1.05, 1.3) {$\cong$};
+    \node[anchor=west, inner sep=0.15cm] at (2.9, 1.3) {$f(\beta) = 0$};
 \end{tikzpicture}
 \end{center}
 \end{content}
@@ -525,7 +519,7 @@ Okay, so, a very important property about field extensions is the following. I r
 
 So, you could say: well, why do mathematicians write this kind of vertical tower to express just this \inlinemetanote{points at $k \subset E \subset F$}? That's an interesting question; I'll explain it in a moment. This notation is the familiar notation: this is a field, that's a field, that's a field, and one's inside the other. There's nothing ambiguous about that. And writing them in this tower is just the same thing.
 
-But the reason why it's nice to write this in this tower is that often we'll have some field, and maybe there'll be a big field, and maybe you want to consider many subfields of it \inlinemetanote{draws a branching diagram with $F$ at top, $k$ at bottom, and intermediate subfields $E_1, E_2, E_3$}, and then maybe they all sit in here, but this one maybe sits in... I have to make up some new letters... $G$, I don't know \inlinemetanote{writes $G$ between $E_1$ and $F$}. So, there's this diagram where you'll have a bottom field and a top field and you want to try to draw the diagram of all the subfields inside, or many of them, and this is more convenient notation to put on a paper than this \inlinemetanote{points back to $k \subset E \subset F$}. Not much more convenient, but a little more convenient. So, that's why this notation is used a lot. I don't know if this was helpful or what, but anyway.
+But the reason why it's nice to write this in this tower is that often we'll have some field, and maybe there'll be a big field, and maybe you want to consider many subfields of it \inlinemetanote{draws a branching diagram with $F$ at top, $k$ at bottom, and intermediate subfields $E_1, E_2, E_3$}, and then maybe they all sit in here, but this one maybe sits in... I have to make up some new letters... $G$, I don't know \inlinemetanote{writes a small $G$ in the diagram, below $F$}. So, there's this diagram where you'll have a bottom field and a top field and you want to try to draw the diagram of all the subfields inside, or many of them, and this is more convenient notation to put on a paper than this \inlinemetanote{points back to $k \subset E \subset F$}. Not much more convenient, but a little more convenient. So, that's why this notation is used a lot. I don't know if this was helpful or what, but anyway.
 \end{speech}
 
 \begin{content}[Tower and Subfield Lattice Diagrams]
@@ -671,7 +665,7 @@ Let us try to prove it. But there's a reasonable question: in these letters ther
 \begin{speech}[00:25:01 - 00:26:18]
 Okay, so, typically if you want to prove things are finite-dimensional and calculate the dimension, a very straightforward way is to look at bases.
 
-So, the assumptions are that since $F$ over $E$ \inlinemetanote{draws the vertical segment $F$ over $E$} is finite-dimensional, this means we can find a basis \inlinemetanote{writes \qt{finite dim} and \qt{$\longrightarrow$}}. And since the basis elements are elements of $F$, I write them as $f_1$ to $f_A$, where $A$ is the dimension of $F$ over $E$ \inlinemetanote{writes \qt{$f_1, \dots, f_A \in F$} and \qt{$A = \dim_E F$}}. So, these are all elements of $F$ and these are the basis \inlinemetanote{draws a brace under $f_1, \dots, f_A$ and writes: basis of $F$ as an $E$-vector space}.
+So, the assumptions are that since $F$ over $E$ \inlinemetanote{draws the vertical segment $F$ over $E$} is finite-dimensional, this means we can find a basis \inlinemetanote{writes \qt{finite dim} and \qt{$\Longrightarrow$}}. And since the basis elements are elements of $F$, I write them as $f_1$ to $f_A$, where $A$ is the dimension of $F$ over $E$ \inlinemetanote{writes \qt{$f_1, \dots, f_A \in F$} and \qt{$A = \dim_E F$}}. So, these are all elements of $F$ and these are the basis \inlinemetanote{draws a brace under $f_1, \dots, f_A$ and writes: basis of $F$ as an $E$-vector space}.
 
 So, you're happy with this notation? If it's finite-dimensional, it has some dimension; I call this dimension big $A$, and I find a basis. It's a basis of $F$ as an $E$-vector space. Okay?
 
@@ -686,7 +680,7 @@ Since $F$ is finite-dimensional as an $E$-vector space, it has some finite dimen
 \end{content}
 
 \begin{speech}[00:26:18 - 00:27:20]
-Similarly, $E$ over $k$ \inlinemetanote{draws the vertical segment $E$ over $k$} is finite-dimensional \inlinemetanote{writes: finite dim $\longrightarrow$}. So, I can pick --- and now I name the basis elements of this with $e$'s, because they live here --- some $e_1$ to $e_B$ in $E$, where $B$ is equal to the dimension of $E$ over $k$ \inlinemetanote{writes \qt{$e_1, \dots, e_B \in E$} and \qt{$B = \dim_k E$}}. And this is a basis of $E$ as a $k$-vector space \inlinemetanote{draws a brace under $e_1, \dots, e_B$ and writes: basis of $E$ as a $k$-vector space}.
+Similarly, $E$ over $k$ \inlinemetanote{draws the vertical segment $E$ over $k$} is finite-dimensional \inlinemetanote{writes: finite dim $\Longrightarrow$}. So, I can pick --- and now I name the basis elements of this with $e$'s, because they live here --- some $e_1$ to $e_B$ in $E$, where $B$ is equal to the dimension of $E$ over $k$ \inlinemetanote{writes \qt{$e_1, \dots, e_B \in E$} and \qt{$B = \dim_k E$}}. And this is a basis of $E$ as a $k$-vector space \inlinemetanote{draws a brace under $e_1, \dots, e_B$ and writes: basis of $E$ as a $k$-vector space}.
 
 All right, so, all I've done is unpacked; I haven't done anything, I just picked the bases. Now, to be a basis has two properties, of course. There's two properties here: generation and independence \inlinemetanote{draws a fork from the first line labeled \qt{gen} and \qt{indep}}. And there's two properties here: generation and independence \inlinemetanote{draws a fork from the second line labeled \qt{gen} and \qt{indep}}. So, this is what we have: as the assumptions, we have these two bases, and we have the basis properties.
 \end{speech}
@@ -774,7 +768,7 @@ So, that's the equation for $c_1$. This is an element of $E$, and the hatted coe
 
 And then we just feed this equation in here \inlinemetanote{points at $f_1 c_1$}, and we get $f_1$ times $e_1$, $f_1$ times $e_2$, with coefficients that are in little $k$. All right? And then we do it for all of them, and then we'll just show at the end, if you do that for every one of these, you will have exactly expressed $x$ as a $k$-linear combination of the proposed basis. Okay?
 
-So, this proves generation, and the full generation statement uses the two generation statements above \inlinemetanote{writes \qt{$\checkmark$ This gives gen} and \qt{uses 2 gen statements above}}. All right?
+So, this proves generation, and the full generation statement uses the two generation statements above \inlinemetanote{writes \qt{This gen.} with an arrow pointing at the equations, and \qt{Uses 2 gen stat.\ above}}. All right?
 \end{speech}
 
 \begin{content}[Proof of Generation over \texorpdfstring{$k$}{k}]
@@ -785,11 +779,11 @@ Let $x \in F$ be an arbitrary element.
 x = f_1 c_1 + f_2 c_2 + \dots + f_A c_A = \sum_{i=1}^A f_i c_i.
 \]
 
-\textbf{Step 2 (Expand each $c_i$ in the $k$-basis of $E$):} Since each $c_i \in E$ and $\{e_1, \dots, e_B\}$ generates $E$ as a $k$-vector space, for $c_1$ (and analogously for every $i \in \{1, \dots, A\}$) there exist coefficients $\hat{c}_{i1}, \hat{c}_{i2}, \dots, \hat{c}_{iB} \in k$ such that
-\begin{align*}
-c_1 &= e_1 \hat{c}_1 + e_2 \hat{c}_2 + \dots + e_B \hat{c}_B, \\
-c_i &= \sum_{j=1}^B e_j \hat{c}_{ij} \qquad (\hat{c}_{ij} \in k).
-\end{align*}
+\textbf{Step 2 (Expand each $c_i$ in the $k$-basis of $E$):} Since each $c_i \in E$ and $\{e_1, \dots, e_B\}$ generates $E$ as a $k$-vector space, there exist coefficients $\hat{c}_{i1}, \hat{c}_{i2}, \dots, \hat{c}_{iB} \in k$ such that
+\[
+c_i = e_1 \hat{c}_{i1} + e_2 \hat{c}_{i2} + \dots + e_B \hat{c}_{iB} = \sum_{j=1}^B e_j \hat{c}_{ij} \qquad (i = 1, \dots, A).
+\]
+(The board does this for $c_1$, writing $c_1 = e_1 \hat{c}_1 + e_2 \hat{c}_2 + \dots + e_B \hat{c}_B$ with $\hat{c}_j$ for $\hat{c}_{1j}$.)
 
 \textbf{Step 3 (Substitute):} Substituting the expansion of each $c_i$ into the expression for $x$ and using distributivity and associativity in the field $F$ yields
 \[
@@ -850,7 +844,7 @@ Wait, is the last bracket placed correctly?
 \end{student}
 
 \begin{speech}[00:36:46 - 00:37:58]
-Uh, no, it's not, thank you \inlinemetanote{erases the misplaced closing parenthesis and places it to the left of $= 0$}.
+No, it's not, thank you \inlinemetanote{erases the misplaced closing parenthesis and places it to the left of $= 0$}.
 
 So, I factored out, which is a thing you can do because we're talking about fields --- there's all this extra thing of multiplication. Now you look at this, and you interpret it rather as a linear equation in $F$ over $E$ \inlinemetanote{writes $F/E$ to the left of the factored system}, because these are the ones in $F$ and these coefficients are now all in the field $E$.
 
@@ -890,7 +884,7 @@ e_1 \hat{c}_{i1} + e_2 \hat{c}_{i2} + \dots + e_B \hat{c}_{iB} = 0 \qquad \text{
 
 \begin{aiNote}[Spoken Slip: \qt{$E$ over $F$}]
 % [PERSISTENT]
-At 00:37:46, the lecturer says \qt{the one of $E$ over $F$} when referring to the linear independence of $\{e_1, \dots, e_B\}$ for $E$ over $k$; this is anchored inline in the `speech` block. Also note that on the board, the lecturer writes $\dim_E^F$ (with $F$ raised above $E$) as shorthand for $\dim_E F$.
+At 00:37:46, the lecturer says \qt{the one of $E$ over $F$}; he means the linear independence of $e_1, \dots, e_B$ over $k$, that is, $E$ over $k$.
 \end{aiNote}
 
 \begin{speech}[00:37:58 - 00:38:08]
@@ -908,7 +902,7 @@ So, it has to do with this topic which, you know, used to be popular --- certain
 
 And the idea with the straightedge and compass is that you have a straightedge and a compass, and the question is what can you construct? And there's a lot of classical impossibility results; the simplest one we can already prove.
 
-So, the straightedge and compass: you have a compass like this \inlinemetanote{draws a V-shaped compass on the far left} and you have a straightedge \inlinemetanote{draws a vertical line segment}, and you're given... that's the plane \inlinemetanote{draws coordinate axes}, and you're given the unit, meaning a unit length \inlinemetanote{marks unit ticks along the axes and draws a square in the first quadrant}. That's the beginning of the story. You have this machine, this compass --- you know what a compass is, right? Do you or not?
+So, the straightedge and compass: you have a compass like this \inlinemetanote{draws a V-shaped compass on the far left} and you have a straightedge \inlinemetanote{draws a horizontal line segment below it}, and you're given... that's the plane \inlinemetanote{draws coordinate axes}, and you're given the unit, meaning a unit length \inlinemetanote{marks unit ticks along the axes and draws a square in the first quadrant}. That's the beginning of the story. You have this machine, this compass --- you know what a compass is, right? Do you or not?
 
 And the straightedge, and you start with this unit length, and then you can just do whatever you want with the straightedge and compass. So, you can certainly construct --- I mean, there's a lot of tricks here that you learn somehow --- the easiest thing is you can just fill out the integer points \inlinemetanote{marks equally spaced ticks along the horizontal axis}, and then you can do more things and more...
 
@@ -925,7 +919,8 @@ In classical straightedge and compass constructions, one begins with a straighte
 \definecolor{figGray}{HTML}{666665} % RGB (102, 102, 101): dark gray (gray!80!black)
 \definecolor{figOrange}{HTML}{CC7E2A} % RGB (204, 126, 42): ochre orange (BurntOrange!80!black)
 \begin{hidden}
-- Canvas: no scale, cm; left side shows schematic compass (x in [0.0, 1.4]) and straightedge (x = 2.9, label spans ~1.8..4.0), right side shows the coordinate plane with unit length and integer ticks (x in [4.3, 10.7]); y in [-1.5, 2.4]
+- Board (frame 00:44:58): the straightedge is a horizontal line below the compass, so the figure draws it horizontally too.
+- Canvas: no scale, cm; left side shows schematic compass (x in [0.0, 1.4]) and straightedge (horizontal, x in [2.0, 3.8] at y = 0.8, label spans ~1.8..4.0 below it), right side shows the coordinate plane with unit length and integer ticks (x in [4.3, 10.7]); y in [-1.5, 2.4]
 - Order: (1) compass V-shape and straightedge segment; (2) coordinate axes; (3) unit square and integer ticks; (4) all text last
 - Coordinates:
   Compass: apex (0.7, 2.0), legs to (0.1, 0.2) and (1.3, 0.2), hinge circle radius 0.08 at (0.7, 2.0)
@@ -933,7 +928,7 @@ In classical straightedge and compass constructions, one begins with a straighte
   Plane: origin at (6.7, 0), x-axis from (4.3, 0) to (10.5, 0), y-axis from (6.7, -1.2) to (6.7, 2.2)
   Unit step = 1.0 cm: ticks at x = 4.7, 5.7, 7.7, 8.7, 9.7; y = 1.0; unit square (6.7, 0) rectangle (7.7, 1.0)
 - Labels (§ Attaching Labels), each with inner sep=0.15cm:
-  "compass" anchor north at (0.7, 0.0); "straightedge" anchor north at (2.9, 0.0)
+  "compass" anchor north at (0.7, 0.0); "straightedge" anchor north at (2.9, 0.6), 0.2 cm under its bar (closer, the bar read like an overline)
   "0" anchor north east at (6.7, 0.0); "1" anchor north at (7.7, -0.08); "2" anchor north at (8.7, -0.08); "-1" anchor north at (5.7, -0.08)
   "\mathbb{R}" anchor west at (10.5, 0)
 - Collisions: "compass" centred at x=0.7 (~0.0..1.4) and "straightedge" centred at x=2.9 (~1.8..4.0) have ~0.4 cm horizontal separation and stop 0.3 cm left of the x-axis at 4.3; tick labels sit below the x-axis; "0" sits in the south-west quadrant clear of both axes.
@@ -943,7 +938,7 @@ In classical straightedge and compass constructions, one begins with a straighte
     % (1) Compass and straightedge
     \draw[thick, figGray] (0.1, 0.2) -- (0.7, 2.0) -- (1.3, 0.2);
     \filldraw[fill=white, draw=figGray, thick] (0.7, 2.0) circle (0.08);
-    \draw[very thick, figGray] (2.9, 0.0) -- (2.9, 2.1);
+    \draw[very thick, figGray] (2.0, 0.8) -- (3.8, 0.8);
 
     % (2) Coordinate axes
     \draw[->, thick] (4.3, 0) -- (10.5, 0);
@@ -958,7 +953,7 @@ In classical straightedge and compass constructions, one begins with a straighte
 
     % (4) Text last
     \node[anchor=north, inner sep=0.15cm, figGray] at (0.7, 0.0) {compass};
-    \node[anchor=north, inner sep=0.15cm, figGray] at (2.9, 0.0) {straightedge};
+    \node[anchor=north, inner sep=0.15cm, figGray] at (2.9, 0.6) {straightedge};
     \node[anchor=north east, inner sep=0.15cm] at (6.7, 0.0) {$0$};
     \node[anchor=north, inner sep=0.15cm] at (5.7, -0.08) {$-1$};
     \node[anchor=north, inner sep=0.15cm, figBlue] at (7.7, -0.08) {$1$};
@@ -979,7 +974,7 @@ In classical straightedge and compass constructions, one begins with a straighte
 \begin{speech}[00:39:59 - 00:42:25]
 And then, the interesting thing is this compass, because that's the circle \inlinemetanote{draws a circle below the compass}, and a circle satisfies a quadratic equation. So, the answer to what you can construct is: you can construct any number in $\mathbb{R}$ such that --- if I take this number, let's say the number $\alpha$ --- such that $\alpha$ lies in an extension... \inlinemetanote{writes \qt{You can construct}, \qt{any number $\alpha$ in $\mathbb{R}$}, and \qt{such that}, and inserts $\alpha$ after \qt{number}} So, here's $\mathbb{R}$, that's a big thing, and here's $\mathbb{Q}$ \inlinemetanote{draws vertical tower $\mathbb{R}$ over $\mathbb{Q}$}. If I construct it, $\alpha$ lies in some field $E$ \inlinemetanote{adds $E$ on the tower and writes $\alpha \in E$ to its left}.
 
-So, you can construct any $\alpha$ in $E$ such that the dimension of $E$ over $\mathbb{Q}$... Well, let's try to say it correctly: such that $E$ lives in some tower of extensions $F_1$, $F_2$, $F_k$, and then $\mathbb{Q}$, such that every degree of the extension is $2$ \inlinemetanote{writes \qt{Such that} and \qt{$E \subset$}, draws vertical tower $F_k, \dots, F_2, F_1, \mathbb{Q}$, and writes \qt{$2$} beside the segments of the tower}.
+So, you can construct any $\alpha$ in $E$ such that the dimension of $E$ over $\mathbb{Q}$... Well, let's try to say it correctly: such that $E$ lives in some tower of extensions $F_1$, $F_2$, $F_k$, and then $\mathbb{Q}$, such that every degree of the extension is $2$ \inlinemetanote{writes \qt{Such that} and \qt{$E \subset$}, draws the tower $F_1, F_2, \dots, F_k, \mathbb{Q}$ from the top down, and writes \qt{$2$} beside the steps}.
 
 Did you learn this stuff in high school or not? I don't know. Like I said, it was a kind of a popular topic once. But if you learned it, then this is the conclusion: what can you compute using this? You can compute any number that sits inside an iteration of quadratic extensions.
 
@@ -991,7 +986,7 @@ A real number $\alpha \in \mathbb{R}$ can be constructed by straightedge and com
 \[
 \mathbb{Q} \subset F_1 \subset F_2 \subset \dots \subset F_k, \qquad \text{with } \dim_{\mathbb{Q}} F_1 = \dim_{F_1} F_2 = \dots = \dim_{F_{k-1}} F_k = 2,
 \]
-and $\alpha \in E \subset F_k$.
+and $\alpha \in E \subset F_k$. (The lecture names the fields from the top down, $E \subset F_1$ with $F_k$ just above $\mathbb{Q}$; here they are numbered upwards from $\mathbb{Q}$.)
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \definecolor{figGreen}{HTML}{3D8252} % RGB (61, 130, 82): dark green (ForestGreen!70!black)
@@ -1055,7 +1050,7 @@ By the Tower Law (\cref{prop:tower-law}), iterating $k$ such steps yields a fiel
 \begin{speech}[00:42:25 - 00:43:24]
 So, then the traditional first application of this is that it's impossible to trisect angles \inlinemetanote{writes: Imposs.\ to trisect angles} --- meaning you cannot trisect any angle. And the standard angle that's used for this is that you take the angle $60^\circ$ \inlinemetanote{writes: $60^\circ$}. That's the angle for the equilateral triangle \inlinemetanote{draws an equilateral triangle below $60^\circ$}, and you can ask: could I construct the trisector of that?
 
-The trisector of $60^\circ$ would be a $20^\circ$ angle \inlinemetanote{writes: $\longrightarrow 20^\circ$}. And if you study what you can do here, if you could trisect this angle, that means you could construct this $20^\circ$. That means you could construct this number: cosine of $20^\circ$ \inlinemetanote{writes: $\cos(20^\circ)$}. That would mean cosine of $20^\circ$ is this $\alpha$ \inlinemetanote{points back to $\alpha$}. You would have to be able to construct this cosine of $20^\circ$...
+The trisector of $60^\circ$ would be a $20^\circ$ angle \inlinemetanote{writes: $\longrightarrow 20^\circ$}. And if you study what you can do here, if you could trisect this angle, that means you could construct this $20^\circ$. That means you could construct this number: cosine of $20^\circ$ \inlinemetanote{writes: $\cos(20) = \alpha$}. That would mean cosine of $20^\circ$ is this $\alpha$ \inlinemetanote{points back to $\alpha$}. You would have to be able to construct this cosine of $20^\circ$...
 \end{speech}
 
 \begin{content}[Reduction of Angle Trisection to \texorpdfstring{$\cos(20^\circ)$}{cos(20 degrees)}]
@@ -1082,9 +1077,9 @@ If $60^\circ$ could be trisected, one could construct a $20^\circ$ angle, and by
 \end{content}
 
 \begin{speech}[00:43:24 - 00:45:01]
-Now I just have to write down one more equation. So, what is this cosine of $20^\circ$? Well, there's this triple-angle formula, if you remember from high school --- actually, do I remember it? --- so, $3\theta$ (i.e., $\cos(3\theta)$) is equal to $4 \cos(\theta)^3 - 3 \cos(\theta)$ \inlinemetanote{writes: $\cos(3\theta) = 4 \cos(\theta)^3 - 3 \cos(\theta)$}. That's the triple-angle formula, which you should remember from high school.
+Now I just have to write down one more equation. So, what is this cosine of $20^\circ$? Well, there's this triple-angle formula, if you remember from high school --- actually, do I remember it? --- so, $3\theta$ (i.e., $\cos(3\theta)$) is equal to $4 \cos(\theta)^3 - 3 \cos(\theta)$ \inlinemetanote{writes: $\cos(3\theta) = 4 \cos^3(\theta) - 3 \cos(\theta)$}. That's the triple-angle formula, which you should remember from high school.
 
-And if you put it here \inlinemetanote{points at $\cos(3\theta)$}, if you put $\theta = 20^\circ$, cosine of $3\theta$ is cosine of $60^\circ$, that's a half --- you should remember that also. And so, it says that a half is $4$ times the cosine of $20^\circ$ (cubed) minus $3$ times the cosine of $20^\circ$ \inlinemetanote{writes: $\frac{1}{2} = 4 \cos(20^\circ)^3 - 3 \cos(20^\circ)$}.
+And if you put it here \inlinemetanote{points at $\cos(3\theta)$}, if you put $\theta = 20^\circ$, cosine of $3\theta$ is cosine of $60^\circ$, that's a half --- you should remember that also. And so, it says that a half is $4$ times the cosine of $20^\circ$ (cubed) minus $3$ times the cosine of $20^\circ$ \inlinemetanote{writes: $\frac{1}{2} = 4 \cos^3(20) - 3 \cos(20)$}.
 
 So, this gives an equation for the cosine of $20^\circ$, and it's a cubic equation. And you can then actually check it's irreducible --- I don't do that now, it's elementary to check that this cubic equation over the rationals is irreducible. So, the cosine of $20^\circ$ satisfies an irreducible cubic equation.
 
@@ -1104,7 +1099,7 @@ Setting $\theta = 20^\circ$ and using $\cos(3 \cdot 20^\circ) = \cos(60^\circ) =
 \]
 Thus, $\alpha = \cos(20^\circ)$ is a root of the cubic polynomial $f(x) = 8x^3 - 6x - 1 \in \mathbb{Q}[x]$ (equivalently $x^3 - \frac{3}{4}x - \frac{1}{8}$), which is irreducible over $\mathbb{Q}$.
 
-Suppose toward a contradiction that $\alpha = \cos(20^\circ)$ were constructible, so $\alpha \in E \subset F_k$ for some tower of quadratic extensions $\mathbb{Q} \subset F_1 \subset \dots \subset F_k$. By the uniqueness construction for simple extensions, the smallest subfield $K \subset E$ containing $\alpha$ is isomorphic to $\faktor{\mathbb{Q}[x]}{(f)}$, and by \cref{prop:dim-quotient-field} its dimension over $\mathbb{Q}$ is
+Suppose toward a contradiction that $\alpha = \cos(20^\circ)$ were constructible, so $\alpha \in E \subset F_k$ for some tower of quadratic extensions $\mathbb{Q} \subset F_1 \subset \dots \subset F_k$. By the uniqueness of the construction (\cref{thm:uniqueness-root-extension}), the smallest subfield $K \subset E$ containing $\alpha$ is isomorphic to $\faktor{\mathbb{Q}[x]}{(f)}$, and by \cref{prop:dim-quotient-field} its dimension over $\mathbb{Q}$ is
 \[
 \dim_{\mathbb{Q}} K = \operatorname{degree}(f) = 3.
 \]

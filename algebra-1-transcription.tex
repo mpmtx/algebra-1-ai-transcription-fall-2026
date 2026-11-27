@@ -1273,7 +1273,9 @@ fonttitle=\bfseries\sffamily,
 % 2026-10-25: Title text color set to EnvAITitleText (#668F99, previously white):
 % coltitle=white,
 coltitle=EnvAITitleText,
-title={\faRobot\ \ #1},
+% 2026-11-27: \qt quote marks in the title take the title colour (QuoteRed, the heading purple, was faint on the title bar):
+% title={\faRobot\ \ #1},
+title={\begingroup\colorlet{QuoteRed}{EnvAITitleText}\faRobot\ \ #1\endgroup},
 boxrule=1pt,
 arc=3pt,
 breakable
