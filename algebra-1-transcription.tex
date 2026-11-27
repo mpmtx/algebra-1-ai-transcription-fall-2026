@@ -1757,18 +1757,22 @@ breakable
 
 % --- NUMBERED HEADINGS (2026-11-27) ---
 % Numbered as in a textbook, 3.1, 4.4.2 and 4.4.2.1 (as in the Algebra textbook, which sets them in
-% MidnightBlue), with the number in the colour of the title. \phantomsection at the start of the
-% title text gives the TOC entry and the bookmark a target on the heading itself; without it they
-% landed one page early. The numberless forms (\section*) only leave out the number.
-\newcommand{\SecTitleFormat}{\normalfont\Large\sffamily\bfseries\boldmath\color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}}
-\newcommand{\SubsecTitleFormat}{\normalfont\large\sffamily\bfseries\boldmath\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}}
-\newcommand{\SubsubsecTitleFormat}{\normalfont\normalsize\sffamily\bfseries\boldmath\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}}
-\titleformat{\section}{\SecTitleFormat}{\thesection}{0.8em}{\phantomsection}[\SecRule]
-\titleformat{name=\section,numberless}{\SecTitleFormat}{}{0pt}{\phantomsection}[\SecRule]
-\titleformat{\subsection}{\SubsecTitleFormat}{\thesubsection}{0.8em}{\phantomsection}
-\titleformat{name=\subsection,numberless}{\SubsecTitleFormat}{}{0pt}{\phantomsection}
-\titleformat{\subsubsection}{\SubsubsecTitleFormat}{\thesubsubsection}{0.8em}{\phantomsection}
-\titleformat{name=\subsubsection,numberless}{\SubsubsecTitleFormat}{}{0pt}{\phantomsection}
+% MidnightBlue), with the number in the colour of the title. The colour is set in the label and in
+% the before-code, which titlesec typesets in horizontal mode, never in the format: there \color
+% puts a colour whatsit on the vertical list, and the glue after it is a legal page break, which
+% parted a \section from the \subsection right below it (four sections ended a page that way in
+% the first build of these headings). \leavevmode starts the line of a numberless heading
+% (\section*), which has no label; \phantomsection then gives the TOC entry and the bookmark a
+% target on the heading itself (without it they landed one page early).
+\newcommand{\SecHeadingColor}{\color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}}
+\newcommand{\SubsecHeadingColor}{\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}}
+\newcommand{\SubsubsecHeadingColor}{\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}}
+\titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}
+  {\SecHeadingColor\thesection}{0.8em}{\leavevmode\phantomsection\SecHeadingColor}[\SecRule]
+\titleformat{\subsection}{\normalfont\large\sffamily\bfseries\boldmath}
+  {\SubsecHeadingColor\thesubsection}{0.8em}{\leavevmode\phantomsection\SubsecHeadingColor}
+\titleformat{\subsubsection}{\normalfont\normalsize\sffamily\bfseries\boldmath}
+  {\SubsubsecHeadingColor\thesubsubsection}{0.8em}{\leavevmode\phantomsection\SubsubsecHeadingColor}
 \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\boldmath}{\theparagraph}{1em}{\phantomsection} % the class default, plus a link target on the heading (unnumbered, it has none)
 
 % Space around the headings (2026-11-27, after the Algebra textbook; see "Vertical rhythm").
