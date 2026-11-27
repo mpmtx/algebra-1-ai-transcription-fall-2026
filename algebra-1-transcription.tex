@@ -350,8 +350,9 @@ pdfauthor={Prof. Rahul Pandharipande}
 % every gap with the lines; to try one, define \textlinespread before the preamble is read, e.g.
 %   pdflatex -jobname=test '\def\textlinespread{1.3}\input{algebra-1-transcription}'
 % The multiples come from the earlier pt/ex values, so text, statements and proofs look as before.
-% Boxes and headings were brought into harmony: boxes stand 1 L apart, and every heading has 1 L
-% below it (where its first box follows) and clearly more above it, so it belongs to what follows.
+% Boxes and headings were brought into harmony: boxes stand 1 L apart, and every heading stands
+% closer to the box below it than that and clearly farther from what comes before it, so it belongs
+% to what follows (heading spacing: see the \titlespacing lines).
 %
 %   line break                         0
 %   paragraph                          0.21 L           \parskip (\customparskip, 3pt)
@@ -360,8 +361,9 @@ pdfauthor={Prof. Rahul Pandharipande}
 %   display formula                    0.25 L           (short: 0.10 L above, 0.17 L below)
 %   centred figure or table            0.63 L + 0.21 L  \topsep of center, plus \parskip
 %   box (speech, content, notes, ...)  1 L              tcolorbox before/after skip
-%   subsubsection / subsection /       2 / 2.25 / 2.5 L above, 1 L below
-%     section; titled long proof       2 L above, 1 L below
+%   subsubsection / subsection /       1.5 / 1.75 / 2 L above, 0.36 / 0.43 / 0.65 L below
+%     section; long proof's title      (2026-11-27; before: 2 / 2.25 / 2.5 L above, 1 L below);
+%                                      the proof's title like the heading of its size
 %   footnotes                          1.12 L           above the footnote rule
 %
 % (The contents pages keep their own ex-based spacing, and so do the insides of boxes and formulas.)
@@ -1423,12 +1425,35 @@ breakable
     \normalsize% 3: subsubsection
   \fi
 }
-% Spacing as for a subsubsection heading at every depth (see "Vertical rhythm").
-\newcommand{\proofwrapper@beforespace}{\headingbefore{2\textline plus 0.36\textline minus 0.07\textline}}
-\newcommand{\proofwrapper@afterspace}{1\textline plus 0.07\textline}
+% The title acts like a heading (2026-11-27): it is set in the size of the heading the proof sits
+% under and spaced like that heading (before: as a subsubsection at every depth, 2 L above and 1 L
+% below), and before it comes what titlesec puts before a heading: the space above, a page break
+% preferred there (\@secpenalty), and no title in the last 3.5 lines of a page (the
+% nobottomtitles* test, copied from titlesec's \ttl@straight@ii). Right after a heading it adds
+% neither space nor a break, as a heading right after a heading; a heading right after the title
+% follows at the space below it. The skips are defined with the heading spacing, after the
+% \titleformat lines.
+\newcommand{\proofwrapper@byheading}[3]{% #1 chapter or section, #2 subsection, #3 subsubsection
+  \ifcase\numexpr\proofwrapper@depth\relax #1\or #1\or #2\else #3\fi}
+\newcommand{\proofwrapper@afterspace}{\proofwrapper@byheading{\sectionskipbelow}{\subsectionskipbelow}{\subsubsectionskipbelow}}
+\newcommand{\proofwrapper@before}{%
+  \par
+  \if@nobreak\else
+    \addpenalty{\@secpenalty}%
+    \addvspace{\proofwrapper@byheading{\sectionskipabove}{\subsectionskipabove}{\subsubsectionskipabove}}%
+    \begingroup
+      \@tempskipb\pagegoal
+      \@tempskipa\pagegoal
+      \advance\@tempskipa-\bottomtitlespace\relax
+      \pagegoal\@tempskipa
+      \def\@textbottom{\vskip\z@\@plus.0001fil}%
+      \penalty9999
+      \pagegoal\@tempskipb
+    \endgroup
+  \fi}
 
 \newenvironment{proofWrapper}[1][Proof]{%
-    \par\addvspace{\proofwrapper@beforespace}%
+    \proofwrapper@before
     \insideprooftrue
     \noindent%
     \def\proofwrapper@title{#1}%
@@ -1436,7 +1461,9 @@ breakable
     {\normalfont\sffamily\bfseries\boldmath\proofwrapper@fontsize\color{ProofTint}%
       \faPenNib\hspace{0.5em}#1%
     }%
-    \par\nobreak\vspace{\proofwrapper@afterspace}\vspace{-\parskip}%
+    % As below a heading: the paragraph skip and, for a box, tcolorbox's 2pt come on top of the
+    % space (until 2026-11-27 the paragraph skip was taken off here; the space was 1 L).
+    \par\nobreak\vspace{\proofwrapper@afterspace}%
     \@afterindentfalse\@afterheading
 }{%
     % The title keeps the space of a heading; after the badge, an ordinary paragraph break.
@@ -1507,7 +1534,8 @@ breakable
 \NewFallbackBox{ai-kinetic-emphasis}
 
 % --- VIBRANT HEADING & CHAPTER STYLING (CLEAN & RAZOR-SHARP) ---
-% Color definitions for bars and accent lines:
+% Color definitions for bars and accent lines (the bar headings are switched off since 2026-11-27,
+% see "BAR HEADINGS"; the rule under a section uses SecLineRight):
 \definecolor{SecBarOne}{HTML}{6A3199}
 \definecolor{SecBarTwo}{HTML}{143866}
 \definecolor{SecBarThree}{HTML}{008CC8}
@@ -1673,62 +1701,99 @@ breakable
 {\ChapRule\endgraf\nopagebreak\vspace{0.924\textline}\raggedleft} 
 [\endgraf\nopagebreak\vspace{0.462\textline}\ChapRule]
 
+% The rule under a section title. 2026-11-27: one colour, the light blue of its right-hand part
+% (SecLineRight); before, it ran purple, navy and light blue:
+% \newcommand{\SecRule}{%
+%   \vspace{-0.55em}\noindent%
+%   \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.0pt}}%
+%   \textcolor{SecLineMid}{\rule{0.36\textwidth}{1.0pt}}%
+%   \textcolor{SecLineRight}{\rule{0.36\textwidth}{1.0pt}}%
+% }
+\colorlet{SecLine}{SecLineRight}
 \newcommand{\SecRule}{%
   \vspace{-0.55em}\noindent%
-  \textcolor{SecLineLeft}{\rule{0.28\textwidth}{1.0pt}}%
-  \textcolor{SecLineMid}{\rule{0.36\textwidth}{1.0pt}}%
-  \textcolor{SecLineRight}{\rule{0.36\textwidth}{1.0pt}}%
+  \textcolor{SecLine}{\rule{\textwidth}{1.0pt}}%
 }
 
-\newcommand{\SecSym}{%
-  \phantomsection%
-  \mbox{%
-    \cbar{SecBarOne}{3pt}{1.55ex}%
-    \cbar{SecBarTwo}{2.2pt}{1.55ex}%
-    \cbar{SecBarThree}{1.5pt}{1.55ex}%
-    \cbar{SecBarFour}{0.95pt}{1.55ex}%
-    \kern0.4em%
-  }%
-  \color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}%
-}
+% --- BAR HEADINGS (2026-10-25 to 2026-11-27), switched off: the headings are numbered now (below).
+% To bring the bars back, uncomment the three symbols and their \titleformat lines, and comment
+% out the numbered \titleformat lines. Their colours (SecBarOne, ...) and \cbar are still defined.
+% \newcommand{\SecSym}{%
+%   \phantomsection%
+%   \mbox{%
+%     \cbar{SecBarOne}{3pt}{1.55ex}%
+%     \cbar{SecBarTwo}{2.2pt}{1.55ex}%
+%     \cbar{SecBarThree}{1.5pt}{1.55ex}%
+%     \cbar{SecBarFour}{0.95pt}{1.55ex}%
+%     \kern0.4em%
+%   }%
+%   \color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}%
+% }
+%
+% \newcommand{\SubsecSym}{%
+%   \phantomsection%
+%   \mbox{%
+%     \cbar{SubSecBarOne}{3pt}{1.45ex}%
+%     \cbar{SubSecBarTwo}{2.15pt}{1.45ex}%
+%     \cbar{SubSecBarThree}{1.3pt}{1.45ex}%
+%     \kern0.4em%
+%   }%
+%   \color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}%
+% }
+%
+% \newcommand{\SubsubsecSym}{%
+%   \phantomsection%
+%   \mbox{%
+%     \cbar{SubSubSecBarOne}{3pt}{1.35ex}%
+%     \cbar{SubSubSecBarTwo}{1.75pt}{1.35ex}%
+%     \kern0.35em%
+%   }%
+%   \color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}%
+% }
+%
+% \titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}{}{0pt}{\SecSym}[\SecRule]
+% \titleformat{\subsection}{\normalfont\large\sffamily\bfseries\boldmath}{}{0pt}{\SubsecSym}
+% \titleformat{\subsubsection}{\normalfont\normalsize\sffamily\bfseries\boldmath}{}{0pt}{\SubsubsecSym}
 
-\newcommand{\SubsecSym}{%
-  \phantomsection%
-  \mbox{%
-    \cbar{SubSecBarOne}{3pt}{1.45ex}%
-    \cbar{SubSecBarTwo}{2.15pt}{1.45ex}%
-    \cbar{SubSecBarThree}{1.3pt}{1.45ex}%
-    \kern0.4em%
-  }%
-  \color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}%
-}
-
-\newcommand{\SubsubsecSym}{%
-  \phantomsection%
-  \mbox{%
-    \cbar{SubSubSecBarOne}{3pt}{1.35ex}%
-    \cbar{SubSubSecBarTwo}{1.75pt}{1.35ex}%
-    \kern0.35em%
-  }%
-  \color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}%
-}
-
-\titleformat{\section}{\normalfont\Large\sffamily\bfseries\boldmath}{}{0pt}{\SecSym}[\SecRule]
-\titleformat{\subsection}{\normalfont\large\sffamily\bfseries\boldmath}{}{0pt}{\SubsecSym}
-\titleformat{\subsubsection}{\normalfont\normalsize\sffamily\bfseries\boldmath}{}{0pt}{\SubsubsecSym}
+% --- NUMBERED HEADINGS (2026-11-27) ---
+% Numbered as in a textbook, 3.1, 4.4.2 and 4.4.2.1 (as in the Algebra textbook, which sets them in
+% MidnightBlue), with the number in the colour of the title. \phantomsection at the start of the
+% title text gives the TOC entry and the bookmark a target on the heading itself; without it they
+% landed one page early. The numberless forms (\section*) only leave out the number.
+\newcommand{\SecTitleFormat}{\normalfont\Large\sffamily\bfseries\boldmath\color{\ifinsideproof SecTitleColorProof\else SecTitleCol\fi}}
+\newcommand{\SubsecTitleFormat}{\normalfont\large\sffamily\bfseries\boldmath\color{\ifinsideproof SubSecTitleColorProof\else SubSecTitleCol\fi}}
+\newcommand{\SubsubsecTitleFormat}{\normalfont\normalsize\sffamily\bfseries\boldmath\color{\ifinsideproof SubSubSecTitleColorProof\else SubSubSecTitleCol\fi}}
+\titleformat{\section}{\SecTitleFormat}{\thesection}{0.8em}{\phantomsection}[\SecRule]
+\titleformat{name=\section,numberless}{\SecTitleFormat}{}{0pt}{\phantomsection}[\SecRule]
+\titleformat{\subsection}{\SubsecTitleFormat}{\thesubsection}{0.8em}{\phantomsection}
+\titleformat{name=\subsection,numberless}{\SubsecTitleFormat}{}{0pt}{\phantomsection}
+\titleformat{\subsubsection}{\SubsubsecTitleFormat}{\thesubsubsection}{0.8em}{\phantomsection}
+\titleformat{name=\subsubsection,numberless}{\SubsubsecTitleFormat}{}{0pt}{\phantomsection}
 \titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries\boldmath}{\theparagraph}{1em}{\phantomsection} % the class default, plus a link target on the heading (unnumbered, it has none)
 
-% 1 L below every heading, where its first box follows at the box gap, and more above it, so the
-% heading belongs to what follows (see "Vertical rhythm"; before: 3.5ex/1.8ex, 3ex/1.2ex, 2.5ex/1ex).
+% Space around the headings (2026-11-27, after the Algebra textbook; see "Vertical rhythm").
+% Below: the textbook's 0.65 / 0.43 / 0.36 L. A breakable box right after a heading does not add
+% its own 1 L (with ignore nobreak=false, tcolorbox only adds the paragraph skip and 2pt), so the
+% space below alone decides how close a title stands to its box: about 13pt, less than the 1 L
+% between two boxes. Above: 2 / 1.75 / 1.5 L, clearly more than that 1 L, so that a heading
+% belongs to what follows it (the textbook, which has no boxes, uses 1.26 / 1.08 / 0.90 L).
+% Before: 2.5 / 2.25 / 2 L above and 1 L below, which left a title 21-23pt above its box.
 % A heading right after another heading (a section with its first subsection, say) follows at
-% the 1 L below the first one, so the two stay together: \headingbefore gives no space of its
-% own while \if@nobreak says that no text has come since the last heading.
+% the space below the first one, so the two stay together: \headingbefore gives no space of its
+% own while \if@nobreak says that no text has come since the last heading. The long proof's title
+% acts like the heading whose size it has (\proofwrapper@before, \proofwrapper@afterspace).
 \makeatletter
 \newcommand{\headingbefore}[1]{\if@nobreak 0pt\else #1\fi}
 \makeatother
-\titlespacing*{\section}{0pt}{\headingbefore{2.5\textline plus 0.5\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
-\titlespacing*{\subsection}{0pt}{\headingbefore{2.25\textline plus 0.45\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
-\titlespacing*{\subsubsection}{0pt}{\headingbefore{2\textline plus 0.4\textline minus 0.1\textline}}{1\textline plus 0.07\textline}
+\newcommand{\sectionskipabove}{2\textline plus 0.4\textline minus 0.1\textline}
+\newcommand{\sectionskipbelow}{0.65\textline plus 0.07\textline}
+\newcommand{\subsectionskipabove}{1.75\textline plus 0.35\textline minus 0.1\textline}
+\newcommand{\subsectionskipbelow}{0.43\textline plus 0.07\textline}
+\newcommand{\subsubsectionskipabove}{1.5\textline plus 0.3\textline minus 0.1\textline}
+\newcommand{\subsubsectionskipbelow}{0.36\textline plus 0.07\textline}
+\titlespacing*{\section}{0pt}{\headingbefore{\sectionskipabove}}{\sectionskipbelow}
+\titlespacing*{\subsection}{0pt}{\headingbefore{\subsectionskipabove}}{\subsectionskipbelow}
+\titlespacing*{\subsubsection}{0pt}{\headingbefore{\subsubsectionskipabove}}{\subsubsectionskipbelow}
 \titlespacing*{\paragraph}{0pt}{\customenvspace}{1em}
 
 
