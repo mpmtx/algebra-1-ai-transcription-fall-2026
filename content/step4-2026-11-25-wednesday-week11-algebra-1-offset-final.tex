@@ -256,20 +256,20 @@ By the division algorithm for polynomials in $k[x]$ (\cref{thm:poly-long-divisio
 \[
 g(x) = h(x) \cdot f(x) + r(x), \qquad \operatorname{degree}(r) < d,
 \]
-for some quotient $h(x) \in k[x]$ and remainder $r(x) \in k[x]$.
+for some quotient $h(x) \in k[x]$ and remainder $r(x) \in k[x]$; precisely, \cref{thm:poly-long-division} gives $r(x) = 0$ or $\operatorname{degree}(r) < d$, since the degree of the zero polynomial is undefined (\cref{def:poly-degree}).
 
 Passing to residue classes in $K = \faktor{k[x]}{(f)}$, and noting that $\overline{f(x)} = 0$ because $f \in (f)$, we obtain
 \[
 \overline{g(x)} = \underset{0}{\cancel{\overline{h(x)} \, \overline{f(x)}}} + \overline{r(x)} = \overline{r(x)}.
 \]
-Since $\operatorname{degree}(r) < d$, we can write $r(x) = \sum_{i=0}^{d-1} a_i x^i$ with coefficients $a_i \in k$. Taking residue classes yields
+In either case, we can write $r(x) = \sum_{i=0}^{d-1} a_i x^i$ with coefficients $a_i \in k$ (all $a_i = 0$ if $r(x) = 0$). Taking residue classes yields
 \[
 \overline{g(x)} = \overline{r(x)} = \sum_{i=0}^{d-1} a_i \bar{x}^i,
 \]
 which is a $k$-linear combination of $\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}$. Hence, the set generates $K$.
 
 \begin{steps}[Why $\operatorname{degree}(r) < d$ Guarantees Spanning]
-Every polynomial $r(x)$ of degree strictly less than $d$ involves only powers $x^0, x^1, \dots, x^{d-1}$. Because the quotient map $k[x] \to K$ is a $k$-linear ring homomorphism, $\overline{\sum_{i=0}^{d-1} a_i x^i} = \sum_{i=0}^{d-1} a_i \bar{x}^i$, so every element of $K$ lies in the $k$-linear span of $\{\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}\}$. (Note that if $r(x) = 0$, the convention $\operatorname{degree}(0) = -\infty < d$ also fits, giving the zero linear combination.)
+Every polynomial $r(x)$ of degree strictly less than $d$ involves only powers $x^0, x^1, \dots, x^{d-1}$. Because the quotient map $k[x] \to K$ is a $k$-linear ring homomorphism, $\overline{\sum_{i=0}^{d-1} a_i x^i} = \sum_{i=0}^{d-1} a_i \bar{x}^i$, so every element of $K$ lies in the $k$-linear span of $\{\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}\}$. (The case $r(x) = 0$ gives the zero linear combination.)
 \end{steps}
 \end{content}
 
@@ -381,7 +381,7 @@ By the universal property of the polynomial ring $k[x]$ (\cref{thm:universal-pro
 \]
 satisfying the two properties:
 \begin{enumerate}[label=\textbf{(\arabic*)}]
-    \item $\phi|_k = \id_k$ (i.e., $\phi$ acts as the identity on the constant subfield $k$),
+    \item $\phi|_k = \operatorname{Id}_k$ (i.e., $\phi$ acts as the identity on the constant subfield $k$),
     \item $\phi(x) = \beta$.
 \end{enumerate}
 Explicitly, $\phi$ is the evaluation homomorphism $g(x) \mapsto g(\beta)$.
@@ -421,13 +421,13 @@ onto the image $\operatorname{Im}(\phi)$ inside $F$ (which is therefore a subfie
   Ray k -> F: vector (2.6, 1.8), unit (0.822, 0.569); segment (2.89, 1.60) -- (4.66, 2.82)
   Arrow kx -> F: (0.65, 3.2) -- (4.45, 3.2) (length 3.80 cm; clears k[x] on left and F \ni \beta on right)
   Arrow kx -> K: (0, 2.8) -- (0, 0.65) (stops well above the fraction in K = k[x]/(f))
-  Arrow K -> Im: (1.15, 0) -- (3.85, 0) (length 2.70 cm; clears K = k[x]/(f) up to ~1.05 and Im(\phi) \subset F starting at ~3.95)
+  Arrow K -> Im: (1.35, 0) -- (3.85, 0) (length 2.50 cm; clears K = k[x]/(f), whose text with inner sep reaches past 1.15, and Im(\phi) \subset F starting at ~3.95)
 - Labels (§ Attaching Labels), each with inner sep=0.15cm:
   "k[x]" at (0, 3.2), "F \ni \beta" at (5.2, 3.2)
   "k" at (2.6, 1.4), "K = \faktor{k[x]}{(f)}" at (0, 0), "\operatorname{Im}(\phi) \subset F" at (5.2, 0)
   "\exists!" by auto on (0.65, 3.2)--(4.45, 3.2) (above), "\phi" by [auto, swap] on the same segment (below)
   "\ker(\phi) = (f)" anchor east at (0, 1.72) (left of the downward arrow, outside the V-shape)
-  "\bar{\phi}" by auto on (1.15, 0)--(3.85, 0) (above), "\sim" by [auto, swap] (below)
+  "\bar{\phi}" by auto on (1.35, 0)--(3.85, 0) (above), "\sim" by [auto, swap] (below)
 - Collisions: "\phi" sits at y ~ 2.9 below the top arrow, well above k at y = 1.4 and clear of the diagonal inclusions.
   "\bar{\phi}" sits at y ~ 0.35 above the bottom arrow, 1.05 cm below k at y = 1.4. "\ker(\phi) = (f)" sits completely left of x = 0.
 \end{hidden}
@@ -440,7 +440,7 @@ onto the image $\operatorname{Im}(\phi)$ inside $F$ (which is therefore a subfie
     % (2) Arrows
     \draw[->, thick, figBlue] (0.65, 3.2) -- (4.45, 3.2);
     \draw[->, thick, figRed] (0, 2.8) -- (0, 0.65);
-    \draw[->, thick, figBlue] (1.15, 0) -- (3.85, 0);
+    \draw[->, thick, figBlue] (1.35, 0) -- (3.85, 0);
 
     % (3) Text last
     \node[inner sep=0.15cm] at (0, 3.2) {$k[x]$};
@@ -451,8 +451,8 @@ onto the image $\operatorname{Im}(\phi)$ inside $F$ (which is therefore a subfie
     \path (0.65, 3.2) -- (4.45, 3.2) node[midway, auto, inner sep=0.15cm, figBlue] {$\exists!$};
     \path (0.65, 3.2) -- (4.45, 3.2) node[midway, auto, swap, inner sep=0.15cm, figBlue] {$\phi$};
     \node[anchor=east, inner sep=0.15cm, figRed] at (0, 1.72) {$\ker(\phi) = (f)$};
-    \path (1.15, 0) -- (3.85, 0) node[midway, auto, inner sep=0.15cm, figBlue] {$\bar{\phi}$};
-    \path (1.15, 0) -- (3.85, 0) node[midway, auto, swap, inner sep=0.15cm, figBlue] {$\sim$};
+    \path (1.35, 0) -- (3.85, 0) node[midway, auto, inner sep=0.15cm, figBlue] {$\bar{\phi}$};
+    \path (1.35, 0) -- (3.85, 0) node[midway, auto, swap, inner sep=0.15cm, figBlue] {$\sim$};
 \end{tikzpicture}
 \end{center}
 \end{content}
@@ -646,6 +646,7 @@ Then $F$ is finite-dimensional as a $k$-vector space, and
 \dim_E F \cdot \dim_k E = \dim_k F.
 \end{equation}
 \end{proposition}
+The dimension $\dim_k E$ is also called the \newterm{degree} of the field extension $k \subset E$; the lecture later speaks of the \qt{degree of the extension} in exactly this sense, and the Tower Law says that degrees multiply in a tower.
 \end{content}
 
 \begin{student}[Student Question]
@@ -874,7 +875,7 @@ e_1 \hat{c}_{i1} + e_2 \hat{c}_{i2} + \dots + e_B \hat{c}_{iB} = 0 \qquad \text{
 \hat{c}_{ij} = 0 \qquad \text{for all } 1 \le i \le A,\; 1 \le j \le B.
 \]
 
-\textbf{Conclusion:} Thus, $\{f_i e_j \mid 1 \le i \le A,\; 1 \le j \le B\}$ both generates $F$ over $k$ and is linearly independent over $k$, so it is a $k$-basis of $F$. Moreover, all $A \cdot B$ elements $f_i e_j$ are distinct (if $f_i e_j = f_{i'} e_{j'}$ with $(i, j) \neq (i', j')$, then $f_i e_j - f_{i'} e_{j'} = 0$ would be a nontrivial $k$-linear relation, contradicting linear independence). Therefore, $F$ is finite-dimensional over $k$ and
+\textbf{Conclusion:} Thus, $\{f_i e_j \mid 1 \le i \le A,\; 1 \le j \le B\}$ both generates $F$ over $k$ and is linearly independent over $k$, so it is a $k$-basis of $F$. Moreover, all $A \cdot B$ elements $f_i e_j$ are distinct (if $f_i e_j = f_{i'} e_{j'}$ with $(i, j) \neq (i', j')$, then $f_i e_j - f_{i'} e_{j'} = 0$ would be a $k$-linear relation with coefficients $\hat{c}_{ij} = 1$ and $\hat{c}_{i'j'} = -1$, contradicting $\hat{c}_{ij} = 0$ from Step 2). Therefore, $F$ is finite-dimensional over $k$ and
 \[
 \dim_k F = A \cdot B = \dim_E F \cdot \dim_k E.
 \]
@@ -924,7 +925,7 @@ In classical straightedge and compass constructions, one begins with a straighte
 - Order: (1) compass V-shape and straightedge segment; (2) coordinate axes; (3) unit square and integer ticks; (4) all text last
 - Coordinates:
   Compass: apex (0.7, 2.0), legs to (0.1, 0.2) and (1.3, 0.2), hinge circle radius 0.08 at (0.7, 2.0)
-  Straightedge: vertical bar at x = 2.9 from y = 0.0 to y = 2.1
+  Straightedge: horizontal segment (2.0, 0.8) -- (3.8, 0.8)
   Plane: origin at (6.7, 0), x-axis from (4.3, 0) to (10.5, 0), y-axis from (6.7, -1.2) to (6.7, 2.2)
   Unit step = 1.0 cm: ticks at x = 4.7, 5.7, 7.7, 8.7, 9.7; y = 1.0; unit square (6.7, 0) rectangle (7.7, 1.0)
 - Labels (§ Attaching Labels), each with inner sep=0.15cm:
@@ -1038,7 +1039,7 @@ and $\alpha \in E \subset F_k$. (The lecture names the fields from the top down,
 Going beyond the lecture: Each new constructible point is obtained by intersecting two lines, a line and a circle, or two circles defined using previously constructed coordinates in a field $F_m$:
 \begin{itemize}
     \item \textbf{Line $\cap$ Line:} Solving two linear equations over $F_m$ yields coordinates already in $F_m$ (degree $1$).
-    \item \textbf{Line $\cap$ Circle:} Substituting a linear equation into a quadratic circle equation $(x - a)^2 + (y - b)^2 = r^2$ yields a quadratic equation over $F_m$, whose solutions lie in $F_m$ or a degree-$2$ extension $F_{m+1} = F_m(\sqrt{d})$.
+    \item \textbf{Line $\cap$ Circle:} Substituting a linear equation into a quadratic circle equation $(x - a)^2 + (y - b)^2 = r^2$ (with $a, b, r^2 \in F_m$) yields a quadratic equation over $F_m$, whose solutions lie in $F_m$ or a degree-$2$ extension $F_{m+1} = F_m(\sqrt{d})$.
     \item \textbf{Circle $\cap$ Circle:} Subtracting the two circle equations cancels the $x^2$ and $y^2$ terms, reducing the system to a line $\cap$ circle intersection.
 \end{itemize}
 By the Tower Law (\cref{prop:tower-law}), iterating $k$ such steps yields a field $F_k$ of dimension $\dim_{\mathbb{Q}} F_k = 2^k$ over $\mathbb{Q}$.
@@ -1099,7 +1100,7 @@ Setting $\theta = 20^\circ$ and using $\cos(3 \cdot 20^\circ) = \cos(60^\circ) =
 \]
 Thus, $\alpha = \cos(20^\circ)$ is a root of the cubic polynomial $f(x) = 8x^3 - 6x - 1 \in \mathbb{Q}[x]$ (equivalently $x^3 - \frac{3}{4}x - \frac{1}{8}$), which is irreducible over $\mathbb{Q}$.
 
-Suppose toward a contradiction that $\alpha = \cos(20^\circ)$ were constructible, so $\alpha \in E \subset F_k$ for some tower of quadratic extensions $\mathbb{Q} \subset F_1 \subset \dots \subset F_k$. By the uniqueness of the construction (\cref{thm:uniqueness-root-extension}), the smallest subfield $K \subset E$ containing $\alpha$ is isomorphic to $\faktor{\mathbb{Q}[x]}{(f)}$, and by \cref{prop:dim-quotient-field} its dimension over $\mathbb{Q}$ is
+Suppose toward a contradiction that $\alpha = \cos(20^\circ)$ were constructible, so $\alpha \in E \subset F_k$ for some tower of quadratic extensions $\mathbb{Q} \subset F_1 \subset \dots \subset F_k$. By the uniqueness of the construction (\cref{thm:uniqueness-root-extension}), the smallest subfield $K \subset E$ containing $\alpha$ is isomorphic to $\faktor{\mathbb{Q}[x]}{(f)}$ by an isomorphism that is the identity on $\mathbb{Q}$, hence $\mathbb{Q}$-linear, so by \cref{prop:dim-quotient-field} its dimension over $\mathbb{Q}$ is
 \[
 \dim_{\mathbb{Q}} K = \operatorname{degree}(f) = 3.
 \]
@@ -1174,7 +1175,7 @@ None of these vanishes, so $8x^3 - 6x - 1$ has no rational root and is therefore
 \begin{overview}[Summary of Key Concepts]
 \begin{itemize}
     \item \textbf{Dimension of a Simple Quotient Extension:} For a field $k$ and an irreducible polynomial $f \in k[x]$ of degree $d$, the field $K = \faktor{k[x]}{(f)}$ is a finite-dimensional $k$-vector space with basis $\{\bar{1}, \bar{x}, \dots, \bar{x}^{d-1}\}$ and $\dim_k K = \operatorname{degree}(f)$.
-    \item \textbf{Uniqueness up to Isomorphism:} For any field extension $F$ of $k$ containing a root $\beta$ of $f$, the universal property of $k[x]$ gives a unique evaluation homomorphism $\phi \colon k[x] \to F$ with $\phi|_k = \id_k$ and $\phi(x) = \beta$. Its kernel is $(f)$, inducing an isomorphism $\bar{\phi} \colon K \xrightarrow{\sim} \operatorname{Im}(\phi) \subset F$ onto the smallest subfield of $F$ containing $k$ and $\beta$.
+    \item \textbf{Uniqueness up to Isomorphism:} For any field extension $F$ of $k$ containing a root $\beta$ of $f$, the universal property of $k[x]$ gives a unique evaluation homomorphism $\phi \colon k[x] \to F$ with $\phi|_k = \operatorname{Id}_k$ and $\phi(x) = \beta$. Its kernel is $(f)$, inducing an isomorphism $\bar{\phi} \colon K \xrightarrow{\sim} \operatorname{Im}(\phi) \subset F$ onto the smallest subfield of $F$ containing $k$ and $\beta$.
     \item \textbf{The Tower Law:} For a tower of fields $k \subset E \subset F$ where $F$ is finite-dimensional over $E$ (with basis $\{f_1, \dots, f_A\}$) and $E$ is finite-dimensional over $k$ (with basis $\{e_1, \dots, e_B\}$), the products $\{f_i e_j\}$ form a $k$-basis of $F$, giving $\dim_E F \cdot \dim_k E = \dim_k F$.
     \item \textbf{Impossibility of Angle Trisection:} A real number $\alpha$ is constructible by straightedge and compass if and only if it lies in a subfield $E \subset F_k$ of a finite tower $\mathbb{Q} \subset F_1 \subset \dots \subset F_k$ of degree-$2$ extensions (since lines give degree-$1$ equations and circles give quadratic equations). Since $\cos(20^\circ)$ satisfies an irreducible cubic equation over $\mathbb{Q}$ (from $\cos(3\theta) = 4\cos(\theta)^3 - 3\cos(\theta)$), it generates a degree-$3$ subfield $K$, which cannot sit inside a field of degree $2^k$ over $\mathbb{Q}$. Hence, $60^\circ$ cannot be trisected.
 \end{itemize}

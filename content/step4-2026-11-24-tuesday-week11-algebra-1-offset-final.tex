@@ -344,7 +344,7 @@ The identity $e \in G$ satisfies $e Q e^{-1} = Q$, so $e \in N$. If $x, y \in N$
 \end{proof}
 
 \begin{lemma}\label[lemma]{lem:q-in-normalizer}
-$Q \subset N$, and hence we have the chain of subgroups $Q \subset N \subset G$.
+For a subgroup $Q \subset G$, we have $Q \subset N$, and hence the chain of subgroups $Q \subset N \subset G$.
 \end{lemma}
 \begin{proof}
 Since $Q$ is a subgroup of $G$, for every $x \in Q$ we have $x Q x^{-1} = Q$, which means $x \in N$.
@@ -535,6 +535,11 @@ A group $G$ is a \newterm{simple group} $\stackrel{\text{def}}{\iff}$ $G$ has no
 \end{definition}
 \end{content}
 
+\begin{aiNote}[Beyond the Lecture: The Trivial Group]
+% [PERSISTENT, ADDITION]
+Most textbooks also require $G \neq \{e\}$ in the definition of a simple group, so that the trivial group (whose only normal subgroup is $\{e\} = G$) does not count as simple, much as $1$ does not count as a prime.
+\end{aiNote}
+
 \begin{speech}[00:22:28 - 00:22:42]
 And the proposition that is very useful in Algebra $2$ is that the group we've seen, $A_5$, is simple \inlinemetanote{writes \qt{Prop.} and \qt{$A_5$ is simple.}}.
 \end{speech}
@@ -571,7 +576,7 @@ And the way to do this is that, to first order, you should think about them: the
 
 And I'll just tell you what the answers are here, if I can remember: $1$... the conjugacy classes are of this order, and the last one splits, so it should be like that \inlinemetanote{writes \qt{$1,$}, \qt{$15, 20,$}, and \qt{$12, 12$}}. So, hopefully this adds up to $60$, which it does.
 
-So, that's the order of the conjugacy classes. This is for you to check \inlinemetanote{draws arrow from $1, 15, 20, 12, 12$ and writes: for you to check}. And this is a finite check, and it's not a very hard one, but just like we did for $A_3$ (slip for $A_4$), you have to do a little bit of work and playing with the group. There's no way around that. Because after all, this is a property of this group. You have to use something about this group.
+So, that's the order of the conjugacy classes. This is for you to check \inlinemetanote{draws arrow from $1, 15, 20, 12, 12$ and writes: for you to check}. And this is a finite check, and it's not a very hard one, but just like we did for $A_3$ (i.e., $A_4$), you have to do a little bit of work and playing with the group. There's no way around that. Because after all, this is a property of this group. You have to use something about this group.
 \end{speech}
 
 \begin{content}[Conjugacy Class Sizes of \texorpdfstring{$A_5$}{A5}]
@@ -776,7 +781,7 @@ Sylow IV (\cref{thm:sylow-iv}) implies that $\faktor{\mathbb{Z}}{p\mathbb{Z}} \s
 The lecture leaves the details to the students. Let $n_p$ be the number of $p$-Sylow subgroups of $G$. They are all conjugate (\cref{thm:sylow-3}), so they form a single orbit of the conjugation action of $G$, and by the Orbit--Stabilizer Theorem (\cref{thm:orbit-stabilizer}) $n_p$ divides $|G| = pq$. Since $n_p \equiv 1 \pmod p$, $p \nmid n_p$, so $n_p \mid q$. If $n_p \neq 1$, then $n_p \ge p + 1 > q$, which is impossible. Hence, $n_p = 1$. Every conjugate $x A x^{-1}$ of the $p$-Sylow subgroup $A$ is again a $p$-Sylow subgroup, hence equal to $A$, so $A$ is normal in $G$.
 \end{proof}
 
-Taking a generator $x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$, normality of $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ ensures that conjugation by $x$ maps $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ to itself:
+Here $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ and $\faktor{\mathbb{Z}}{q\mathbb{Z}}$ stand for the Sylow subgroups $A, B \subset G$, written with the multiplication of $G$. Taking a generator $x \in \faktor{\mathbb{Z}}{q\mathbb{Z}}$, normality of $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ ensures that conjugation by $x$ maps $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ to itself:
 \[
 \operatorname{Conj}_x \colon \faktor{\mathbb{Z}}{p\mathbb{Z}} \to \faktor{\mathbb{Z}}{p\mathbb{Z}}, \qquad y \mapsto x y x^{-1}.
 \]
@@ -818,7 +823,7 @@ Starting from the study of groups $G$ (mostly finite in this course), a first ma
 \begin{speech}[00:35:02 - 00:35:43]
 So, then there's another direction, it's called representation theory \inlinemetanote{writes: Representation theory}.
 
-And this is easy to explain: it basically asks to study homomorphisms from $G$ to matrix groups, $\operatorname{GL}_n$ over some field \inlinemetanote{writes: $( f \colon G \to GL_n(k) )$}. That's the study of such representations, study of homomorphisms \inlinemetanote{writes: study of homoms.}.
+And this is easy to explain: it basically asks to study homomorphisms from $G$ to matrix groups, $\operatorname{GL}_n$ over some field \inlinemetanote{writes: $( f \colon G \to \operatorname{GL}_n(k) )$}. That's the study of such representations, study of homomorphisms \inlinemetanote{writes: study of homoms.}.
 
 And this is an amazingly rich thing to do. Sometimes in Algebra $2$ at the end there's some discussion about this. There's many books on this.
 \end{speech}
@@ -861,13 +866,13 @@ Sophus Lie pursued Klein's perspective by systematically classifying \newterm{co
 \begin{speech}[00:38:18 - 00:40:22]
 And the reason for this is that... Well, yeah. So, let me first give you... so the kind of examples that Sophus Lie... And this is also --- this kind of classification theory is complete, you know.
 
-Is how do you find these groups of continuous symmetries? Well, we've seen them already! Like you can take $\operatorname{GL}_n$, let's just say $\mathbb{R}$ \inlinemetanote{writes \qt{$\mathbb{R}^n$} and below it \qt{$GL_n(\mathbb{R})$}}. You can also change the field, but $\operatorname{GL}_n$, that group --- that's a continuous, it's not a finite group, it's kind of continuous symmetries of a vector space. And you could take maybe $\operatorname{SL}_n$, that's the determinant $1$ \inlinemetanote{writes: $SL_n(\mathbb{R})$}. That's just of a vector space $\mathbb{R}^n$.
+Is how do you find these groups of continuous symmetries? Well, we've seen them already! Like you can take $\operatorname{GL}_n$, let's just say $\mathbb{R}$ \inlinemetanote{writes \qt{$\mathbb{R}^n$} and below it \qt{$\operatorname{GL}_n(\mathbb{R})$}}. You can also change the field, but $\operatorname{GL}_n$, that group --- that's a continuous, it's not a finite group, it's kind of continuous symmetries of a vector space. And you could take maybe $\operatorname{SL}_n$, that's the determinant $1$ \inlinemetanote{writes: $\operatorname{SL}_n(\mathbb{R})$}. That's just of a vector space $\mathbb{R}^n$.
 
-You could also take a vector space with some kind of inner product and look at the continuous symmetries of that, and these groups are called $O_n$, for the orthogonal groups \inlinemetanote{writes \qt{$\mathbb{R}^n, \langle , \rangle$} and \qt{$O_n$}}. And then you can take $\operatorname{SO}$, that's the... \inlinemetanote{writes: $SO_n$}
+You could also take a vector space with some kind of inner product and look at the continuous symmetries of that, and these groups are called $\operatorname{O}_n$, for the orthogonal groups \inlinemetanote{writes \qt{$\mathbb{R}^n, \langle , \rangle$} and \qt{$\operatorname{O}_n$}}. And then you can take $\operatorname{SO}$, that's the... \inlinemetanote{writes: $\operatorname{SO}_n$}
 
-Or you could have some complex thing and have a Hermitian inner product, and these things are called the unitary groups and $\operatorname{SU}$ \inlinemetanote{writes \qt{$\mathbb{C}, \langle , \rangle$}, \qt{$U_n$}, and \qt{$SU_n$}}.
+Or you could have some complex thing and have a Hermitian inner product, and these things are called the unitary groups and $\operatorname{SU}$ \inlinemetanote{writes \qt{$\mathbb{C}, \langle , \rangle$}, \qt{$\operatorname{U}_n$}, and \qt{$\operatorname{SU}_n$}}.
 
-Or you could take some kind of vector space --- I don't know if you've learned about this --- but have a symplectic inner product \inlinemetanote{writes: $V, \langle , \rangle^{\text{sympl}}$}. Do you know about that? This is a skew-symmetric inner product. It turns out in that case you have to be even, and this is called the symplectic group \inlinemetanote{writes: $Sp_{2n}$}.
+Or you could take some kind of vector space --- I don't know if you've learned about this --- but have a symplectic inner product \inlinemetanote{writes: $V, \langle , \rangle^{\text{sympl}}$}. Do you know about that? This is a skew-symmetric inner product. It turns out in that case you have to be even, and this is called the symplectic group \inlinemetanote{writes: $\operatorname{Sp}_{2n}$}.
 
 So, these are the standard families of infinite connected groups, and they relate directly to ideas in mathematical physics. For example, this symplectic group turns out to be classical mechanics, and this unitary group is related to quantum mechanics, and this orthogonal group is related to relativity.
 
@@ -923,9 +928,9 @@ The classical families of continuous symmetry groups arise as symmetries of vect
 \textbf{Underlying Structure} & \textbf{Classical Lie Groups} & \textbf{Physics Connection} \\
 \midrule
 $\mathbb{R}^n$ (vector space) & $\operatorname{GL}_n(\mathbb{R})$, $\operatorname{SL}_n(\mathbb{R})$ & --- \\
-$\mathbb{R}^n, \langle \cdot, \cdot \rangle$ (inner product) & $O_n$, $SO_n$ & Relativity \\
-$\mathbb{C}, \langle \cdot, \cdot \rangle$ (Hermitian inner product) & $U_n$, $SU_n$ & Quantum mechanics \\
-$V, \langle \cdot, \cdot \rangle^{\text{sympl}}$ (skew-symmetric) & $Sp_{2n}$ & Classical mechanics \\
+$\mathbb{R}^n, \langle \cdot, \cdot \rangle$ (inner product) & $\operatorname{O}_n$, $\operatorname{SO}_n$ & Relativity \\
+$\mathbb{C}^n, \langle \cdot, \cdot \rangle$ (Hermitian inner product) & $\operatorname{U}_n$, $\operatorname{SU}_n$ & Quantum mechanics \\
+$V, \langle \cdot, \cdot \rangle^{\text{sympl}}$ (skew-symmetric) & $\operatorname{Sp}_{2n}$ & Classical mechanics \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1083,7 +1088,7 @@ So, this means we can reduce the problem of solving to $g_1$ and $g_2$ \inlineme
 \end{speech}
 
 \begin{content}[Reduction via Factorization]
-Suppose $f$ factors non-trivially in $k[x]$ as $f = g_1 \cdot g_2$ for polynomials $g_1, g_2 \in k[x]$. Since $k$ is a field (and in particular has no zero divisors), for any $\alpha \in k$ we have:
+Suppose a non-zero $f$ factors non-trivially in $k[x]$ as $f = g_1 \cdot g_2$ for polynomials $g_1, g_2 \in k[x]$. Since $k$ is a field (and in particular has no zero divisors), for any $\alpha \in k$ we have:
 \[
 f(\alpha) = 0 \iff g_1(\alpha) \cdot g_2(\alpha) = 0 \iff \text{either } g_1(\alpha) = 0 \text{ or } g_2(\alpha) = 0.
 \]
@@ -1144,6 +1149,8 @@ Our standard starting data are therefore:
 
 \subsection{Roots and Linear Factors}
 
+% [WORD-CHECKED: a Gemini Neon hearing of 00:55:35-00:56:35 gives "alpha" in the statement of the proposition, then "f of a"
+% and "x minus a" in the division-algorithm argument, so the speech keeps $a$ there; the board note writes $\alpha$.]
 \begin{speech}[00:55:12 - 00:56:32]
 All right, so, if you ever find this, here's the first proposition: that if $f$ in $k[x]$ is any polynomial --- so, not all these conditions here --- then there exists $\alpha$ in $k$ such that $\alpha$ is a root if and only if $x - \alpha$ divides $f$ \inlinemetanote{writes \qt{Prop:}, \qt{If $f \in k[x]$ is any poly.}, \qt{then $\exists \alpha \in k$ s.t. $f(\alpha) = 0$}, and \qt{$\iff (x - \alpha) \mid f$}}. Okay?
 
@@ -1161,7 +1168,7 @@ f(\alpha) = 0 \iff (x - \alpha) \mid f.
 \end{proposition}
 
 \begin{proof}[Proof Sketch (via the Division Algorithm)]
-By the division algorithm in $k[x]$ (Week 5, \cref{thm:poly-long-division}), dividing $f$ by the monic degree-$1$ polynomial $(x - \alpha)$ yields a quotient $g \in k[x]$ and a remainder $r \in k[x]$ of degree less than $1$ (hence, a constant $r \in k$):
+By the division algorithm in $k[x]$ (Week 5, \cref{thm:poly-long-division}), dividing $f$ by the monic degree-$1$ polynomial $(x - \alpha)$ yields a quotient $g \in k[x]$ and a remainder $r \in k[x]$ with $r = 0$ or $\deg(r) < 1$ (in either case a constant $r \in k$):
 \[
 f = g \cdot (x - \alpha) + r.
 \]
@@ -1759,7 +1766,7 @@ by:
 k &\xrightarrow{\;\sim\;} k \subset F && \text{(identity on constants)}, \\
 x &\longmapsto \beta && \text{(evaluation at $\beta$)}.
 \end{align*}
-These two conditions uniquely define a ring homomorphism $\phi \colon k[x] \to F$, namely the evaluation map $\phi(g(x)) = g(\beta)$ for every $g \in k[x]$.
+By the universal property of the polynomial ring (Week 3, \cref{thm:universal-property-polynomial-ring}), these two conditions uniquely define a ring homomorphism $\phi \colon k[x] \to F$, namely the evaluation map $\phi(g(x)) = g(\beta)$ for every $g \in k[x]$.
 \end{content}
 
 \begin{speech}[01:27:53 - 01:29:23]
@@ -1863,9 +1870,9 @@ Consider the image $\operatorname{Im}(\bar{\phi}) \subset F$. Because $K$ is a f
 \end{enumerate}
 Hence, $\operatorname{Im}(\bar{\phi})$ is the smallest subfield of $F$ containing $k$ and $\beta$, which by \cref{def:subfield-generated-by-beta} means
 \[
-\operatorname{Im}(\bar{\phi}) = k(\beta).
+\operatorname{Im}(\bar{\phi}) = \operatorname{Im}(\phi) = k(\beta).
 \]
-Since $\bar{\phi} \colon K \hookrightarrow F$ is injective and has image $k(\beta)$, restricting its codomain gives the canonical field isomorphism $\phi \colon K \xrightarrow{\sim} k(\beta)$ (which restricts to the identity on $k$ and maps $\alpha \mapsto \beta$). This completes the proof of \cref{thm:uniqueness-root-extension}.
+Since $\bar{\phi} \colon K \hookrightarrow F$ is injective and has image $k(\beta)$, restricting its codomain gives the canonical field isomorphism $\bar{\phi} \colon K \xrightarrow{\sim} k(\beta)$ (the $\phi$ of \cref{thm:uniqueness-root-extension}, which restricts to the identity on $k$ and maps $\alpha \mapsto \beta$). This completes the proof of \cref{thm:uniqueness-root-extension}.
 \end{content}
 
 \end{proofWrapper}
@@ -1888,7 +1895,7 @@ Okay. That's it.
     \item \textbf{Sylow IV (\cref{thm:sylow-iv}):} For a finite group $G$ of order $p^k m$ with $(p, m) = 1$, the number $|V|$ of $p$-Sylow subgroups satisfies $|V| \equiv 1 \pmod p$, proved by restricting the conjugation action $G \curvearrowright V$ to one $p$-Sylow subgroup $P$ and showing $P$ is its unique fixed point via the normalizer $N(Q)$.
     \item \textbf{Counterexample to the Full Converse of Lagrange ($A_4$):} By listing the conjugacy class sizes of $A_4$ ($1, 3, 4, 4$) and using that any subgroup of index $2$ must be normal (hence a union of conjugacy classes), $A_4$ of order $12$ has no subgroup of order $6$ (\cref{prop:a4-no-order-6}).
     \item \textbf{Simple Groups and Simplicity of $A_5$:} A group is simple (\cref{def:simple-group}) if it has no non-trivial normal subgroups. Using the conjugacy class sizes of $A_5$ ($1, 15, 20, 12, 12$), no proper sum containing $1$ divides $60$, so $A_5$ is simple (\cref{prop:a5-simple}), whereas $A_4$ has a normal subgroup of order $1 + 3 = 4$ and is not simple.
-    \item \textbf{Classification Hints and Directions in Group Theory:} Groups of order $p$ are cyclic ($\faktor{\mathbb{Z}}{p\mathbb{Z}}$), groups of order $p^2$ are abelian (stated as an exercise), and groups of order $pq$ ($p > q$) have a unique normal $p$-Sylow subgroup $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ acted on by conjugation by $\faktor{\mathbb{Z}}{q\mathbb{Z}}$. Broader directions include the classification of finite simple groups, representation theory, Klein's Erlangen program, and Lie groups ($O_n, SO_n, U_n, SU_n, Sp_{2n}$, and exceptional groups $G_2, F_4, E_6, E_7, E_8$).
+    \item \textbf{Classification Hints and Directions in Group Theory:} Groups of order $p$ are cyclic ($\faktor{\mathbb{Z}}{p\mathbb{Z}}$), groups of order $p^2$ are abelian (stated as an exercise), and groups of order $pq$ ($p > q$) have a unique normal $p$-Sylow subgroup $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ acted on by conjugation by $\faktor{\mathbb{Z}}{q\mathbb{Z}}$. Broader directions include the classification of finite simple groups, representation theory, Klein's Erlangen program, and Lie groups ($\operatorname{O}_n, \operatorname{SO}_n, \operatorname{U}_n, \operatorname{SU}_n, \operatorname{Sp}_{2n}$, and exceptional groups $G_2, F_4, E_6, E_7, E_8$).
     \item \textbf{The Field $K = \faktor{k[x]}{(f)}$:} Given an irreducible polynomial $f \in k[x]$, the principal ideal $(f)$ is maximal in the $\mathrm{PID}$ $k[x]$, so $K = \faktor{k[x]}{(f)}$ is a field (\cref{clm:quotient-is-field}) containing $k$ canonically (\cref{clm:canonical-embedding}) and a root $\alpha = \bar{x}$ of $f$ (\cref{clm:alpha-is-root}), as exemplified by $\faktor{\mathbb{R}[x]}{(x^2+1)} \cong \mathbb{C}$.
     \item \textbf{Uniqueness of the Construction (\cref{thm:uniqueness-root-extension}):} For any field extension $F \supset k$ containing a root $\beta \in F$ of $f$, the evaluation map $\phi \colon k[x] \to F$ ($x \mapsto \beta$) has kernel $(f)$ and induces a canonical isomorphism $K \xrightarrow{\sim} k(\beta)$ onto the subfield generated by $\beta$ over $k$.
 \end{itemize}
