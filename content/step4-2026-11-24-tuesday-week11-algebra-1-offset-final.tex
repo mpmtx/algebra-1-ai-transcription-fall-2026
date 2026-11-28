@@ -347,7 +347,7 @@ The identity $e \in G$ satisfies $e Q e^{-1} = Q$, so $e \in N$. If $x, y \in N$
 For a subgroup $Q \subset G$, we have $Q \subset N$, and hence the chain of subgroups $Q \subset N \subset G$.
 \end{lemma}
 \begin{proof}
-Since $Q$ is a subgroup of $G$, for every $x \in Q$ we have $x Q x^{-1} = Q$, which means $x \in N$.
+Since $Q$ is a subgroup of $G$, for every $x \in Q$ we have $x Q x^{-1} = Q$: closure gives $x Q x^{-1} \subset Q$, and every $q \in Q$ equals $x (x^{-1} q x) x^{-1} \in x Q x^{-1}$. This means $x \in N$.
 \end{proof}
 \end{content}
 
@@ -508,8 +508,10 @@ No combination of these conjugacy class sizes sums to $6$:
 \]
 (and $H$ must contain the identity $(e)$ of class size $1$; even without that, $\{3, 4, 4\}$ cannot sum to $6$). This contradiction shows that $A_4$ has no subgroup of order $6$.
 
-\begin{steps}[Why the \texorpdfstring{$3$}{3}-Cycles Split in \texorpdfstring{$A_4$}{A4}]
-Going beyond the lecture: the elements of $S_4$ that commute with $(123)$ form the subgroup $\langle (123) \rangle$ of order $3$, which lies in $A_4$. By the Orbit--Stabilizer Theorem for the conjugation action of $A_4$ on itself (Week 9, \cref{thm:orbit-stabilizer}), the conjugacy class of $(123)$ in $A_4$ has $12 / 3 = 4$ elements, namely $(123)$, $(134)$, $(142)$, $(243)$, and the same count holds for every $3$-cycle. So the eight $3$-cycles form two classes of four. The other class contains $(132)$: the elements of $S_4$ that conjugate $(123)$ into $(132)$ form the coset $(23)\langle (123) \rangle$, and all of them are odd permutations.
+\begin{steps}[Conjugacy Classes in \texorpdfstring{$A_4$}{A4}]
+Going beyond the lecture: there are three products of two disjoint transpositions, since there are three ways to split $\{1, 2, 3, 4\}$ into two pairs ($1$ goes with $2$, $3$ or $4$). They form one class of $A_4$: conjugation relabels the numbers (Week 8, \cref{thm:conjugation-sn-formula}), and conjugating $(12)(34)$ by the even permutations $(123)$ and $(132)$ gives $(23)(14)$ and $(31)(24)$.
+
+For the $3$-cycles, the elements of $S_4$ that commute with $(123)$ form the subgroup $\langle (123) \rangle$ of order $3$, which lies in $A_4$. By the Orbit--Stabilizer Theorem for the conjugation action of $A_4$ on itself (Week 9, \cref{thm:orbit-stabilizer}), the conjugacy class of $(123)$ in $A_4$ has $12 / 3 = 4$ elements, namely $(123)$, $(134)$, $(142)$, $(243)$, and the same count holds for every $3$-cycle. So the eight $3$-cycles form two classes of four. The other class contains $(132)$: the elements of $S_4$ that conjugate $(123)$ into $(132)$ form the coset $(23)\langle (123) \rangle$, and all of them are odd permutations.
 \end{steps}
 \end{content}
 
@@ -587,7 +589,9 @@ The sizes of the conjugacy classes of $A_5$ are:
 (which sum to $1 + 15 + 20 + 12 + 12 = 60 = |A_5|$, left as an exercise to verify).
 
 \begin{steps}[Origin of the Class Sizes from \texorpdfstring{$S_5$}{S5}]
-Going beyond the lecture: the even permutations in $S_5$ have cycle types $(1)$, $(12)(34)$, $(123)$, and $(12345)$, of sizes $1$, $15$, $20$, and $24$ respectively. The $15$ double transpositions and $20$ $3$-cycles remain single conjugacy classes in $A_5$, whereas the $24$ $5$-cycles split into two $A_5$-conjugacy classes of size $12$ each.
+Going beyond the lecture: the even permutations in $S_5$ (Week 8, \cref{prop:sign-from-cycles}) have cycle types $(1)$, $(12)(34)$, $(123)$, and $(12345)$, of sizes $1$, $15$, $20$, and $24$ respectively: $5 \cdot 3 = 15$ (choose the fixed number, then split the other four into two pairs in $3$ ways), $\binom{5}{3} \cdot 2 = 20$ (choose three numbers and one of two cyclic orders), and $4! = 24$ (write a $5$-cycle starting with $1$). Each of these sets is one conjugacy class of $S_5$, and a union of conjugacy classes of $A_5$.
+
+For $\sigma \in A_5$, let $C' \subset S_5$ be the subgroup of permutations commuting with $\sigma$, and $C = C' \cap A_5$. By the Orbit--Stabilizer Theorem (Week 9, \cref{thm:orbit-stabilizer}), the class of $\sigma$ has $120 / |C'|$ elements in $S_5$ and $60 / |C|$ elements in $A_5$. If $C'$ contains an odd permutation $\tau$, then multiplication by $\tau$ maps the even elements of $C'$ bijectively onto the odd ones (the sign is a homomorphism, Week 8, \cref{def:sign-homomorphism}), so $|C| = |C'| / 2$ and the class does not split. This happens for $(12)(34)$, which commutes with the odd $(12)$, and for $(123)$, which commutes with the odd $(45)$: the $15$ double transpositions and the $20$ $3$-cycles remain single conjugacy classes in $A_5$. For every $5$-cycle $\sigma$, $|C'| = 120 / 24 = 5$, and $C'$ contains the five powers of $\sigma$, so $C' = \langle \sigma \rangle \subset A_5$ and $|C| = 5$. Its class in $A_5$ has $60 / 5 = 12$ elements, so the $24$ $5$-cycles split into two $A_5$-conjugacy classes of size $12$ each.
 \end{steps}
 \end{content}
 
@@ -644,7 +648,7 @@ Indeed, the union of the identity class and the conjugacy class of products of t
 \end{remark}
 
 \begin{steps}[Explicit Verification for \texorpdfstring{$A_4$}{A4}]
-Going beyond the lecture: the subset $V_4 := \{ (e), (12)(34), (13)(24), (14)(23) \} \subset A_4$ is closed under composition (every non-identity element has order $2$, and the product of any two distinct ones is the third), so it is a subgroup (the Klein four-group). Since it is a union of conjugacy classes of $A_4$, it is normal in $A_4$.
+Going beyond the lecture: the subset $V_4 := \{ (e), (12)(34), (13)(24), (14)(23) \} \subset A_4$ is closed under composition (every non-identity element has order $2$, and the product of any two distinct ones is the third), so it is a subgroup (the Klein four-group). Since it is a union of conjugacy classes of $A_4$, it is normal in $A_4$ (Week 8, \cref{rem:normal-conjugate-closed}).
 \end{steps}
 \end{content}
 
@@ -787,6 +791,11 @@ Here $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ and $\faktor{\mathbb{Z}}{q\mathbb{Z}}$ s
 \]
 This map tells how the generators of $\faktor{\mathbb{Z}}{q\mathbb{Z}}$ and $\faktor{\mathbb{Z}}{p\mathbb{Z}}$ interact, and studying what it can be classifies all groups of order $p q$.
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: Groups of Order \texorpdfstring{$pq$}{pq}]
+% [PERSISTENT, ADDITION]
+Write $A \cong \faktor{\mathbb{Z}}{p\mathbb{Z}}$ and $B = \langle x \rangle \cong \faktor{\mathbb{Z}}{q\mathbb{Z}}$ for the two Sylow subgroups ($p > q$). By Lagrange, $|A \cap B|$ divides $p$ and $q$, so $A \cap B = \{e\}$; then the $pq$ products $y b$ ($y \in A$, $b \in B$) are pairwise distinct, since $y_1 b_1 = y_2 b_2$ gives $y_2^{-1} y_1 = b_2 b_1^{-1} \in A \cap B$. So, every element of $G$ is $y x^i$ with $y \in A$ and $0 \le i < q$, and $(y_1 x^i)(y_2 x^j) = y_1 \operatorname{Conj}_x^i(y_2) \, x^{i + j}$: the map $\operatorname{Conj}_x$ determines the group. If $y_0$ generates $A$, then $\operatorname{Conj}_x(y_0) = y_0^a$ for some $1 \le a \le p - 1$, hence $\operatorname{Conj}_x(y) = y^a$ for all $y \in A$; since $x^q = e$, applying $\operatorname{Conj}_x$ $q$ times gives the identity (Week 8, \cref{clm:conj-hom}), so $a^q \equiv 1 \pmod p$, and the order of $a$ in $(\faktor{\mathbb{Z}}{p\mathbb{Z}})^*$ divides both $q$ and $p - 1$. If $q \nmid p - 1$, then $a = 1$, $x$ commutes with $y_0$, and $y_0 x$ has order $pq$ (since $(y_0 x)^n = y_0^n x^n = e$ forces $y_0^n = x^{-n} \in A \cap B = \{e\}$, so $p \mid n$ and $q \mid n$); thus $G \cong \faktor{\mathbb{Z}}{pq\mathbb{Z}}$, and for example every group of order $15$ is cyclic. If $q \mid p - 1$, there is, besides the cyclic group, exactly one non-abelian group of order $pq$ up to isomorphism; for $q = 2$ it is the dihedral group $D_{2p}$, where conjugation by a flip inverts the rotations ($a = p - 1$).
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:32:56
@@ -934,7 +943,18 @@ $V, \langle \cdot, \cdot \rangle^{\text{sympl}}$ (skew-symmetric) & $\operatorna
 \bottomrule
 \end{tabular}
 \end{center}
+Here a symplectic form is a non-degenerate skew-symmetric bilinear form; non-degeneracy is what forces the dimension of $V$ to be even, $\dim V = 2n$.
 \end{content}
+
+\begin{aiNote}[Spoken Slip: \qt{infinite connected groups}]
+% [PERSISTENT]
+In the passage 00:38:18--00:40:22, the lecturer calls the groups of the table \qt{the standard families of infinite connected groups}. The groups $\operatorname{SL}_n(\mathbb{R})$, $\operatorname{SO}_n$, $\operatorname{U}_n$, $\operatorname{SU}_n$ and $\operatorname{Sp}_{2n}$ are connected, but $\operatorname{GL}_n(\mathbb{R})$ and $\operatorname{O}_n$ are not: each has two connected components, the matrices of positive and of negative determinant (for $\operatorname{O}_n$, of determinant $1$ and $-1$).
+\end{aiNote}
+
+\begin{aiNote}[Beyond the Lecture: The Lorentz Group]
+% [PERSISTENT, ADDITION]
+More precisely, special relativity uses the Lorentz group $\operatorname{O}(1, 3)$, the orthogonal group of the indefinite form $x_0^2 - x_1^2 - x_2^2 - x_3^2$ on $\mathbb{R}^4$, rather than the group $\operatorname{O}_n$ of a positive definite inner product.
+\end{aiNote}
 
 \begin{hidden}
 % timestamp: 00:40:22
@@ -955,7 +975,7 @@ Anyway, this is the...
 \end{speech}
 
 \begin{content}[Exceptional Lie Groups]
-Alongside the infinite classical families, the classification of continuous symmetry groups (\newterm{Lie groups}) contains five exceptional (exotic) groups:
+Alongside the infinite classical families, the classification of the simple continuous symmetry groups (the simple \newterm{Lie groups}) contains five exceptional (exotic) groups:
 \[
 G_2, \quad F_4, \quad E_6, \quad E_7, \quad E_8,
 \]
@@ -1088,7 +1108,7 @@ So, this means we can reduce the problem of solving to $g_1$ and $g_2$ \inlineme
 \end{speech}
 
 \begin{content}[Reduction via Factorization]
-Suppose a non-zero $f$ factors non-trivially in $k[x]$ as $f = g_1 \cdot g_2$ for polynomials $g_1, g_2 \in k[x]$. Since $k$ is a field (and in particular has no zero divisors), for any $\alpha \in k$ we have:
+Suppose a non-zero $f$ factors non-trivially in $k[x]$ as $f = g_1 \cdot g_2$ for polynomials $g_1, g_2 \in k[x]$. Evaluation at $\alpha \in k$ is a ring homomorphism (Week 3, \cref{thm:universal-property-polynomial-ring}), so $f(\alpha) = g_1(\alpha) \cdot g_2(\alpha)$. Since $k$ is a field (and in particular has no zero divisors, Week 2, \cref{ex:fields-are-domains}), for any $\alpha \in k$ we have:
 \[
 f(\alpha) = 0 \iff g_1(\alpha) \cdot g_2(\alpha) = 0 \iff \text{either } g_1(\alpha) = 0 \text{ or } g_2(\alpha) = 0.
 \]
@@ -1138,7 +1158,7 @@ And it is a fact that you can't always solve. This is a fact that you grow up wi
 \end{speech}
 
 \begin{content}[Standard Setup for Root-Finding]
-Linear polynomials $f = c_1 x + c_2$ ($c_1, c_2 \in k$, $c_1 \neq 0$) are irreducible, but solving $c_1 \alpha + c_2 = 0$ is immediate ($\alpha = -c_2 / c_1$, linear algebra). Thus, the genuinely interesting case has $\deg(f) \ge 2$. Moreover, dividing by the non-zero leading coefficient does not change the roots, so we may assume $f$ is monic.
+Linear polynomials $f = c_1 x + c_2$ ($c_1, c_2 \in k$, $c_1 \neq 0$) are irreducible, but solving $c_1 \alpha + c_2 = 0$ is immediate ($\alpha = -c_2 / c_1$, linear algebra). Thus, the genuinely interesting case has $\deg(f) \ge 2$. Moreover, dividing by the non-zero leading coefficient does not change the roots, so we may assume $f$ is monic (leading coefficient $1$).
 
 Our standard starting data are therefore:
 \begin{itemize}
@@ -1228,7 +1248,7 @@ Each of the following degree-$2$ polynomials has no root in its base field $k$ (
 \end{examples}
 
 \begin{steps}[Why No Roots Implies Irreducibility in Degree \texorpdfstring{$2$}{2} or \texorpdfstring{$3$}{3}]
-Going beyond the lecture: if a polynomial $f \in k[x]$ of degree $2$ or $3$ factored non-trivially as $f = g_1 \cdot g_2$ with $\deg(g_1), \deg(g_2) \ge 1$, then at least one factor would have degree $1$, giving a root in $k$ by \cref{prop:root-linear-factor}. Thus, in degrees $2$ and $3$, having no roots in $k$ is equivalent to being irreducible over $k$.
+Going beyond the lecture: if a polynomial $f \in k[x]$ of degree $2$ or $3$ factored non-trivially as $f = g_1 \cdot g_2$ with $\deg(g_1), \deg(g_2) \ge 1$, then at least one factor would have degree $1$, giving a root in $k$ by \cref{prop:root-linear-factor}. Thus, in degrees $2$ and $3$, having no roots in $k$ is equivalent to being irreducible over $k$. In degree $4$ this fails: $(x^2 + 1)^2$ has no root in $\mathbb{R}$, but it is not irreducible over $\mathbb{R}$.
 \end{steps}
 \end{content}
 
@@ -1390,7 +1410,7 @@ Define the map $\phi \colon k \to K$ by sending each element $\gamma \in k$ (vie
 \[
 \gamma \in k \longmapsto \bar{\gamma} \in K.
 \]
-This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $\phi$ is injective, embedding $k$ canonically as a subfield of $K$.
+This map is a ring homomorphism between two fields sending $1_k$ to $\bar{1}_K$. A ring homomorphism out of a field is either injective or identically zero; since $1_k \mapsto \bar{1} \neq \bar{0}$ (as $\deg(f) \ge 1$, the ideal $(f)$ contains no non-zero constants), the kernel is $\{0\}$. Equivalently, no non-zero constant $\gamma \in k$ can be a multiple of $f$. Thus, $\phi$ is injective. Its image is a subring of $K$ (Week 2, \cref{prop:image-ring-hom-subring}) that contains the inverse $\overline{\gamma^{-1}}$ of each $\bar{\gamma} \neq \bar{0}$, hence a subfield, and $\phi$ embeds $k$ canonically as a subfield of $K$.
 \end{proof}
 
 \begin{steps}[Why the Ideal \texorpdfstring{$(f)$}{(f)} Contains No Non-Zero Constants]
@@ -1604,7 +1624,7 @@ Let $k \subset F$ be a field extension and let $\beta \in F$. The \newterm{subfi
 \end{definition}
 
 \begin{steps}[Why a Smallest Subfield Exists]
-The intersection of any non-empty family of subfields of $F$ is again a subfield of $F$. Taking the intersection of all subfields $L \subset F$ such that $k \subset L$ and $\beta \in L$ (a non-empty family since $F$ itself belongs to it) yields a well-defined subfield $k(\beta)$ that contains $k$ and $\beta$ and is contained in every other such subfield:
+The intersection of any non-empty family of subfields of $F$ is again a subfield of $F$: it contains $0$ and $1$, and with any of its elements their sums, negatives and products, and the inverses of the non-zero ones, since every subfield of the family does. Taking the intersection of all subfields $L \subset F$ such that $k \subset L$ and $\beta \in L$ (a non-empty family since $F$ itself belongs to it) yields a well-defined subfield $k(\beta)$ that contains $k$ and $\beta$ and is contained in every other such subfield:
 \[
 k(\beta) := \bigcap_{\substack{L \subset F \text{ subfield} \\ k \subset L, \; \beta \in L}} L.
 \]
@@ -1629,7 +1649,7 @@ Then there exists a canonical field isomorphism
 \[
 \phi \colon K \xrightarrow{\;\sim\;} k(\beta)
 \]
-extending the identity on $k$ (and sending $\alpha = \bar{x} \in K$ to $\beta \in k(\beta)$), where $K = \faktor{k[x]}{(f)}$.
+extending the identity on $k$ and sending $\alpha = \bar{x} \in K$ to $\beta \in k(\beta)$, where $K = \faktor{k[x]}{(f)}$.
 \end{theorem}
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
@@ -1879,7 +1899,7 @@ Since $\bar{\phi} \colon K \hookrightarrow F$ is injective and has image $k(\bet
 
 \begin{aiNote}[Beyond the Lecture: Kronecker's Theorem and Polynomials in \texorpdfstring{$\beta$}{beta}]
 % [PERSISTENT, ADDITION]
-The existence result (\cref{clm:quotient-is-field}, \cref{clm:canonical-embedding}, and \cref{clm:alpha-is-root}) is commonly known as \emph{Kronecker's Theorem}. Notice also a striking consequence of the proof of \cref{thm:uniqueness-root-extension}: although $k(\beta)$ is defined in general as the smallest \emph{subfield} containing $k$ and $\beta$ (which normally requires quotients $g(\beta)/h(\beta)$), here $\operatorname{Im}(\bar{\phi}) = \{ g(\beta) \mid g \in k[x] \}$ is already a field! Thus, every element of $k(\beta)$ can be written purely as a polynomial in $\beta$ over $k$ (and in fact uniquely of degree $< \deg(f)$).
+The existence result (\cref{clm:quotient-is-field}, \cref{clm:canonical-embedding}, and \cref{clm:alpha-is-root}) is commonly known as \emph{Kronecker's Theorem}. Notice also a striking consequence of the proof of \cref{thm:uniqueness-root-extension}: although $k(\beta)$ is defined in general as the smallest \emph{subfield} containing $k$ and $\beta$ (which normally requires quotients $g(\beta)/h(\beta)$), here $\operatorname{Im}(\bar{\phi}) = \{ g(\beta) \mid g \in k[x] \}$ is already a field! Thus, every element of $k(\beta)$ can be written purely as a polynomial in $\beta$ over $k$ (and in fact uniquely of degree $< \deg(f)$). The isomorphism depends on the root: since every element of $K$ is a polynomial in $\alpha$, $\bar{\phi}$ is the only homomorphism $K \to F$ that is the identity on $k$ and sends $\alpha$ to $\beta$, and another root gives another isomorphism. For example, $\mathbb{C} = \mathbb{R}(i) = \mathbb{R}(-i)$, and the roots $i$ and $-i$ of $x^2 + 1$ give the two isomorphisms $\faktor{\mathbb{R}[x]}{(x^2 + 1)} \to \mathbb{C}$ with $\bar{x} \mapsto i$ and $\bar{x} \mapsto -i$, which differ by complex conjugation.
 \end{aiNote}
 
 \begin{speech}[01:31:46 - 01:32:24]

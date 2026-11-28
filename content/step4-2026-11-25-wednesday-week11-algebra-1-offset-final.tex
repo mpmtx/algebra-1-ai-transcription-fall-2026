@@ -319,7 +319,7 @@ So, the right way to think about all of this is with these hypotheses: $k$ is a 
 \end{speech}
 
 \begin{insight}[The Degenerate Degree-$1$ Case]
-An irreducible polynomial $f \in k[x]$ has no root in $k$ provided $\operatorname{degree}(f) \ge 2$ (otherwise a root $a \in k$ gives a proper linear factor $(x - a)$). When $\operatorname{degree}(f) = 1$, $f$ is both irreducible and already has a root in $k$; in this degenerate case the quotient construction still works without issue and gives $\dim_k K = 1$, i.e., $K \cong k$.
+An irreducible polynomial $f \in k[x]$ has no root in $k$ provided $\operatorname{degree}(f) \ge 2$ (otherwise a root $a \in k$ gives a proper linear factor $(x - a)$). When $\operatorname{degree}(f) = 1$, $f$ is both irreducible and already has a root in $k$; in this degenerate case the quotient construction still works without issue and gives $\dim_k K = 1$, i.e., $K \cong k$ ($\bar{1}$ alone spans $K$ over $k$, so the canonical embedding $k \to K$ is onto).
 \end{insight}
 
 \begin{aiNote}[Spoken Slip: \qt{degrees greater than $2$}]
@@ -1039,12 +1039,17 @@ and $\alpha \in E \subset F_k$. (The lecture names the fields from the top down,
 Going beyond the lecture: Each new constructible point is obtained by intersecting two lines, a line and a circle, or two circles defined using previously constructed coordinates in a field $F_m$:
 \begin{itemize}
     \item \textbf{Line $\cap$ Line:} Solving two linear equations over $F_m$ yields coordinates already in $F_m$ (degree $1$).
-    \item \textbf{Line $\cap$ Circle:} Substituting a linear equation into a quadratic circle equation $(x - a)^2 + (y - b)^2 = r^2$ (with $a, b, r^2 \in F_m$) yields a quadratic equation over $F_m$, whose solutions lie in $F_m$ or a degree-$2$ extension $F_{m+1} = F_m(\sqrt{d})$.
+    \item \textbf{Line $\cap$ Circle:} Substituting a linear equation into a quadratic circle equation $(x - a)^2 + (y - b)^2 = r^2$ (with $a, b, r^2 \in F_m$) yields a quadratic equation over $F_m$. By the quadratic formula, its solutions lie in $F_m$ if its discriminant $d \in F_m$ has a square root in $F_m$, and otherwise in the degree-$2$ extension $F_{m+1} = F_m(\sqrt{d})$.
     \item \textbf{Circle $\cap$ Circle:} Subtracting the two circle equations cancels the $x^2$ and $y^2$ terms, reducing the system to a line $\cap$ circle intersection.
 \end{itemize}
 By the Tower Law (\cref{prop:tower-law}), iterating $k$ such steps yields a field $F_k$ of dimension $\dim_{\mathbb{Q}} F_k = 2^k$ over $\mathbb{Q}$.
 \end{steps}
 \end{content}
+
+\begin{aiNote}[Beyond the Lecture: The Field \texorpdfstring{$E$}{E} and Degrees That Are Powers of \texorpdfstring{$2$}{2}]
+% [PERSISTENT, ADDITION]
+For $E$ one may always take $\mathbb{Q}(\alpha)$, the smallest subfield of $\mathbb{R}$ containing $\alpha$ (\cref{def:subfield-generated-by-beta}), since it lies in every subfield of $\mathbb{R}$ that contains $\alpha$. By the Tower Law for $\mathbb{Q} \subset \mathbb{Q}(\alpha) \subset F_k$, $\dim_{\mathbb{Q}} \mathbb{Q}(\alpha)$ then divides $2^k$, so it is a power of $2$. This condition is necessary but not sufficient: there are real numbers $\alpha$ with $\dim_{\mathbb{Q}} \mathbb{Q}(\alpha) = 4$ that cannot be constructed (Galois theory shows this). This is why the characterization asks for a tower of quadratic steps, and not only for a dimension.
+\end{aiNote}
 
 \subsection{Impossibility of Trisecting an Angle}
 
@@ -1055,11 +1060,11 @@ The trisector of $60^\circ$ would be a $20^\circ$ angle \inlinemetanote{writes: 
 \end{speech}
 
 \begin{content}[Reduction of Angle Trisection to \texorpdfstring{$\cos(20^\circ)$}{cos(20 degrees)}]
-A classical impossibility result is that one cannot trisect an arbitrary angle with straightedge and compass. As a concrete counterexample, consider an angle of $60^\circ$ (which is constructible, as it is the interior angle of an equilateral triangle):
+A classical impossibility result is that one cannot trisect an arbitrary angle with straightedge and compass. As a concrete counterexample, consider an angle of $60^\circ$ (which is constructible, as it is the interior angle of an equilateral triangle: the circles of radius $1$ around the two ends of the unit segment meet in its third vertex):
 \[
 60^\circ \longrightarrow 20^\circ.
 \]
-If $60^\circ$ could be trisected, one could construct a $20^\circ$ angle, and by dropping a perpendicular onto the horizontal unit segment, one could construct the length $\alpha = \cos(20^\circ) \in \mathbb{R}$.
+If $60^\circ$ could be trisected, one could construct a $20^\circ$ angle at the end $0$ of the unit segment, and by dropping a perpendicular from the point at distance $1$ on its ray onto the horizontal unit segment, one could construct the length $\alpha = \cos(20^\circ) \in \mathbb{R}$.
 
 \definecolor{figBlue}{HTML}{07608F} % RGB (7, 96, 143): petrol blue (MidnightBlue)
 \begin{hidden}
@@ -1094,6 +1099,11 @@ Recall the triple-angle trigonometric identity:
 \[
 \cos(3\theta) = 4 \cos(\theta)^3 - 3 \cos(\theta).
 \]
+
+\begin{steps}[Deriving the Triple-Angle Formula]
+Going beyond the lecture: under multiplication of complex numbers the angles add (\cref{fact:pre-complex}), so $\cos(3\theta) + i \sin(3\theta) = (\cos(\theta) + i \sin(\theta))^3$. Comparing real parts gives $\cos(3\theta) = \cos(\theta)^3 - 3 \cos(\theta) \sin(\theta)^2 = 4 \cos(\theta)^3 - 3 \cos(\theta)$, using $\sin(\theta)^2 = 1 - \cos(\theta)^2$.
+\end{steps}
+
 Setting $\theta = 20^\circ$ and using $\cos(3 \cdot 20^\circ) = \cos(60^\circ) = \frac{1}{2}$ gives
 \[
 \frac{1}{2} = 4 \cos(20^\circ)^3 - 3 \cos(20^\circ).
@@ -1104,7 +1114,7 @@ Suppose toward a contradiction that $\alpha = \cos(20^\circ)$ were constructible
 \[
 \dim_{\mathbb{Q}} K = \operatorname{degree}(f) = 3.
 \]
-Now consider the tower $\mathbb{Q} \subset K \subset F_k$. By the Tower Law (\cref{prop:tower-law}):
+Now consider the tower $\mathbb{Q} \subset K \subset F_k$. The field $F_k$ is finite-dimensional over $K$, since a $\mathbb{Q}$-basis of $F_k$ spans $F_k$ over $K$ as well. By the Tower Law (\cref{prop:tower-law}):
 \[
 \dim_{\mathbb{Q}} F_k = \dim_K F_k \cdot \dim_{\mathbb{Q}} K = \dim_K F_k \cdot 3,
 \]
@@ -1163,7 +1173,7 @@ so $3 \mid \dim_{\mathbb{Q}} F_k$. On the other hand, applying the Tower Law ite
 \end{center}
 
 \begin{steps}[Verifying Irreducibility of \texorpdfstring{$8x^3 - 6x - 1$}{8x\textasciicircum 3 - 6x - 1} over \texorpdfstring{$\mathbb{Q}$}{Q}]
-Going beyond the lecture: A cubic polynomial over $\mathbb{Q}$ is reducible if and only if it has a linear factor, i.e., a rational root. By the Rational Root Theorem, any rational root $p/q$ (in lowest terms) of $8x^3 - 6x - 1$ must satisfy $p \mid 1$ and $q \mid 8$, leaving only the candidates $\pm 1, \pm \frac{1}{2}, \pm \frac{1}{4}, \pm \frac{1}{8}$. Evaluating directly:
+Going beyond the lecture: A cubic polynomial over $\mathbb{Q}$ is reducible if and only if it has a linear factor, i.e., a rational root. Suppose $f(\frac{p}{q}) = 0$ with $p, q \in \mathbb{Z}$, $q > 0$ and $(p, q) = 1$; here $p \neq 0$, since $f(0) = -1$. Multiplying by $q^3$ gives $8p^3 - 6pq^2 - q^3 = 0$, so $p$ divides $q^3 = 8p^3 - 6pq^2$. A prime factor of $p$ would then divide $q$ (Euclid's lemma, \cref{fact:pre-euclid}), which is impossible since $(p, q) = 1$; so $p = \pm 1$. Then $q$ divides $8p^3 = \pm 8$, so $q \in \{1, 2, 4, 8\}$. This leaves only the candidates $\pm 1, \pm \frac{1}{2}, \pm \frac{1}{4}, \pm \frac{1}{8}$. Evaluating directly:
 \begin{align*}
 f(\pm 1) &= \pm 8 \mp 6 - 1 \in \{1, -3\}, & f\!\left(\pm \frac{1}{2}\right) &= \pm 1 \mp 3 - 1 \in \{-3, 1\}, \\
 f\!\left(\pm \frac{1}{4}\right) &= \pm \frac{1}{8} \mp \frac{3}{2} - 1 \in \left\{-\frac{19}{8}, \frac{3}{8}\right\}, & f\!\left(\pm \frac{1}{8}\right) &= \pm \frac{1}{64} \mp \frac{3}{4} - 1 \in \left\{-\frac{111}{64}, -\frac{17}{64}\right\}.
